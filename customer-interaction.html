@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 18: Customer Reviews, Comments &amp; Messages - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+            <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction &amp; Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce &amp; Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders &amp; Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers &amp; Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons &amp; Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website &amp; CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders &amp; Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ &amp; About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs &amp; Editorial
+                </a>
+                <div class="sidebar-heading">Customer &amp; Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews &amp; Messages
+                </a>
+                <div class="sidebar-heading">Administration &amp; Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations &amp; Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance &amp; Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron &amp; FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Customer &amp; Community</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">18. Reviews &amp; Messages</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= MAIN CHAPTER SECTION ================= -->
+                <section class="doc-section" id="ch18-intro">
+                    <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2.5 py-1 rounded-pill small fw-semibold">
+                            <i class="mdi mdi-account-star-outline me-1"></i> Customer &amp; Community Hub
+                        </span>
+                        <span class="badge bg-light text-muted border px-2.5 py-1 rounded-pill small">
+                            Chapter 18 of 22
+                        </span>
+                    </div>
+
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-account-star-outline text-primary"></i> Chapter 18: Customer Reviews, Comments &amp; Messages
+                    </h1>
+                    <p class="lead text-muted">
+                        Product ratings and sentiment telemetry, blog comment approval controls, customer contact inquiry workflows, and Gemini AI-powered email response generation.
+                    </p>
+
+                    <!-- Feature Highlights Grid -->
+                    <div class="row g-3 my-4">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-star-half-full text-warning fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Ratings &amp; Sentiment</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Aggregate product ratings (1-5 stars), verified purchase badges, telemetry metric cards, and review moderation workflows.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-comment-check-outline text-success fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Comment Moderation</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Granular auto-approval toggle switch, spam protection, article discussion threads, and instant status management.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-robot-happy-outline text-primary fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Gemini AI Support Studio</h6>
+                                </div>
+                                <p class="small text-muted mb-0">1-click inquiry analysis and automated email response drafting with live branded HTML preview and SMTP delivery.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Architectural Overview -->
+                    <div class="card border-0 shadow-sm rounded-3 mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold mb-3">Module Architecture &amp; Workflow</h4>
+                            <p class="text-muted">
+                                The <strong>MartX Customer &amp; Community Suite</strong> consolidates all shopper interactions into a unified operational command center. Store managers can monitor customer satisfaction, protect the storefront from spam, maintain high engagement on editorial articles, resolve pre-sales or post-sales inquiries using artificial intelligence, and manage newsletter audiences.
+                            </p>
+                            <div class="alert alert-info border-0 d-flex align-items-start gap-3 mb-0">
+                                <i class="mdi mdi-information-outline fs-4 text-info flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <strong>Admin Navigation Paths:</strong>
+                                    <div class="mt-1 font-monospace small">
+                                        • Admin Dashboard &gt; Customer &amp; Community &gt; Product Reviews<br>
+                                        • Admin Dashboard &gt; Customer &amp; Community &gt; Blog Comments<br>
+                                        • Admin Dashboard &gt; Customer &amp; Community &gt; Contact Messages<br>
+                                        • Admin Dashboard &gt; Customer &amp; Community &gt; Newsletters
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- ================= 18.1: PRODUCT REVIEWS & RATING TELEMETRY ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-18-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-star-box-multiple text-primary me-1"></i> 18.1 Product Reviews &amp; Rating Moderation
+                        </h3>
+                        <p class="text-muted">
+                            Product reviews build essential social proof, boost buyer confidence, and directly influence conversion rates. The <strong>Product Reviews Management</strong> console features real-time telemetry cards and filtering tools for moderating customer feedback.
+                        </p>
+
+                        <!-- Screenshot 1: Product Reviews Table + Metric Cards -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Product Reviews Management: Telemetry Cards &amp; Rating Ledger
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Reviews Engine</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/customer/admin_product_reviews_table.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/customer/admin_product_reviews_table.png" alt="Product Reviews Management Directory and Metrics" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- 4 Telemetry Metric Cards Breakdown -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-star-box-multiple text-primary fs-4"></i>
+                                        <h6 class="fw-bold mb-0">Total Reviews</h6>
+                                    </div>
+                                    <h4 class="fw-bold text-dark mb-1">97</h4>
+                                    <p class="small text-muted mb-0">Cumulative lifetime customer testimonials across all products.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-clock-alert text-warning fs-4"></i>
+                                        <h6 class="fw-bold mb-0">Pending Approval</h6>
+                                    </div>
+                                    <h4 class="fw-bold text-dark mb-1">0</h4>
+                                    <p class="small text-muted mb-0">Submitted reviews awaiting administrator safety moderation.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-check-decagram text-success fs-4"></i>
+                                        <h6 class="fw-bold mb-0">Approved Reviews</h6>
+                                    </div>
+                                    <h4 class="fw-bold text-dark mb-1">97</h4>
+                                    <p class="small text-muted mb-0">Live testimonials published and visible on public product pages.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-star text-warning fs-4"></i>
+                                        <h6 class="fw-bold mb-0">Average Rating</h6>
+                                    </div>
+                                    <h4 class="fw-bold text-dark mb-1">4.7 / 5.0</h4>
+                                    <p class="small text-muted mb-0">Aggregate customer satisfaction rating computed storewide.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 2: Product Review View Modal -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Review Details Modal: Customer Rating &amp; Feedback Inspection
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Review Details</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/customer/admin_product_review_view.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/customer/admin_product_review_view.png" alt="Product Review View Modal Interface" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Technical Deep Dive: Reviews Table Columns & Modal Attributes -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-light-subtle border-bottom py-3 px-4">
+                                <h5 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-table-eye text-primary me-2"></i> Review Directory Columns &amp; Parameters
+                                </h5>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light text-muted small text-uppercase">
+                                            <tr>
+                                                <th style="width: 18%;">Column / Field</th>
+                                                <th style="width: 15%;">Data Type</th>
+                                                <th style="width: 15%;">Requirement</th>
+                                                <th style="width: 52%;">Operational Description &amp; Front-End Impact</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">SL</td>
+                                                <td><span class="badge bg-light text-dark border">Integer</span></td>
+                                                <td>Auto-generated</td>
+                                                <td>Sequential numbering for administrative record display.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Product</td>
+                                                <td><span class="badge bg-primary-subtle text-primary">Relationship</span></td>
+                                                <td>System Reference</td>
+                                                <td>Displays the thumbnail and product title linked directly to the store catalog.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Customer</td>
+                                                <td><span class="badge bg-light text-dark border">User String</span></td>
+                                                <td>Verified Buyer</td>
+                                                <td>Reviewer's registered customer name. Anonymous reviews are flagged.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Rating</td>
+                                                <td><span class="badge bg-warning-subtle text-warning">Star Score</span></td>
+                                                <td>1 to 5 Stars</td>
+                                                <td>Numerical rating rendered as golden star glyphs (⭐) on storefront pages.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Status</td>
+                                                <td><span class="badge bg-success-subtle text-success">Approved / Pending</span></td>
+                                                <td>Toggle Pill</td>
+                                                <td>Controls public visibility. Clicking toggles between Approved and Pending.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Actions</td>
+                                                <td><span class="badge bg-secondary-subtle text-dark">Action Buttons</span></td>
+                                                <td>Management</td>
+                                                <td>Triggers the Review View modal or initiates soft-deletion.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= 18.2: BLOG DISCUSSION & COMMENT MODERATION ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-18-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-comment-multiple-outline text-primary me-1"></i> 18.2 Blog Discussion &amp; Comment Moderation Engine
+                        </h3>
+                        <p class="text-muted">
+                            Active blog engagement drives organic search rankings and community trust. The <strong>Blog Comments</strong> console gives administrators full control over discussion threads with auto-approval safety toggles.
+                        </p>
+
+                        <!-- Screenshot 3: Blog Comments Table + Settings Card -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Blog Comments: Global Auto-Approval Settings &amp; Comment Ledger
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Comments Hub</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/customer/admin_blog_comments_table.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/customer/admin_blog_comments_table.png" alt="Blog Comments Management and Settings Card" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Auto-Approval Settings Card Deep Dive -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-light-subtle border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-cog-outline text-primary me-2"></i> Auto-Approval Control &amp; Anti-Spam Strategy
+                                </h6>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" checked disabled id="doc_mock_comment_switch">
+                                    <label class="form-check-label fw-bold text-dark" for="doc_mock_comment_switch">
+                                        Enable Auto Approve for New Comments
+                                    </label>
+                                    <small class="d-block text-muted">
+                                        If enabled, new blog comments will be published immediately without waiting for admin approval.
+                                    </small>
+                                </div>
+                                <div class="alert alert-warning border border-warning-subtle mb-0 p-3">
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i class="mdi mdi-shield-alert text-warning fs-5 flex-shrink-0 mt-0.5"></i>
+                                        <div class="small">
+                                            <strong>Security Best Practice:</strong> While <em>Auto Approve</em> accelerates community engagement, stores experiencing high bot traffic should leave this switch <strong>OFF</strong> to review comments manually before public rendering.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 4: Blog Comment View Modal -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Comment Details Modal: Reader Feedback &amp; Blog Context
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Comment Inspector</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/customer/admin_blog_comment_view.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/customer/admin_blog_comment_view.png" alt="Blog Comment View Details Modal" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Comment Inspection Attributes -->
+                        <div class="p-4 rounded-3 border bg-light-subtle">
+                            <h6 class="fw-bold text-dark mb-2">Comment Modal Parameters:</h6>
+                            <ul class="text-muted small ps-3 mb-0">
+                                <li class="mb-1"><strong>Blog Post:</strong> Full title of the target article (e.g., <em>Exclusive Autumn-Winter 2026 Collection Preview</em>).</li>
+                                <li class="mb-1"><strong>Commenter Name:</strong> Author's public display name (e.g., <em>Suman Chandra Dev Sharma</em>).</li>
+                                <li class="mb-1"><strong>Email Address:</strong> Submitter's email for administrative follow-up or reply notifications.</li>
+                                <li class="mb-1"><strong>Date Posted:</strong> Precise timestamp (e.g., <code>Sep 17, 2026, 10:24 AM</code>).</li>
+                                <li><strong>Full Comment:</strong> Unabridged multi-paragraph reader commentary with preserved whitespace formatting.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= 18.3: CONTACT MESSAGES & CUSTOMER SUPPORT LEDGER ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-18-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-email-mark-as-unread text-primary me-1"></i> 18.3 Contact Messages &amp; Customer Support Ledger
+                        </h3>
+                        <p class="text-muted">
+                            Shoppers frequently submit inquiries regarding sizing, return windows, B2B wholesale pricing, or international delivery. The <strong>Contact Messages</strong> directory serves as a centralized help desk ticketing inbox.
+                        </p>
+
+                        <!-- Screenshot 5: Contact Messages Table -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Contact Messages: Customer Inquiries &amp; Status Badges
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Messages Directory</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/customer/admin_contact_messages_table.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/customer/admin_contact_messages_table.png" alt="Contact Messages Management Ledger" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Status Lifecycle Badges Reference Table -->
+                        <div class="table-responsive my-3">
+                            <table class="table table-hover border align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width: 18%;">Status Badge</th>
+                                        <th style="width: 22%;">Visual Indicator</th>
+                                        <th style="width: 60%;">Operational Workflow &amp; Help Desk State</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-semibold font-monospace">Unread</td>
+                                        <td><span class="badge bg-warning-subtle text-warning border border-warning-subtle px-3 py-1 fw-semibold">Unread</span></td>
+                                        <td>Newly received message requiring staff triage. Triggers top-bar notification counter.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold font-monospace">Read</td>
+                                        <td><span class="badge bg-info-subtle text-info border border-info-subtle px-3 py-1 fw-semibold">Read</span></td>
+                                        <td>Message has been opened and inspected via modal or reply view, but no outgoing response has been transmitted yet.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold font-monospace">Replied</td>
+                                        <td><span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1 fw-semibold">Replied</span></td>
+                                        <td>Staff member has composed and dispatched an official email reply. Ticket is marked resolved.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Screenshot 6: Contact Message View Modal -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Contact Message Details Modal: Inquiry Inspection &amp; Fast Reply Trigger
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Message Inspector</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/customer/admin_contact_message_view.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/customer/admin_contact_message_view.png" alt="Contact Message View Details Modal" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= 18.4: GEMINI AI EMAIL REPLY STUDIO ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-18-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-creation text-primary me-1"></i> 18.4 Gemini AI Email Reply Studio &amp; Live HTML Template Preview
+                        </h3>
+                        <p class="text-muted">
+                            MartX pioneers integrated AI customer service. When viewing any contact message, clicking <strong>Reply to Message</strong> directs the administrator into the <strong>Reply Studio</strong>, featuring one-click AI draft generation and real-time responsive HTML email previewing.
+                        </p>
+
+                        <!-- Screenshot 7: Contact Message Reply Studio with AI & Live Preview -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Reply to Customer Message: Gemini AI Assistant &amp; Live Branded Email Preview
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Gemini AI Studio</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/customer/admin_contact_message_reply.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/customer/admin_contact_message_reply.png" alt="Contact Message Reply Studio with Gemini AI and Live HTML Preview" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- AI Reply Engine Deep Dive -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 4px solid #6366f1 !important;">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <span class="badge bg-primary px-3 py-1.5 rounded-pill fw-semibold">
+                                        <i class="mdi mdi-robot me-1"></i> AI Customer Specialist
+                                    </span>
+                                    <h5 class="fw-bold mb-0 text-heading">Gemini AI Support Specialist: Workflow Architecture</h5>
+                                </div>
+                                <p class="text-muted mb-3">
+                                    When an administrator clicks <strong>✨ Auto Generate with AI</strong> on the reply screen:
+                                </p>
+                                <ol class="text-muted small ps-3 mb-0">
+                                    <li class="mb-2"><strong>Context Extraction:</strong> The customer's full name, email address, original inquiry subject, and inquiry text are packaged and sent to the endpoint <code>admin.contact-message.generate-ai-reply</code>.</li>
+                                    <li class="mb-2"><strong>Persona-Driven Reasoning:</strong> Google Gemini assumes the persona of a <em>Senior Customer Support Specialist</em> for your store brand, generating:
+                                        <ul class="mt-1 ps-3">
+                                            <li>An appropriate email subject line prefixed with <code>Re:</code>.</li>
+                                            <li>A personalized greeting addressing the customer by their first name.</li>
+                                            <li>An empathetic, polite response directly resolving their inquiry.</li>
+                                            <li>An official sign-off with the store's customer support signature.</li>
+                                        </ul>
+                                    </li>
+                                    <li class="mb-2"><strong>DOM Synchronization:</strong> The subject input and message textarea are filled instantly.</li>
+                                    <li><strong>Live HTML Template Sync:</strong> The right-side <strong>Live Email Preview</strong> updates in real-time, rendering the exact responsive HTML template the customer will receive in their inbox.</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- Input Parameters Table (Reply Screen) -->
+                        <div class="table-responsive">
+                            <table class="table table-hover border align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width: 20%;">Field / Component</th>
+                                        <th style="width: 15%;">Type &amp; Limit</th>
+                                        <th style="width: 12%;">Mandatory</th>
+                                        <th style="width: 53%;">Operational Functionality &amp; Validation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold font-monospace text-primary">Email Subject</td>
+                                        <td>Text Input (Max 255)</td>
+                                        <td><span class="badge bg-danger-subtle text-danger">Required</span></td>
+                                        <td>Specifies the outgoing SMTP email subject line. Automatically pre-filled with <code>Re: [Original Subject]</code> or populated by Gemini AI.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold font-monospace text-primary">Reply Message Body</td>
+                                        <td>Textarea (9 Rows)</td>
+                                        <td><span class="badge bg-danger-subtle text-danger">Required</span></td>
+                                        <td>Main content of the reply email. Supports custom editing, manual refinement, or 100% AI generation.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold font-monospace text-primary">Live Email Preview</td>
+                                        <td>Interactive Component</td>
+                                        <td><span class="badge bg-secondary-subtle text-secondary">Visual Aid</span></td>
+                                        <td>Re-renders on every keystroke, showing branded header banner, greeting, body copy, quoted inquiry block, and store footer links.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold font-monospace text-primary">Send Email Reply</td>
+                                        <td>Submit Button</td>
+                                        <td><span class="badge bg-primary-subtle text-primary">Action</span></td>
+                                        <td>Dispatches email via queued SMTP, marks the ticket status as <strong>Replied</strong>, and logs the outbound transmission timestamp.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= 18.5: NEWSLETTERS & AUDIENCE MANAGEMENT ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-18-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-newspaper-variant-outline text-primary me-1"></i> 18.5 Newsletter Subscribers &amp; Audience Management
+                        </h3>
+                        <p class="text-muted">
+                            Email marketing delivers the highest ROI in e-commerce. The <strong>Newsletters</strong> module captures email subscribers from storefront footer forms and checkout opt-ins.
+                        </p>
+
+                        <!-- Screenshot 8: Newsletters Table + CSV Export -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Newsletters: Subscriber Directory &amp; One-Click CSV Export
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Audience &amp; CSV</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/customer/admin_newsletters_table.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/customer/admin_newsletters_table.png" alt="Newsletter Subscribers Ledger and CSV Export" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Newsletter Ledger Capabilities Grid -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-file-delimited-outline text-success fs-5"></i>
+                                        <h6 class="fw-bold mb-0">One-Click CSV Export</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">Export clean subscriber lists with timestamp data for immediate import into Mailchimp, Klaviyo, Brevo, or SendGrid campaigns.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-bell-badge-outline text-primary fs-5"></i>
+                                        <h6 class="fw-bold mb-0">Subscription Status</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">Easily toggle subscriber status between <strong>Subscribed</strong> and <strong>Unsubscribed</strong> to respect customer privacy preferences.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-email-search-outline text-warning fs-5"></i>
+                                        <h6 class="fw-bold mb-0">Instant Email Search</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">Search subscriber records by full or partial email address to handle customer unsubscribes or manual profile updates.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= 18.6: CUSTOMER INTERACTION & MODERATION SOP ================= -->
+                    <div class="doc-subsection mt-5" id="sec-18-6">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-clipboard-check-outline text-primary me-1"></i> 18.6 Customer Interaction &amp; Moderation SOP
+                        </h3>
+                        <p class="text-muted">
+                            To maintain 5-star customer satisfaction and ensure brand integrity, customer success agents should execute this daily 5-step Standard Operating Procedure:
+                        </p>
+
+                        <div class="p-4 rounded-3 border bg-light shadow-sm">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white border rounded-3 h-100">
+                                        <div class="fw-bold text-primary mb-1">Step 1: Daily Inbox &amp; Review Audit</div>
+                                        <p class="small text-muted mb-0">Review the top-bar notification count for new contact inquiries and check the <strong>Pending Approval</strong> metric card on Product Reviews.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white border rounded-3 h-100">
+                                        <div class="fw-bold text-primary mb-1">Step 2: Review Moderation</div>
+                                        <p class="small text-muted mb-0">Inspect star ratings and feedback text in the Review Modal. Approve legitimate buyer feedback or reject spam.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white border rounded-3 h-100">
+                                        <div class="fw-bold text-primary mb-1">Step 3: Blog Comment Moderation</div>
+                                        <p class="small text-muted mb-0">Audit new comments under Blog Comments. Verify compliance with store community guidelines before approving.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white border rounded-3 h-100">
+                                        <div class="fw-bold text-primary mb-1">Step 4: AI Reply Generation</div>
+                                        <p class="small text-muted mb-0">Open Unread Contact Messages, click <strong>Reply to Message</strong>, and use <strong>✨ Auto Generate with AI</strong> to draft responses.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white border rounded-3 h-100">
+                                        <div class="fw-bold text-primary mb-1">Step 5: Preview &amp; Dispatch</div>
+                                        <p class="small text-muted mb-0">Verify the generated response against the Live Email Preview and click <strong>Send Email Reply</strong> to resolve the ticket.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white border rounded-3 h-100">
+                                        <div class="fw-bold text-primary mb-1">Step 6: Audience Sync</div>
+                                        <p class="small text-muted mb-0">Perform weekly exports from Newsletters via <strong>Export CSV</strong> to synchronize marketing subscriber databases.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="blogs-editorial.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 17 (Blogs &amp; Editorial)
+                    </a>
+                    <a href="staff-roles.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 19 (Multi-Staff &amp; Roles) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch18-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-18-1" class="doc-toc-link">18.1 Product Reviews</a>
+                    <a href="#sec-18-2" class="doc-toc-link">18.2 Blog Comments</a>
+                    <a href="#sec-18-3" class="doc-toc-link">18.3 Contact Messages</a>
+                    <a href="#sec-18-4" class="doc-toc-link">18.4 AI Email Reply Studio</a>
+                    <a href="#sec-18-5" class="doc-toc-link">18.5 Newsletters &amp; Audience</a>
+                    <a href="#sec-18-6" class="doc-toc-link">18.6 Interaction SOP</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch18-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction &amp; Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce &amp; Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders &amp; Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers &amp; Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons &amp; Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website &amp; CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders &amp; Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ &amp; About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs &amp; Editorial
+            </a>
+            <div class="sidebar-heading">Customer &amp; Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews &amp; Messages
+            </a>
+            <div class="sidebar-heading">Administration &amp; Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations &amp; Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance &amp; Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron &amp; FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 1rem; overflow: hidden;">
+                <div class="modal-header border-bottom p-3">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0 text-muted ps-2">
+                            <i class="mdi mdi-magnify fs-4"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 shadow-none ps-2" id="docGlobalSearch" placeholder="Search documentation chapters, attributes, or guides..." autofocus>
+                    </div>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3" id="docSearchResults" style="max-height: 400px; overflow-y: auto;">
+                    <div class="text-muted small text-uppercase fw-bold px-2 mb-2">Documentation Hub</div>
+                    <div class="p-3 text-center text-muted">Type any keyword to search across all 22 chapters...</div>
+                </div>
+                <div class="modal-footer border-top py-2 px-3 justify-content-between text-muted small">
+                    <span>Press <kbd class="bg-light text-dark border">ESC</kbd> to exit</span>
+                    <span>MartX Documentation v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,1147 @@
+/**
+ * MartX Enterprise E-Commerce - Official Documentation Styling
+ * Author: Suman Chandra Dev Sharma (sumondav444@gmail.com)
+ * Version: 1.0.0
+ * Architecture: Bootstrap 5.3 Modern Docs Architecture
+ */
+
+:root {
+    --doc-primary: #6366f1;
+    --doc-primary-rgb: 99, 102, 241;
+    --doc-primary-hover: #4f46e5;
+    --doc-accent: #0ea5e9;
+    --doc-bg: #f8fafc;
+    --doc-card-bg: #ffffff;
+    --doc-text: #334155;
+    --doc-heading: #0f172a;
+    --doc-border: #e2e8f0;
+    --doc-sidebar-bg: #ffffff;
+    --doc-code-bg: #0f172a;
+    --doc-code-text: #e2e8f0;
+    --doc-callout-info-bg: #eff6ff;
+    --doc-callout-info-border: #3b82f6;
+    --doc-callout-warn-bg: #fffbeb;
+    --doc-callout-warn-border: #f59e0b;
+    --doc-callout-success-bg: #f0fdf4;
+    --doc-callout-success-border: #10b981;
+    --doc-callout-danger-bg: #fef2f2;
+    --doc-callout-danger-border: #ef4444;
+}
+
+[data-bs-theme="dark"] {
+    --doc-bg: #0b0f19;
+    --doc-card-bg: #111827;
+    --doc-text: #94a3b8;
+    --doc-heading: #f1f5f9;
+    --doc-border: #1e293b;
+    --doc-sidebar-bg: #0f172a;
+    --doc-code-bg: #030712;
+    --doc-code-text: #f8fafc;
+    --doc-callout-info-bg: rgba(59, 130, 246, 0.1);
+    --doc-callout-warn-bg: rgba(245, 158, 11, 0.1);
+    --doc-callout-success-bg: rgba(16, 185, 129, 0.1);
+    --doc-callout-danger-bg: rgba(239, 68, 68, 0.1);
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--doc-bg);
+    color: var(--doc-text);
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--doc-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* ================= TOP NAVBAR ================= */
+.doc-navbar {
+    background-color: var(--doc-sidebar-bg);
+    border-bottom: 1px solid var(--doc-border);
+    backdrop-filter: blur(8px);
+    z-index: 1030;
+    transition: background-color 0.3s ease;
+}
+
+.doc-brand-logo {
+    height: 34px;
+    max-height: 36px;
+    width: auto;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-brand:hover .doc-brand-logo {
+    transform: scale(1.03);
+}
+
+.doc-brand-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, var(--doc-primary), var(--doc-accent));
+    color: #ffffff;
+}
+
+.doc-search-input {
+    border-radius: 0.5rem;
+    background-color: var(--doc-bg);
+    border: 1px solid var(--doc-border);
+    color: var(--doc-text);
+    padding: 0.45rem 0.85rem;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.doc-search-input:focus {
+    border-color: var(--doc-primary);
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* ================= 🔍 SEARCH & MODAL FOCUS (ZERO SHADOW & UNIFIED BORDERS) ================= */
+#docGlobalSearch:focus,
+.doc-navbar .form-control:focus,
+.doc-search-input:focus,
+.input-group .form-control:focus,
+.modal-header .form-control:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.modal-header .input-group {
+    border: 1px solid var(--doc-border);
+    border-radius: 0.65rem;
+    overflow: hidden;
+    background-color: var(--doc-card-bg);
+    transition: border-color 0.2s ease;
+}
+
+.modal-header .input-group:focus-within {
+    border-color: var(--doc-primary) !important;
+    box-shadow: none !important;
+}
+
+.modal-header .input-group .input-group-text,
+.modal-header .input-group .form-control {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background-color: transparent !important;
+}
+
+/* Navbar Search Trigger Pill - Unified 38px & Zero Asymmetric Border */
+.doc-navbar .input-group {
+    height: 38px;
+    border: 1px solid var(--doc-border) !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden;
+    background-color: var(--doc-bg) !important;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.doc-navbar .input-group:hover {
+    border-color: rgba(var(--doc-primary-rgb), 0.4) !important;
+}
+
+.doc-navbar .input-group:focus-within {
+    border-color: var(--doc-border) !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.doc-navbar .input-group .input-group-text,
+.doc-navbar .input-group .form-control {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background-color: transparent !important;
+    height: 100%;
+}
+
+.doc-navbar .input-group .form-control:focus {
+    border: none !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background-color: transparent !important;
+}
+
+/* ================= 🎯 NAVBAR BUTTON HEIGHT & Y-PADDING UNIFICATION (38px) ================= */
+.doc-navbar-btn-icon {
+    width: 38px;
+    height: 38px;
+    padding: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem !important;
+    line-height: 1;
+    border: 1px solid var(--doc-border) !important;
+    color: var(--doc-text) !important;
+    background-color: var(--doc-card-bg) !important;
+    transition: all 0.15s ease-in-out;
+}
+
+.doc-navbar-btn-icon:hover {
+    color: var(--doc-primary) !important;
+    border-color: rgba(var(--doc-primary-rgb), 0.4) !important;
+    background-color: rgba(var(--doc-primary-rgb), 0.04) !important;
+}
+
+.doc-navbar-btn {
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem !important;
+    border-radius: 0.5rem !important;
+    line-height: 1;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    transition: all 0.15s ease-in-out;
+}
+
+/* ================= LEFT SIDEBAR ================= */
+.doc-sidebar {
+    position: sticky;
+    top: 56px;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+    background-color: var(--doc-sidebar-bg);
+    border-right: 1px solid var(--doc-border);
+    padding: 1.5rem 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--doc-border) transparent;
+}
+
+.doc-sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.doc-sidebar::-webkit-scrollbar-thumb {
+    background: var(--doc-border);
+    border-radius: 4px;
+}
+
+.sidebar-heading {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #64748b;
+    letter-spacing: 0.08em;
+    margin-top: 1rem;
+    margin-bottom: 0.35rem;
+    padding-left: 0.65rem;
+}
+
+.sidebar-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    font-weight: 500;
+    color: var(--doc-text);
+    text-decoration: none;
+    border-radius: 0.375rem;
+    transition: all 0.15s ease-in-out;
+    margin-bottom: 0.1rem;
+}
+
+.sidebar-nav-link i {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    opacity: 0.8;
+}
+
+.sidebar-nav-link:hover {
+    color: var(--doc-primary);
+    background-color: rgba(var(--doc-primary-rgb), 0.08);
+}
+
+.sidebar-nav-link.active {
+    color: var(--doc-primary);
+    background-color: rgba(var(--doc-primary-rgb), 0.12);
+    font-weight: 700;
+}
+
+.sidebar-submenu {
+    list-style: none;
+    padding-left: 0.75rem;
+    margin: 0.2rem 0 0.6rem 0.75rem;
+    border-left: 2px solid var(--doc-border);
+}
+
+.sidebar-submenu-link {
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.8125rem;
+    color: var(--doc-text);
+    text-decoration: none;
+    border-radius: 0.35rem;
+    transition: all 0.15s ease-in-out;
+    opacity: 0.85;
+}
+
+.sidebar-submenu-link:hover, .sidebar-submenu-link.active {
+    color: var(--doc-primary);
+    background-color: rgba(var(--doc-primary-rgb), 0.08);
+    opacity: 1;
+    font-weight: 600;
+}
+
+.sidebar-submenu-link i {
+    font-size: 0.95rem;
+    margin-right: 0.45rem;
+    opacity: 0.75;
+}
+
+/* ================= 🖥️ LIVE ADMIN BROWSER FRAME ================= */
+.doc-admin-frame {
+    background-color: var(--doc-card-bg);
+    border: 1px solid var(--doc-border);
+    border-radius: 0.85rem;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+    margin-top: 1.5rem;
+    margin-bottom: 2rem !important;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-bs-theme="dark"] .doc-admin-frame {
+    box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.45);
+}
+
+.doc-admin-frame-header {
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid var(--doc-border);
+    padding: 0.6rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+[data-bs-theme="dark"] .doc-admin-frame-header {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.doc-admin-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.doc-admin-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.doc-admin-dot.red { background-color: #ef4444; }
+.doc-admin-dot.yellow { background-color: #f59e0b; }
+.doc-admin-dot.green { background-color: #10b981; }
+
+.doc-admin-url-bar {
+    background-color: var(--doc-card-bg);
+    border: 1px solid var(--doc-border);
+    border-radius: 0.35rem;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: #64748b;
+    flex-grow: 1;
+    max-width: 450px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.doc-admin-frame-body {
+    padding: 1.5rem;
+    background-color: var(--doc-card-bg);
+}
+
+/* ================= 3-TIER FIELD ANATOMY TABLE ================= */
+.doc-field-card {
+    border: 1px solid var(--doc-border);
+    border-radius: 0.75rem;
+    background-color: var(--doc-card-bg);
+    margin-bottom: 1.25rem;
+    transition: border-color 0.15s ease;
+}
+
+.doc-field-card:hover {
+    border-color: rgba(var(--doc-primary-rgb), 0.4);
+}
+
+.doc-field-header {
+    padding: 0.75rem 1rem;
+    background-color: rgba(var(--doc-primary-rgb), 0.03);
+    border-bottom: 1px solid var(--doc-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.doc-field-body {
+    padding: 1rem;
+}
+
+.doc-field-impact-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: rgba(14, 165, 233, 0.1);
+    color: #0284c7;
+    border: 1px solid rgba(14, 165, 233, 0.25);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+[data-bs-theme="dark"] .doc-field-impact-badge {
+    background-color: rgba(14, 165, 233, 0.15);
+    color: #38bdf8;
+    border-color: rgba(14, 165, 233, 0.3);
+}
+
+/* Sticky In-Page Subnav Pills */
+.doc-subnav-container {
+    position: sticky;
+    top: 56px;
+    z-index: 1020;
+    background-color: var(--doc-bg);
+    padding: 0.75rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--doc-border);
+    backdrop-filter: blur(10px);
+}
+
+.doc-subnav-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--doc-text);
+    background-color: var(--doc-card-bg);
+    border: 1px solid var(--doc-border);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+}
+
+.doc-subnav-pill:hover, .doc-subnav-pill.active {
+    background-color: var(--doc-primary);
+    border-color: var(--doc-primary);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(var(--doc-primary-rgb), 0.25);
+}
+
+/* ================= MAIN CONTENT ================= */
+.doc-main-content {
+    padding: 2.5rem 2rem 5rem 2rem;
+    min-height: calc(100vh - 56px);
+}
+
+.doc-section {
+    margin-bottom: 3.5rem;
+    scroll-margin-top: 80px;
+}
+
+.doc-section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--doc-border);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.doc-subsection {
+    scroll-margin-top: 85px;
+}
+
+.doc-subsection h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.015em;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.65rem;
+}
+
+.doc-subsection h3 i {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.doc-card {
+    background-color: var(--doc-card-bg);
+    border: 1px solid var(--doc-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* ================= CODE BLOCKS ================= */
+.doc-code-wrapper {
+    position: relative;
+    background-color: var(--doc-code-bg);
+    border-radius: 0.625rem;
+    margin: 1.25rem 0;
+    overflow: hidden;
+    border: 1px solid var(--doc-border);
+}
+
+.doc-code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-family: monospace;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.doc-code-wrapper pre {
+    margin: 0;
+    padding: 1.15rem 5rem 1.15rem 1rem;
+    color: var(--doc-code-text);
+    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    font-size: 0.875rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.doc-btn-copy {
+    position: absolute;
+    top: 0.65rem;
+    right: 0.75rem;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #94a3b8;
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.doc-btn-copy:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ================= INLINE CODE BADGES ================= */
+code:not(pre code) {
+    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    font-size: 0.85em;
+    color: var(--doc-primary);
+    background-color: rgba(var(--doc-primary-rgb), 0.08);
+    padding: 0.12rem 0.38rem;
+    border-radius: 0.35rem;
+    border: 1px solid rgba(var(--doc-primary-rgb), 0.18);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+[data-bs-theme="dark"] code:not(pre code) {
+    background-color: rgba(99, 102, 241, 0.15);
+    border-color: rgba(99, 102, 241, 0.3);
+    color: #a5b4fc;
+}
+
+/* ================= CALLOUT BOXES ================= */
+.doc-callout {
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+    margin: 1.25rem 0;
+    border-left: 4px solid;
+}
+
+.doc-callout-info {
+    background-color: var(--doc-callout-info-bg);
+    border-left-color: var(--doc-callout-info-border);
+}
+
+.doc-callout-warning {
+    background-color: var(--doc-callout-warn-bg);
+    border-left-color: var(--doc-callout-warn-border);
+}
+
+.doc-callout-success {
+    background-color: var(--doc-callout-success-bg);
+    border-left-color: var(--doc-callout-success-border);
+}
+
+.doc-callout-danger {
+    background-color: var(--doc-callout-danger-bg);
+    border-left-color: var(--doc-callout-danger-border);
+}
+
+.doc-callout-title {
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ================= ⚡ 3-MINUTE QUICK START COMPONENT ================= */
+.doc-quickstart-banner {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(14, 165, 233, 0.06) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.25) !important;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+[data-bs-theme="dark"] .doc-quickstart-banner {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(15, 23, 42, 0.6) 100%);
+    border-color: rgba(99, 102, 241, 0.35) !important;
+}
+
+.doc-quickstart-card {
+    background-color: var(--doc-card-bg);
+    border: 1px solid var(--doc-border);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.doc-quickstart-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.08), 0 6px 10px -4px rgba(0, 0, 0, 0.04);
+}
+
+.doc-quickstart-card.step-1 { border-top: 3px solid #6366f1; }
+.doc-quickstart-card.step-2 { border-top: 3px solid #0ea5e9; }
+.doc-quickstart-card.step-3 { border-top: 3px solid #10b981; }
+
+.doc-quickstart-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.8125rem;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+/* ================= RIGHT SIDEBAR (ON THIS PAGE) ================= */
+.doc-toc {
+    position: sticky;
+    top: 76px;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+    padding-left: 1rem;
+    border-left: 1px solid var(--doc-border);
+    font-size: 0.8125rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--doc-border) transparent;
+}
+
+.doc-toc::-webkit-scrollbar {
+    width: 4px;
+}
+
+.doc-toc::-webkit-scrollbar-thumb {
+    background: var(--doc-border);
+    border-radius: 4px;
+}
+
+.doc-toc-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #64748b;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+}
+
+.doc-toc-link {
+    display: block;
+    color: var(--doc-text);
+    text-decoration: none;
+    padding: 0.3rem 0;
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.doc-toc-link:hover, .doc-toc-link.active {
+    color: var(--doc-primary);
+    font-weight: 600;
+    transform: translateX(4px);
+}
+
+/* ================= FEATURE BADGES & TABLES ================= */
+.doc-badge-pill {
+    padding: 0.35rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.table-responsive {
+    border-radius: 0.5rem;
+    border: 1px solid var(--doc-border);
+    margin: 1.25rem 0;
+    background-color: var(--doc-card-bg);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.doc-table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    background-color: transparent;
+    border: none;
+}
+
+.doc-table th {
+    background-color: rgba(var(--doc-primary-rgb), 0.05);
+    color: var(--doc-heading);
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--doc-border);
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.doc-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--doc-border);
+    font-size: 0.875rem;
+    vertical-align: top;
+}
+
+.doc-table.align-middle td,
+.doc-table td.align-middle {
+    vertical-align: middle;
+}
+
+.doc-table tbody tr:hover {
+    background-color: rgba(var(--doc-primary-rgb), 0.02);
+}
+
+.doc-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ================= THEME LAYOUTS & MOCKUP STYLES ================= */
+.doc-layout-card {
+    border: 2px solid var(--doc-border);
+    border-radius: 0.85rem;
+    padding: 0.75rem;
+    background-color: var(--doc-card-bg);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    cursor: default;
+}
+
+.doc-layout-card:hover {
+    border-color: rgba(var(--doc-primary-rgb), 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.doc-layout-card.active {
+    border-color: var(--doc-primary) !important;
+    background-color: rgba(var(--doc-primary-rgb), 0.02);
+    box-shadow: 0 6px 20px rgba(var(--doc-primary-rgb), 0.15) !important;
+}
+
+.doc-layout-check {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #10b981;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.4);
+    z-index: 5;
+}
+
+.doc-layout-img-box {
+    position: relative;
+    width: 100%;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    background: #f1f5f9;
+    border: 1px solid var(--doc-border);
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[data-bs-theme="dark"] .doc-layout-img-box {
+    background: #0f172a;
+}
+
+.doc-layout-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0.65rem;
+    color: var(--doc-text);
+}
+
+.doc-layout-card.active .doc-layout-title {
+    color: var(--doc-primary);
+}
+
+.doc-layout-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+}
+
+/* Header Strip Mockup Components */
+.doc-header-strip {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* Real Cockpit Interactive Tab Menu */
+.doc-tab-menu {
+    border-radius: 0.85rem;
+    overflow: hidden;
+    background-color: var(--doc-card-bg);
+    border: 1px solid var(--doc-border);
+}
+
+.doc-tab-menu .nav-link {
+    color: var(--doc-text);
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-left: 3px solid transparent;
+    border-radius: 0;
+    padding: 0.85rem 1.15rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid var(--doc-border);
+}
+
+.doc-tab-menu .nav-link:last-child {
+    border-bottom: none;
+}
+
+.doc-tab-menu .nav-link:hover {
+    background-color: rgba(var(--doc-primary-rgb), 0.05);
+    color: var(--doc-primary);
+}
+
+.doc-tab-menu .nav-link.active {
+    background-color: rgba(var(--doc-primary-rgb), 0.08);
+    color: var(--doc-primary);
+    border-left: 3px solid var(--doc-primary);
+    font-weight: 700;
+}
+
+/* Real MartX Capsule Header 2 Mockup */
+.doc-capsule-header {
+    background: #ffffff;
+    border-radius: 9999px;
+    padding: 0.6rem 1.25rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+[data-bs-theme="dark"] .doc-capsule-header {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Real MartX Frosted Glass Panel */
+.doc-glass-panel {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 0.75rem;
+}
+
+[data-bs-theme="dark"] .doc-glass-panel {
+    background: rgba(15, 23, 42, 0.88);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ================= 2026+ COMPREHENSIVE RESPONSIVE DESIGN ================= */
+
+/* Tablets and Medium Screens (< 992px) */
+@media (max-width: 991.98px) {
+    .doc-main-content {
+        padding: 1.75rem 1.25rem 4rem 1.25rem;
+    }
+    .doc-section-title {
+        font-size: 1.65rem;
+    }
+    .doc-code-wrapper pre {
+        font-size: 0.8125rem;
+        padding-right: 4.5rem;
+    }
+}
+
+/* Mobile Screens (< 768px) */
+@media (max-width: 767.98px) {
+    .doc-navbar .navbar-brand span.fs-5 {
+        font-size: 1.1rem !important;
+    }
+    .doc-brand-badge {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+    .doc-main-content {
+        padding: 1.25rem 0.85rem 3.5rem 0.85rem;
+    }
+    .doc-section-title {
+        font-size: 1.4rem;
+        gap: 0.5rem;
+    }
+    .doc-subsection h3 {
+        font-size: 1.1rem;
+    }
+    .doc-card {
+        padding: 1rem;
+    }
+    .doc-callout {
+        padding: 0.85rem 1rem;
+        font-size: 0.9rem;
+    }
+    .doc-table th, .doc-table td {
+        padding: 0.6rem 0.75rem;
+        font-size: 0.8125rem;
+    }
+}
+
+/* Small Mobile Screens (< 576px) */
+@media (max-width: 575.98px) {
+    .doc-main-content {
+        padding: 1rem 0.65rem 3rem 0.65rem;
+    }
+    .doc-section-title {
+        font-size: 1.25rem;
+    }
+    .doc-subsection h3 {
+        font-size: 1.05rem;
+    }
+    .doc-code-wrapper pre {
+        font-size: 0.75rem;
+        padding: 1rem 4rem 1rem 0.75rem;
+    }
+    .doc-btn-copy {
+        top: 0.5rem;
+        right: 0.5rem;
+        padding: 0.2rem 0.45rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* Prevent grid frame overflow only when explicitly placed inside column grids with h-100 */
+.row [class*="col-"] > .doc-admin-frame.h-100 {
+    margin: 0 !important;
+}
+
+/* Ensure consistent, generous breathing room between frames and subsequent elements */
+.doc-admin-frame + .p-4,
+.doc-admin-frame + .p-3,
+.doc-admin-frame + .doc-callout,
+.doc-admin-frame + .table-responsive,
+.doc-admin-frame + .row {
+    margin-top: 2rem !important;
+}
+
+/* ================= 🖼️ PREMIER LIGHTBOX MODAL (DISTRACTION-FREE ZOOM) ================= */
+.doc-admin-frame .doc-viewport-wrapper {
+    position: relative;
+    max-height: 620px;
+    overflow-y: auto;
+    border-radius: 0.5rem;
+    background: #f8fafc;
+    border: 1px solid var(--doc-border);
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+.doc-admin-frame .doc-viewport-wrapper::-webkit-scrollbar {
+    width: 7px;
+}
+.doc-admin-frame .doc-viewport-wrapper::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 4px;
+}
+.doc-admin-frame .doc-viewport-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8;
+}
+
+.doc-admin-frame img.doc-mockup-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: zoom-in;
+    transition: opacity 0.2s ease;
+}
+.doc-admin-frame img.doc-mockup-img:hover {
+    opacity: 0.96;
+}
+
+/* Lightbox Modal Shell */
+.doc-lightbox-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.doc-lightbox-modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Lightbox Header Bar */
+.doc-lightbox-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background: rgba(15, 23, 42, 0.96);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.doc-lightbox-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.doc-lightbox-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.doc-lightbox-btn-close {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+
+.doc-lightbox-btn-close:hover {
+    background: #ef4444;
+    border-color: #ef4444;
+    transform: scale(1.08);
+}
+
+/* Lightbox Content Area */
+.doc-lightbox-body {
+    flex: 1;
+    overflow: auto;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.doc-lightbox-body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.doc-lightbox-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+}
+
+.doc-lightbox-image {
+    max-width: 96%;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.15);
+    cursor: default;
+    background: #ffffff;
+}
+
+

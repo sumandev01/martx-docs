@@ -1,0 +1,2121 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MartX - Enterprise Multipurpose E-Commerce Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+                                    <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Chapter 1: Introduction & Overview</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= CHAPTER 1: FULL MASTER DOCUMENTATION (21 SECTIONS) ================= -->
+                <section class="doc-section" id="ch1-intro">
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-book-open-page-variant text-primary"></i> Chapter 1: Introduction, Overview & Complete Capabilities
+                    </h1>
+                    <p class="lead text-muted">
+                        Welcome to the definitive documentation for <strong>MartX v1.0.0</strong> — an enterprise-grade, multipurpose Laravel 12 e-commerce platform built for high-volume digital stores, multi-niche megashops, fashion boutiques, and modern brand marketplaces.
+                    </p>
+
+                    <!-- ================= ⚡ 3-MINUTE QUICK START ROADMAP (ABOVE-THE-FOLD) ================= -->
+                    <div class="doc-quickstart-banner p-4 p-md-4 my-4" id="quick-start">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3 pb-3 border-bottom">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="badge bg-warning text-dark px-3 py-2 fw-bold d-flex align-items-center gap-1 shadow-sm">
+                                    <i class="mdi mdi-flash fs-6"></i> FAST-TRACK ROADMAP
+                                </span>
+                                <h3 class="h5 fw-bold text-heading mb-0">⚡ 3-Minute Quick Start Guide</h3>
+                            </div>
+                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1 fw-medium font-monospace small">
+                                <i class="mdi mdi-clock-fast me-1"></i> Zero Terminal Commands Required
+                            </span>
+                        </div>
+                        <p class="text-muted small mb-4">
+                            Short on time? Deploy MartX to your live server in 3 intuitive steps. No coding knowledge or command-line experience needed:
+                        </p>
+
+                        <div class="row g-3">
+                            <!-- Step 1 -->
+                            <div class="col-md-4">
+                                <div class="doc-quickstart-card step-1 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="doc-quickstart-num bg-primary">1</span>
+                                        <h6 class="fw-bold text-heading mb-0">Upload & Extract</h6>
+                                    </div>
+                                    <p class="text-muted small mb-3 flex-grow-1">
+                                        Upload the MartX zip package to your cPanel or server webroot (<code class="text-primary font-monospace">public_html</code>) and extract all files.
+                                    </p>
+                                    <div class="pt-2 border-top small text-muted d-flex align-items-center gap-1">
+                                        <i class="mdi mdi-check-circle text-success"></i> Point webroot to <code class="font-monospace text-dark">/public</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="col-md-4">
+                                <div class="doc-quickstart-card step-2 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="doc-quickstart-num bg-info">2</span>
+                                        <h6 class="fw-bold text-heading mb-0">5-Step Web Wizard</h6>
+                                    </div>
+                                    <p class="text-muted small mb-3 flex-grow-1">
+                                        Visit your domain in any browser. The automated installer audits PHP requirements, connects your database, and sets up your admin account.
+                                    </p>
+                                    <div class="pt-2 border-top small">
+                                        <a href="installation.html" class="text-primary fw-semibold text-decoration-none d-inline-flex align-items-center gap-1">
+                                            Chapter 3: Full Setup Guide <i class="mdi mdi-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="col-md-4">
+                                <div class="doc-quickstart-card step-3 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="doc-quickstart-num bg-success">3</span>
+                                        <h6 class="fw-bold text-heading mb-0">Launch & Sell</h6>
+                                    </div>
+                                    <p class="text-muted small mb-3 flex-grow-1">
+                                        Log in to your 360° Admin Dashboard, configure your store currency and payment gateways, and start processing customer orders immediately!
+                                    </p>
+                                    <div class="pt-2 border-top small text-muted d-flex align-items-center gap-1">
+                                        <i class="mdi mdi-check-circle text-success"></i> Ready for live transactions
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 🌐 LIVE DEMO & ACCESS CREDENTIALS (CONVERSION SHOWCASE) ================= -->
+                    <div class="doc-card p-4 my-4 border-primary shadow-sm" id="demo-accounts" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, rgba(16, 185, 129, 0.04) 100%);">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3 pb-3 border-bottom">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="badge bg-success text-white px-3 py-2 fw-bold d-flex align-items-center gap-1 shadow-sm">
+                                    <i class="mdi mdi-play-circle-outline fs-6"></i> LIVE PRODUCT DEMO
+                                </span>
+                                <h4 class="h5 fw-bold text-heading mb-0">Experience MartX in Real Time</h4>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <a href="https://demo.martx.com" target="_blank" class="btn btn-sm btn-outline-primary fw-bold d-inline-flex align-items-center gap-1">
+                                    <i class="mdi mdi-store-outline"></i> Storefront Demo <i class="mdi mdi-open-in-new small"></i>
+                                </a>
+                                <a href="https://demo.martx.com/admin" target="_blank" class="btn btn-sm btn-primary fw-bold d-inline-flex align-items-center gap-1">
+                                    <i class="mdi mdi-view-dashboard-outline"></i> Admin Cockpit <i class="mdi mdi-open-in-new small"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-3">
+                            Test drive both customer and merchant perspectives using our pre-configured sandbox environments. Explore full catalog management, order processing, and theme customization:
+                        </p>
+
+                        <div class="row g-3">
+                            <!-- Super Admin Account -->
+                            <div class="col-md-4">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <span class="badge bg-danger-subtle text-danger fw-bold"><i class="mdi mdi-shield-crown me-1"></i> Super Admin</span>
+                                        <span class="badge bg-light text-muted font-monospace small">Full Access</span>
+                                    </div>
+                                    <div class="small font-monospace mb-1 d-flex align-items-center justify-content-between">
+                                        <span class="text-muted">User:</span>
+                                        <button class="btn btn-link btn-sm p-0 text-decoration-none font-monospace text-dark fw-bold" data-copy-text="admin@martx.com" title="Click to copy">
+                                            admin@martx.com <i class="mdi mdi-content-copy text-muted ms-1"></i>
+                                        </button>
+                                    </div>
+                                    <div class="small font-monospace mb-2 d-flex align-items-center justify-content-between">
+                                        <span class="text-muted">Pass:</span>
+                                        <button class="btn btn-link btn-sm p-0 text-decoration-none font-monospace text-dark fw-bold" data-copy-text="12345678" title="Click to copy">
+                                            12345678 <i class="mdi mdi-content-copy text-muted ms-1"></i>
+                                        </button>
+                                    </div>
+                                    <p class="text-muted small mb-0 pt-2 border-top" style="font-size: 0.75rem;">
+                                        Manage all 77 permissions, payment gateways, system settings & server obfuscation.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Store Manager Account -->
+                            <div class="col-md-4">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <span class="badge bg-primary-subtle text-primary fw-bold"><i class="mdi mdi-account-tie me-1"></i> Store Manager</span>
+                                        <span class="badge bg-light text-muted font-monospace small">Operations</span>
+                                    </div>
+                                    <div class="small font-monospace mb-1 d-flex align-items-center justify-content-between">
+                                        <span class="text-muted">User:</span>
+                                        <button class="btn btn-link btn-sm p-0 text-decoration-none font-monospace text-dark fw-bold" data-copy-text="manager@martx.com" title="Click to copy">
+                                            manager@martx.com <i class="mdi mdi-content-copy text-muted ms-1"></i>
+                                        </button>
+                                    </div>
+                                    <div class="small font-monospace mb-2 d-flex align-items-center justify-content-between">
+                                        <span class="text-muted">Pass:</span>
+                                        <button class="btn btn-link btn-sm p-0 text-decoration-none font-monospace text-dark fw-bold" data-copy-text="12345678" title="Click to copy">
+                                            12345678 <i class="mdi mdi-content-copy text-muted ms-1"></i>
+                                        </button>
+                                    </div>
+                                    <p class="text-muted small mb-0 pt-2 border-top" style="font-size: 0.75rem;">
+                                        Catalog products, inventory matrices, order fulfillment & customer reviews.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Customer Account -->
+                            <div class="col-md-4">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <span class="badge bg-success-subtle text-success fw-bold"><i class="mdi mdi-account-circle me-1"></i> Demo Customer</span>
+                                        <span class="badge bg-light text-muted font-monospace small">Storefront</span>
+                                    </div>
+                                    <div class="small font-monospace mb-1 d-flex align-items-center justify-content-between">
+                                        <span class="text-muted">User:</span>
+                                        <button class="btn btn-link btn-sm p-0 text-decoration-none font-monospace text-dark fw-bold" data-copy-text="customer@martx.com" title="Click to copy">
+                                            customer@martx.com <i class="mdi mdi-content-copy text-muted ms-1"></i>
+                                        </button>
+                                    </div>
+                                    <div class="small font-monospace mb-2 d-flex align-items-center justify-content-between">
+                                        <span class="text-muted">Pass:</span>
+                                        <button class="btn btn-link btn-sm p-0 text-decoration-none font-monospace text-dark fw-bold" data-copy-text="12345678" title="Click to copy">
+                                            12345678 <i class="mdi mdi-content-copy text-muted ms-1"></i>
+                                        </button>
+                                    </div>
+                                    <p class="text-muted small mb-0 pt-2 border-top" style="font-size: 0.75rem;">
+                                        Self-service order tracking, PDF invoice downloads, wishlist & address book.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                    <!-- 1.1: WELCOME & VISION -->
+                    <div class="doc-subsection mt-5" id="sec-1-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-hand-wave-outline text-primary me-1"></i> 1.1 Welcome & Product Vision
+                        </h3>
+                        <p>
+                            MartX represents the next evolution of digital commerce software. Engineered with <strong>2026+ web standards</strong>, it delivers sub-50ms interaction response times, predictive storefront journeys, rock-solid security architectures, and autonomous AI-assisted operations for merchants worldwide.
+                        </p>
+                    </div>
+
+                    <!-- 1.2: AUTHOR CREDENTIALS & SUPPORT -->
+                    <div class="doc-subsection mt-5" id="sec-1-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-account-check text-primary me-1"></i> 1.2 Author Credentials, Licensing & Support Policy
+                        </h3>
+                        <p>
+                            MartX is authored, engineered, and maintained by <strong>Suman Chandra Dev Sharma</strong>. Built for high-volume enterprise digital commerce, the platform is distributed under commercial marketplace licensing with guaranteed core code purity, dedicated bug resolution, and professional architectural integrity.
+                        </p>
+                        <div class="table-responsive mb-3">
+                            <table class="doc-table">
+                                <tbody>
+                                    <tr>
+                                        <th style="width: 30%;">Lead Author & Architect</th>
+                                        <td><strong>Suman Chandra Dev Sharma</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Direct Support Email</th>
+                                        <td><a href="https://mail.google.com/mail/?view=cm&fs=1&to=sumondav444@gmail.com&su=MartX%20Enterprise%20Support%20Inquiry" target="_blank" class="text-decoration-none fw-bold font-monospace text-primary">sumondav444@gmail.com</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Official WhatsApp Support</th>
+                                        <td><a href="https://wa.me/8801750527181?text=Hello%20Suman%20Dev,%20I%20purchased%20MartX%20Enterprise%20and%20need%20assistance." target="_blank" class="text-decoration-none fw-bold font-monospace text-success"><i class="mdi mdi-whatsapp me-1"></i>+880 1750-527181 (Instant Chat)</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th>GitHub Repository / Profile</th>
+                                        <td><a href="https://github.com/sumandev01" target="_blank" class="text-decoration-none fw-bold font-monospace text-primary">https://github.com/sumandev01</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Software Version</th>
+                                        <td><span class="badge bg-primary text-white font-monospace">v1.0.0 (Enterprise Release)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Distribution Channels</th>
+                                        <td>CodeCanyon (Envato), Codester, TemplateMonster, Direct Agency Deployments</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                    <h6 class="fw-bold text-heading mb-1"><i class="mdi mdi-certificate text-primary me-1"></i> Licensing Scope</h6>
+                                    <p class="small text-muted mb-0">
+                                        <strong>Regular License:</strong> Single domain, single commercial end-product where end-users are not charged a fee.<br>
+                                        <strong>Extended License:</strong> Single domain application where end-users can be charged recurring subscription or access fees.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                    <h6 class="fw-bold text-heading mb-1"><i class="mdi mdi-update text-info me-1"></i> Update Policy (License Period)</h6>
+                                    <p class="small text-muted mb-0">
+                                        Software updates, compatibility patches, and security releases are provided during your <strong>active marketplace license and valid support period</strong> (standard 6-month support included with purchase, renewable through CodeCanyon). <em>Unlimited lifetime free updates are not offered.</em>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                    <h6 class="fw-bold text-heading mb-1"><i class="mdi mdi-bug-check text-success me-1"></i> Bug Fix Support Scope</h6>
+                                    <p class="small text-muted mb-0">
+                                        <strong>Included:</strong> 100% free resolution for genuine software defects, core codebase errors, and out-of-the-box system bugs.<br>
+                                        <strong>Excluded:</strong> Custom feature requests, user code modifications, third-party plugin conflicts, and server misconfigurations (available as paid custom services).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.3: MODERN TECH STACK -->
+                    <div class="doc-subsection mt-5" id="sec-1-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-cube-outline text-primary me-1"></i> 1.3 Core Modern Tech Stack & Architecture Audit
+                        </h3>
+                        <p>
+                            Built without legacy bloat, MartX combines enterprise-tier backend engineering with high-velocity, lightweight frontend performance:
+                        </p>
+                        <div class="row g-3 my-2">
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                    <h6 class="fw-bold text-danger mb-1"><i class="mdi mdi-laravel me-1"></i> Laravel 12.46.x</h6>
+                                    <p class="small text-muted mb-0">PHP 8.2+ core, 65+ dedicated business services, 77-permission granular staff access control, and high-speed optimized route performance.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                    <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-bootstrap me-1"></i> Bootstrap 5.3 & Purple UI</h6>
+                                    <p class="small text-muted mb-0">Mobile-first responsive storefront, Purple Admin cockpit, 5 color skins, 4 font presets, and dark/light modes.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                    <h6 class="fw-bold text-warning mb-1"><i class="mdi mdi-lightning-bolt me-1"></i> High-Velocity JS Stack</h6>
+                                    <p class="small text-muted mb-0">Zero heavy SPA bloat (no cumbersome NPM compile steps needed). Battle-tested DataTables, SweetAlert2 & sub-50ms reactive AJAX interactions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- High-Performance Caching Callout -->
+                        <div class="p-3 bg-white border rounded-3 shadow-sm mt-3 mb-3">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <div class="p-2 rounded bg-success-subtle text-success"><i class="mdi mdi-cached fs-4"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-0 text-heading">Storefront Multi-Tier Speed Caching & Real-Time Sync</h6>
+                                    <span class="text-muted small">Sub-50ms instant response with automated background updates</span>
+                                </div>
+                            </div>
+                            <p class="small text-muted mb-2">
+                                MartX optimizes 90%+ of catalog loading speed. The entire public catalog, multi-column mega menus, homepage sections, and product search queries are accelerated for instant buyer browsing.
+                            </p>
+                            <div class="row g-2 small">
+                                <div class="col-md-6">
+                                    <div class="p-2 bg-light rounded border">
+                                        <strong class="text-primary"><i class="mdi mdi-eye-refresh-outline me-1"></i> Automated Instant Catalog Sync:</strong>
+                                        <span class="text-muted d-block mt-1">Whenever an administrator creates, edits, or removes products, categories, banners, or blog posts in the Admin Dashboard, the storefront updates immediately for your customers without needing manual cache clearing.</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-2 bg-light rounded border">
+                                        <strong class="text-success"><i class="mdi mdi-tag-text-outline me-1"></i> Zero-Downtime High-Traffic Protection:</strong>
+                                        <span class="text-muted d-block mt-1">During massive flash sales and traffic spikes, catalog updates happen smoothly in the background without causing server slowdowns, CPU spikes, or site freezes.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Server Sizing & Performance Benchmark Guide -->
+                        <h5 class="fw-bold text-heading mt-4 mb-2">
+                            <i class="mdi mdi-server-network text-primary me-1"></i> Server Sizing, Concurrent Visitors & Order Throughput Benchmark Guide
+                        </h5>
+                        <p class="small text-muted mb-3">
+                            Real-world performance benchmarks for MartX across different hosting environments. Thanks to efficient caching and atomic concurrency locks, even budget hosting delivers exceptional speed:
+                        </p>
+                        <div class="table-responsive">
+                            <table class="doc-table table align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 22%;">Server Tier & Hardware</th>
+                                        <th style="width: 14%;">Cache System</th>
+                                        <th style="width: 14%;">Daily Traffic</th>
+                                        <th style="width: 15%;">Concurrent Visitors</th>
+                                        <th style="width: 15%;">Order Capacity</th>
+                                        <th>Target Business Scope</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong class="text-heading">Tier 1: Entry / Shared</strong>
+                                            <div class="small text-muted font-monospace" style="font-size: 10px;">1 vCPU, 1–2 GB RAM<br>cPanel / LiteSpeed</div>
+                                        </td>
+                                        <td><span class="badge bg-secondary-subtle text-secondary font-monospace">File Cache</span></td>
+                                        <td><strong class="text-dark">10K – 25K</strong><br><span class="text-muted small">views/day</span></td>
+                                        <td><strong class="text-primary">150 – 300</strong><br><span class="text-muted small">live users</span></td>
+                                        <td><strong class="text-success">15 – 30</strong><br><span class="text-muted small">orders/min</span></td>
+                                        <td class="small text-muted">Boutiques, local retail shops & single-brand startups (100–1,000 products).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-1">
+                                                <strong class="text-primary">Tier 2: Starter Cloud VPS</strong>
+                                                <span class="badge bg-warning text-dark font-monospace" style="font-size: 9px;"><i class="mdi mdi-star"></i> Recommended</span>
+                                            </div>
+                                            <div class="small text-muted font-monospace" style="font-size: 10px;">2 vCPU, 4 GB RAM<br>Hetzner / DO / Linode</div>
+                                        </td>
+                                        <td><span class="badge bg-primary-subtle text-primary font-monospace">Redis In-Memory</span></td>
+                                        <td><strong class="text-dark">50K – 150K</strong><br><span class="text-muted small">views/day</span></td>
+                                        <td><strong class="text-primary">800 – 1,500</strong><br><span class="text-muted small">live users</span></td>
+                                        <td><strong class="text-success">80 – 150</strong><br><span class="text-muted small">orders/min</span></td>
+                                        <td class="small text-muted">Growing e-commerce brands running regular marketing campaigns (1,000–10,000 products).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong class="text-success">Tier 3: High-Performance VPS</strong>
+                                            <div class="small text-muted font-monospace" style="font-size: 10px;">4 vCPU, 8 GB RAM<br>Redis + Queue Worker</div>
+                                        </td>
+                                        <td><span class="badge bg-success-subtle text-success font-monospace">Redis Cache & Queue</span></td>
+                                        <td><strong class="text-dark">250K – 500K</strong><br><span class="text-muted small">views/day</span></td>
+                                        <td><strong class="text-primary">2,500 – 5,000</strong><br><span class="text-muted small">live users</span></td>
+                                        <td><strong class="text-success">300 – 600</strong><br><span class="text-muted small">orders/min</span></td>
+                                        <td class="small text-muted">Flash sales, seasonal promotions (Black Friday/Eid), high-density catalogs (20,000+ products).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong class="text-danger">Tier 4: Enterprise Dedicated</strong>
+                                            <div class="small text-muted font-monospace" style="font-size: 10px;">8+ vCPU, 16–32 GB RAM<br>MySQL Replica + Redis</div>
+                                        </td>
+                                        <td><span class="badge bg-danger-subtle text-danger font-monospace">Redis Cluster</span></td>
+                                        <td><strong class="text-dark">1,000,000+</strong><br><span class="text-muted small">views/day</span></td>
+                                        <td><strong class="text-primary">10,000+</strong><br><span class="text-muted small">live users</span></td>
+                                        <td><strong class="text-success">1,500+</strong><br><span class="text-muted small">orders/min</span></td>
+                                        <td class="small text-muted">National retail leaders, mega multi-category storefronts & global high-frequency flash sales.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Benchmark Clarification Note & Cloudflare Free CDN Recommendation -->
+                        <div class="row g-2 mt-2">
+                            <div class="col-md-6">
+                                <div class="p-2 px-3 bg-light rounded-3 border small h-100">
+                                    <strong class="text-primary"><i class="mdi mdi-check-decagram me-1"></i> 100% Full Source Code Included:</strong>
+                                    <span class="text-muted d-block mt-1" style="font-size: 11px;">
+                                        MartX comes complete with all enterprise features unlocked out of the box with zero artificial limitations. The tiers above are purely recommended hosting server sizing guidelines based on your daily store traffic volume.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-2 px-3 bg-light rounded-3 border small h-100">
+                                    <strong class="text-warning"><i class="mdi mdi-cloud-check-outline me-1"></i> Cloudflare Free CDN & DDoS Shield:</strong>
+                                    <span class="text-muted d-block mt-1" style="font-size: 11px;">
+                                        Connect your domain to <strong>Cloudflare (100% Free Tier)</strong> to instantly offload 60%–75% of static asset bandwidth (images, CSS, JS) to 300+ global edge locations, activate enterprise DDoS/Bot protection, and achieve sub-30ms global load speeds on any budget hosting!
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.4: ZERO-CONFIG LICENSING -->
+                    <div class="doc-subsection mt-5" id="sec-1-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-shield-check text-primary me-1"></i> 1.4 Cloud Security & Zero-Configuration License Shield
+                        </h3>
+                        <p>
+                            MartX eliminates complex configuration hurdles. Your installation requires zero licensing API keys or external server setup. The platform operates with automated cloud-based security verification, instant domain binding, and a 14-day offline fail-safe checkout protection ensuring your store never drops a customer order.
+                        </p>
+                    </div>
+
+                    <!-- 1.5: 5-STEP WEB INSTALLER -->
+                    <div class="doc-subsection mt-5" id="sec-1-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-wizard-hat text-success me-1"></i> 1.5 5-Step Web Installation Wizard (4-Marketplace Selector)
+                        </h3>
+                        <p>
+                            Deploy in under 3 minutes via a guided web wizard. Step 3 features <strong>4 Marketplace Selector Cards</strong> (CodeCanyon, Codester, TemplateMonster, Direct) with dynamic input switching and automated one-click database setup with demo catalog data.
+                        </p>
+                    </div>
+
+                    <!-- 1.6: IN-DASHBOARD LICENSE MANAGEMENT -->
+                    <div class="doc-subsection mt-5" id="sec-1-6">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-shield-sync text-primary me-1"></i> 1.6 In-Dashboard License Management Suite
+                        </h3>
+                        <p>
+                            Manage your active license, view verification status, or seamlessly transfer domains directly from the Administrative Dashboard. If migrating between domains or activating post-setup, an intuitive modal allows instant 1-click binding without reinstalling. For the complete walkthrough, explore <a href="license-activation.html" class="fw-bold text-primary text-decoration-none">Chapter 4: License Activation Hub</a>.
+                        </p>
+                    </div>
+
+                    <!-- 1.7: ANTI-HACKING & MULTI-LAYERED SECURITY -->
+                    <div class="doc-subsection mt-5" id="sec-1-7">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-shield-bug-outline text-danger me-1"></i> 1.7 Multi-Layered Anti-Hacking & Code Purity Shield
+                        </h3>
+                        <p>
+                            Enterprise-grade defense against database injection attacks, malicious script execution, unauthorized fake requests, and military-grade encrypted password hashing for maximum buyer and administrative account security.
+                        </p>
+                    </div>
+
+                    <!-- 1.8: LOGIN RATE LIMITING -->
+                    <div class="doc-subsection mt-5" id="sec-1-8">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-timer-lock text-danger me-1"></i> 1.8 Login Rate Limiting & Brute-Force Lockout Policy
+                        </h3>
+                        <p>
+                            Defends against bot password guessing. After <strong>5 failed attempts</strong> within 60 seconds, the IP address and target account are subjected to an automated <strong>30-minute penalty lockout</strong>.
+                        </p>
+                    </div>
+
+                    <!-- 1.9: ANTI-TAMPERING PRICING -->
+                    <div class="doc-subsection mt-5" id="sec-1-9">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-currency-usd-off text-success me-1"></i> 1.9 Anti-Tampering Server-Side Price Calculation
+                        </h3>
+                        <p>
+                            Any attempt by dishonest buyers to manipulate product prices in their browser (such as attempting to change \$100 to \$1 via inspect tools) is strictly blocked. All product prices, variant surcharges, coupon discounts, shipping rates, and taxes are strictly verified and recalculated automatically by an automated secure server-side pricing engine.
+                        </p>
+                    </div>
+
+                    <!-- 1.10: ADMIN URL PREFIX OBFUSCATION -->
+                    <div class="doc-subsection mt-5" id="sec-1-10">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-incognito text-primary me-1"></i> 1.10 Super Admin Security & Admin URL Obfuscation
+                        </h3>
+                        <div class="alert alert-primary bg-primary-subtle border-primary-subtle d-flex align-items-center gap-2 py-2 px-3 mb-3">
+                            <i class="mdi mdi-compass-outline fs-5 text-primary"></i>
+                            <span class="small text-primary-emphasis"><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Administration & Settings &rarr; System Settings &rarr; <strong>"Security & 2FA"</strong> (Tab)</span>
+                        </div>
+                        <p>
+                            Protect your store against automated bot sweeps and brute-force password guessing by relocating the default admin login path to your own custom secret URL (e.g. <em>secret-portal</em> or <em>control-hub</em>) directly from the Security Settings tab.
+                        </p>
+                        <div class="row g-3 my-2">
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                    <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-email-seal me-1"></i> Automated Team Sync & Email Dispatch</h6>
+                                    <p class="small text-muted mb-0">
+                                        Changing your administrative URL automatically refreshes the routing system and sends an instant security notification email to all registered administrators containing the new secure sign-in link, ensuring no staff member gets locked out.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                    <h6 class="fw-bold text-danger mb-1"><i class="mdi mdi-shield-alert me-1"></i> Reserved System Path Protection</h6>
+                                    <p class="small text-muted mb-0">
+                                        The security validator automatically prevents you from selecting essential storefront paths (such as login, register, cart, checkout, shop, or blog) ensuring your public store continues running smoothly without conflicts.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.11: 2FA EMAIL OTP & RECOVERY CODES -->
+                    <div class="doc-subsection mt-5" id="sec-1-11">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-shield-key text-info me-1"></i> 1.11 Two-Factor Authentication (2FA) & 5 Emergency Recovery Codes
+                        </h3>
+                        <p>
+                            MartX delivers enterprise-grade multi-factor security for administrator accounts, pairing real-time email verification with cryptographically secure emergency bypass mechanisms:
+                        </p>
+                        <div class="row g-3 my-2">
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                    <h6 class="fw-bold text-info mb-1"><i class="mdi mdi-email-fast-outline me-1"></i> 6-Digit Email OTP Challenge</h6>
+                                    <p class="small text-muted mb-0">
+                                        When 2FA is activated, every administrative sign-in requires a dynamic 6-digit one-time verification code dispatched directly to your authorized administrator email address with an automated security expiry timer.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                    <h6 class="fw-bold text-success mb-1"><i class="mdi mdi-handshake-outline me-1"></i> Mandatory SMTP Handshake</h6>
+                                    <p class="small text-muted mb-0">
+                                        To prevent accidental administrator lockout due to invalid mail configurations, 2FA cannot be toggled on without successfully passing an interactive live test OTP handshake.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                    <h6 class="fw-bold text-danger mb-1"><i class="mdi mdi-key-variant me-1"></i> 5 Emergency Backup Codes</h6>
+                                    <p class="small text-muted mb-0">
+                                        Generates 5 single-use emergency backup recovery codes (e.g. <span class="badge bg-secondary-subtle text-secondary font-monospace">A1B2-C3D4</span>) stored securely with encryption. Includes 1-click clipboard copy and text file download. In case of mailbox downtime, entering a backup code grants instant access.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Disaster Recovery: Emergency 2FA Database Bypass -->
+                        <div class="doc-callout doc-callout-warning mt-3">
+                            <div class="doc-callout-title text-warning">
+                                <i class="mdi mdi-database-alert"></i> Disaster Recovery: Emergency 2FA Lockdown Bypass (Database Reset)
+                            </div>
+                            <p class="small mb-2">
+                                In the rare emergency where the administrator loses access to their mailbox <strong>and</strong> has misplaced all 5 backup recovery codes, you are never locked out. As a technical administrator (via cPanel phpMyAdmin or database manager), you can instantly deactivate 2FA with zero downtime by switching the 2FA status key to 0 in the settings table.
+                            </p>
+                            <p class="small text-muted mb-0">
+                                <i class="mdi mdi-check-decagram text-success me-1"></i> <strong>Real-Time Emergency Reset:</strong> The authentication engine checks database status in real-time during admin sign-in. The moment the status is reset in phpMyAdmin, 2FA is immediately deactivated without requiring terminal commands or server restarts.
+                            </p>
+                        </div>
+                    </div>
+
+                                        <!-- 1.12: DYNAMIC HEADER LAYOUTS & MOBILE NAV -->
+                    <div class="doc-subsection mt-5" id="sec-1-12">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-page-layout-header text-primary me-1"></i> 1.12 Dynamic Header Layouts (3 Styles) & Sticky Mobile Navigation
+                        </h3>
+                        <p>
+                            MartX provides <strong>3 distinct Header Styles</strong> switchable in 1 click from the Theme Layouts Hub.<br><span class="small text-primary"><i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Website & CMS &rarr; Theme Layouts &rarr; <strong>"Header Layout"</strong> (Tab)</span>:
+                        </p>
+                        <div class="row g-4 mb-4">
+                            <!-- Header Style 1 -->
+                            <div class="col-12">
+                                <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                    <div class="doc-admin-frame-header py-2">
+                                          <div class="doc-admin-dots">
+                                              <span class="doc-admin-dot red"></span>
+                                              <span class="doc-admin-dot yellow"></span>
+                                              <span class="doc-admin-dot green"></span>
+                                          </div>
+                                          <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                              Header Style 1 &mdash; Classic E-Commerce Comprehensive
+                                          </div>
+                                          <div class="d-flex align-items-center gap-2 ms-auto">
+                                              <span class="badge d-none d-md-inline-block bg-primary-subtle text-primary font-monospace" style="font-size: 10px;">Classic</span>
+                                              <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                                  <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                              </button>
+                                              <a href="images/header_1.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                                  <i class="mdi mdi-open-in-new"></i>
+                                              </a>
+                                          </div>
+                                      </div>
+                                      <div class="doc-admin-frame-body p-3">
+                                          <div class="position-relative rounded-3 mb-3 border bg-light text-center doc-viewport-wrapper">
+                                              <img src="images/header_1.png" alt="Header Style 1" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                            <div class="w-100 text-center text-muted py-4">
+                                                <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                                <span class="badge bg-primary-subtle text-primary font-monospace small">images/header_1.png</span>
+                                                <div class="small text-muted mt-1" style="font-size: 10px;">Header Style 1 Screenshot</div>
+                                            </div>
+                                        </div>
+                                        <h6 class="fw-bold text-primary mb-1">Header Style 1 (Classic E-Commerce Comprehensive)</h6>
+                                        <p class="small text-muted mb-0">Top announcement ticker (support hotline, email & multi-currency), centered brand logo, full-width categorized live search bar with AJAX auto-suggest, Dark/Light mode toggle, <strong>User Account / 1-Click Login Modal</strong>, wishlist count badge, dropdown mini-cart, and full-width main department navigation bar.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Header Style 2 -->
+                            <div class="col-12">
+                                <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                    <div class="doc-admin-frame-header py-2">
+                                          <div class="doc-admin-dots">
+                                              <span class="doc-admin-dot red"></span>
+                                              <span class="doc-admin-dot yellow"></span>
+                                              <span class="doc-admin-dot green"></span>
+                                          </div>
+                                          <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                              Header Style 2 &mdash; Modern Floating Capsule
+                                          </div>
+                                          <div class="d-flex align-items-center gap-2 ms-auto">
+                                              <span class="badge d-none d-md-inline-block bg-info-subtle text-info font-monospace" style="font-size: 10px;">Mega-Store</span>
+                                              <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                                  <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                              </button>
+                                              <a href="images/header_2.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                                  <i class="mdi mdi-open-in-new"></i>
+                                              </a>
+                                          </div>
+                                      </div>
+                                      <div class="doc-admin-frame-body p-3">
+                                          <div class="position-relative rounded-3 mb-3 border bg-light text-center doc-viewport-wrapper">
+                                              <img src="images/header_2.png" alt="Header Style 2" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                            <div class="w-100 text-center text-muted py-4">
+                                                <i class="mdi mdi-image-outline fs-2 text-info opacity-50 mb-1 d-block"></i>
+                                                <span class="badge bg-info-subtle text-info font-monospace small">images/header_2.png</span>
+                                                <div class="small text-muted mt-1" style="font-size: 10px;">Header Style 2 Screenshot</div>
+                                            </div>
+                                        </div>
+                                        <h6 class="fw-bold text-info mb-1">Header Style 2 (Modern Floating Capsule)</h6>
+                                        <p class="small text-muted mb-0">Drop-shadowed rounded floating capsule bar with inline navigation, an integrated <strong>'Categories' trigger button</strong> for the Mega Menu, click-to-expand search dropdown, Dark/Light theme switcher, and circular action pills.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Header Style 3 -->
+                            <div class="col-12">
+                                <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                    <div class="doc-admin-frame-header py-2">
+                                          <div class="doc-admin-dots">
+                                              <span class="doc-admin-dot red"></span>
+                                              <span class="doc-admin-dot yellow"></span>
+                                              <span class="doc-admin-dot green"></span>
+                                          </div>
+                                          <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                              Header Style 3 &mdash; Minimalist & Luxury Boutique
+                                          </div>
+                                          <div class="d-flex align-items-center gap-2 ms-auto">
+                                              <span class="badge d-none d-md-inline-block bg-dark-subtle text-dark font-monospace" style="font-size: 10px;">Luxury</span>
+                                              <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                                  <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                              </button>
+                                              <a href="images/header_3.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                                  <i class="mdi mdi-open-in-new"></i>
+                                              </a>
+                                          </div>
+                                      </div>
+                                      <div class="doc-admin-frame-body p-3">
+                                          <div class="position-relative rounded-3 mb-3 border bg-light text-center doc-viewport-wrapper">
+                                              <img src="images/header_3.png" alt="Header Style 3" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                            <div class="w-100 text-center text-muted py-4">
+                                                <i class="mdi mdi-image-outline fs-2 text-dark opacity-50 mb-1 d-block"></i>
+                                                <span class="badge bg-dark-subtle text-dark font-monospace small">images/header_3.png</span>
+                                                <div class="small text-muted mt-1" style="font-size: 10px;">Header Style 3 Screenshot</div>
+                                            </div>
+                                        </div>
+                                        <h6 class="fw-bold text-heading mb-1">Header Style 3 (Minimalist & Luxury Boutique)</h6>
+                                        <p class="small text-muted mb-0">High-fashion boutique aesthetic with a centered absolute brand logo, left-aligned menu links, slide-out search drawer, minimal user profile icon, and full-screen <strong>Curtain Mega Menu</strong>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sticky Mobile Bottom Nav Callout with clean spacing -->
+                        <div class="p-3 bg-light border rounded-3 small">
+                            <strong class="text-primary"><i class="mdi mdi-cellphone-link me-1"></i> Sticky Mobile Bottom Navigation:</strong> On smartphones and tablets, MartX renders an app-like sticky bottom bar giving instant 1-thumb touch access to <em>Home, Shop, Categories, Wishlist, and Cart</em> with live counter badges.
+                        </div>
+                    </div>
+
+                    <!-- 1.13: MEGA MENU LAYOUTS -->
+                    <div class="doc-subsection mt-5" id="sec-1-13">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-view-headline text-primary me-1"></i> 1.13 Multi-Level Category Mega Menu (2 Mega Menu Layouts)
+                        </h3>
+                        <p>
+                            Choose between <strong>2 interactive Mega Menu Layouts</strong> designed for high-density catalog navigation.<br><span class="small text-primary"><i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Website & CMS &rarr; Theme Layouts &rarr; <strong>"Mega Menu"</strong> (Tab)</span>:
+                        </p>
+                        <div class="row g-3">
+                            <!-- Mega Menu Layout 1 -->
+                            <div class="col-md-6">
+                                <div class="doc-card h-100 p-3 mb-0">
+                                    <div class="position-relative overflow-hidden rounded-3 mb-2 border bg-light d-flex flex-column align-items-center justify-content-center p-3 text-center" style="min-height: 140px;">
+                                        <img src="images/mega_menu_1.png" alt="Mega Menu Layout 1" class="w-100 h-auto rounded-3 img-fluid" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-2">
+                                            <i class="mdi mdi-image-outline fs-2 text-info opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-info-subtle text-info font-monospace small">images/mega_menu_1.png</span>
+                                            <div class="small text-muted mt-1" style="font-size: 10px;">Mega Menu Layout 1 Screenshot</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-info mb-1">Mega Menu Layout 1 (Multi-Column Grid with Promo Banner)</h6>
+                                    <p class="small text-muted mb-0">Multi-column category dropdown with real-time hover-switching subcategory panels, category icons, "HOT/NEW" badges, and a dedicated right-aligned promotional offer banner (<code>Banner Position 1</code>).</p>
+                                </div>
+                            </div>
+                            <!-- Mega Menu Layout 2 -->
+                            <div class="col-md-6">
+                                <div class="doc-card h-100 p-3 mb-0">
+                                    <div class="position-relative overflow-hidden rounded-3 mb-2 border bg-light d-flex flex-column align-items-center justify-content-center p-3 text-center" style="min-height: 140px;">
+                                        <img src="images/mega_menu_2.png" alt="Mega Menu Layout 2" class="w-100 h-auto rounded-3 img-fluid" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-2">
+                                            <i class="mdi mdi-image-outline fs-2 text-info opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-info-subtle text-info font-monospace small">images/mega_menu_2.png</span>
+                                            <div class="small text-muted mt-1" style="font-size: 10px;">Mega Menu Layout 2 Screenshot</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-info mb-1">Mega Menu Layout 2 (Categorized Column Grid with Icon Thumbnails)</h6>
+                                    <p class="small text-muted mb-0">High-density multi-column catalog grid featuring circular category image/icon thumbnails, instant subcategory lists, and automatic "View All (X) &rarr;" links with fallback monograms, ideal for electronics and mega-catalog stores.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.14: HOME PAGE LAYOUTS & SECTIONS -->
+                    <div class="doc-subsection mt-5" id="sec-1-14">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-home-outline text-primary me-1"></i> 1.14 Home Page Layouts (2 Layouts) & Dynamic Section Builder
+                        </h3>
+                        <p>
+                            MartX includes <strong>2 pre-designed Home Page Layouts</strong> packed with conversion-boosting dynamic sections.<br><span class="small text-primary"><i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Website & CMS &rarr; Theme Layouts &rarr; <strong>"Home Layout"</strong> (Tab)</span>:
+                        </p>
+                        <div class="row g-3 mb-4">
+                            <!-- Home Layout 1 -->
+                            <div class="col-md-6">
+                                <div class="doc-card h-100 p-3 mb-0">
+                                    <div class="position-relative overflow-hidden rounded-3 mb-2 border bg-light d-flex flex-column align-items-center justify-content-center p-3 text-center" style="min-height: 140px;">
+                                        <img src="images/home_1.png" alt="Home Layout 1" class="w-100 h-auto rounded-3 img-fluid" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-2">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/home_1.png</span>
+                                            <div class="small text-muted mt-1" style="font-size: 10px;">Home Layout 1 Screenshot</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-primary mb-1">Home Layout 1 (Hero Slider & Full Dynamic Marketplace)</h6>
+                                    <p class="small text-muted mb-0">Full-width interactive hero banner slider with call-to-action buttons, 4-column store trust badges, circular category carousel, real-time ticking Flash Sale countdown, symmetrical dual offer banners, multi-tab product showcase (Featured, New, Best Sellers, Top Rated), customer reviews, brand partners, and newsletter capture.</p>
+                                </div>
+                            </div>
+                            <!-- Home Layout 2 -->
+                            <div class="col-md-6">
+                                <div class="doc-card h-100 p-3 mb-0">
+                                    <div class="position-relative overflow-hidden rounded-3 mb-2 border bg-light d-flex flex-column align-items-center justify-content-center p-3 text-center" style="min-height: 140px;">
+                                        <img src="images/home_2.png" alt="Home Layout 2" class="w-100 h-auto rounded-3 img-fluid" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-2">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/home_2.png</span>
+                                            <div class="small text-muted mt-1" style="font-size: 10px;">Home Layout 2 Screenshot</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-primary mb-1">Home Layout 2 (Modern Split Hero & Curated Boutique)</h6>
+                                    <p class="small text-muted mb-0">Asymmetrical split-screen hero layout (prominent hero banner paired with side promo cards), trending product masonry grid, curated category discovery cards, and high-conversion flash deal showcases tailored for modern fashion labels.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="doc-callout doc-callout-info">
+                            <div class="doc-callout-title text-primary">
+                                <i class="mdi mdi-view-dashboard"></i> Complete Home Page Sections Suite
+                            </div>
+                            <ul class="mb-0 small">
+                                <li><strong>Hero Banner Slider:</strong> High-impact hero carousel with custom call-to-action buttons, seasonal discount tags, and background imagery.</li>
+                                <li><strong>Store Features / Trust Badges:</strong> Drag-and-drop reorderable trust badges (Free Shipping, 24/7 Support, 30-Day Returns, Secure Payments).</li>
+                                <li><strong>Dual Offer Banners:</strong> Symmetrical promotional cards (Offer 1 & Offer 2) with custom titles, discounts, and shop links.</li>
+                                <li><strong>Trending Categories Grid:</strong> Responsive category tiles with image thumbnails and product counters.</li>
+                                <li><strong>Featured & Trending Products:</strong> Multi-tab product showcase (Featured, New Arrivals, Best Sellers, Top Rated) with smooth AJAX tab switching.</li>
+                                <li><strong>Flash Sale with Live Countdown Timer:</strong> Real-time ticking countdown clock driving urgent impulse purchases.</li>
+                                <li><strong>Latest Blog & Buying Guides:</strong> Content marketing section showcasing recent articles and shopping tips.</li>
+                                <li><strong>Newsletter Subscription Bar:</strong> High-converting customer email capture widget syncing directly with admin newsletter subscribers.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                                        <!-- 1.15: 6 PRODUCT CARD STYLES -->
+                    <div class="doc-subsection mt-5" id="sec-1-15">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-card-bulleted-outline text-success me-1"></i> 1.15 High-Converting Product Card Engine (6 Distinct Architectural Styles)
+                        </h3>
+                        <p>
+                            MartX offers <strong>6 dedicated Product Card Styles</strong> switchable store-wide from the Theme Layouts Hub. Each image below demonstrates both interactive states side-by-side &mdash; <strong>Left (On Hover State)</strong> and <strong>Right (Default State)</strong>:<br><span class="small text-primary"><i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Website & CMS &rarr; Theme Layouts &rarr; <strong>"Product Card"</strong> (Tab)</span>:
+                        </p>
+                        <div class="row g-3">
+                            <!-- Card Style 1 -->
+                            <div class="col-md-4">
+                                <div class="doc-card h-100 p-3 mb-0">
+                                    <div class="position-relative overflow-hidden rounded-3 mb-2 border bg-light d-flex flex-column align-items-center justify-content-center p-3 text-center" style="min-height: 140px;">
+                                        <img src="images/product_card_1.png" alt="Product Card Style 1" class="w-100 h-auto rounded-3 img-fluid" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-2">
+                                            <i class="mdi mdi-image-outline fs-2 text-success opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-success-subtle text-success font-monospace small">images/product_card_1.png</span>
+                                            <div class="small text-muted mt-1" style="font-size: 10px;">Product Card Style 1 Screenshot</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-success mb-2">Product Card Style 1 (Modern Overlay)</h6>
+                                    <p class="small text-muted mb-0">
+                                        <span class="d-block mb-1"><strong><i class="mdi mdi-arrow-left-bold text-success"></i> Left (On Hover):</strong> Card elevates 5px with drop shadow, active red wishlist heart, interactive size chips &amp; color swatches slide in, and solid call-to-action button.</span>
+                                        <span class="d-block"><strong><i class="mdi mdi-arrow-right-bold text-muted"></i> Right (Default View):</strong> Clean unhovered catalog look with outline wishlist icon, -16% discount badge, running flash sale countdown timer, and outline button.</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Card Style 2 -->
+                            <div class="col-md-4">
+                                <div class="doc-card h-100 p-3 mb-0">
+                                    <div class="position-relative overflow-hidden rounded-3 mb-2 border bg-light d-flex flex-column align-items-center justify-content-center p-3 text-center" style="min-height: 140px;">
+                                        <img src="images/product_card_2.png" alt="Product Card Style 2" class="w-100 h-auto rounded-3 img-fluid" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-2">
+                                            <i class="mdi mdi-image-outline fs-2 text-success opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-success-subtle text-success font-monospace small">images/product_card_2.png</span>
+                                            <div class="small text-muted mt-1" style="font-size: 10px;">Product Card Style 2 Screenshot</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-success mb-2">Product Card Style 2 (Action Pills)</h6>
+                                    <p class="small text-muted mb-0">
+                                        <span class="d-block mb-1"><strong><i class="mdi mdi-arrow-left-bold text-success"></i> Left (On Hover):</strong> Image scales smoothly (1.08x) with deep elevation; circular floating action pills (Wishlist heart &amp; One-Tap Cart) slide in from the right edge.</span>
+                                        <span class="d-block"><strong><i class="mdi mdi-arrow-right-bold text-muted"></i> Right (Default View):</strong> Clean product card with category badge, -16% discount tag, live flash sale timer, truncated title, and star rating.</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Card Style 3 -->
+                            <div class="col-md-4">
+                                <div class="doc-card h-100 p-3 mb-0">
+                                    <div class="position-relative overflow-hidden rounded-3 mb-2 border bg-light d-flex flex-column align-items-center justify-content-center p-3 text-center" style="min-height: 140px;">
+                                        <img src="images/product_card_3.png" alt="Product Card Style 3" class="w-100 h-auto rounded-3 img-fluid" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-2">
+                                            <i class="mdi mdi-image-outline fs-2 text-success opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-success-subtle text-success font-monospace small">images/product_card_3.png</span>
+                                            <div class="small text-muted mt-1" style="font-size: 10px;">Product Card Style 3 Screenshot</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-success mb-2">Product Card Style 3 (Bordered Classic)</h6>
+                                    <p class="small text-muted mb-0">
+                                        <span class="d-block mb-1"><strong><i class="mdi mdi-arrow-left-bold text-success"></i> Left (On Hover):</strong> Card elevates above the grid (Z-index 30); expandable accordion drawer drops down revealing size chips, color swatches, and full "Add to Cart" button.</span>
+                                        <span class="d-block"><strong><i class="mdi mdi-arrow-right-bold text-muted"></i> Right (Default View):</strong> Structured outline border, top -16% discount badge, live flash countdown timer, and centered product info.</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Card Style 4 -->
+                            <div class="col-md-4">
+                                <div class="doc-card h-100 p-3 mb-0">
+                                    <div class="position-relative overflow-hidden rounded-3 mb-2 border bg-light d-flex flex-column align-items-center justify-content-center p-3 text-center" style="min-height: 140px;">
+                                        <img src="images/product_card_4.png" alt="Product Card Style 4" class="w-100 h-auto rounded-3 img-fluid" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-2">
+                                            <i class="mdi mdi-image-outline fs-2 text-success opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-success-subtle text-success font-monospace small">images/product_card_4.png</span>
+                                            <div class="small text-muted mt-1" style="font-size: 10px;">Product Card Style 4 Screenshot</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-success mb-2">Product Card Style 4 (Elevated Glass)</h6>
+                                    <p class="small text-muted mb-0">
+                                        <span class="d-block mb-1"><strong><i class="mdi mdi-arrow-left-bold text-success"></i> Left (On Hover):</strong> Card lifts with soft glow; bottom frosted-glass panel (Glassmorphism) slides upward to expose variant chips and instant purchase button.</span>
+                                        <span class="d-block"><strong><i class="mdi mdi-arrow-right-bold text-muted"></i> Right (Default View):</strong> Edge-to-edge product photo with top live countdown timer and -16% discount tag without obstructing the image.</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Card Style 5 -->
+                            <div class="col-md-4">
+                                <div class="doc-card h-100 p-3 mb-0">
+                                    <div class="position-relative overflow-hidden rounded-3 mb-2 border bg-light d-flex flex-column align-items-center justify-content-center p-3 text-center" style="min-height: 140px;">
+                                        <img src="images/product_card_5.png" alt="Product Card Style 5" class="w-100 h-auto rounded-3 img-fluid" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-2">
+                                            <i class="mdi mdi-image-outline fs-2 text-success opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-success-subtle text-success font-monospace small">images/product_card_5.png</span>
+                                            <div class="small text-muted mt-1" style="font-size: 10px;">Product Card Style 5 Screenshot</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-success mb-2">Product Card Style 5 (Compact Dock)</h6>
+                                    <p class="small text-muted mb-0">
+                                        <span class="d-block mb-1"><strong><i class="mdi mdi-arrow-left-bold text-success"></i> Left (On Hover):</strong> Compact card elevates; bottom drawer expands displaying variant size chips and color swatches with circular one-tap cart icon.</span>
+                                        <span class="d-block"><strong><i class="mdi mdi-arrow-right-bold text-muted"></i> Right (Default View):</strong> Docked countdown timer bar, top-left -16% discount badge, and single-line compact title, price, and cart button.</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Card Style 6 -->
+                            <div class="col-md-4">
+                                <div class="doc-card h-100 p-3 mb-0">
+                                    <div class="position-relative overflow-hidden rounded-3 mb-2 border bg-light d-flex flex-column align-items-center justify-content-center p-3 text-center" style="min-height: 140px;">
+                                        <img src="images/product_card_6.png" alt="Product Card Style 6" class="w-100 h-auto rounded-3 img-fluid" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-2">
+                                            <i class="mdi mdi-image-outline fs-2 text-success opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-success-subtle text-success font-monospace small">images/product_card_6.png</span>
+                                            <div class="small text-muted mt-1" style="font-size: 10px;">Product Card Style 6 Screenshot</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-success mb-2">Product Card Style 6 (Luxury Editorial)</h6>
+                                    <p class="small text-muted mb-0">
+                                        <span class="d-block mb-1"><strong><i class="mdi mdi-arrow-left-bold text-success"></i> Left (On Hover):</strong> 3:4 vertical luxury photo with active heart; a full-width solid "Add to Cart" bar smoothly slides up from the bottom of the photo.</span>
+                                        <span class="d-block"><strong><i class="mdi mdi-arrow-right-bold text-muted"></i> Right (Default View):</strong> Minimal high-fashion presentation with top -16% badge and flash countdown timer with no visible cart button.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.16: 3 SHOP LAYOUTS & FACETED FILTERS -->
+                    <div class="doc-subsection mt-5" id="sec-1-16">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-store-outline text-info me-1"></i> 1.16 3 Shop Page Layouts & Faceted AJAX Live Filters
+                        </h3>
+                        <p>
+                            MartX includes exactly <strong>3 Shop Page Layouts</strong> plus an interactive <strong>Grid / List View Switcher</strong>.<br><span class="small text-primary"><i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Website & CMS &rarr; Theme Layouts &rarr; <strong>"Shop Layout"</strong> (Tab)</span>:
+                        </p>
+                        <div class="row g-3 mb-3">
+                            <!-- Shop Left Sidebar -->
+                            <div class="col-md-4">
+                                <div class="doc-card h-100 p-3 mb-0 text-center">
+                                    <div class="position-relative overflow-hidden rounded-3 mb-2 border bg-light d-flex flex-column align-items-center justify-content-center p-3 text-center" style="min-height: 140px;">
+                                        <img src="images/shop_left_sidebar.png" alt="Shop Left Sidebar" class="w-100 h-auto rounded-3 img-fluid doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-2">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/shop_left_sidebar.png</span>
+                                            <div class="small text-muted mt-1" style="font-size: 10px;">Shop Left Sidebar Screenshot</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-primary mb-1">1. Shop Left Sidebar</h6>
+                                    <p class="small text-muted mb-0">Sticky vertical filter sidebar on the left (Price range slider, brand checkboxes with counts, color swatches, size buttons, rating filters) with product catalog grid on the right.</p>
+                                </div>
+                            </div>
+                            <!-- Shop Right Sidebar -->
+                            <div class="col-md-4">
+                                <div class="doc-card h-100 p-3 mb-0 text-center">
+                                    <div class="position-relative overflow-hidden rounded-3 mb-2 border bg-light d-flex flex-column align-items-center justify-content-center p-3 text-center" style="min-height: 140px;">
+                                        <img src="images/shop_right_sidebar.png" alt="Shop Right Sidebar" class="w-100 h-auto rounded-3 img-fluid doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-2">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/shop_right_sidebar.png</span>
+                                            <div class="small text-muted mt-1" style="font-size: 10px;">Shop Right Sidebar Screenshot</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-primary mb-1">2. Shop Right Sidebar</h6>
+                                    <p class="small text-muted mb-0">Product catalog on the left with the complete faceted filter sidebar positioned on the right for alternative layout preferences.</p>
+                                </div>
+                            </div>
+                            <!-- Shop Full Width -->
+                            <div class="col-md-4">
+                                <div class="doc-card h-100 p-3 mb-0 text-center">
+                                    <div class="position-relative overflow-hidden rounded-3 mb-2 border bg-light d-flex flex-column align-items-center justify-content-center p-3 text-center" style="min-height: 140px;">
+                                        <img src="images/shop_full_width.png" alt="Shop Full Width" class="w-100 h-auto rounded-3 img-fluid doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-2">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/shop_full_width.png</span>
+                                            <div class="small text-muted mt-1" style="font-size: 10px;">Shop Full Width Screenshot</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-primary mb-1">3. Shop Full Width</h6>
+                                    <p class="small text-muted mb-0">Edge-to-edge 12-column responsive product grid with a collapsible top offcanvas filter drawer accessible via a dedicated "Filter" button.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-light border rounded-3 small">
+                            <strong class="text-primary"><i class="mdi mdi-tune me-1"></i> Faceted AJAX Live Filters:</strong> Dual-handle Price Range Slider, Brand Checkboxes with product count badges, 5★ to 1★ Rating Stars, Color Swatch Tiles, Size/Dimension Buttons, and instant Grid/List view switching without page reloads.
+                        </div>
+                    </div>
+
+                    <!-- 1.17: REUSABLE MEDIA LIBRARY -->
+                    <div class="doc-subsection mt-5" id="sec-1-17">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-image-multiple-outline text-primary me-1"></i> 1.17 WordPress-Style Reusable Central Media Library
+                        </h3>
+                        <p>
+                            MartX features a centralized, WordPress-inspired media management suite that completely eliminates duplicate image uploads and server storage bloat.<br><span class="small text-primary"><i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Main &rarr; <strong>Media Library</strong></span>:
+                        </p>
+                        <div class="doc-callout doc-callout-info">
+                            <div class="doc-callout-title text-primary">
+                                <i class="mdi mdi-check-decagram"></i> Single Upload & Universal Reuse
+                            </div>
+                            <ul class="mb-0 small">
+                                <li><strong>Central Media Hub:</strong> Upload your high-res banners, brand logos, product photos, and category icons into a unified library.</li>
+                                <li><strong>Instant Modal Media Picker:</strong> Select assets directly from modal dialogs when editing products, categories, blogs, or site settings.</li>
+                                <li><strong>Automated Optimization:</strong> Converts and compresses uploads into modern WebP/JPEG formats for lightning-fast page loading speeds.</li>
+                                <li><strong>Zero Storage Duplication:</strong> Reusing the same asset across 50 products references a single media ID in MySQL rather than creating 50 duplicate files.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 1.18: CONTACT INBOX & AI-POWERED 1-CLICK SMTP REPLY -->
+                    <div class="doc-subsection mt-5" id="sec-1-18">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-email-fast-outline text-primary me-1"></i> 1.18 Contact Inbox & AI-Powered 1-Click Direct SMTP Email Reply Suite
+                        </h3>
+                        <p>
+                            Customer inquiries submitted through the frontend Contact page automatically sync to the Admin Contact Message Inbox with integrated Google Gemini AI assistance.<br><span class="small text-primary"><i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Customer & Community &rarr; <strong>Contact Messages</strong></span>:
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-md-6 col-lg-3">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                    <i class="mdi mdi-inbox-arrow-down fs-2 text-primary mb-2"></i>
+                                    <h6 class="fw-bold">1. Auto Inbox Sync</h6>
+                                    <p class="small text-muted mb-0">Inquiries (Name, Email, Phone, Subject, Message) are immediately captured with date/time stamps.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                    <i class="mdi mdi-robot-outline fs-2 text-purple mb-2" style="color: #8b5cf6;"></i>
+                                    <h6 class="fw-bold">2. Gemini AI Reply Drafter</h6>
+                                    <p class="small text-muted mb-0">1-click AI composition analyzes inquiry context and drafts empathetic, professional emails instantly.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                    <i class="mdi mdi-reply-all fs-2 text-success mb-2"></i>
+                                    <h6 class="fw-bold">3. 1-Click Direct SMTP</h6>
+                                    <p class="small text-muted mb-0">Admins review/edit drafts and dispatch replies directly to customer inboxes without external webmail.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                    <i class="mdi mdi-check-circle-outline fs-2 text-info mb-2"></i>
+                                    <h6 class="fw-bold">4. Audit Status Tracking</h6>
+                                    <p class="small text-muted mb-0">Messages dynamically switch between <strong>Pending</strong> and <strong>Replied</strong> badges preventing duplication.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.19: 360 EXECUTIVE ADMIN DASHBOARD -->
+                    <div class="doc-subsection mt-5" id="sec-1-19">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-view-dashboard-variant-outline text-primary me-1"></i> 1.19 360° Executive Admin Dashboard & Real-Time Analytics
+                        </h3>
+                        <p>
+                            Upon logging into the MartX administrative portal (<strong>Admin Sidebar &rarr; Main &rarr; Dashboard</strong>), store managers are greeted with an executive <strong>6-Tier Business Intelligence Cockpit</strong>:
+                        </p>
+
+                        <!-- Executive Admin Dashboard Browser Frame Mockup -->
+                        <div class="doc-admin-frame mb-4">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar">
+                                    <i class="mdi mdi-lock text-success me-1"></i> https://demo.martx.com/admin/dashboard
+                                </div>
+                                <span class="badge bg-primary-subtle text-primary font-monospace small px-2">Purple Pro Cockpit</span>
+                            </div>
+                            <div class="doc-admin-frame-body p-3 bg-light">
+                                <!-- 4 KPI Cards Mockup -->
+                                <div class="row g-2 mb-3">
+                                    <div class="col-6 col-md-3">
+                                        <div class="p-2 bg-white border rounded-2 shadow-sm">
+                                            <div class="text-muted" style="font-size: 10px;">This Week Sales</div>
+                                            <div class="fw-bold text-success fs-6 my-1">$12,450.00</div>
+                                            <span class="badge bg-success-subtle text-success" style="font-size: 9px;"><i class="mdi mdi-trending-up"></i> +14.2% vs Last Week</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <div class="p-2 bg-white border rounded-2 shadow-sm">
+                                            <div class="text-muted" style="font-size: 10px;">This Week Orders</div>
+                                            <div class="fw-bold text-primary fs-6 my-1">324 Orders</div>
+                                            <span class="badge bg-primary-subtle text-primary" style="font-size: 9px;"><i class="mdi mdi-trending-up"></i> +8.5% Growth</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <div class="p-2 bg-white border rounded-2 shadow-sm">
+                                            <div class="text-muted" style="font-size: 10px;">Active Catalog</div>
+                                            <div class="fw-bold text-info fs-6 my-1">1,250 Products</div>
+                                            <span class="badge bg-info-subtle text-info" style="font-size: 9px;">Stock Healthy</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <div class="p-2 bg-white border rounded-2 shadow-sm">
+                                            <div class="text-muted" style="font-size: 10px;">Customer Base</div>
+                                            <div class="fw-bold text-dark fs-6 my-1">4,890 Users</div>
+                                            <span class="badge bg-dark-subtle text-dark" style="font-size: 9px;">Verified Buyers</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-2 bg-white border rounded-2 small text-muted text-center" style="font-size: 11px;">
+                                    <i class="mdi mdi-chart-bell-curve-cumulative text-primary me-1"></i> Interactive 12-Month Area Chart + Donut Status Distribution + 6-Tier Dynamic Adaptive Masonry Stream.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6-TIER WIDGET SUITE BREAKDOWN -->
+                        <div class="table-responsive">
+                            <table class="doc-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 28%;">Dashboard Architecture</th>
+                                        <th>Widgets, Datasets & Real-Time Operational Functions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>📅 Filter Controls</strong></td>
+                                        <td>Filter entire dashboard datasets across <em>Today, Yesterday, Last 7 Days, This Month, This Year</em>, or a <em>Custom Date Range</em>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>📊 Macro Charts</strong></td>
+                                        <td>
+                                            <strong>1. Sales Analytics Curve (8-Col Area Chart):</strong> 12-Month sales progression and revenue trend curves.<br>
+                                            <strong>2. Order Status Breakdown (4-Col Donut Chart):</strong> Proportional share of Pending, Processing, Shipped, Delivered, and Cancelled orders.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>⚡ Tier 1: Daily Activity</strong></td>
+                                        <td>
+                                            <strong>1. Recent Orders Stream:</strong> Live orders table with Customer Info, Amount, Payment Method, and Real-Time Status Badge.<br>
+                                            <strong>2. Top Selling Products:</strong> Ranked listing of highest-converting catalog items with sales counts and gross revenues.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>⚠️ Tier 2: Inventory Alerts</strong></td>
+                                        <td>
+                                            <strong>3. Out of Stock Emergency Alert:</strong> Immediate restock widget alerting managers when items reach 0 quantity.<br>
+                                            <strong>4. Low Stock Warning Table:</strong> Threshold monitor warning before SKUs run completely out.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>💡 Tier 3: Sales Intelligence</strong></td>
+                                        <td>
+                                            <strong>5. Top VIP Customers:</strong> Lifetime spend ranking showing high-value buyers and total orders placed.<br>
+                                            <strong>6. Sales by Category:</strong> Department-wise volume breakdown and percentage revenue share.<br>
+                                            <strong>7. Payment Gateway Breakdown:</strong> Transaction volume distribution across Stripe, PayPal, SSLCommerz, COD, etc.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>🚚 Tier 4: Logistics & Fulfillment</strong></td>
+                                        <td>
+                                            <strong>8. Top Shipping Locations:</strong> Geographic distribution of customer delivery states and regions.<br>
+                                            <strong>9. Courier Performance Tracker:</strong> Delivery speed and consignment success rates across courier partners.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>🎟️ Tier 5: Campaigns & Promos</strong></td>
+                                        <td>
+                                            <strong>10. Active Discounted Products:</strong> Live tracker of products currently on promotional sales.<br>
+                                            <strong>11. Active Coupons & Redemption:</strong> Real-time coupon code monitor showing usage counts vs limits.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>💬 Tier 6: Customer Sentiment</strong></td>
+                                        <td>
+                                            <strong>12. Recent Customer Reviews:</strong> Verified 5★ buyer feedback and pending reviews needing moderation.<br>
+                                            <strong>13. Contact Inquiries Inbox:</strong> Recent unread customer messages with 1-click reply status.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 1.20: MASTER SETTINGS HUB DEEP-DIVE -->
+                    <div class="doc-subsection mt-5" id="sec-1-20">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-tune-vertical text-primary me-1"></i> 1.20 Master Settings Hub Reference (6 Core Tabs)
+                        </h3>
+                        <p>
+                            Centralizing store configuration with automatic tab memory, store managers can configure all vital store parameters from a unified interface.<br><span class="small text-primary"><i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Administration & Settings &rarr; <strong>System Settings</strong></span>:
+                        </p>
+                        <div class="accordion mb-4" id="settingsAccordion">
+                            <!-- TAB 1: GENERAL -->
+                            <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm overflow-hidden">
+                                <h2 class="accordion-header" id="headingGeneral">
+                                    <button class="accordion-button fw-bold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGeneral" aria-expanded="true" aria-controls="collapseGeneral">
+                                        <i class="mdi mdi-information-outline text-primary me-2"></i> 1. General Settings
+                                    </button>
+                                </h2>
+                                <div id="collapseGeneral" class="accordion-collapse collapse show" aria-labelledby="headingGeneral">
+                                    <div class="accordion-body small bg-white">
+                                        <ul>
+                                            <li><strong>Basic Information:</strong> Site Title, SEO Keywords, Meta Description (3-row textarea), Store Country Selector, and Store Timezone Selector.</li>
+                                            <li><strong>4 Centralized Media Logos:</strong> Light Logo (1:1 contain), Dark Logo (1:1 contain), Footer Logo (1:1 contain), and Favicon via modal media selectors.</li>
+                                            <li><strong>Contact & Footer:</strong> Public Contact Email, Phone, Physical Address, and Footer Copy text with dynamic placeholders (<code>©</code>, <code>{year}</code>, <code>{site_title}</code>).</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TAB 2: THEME -->
+                            <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm overflow-hidden">
+                                <h2 class="accordion-header" id="headingTheme">
+                                    <button class="accordion-button collapsed fw-bold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTheme" aria-expanded="false" aria-controls="collapseTheme">
+                                        <i class="mdi mdi-palette text-primary me-2"></i> 2. Theme & Appearance
+                                    </button>
+                                </h2>
+                                <div id="collapseTheme" class="accordion-collapse collapse" aria-labelledby="headingTheme">
+                                    <div class="accordion-body small bg-white">
+                                        <ul>
+                                            <li><strong>7 Typography Font Presets:</strong> Plus Jakarta Sans (Recommended), Inter (Modern Tech), Outfit (High-End Fashion), Poppins (Classic), Playfair Display (Editorial Luxury Serif), Urbanist (Modern Streetwear & Gen-Z), and DM Sans (Clean & Fast Minimalism).</li>
+                                            <li><strong>10 1-Click Color Presets:</strong> Custom Hex Colors, Vibrant Orange & Amber (<code>#F97316</code>), Electric Blue & Slate (<code>#2563EB</code>), Luxury Emerald Green (<code>#059669</code>), Luxury Noir / Modern Black (<code>#111827</code>), Royal Indigo & Violet (<code>#6366F1</code>), Crimson Ruby & Rose (<code>#E11D48</code>), Champagne Gold & Luxury (<code>#C5A880</code>), Nordic Ocean Teal (<code>#0D9488</code>), and Rose / Warm Luxury (<code>#D19C97</code>).</li>
+                                            <li><strong>Dark / Light Controls:</strong> Visitor theme switcher toggle switch (allows visitors to toggle modes) and Default Mode selector (Light Mode default vs Dark Mode for first-time visitors).</li>
+                                            <li><strong>AOS Smooth Scroll Animation:</strong> Dedicated toggle switch to enable/disable on-scroll smooth entrance animations (disabling immediately maximizes PageSpeed and reduces mobile script overhead).</li>
+                                            <li><strong>3-Point Live Color Pickers:</strong> Primary Brand Color, Button Background Color, and Button Text Color via interactive color picker wells with real-time Hex code reflection.</li>
+                                            <li><strong>5 Social Media Profiles:</strong> Facebook, Twitter (X), LinkedIn, Instagram, and YouTube URL profiles displayed dynamically across storefront header and footer.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TAB 3: SYSTEM -->
+                            <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm overflow-hidden">
+                                <h2 class="accordion-header" id="headingSystem">
+                                    <button class="accordion-button collapsed fw-bold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSystem" aria-expanded="false" aria-controls="collapseSystem">
+                                        <i class="mdi mdi-cog-outline text-primary me-2"></i> 3. System Configuration
+                                    </button>
+                                </h2>
+                                <div id="collapseSystem" class="accordion-collapse collapse" aria-labelledby="headingSystem">
+                                    <div class="accordion-body small bg-white">
+                                        <ul>
+                                            <li><strong>Currency & Regional:</strong> Currency Symbol (<code>$</code>, <code>€</code>, <code>£</code>, <code>¥</code>, <code>₹</code>), Code (<code>USD</code>, <code>EUR</code>, <code>GBP</code>), Position (Left <code>$100</code> vs Right <code>100€</code>), Decimal Places (0 to 4), Decimal separator (<code>.</code>), Thousand separator (<code>,</code>).</li>
+                                            <li><strong>Analytics & Tracking:</strong> Facebook Pixel ID (e-commerce catalog events) and Google Analytics 4 (GA4) Measurement ID (<code>G-XXXXXXX</code>).</li>
+                                            <li><strong>Google Maps Embed:</strong> Responsive container for physical store location maps on the Contact page.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TAB 4: MAIL -->
+                            <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm overflow-hidden">
+                                <h2 class="accordion-header" id="headingMail">
+                                    <button class="accordion-button collapsed fw-bold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMail" aria-expanded="false" aria-controls="collapseMail">
+                                        <i class="mdi mdi-email-outline text-primary me-2"></i> 4. Mail Settings (SMTP)
+                                    </button>
+                                </h2>
+                                <div id="collapseMail" class="accordion-collapse collapse" aria-labelledby="headingMail">
+                                    <div class="accordion-body small bg-white">
+                                        <ul>
+                                            <li><strong>Interactive Collapsible Setup Guides:</strong> Step-by-step instructions for cPanel Webmail (<code>mail.domain.com</code>, Port 465 SSL), Gmail 16-digit App Password, and Transactional Gateways (Brevo, Resend, Mailgun on Port 587 TLS).</li>
+                                            <li><strong>Credentials:</strong> Mail Host, Mail Port, Mail Username, Mail Password (Password Masked), Encryption (<code>SSL</code>/<code>TLS</code>), and Mail From Address.</li>
+                                            <li><strong>Deliverability Tips:</strong> Guidance on setting up SPF and DKIM TXT records for 100% spam-free delivery.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TAB 5: AI & LIVE CHAT -->
+                            <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm overflow-hidden">
+                                <h2 class="accordion-header" id="headingAiChat">
+                                    <button class="accordion-button collapsed fw-bold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAiChat" aria-expanded="false" aria-controls="collapseAiChat">
+                                        <i class="mdi mdi-robot text-primary me-2"></i> 5. AI Shopping Assistant & WhatsApp Hub
+                                    </button>
+                                </h2>
+                                <div id="collapseAiChat" class="accordion-collapse collapse" aria-labelledby="headingAiChat">
+                                    <div class="accordion-body small bg-white">
+                                        <ul>
+                                            <li><strong>Google Gemini AI Shopping Advisor:</strong> Storefront 24/7 AI chat bubble switch, free tier setup guide (zero credit card required at <code>aistudio.google.com</code>), AES-256 encrypted API key, and customizable AI Bot Name.</li>
+                                            <li><strong>WhatsApp Live Agent Support:</strong> Official WhatsApp number input with country code (e.g., <code>+8801700000000</code>) and customizable pre-filled greeting message.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TAB 6: SECURITY & 2FA -->
+                            <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm overflow-hidden">
+                                <h2 class="accordion-header" id="headingSecurity">
+                                    <button class="accordion-button collapsed fw-bold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSecurity" aria-expanded="false" aria-controls="collapseSecurity">
+                                        <i class="mdi mdi-shield-check-outline text-primary me-2"></i> 6. Security & Access Control (Super Admin Exclusive)
+                                    </button>
+                                </h2>
+                                <div id="collapseSecurity" class="accordion-collapse collapse" aria-labelledby="headingSecurity">
+                                    <div class="accordion-body small bg-white">
+                                        <ul>
+                                            <li><strong>Admin Portal URL Prefix Obfuscation:</strong> Real-time input sanitizer with live future URL preview and 1-click URL copy button.</li>
+                                            <li><strong>Live Handshake 2FA Email OTP:</strong> Verifies live SMTP delivery before enabling 2FA.</li>
+                                            <li><strong>5 Emergency Recovery Codes:</strong> Generates single-use backup recovery codes with <strong>Copy All</strong> and <strong>Download .txt</strong> features.</li>
+                                            <li><strong>Rate Limiting Status:</strong> Enforces 5 failed attempts threshold and 30-minute lockout policy.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.21: PAYMENT GATEWAYS, RBAC & ARCHITECTURE METRICS -->
+                    <div class="doc-subsection mt-5" id="sec-1-21">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-cash-multiple text-success me-1"></i> 1.21 Payment Gateways, Unlimited Custom Roles & Codebase Architecture
+                        </h3>
+                        <p>
+                            Pre-integrated with <strong>11 Payment Methods</strong>, an enterprise <strong>Unlimited Custom Staff RBAC Engine</strong>, and a clean, layered Laravel 12 architecture:
+                        </p>
+
+                        <!-- Payment Gateways Grid -->
+                        <div class="row g-2 mb-4">
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
+                                    <div class="fw-bold text-primary small">Stripe</div>
+                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Global Credit/Debit</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
+                                    <div class="fw-bold text-primary small">SSLCommerz</div>
+                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Bangladesh #1</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
+                                    <div class="fw-bold text-primary small">PayPal</div>
+                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Express Checkout</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
+                                    <div class="fw-bold text-primary small">Razorpay</div>
+                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">India UPI / Cards</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
+                                    <div class="fw-bold text-primary small">WayForPay</div>
+                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Eastern Europe</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
+                                    <div class="fw-bold text-primary small">Paystack</div>
+                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Africa Market</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
+                                    <div class="fw-bold text-primary small">CoinGate</div>
+                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Crypto 70+ Coins</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
+                                    <div class="fw-bold text-primary small">Binance Pay</div>
+                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Crypto 0% Fee</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
+                                    <div class="fw-bold text-dark small">Cash on Delivery</div>
+                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Zero Risk / Hybrid</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
+                                    <div class="fw-bold text-dark small">Bank Transfer</div>
+                                    <span class="badge bg-dark-subtle text-dark" style="font-size: 8px;">Offline BACS</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
+                                    <div class="fw-bold text-dark small">Manual / Custom</div>
+                                    <span class="badge bg-dark-subtle text-dark" style="font-size: 8px;">Custom Instructions</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Smart Anti-Fraud Hybrid Cash on Delivery & Advance Delivery Charge Callout -->
+                        <div class="p-3 bg-white border rounded-3 shadow-sm mb-4">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <div class="p-2 rounded bg-success-subtle text-success"><i class="mdi mdi-shield-check fs-4"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-0 text-heading">Smart Anti-Fraud Hybrid Cash on Delivery (Advance Delivery Charge System)</h6>
+                                    <span class="text-muted small">Eliminate fake orders and return shipping losses with configurable upfront fulfillment charge</span>
+                                </div>
+                            </div>
+                            <div class="alert alert-success bg-success-subtle border-success-subtle d-flex align-items-center gap-2 py-2 px-3 mb-2">
+                                <i class="mdi mdi-compass-outline fs-5 text-success"></i>
+                                <span class="small text-success-emphasis"><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Ecommerce & Sales &rarr; Payment Gateways &rarr; <strong>Cash on Delivery (Click Edit)</strong></span>
+                            </div>
+                            <p class="small text-muted mb-2">
+                                The greatest operational risk in digital commerce merchandising is fraudulent or uncollected Cash on Delivery shipments where merchants absorb double return delivery costs. MartX eliminates this vulnerability through an intelligent <strong>Hybrid Cash on Delivery system</strong>:
+                            </p>
+                            <div class="row g-2 small">
+                                <div class="col-md-6">
+                                    <div class="p-2.5 bg-light rounded border h-100">
+                                        <strong class="text-primary d-flex align-items-center gap-1 mb-1">
+                                            <i class="mdi mdi-toggle-switch-off-outline"></i> 1. Standard Pure COD Mode (Status: Disabled / Off):
+                                        </strong>
+                                        <span class="text-muted d-block">
+                                            When the Advance Shipping switch is toggled <strong>OFF</strong>, customers place orders with zero upfront payment. The full gross invoice amount is collected at doorstep delivery.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-2.5 bg-light rounded border h-100">
+                                        <strong class="text-success d-flex align-items-center gap-1 mb-1">
+                                            <i class="mdi mdi-toggle-switch-outline"></i> 2. Mandatory Upfront Delivery Charge Mode (Status: Enabled / On):
+                                        </strong>
+                                        <span class="text-muted d-block">
+                                            When toggled <strong>ON</strong>, customers must pay the delivery/shipping charge upfront during checkout to confirm order placement, while paying the remaining product bill safely on doorstep delivery.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="p-2.5 bg-light rounded border">
+                                        <strong class="text-dark d-flex align-items-center gap-1 mb-1">
+                                            <i class="mdi mdi-credit-card-sync-outline text-primary"></i> Omni-Channel Advance Payment Channels:
+                                        </strong>
+                                        <span class="text-muted d-block">
+                                            Merchants easily select which gateways are permitted to receive advance shipping charges using the <strong>Allowed Advance Gateways</strong> multi-select dropdown. Customers choose between any of the <strong>8 integrated online gateways</strong> (<em>Stripe, SSLCommerz, PayPal, Razorpay, WayForPay, Paystack, CoinGate, Binance Pay</em>) or <strong>Direct / Manual Payment</strong> (<em>bKash, Nagad, Rocket, Bank Transfer</em> with Sender Number & Transaction ID verification). The order status automatically updates to <span class="badge bg-info-subtle text-info border border-info-subtle px-2 py-0"><i class="mdi mdi-check-circle me-1"></i>Shipping Paid</span> with verified advance payment confirmation in the admin order list.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Unlimited Custom Roles Callout -->
+                        <div class="p-3 bg-white border rounded-3 shadow-sm mb-4">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <div class="p-2 rounded bg-primary-subtle text-primary"><i class="mdi mdi-shield-account fs-4"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-0 text-heading">Unlimited Custom Staff Roles & 77 Granular Permissions</h6>
+                                    <span class="text-muted small">Complete delegation freedom for teams of any scale</span>
+                                </div>
+                            </div>
+                            <div class="alert alert-primary bg-primary-subtle border-primary-subtle d-flex align-items-center gap-2 py-2 px-3 mb-2">
+                                <i class="mdi mdi-compass-outline fs-5 text-primary"></i>
+                                <span class="small text-primary-emphasis"><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Administration & Settings &rarr; <strong>Roles & Permissions</strong></span>
+                            </div>
+                            <p class="small text-muted mb-0">
+                                Store owners are never restricted to fixed pre-defined roles. You can create <strong>unlimited custom staff roles</strong> (e.g. <em>Store Manager, Order Fulfillment Lead, Inventory Specialist, SEO & Content Writer, Customer Support Lead, Financial Accountant</em>) and assign exact capabilities using an intuitive checkbox matrix covering <strong>77 granular permissions</strong> across 24 permission modules.
+                            </p>
+                        </div>
+
+                        <!-- Server-to-Server Webhook & IPN Architecture Panel -->
+                        <div class="p-3 bg-white border rounded-3 shadow-sm mb-4">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <div class="p-2 rounded bg-info-subtle text-info"><i class="mdi mdi-webhook fs-4"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-0 text-heading">Automated Background Payment Sync & Fraud Shield</h6>
+                                    <span class="text-muted small">Zero lost orders even if buyers close their browser before return redirects execute</span>
+                                </div>
+                            </div>
+                            <p class="small text-muted mb-2">
+                                Traditional online stores risk dropped orders when buyers close their browser immediately after paying. MartX completely protects merchants through automated direct server-to-server payment notifications:
+                            </p>
+                            <div class="row g-2 small">
+                                <div class="col-md-4">
+                                    <div class="p-2 bg-light rounded border h-100">
+                                        <strong class="text-primary"><i class="mdi mdi-shield-check me-1"></i> Cryptographic Signatures:</strong>
+                                        <p class="text-muted mb-0 mt-1" style="font-size: 11px;">Payment notifications are cryptographically verified directly with gateway servers (Stripe, PayPal, Razorpay, Paystack) to ensure every transaction confirmation is genuine.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-2 bg-light rounded border h-100">
+                                        <strong class="text-danger"><i class="mdi mdi-currency-usd-off me-1"></i> Anti-Price Tampering:</strong>
+                                        <p class="text-muted mb-0 mt-1" style="font-size: 11px;">Background listeners strictly compare the actual paid amount against the order grand total. Any tampered or mismatched amount is flagged immediately for merchant review.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-2 bg-light rounded border h-100">
+                                        <strong class="text-success"><i class="mdi mdi-lock-sync me-1"></i> Duplicate Order Prevention:</strong>
+                                        <p class="text-muted mb-0 mt-1" style="font-size: 11px;">Automated transaction locking ensures that if a customer redirect and a background webhook notification arrive simultaneously, the order is confirmed once and only once with zero duplicates.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Architecture Metrics Grid -->
+                        <div class="row g-2">
+                            <div class="col-6 col-md-3">
+                                <div class="p-3 bg-white border rounded-3 text-center shadow-sm">
+                                    <div class="display-6 fw-bold text-primary">340+</div>
+                                    <div class="text-muted small">Optimized Store Features</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="p-3 bg-white border rounded-3 text-center shadow-sm">
+                                    <div class="display-6 fw-bold text-success">45</div>
+                                    <div class="text-muted small">Commerce Modules & Engines</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="p-3 bg-white border rounded-3 text-center shadow-sm">
+                                    <div class="display-6 fw-bold text-info">55</div>
+                                    <div class="text-muted small">Auto-Managed Data Tables</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="p-3 bg-white border rounded-3 text-center shadow-sm">
+                                    <div class="display-6 fw-bold text-warning">65</div>
+                                    <div class="text-muted small">Business Automation Services</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.22: COMPLETE COMMERCE ENGINES SUITE -->
+                    <div class="doc-subsection mt-5" id="sec-1-22">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-layers-triple-outline text-primary me-1"></i> 1.22 Complete Enterprise Commerce Engine & Capabilities Suite
+                        </h3>
+                        <p>
+                            Beyond themes and administrative security, MartX packages <strong>14 turnkey enterprise commerce engines</strong> designed for merchants to operate smoothly with zero coding:
+                        </p>
+
+                        <div class="row g-3 my-2">
+                            <!-- Engine 1: Flash Sale & Countdown Timer -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="p-2 rounded bg-danger-subtle text-danger"><i class="mdi mdi-fire fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">1. Flash Sale & Timed Countdown Engine</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Drive urgent buyer conversions with automated flash sale campaigns. Features live ticking countdown clocks, special discount badges, and automated start/end schedule activation.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 mt-auto border-top small text-primary lh-base">
+                                        <i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Website & CMS &rarr; <strong>Banners & Sliders</strong> &amp; Marketing &rarr; <strong>Flash Sales</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engine 2: Product Variants & SKU Inventory Engine -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="p-2 rounded bg-primary-subtle text-primary"><i class="mdi mdi-palette-swatch fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">2. Multi-Attribute Variant & SKU Inventory Engine</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Manage infinite combinations of product Colors and Sizes. Each variant supports independent pricing surcharges, dedicated stock counters, and unique SKU identifiers to completely eliminate over-selling.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 mt-auto border-top small text-primary lh-base">
+                                        <i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Ecommerce & Sales &rarr; Products &rarr; <strong>Add / Edit Product &rarr; Variants</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engine 3: Smart Promotions & Coupons -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="p-2 rounded bg-success-subtle text-success"><i class="mdi mdi-ticket-percent fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">3. Dynamic Promotions & Anti-Abuse Coupon Protection</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Create percentage (%) and fixed flat ($) discount coupons. Includes automated anti-abuse protection preventing double-use during flash sales, strict per-customer usage quotas, and exclusions for already-discounted items.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 mt-auto border-top small text-primary lh-base">
+                                        <i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Ecommerce & Sales &rarr; Marketing &rarr; <strong>Coupons</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engine 4: Cross-Border & Incremental Shipping Engine -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="p-2 rounded bg-info-subtle text-info"><i class="mdi mdi-truck-fast fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">4. Cross-Border &amp; Incremental Shipping Engine</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Configure multi-tier geographic shipping zones by country and state with <strong>Base Price + Incremental Per-Item Rates</strong> (<code class="font-monospace text-primary">Base + (Qty &minus; 1) &times; Extra Fee</code>). Features live checkout breakdown, anti-tampering server calculations, and AI assistant synchronization.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 mt-auto border-top small text-primary lh-base">
+                                        <i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Ecommerce &amp; Sales &rarr; <strong>Shipping &amp; Locations</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engine 5: Courier & Logistics Fulfillment -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="p-2 rounded bg-warning-subtle text-warning"><i class="mdi mdi-package-variant fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">5. Courier Logistics & Consignment Tracking</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Assign customer fulfillment orders to delivery partners (e.g., DHL, FedEx, Pathao, Steadfast). Attach consignment tracking IDs and dispatch real-time status updates directly to buyers.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 mt-auto border-top small text-primary lh-base">
+                                        <i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Ecommerce & Sales &rarr; Orders &rarr; <strong>Assign Courier</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engine 6: Public Order Tracking & PDF Invoices -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="p-2 rounded bg-dark-subtle text-dark"><i class="mdi mdi-map-marker-path fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">6. Public Guest Order Tracking & PDF Invoices</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Customers track shipments publicly without login using Order ID + Email verification. Features 1-click branded PDF invoice downloads, saved shipping addresses, and customer wishlists.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 mt-auto border-top small text-primary lh-base">
+                                        <i class="mdi mdi-web me-1"></i><strong>Public Access:</strong> Storefront Header & Footer &rarr; <strong>Order Tracking</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engine 7: Automated Abandoned Checkout & Inventory Restitution -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="p-2 rounded bg-warning-subtle text-warning"><i class="mdi mdi-clock-check-outline fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">7. Automated Unpaid Order Cleanup & Stock Recovery</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            An automated background task actively cancels abandoned payment gateway checkouts older than 35 minutes. It immediately restores reserved product inventory back to stock and repopulates the buyer's cart if they return to complete payment.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 mt-auto border-top small text-success lh-base">
+                                        <i class="mdi mdi-shield-check me-1"></i><strong>Reliability:</strong> 100% Automated Background Task (Zero stock leakage)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engine 8: Reviews, Ratings & Admin Reply -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="p-2 rounded bg-danger-subtle text-danger"><i class="mdi mdi-star-half-full fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">8. Verified Reviews & Direct Admin Public Reply</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            5-Star verified buyer feedback with approval moderation workflows, preventing spam reviews, along with direct administrative public reply capability shown directly on product pages.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 mt-auto border-top small text-primary lh-base">
+                                        <i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Customer & Community &rarr; <strong>Customer Reviews</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engine 9: Rich Blogging & Media CMS -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="p-2 rounded bg-primary-subtle text-primary"><i class="mdi mdi-post-outline fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">9. Publishing Blog CMS & Social Comments</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Full blogging management with high-res cover photos, SEO meta keywords, department categories, tags, and moderated reader comment discussions to build organic store traffic.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 mt-auto border-top small text-primary lh-base">
+                                        <i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Website & CMS &rarr; <strong>Blogs</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engine 10: Dynamic Custom Pages & FAQs -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="p-2 rounded bg-success-subtle text-success"><i class="mdi mdi-file-document-outline fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">10. Dynamic Pages & Accordion FAQ System</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Create unlimited custom pages (Privacy Policy, Terms, Refund Policy) using an intuitive rich-text editor with custom SEO URLs. Includes an organized collapsible FAQ manager.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 mt-auto border-top small text-primary lh-base">
+                                        <i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Website & CMS &rarr; <strong>Custom Pages &amp; FAQs</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engine 11: Brand About Page & Store Features -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="p-2 rounded bg-info-subtle text-info"><i class="mdi mdi-account-group fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">11. Brand About Page & Store Features</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Showcase your store identity with brand mission statements, team member bios, social links, and 4 trust value badges (Free Shipping, 24/7 Support, Safe Payment, Money-back Guarantee).
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 mt-auto border-top small text-primary lh-base">
+                                        <i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Website & CMS &rarr; <strong>About Page &amp; Store Features</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engine 12: Wishlist & AJAX Shopping Cart -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="p-2 rounded bg-danger-subtle text-danger"><i class="mdi mdi-heart-outline fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">12. 1-Click Wishlist & Interactive Mini-Cart</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Instant 1-click wishlist bookmarking with live header counter badges, dynamic dropdown mini-cart, and sub-50ms reactive cart drawer updates with zero page reloads.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 mt-auto border-top small text-primary lh-base">
+                                        <i class="mdi mdi-cellphone-link me-1"></i><strong>Storefront:</strong> Pre-integrated across all Storefront Headers &amp; Product Cards
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engine 13: Newsletter Subscription Engine -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="p-2 rounded bg-dark-subtle text-dark"><i class="mdi mdi-email-check-outline fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">13. Newsletter Engine & CSV Subscriber Export</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Storefront footer newsletter capture bar with duplicate email prevention, administrative subscriber management table, and 1-click CSV subscriber list export.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 mt-auto border-top small text-primary lh-base">
+                                        <i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Customer & Community &rarr; <strong>Newsletter Subscribers</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engine 14: AI Customer Inquiry Desk -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="p-2 rounded bg-primary-subtle text-primary"><i class="mdi mdi-robot-happy-outline fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">14. AI Customer Inquiry & Instant Email Reply Desk</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Turn inquiries into buyers with Google Gemini AI. Features 1-click contextual AI response drafting, full merchant editability, direct SMTP email transmission, and automated "Replied" audit marking.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 mt-auto border-top small text-primary lh-base">
+                                        <i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Customer & Community &rarr; <strong>Contact Messages</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Real-Time 1-Click Governance Desk vs Safe-Mode Catalog Protection -->
+                        <div class="p-3 bg-white border rounded-3 shadow-sm my-4">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <div class="p-2 rounded bg-purple-subtle text-primary" style="background-color: rgba(99, 102, 241, 0.1);"><i class="mdi mdi-cursor-default-click-outline fs-4 text-primary"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-0 text-heading">Enterprise Operational Control: Real-Time 1-Click Governance vs Safe-Mode Catalog Integrity</h6>
+                                    <span class="text-muted small">Balanced UI/UX engineering: Instant operations where speed matters, fortified validations where catalog safety is vital</span>
+                                </div>
+                            </div>
+                            <p class="small text-muted mb-3">
+                                High-velocity enterprise stores require rapid management responses without compromising catalog and database safety. MartX enforces a deliberate, battle-tested administrative architectural standard:
+                            </p>
+                            <div class="row g-3 small">
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-light rounded border h-100">
+                                        <div class="fw-bold text-success d-flex align-items-center gap-1 mb-2">
+                                            <i class="mdi mdi-lightning-bolt"></i> 1-Click Instant Action & Moderation Desk
+                                        </div>
+                                        <ul class="text-muted mb-0 ps-3">
+                                            <li class="mb-1.5"><strong>User Account Governance:</strong> Instantly <em>Activate</em> or <em>Deactivate</em> customer accounts with 1 click directly from action dropdowns without navigating away.</li>
+                                            <li class="mb-1.5"><strong>Newsletter Subscription Moderation:</strong> 1-click <em>Unsubscribe</em> or <em>Re-subscribe</em> subscriber emails directly from the subscribers table.</li>
+                                            <li class="mb-1.5"><strong>Product Reviews & Blog Comments:</strong> Real-time <em>Approve</em> and <em>Reject</em> 1-click moderation buttons right in index tables and inspect modals.</li>
+                                            <li class="mb-0"><strong>Live Homepage Merchandising:</strong> Product tables feature an interactive <strong>AJAX Trending Switch</strong> to promote items to the storefront curated section with 0 page reloads.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-light rounded border h-100">
+                                        <div class="fw-bold text-primary d-flex align-items-center gap-1 mb-2">
+                                            <i class="mdi mdi-shield-lock-outline"></i> Enterprise Safe-Mode Catalog Integrity
+                                        </div>
+                                        <p class="text-muted mb-2">
+                                            In high-concurrency merchandising, accidental clicks on mobile or tablet devices can inadvertently deactivate best-selling products or categories, breaking live SEO indexing and causing shopping cart checkout failures.
+                                        </p>
+                                        <ul class="text-muted mb-0 ps-3">
+                                            <li class="mb-1.5"><strong>Protected Catalog Models:</strong> Products, Categories, Subcategories, Blogs, and Coupons operate under <strong>Safe-Mode Governance</strong>.</li>
+                                            <li class="mb-0"><strong>Explicit Form Validation:</strong> Status toggles and SKU parameters are updated via verified form submissions, ensuring image relationships, SEO slugs, and relational database integrity remain 100% stable.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CHAPTER NAVIGATION BUTTONS -->
+                    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-sm-center gap-3 mt-5 pt-4 border-top">
+                        <button class="btn btn-outline-secondary disabled" disabled>
+                            <i class="mdi mdi-arrow-left me-1"></i> Previous Chapter
+                        </button>
+                        <a href="server-requirements.html" class="btn btn-primary fw-bold px-4">
+                            Next: Chapter 2 (Server Requirements) <i class="mdi mdi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page (22 Topics)</div>
+                    <a href="#quick-start" class="doc-toc-link text-primary fw-bold"><i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start</a>
+                    <a href="#demo-accounts" class="doc-toc-link text-success fw-bold"><i class="mdi mdi-play-circle-outline"></i> 🌐 Live Demos & Logins</a>
+                    <a href="#sec-1-1" class="doc-toc-link active">1.1 Welcome & Vision</a>
+                    <a href="#sec-1-2" class="doc-toc-link">1.2 Author & Licensing</a>
+                    <a href="#sec-1-3" class="doc-toc-link">1.3 Modern Tech Stack</a>
+                    <a href="#sec-1-4" class="doc-toc-link">1.4 License Shield</a>
+                    <a href="#sec-1-5" class="doc-toc-link">1.5 5-Step Web Installer</a>
+                    <a href="#sec-1-6" class="doc-toc-link">1.6 Dashboard Management</a>
+                    <a href="#sec-1-7" class="doc-toc-link">1.7 Anti-Hacking Shield</a>
+                    <a href="#sec-1-8" class="doc-toc-link">1.8 Login Rate Limiting</a>
+                    <a href="#sec-1-9" class="doc-toc-link">1.9 Anti-Tampering Pricing</a>
+                    <a href="#sec-1-10" class="doc-toc-link">1.10 Admin URL Obfuscation</a>
+                    <a href="#sec-1-11" class="doc-toc-link">1.11 2FA & Backup Codes</a>
+                    <a href="#sec-1-12" class="doc-toc-link">1.12 Header Layouts (3 Styles)</a>
+                    <a href="#sec-1-13" class="doc-toc-link">1.13 Mega Menu (2 Layouts)</a>
+                    <a href="#sec-1-14" class="doc-toc-link">1.14 Home Layouts (2 Styles)</a>
+                    <a href="#sec-1-15" class="doc-toc-link">1.15 Product Cards (6 Styles)</a>
+                    <a href="#sec-1-16" class="doc-toc-link">1.16 Shop Layouts (3 Styles)</a>
+                    <a href="#sec-1-17" class="doc-toc-link">1.17 Reusable Media Library</a>
+                    <a href="#sec-1-18" class="doc-toc-link">1.18 Contact Inbox & SMTP</a>
+                    <a href="#sec-1-19" class="doc-toc-link">1.19 360° Admin Dashboard</a>
+                    <a href="#sec-1-20" class="doc-toc-link">1.20 Master Settings Hub</a>
+                    <a href="#sec-1-21" class="doc-toc-link">1.21 Gateways & Codebase</a>
+                    <a href="#sec-1-22" class="doc-toc-link">1.22 Commerce Engines Suite</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch1-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header border-bottom p-3 bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0 text-primary fs-5">
+                            <i class="mdi mdi-magnify"></i>
+                        </span>
+                        <input type="text" class="form-control form-control-lg border-start-0 ps-0" id="docGlobalSearch" placeholder="Search documentation... (e.g., License, Settings, 2FA, SMTP, AI)">
+                    </div>
+                </div>
+                <div class="modal-body p-0" id="docSearchResults" style="max-height: 420px; overflow-y: auto;">
+                    <div class="p-4 text-center text-muted">
+                        <i class="mdi mdi-text-search fs-1 d-block mb-2 text-primary opacity-50"></i>
+                        <p class="mb-0">Type any keyword to search across all chapters in real time.</p>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light py-2 px-3 justify-content-between">
+                    <small class="text-muted"><kbd>ESC</kbd> to close</small>
+                    <small class="text-muted"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

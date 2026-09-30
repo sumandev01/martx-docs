@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: License Activation, Grace Period & Domain Migration - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+    <style>
+        /* ================= 2026+ DUAL-MODE ADMIN BANNER MOCKUPS ================= */
+        .admin-banner-amber {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0.875rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .admin-banner-slate {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: #ffffff;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0.875rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 10px 25px -5px rgba(30, 41, 59, 0.35);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .admin-banner-icon-amber {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.22);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            flex-shrink: 0;
+            color: #ffffff;
+        }
+        .admin-banner-icon-slate {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            flex-shrink: 0;
+            color: #38bdf8;
+        }
+        .admin-btn-amber {
+            background: #111827;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.55rem 1.25rem;
+            border-radius: 0.5rem;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+        .admin-btn-slate {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.55rem 1.25rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        /* Modal Mockup Styling */
+        .admin-modal-frame {
+            border: 1px solid var(--doc-border);
+            border-radius: 1rem;
+            background: var(--doc-card-bg);
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+        .admin-modal-header {
+            padding: 1.15rem 1.5rem;
+            border-bottom: 1px solid var(--doc-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(var(--doc-primary-rgb), 0.04);
+        }
+        .admin-modal-body {
+            padding: 1.5rem;
+        }
+        .admin-market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.65rem;
+            margin-bottom: 1.25rem;
+        }
+        .admin-market-card {
+            border: 1px solid var(--doc-border);
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            text-align: center;
+            background: var(--doc-card-bg);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+        .admin-market-card:hover:not(.active) {
+            border-color: var(--doc-primary);
+            background: rgba(var(--doc-primary-rgb), 0.04);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .admin-market-card.active {
+            border: 2px solid var(--doc-primary);
+            background: rgba(var(--doc-primary-rgb), 0.08);
+            box-shadow: 0 0 0 2px rgba(var(--doc-primary-rgb), 0.2);
+            transform: translateY(-2px);
+        }
+        .admin-market-card:active {
+            transform: translateY(0);
+        }
+
+        /* Standalone Lockout Screen Mockup */
+        .admin-lockout-preview {
+            background: #0f172a;
+            border-radius: 1rem;
+            padding: 2.5rem 1.5rem;
+            margin: 1.75rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #334155;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .admin-lockout-card {
+            max-width: 480px;
+            width: 100%;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 1rem;
+            padding: 2rem;
+            color: #f8fafc;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+        .admin-lockout-card h4 {
+            color: #ffffff !important;
+        }
+        .admin-lockout-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(239, 68, 68, 0.15);
+            border: 2px solid rgba(239, 68, 68, 0.35);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #ef4444;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+                                    <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Chapter 4: License Activation Hub</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= CHAPTER 4: LICENSE ACTIVATION HUB ================= -->
+                <section class="doc-section" id="ch4-licensing">
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-shield-key text-primary"></i> Chapter 4: License Activation, Grace Period & Domain Migration
+                    </h1>
+                    <p class="lead text-muted">
+                        Welcome to the official <strong>MartX License Activation & Verification Hub</strong>. Designed to deliver a smooth, frictionless merchant experience, MartX provides automated cloud verification, an initial 7-day live trial window, free local development testing, and an instant 1-click license key re-binding workflow when migrating to a new domain.
+                    </p>
+
+                    <!-- 4.1: IN-DASHBOARD ACTIVATION SUITE -->
+                    <div class="doc-subsection mt-5" id="sec-4-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-monitor-dashboard text-primary me-1"></i> 4.1 In-Dashboard License Activation Suite
+                        </h3>
+                        <p>
+                            If you verified your purchase code during <strong>Step 3 of the 5-Step Web Installer</strong>, your store is already fully activated and ready for business!
+                        </p>
+                        <p>
+                            However, if you installed the platform and skipped license verification during initial setup, an unactivated license notification banner will appear across the top of your Administrative Dashboard:
+                        </p>
+
+                        <!-- MOCKUP 1: LIVE DOMAIN WARM AMBER WARNING BANNER -->
+                        <div class="mb-2">
+                            <span class="badge bg-warning-subtle text-dark border border-warning-subtle mb-2">
+                                <i class="mdi mdi-web me-1"></i> Live Production Domain View (Unactivated Store)
+                            </span>
+                            <div class="admin-banner-amber">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="admin-banner-icon-amber">
+                                        <i class="mdi mdi-shield-alert-outline"></i>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+                                            <h5 class="fw-bold text-white mb-0" style="font-size: 1.05rem;">Activate Your MartX License</h5>
+                                            <span class="badge bg-dark text-warning border border-warning-subtle font-monospace px-2 py-1">
+                                                ⏳ 7 Days Remaining
+                                            </span>
+                                        </div>
+                                        <p class="mb-0 text-white-50 small">
+                                            Verify your live domain to unlock official author support, verified software updates during your valid license period, and prevent store lockdown.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="admin-btn-amber" type="button">
+                                    Activate Now &rarr;
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- MOCKUP 2: LOCALHOST DEVELOPER MODE BANNER -->
+                        <div class="mb-4">
+                            <span class="badge bg-secondary-subtle text-dark border border-secondary-subtle mb-2">
+                                <i class="mdi mdi-laptop me-1"></i> Localhost / Staging Development View (.test, localhost)
+                            </span>
+                            <div class="admin-banner-slate">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="admin-banner-icon-slate">
+                                        <i class="mdi mdi-code-tags-check"></i>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+                                            <h5 class="fw-bold text-white mb-0" style="font-size: 1.05rem;">Developer Environment Active</h5>
+                                            <span class="badge bg-light-subtle text-info border border-info-subtle font-monospace px-2 py-1">
+                                                🛠️ Developer Mode (Localhost) - Offline Unrestricted Access
+                                            </span>
+                                        </div>
+                                        <p class="mb-0 text-white-50 small">
+                                            Enjoy 100% unrestricted local development with zero trial limits and zero license deduction.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="admin-btn-slate" type="button">
+                                    Activate License (Optional) &rarr;
+                                </button>
+                            </div>
+                        </div>
+
+                        <p class="text-muted small">
+                            Clicking the <strong>"Activate Now &rarr;"</strong> button opens the interactive in-dashboard activation modal:
+                        </p>
+
+                        <!-- EXACT IN-DASHBOARD MODAL UI MOCKUP -->
+                        <div class="admin-modal-frame">
+                            <div class="admin-modal-header">
+                                <h6 class="fw-bold text-heading mb-0">
+                                    <i class="mdi mdi-shield-check text-primary me-1"></i> Activate MartX License
+                                </h6>
+                                <span class="badge bg-light text-muted border font-monospace">Modal Preview</span>
+                            </div>
+                            <div class="admin-modal-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <label class="form-label small fw-bold mb-0">Select Marketplace / Purchase Channel</label>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle font-monospace" style="font-size: 11px;">
+                                        <i class="mdi mdi-cursor-default-click-outline me-1"></i> Interactive: Click tabs to test
+                                    </span>
+                                </div>
+                                
+                                <div class="admin-market-grid" id="docMarketGrid">
+                                    <div class="admin-market-card active" data-channel="codecanyon" role="button" tabindex="0">
+                                        <i class="mdi mdi-shopping-outline text-primary d-block fs-5 mb-1 market-card-icon"></i>
+                                        <strong class="d-block small text-primary market-card-title">CodeCanyon</strong>
+                                        <span class="text-muted" style="font-size: 11px;">Envato Purchase Code</span>
+                                    </div>
+                                    <div class="admin-market-card" data-channel="codester" role="button" tabindex="0">
+                                        <i class="mdi mdi-storefront-outline text-muted d-block fs-5 mb-1 market-card-icon"></i>
+                                        <strong class="d-block small text-heading market-card-title">Codester</strong>
+                                        <span class="text-muted" style="font-size: 11px;">Order ID</span>
+                                    </div>
+                                    <div class="admin-market-card" data-channel="templatemonster" role="button" tabindex="0">
+                                        <i class="mdi mdi-palette-swatch-outline text-muted d-block fs-5 mb-1 market-card-icon"></i>
+                                        <strong class="d-block small text-heading market-card-title">TemplateMonster</strong>
+                                        <span class="text-muted" style="font-size: 11px;">Invoice ID</span>
+                                    </div>
+                                    <div class="admin-market-card" data-channel="direct" role="button" tabindex="0">
+                                        <i class="mdi mdi-shield-check-outline text-muted d-block fs-5 mb-1 market-card-icon"></i>
+                                        <strong class="d-block small text-heading market-card-title">Direct / B2B</strong>
+                                        <span class="text-muted" style="font-size: 11px;">Author Key</span>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3" id="docFieldWrapper" style="transition: all 0.2s ease;">
+                                    <label class="form-label small fw-bold mb-1" id="docFieldLabel">
+                                        Envato Purchase Code <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text bg-light text-muted border-end-0">
+                                            <i class="mdi mdi-key-outline text-primary" id="docFieldIcon"></i>
+                                        </span>
+                                        <input type="text" class="form-control font-monospace border-start-0 ps-0" id="docFieldInput" placeholder="e.g., 94b1a45e-4501-4475-b6d8-XXXXXXXXXXXX" value="94a12b8c-55e1-4c12-88f1-22e89fa6b301" readonly style="background-color: var(--doc-card-bg);">
+                                    </div>
+                                    <span class="text-muted d-block mt-1" id="docFieldHelp" style="font-size: 11px;">
+                                        Found in your CodeCanyon Downloads &gt; License Certificate &amp; Purchase Code PDF.
+                                    </span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold mb-1">Buyer Email Address (Optional)</label>
+                                    <input type="email" class="form-control form-control-sm" placeholder="e.g., buyer@yourdomain.com" value="merchant@yourdomain.com" readonly style="background-color: var(--doc-card-bg);">
+                                    <span class="text-muted d-block mt-1" style="font-size: 11px;">
+                                        Used for automated 1-click domain transfer authorization and official security notices.
+                                    </span>
+                                </div>
+
+                                <div class="d-flex justify-content-end gap-2 pt-3 border-top">
+                                    <button class="btn btn-outline-secondary btn-sm px-3" style="border-radius: 0.5rem;" type="button" id="mockCancelBtn">Reset</button>
+                                    <button class="btn btn-primary btn-sm fw-bold px-4" style="border-radius: 0.5rem;" type="button" id="mockActivateBtn">
+                                        <i class="mdi mdi-check-decagram me-1"></i> Verify &amp; Activate &rarr;
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="doc-card mt-3">
+                            <h6 class="fw-bold text-primary mb-2">
+                                <i class="mdi mdi-lightning-bolt-outline me-1"></i> Quick 3-Step In-Dashboard Activation:
+                            </h6>
+                            <ol class="small text-muted mb-0 ps-3">
+                                <li class="mb-1"><strong>Click Banner:</strong> Click the <strong>"Activate Now &rarr;"</strong> button on the top amber notification banner inside your Admin Dashboard.</li>
+                                <li class="mb-1"><strong>Select Channel &amp; Enter Code:</strong> Select your marketplace channel (e.g., CodeCanyon) and paste your official <strong>Purchase Code</strong> into the input field.</li>
+                                <li class="mb-0"><strong>Instant 1-Click Verification:</strong> Click <strong>"Verify &amp; Activate &rarr;"</strong>. Your live domain is instantly authenticated in the cloud with zero store downtime!</li>
+                            </ol>
+                        </div>
+
+                    </div>
+
+                    <!-- 4.2: MULTI-MARKETPLACE VERIFICATION GUIDE -->
+                    <div class="doc-subsection mt-5" id="sec-4-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-store-check-outline text-primary me-1"></i> 4.2 Multi-Marketplace Verification Guide
+                        </h3>
+                        <p>
+                            MartX provides native support across all major script marketplaces. Select the marketplace card where you acquired your license:
+                        </p>
+
+                        <div class="table-responsive">
+                            <table class="doc-table table align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;">Marketplace Channel</th>
+                                        <th style="width: 25%;">Key Identifier</th>
+                                        <th>Where to Find Your Key</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>CodeCanyon (Envato)</strong></td>
+                                        <td><code>Envato Purchase Code</code> (UUID format)</td>
+                                        <td>
+                                            Log in to <a href="https://codecanyon.net/downloads" target="_blank" class="text-decoration-none fw-bold text-primary">CodeCanyon.net/downloads</a> &rarr; locate <strong>MartX</strong> &rarr; click <strong>Download</strong> &rarr; select <strong>"License Certificate & Purchase Code"</strong> (PDF or text). Your 36-character purchase code is located inside the file.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Codester</strong></td>
+                                        <td><code>Codester Order ID</code></td>
+                                        <td>Codester &rarr; User Dashboard &rarr; Purchases &rarr; View Order Details.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>TemplateMonster</strong></td>
+                                        <td><code>Invoice Order Number</code></td>
+                                        <td>TemplateMonster Account &rarr; Order History &rarr; Item Invoice / Download Details.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Direct / Agency Deployment</strong></td>
+                                        <td><code>MartX Author License Key</code></td>
+                                        <td>Received directly via official email from lead author Suman Chandra Dev Sharma (<a href="mailto:sumondav444@gmail.com" class="text-decoration-none fw-bold text-primary">sumondav444@gmail.com</a>).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 4.3: 7-DAY LIVE DOMAIN INSTALLATION TRIAL WINDOW -->
+                    <div class="doc-subsection mt-5" id="sec-4-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-clock-fast text-primary me-1"></i> 4.3 7-Day Live Domain Installation Trial Window (Grace Period)
+                        </h3>
+                        <p>
+                            We understand that merchants and agencies often need time to connect their payment gateways, upload catalog items, and verify storefront operations on a live production domain before permanently binding their license key.
+                        </p>
+                        
+                        <div class="doc-callout doc-callout-info">
+                            <h5 class="fw-bold"><i class="mdi mdi-shield-check-outline me-1"></i> How the 7-Day Window Works for Buyers</h5>
+                            <ul class="mb-0 ps-3">
+                                <li class="mb-1.5"><strong>Instant Unrestricted Access:</strong> From the moment you first install MartX on any live domain (e.g., <code>yourdomain.com</code>), you receive a full <strong>7-Day Free Trial Window</strong> with 100% access to all admin features.</li>
+                                <li class="mb-1.5"><strong>Dynamic Dual-State Warning Banner:</strong> When trial days exceed 2 days, a warm Amber Banner displays remaining time (<code>⏳ X Days Remaining</code>). On the final 48 hours, the banner dynamically switches to an urgent Crimson Emergency Banner (<code>⚠️ Urgent: Only X Hours Left - Action Required</code>) ensuring you have ample warning.</li>
+                                <li class="mb-1.5"><strong>Zero Customer Interruption:</strong> Even while unactivated during the grace period, your public storefront, product catalogs, and shopping cart checkout remain 100% active and operational.</li>
+                                <li class="mb-0"><strong>Automated Clock Continuity Audit:</strong> To guarantee fairness and stability, the licensing engine cryptographically verifies server time continuity against encrypted installation records and database logs, preventing accidental clock drift from affecting valid store operations.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 4.4: ADMIN PANEL LOCKDOWN SCREEN & HOW TO UNLOCK -->
+                    <div class="doc-subsection mt-5" id="sec-4-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-lock-alert text-primary me-1"></i> 4.4 Admin Panel Lockdown Screen & How to Unlock
+                        </h3>
+                        <p>
+                            If the initial 7-day live trial window elapses without entering a valid purchase code, your Administrative Panel safely enters the <strong>License Verification Lockdown Screen</strong>.
+                        </p>
+                        <p>
+                            In Lockdown Mode, standard admin routes are paused until the license is activated. <strong>Rest assured, your customer storefront and catalog remain safe!</strong>
+                        </p>
+
+                        <!-- MOCKUP 3: STANDALONE LOCKOUT PORTAL -->
+                        <div class="admin-lockout-preview">
+                            <div class="admin-lockout-card">
+                                <div class="admin-lockout-icon">
+                                    <i class="mdi mdi-lock-outline"></i>
+                                </div>
+                                <h4 class="fw-bold text-white mb-1">Administrative Access Locked</h4>
+                                <span class="badge bg-danger text-white px-2 py-1 small mb-3">Trial Window Expired</span>
+                                <p class="text-white-50 small mb-4">
+                                    Your 7-day live domain trial period has elapsed. Please verify your purchase code below to immediately unlock full administrative access.
+                                </p>
+
+                                <div class="bg-dark rounded-3 p-3 text-start mb-3 border border-secondary">
+                                    <label class="form-label small fw-bold text-white mb-1">Purchase Code / Order ID</label>
+                                    <input type="text" class="form-control form-control-sm font-monospace bg-dark text-white border-secondary mb-2" value="94a12b8c-55e1-4c12-88f1-••••••••••••" readonly>
+                                    <button class="btn btn-primary btn-sm fw-bold w-100 py-2" style="border-radius: 0.5rem;" type="button" disabled>
+                                        <i class="mdi mdi-lock-open-variant-outline me-1"></i> Verify & Unlock Admin Panel &rarr;
+                                    </button>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center small mt-3 pt-3 border-top border-secondary">
+                                    <span class="text-info fw-semibold" style="cursor: pointer;"><i class="mdi mdi-swap-horizontal me-1"></i> Transfer License to This Domain</span>
+                                    <span class="text-white-50" style="cursor: pointer;"><i class="mdi mdi-logout me-1"></i> Logout</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="doc-card mt-3">
+                            <h6 class="fw-bold text-primary mb-2"><i class="mdi mdi-lightbulb-on-outline me-1"></i> Quick 3-Step Unlock Process:</h6>
+                            <ol class="small text-muted mb-0 ps-3">
+                                <li>Navigate to your secure Admin login URL. You will be automatically presented with the License Verification Portal.</li>
+                                <li>Paste your <strong>Envato Purchase Code</strong> or marketplace order ID into the input field.</li>
+                                <li>Click <strong>"Verify & Unlock Admin Panel &rarr;"</strong>. Your license is verified immediately in the cloud and you are redirected straight into your full Admin Dashboard!</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- 4.5: UNRESTRICTED LOCALHOST TESTING -->
+                    <div class="doc-subsection mt-5" id="sec-4-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-laptop-account text-primary me-1"></i> 4.5 Unrestricted Localhost & Developer Testing (100% Free)
+                        </h3>
+                        <p>
+                            You never have to waste your live domain activation quota when building, styling, or testing your store on local computers or staging sandboxes:
+                        </p>
+
+                        <div class="table-responsive">
+                            <table class="doc-table table align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Local Environment Pattern</th>
+                                        <th>Recognized Domains</th>
+                                        <th>Developer Mode Policy</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Standard Localhost</strong></td>
+                                        <td><code>localhost</code>, <code>127.0.0.1</code>, <code>::1</code>, <code>localhost:8000</code></td>
+                                        <td><span class="badge bg-success-subtle text-success border border-success-subtle px-2.5 py-1.5 fw-semibold">Free &amp; Unlimited (No Expiration)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Local Development TLDs</strong></td>
+                                        <td><code>*.test</code> (Laragon/Valet), <code>*.local</code>, <code>*.localhost</code></td>
+                                        <td><span class="badge bg-success-subtle text-success border border-success-subtle px-2.5 py-1.5 fw-semibold">Free &amp; Unlimited (No Expiration)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Local LAN IP Addresses</strong></td>
+                                        <td><code>192.168.*.*</code>, <code>10.*.*.*</code></td>
+                                        <td><span class="badge bg-success-subtle text-success border border-success-subtle px-2.5 py-1.5 fw-semibold">Free &amp; Unlimited (No Expiration)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Development Tunnels</strong></td>
+                                        <td><code>*.ngrok-free.app</code>, <code>*.ngrok.io</code>, <code>*.lndo.site</code></td>
+                                        <td><span class="badge bg-success-subtle text-success border border-success-subtle px-2.5 py-1.5 fw-semibold">Free &amp; Unlimited (No Expiration)</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 4.6: LICENSE KEY RE-BINDING & MIGRATION TO A NEW DOMAIN -->
+                    <div class="doc-subsection mt-5" id="sec-4-6">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-swap-horizontal-bold text-primary me-1"></i> 4.6 License Key Re-binding & Migration to a New Domain
+                        </h3>
+                        <p>
+                            Under official commercial licensing, a single MartX purchase code can be actively bound to <strong>one live production domain at a time</strong>. However, if you are migrating from a development/staging subdomain to your primary domain (e.g., from <code>staging.mystore.com</code> to <code>mystore.com</code>) or rebranding your business under a new domain name, you do <strong>not</strong> need to purchase a new license key.
+                        </p>
+                        <p>
+                            MartX includes an automated <strong>1-Click License Relocation &amp; Re-binding</strong> workflow. You can seamlessly move your existing license key to your new domain without contacting support or editing database tables:
+                        </p>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle fw-semibold mb-2">Step 1: Request Key Relocation</span>
+                                    <h6 class="fw-bold">Trigger License Re-binding</h6>
+                                    <p class="small text-muted mb-0">
+                                        On your new live domain's admin panel (or the locked screen), click <strong>"Transfer License to This Domain"</strong> and enter your existing Purchase Code along with your registered Buyer Email address.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                    <span class="badge bg-success-subtle text-success border border-success-subtle fw-semibold mb-2">Step 2: Instant Email Authorization</span>
+                                    <h6 class="fw-bold">1-Click Secure Activation</h6>
+                                    <p class="small text-muted mb-0">
+                                        Check your buyer email inbox. You will receive an automated authorization link. Simply click <strong>"Confirm Domain Transfer"</strong> — your purchase code is instantly released from the old domain and locked to your new live store with zero downtime.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4.7: 14-DAY OFFLINE FAIL-SAFE PROTECTION -->
+                    <div class="doc-subsection mt-5" id="sec-4-7">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-shield-airplane text-primary me-1"></i> 4.7 14-Day Offline Fail-Safe Checkout Protection
+                        </h3>
+                        <p>
+                            Store owners never have to worry about downtime caused by external internet fluctuations or cloud server maintenance.
+                        </p>
+
+                        <div class="doc-callout doc-callout-info">
+                            <h5 class="fw-bold"><i class="mdi mdi-check-decagram-outline me-1"></i> Continuous Sales Guarantee</h5>
+                            <ul class="mb-0 ps-3">
+                                <li><strong>14-Day Fail-Safe Window:</strong> If your hosting server cannot reach the cloud licensing registry during routine periodic health checks, your storefront and admin panel continue running with 100% normal checkout and order processing for <strong>14 consecutive days</strong>.</li>
+                                <li><strong>Silent Auto-Renewal:</strong> As soon as external network connectivity resumes, the system silently verifies license health in the background with zero merchant intervention required.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 4.8: IN-SETTINGS LICENSE CONSOLE & KEY MANAGEMENT -->
+                    <div class="doc-subsection mt-5" id="sec-4-8">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-cog-sync-outline text-primary me-1"></i> 4.8 In-Settings License Console, Key Switching & Safe Deactivation
+                        </h3>
+                        <p>
+                            Super Administrators can inspect active credentials, switch purchase codes, or relocate licenses directly from the dedicated management console located at:
+                        </p>
+                        <div class="p-3 bg-light rounded-3 border mb-3 small d-flex align-items-center gap-2">
+                            <i class="mdi mdi-shield-crown text-danger fs-5"></i>
+                            <div>
+                                <span class="fw-bold text-dark">Super Admin Exclusive Path:</span>
+                                <span class="font-monospace text-primary ms-1">Admin Sidebar &rarr; System Settings &rarr; "License &amp; Verification" (Tab)</span>
+                            </div>
+                        </div>
+                        <p class="small text-muted mb-3">
+                            The License &amp; Verification console is organized into two operational workstations:
+                        </p>
+                        <div class="row g-3">
+                            <!-- Left Workstation: Overview, Switch & Deactivate -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <div class="p-2 rounded bg-primary-subtle text-primary"><i class="mdi mdi-certificate-outline fs-5"></i></div>
+                                        <h6 class="fw-bold mb-0 text-heading">1. Current License Overview &amp; Key Switcher</h6>
+                                    </div>
+                                    <ul class="small text-muted mb-0 ps-3">
+                                        <li class="mb-1.5"><strong>Active Credentials Display:</strong> Displays your masked purchase code (e.g., <code>94b1a45e-****-****-b301</code>), buyer name, marketplace channel badge, bound domain, verification date, and cloud heartbeat health.</li>
+                                        <li class="mb-1.5"><strong>Switch / Update License Key:</strong> An inline collapsible form allows you to replace or upgrade your license key on the fly without wiping store settings or reinstalling the application.</li>
+                                        <li class="mb-0"><strong>Safe Deactivation:</strong> Clicking <strong>"Deactivate License"</strong> triggers a confirmation modal to cleanly unlink the license key from this store so it can be deployed on another project.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Right Workstation: In-Dashboard Domain Migration -->
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <div class="p-2 rounded bg-success-subtle text-success"><i class="mdi mdi-swap-horizontal-bold fs-5"></i></div>
+                                        <h6 class="fw-bold mb-0 text-heading">2. In-Dashboard Domain Migration Desk</h6>
+                                    </div>
+                                    <ul class="small text-muted mb-0 ps-3">
+                                        <li class="mb-1.5"><strong>Target Domain Input:</strong> Moving your store to a new domain or sub-domain? Simply type the destination domain name directly into the migration field.</li>
+                                        <li class="mb-1.5"><strong>1-Click Email Dispatch:</strong> Clicking <strong>"Send 1-Click Transfer Email Link"</strong> dispatches an authorization link to your registered buyer email address.</li>
+                                        <li class="mb-0"><strong>Instant Domain Re-binding:</strong> Confirming the link via your inbox unlocks the new store domain instantly with zero downtime.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CHAPTER NAVIGATION BUTTONS -->
+                    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-sm-center gap-3 mt-5 pt-4 border-top">
+                        <a href="installation.html" class="btn btn-outline-secondary fw-bold px-3">
+                            <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 3 (Installation)
+                        </a>
+                        <a href="settings-theme.html" class="btn btn-primary fw-bold px-4">
+                            Next: Chapter 5 (Settings & Theme Hub) <i class="mdi mdi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page (8 Topics)</div>
+                    <a href="#sec-4-1" class="doc-toc-link active">4.1 In-Dashboard Suite</a>
+                    <a href="#sec-4-2" class="doc-toc-link">4.2 Marketplace Guide</a>
+                    <a href="#sec-4-3" class="doc-toc-link">4.3 7-Day Live Trial</a>
+                    <a href="#sec-4-4" class="doc-toc-link">4.4 Admin Lockout & Unlock</a>
+                    <a href="#sec-4-5" class="doc-toc-link">4.5 Free Localhost Testing</a>
+                    <a href="#sec-4-6" class="doc-toc-link">4.6 Key Re-binding to New Domain</a>
+                    <a href="#sec-4-7" class="doc-toc-link">4.7 14-Day Offline Shield</a>
+                    <a href="#sec-4-8" class="doc-toc-link">4.8 In-Settings Console & Key Switch</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch4-licensing" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header border-bottom p-3 bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0 text-primary fs-5">
+                            <i class="mdi mdi-magnify"></i>
+                        </span>
+                        <input type="text" class="form-control form-control-lg border-start-0 ps-0" id="docGlobalSearch" placeholder="Search documentation... (e.g., License, Grace Period, Domain Transfer, Envato)">
+                    </div>
+                </div>
+                <div class="modal-body p-0" id="docSearchResults" style="max-height: 420px; overflow-y: auto;">
+                    <div class="p-4 text-center text-muted">
+                        <i class="mdi mdi-text-search fs-1 d-block mb-2 text-primary opacity-50"></i>
+                        <p class="mb-0">Type any keyword to search across all chapters in real time.</p>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light py-2 px-3 justify-content-between">
+                    <small class="text-muted"><kbd>ESC</kbd> to close</small>
+                    <small class="text-muted"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

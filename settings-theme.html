@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 21: System Settings, Security & Localization Hub - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+                                    <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Chapter 21: Settings & Theme Hub</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= CHAPTER 5 HEADER ================= -->
+                <section class="doc-section" id="ch21-settings">
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-cog text-primary"></i> Chapter 21: Master Settings Hub (Brand, Appearance, Currency & Security)
+                    </h1>
+                    <p class="lead text-muted">
+                        Welcome to the <strong>MartX Merchant Cockpit</strong>. After completing the initial 5-step installer, your first destination is the <strong>System Settings Suite</strong> (accessible via <strong>Admin Sidebar &rarr; System Settings</strong>). Configure your store branding, logos, currency format, SMTP email delivery, Gemini AI assistant, security shields, and license bindings in under 5 minutes without writing a single line of code.
+                    </p>
+
+
+                    <!-- ================= 21.1 GENERAL SETTINGS & BRAND IDENTITY ================= -->
+                    <div class="doc-subsection mt-5" id="sec-21-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-information-outline text-primary me-1"></i> 21.1 General Settings & Quad-Logo Brand Identity
+                        </h3>
+                        <p class="text-muted">
+                            Navigate to: <strong>Admin Sidebar &rarr; System Settings &rarr; "General Settings" (Tab)</strong>. This panel manages your core brand metadata, regional timezones, contact information, dynamic copyright footer, and all 4 official storefront logos via the MartX Reusable Media Library.
+                        </p>
+
+                        <!-- LIVE SCREENSHOT BROWSER FRAME -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; General Settings & Brand Identity Tab
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Live View</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/settings/admin_settings_general.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/settings/admin_settings_general.png" alt="General Settings & Quad-Logo Brand Identity" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-4">
+                                        <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                        <span class="badge bg-primary-subtle text-primary font-monospace small">images/settings/admin_settings_general.png</span>
+                                    </div>
+                                </div>
+                                <div class="small text-muted mt-2">
+                                    <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>General Settings Workspace:</strong> Live interface managing basic metadata (Site Title, Keywords, Description), regional store country & timezone, the 4-tier storefront logo hub (Light, Dark, Footer, Favicon), official merchant contact details, and dynamic footer copyright templating.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3-TIER FIELD ANATOMY TABLE -->
+                        <h5 class="fw-bold text-heading mt-4 mb-3">
+                            <i class="mdi mdi-format-list-checks text-primary me-1"></i> Field-by-Field Breakdown & Storefront Impact
+                        </h5>
+                        
+                        <div class="table-responsive">
+                            <table class="doc-table table align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;">Field Name & Type</th>
+                                        <th style="width: 35%;">What to Enter & Example</th>
+                                        <th style="width: 40%;">Storefront Impact & Capability</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Site Title</strong><br><span class="badge bg-danger-subtle text-danger small">Required</span><br><code class="small">Text (String)</code></td>
+                                        <td>Your official brand name.<br><em>e.g., <code>MartX Megastore</code></em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-web"></i> Global Header & SEO</span><br>Appears in the browser tab title, search engine rich snippets, automated customer order emails, and replaces the <code>{site_title}</code> footer tag.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Site Keywords</strong><br><span class="badge bg-secondary-subtle text-muted small">Optional</span><br><code class="small">Comma-separated</code></td>
+                                        <td>Target SEO search terms.<br><em>e.g., <code>ecommerce, fashion, electronics, gadgets</code></em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-magnify"></i> HTML Meta Header</span><br>Injected automatically into the <code>&lt;meta name="keywords"&gt;</code> HTML header tag for search indexing.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Site Description</strong><br><span class="badge bg-secondary-subtle text-muted small">Optional</span><br><code class="small">Textarea (3 Rows)</code></td>
+                                        <td>Concise 1-2 sentence brand summary (120-160 characters recommended).</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-share-variant"></i> Social Shares & SERP</span><br>Generates the <code>&lt;meta name="description"&gt;</code> and OpenGraph social card description when customers share links on Facebook/WhatsApp.</td>
+                                    </tr>
+                                     <tr>
+                                         <td><strong>Store Country</strong><br><span class="badge bg-secondary-subtle text-muted small">Optional</span><br><span class="badge bg-light text-dark border small">Country Selector</span></td>
+                                         <td>Select your primary country of business from the ISO global country list.</td>
+                                         <td><span class="doc-field-impact-badge"><i class="mdi mdi-map-marker"></i> Checkout Country Default</span><br>Pre-selects the customer's billing and shipping country on the storefront checkout form for streamlined conversions.</td>
+                                     </tr>
+                                     <tr>
+                                         <td><strong>Store Timezone</strong><br><span class="badge bg-secondary-subtle text-muted small">Optional</span><br><span class="badge bg-light text-dark border small">Timezone Selector</span></td>
+                                         <td>Select your standard local timezone.<br><em>e.g., <code>America/New_York</code> or <code>Asia/Dhaka</code></em></td>
+                                         <td><span class="doc-field-impact-badge"><i class="mdi mdi-clock-outline"></i> Flash Sales & Invoices</span><br>Synchronizes flash deal countdown clocks, promotional coupon start/end timestamps, order invoice generation, and refund timestamps.</td>
+                                     </tr>
+                                    <tr>
+                                        <td><strong>Site Logo (Light)</strong><br><span class="badge bg-primary-subtle text-primary small">Media Thumbnail</span><br><code class="small">PNG / SVG / WebP</code></td>
+                                        <td>Transparent logo optimized for bright/white backgrounds (recommended height: 40-55px).</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-white-balance-sunny"></i> Light Mode Header</span><br>Renders in the main navigation bar whenever the storefront is in Light Mode.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Site Logo (Dark)</strong><br><span class="badge bg-primary-subtle text-primary small">Media Thumbnail</span><br><code class="small">PNG / SVG / WebP</code></td>
+                                        <td>Inverted white/vibrant logo optimized for dark or slate backgrounds.</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-weather-night"></i> Dark Mode Header</span><br>Automatically switches when a shopper clicks the Dark Theme toggle, ensuring your brand stays vibrant and legible.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Footer Logo</strong><br><span class="badge bg-primary-subtle text-primary small">Media Thumbnail</span><br><code class="small">PNG / SVG / WebP</code></td>
+                                        <td>Secondary brand badge or stacked logo.</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-page-layout-footer"></i> Storefront Footer</span><br>Renders above your store's bio paragraph in the footer across all public pages.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Favicon</strong><br><span class="badge bg-primary-subtle text-primary small">Media Thumbnail</span><br><code class="small">ICO / PNG (1:1 Ratio)</code></td>
+                                        <td>Square brand icon (recommended: 32x32px or 64x64px).</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-tab"></i> Browser Tabs & Bookmarks</span><br>Displayed in browser tabs, mobile PWA shortcuts, and customer bookmark bars.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Contact Email</strong><br><span class="badge bg-danger-subtle text-danger small">Required</span><br><code class="small">Valid Email Address</code></td>
+                                        <td>Official merchant support email.<br><em>e.g., <code>support@yourdomain.com</code></em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-email"></i> Contact Us & Topbar</span><br>Displayed on the Contact Us page, customer service widgets, and receives incoming contact form submissions.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Footer Text</strong><br><span class="badge bg-danger-subtle text-danger small">Required</span><br><code class="small">Dynamic Template String</code></td>
+                                        <td>Use smart dynamic placeholders:<br><code>&copy; {year} {site_title}. All Rights Reserved.</code></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-copyright"></i> Bottom Copyright Bar</span><br>Automatically keeps the copyright year current (e.g. 2026+) without manual annual updates.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ================= 21.2 THEME & APPEARANCE HUB ================= -->
+                    <div class="doc-subsection mt-5" id="sec-21-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-palette-outline text-primary me-1"></i> 21.2 Theme & Appearance Hub (Typography, 9 Luxury Color Skins & Social Links)
+                        </h3>
+                        <p class="text-muted">
+                            Navigate to: <strong>Admin Sidebar &rarr; System Settings &rarr; "Theme & Appearance" (Tab)</strong>. MartX eliminates custom CSS coding by providing <strong>7 Curated Google Typography Presets</strong>, <strong>9 One-Click Luxury Color Skins</strong> (plus a Full Custom Hex Mode), a customer <strong>Dark/Light Mode Switcher</strong>, an <strong>AOS Scroll Animation Guard</strong>, and 3 precision hex color pickers.
+                        </p>
+
+                        <!-- LIVE SCREENSHOT BROWSER FRAME -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Theme & Appearance Customizer Tab
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Theme Engine</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/settings/admin_settings_theme.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/settings/admin_settings_theme.png" alt="Theme & Appearance Customizer" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-4">
+                                        <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                        <span class="badge bg-primary-subtle text-primary font-monospace small">images/settings/admin_settings_theme.png</span>
+                                    </div>
+                                </div>
+                                <div class="small text-muted mt-2">
+                                    <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Theme & Appearance Workspace:</strong> Instant visual customizer featuring 7 curated Google Font families, 9 one-click luxury color skin presets (with real-time Hex code previews), customer Light/Dark mode switcher, performance-optimized AOS scroll animation guard, custom button color pickers, and official social media channel links.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3-TIER FIELD ANATOMY TABLE -->
+                        <div class="table-responsive mt-4">
+                            <table class="doc-table table align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;">Field Name & Type</th>
+                                        <th style="width: 35%;">What to Enter & Options</th>
+                                        <th style="width: 40%;">Storefront Impact & Capability</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Font Family</strong><br><code class="small">Dropdown Selector</code></td>
+                                        <td>Choose from <strong>7 curated Google Font engines</strong>:<br>
+                                            • <code>Plus Jakarta Sans</code> (Recommended - Modern SaaS & Tech)<br>
+                                            • <code>Inter</code> (Modern Tech & Readability)<br>
+                                            • <code>Outfit</code> (High-End Fashion)<br>
+                                            • <code>Poppins</code> (Classic E-Commerce)<br>
+                                            • <code>Playfair Display</code> (Editorial Luxury Serif)<br>
+                                            • <code>Urbanist</code> (Modern Streetwear & Gen-Z)<br>
+                                            • <code>DM Sans</code> (Clean & Fast Minimalism)
+                                        </td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-format-font"></i> Global Typography</span><br>Applies dynamically to all storefront headings, body text, buttons, product pricing badges, and navigation menus with zero CSS compilation.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Color Preset</strong><br><code class="small">1-Click Skin</code></td>
+                                        <td>Choose from <strong>9 handcrafted luxury palettes + Custom Hex Mode</strong>:<br>
+                                            • <strong>Vibrant Orange & Amber</strong> (<code>#F97316</code>)<br>
+                                            • <strong>Electric Blue & Slate</strong> (<code>#2563EB</code>)<br>
+                                            • <strong>Luxury Emerald Green</strong> (<code>#059669</code>)<br>
+                                            • <strong>Luxury Noir / Modern Black</strong> (<code>#111827</code>)<br>
+                                            • <strong>Royal Indigo & Violet</strong> (<code>#6366F1</code>)<br>
+                                            • <strong>Crimson Ruby & Rose</strong> (<code>#E11D48</code>)<br>
+                                            • <strong>Champagne Gold & Luxury</strong> (<code>#C5A880</code>)<br>
+                                            • <strong>Nordic Ocean Teal</strong> (<code>#0D9488</code>)<br>
+                                            • <strong>Rose / Warm Luxury</strong> (<code>#D19C97</code>)<br>
+                                            • <strong>Custom Hex Colors</strong> (Unlimited freedom via pickers below)
+                                        </td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-palette"></i> 1-Click Store Palette</span><br>Instantly applies harmonious primary, button background, and button text colors across all cards, navigation bars, and CTA buttons.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Theme Switcher</strong><br><code class="small">Toggle Switch (0 / 1)</code></td>
+                                        <td>Turn the client-side theme toggle ON or OFF.</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-theme-light-dark"></i> Light/Dark Switcher</span><br>When enabled, displays the sun/moon icon toggle in the storefront header for shoppers. When disabled, locks the site to your chosen default mode.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Default Mode</strong><br><code class="small">Select (Light / Dark)</code></td>
+                                        <td>Choose what first-time visitors see on initial page load.</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-monitor-eye"></i> First-Time Impression</span><br>Sets the initial root HTML attribute <code>data-bs-theme="light"</code> or <code>data-bs-theme="dark"</code> before any user preferences are saved to localStorage.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>AOS Scroll Animation</strong><br><code class="small">Toggle Switch (0 / 1)</code></td>
+                                        <td>Enable on-scroll smooth entrance animations.<br><em>Disabling improves page load speed and reduces CPU overhead on mobile devices.</em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-motion"></i> Performance Optimization</span><br>Controls whether Animate-On-Scroll (AOS) scripts execute when shoppers browse product grids, promotional banners, and category tiles.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Hex Color Pickers</strong><br><code class="small">3 Color Inputs (#HEX)</code></td>
+                                        <td>Custom 6-digit hex color pickers:<br>• <strong>Primary Color:</strong> Brand color for badges, links & icons<br>• <strong>Button Bg:</strong> Main call-to-action button background<br>• <strong>Button Text:</strong> Button font color (light/dark)</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-eyedropper"></i> Micro-Branding</span><br>Injects real-time CSS variables across all buttons, badges, category pill hovers, and cart badges. Active when Color Preset is set to <em>Custom Hex</em>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Social Media Links</strong><br><code class="small">5 URL Inputs</code></td>
+                                        <td>Enter full profile links for <strong>Facebook</strong>, <strong>Twitter / X</strong>, <strong>LinkedIn</strong>, <strong>Instagram</strong>, and <strong>YouTube</strong>.</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-account-group"></i> Header & Footer Links</span><br>Renders official branded icons in both the top sticky banner and the main footer. Empty fields are hidden automatically.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ================= 21.3 SYSTEM CONFIGURATION & GLOBAL CURRENCY ================= -->
+                    <div class="doc-subsection mt-5" id="sec-21-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-currency-usd text-primary me-1"></i> 21.3 System Configuration, Global Currency Engine & Storage Symlink
+                        </h3>
+                        <p class="text-muted">
+                            Navigate to: <strong>Admin Sidebar &rarr; System Settings &rarr; "System Configuration" (Tab)</strong>. Controls regional price formatting, decimal precision, symbol positioning, third-party conversion tracking (Facebook Pixel & Google Analytics), Google Map iframe embedding, and standalone <strong>Server Utilities (Storage Symlink &amp; 1-Click Clear Cache)</strong>.
+                        </p>
+
+                        <!-- LIVE SCREENSHOT BROWSER FRAME -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; System Configuration & Currency Engine Tab
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Global Engine</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/settings/admin_settings_system.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/settings/admin_settings_system.png" alt="System Configuration & Currency Engine" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-4">
+                                        <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                        <span class="badge bg-primary-subtle text-primary font-monospace small">images/settings/admin_settings_system.png</span>
+                                    </div>
+                                </div>
+                                <div class="small text-muted mt-2">
+                                    <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>System Configuration Workspace:</strong> Live control center managing regional currency formats (Symbol, Code, Position, Decimals, Separators), marketing tracking scripts (Meta Pixel & Google Analytics 4), Contact Us Google Maps embed, and the 1-click Public Storage Symlink health monitor, alongside the 1-click System Cache Clearing &amp; Optimization engine.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3-TIER FIELD ANATOMY TABLE -->
+                        <div class="table-responsive mt-4">
+                            <table class="doc-table table align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;">Field Name & Type</th>
+                                        <th style="width: 35%;">What to Enter & Example</th>
+                                        <th style="width: 40%;">Storefront Impact & Capability</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Currency Symbol</strong><br><span class="badge bg-danger-subtle text-danger small">Required</span><br><code class="small">Text (String)</code></td>
+                                        <td>The official visual currency character.<br><em>e.g., <code>$</code>, <code>€</code>, <code>£</code>, <code>¥</code>, <code>₹</code>, <code>KD</code></em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-tag"></i> Storewide Price Badges</span><br>Prefixes or suffixes every product card, cart line item, order checkout invoice, and coupon deduction amount.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Currency Code</strong><br><span class="badge bg-danger-subtle text-danger small">Required</span><br><code class="small">3-Letter ISO</code></td>
+                                        <td>Standard 3-letter banking currency code.<br><em>e.g., <code>USD</code>, <code>EUR</code>, <code>GBP</code>, <code>AUD</code></em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-credit-card"></i> Payment Gateway Handshakes</span><br>Passed directly to payment processors (Stripe, PayPal, Razorpay, Paystack) to guarantee correct transaction charges.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Currency Position</strong><br><span class="badge bg-danger-subtle text-danger small">Required</span><br><code class="small">Dropdown (Left / Right)</code></td>
+                                        <td>Select <code>Left</code> or <code>Right</code>.<br><em>Left: <code>$ 100</code> | Right: <code>100 €</code></em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-arrow-left-right"></i> Regional Notation</span><br>Adapts pricing notation to match local banking customs (e.g. US/UK prefix vs European suffix).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Decimal Places</strong><br><span class="badge bg-danger-subtle text-danger small">Required</span><br><code class="small">Number (0 - 4)</code></td>
+                                        <td>Decimal point precision.<br>• <code>2</code> for USD, EUR, GBP (e.g. <code>$ 99.50</code>)<br>• <code>0</code> for JPY, KRW (e.g. <code>¥ 1250</code>)</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-decimal"></i> Micro-Pricing & Cart Totals</span><br>Ensures zero unnecessary zeroes for zero-decimal currencies while preserving exact cent precision for global currencies.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Decimal / Thousand Separators</strong><br><span class="badge bg-danger-subtle text-danger small">Required</span><br><code class="small">Characters</code></td>
+                                        <td>• US Style: Decimal <code>.</code> & Thousand <code>,</code> (<code>$ 1,250.00</code>)<br>• EU Style: Decimal <code>,</code> & Thousand <code>.</code> (<code>1.250,00 €</code>)</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-format-list-numbered"></i> Number Formatting Engine</span><br>Controls number parsing in cart subtotals, tax calculation breakdowns, and PDF invoice downloads.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Facebook Pixel ID</strong><br><code class="small">Numeric String</code></td>
+                                        <td>Meta Business Pixel ID.<br><em>e.g., <code>987654321012345</code></em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-facebook"></i> Conversion Ad Tracking</span><br>Automatically fires standard Meta eCommerce tracking events: <code>PageView</code>, <code>ViewContent</code>, <code>AddToCart</code>, and <code>Purchase</code>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Google Analytics 4 ID</strong><br><code class="small">Measurement ID</code></td>
+                                        <td>Google Analytics 4 ID starting with <code>G-</code>.<br><em>e.g., <code>G-ABC123XYZ0</code></em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-google"></i> Visitor Flow Analytics</span><br>Injects asynchronous <code>gtag.js</code> scripts into the header for real-time traffic, session durations, and checkout drop-off analysis.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Google Map (Iframe)</strong><br><code class="small">HTML Embed Code</code></td>
+                                        <td>Full embed code copied from Google Maps.<br><em>Paste entire <code>&lt;iframe src="..."&gt;&lt;/iframe&gt;</code></em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-map"></i> Contact Us Page</span><br>Renders a responsive interactive satellite/street map on your public Contact Us page so customers can navigate to your retail store.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Public Storage Symlink</strong><br><code class="small">Dynamic Status Badge</code></td>
+                                        <td>Automatic inspection of symbolic link integrity:<br>
+                                            • <span class="badge bg-success-subtle text-success border border-success-subtle">Symlink Active (Healthy)</span><br>
+                                            • <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Symlink Missing</span>
+                                        </td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-image-multiple"></i> Media Access Health</span><br>Bridges <code>storage/app/public</code> to <code>public/storage</code>. Guarantees public storefront visibility for product pictures, category icons, and invoice PDFs.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Re-generate Storage Symlink</strong><br><code class="small">1-Click Server Action</code></td>
+                                        <td>Stand-alone maintenance button.<br><em>Executes safe symlink re-creation without SSH terminal or command-line access.</em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-wrench-outline"></i> Instant cPanel Recovery</span><br>Instantly restores broken media links when migrating hosts, changing domain names, or restoring from cPanel zip backups.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Clear All System Cache</strong><br><code class="small">1-Click Server Action</code></td>
+                                        <td>Instant application cache purge button.<br><em>Executes <code>optimize:clear</code> and flushes runtime key-value cache safely in production.</em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-broom"></i> Cache Reset &amp; Optimization</span><br>Instantly clears compiled Blade views, route caches, configuration caches, and application caches. Essential after manual file uploads or environment modifications on shared hosting without SSH terminal access.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ================= 21.4 SMTP MAIL SERVER SETTINGS ================= -->
+                    <div class="doc-subsection mt-5" id="sec-21-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-email-outline text-primary me-1"></i> 21.4 SMTP Mail Server Setup & Port Matching Blueprints
+                        </h3>
+                        <p class="text-muted">
+                            Navigate to: <strong>Admin Sidebar &rarr; System Settings &rarr; "Mail Settings" (Tab)</strong>. Reliable email delivery is vital for customer order receipts, 2FA login verification codes, and password resets. MartX provides built-in blueprints for <strong>cPanel Webmail</strong>, <strong>Personal Gmail</strong>, and <strong>Transactional Relay Gateways (Brevo, Resend, Mailgun)</strong>.
+                        </p>
+
+                        <!-- LIVE SCREENSHOT BROWSER FRAME -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; SMTP Mail Server Configuration Tab
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">SMTP Relay</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/settings/admin_settings_mail.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/settings/admin_settings_mail.png" alt="SMTP Mail Server Configuration" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-4">
+                                        <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                        <span class="badge bg-primary-subtle text-primary font-monospace small">images/settings/admin_settings_mail.png</span>
+                                    </div>
+                                </div>
+                                <div class="small text-muted mt-2">
+                                    <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Mail Settings Workspace:</strong> Live outbound SMTP gateway manager featuring Mail Host, Port, Username, App Password encryption, SSL/TLS protocol toggle, default sender From Address, and real-time validation.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Alert Blueprint Box -->
+                        <div class="alert alert-info border-0 shadow-sm rounded-3 p-3 my-4" style="background: #f8fafc; border-left: 4px solid var(--doc-primary) !important;">
+                            <div class="fw-bold text-heading mb-2"><i class="mdi mdi-lightbulb-on text-warning me-1"></i> Built-in SMTP Provider Blueprints:</div>
+                            <div class="small mb-1"><strong>1. Live Hosting Webmail:</strong> Host: <code>mail.yourdomain.com</code> | Port: <code>465</code> | Encryption: <code>SSL</code></div>
+                            <div class="small mb-1"><strong>2. Personal Gmail:</strong> Host: <code>smtp.gmail.com</code> | Port: <code>465</code> | Encryption: <code>SSL</code> (Requires 16-digit Google App Password)</div>
+                            <div class="small"><strong>3. Transactional Relays (Brevo / Resend / Mailgun):</strong> Host: <code>smtp-relay.brevo.com</code> | Port: <code>587</code> | Encryption: <code>TLS</code></div>
+                        </div>
+
+                        <!-- 3-TIER FIELD ANATOMY TABLE -->
+                        <div class="table-responsive mt-4">
+                            <table class="doc-table table align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;">Field Name & Type</th>
+                                        <th style="width: 35%;">What to Enter & Configuration Rules</th>
+                                        <th style="width: 40%;">Storefront Impact & Capability</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Mail Host</strong><br><code class="small">Hostname / IP</code></td>
+                                        <td>Your outgoing mail server.<br><em>e.g., <code>smtp.gmail.com</code> or <code>mail.yourdomain.com</code></em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-server"></i> SMTP Handshake</span><br>Establishes the secure socket connection for outgoing transactional emails.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mail Port & Encryption</strong><br><code class="small">Port Number + Protocol</code></td>
+                                        <td><strong class="text-danger">Crucial Port Matching Rule:</strong><br>• Port <code>465</code> &rarr; Must select <code>SSL</code><br>• Port <code>587</code> &rarr; Must select <code>TLS</code></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-shield-lock"></i> SSL/TLS Transport</span><br>Prevents timeout connection errors by pairing the correct cryptographic encryption layer with the corresponding firewall port.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mail Username</strong><br><code class="small">Username / Email</code></td>
+                                        <td>Your full email address or account username.</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-account-key"></i> SMTP Auth</span><br>Authenticates your store's sending credentials against the mail server.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mail Password</strong><br><code class="small">Secret Password</code></td>
+                                        <td><strong>For Gmail:</strong> Generate a 16-character <em>App Password</em> from your Google Security account (regular password will fail due to 2FA).<br><strong>For Webmail:</strong> Enter your mailbox password.</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-lock"></i> Secure Relay</span><br>Stored securely and masked in the database. Never exposed publicly on the storefront.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mail From Address</strong><br><code class="small">Sender Email</code></td>
+                                        <td>The sender email address shoppers see.<br><em>e.g., <code>orders@yourdomain.com</code></em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-inbox-arrow-down"></i> Inbox Sender Reputation</span><br>Matches your domain's SPF/DKIM DNS records to prevent emails from ending up in customer spam folders.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ================= 21.5 GOOGLE GEMINI AI & WHATSAPP HUB ================= -->
+                    <div class="doc-subsection mt-5" id="sec-21-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-robot text-primary me-1"></i> 21.5 Google Gemini AI Shopping Assistant & WhatsApp Live Hub
+                        </h3>
+                        <p class="text-muted">
+                            Navigate to: <strong>Admin Sidebar &rarr; System Settings &rarr; "AI & Live Chat" (Tab)</strong>. Enables an autonomous 24/7 AI shopping assistant powered by <strong>Google Gemini 1.5 Flash</strong> (free tier with zero credit card required) and a 1-click <strong>WhatsApp Live Agent Support</strong> widget.
+                        </p>
+
+                        <!-- LIVE SCREENSHOT BROWSER FRAME -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Google Gemini AI & WhatsApp Live Hub Tab
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Gemini & WhatsApp</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/settings/admin_settings_ai_chat.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/settings/admin_settings_ai_chat.png" alt="Google Gemini AI & WhatsApp Live Hub" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-4">
+                                        <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                        <span class="badge bg-primary-subtle text-primary font-monospace small">images/settings/admin_settings_ai_chat.png</span>
+                                    </div>
+                                </div>
+                                <div class="small text-muted mt-2">
+                                    <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>AI & Live Chat Workspace:</strong> Live integration dashboard for Google Gemini 1.5 Flash autonomous shopping agent (with master toggle, AES-256 encrypted API key vault, custom bot branding) and WhatsApp 1-click live customer support hub (phone number & instant greeting pre-fill).
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3-TIER FIELD ANATOMY TABLE -->
+                        <div class="table-responsive mt-4">
+                            <table class="doc-table table align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;">Field Name & Type</th>
+                                        <th style="width: 35%;">What to Enter & How to Obtain</th>
+                                        <th style="width: 40%;">Storefront Impact & Capability</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Enable AI Chat</strong><br><code class="small">Toggle Switch (0 / 1)</code></td>
+                                        <td>Turn the Google Gemini floating chat widget ON or OFF.</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-robot"></i> Floating Storefront Bot</span><br>When enabled, renders a sleek floating AI chat bubble in the bottom right corner across all storefront pages.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Gemini API Key</strong><br><code class="small">API Key String</code></td>
+                                        <td>Visit <a href="https://aistudio.google.com/app/apikey" target="_blank" class="fw-bold text-primary text-decoration-none">Google AI Studio</a>, sign in with your Google account, and click <strong>Create API Key</strong>.<br><em>100% Free Tier: 15 Requests/Min with zero billing setup.</em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-brain"></i> Autonomous AI Brain</span><br>Empowers the bot to analyze your live product catalog, suggest accessories, and answer customer sizing or shipping queries in real-time. Stored encrypted with AES-256 in your database.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>AI Assistant Bot Name</strong><br><code class="small">Text (String)</code></td>
+                                        <td>Custom name for your bot.<br><em>e.g., <code>MartX AI Advisor</code></em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-card-account-details"></i> Chat Header Title</span><br>Displayed on the chat popup window header, welcome bubble, and avatar card.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>WhatsApp Number</strong><br><code class="small">Phone Number</code></td>
+                                        <td>Official business WhatsApp number including country code.<br><em>e.g., <code>+18005550199</code> or <code>+8801700000000</code></em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-whatsapp"></i> 1-Click WhatsApp Float</span><br>When provided, adds an instant WhatsApp floating trigger. Leaving this blank automatically hides the WhatsApp button.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Pre-filled Message</strong><br><code class="small">Text (String)</code></td>
+                                        <td>Default inquiry greeting text.<br><em>e.g., <code>Hello MartX Team! I need help with an order.</code></em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-message-text"></i> Instant Chat Pre-fill</span><br>Pre-fills automatically inside the customer's mobile or desktop WhatsApp client when clicked, eliminating typing friction.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ================= 21.6 SECURITY & ACCESS SHIELD ================= -->
+                    <div class="doc-subsection mt-5" id="sec-21-6">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-shield-check-outline text-primary me-1"></i> 21.6 Security & Access Shield (URL Obfuscation, 2FA & Rate Limiting)
+                        </h3>
+                        <p class="text-muted">
+                            Navigate to: <strong>Admin Sidebar &rarr; System Settings &rarr; "Security & Access" (Tab)</strong> <em>(Super Admin Exclusive)</em>. Provides multi-layered defense including custom admin URL prefix obfuscation, 2FA email verification with SMTP pre-flight handshake, single-use emergency backup recovery codes, and brute-force account lockout protection.
+                        </p>
+
+                        <!-- LIVE SCREENSHOT BROWSER FRAME -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Security & Access Shield Tab
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-danger text-white font-monospace" style="font-size: 10px;">Security Shield</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/settings/admin_settings_security.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/settings/admin_settings_security.png" alt="Security & Access Shield" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-4">
+                                        <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                        <span class="badge bg-primary-subtle text-primary font-monospace small">images/settings/admin_settings_security.png</span>
+                                    </div>
+                                </div>
+                                <div class="small text-muted mt-2">
+                                    <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Security & Access Shield Workspace:</strong> Enterprise protection suite featuring Admin Portal URL prefix obfuscation (dynamic future URL preview & one-click clipboard copy), Two-Factor Authentication (2FA Email OTP enforcement), and automated Brute-Force Rate Limiting & lockout penalty policy.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3-TIER FIELD ANATOMY TABLE -->
+                        <div class="table-responsive mt-4">
+                            <table class="doc-table table align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;">Feature Name & Type</th>
+                                        <th style="width: 35%;">How it Operates & Rules</th>
+                                        <th style="width: 40%;">Storefront Impact & Capability</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Admin URL Prefix</strong><br><code class="small">Slug String</code></td>
+                                        <td>Change the default <code>/admin</code> path to any custom slug (e.g. <code>control_hub</code>, <code>secure_portal</code>).<br><em>Only lowercase a-z, numbers 0-9, hyphens, and underscores allowed.</em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-incognito"></i> Complete URL Obfuscation</span><br>Instantly updates your secret Admin Login, Password Reset, and Dashboard URLs. Attackers scanning <code>/admin</code> or <code>/wp-admin</code> receive HTTP 404 Not Found. Automatically dispatches the new login link to all staff emails.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Two-Factor Auth (2FA)</strong><br><code class="small">Email OTP System</code></td>
+                                        <td>Requires a 6-digit one-time PIN sent to the administrator's email upon signing in.<br><em>Built with a live pre-flight SMTP handshake to guarantee email delivery before enforcing.</em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-shield-account"></i> Zero Compromise Protection</span><br>Prevents unauthorized dashboard access even if an administrator's primary password is leaked or compromised.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>5 Emergency Recovery Codes</strong><br><code class="small">Cryptographic Tokens</code></td>
+                                        <td>Generated during 2FA activation.<br><em>Includes <strong>Copy All</strong> and <strong>Download .txt</strong> buttons.</em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-key-variant"></i> Fail-Safe Emergency Login</span><br>Single-use recovery codes allowing administrators to regain dashboard access if their email provider is temporarily offline.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Brute-Force Rate Limiting</strong><br><span class="badge bg-danger-subtle text-danger small">Automated Protection</span></td>
+                                        <td>Strict threshold: <strong>5 failed login attempts</strong> within 60 seconds triggers an automated <strong>30-minute IP lockout</strong>.</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-timer-lock"></i> Automated DDoS Defense</span><br>Eliminates automated password-spraying dictionary bots with zero performance penalty on legitimate shoppers.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ================= 21.7 IN-DASHBOARD LICENSE & DOMAIN MANAGEMENT ================= -->
+                    <div class="doc-subsection mt-5" id="sec-21-7">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-certificate-outline text-primary me-1"></i> 21.7 In-Dashboard License Suite & Key Re-binding to New Domain
+                        </h3>
+                        <p class="text-muted">
+                            Navigate to: <strong>Admin Sidebar &rarr; System Settings &rarr; "License & Verification" (Tab)</strong> <em>(Super Admin Exclusive)</em>. Allows you to review your verified purchase credentials, switch license keys, deactivate a license, or execute an automated <strong>1-Click License Key Re-binding & Migration</strong> to a new domain via official email authorization.
+                        </p>
+
+                        <!-- LIVE SCREENSHOT BROWSER FRAME -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; License Manager & Domain Binding Tab
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-success text-white font-monospace" style="font-size: 10px;">Domain Protection</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/settings/admin_settings_license.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/settings/admin_settings_license.png" alt="License Manager & Domain Binding" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-4">
+                                        <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                        <span class="badge bg-primary-subtle text-primary font-monospace small">images/settings/admin_settings_license.png</span>
+                                    </div>
+                                </div>
+                                <div class="small text-muted mt-2">
+                                    <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>License Management Workspace:</strong> Official licensing hub allowing instant purchase key verification (Envato CodeCanyon, Buyer Email), active domain lock confirmation, and automated 1-click domain relocation & license transfer link dispatch.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3-TIER FIELD ANATOMY TABLE -->
+                        <div class="table-responsive mt-4">
+                            <table class="doc-table table align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;">Action / Field</th>
+                                        <th style="width: 35%;">What to Enter & Rules</th>
+                                        <th style="width: 40%;">Storefront Impact & Capability</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Active License Overview</strong><br><code class="small">Read-Only Card</code></td>
+                                        <td>Displays your verified purchase code with masked middle digits (<code>XXXX-****-****-XXXX</code>), registered marketplace, and bound domain.</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-shield-check"></i> Authentic Verification</span><br>Confirms your store is backed by official author support, verified software updates during your valid license period, and active domain lock protection.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Switch / Update License</strong><br><code class="small">Action Form</code></td>
+                                        <td>Enter a new purchase code, buyer email, and select your marketplace (CodeCanyon, Codester, TemplateMonster, Direct).</td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-swap-horizontal"></i> Instant Re-binding</span><br>Allows you to upgrade your license tier (e.g. Regular to Extended Commercial License) or switch keys without touching database tables or reinstalling.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Deactivate License</strong><br><code class="small">Danger Action</code></td>
+                                        <td>Unlinks the license from your current installation.<br><em>Triggers SweetAlert2 warning regarding initial 7-day trial expiration.</em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-alert-circle"></i> License Release</span><br>Frees your license key for deployment on another production server. Note: If your initial 7-day grace period has already passed, the admin panel locks until a new key is activated.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>License Key Re-binding / Migration</strong><br><code class="small">Automated Workflow</code></td>
+                                        <td>Enter your <strong>Target New Domain</strong> and click <em>Send 1-Click Confirmation Link</em>.<br><em>Zero terminal commands or database edits required.</em></td>
+                                        <td><span class="doc-field-impact-badge"><i class="mdi mdi-web-sync"></i> Seamless Key Relocation</span><br>Dispatches an authorization link to the buyer's registered email. Clicking "Confirm Domain Transfer" instantly unlinks the key from your old domain and binds it to your new live store with zero downtime. (Details in <a href="locations-coverage.html" class="fw-bold text-primary text-decoration-none">Chapter 4</a>).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- HUMAN-READABLE ROLE & PERMISSION NOTE -->
+                    <div class="p-3 p-md-4 border rounded-3 bg-light d-flex align-items-start gap-3 my-4">
+                        <i class="mdi mdi-shield-check text-success fs-3 lh-1"></i>
+                        <div>
+                            <h6 class="fw-bold mb-1">🔒 Role & Permission Security (Settings Suite)</h6>
+                            <p class="small text-muted mb-0">
+                                The entire System Settings Suite is strictly protected by MartX's enterprise <strong>Role & Permission</strong> architecture. Unauthorized staff members cannot view or alter configurations. Only team members explicitly granted the <strong>System Setting Access</strong> permission in Staff & Role Management can modify store branding, currencies, SMTP mail delivery, or security credentials.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CHAPTER NAVIGATION BUTTONS -->
+                    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-sm-center gap-3 mt-5 pt-4 border-top">
+                        <a href="locations-coverage.html" class="btn btn-outline-secondary fw-bold px-4">
+                            <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 20 (Locations & Coverage)
+                        </a>
+                        <a href="cron-faq.html" class="btn btn-primary fw-bold px-4">
+                            Next: Chapter 22 (Web Cron & FAQs) <i class="mdi mdi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page (7 Tabs)</div>
+                    <a href="#sec-21-1" class="doc-toc-link active">21.1 General & Brand</a>
+                    <a href="#sec-21-2" class="doc-toc-link">21.2 Theme & Appearance</a>
+                    <a href="#sec-21-3" class="doc-toc-link">21.3 System & Symlink</a>
+                    <a href="#sec-21-4" class="doc-toc-link">21.4 SMTP Mail Server</a>
+                    <a href="#sec-21-5" class="doc-toc-link">21.5 AI & WhatsApp Hub</a>
+                    <a href="#sec-21-6" class="doc-toc-link">21.6 Security & 2FA</a>
+                    <a href="#sec-21-7" class="doc-toc-link">21.7 License & Key Re-bind</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch21-settings" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header border-bottom p-3 bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0 text-primary fs-5">
+                            <i class="mdi mdi-magnify"></i>
+                        </span>
+                        <input type="text" class="form-control form-control-lg border-start-0 ps-0" id="docGlobalSearch" placeholder="Search documentation... (e.g., General, Currency, 2FA, SMTP, AI, Domain Transfer)">
+                    </div>
+                </div>
+                <div class="modal-body p-0" id="docSearchResults" style="max-height: 420px; overflow-y: auto;">
+                    <div class="p-4 text-center text-muted">
+                        <i class="mdi mdi-text-search fs-1 d-block mb-2 text-primary opacity-50"></i>
+                        <p class="mb-0">Type any keyword to search across all chapters in real time.</p>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light py-2 px-3 justify-content-between">
+                    <small class="text-muted"><kbd>ESC</kbd> to close</small>
+                    <small class="text-muted"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

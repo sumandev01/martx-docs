@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Couriers & Shipping Cost Management - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+            <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Ecommerce & Sales</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">10. Couriers & Shipping Costs</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= MAIN CHAPTER SECTION ================= -->
+                <section class="doc-section" id="ch10-intro">
+                    <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2.5 py-1 rounded-pill small fw-semibold">
+                            <i class="mdi mdi-truck-fast-outline me-1"></i> Logistics & Fulfillment Engine
+                        </span>
+                        <span class="badge bg-light text-muted border px-2.5 py-1 rounded-pill small">
+                            Chapter 10 of 22
+                        </span>
+                    </div>
+
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-truck-fast-outline text-primary"></i> Chapter 10: Couriers & Shipping Cost Management
+                    </h1>
+                    <p class="lead text-muted">
+                        Universal courier fleet orchestration, official online tracking portals, zone-based delivery pricing rules, and state-level automated checkout calculations.
+                    </p>
+
+                    <!-- Feature Highlights Grid -->
+                    <div class="row g-3 my-4">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-truck-delivery-outline text-success fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Universal Tracking Support</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Connect any domestic or international courier service (Sundarban, Steadfast, Pathao, FedEx, UPS) without complex API keys.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-map-marker-distance text-primary fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Zone Pricing Matrix</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Configure granular delivery fees grouped by country, division, and state for automatic checkout rate calculations.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-cursor-default-click text-warning fs-4"></i>
+                                    <h6 class="fw-bold mb-0">One-Click Buyer Tracking</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Customers receive tracking codes and direct portal buttons to query live transit status directly on the courier's website.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mandatory Shipping Charge Setup Alert -->
+                    <div class="alert alert-warning bg-warning-subtle border-0 text-dark mb-4 p-3 rounded-3 d-flex align-items-start gap-3">
+                        <i class="mdi mdi-alert-decagram text-warning fs-3 flex-shrink-0 mt-1"></i>
+                        <div>
+                            <strong class="d-block text-dark mb-1">Essential Store Requirement — Configuring Shipping Charges is Mandatory:</strong>
+                            <p class="small mb-0">
+                                Before launching your store or accepting live customer orders, administrators <strong>must establish active shipping cost rules</strong> under <strong>Shipping Costs</strong>. The MartX storefront checkout engine dynamically reads these geographic zone rules to calculate customer delivery charges. Without configured shipping zones, orders cannot automatically compute accurate delivery tariffs at checkout.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Core Architectural Overview -->
+                    <div class="card border-0 shadow-sm rounded-3 mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold mb-3">Module Architecture & Administrative Workflow</h4>
+                            <p class="text-muted">
+                                Shipping and parcel fulfillment in MartX is architected across two synergistic submodules accessible directly under the <strong>Ecommerce &amp; Sales</strong> sidebar group:
+                            </p>
+                            <div class="row g-3 mt-1">
+                                <div class="col-md-6">
+                                    <div class="p-3 rounded-3 border bg-white h-100">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <span class="badge bg-primary-subtle text-primary p-2 rounded-circle">
+                                                <i class="mdi mdi-truck-fast-outline fs-5"></i>
+                                            </span>
+                                            <h6 class="fw-bold mb-0">1. Couriers Management</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Manages your logistics delivery fleet. Stores carrier names and their public tracking search portal URLs so staff can assign consignment numbers during order fulfillment.
+                                        </p>
+                                        <div class="font-monospace small text-primary bg-light p-1.5 rounded border">
+                                            Admin Dashboard &gt; Ecommerce &amp; Sales &gt; Couriers
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 rounded-3 border bg-white h-100">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <span class="badge bg-success-subtle text-success p-2 rounded-circle">
+                                                <i class="mdi mdi-cash-multiple fs-5"></i>
+                                            </span>
+                                            <h6 class="fw-bold mb-0">2. Shipping Costs &amp; Zones</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Defines delivery fee rules based on geographic boundaries (e.g., Inside Dhaka, Outside Dhaka, Sub-Urban). Automatically updates order totals during storefront checkout.
+                                        </p>
+                                        <div class="font-monospace small text-success bg-light p-1.5 rounded border">
+                                            Admin Dashboard &gt; Ecommerce &amp; Sales &gt; Shipping Costs
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 10.1: COURIERS FLEET DIRECTORY ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-10-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-format-list-bulleted-square text-primary me-1"></i> 10.1 Couriers Directory &amp; Fleet Management
+                        </h3>
+                        <p class="text-muted">
+                            The <strong>Couriers Management Directory</strong> provides a centralized catalog of all delivery carriers authorized to transport store shipments. Logistics supervisors can instantly monitor carrier status, query tracking URLs, perform real-time searches, and manage carrier records.
+                        </p>
+
+                        <!-- Screenshot 1: Couriers Table -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Couriers Management: Logistics Partners Directory &amp; Status Engine
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/couriers/admin_couriers_table.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/couriers/admin_couriers_table.png" alt="Couriers Management Directory" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-truck-delivery-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Couriers Management Directory Interface</span>
+                                        <span class="small text-muted font-monospace">(images/couriers/admin_couriers_table.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">Couriers Fleet Directory</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Parameter Matrix Table -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-table-cog text-primary me-1"></i> Couriers Directory Interface Elements
+                                </h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light small">
+                                            <tr>
+                                                <th style="width: 22%;">UI Control / Column</th>
+                                                <th style="width: 20%;">Type &amp; Visual Representation</th>
+                                                <th style="width: 58%;">Operational Description &amp; Behavioral Logic</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-plus-circle text-primary me-1"></i> Add New Courier Button
+                                                </td>
+                                                <td><span class="badge bg-primary text-white px-2 py-1">+ Add New Courier</span></td>
+                                                <td>Top primary action trigger in the page header that navigates directly to the courier creation view (<code>/admin/couriers/create</code>).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-filter-variant text-muted me-1"></i> Courier Status Filter
+                                                </td>
+                                                <td><span class="badge bg-light text-dark border">All Couriers (3) ▾</span></td>
+                                                <td>Contextual filter dropdown displaying total configured carriers with quick segmentation between <em>Active</em> and <em>Inactive</em> partners.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-magnify text-muted me-1"></i> Search Input Field
+                                                </td>
+                                                <td><code>Search couriers...</code></td>
+                                                <td>Instant search input that filters table rows dynamically against carrier names and tracking URL domains.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Courier Name Column</td>
+                                                <td><span class="fw-semibold">UPS Global Logistics</span></td>
+                                                <td>The official registered brand name of the courier service. This exact name appears in customer tracking dossiers and dispatch selectors.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Tracking Page URL Column</td>
+                                                <td><span class="text-primary font-monospace">https://www.ups.com/track ↗</span></td>
+                                                <td>Hyperlinked URL opening the carrier's public parcel tracking search portal in a new browser tab for quick administrative inspection.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Status Column</td>
+                                                <td><span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">Active</span></td>
+                                                <td>Visual state pill. When set to <strong>Active</strong>, the courier appears in the order fulfillment status editor. When <strong>Inactive</strong>, it is hidden from selectors without affecting past orders.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Action Menu</td>
+                                                <td><span class="btn btn-sm btn-light border px-2 py-0">⋮</span></td>
+                                                <td>Contextual menu with granular controls to <strong>Edit</strong> partner parameters or securely <strong>Delete</strong> the courier record.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 10.2: ADD NEW COURIER ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-10-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-plus-box-outline text-primary me-1"></i> 10.2 Add New Courier Partner &amp; Operational Tracking Architecture
+                        </h3>
+                        <p class="text-muted">
+                            Adding a courier partner in MartX requires zero technical API integrations or webhook setups. The interface is engineered with a modern two-column layout featuring an active input form on the left and an integrated <strong>Operational Guide</strong> on the right that explains how parcel tracking functions from warehouse dispatch to customer delivery.
+                        </p>
+
+                        <!-- Screenshot 2: Add New Courier -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Add New Courier: Configure Delivery Partner &amp; Tracking Portal URL
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/couriers/admin_courier_create.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/couriers/admin_courier_create.png" alt="Add New Courier Partner" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-plus-circle-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Add New Courier Interface</span>
+                                        <span class="small text-muted font-monospace">(images/couriers/admin_courier_create.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">Courier Creation Console</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detailed Field & Workflow Analysis Grid -->
+                        <div class="row g-4 mb-4">
+                            <div class="col-lg-6">
+                                <div class="card border shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-white border-bottom py-3 px-4">
+                                        <h6 class="fw-bold mb-0 text-heading">
+                                            <i class="mdi mdi-form-select text-primary me-1"></i> Courier Information Form Fields
+                                        </h6>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <div class="mb-3 pb-3 border-bottom">
+                                            <label class="form-label fw-bold small text-muted text-uppercase mb-1">Courier Name *</label>
+                                            <p class="small text-muted mb-0">
+                                                The official name of the carrier (e.g., <em>Sundarban Courier, Steadfast, Pathao, FedEx</em>). This name is visible to administrative fulfillment teams in order dispatch selectors and displayed on customer order confirmation slips.
+                                            </p>
+                                        </div>
+                                        <div class="mb-3 pb-3 border-bottom">
+                                            <label class="form-label fw-bold small text-muted text-uppercase mb-1">Tracking Page URL (Optional)</label>
+                                            <p class="small text-muted mb-0">
+                                                The official website URL where customers can query parcel transit progress (e.g., <code>https://sundarbancourier.com.bd/</code> or <code>https://www.fedex.com/fedextrack</code>). Providing this link activates the customer one-click tracking engine.
+                                            </p>
+                                        </div>
+                                        <div class="mb-0">
+                                            <label class="form-label fw-bold small text-muted text-uppercase mb-1">Courier Status *</label>
+                                            <p class="small text-muted mb-0">
+                                                Select <strong>Active</strong> to make this carrier available for ongoing fulfillment, or <strong>Inactive</strong> to archive the service without removing historical order tracking associations.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="card border shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-white border-bottom py-3 px-4 d-flex justify-content-between align-items-center">
+                                        <h6 class="fw-bold mb-0 text-heading">
+                                            <i class="mdi mdi-transit-connection-variant text-primary me-1"></i> 3-Step Tracking Architecture
+                                        </h6>
+                                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-0.5 small">How It Works</span>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-start gap-3 mb-3 pb-3 border-bottom">
+                                            <span class="badge bg-primary rounded-circle p-2 fs-6 flex-shrink-0" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;">1</span>
+                                            <div>
+                                                <strong class="d-block text-dark small">Configure Courier &amp; Website URL</strong>
+                                                <span class="small text-muted">Save the courier name and general tracking page link in this view. This is a one-time configuration per logistics partner.</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-start gap-3 mb-3 pb-3 border-bottom">
+                                            <span class="badge bg-primary rounded-circle p-2 fs-6 flex-shrink-0" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;">2</span>
+                                            <div>
+                                                <strong class="d-block text-dark small">Assign Tracking Number on Dispatch</strong>
+                                                <span class="small text-muted">In <a href="orders-fulfillment.html" class="text-primary text-decoration-none fw-semibold">Chapter 9 (Orders)</a>, select this courier and enter the physical booking memo or consignment code (e.g., <code>SB-89210</code>).</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-start gap-3">
+                                            <span class="badge bg-primary rounded-circle p-2 fs-6 flex-shrink-0" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;">3</span>
+                                            <div>
+                                                <strong class="d-block text-dark small">Customer One-Click Tracking Access</strong>
+                                                <span class="small text-muted">The tracking number is <strong>not</strong> auto-appended to the URL. Customers receive the tracking code and a direct button to open the courier's portal where they paste the code to track live progress.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pro-Tip Box -->
+                        <div class="p-3 bg-light rounded-3 border border-light-subtle d-flex align-items-start gap-3">
+                            <i class="mdi mdi-lightbulb-on text-warning fs-3 flex-shrink-0 mt-n1"></i>
+                            <div>
+                                <strong class="d-block text-dark small mb-1">Pro-Tip for Maximum Tracking Usability:</strong>
+                                <span class="small text-muted">
+                                    Whenever possible, input the carrier's direct parcel search landing page (e.g., <code>https://steadfast.com.bd/t/</code> or <code>https://sundarbancourier.com.bd/tracking</code>) rather than just the generic brand homepage. This allows buyers to paste their consignment number immediately without having to locate the tracking subpage manually.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 10.3: EDIT & SYNCHRONIZE COURIER ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-10-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-square-edit-outline text-primary me-1"></i> 10.3 Edit &amp; Synchronize Courier Parameters
+                        </h3>
+                        <p class="text-muted">
+                            When carrier contact endpoints, portal addresses, or operational statuses change, administrators can update parameters seamlessly via the <strong>Edit Courier</strong> console. Changes are instantly synchronized across all ongoing fulfillment pipelines.
+                        </p>
+
+                        <!-- Screenshot 3: Edit Courier -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Edit Courier: Update Logistics Partner Parameters &amp; Tracking Portal
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/couriers/admin_courier_edit.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/couriers/admin_courier_edit.png" alt="Edit Courier Partner" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-truck-edit fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Edit Courier Interface</span>
+                                        <span class="small text-muted font-monospace">(images/couriers/admin_courier_edit.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">Courier Update Console</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Update Synchronization & Data Integrity Notice -->
+                        <div class="card border-0 shadow-sm bg-light-subtle rounded-3 p-4 mb-4">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="badge bg-success-subtle text-success p-2 rounded-circle flex-shrink-0">
+                                    <i class="mdi mdi-check-decagram-outline fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold text-dark mb-1">Update Synchronization &amp; Historical Integrity</h6>
+                                    <p class="small text-muted mb-2">
+                                        Modifying a courier's <strong>Tracking Page URL</strong> or <strong>Name</strong> takes effect immediately for all active dispatches and upcoming shipments. Past fulfilled orders maintain their historical consignment numbers and link to the updated portal destination seamlessly.
+                                    </p>
+                                    <ul class="small text-muted mb-0 ps-3">
+                                        <li><strong>Carrier Name Changes:</strong> Reflected dynamically across all admin dropdowns and buyer invoices.</li>
+                                        <li><strong>URL Endpoint Adjustments:</strong> Updates the destination target for buyer <em>"Track on Courier Website"</em> triggers instantly.</li>
+                                        <li><strong>Deactivating a Carrier:</strong> Sets status to <em>Inactive</em>, which cleanly removes the partner from order dispatch dropdowns while preserving tracking records on delivered packages.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 10.4: SHIPPING COSTS DIRECTORY ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-10-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-cash-multiple text-primary me-1"></i> 10.4 Shipping Costs Directory &amp; Operational Zone Matrix
+                        </h3>
+                        <p class="text-muted">
+                            The <strong>Shipping Costs Management Directory</strong> (<code>/admin/shipping-costs</code>) is where store owners configure geographic delivery tariffs. Every store must establish delivery fee rules before trading to ensure the storefront checkout engine calculates correct shipping costs based on the customer's delivery destination.
+                        </p>
+
+                        <!-- Screenshot 4: Shipping Costs Table -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Shipping Costs Management: Zone Pricing Rules &amp; Operational Guidelines
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/shipping/admin_shipping_costs_table.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/shipping/admin_shipping_costs_table.png" alt="Shipping Costs Management Directory" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-cash-multiple fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Shipping Costs Management Directory Interface</span>
+                                        <span class="small text-muted font-monospace">(images/shipping/admin_shipping_costs_table.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">Shipping Tariff Rules</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Parameter Matrix Table -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-table-cog text-primary me-1"></i> Shipping Costs Directory Interface Elements
+                                </h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light small">
+                                            <tr>
+                                                <th style="width: 22%;">UI Control / Column</th>
+                                                <th style="width: 20%;">Type &amp; Visual Representation</th>
+                                                <th style="width: 58%;">Operational Description &amp; Behavioral Logic</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-plus-circle text-primary me-1"></i> Add New Shipping Cost
+                                                </td>
+                                                <td><span class="badge bg-primary text-white px-2 py-1">+ Add New Shipping Cost</span></td>
+                                                <td>Header action trigger leading to the zone pricing creation console (<code>/admin/shipping-costs/create</code>).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Name (Zone) Column</td>
+                                                <td><span class="fw-semibold">Express Priority Courier (DHL/FedEx)</span></td>
+                                                <td>Descriptive name identifying the delivery zone (e.g., <em>Inside City, Outside City, Express Priority, Standard Worldwide</em>).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Price (Base &amp; Incremental) Column</td>
+                                                <td>
+                                                    <div><span class="fw-bold text-primary font-monospace">$25.00 / ৳60.00</span> <small class="text-muted">(Base)</small></div>
+                                                    <div class="small text-success font-monospace">+ $5.00 / extra item</div>
+                                                </td>
+                                                <td>Displays the initial base delivery rate billed for the 1st item, alongside any incremental surcharge per additional item for multi-quantity cross-border orders.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Assigned States Column</td>
+                                                <td>
+                                                    <span class="badge bg-light text-dark border me-1">Ontario</span>
+                                                    <span class="badge bg-light text-dark border me-1">British Columbia</span>
+                                                    <span class="badge bg-light text-dark border">Quebec</span>
+                                                </td>
+                                                <td>Interactive pill badges displaying every state, district, or province covered under this exact shipping cost rule.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Action Menu</td>
+                                                <td><span class="btn btn-sm btn-light border px-2 py-0">⋮</span></td>
+                                                <td>Granular controls enabling administrators to <strong>Edit</strong> zone details or permanently <strong>Delete</strong> the shipping rate rule.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Operational Guidance Card Breakdown -->
+                        <div class="card border-0 shadow-sm rounded-3 p-4 mb-4 bg-light-subtle border">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="badge bg-primary-subtle text-primary p-2 rounded-circle flex-shrink-0">
+                                    <i class="mdi mdi-information-outline fs-4"></i>
+                                </div>
+                                <div class="w-100">
+                                    <h6 class="fw-bold text-dark mb-1">Shipping Zone Coverage &amp; Operational Guidelines (Under-Table Intelligence)</h6>
+                                    <p class="small text-muted mb-3">
+                                        Located directly beneath the shipping rules table, this persistent operational card reinforces critical system constraints for store managers:
+                                    </p>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="p-3 bg-white rounded-3 border h-100">
+                                                <strong class="d-block text-dark small mb-1">
+                                                    <i class="mdi mdi-checkbox-marked-circle-outline text-success me-1"></i> Exclusive Location Allocation
+                                                </strong>
+                                                <span class="small text-muted">
+                                                    Each district or state can belong to only <strong>one</strong> shipping zone. Once a state is mapped, it is automatically excluded from other zone lists to prevent dual-pricing collisions.
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-3 bg-white rounded-3 border h-100">
+                                                <strong class="d-block text-dark small mb-1">
+                                                    <i class="mdi mdi-alert-circle-outline text-warning me-1"></i> Minimum Location Requirement
+                                                </strong>
+                                                <span class="small text-muted">
+                                                    Every active zone must have <strong>at least one state</strong> selected. The system prevents creating or saving zones with empty location sets.
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-3 bg-white rounded-3 border h-100">
+                                                <strong class="d-block text-dark small mb-1">
+                                                    <i class="mdi mdi-swap-horizontal-bold text-primary me-1"></i> Reassigning a Location
+                                                </strong>
+                                                <span class="small text-muted">
+                                                    To migrate a state between zones, edit the current zone, uncheck the state, and save. The released state immediately becomes eligible for selection in other zones.
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-3 bg-white rounded-3 border h-100">
+                                                <strong class="d-block text-dark small mb-1">
+                                                    <i class="mdi mdi-cart-check text-info me-1"></i> Storefront Real-Time Calculation
+                                                </strong>
+                                                <span class="small text-muted">
+                                                    Selecting a shipping state on the checkout page recalculates the delivery tariff in real time without refreshing the page.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 10.5: ADD & EDIT SHIPPING RULES ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-10-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-plus-network-outline text-primary me-1"></i> 10.5 Add &amp; Edit Geographic Zone Pricing Rules
+                        </h3>
+                        <p class="text-muted">
+                            Configuring new delivery zones or modifying existing shipping rates is performed through the dedicated <strong>Zone Details</strong> console. The interface integrates an interactive multi-country state accordion with instant validation feedback.
+                        </p>
+
+                        <!-- Screenshot 5: Add Shipping Cost -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Add Shipping Cost: Define Geographic Delivery Zone &amp; Price
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/shipping/admin_shipping_cost_create.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/shipping/admin_shipping_cost_create.png" alt="Add Shipping Cost Rule" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-plus-circle-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Add Shipping Cost Interface</span>
+                                        <span class="small text-muted font-monospace">(images/shipping/admin_shipping_cost_create.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">Zone Creation Console</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 6: Edit Shipping Cost -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Edit Shipping Cost: Modify Delivery Rates &amp; State Allocations
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/shipping/admin_shipping_cost_edit.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/shipping/admin_shipping_cost_edit.png" alt="Edit Shipping Cost Rule" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-square-edit-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Edit Shipping Cost Interface</span>
+                                        <span class="small text-muted font-monospace">(images/shipping/admin_shipping_cost_edit.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">Zone Update Console</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Configuration Field & Checkout Engine Grid -->
+                        <div class="row g-4 mb-4">
+                            <div class="col-lg-6">
+                                <div class="card border shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-white border-bottom py-3 px-4">
+                                        <h6 class="fw-bold mb-0 text-heading">
+                                            <i class="mdi mdi-tune-vertical text-primary me-1"></i> Zone Details Parameters
+                                        </h6>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <div class="mb-3 pb-3 border-bottom">
+                                            <label class="form-label fw-bold small text-muted text-uppercase mb-1">Zone Name (e.g., Inside Dhaka) *</label>
+                                            <p class="small text-muted mb-0">
+                                                Descriptive operational name for the zone (e.g., <code>Inside Dhaka Metro</code>, <code>Express Priority Courier (DHL/FedEx)</code>).
+                                            </p>
+                                        </div>
+                                        <div class="mb-3 pb-3 border-bottom">
+                                            <label class="form-label fw-bold small text-muted text-uppercase mb-1">Base Shipping Price *</label>
+                                            <p class="small text-muted mb-0">
+                                                The initial delivery tariff charged for the first item in the cart (e.g., <code>$25.00</code>, <code>৳60.00</code>). Set to <code>0</code> for zones offering unconditional free delivery.
+                                            </p>
+                                        </div>
+                                        <div class="mb-3 pb-3 border-bottom">
+                                            <label class="form-label fw-bold small text-muted text-uppercase mb-1">Additional Fee Per Item ($)</label>
+                                            <p class="small text-muted mb-0">
+                                                Incremental surcharge applied to each extra item beyond the first (<code class="text-primary font-monospace">Qty &gt; 1</code>). For example, if Base is <code>$20.00</code> and Additional Fee is <code>$5.00</code>, ordering 3 items calculates: <code class="bg-light p-1 rounded font-monospace text-dark">$20 + (2 &times; $5) = $30.00</code>. Leave as <code>0</code> for standard flat-rate delivery zones.
+                                            </p>
+                                        </div>
+                                        <div class="mb-0">
+                                            <label class="form-label fw-bold small text-muted text-uppercase mb-1">Multi-Country State Accordion</label>
+                                            <p class="small text-muted mb-0">
+                                                Hierarchical selection grouped by country (e.g., <em>Canada, Germany, United States, United Kingdom, Australia</em>). Features a master <strong>"Select All States"</strong> checkbox alongside individual state toggles.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="card border shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-white border-bottom py-3 px-4 d-flex justify-content-between align-items-center">
+                                        <h6 class="fw-bold mb-0 text-heading">
+                                            <i class="mdi mdi-cart-check text-success me-1"></i> Automated Checkout Calculation Engine
+                                        </h6>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-0.5 small">Real-Time</span>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <p class="small text-muted mb-3">
+                                            When buyers proceed to the storefront checkout (<code>/checkout</code>), MartX calculates shipping automatically based on their destination address and total cart quantity:
+                                        </p>
+                                        <div class="p-3 bg-light rounded-3 border mb-3">
+                                            <div class="d-flex justify-content-between small text-muted mb-1">
+                                                <span>Cart Items Subtotal (8 Items):</span>
+                                                <strong class="text-dark">$408.00</strong>
+                                            </div>
+                                            <div class="d-flex justify-content-between small text-muted mb-1">
+                                                <span>Coupon Discount:</span>
+                                                <strong class="text-success">$0.00</strong>
+                                            </div>
+                                            <div class="d-flex justify-content-between small text-primary fw-bold mb-2 pb-2 border-bottom">
+                                                <span>Shipping Delivery Fee (Standard Worldwide):</span>
+                                                <span>$38.00 <small class="text-muted fw-normal">($10 Base + $28 for 7 extra items)</small></span>
+                                            </div>
+                                            <div class="d-flex justify-content-between fw-bold text-dark fs-6">
+                                                <span>Calculated Grand Total:</span>
+                                                <span class="text-success">$446.00</span>
+                                            </div>
+                                        </div>
+                                        <p class="small text-muted mb-0">
+                                            <i class="mdi mdi-shield-check text-success me-1"></i> <strong>Anti-Tampering Server Security:</strong> The calculation is executed dynamically in the buyer's browser via AJAX and re-computed authoritatively on the backend by <code>OrderRepository</code>. Inspect-element alterations are strictly ignored.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Validation Error Callout Notice -->
+                        <div class="p-3 bg-light rounded-3 border border-light-subtle d-flex align-items-start gap-3">
+                            <i class="mdi mdi-alert-circle text-danger fs-3 flex-shrink-0 mt-n1"></i>
+                            <div>
+                                <strong class="d-block text-dark small mb-1">Zero-State Validation Enforcement:</strong>
+                                <span class="small text-muted">
+                                    Submitting a zone without selecting at least one state will trigger an immediate validation warning: <code>"Validation Error: Please select at least one state or district for this shipping zone."</code> The interface will smoothly scroll to the selector, preventing accidental creation of orphaned or unreachable delivery zones.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 10.6: END-TO-END LOGISTICS SOP ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-10-6">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-clipboard-check-outline text-primary me-1"></i> 10.6 Standard Operating Procedure (SOP): End-to-End Shipping &amp; Logistics Protocol
+                        </h3>
+                        <p class="text-muted">
+                            To ensure error-free parcel handling, tracking transparency, and accurate financial accounting, follow this standardized 5-step operational protocol:
+                        </p>
+
+                        <div class="card border shadow-sm rounded-3 p-4">
+                            <div class="d-flex align-items-start gap-3 mb-3 pb-3 border-bottom">
+                                <div class="badge bg-primary rounded-circle p-2 fs-6 flex-shrink-0" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">1</div>
+                                <div>
+                                    <h6 class="fw-bold text-heading mb-1">Mandatory Setup: Establish Geographic Shipping Zones</h6>
+                                    <p class="small text-muted mb-0">Navigate to <strong>Shipping Costs &gt; Add New Shipping Cost</strong>. Create your operational delivery zones (e.g., Inside City, Outside City, Express) and map all covered states or districts with their respective delivery fees.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3 mb-3 pb-3 border-bottom">
+                                <div class="badge bg-primary rounded-circle p-2 fs-6 flex-shrink-0" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">2</div>
+                                <div>
+                                    <h6 class="fw-bold text-heading mb-1">Register Official Courier Fleet Partners</h6>
+                                    <p class="small text-muted mb-0">Navigate to <strong>Couriers &gt; Add Courier</strong>. Input the carrier name (e.g., <em>Sundarban, Steadfast, Pathao, FedEx</em>) and their public parcel tracking search portal URL.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3 mb-3 pb-3 border-bottom">
+                                <div class="badge bg-primary rounded-circle p-2 fs-6 flex-shrink-0" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">3</div>
+                                <div>
+                                    <h6 class="fw-bold text-heading mb-1">Customer Order Placement &amp; Dynamic Fee Application</h6>
+                                    <p class="small text-muted mb-0">The buyer selects their delivery district during checkout. MartX matches the state against configured shipping zones and attaches the exact delivery charge to the order invoice.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3 mb-3 pb-3 border-bottom">
+                                <div class="badge bg-primary rounded-circle p-2 fs-6 flex-shrink-0" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">4</div>
+                                <div>
+                                    <h6 class="fw-bold text-heading mb-1">Warehouse Dispatch &amp; Consignment Tracking Assignment</h6>
+                                    <p class="small text-muted mb-0">Once the parcel is packed and handed over to the courier, the warehouse admin opens <a href="orders-fulfillment.html#sec-9-2" class="fw-semibold text-primary text-decoration-none">Edit Order Status</a>, selects the courier partner, inputs the booking consignment code, and marks status as <strong>Shipped</strong>.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="badge bg-success rounded-circle p-2 fs-6 flex-shrink-0" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">5</div>
+                                <div>
+                                    <h6 class="fw-bold text-heading mb-1">Buyer Self-Service Tracking &amp; Delivery Reconciliation</h6>
+                                    <p class="small text-muted mb-0">The buyer accesses their order tracking page, copies their consignment code, and clicks <strong>"Track on Courier Website"</strong> to monitor live transit progress until final delivery confirmation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="orders-fulfillment.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 9 (Orders &amp; Fulfillment)
+                    </a>
+                    <a href="coupons-marketing.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 11 (Coupons &amp; Marketing) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch10-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-10-1" class="doc-toc-link">10.1 Couriers Directory</a>
+                    <a href="#sec-10-2" class="doc-toc-link">10.2 Add New Courier</a>
+                    <a href="#sec-10-3" class="doc-toc-link">10.3 Edit &amp; Sync Courier</a>
+                    <a href="#sec-10-4" class="doc-toc-link">10.4 Shipping Costs Table</a>
+                    <a href="#sec-10-5" class="doc-toc-link">10.5 Add &amp; Edit Zones</a>
+                    <a href="#sec-10-6" class="doc-toc-link">10.6 Logistics SOP</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch10-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 1rem; overflow: hidden;">
+                <div class="modal-header border-bottom p-3">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0 text-muted ps-2">
+                            <i class="mdi mdi-magnify fs-4"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 shadow-none ps-2" id="docGlobalSearch" placeholder="Search documentation chapters, attributes, or guides..." autofocus>
+                    </div>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3" id="docSearchResults" style="max-height: 400px; overflow-y: auto;">
+                    <div class="text-muted small text-uppercase fw-bold px-2 mb-2">Documentation Hub</div>
+                    <div class="p-3 text-center text-muted">Type any keyword to search across all 22 chapters...</div>
+                </div>
+                <div class="modal-footer border-top py-2 px-3 justify-content-between text-muted small">
+                    <span>Press <kbd class="bg-light text-dark border">ESC</kbd> to exit</span>
+                    <span>MartX Documentation v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

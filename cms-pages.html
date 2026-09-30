@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 16: Dynamic CMS Pages, FAQ & About Us Hub - MartX Documentation</title>
+    <meta name="description" content="Chapter 9: Dynamic Custom Pages, Google Gemini AI Content Generation, Multi-Block About Us Page Builder, FAQ Knowledge Base, and Team Members Showcase - MartX Enterprise Documentation">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+                                    <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER MAIN CONTENT COLUMN ================= -->
+            <main class="col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb doc-breadcrumb small mb-0">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Docs</a></li>
+                        <li class="breadcrumb-item"><a href="settings-theme.html" class="text-decoration-none text-muted">Website Design & Theme Engine</a></li>
+                        <li class="breadcrumb-item active text-primary" aria-current="page">Chapter 9: Pages & CMS</li>
+                    </ol>
+                </nav>
+
+                <!-- SECTION HEADER -->
+                <section class="doc-section mb-4" id="ch9-intro">
+                    <h1 class="doc-section-title d-flex align-items-center gap-2 mb-3">
+                        <i class="mdi mdi-file-document-outline text-primary"></i> Chapter 9: Pages & CMS Engine
+                    </h1>
+                    <p class="lead text-muted">
+                        Dynamic Policy & Custom Page Authoring, Google Gemini AI Content Synthesis, Multi-Block About Us Page Builder, Interactive FAQ Knowledge Base, and Team Leadership Showcase.
+                    </p>
+                </section>
+
+                <!-- Quick Overview Stat Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-creation fs-3 text-success mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">Gemini AI</span>
+                            <span class="text-muted small">1-Click Policy Synthesis</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-format-color-text fs-3 text-primary mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">WYSIWYG & SEO</span>
+                            <span class="text-muted small">20k Char & SERP Limits</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-drag fs-3 text-warning mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">Live Drag & Drop</span>
+                            <span class="text-muted small">Sortable.js AJAX Reordering</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-layers-triple-outline fs-3 text-purple mb-1 d-block" style="color: #6f42c1;"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">Multi-Block CMS</span>
+                            <span class="text-muted small">About, FAQ & Team Suite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 9.1: DYNAMIC CUSTOM PAGES ================= -->
+                <div class="doc-subsection mt-4 mb-5" id="sec-9-1">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-file-document-multiple-outline text-primary me-1"></i> 9.1 Dynamic Custom Pages & Policy Manager
+                    </h3>
+                    <p>
+                        Every modern enterprise e-commerce platform requires legal compliance and institutional transparency. The <strong>Dynamic Pages Manager</strong> allows administrators to publish and maintain legal policies (Terms & Conditions, Privacy Policy, Shipping & Return Guarantees) alongside custom promotional landing pages with automatic SEO slug routing and instant live status toggles.
+                    </p>
+
+                    <!-- Screenshot 1: Admin Pages Table -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Dynamic Pages Management Table
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Pages Registry</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/cms/admin_pages_table.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/cms/admin_pages_table.png" alt="Dynamic Pages Table" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-1 d-block mb-1"></i>
+                                    <span class="small">Dynamic Pages Table (images/cms/admin_pages_table.png)</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center text-muted small pt-1 border-top mt-2">
+                                <span><i class="mdi mdi-information-outline me-1"></i> Centralized registry displaying all active policies, dynamic slugs, and quick management actions.</span>
+                                <span class="badge bg-light text-dark border">MartX v1.0.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Paths Callout -->
+                    <div class="doc-callout doc-callout-info mb-4">
+                        <div class="doc-callout-title text-primary">
+                            <i class="mdi mdi-compass-outline"></i> Admin Access Route
+                        </div>
+                        <p class="small mb-0">
+                            Navigate to: <strong>Admin Dashboard</strong> &rarr; <strong>Website Setup</strong> &rarr; <strong>Pages</strong>. From here, click <kbd class="bg-primary text-white">+ Create Page</kbd> to launch the authoring canvas.
+                        </p>
+                    </div>
+
+                    <!-- Table Anatomy Breakdown -->
+                    <h5 class="fw-bold text-heading mt-4 mb-3">
+                        <i class="mdi mdi-table-eye text-primary me-1"></i> Pages Registry Anatomy & Field Specifications
+                    </h5>
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th style="width: 15%;">Column / Attribute</th>
+                                    <th style="width: 25%;">Admin Controls & Data Type</th>
+                                    <th style="width: 35%;">System Purpose & Architecture</th>
+                                    <th style="width: 25%;">Storefront Impact</th>
+                                </tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr>
+                                    <td><strong>SL / Serial</strong></td>
+                                    <td><span class="badge bg-light text-dark border">Sequential ID</span></td>
+                                    <td>Auto-incremented listing order for fast identification in the management grid.</td>
+                                    <td>Internal administrative reference only.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Title</strong></td>
+                                    <td><span class="badge bg-info-subtle text-info border">Text String</span> (e.g., <em>"Terms and Conditions"</em>)</td>
+                                    <td>The primary human-readable title of the document. Displays prominently at the top of the rendered page.</td>
+                                    <td>Rendered as the primary <code>&lt;h1&gt;</code> page header and default HTML title tag.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Slug</strong></td>
+                                    <td><span class="badge bg-secondary-subtle text-secondary border">URL Slug</span> (e.g., <code>terms-and-conditions</code>)</td>
+                                    <td>Unique URL-encoded identifier generated automatically from the title or customized by the admin.</td>
+                                    <td>Resolves public access via clean routing: <code>https://yourstore.com/page/{slug}</code>.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Status</strong></td>
+                                    <td><span class="badge bg-success-subtle text-success border">Active / Inactive Switch</span></td>
+                                    <td>Instant AJAX state controller. Setting to Inactive takes the page offline immediately without deletion.</td>
+                                    <td>When Inactive, the public URL returns a clean 404 response and removes links from footers.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Actions</strong></td>
+                                    <td><span class="badge bg-primary-subtle text-primary border">Edit / Delete Buttons</span></td>
+                                    <td>Launches the full-page editing suite or prompts a secure two-step modal deletion confirmation.</td>
+                                    <td>Edits update live storefront content immediately upon saving.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ================= 9.2: CREATING & EDITING WITH GEMINI AI ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-9-2">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-creation text-primary me-1"></i> 9.2 Creating & Editing Pages with Google Gemini AI
+                    </h3>
+                    <p>
+                        Drafting comprehensive e-commerce policies like Privacy Policies or Return Guarantees typically requires hours of legal drafting. MartX features a built-in <strong>1-Click Google Gemini AI Policy Generator</strong> directly integrated into the page authoring canvas. With a single click, store information is synthesized into enterprise-grade legal prose.
+                    </p>
+
+                    <!-- Screenshot 2: Admin Page Add -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Create Dynamic Page with Gemini AI Assistant
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-success text-white font-monospace" style="font-size: 10px;">AI Policy Generator</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/cms/admin_page_add.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/cms/admin_page_add.png" alt="Add Page with Gemini AI" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-1 d-block mb-1"></i>
+                                    <span class="small">Add Page with Gemini AI (images/cms/admin_page_add.png)</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center text-muted small pt-1 border-top mt-2">
+                                <span><i class="mdi mdi-creation me-1 text-success"></i> Notice the prominent "Auto Generate with AI" button, Summernote WYSIWYG editor with live character counter, and SEO fields.</span>
+                                <span class="badge bg-light text-dark border">MartX v1.0.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Generation Feature Card -->
+                    <div class="p-4 border rounded-3 bg-white mb-4 shadow-sm">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="bg-success text-white rounded-3 p-3 flex-shrink-0">
+                                <i class="mdi mdi-robot-excited-outline fs-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-heading mb-1">How 1-Click AI Policy Generation Operates</h5>
+                                <p class="small text-muted mb-3">
+                                    When an administrator enters a page title (e.g. <em>"Privacy Policy"</em>, <em>"Return and Refund Policy"</em>, or <em>"Shipping Terms"</em>) and clicks <kbd class="bg-success text-white">Auto Generate with AI</kbd>, MartX executes a background API prompt utilizing Google Gemini 1.5 Flash:
+                                </p>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <div class="p-2 border rounded-2 bg-light small h-100">
+                                            <strong class="d-block text-heading mb-1"><i class="mdi mdi-store me-1 text-primary"></i> 1. Store Context Injection</strong>
+                                            Pulls Store Name, Support Email, Hotline Phone, and Physical Address directly from Chapter 5 General Settings.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-2 border rounded-2 bg-light small h-100">
+                                            <strong class="d-block text-heading mb-1"><i class="mdi mdi-scale-balance me-1 text-success"></i> 2. Legal Synthesis</strong>
+                                            Generates formatted HTML clauses (Data Collection, Cookies, Return Windows, Chargebacks) structured with headings and bullet points.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-2 border rounded-2 bg-light small h-100">
+                                            <strong class="d-block text-heading mb-1"><i class="mdi mdi-google me-1 text-warning"></i> 3. SERP SEO Automation</strong>
+                                            Simultaneously writes optimized Meta Titles (under 70 chars), comma-separated Keywords, and Meta Descriptions (under 160 chars).
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Screenshot 3: Admin Page Edit -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Edit Dynamic Page Workspace (Terms & Conditions)
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Active Editor</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/cms/admin_page_edit.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/cms/admin_page_edit.png" alt="Edit Page View" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-1 d-block mb-1"></i>
+                                    <span class="small">Edit Page View (images/cms/admin_page_edit.png)</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center text-muted small pt-1 border-top mt-2">
+                                <span><i class="mdi mdi-counter me-1 text-primary"></i> Live view of registered legal clauses with real-time character tracker (2,513 / 20,000 chars) and pre-filled SEO metadata.</span>
+                                <span class="badge bg-light text-dark border">MartX v1.0.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Anatomy Table -->
+                    <h5 class="fw-bold text-heading mt-4 mb-3">
+                        <i class="mdi mdi-form-select text-primary me-1"></i> Page Authoring Form Anatomy & Character Limits
+                    </h5>
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th style="width: 18%;">Field Name</th>
+                                    <th style="width: 20%;">Type & Constraints</th>
+                                    <th style="width: 32%;">Description & Validation Rules</th>
+                                    <th style="width: 30%;">Storefront Output</th>
+                                </tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr>
+                                    <td><strong>Page Title</strong></td>
+                                    <td><code>string (required)</code><br><span class="badge bg-light text-dark border">Max 255 Chars</span></td>
+                                    <td>The primary title. Generates the default permalink slug upon blur if slug field is empty.</td>
+                                    <td>Main page headline, breadcrumb label, and default browser tab title.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Page Content</strong></td>
+                                    <td><code>longtext (html)</code><br><span class="badge bg-primary-subtle text-primary border">Max 20,000 Chars</span></td>
+                                    <td>Full-featured Summernote WYSIWYG editor supporting bold, lists, tables, links, images, and raw code view. Features real-time character counter.</td>
+                                    <td>Renders sanitized, responsive HTML within the storefront page container template.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Meta Title</strong></td>
+                                    <td><code>string (optional)</code><br><span class="badge bg-warning-subtle text-warning border">Max 70 Chars</span></td>
+                                    <td>SEO title tag for search engine result pages (SERPs). Displays a real-time character counter to prevent Google truncation.</td>
+                                    <td>Injected into <code>&lt;title&gt;</code> and <code>&lt;meta property="og:title"&gt;</code> head tags.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Meta Keywords</strong></td>
+                                    <td><code>string (optional)</code><br><span class="badge bg-light text-dark border">Comma-separated</span></td>
+                                    <td>Descriptive keywords indexing the core topic of the document (e.g. <em>"privacy, gdpr, cookies, personal data"</em>).</td>
+                                    <td>Injected into <code>&lt;meta name="keywords"&gt;</code> head tag.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Meta Description</strong></td>
+                                    <td><code>string (optional)</code><br><span class="badge bg-warning-subtle text-warning border">Max 160 Chars</span></td>
+                                    <td>Search snippet summary. The dynamic counter guides editors to craft snippets under the 160-character desktop snippet limit.</td>
+                                    <td>Injected into <code>&lt;meta name="description"&gt;</code> and <code>&lt;meta property="og:description"&gt;</code>.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Status Toggle</strong></td>
+                                    <td><code>boolean</code><br><span class="badge bg-success-subtle text-success border">Default: Active</span></td>
+                                    <td>Determines whether this dynamic page is publicly discoverable and accessible via direct permalink.</td>
+                                    <td>If inactive, visiting <code>/page/{slug}</code> redirects or returns an HTTP 404 response.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ================= 9.3: ABOUT US PAGE BUILDER ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-9-3">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-card-account-details-outline text-primary me-1"></i> 9.3 Multi-Block About Us Page Builder
+                    </h3>
+                    <p>
+                        Rather than requiring store owners to construct an About Us page using raw HTML, MartX provides a dedicated, multi-block <strong>About Us Page Builder</strong>. This structured interface breaks the public <code>/about-us</code> storefront page into cohesive brand storytelling components: Hero Storytelling, Strategic Pillars, and a dynamic Call-to-Action (CTA) showroom card.
+                    </p>
+
+                    <!-- Screenshot 4: Admin About Page -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Multi-Block About Us Page Builder
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-purple text-white font-monospace" style="background-color: #6f42c1; font-size: 10px;">Page Builder</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/cms/admin_about_page.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/cms/admin_about_page.png" alt="About Us Page Builder" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-1 d-block mb-1"></i>
+                                    <span class="small">About Us Page Builder (images/cms/admin_about_page.png)</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center text-muted small pt-1 border-top mt-2">
+                                <span><i class="mdi mdi-information-outline me-1"></i> Multi-section builder configuring General Brand Story, Mission & Vision statements, and Showroom CTA media.</span>
+                                <span class="badge bg-light text-dark border">MartX v1.0.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Paths Callout -->
+                    <div class="doc-callout doc-callout-info mb-4">
+                        <div class="doc-callout-title text-primary">
+                            <i class="mdi mdi-compass-outline"></i> Admin Access Route
+                        </div>
+                        <p class="small mb-0">
+                            Navigate to: <strong>Admin Dashboard</strong> &rarr; <strong>Website Setup</strong> &rarr; <strong>About Us Page</strong>. Click <kbd class="bg-primary text-white">Save Changes</kbd> to publish updates directly to <code>/about-us</code>.
+                        </p>
+                    </div>
+
+                    <!-- About Page 3-Block Architecture Breakdown -->
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-primary text-white rounded-pill px-2 py-1">Block 1</span>
+                                    <h6 class="fw-bold text-heading mb-0">General Brand Story</h6>
+                                </div>
+                                <p class="small text-muted mb-2">
+                                    Defines the hero introduction at the top of the About page:
+                                </p>
+                                <ul class="small text-muted ps-3 mb-0">
+                                    <li><strong>Page Title:</strong> Hero headline (e.g., <em>"Crafting Extraordinary Shopping Experiences"</em>).</li>
+                                    <li><strong>Subtitle:</strong> Supporting brand ethos statement.</li>
+                                    <li><strong>About Content:</strong> In-depth brand journey, founding philosophy, and craftsmanship narrative.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-success text-white rounded-pill px-2 py-1">Block 2</span>
+                                    <h6 class="fw-bold text-heading mb-0">Strategic Pillars</h6>
+                                </div>
+                                <p class="small text-muted mb-2">
+                                    Structured cards reinforcing enterprise trust:
+                                </p>
+                                <ul class="small text-muted ps-3 mb-0">
+                                    <li><strong>Our Mission:</strong> Clear actionable commitment to customer satisfaction and quality.</li>
+                                    <li><strong>Our Vision:</strong> Forward-looking aspirational statement for brand leadership.</li>
+                                    <li><strong>Core Values:</strong> Integrity, customer obsession, and sustainable sourcing standards.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-warning text-dark rounded-pill px-2 py-1">Block 3</span>
+                                    <h6 class="fw-bold text-heading mb-0">Media CTA Card</h6>
+                                </div>
+                                <p class="small text-muted mb-2">
+                                    High-converting promotional callout card:
+                                </p>
+                                <ul class="small text-muted ps-3 mb-0">
+                                    <li><strong>Showroom Image:</strong> High-res photo uploaded via MartX Media Modal.</li>
+                                    <li><strong>Button Text:</strong> Actionable label (e.g., <em>"Explore Catalog"</em>).</li>
+                                    <li><strong>Target Link:</strong> Destination routing to store categories, collections, or custom campaigns.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert-info border-0 d-flex align-items-center gap-3 mt-4 mb-2 p-3 rounded-3 shadow-sm">
+                        <i class="mdi mdi-account-group-outline fs-3 text-info flex-shrink-0"></i>
+                        <div>
+                            <strong class="d-block text-heading">Public Team Members &amp; Leadership Showcase:</strong>
+                            <span class="small text-muted">To manage executive portraits, designations, social links, and drag-and-drop hierarchy for the public About Us page, navigate to <strong>Admin Dashboard &rarr; Administration &amp; Settings &rarr; Team Members</strong>. See the complete walkthrough in <a href="staff-roles.html#sec-19-1" class="fw-bold text-primary text-decoration-none">Chapter 19: Team Members &amp; Staff Roles &rarr;</a></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 9.4: FAQ KNOWLEDGE BASE ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-9-4">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-help-circle-outline text-primary me-1"></i> 9.4 FAQ Knowledge Base & Live Quick View Modal
+                    </h3>
+                    <p>
+                        A self-service knowledge base drastically reduces customer support ticket volume. The MartX <strong>FAQ Knowledge Base</strong> is built on an ultra-efficient dual-column split workspace: the left side provides a sortable questions table with drag-and-drop hierarchy reordering, while the right side delivers a persistent inline creation form.
+                    </p>
+
+                    <!-- Screenshot 5: Admin FAQ Management Workspace -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; FAQ Split Management Workspace (Sortable Table + Inline Creator)
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">FAQ Workspace</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/cms/admin_faq_management.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/cms/admin_faq_management.png" alt="FAQ Split Workspace" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-1 d-block mb-1"></i>
+                                    <span class="small">FAQ Split Workspace (images/cms/admin_faq_management.png)</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center text-muted small pt-1 border-top mt-2">
+                                <span><i class="mdi mdi-drag me-1 text-warning"></i> Dual-column workspace: Drag handle (::) enables instant drag reordering with AJAX auto-save; right column contains sticky creation card.</span>
+                                <span class="badge bg-light text-dark border">MartX v1.0.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Comparison: View Modal vs Edit Page -->
+                    <h5 class="fw-bold text-heading mt-4 mb-3">
+                        <i class="mdi mdi-eye-outline text-primary me-1"></i> FAQ Inspection & Modification Modalities
+                    </h5>
+                    <p class="small text-muted mb-4">
+                        To save administrator time, MartX features two levels of FAQ interaction: an instant zero-reload <strong>Quick View Modal</strong> for reading answers on the fly, and a dedicated <strong>Edit Workspace</strong> for comprehensive formatting adjustments.
+                    </p>
+
+                    <div class="row g-4 mb-4">
+                        <!-- Screenshot 6: FAQ View Modal -->
+                        <div class="col-lg-6">
+                            <div class="doc-admin-frame shadow-sm h-100">
+                                <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                FAQ Details Preview Modal
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-info text-white font-monospace" style="font-size: 10px;">Quick Modal</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/cms/admin_faq_view.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/cms/admin_faq_view.png" alt="FAQ Quick View Modal" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-1 d-block mb-1"></i>
+                                            <span class="small">FAQ Quick View Modal (images/cms/admin_faq_view.png)</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-1 small mt-2">Zero-Reload Modal Inspection</h6>
+                                    <p class="text-muted small mb-0">
+                                        Clicking the <i class="mdi mdi-eye text-primary"></i> icon opens this instant modal. Admins can verify question titles, check complex HTML answer formatting, inspect active status, and close with <kbd>Esc</kbd> without losing their table scroll position.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 7: FAQ Edit Form -->
+                        <div class="col-lg-6">
+                            <div class="doc-admin-frame shadow-sm h-100">
+                                <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Edit FAQ Workspace
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Full Editor</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/cms/admin_faq_edit.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/cms/admin_faq_edit.png" alt="Edit FAQ View" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-1 d-block mb-1"></i>
+                                            <span class="small">Edit FAQ View (images/cms/admin_faq_edit.png)</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-1 small mt-2">Dedicated Edit Workspace</h6>
+                                    <p class="text-muted small mb-0">
+                                        Clicking the <i class="mdi mdi-pencil text-warning"></i> icon opens this focused editor. Features complete WYSIWYG controls for updating question strings, formatting bulleted instructions, revising answers, and toggling visibility.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Architecture Table -->
+                    <h5 class="fw-bold text-heading mt-4 mb-3">
+                        <i class="mdi mdi-format-list-checks text-primary me-1"></i> FAQ Component Field Specifications
+                    </h5>
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th style="width: 20%;">Field / Element</th>
+                                    <th style="width: 25%;">Control Type & Constraints</th>
+                                    <th style="width: 30%;">Operational Behavior</th>
+                                    <th style="width: 25%;">Storefront Display</th>
+                                </tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr>
+                                    <td><strong>Drag Handle (::)</strong></td>
+                                    <td><span class="badge bg-warning-subtle text-dark border">Sortable.js Handle</span></td>
+                                    <td>Allows grabbing rows to move them up or down. Releases trigger an asynchronous AJAX reorder request.</td>
+                                    <td>Controls the exact accordion order displayed to shoppers on the public FAQ page.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Question</strong></td>
+                                    <td><code>string (required)</code><br><span class="badge bg-light text-dark border">Max 255 Chars</span></td>
+                                    <td>The customer query (e.g., <em>"How do I track my order?"</em>, <em>"What payment methods do you accept?"</em>).</td>
+                                    <td>Rendered as the clickable accordion header trigger on the storefront.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Answer</strong></td>
+                                    <td><code>text (rich html)</code><br><span class="badge bg-primary-subtle text-primary border">Summernote WYSIWYG</span></td>
+                                    <td>Comprehensive explanatory text supporting ordered lists, tracking hyperlinks, bold emphases, and refund instructions.</td>
+                                    <td>Expands smoothly inside the accordion collapse body when the user clicks the question.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Status Toggle</strong></td>
+                                    <td><code>boolean</code><br><span class="badge bg-success-subtle text-success border">Active / Inactive</span></td>
+                                    <td>Allows temporarily hiding seasonal or deprecated questions without permanently deleting them.</td>
+                                    <td>Inactive questions are excluded from storefront accordion renders and live search indexes.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ================= 9.5: CMS BEST PRACTICES & SEO ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-9-5">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-lightbulb-on-outline text-warning me-1"></i> 9.5 CMS Best Practices & SEO Guidelines
+                    </h3>
+                    <p>
+                        To ensure high search visibility, rapid page load speeds, and legal compliance across multiple international jurisdictions, follow these core architectural guidelines when managing MartX CMS assets:
+                    </p>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <i class="mdi mdi-google fs-2 text-primary mb-2 d-block"></i>
+                                <h6 class="fw-bold text-heading mb-1">SERP Strict Limits</h6>
+                                <p class="small text-muted mb-0">
+                                    Keep Meta Titles strictly under 70 characters and Meta Descriptions under 160 characters. MartX real-time counters ensure zero truncation on Google search snippets.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <i class="mdi mdi-shield-check-outline fs-2 text-success mb-2 d-block"></i>
+                                <h6 class="fw-bold text-heading mb-1">Mandatory Legal Quartet</h6>
+                                <p class="small text-muted mb-0">
+                                    Every online storefront should maintain at minimum: Terms & Conditions, Privacy Policy, Shipping Policy, and Return & Refund Policy to meet credit card processor requirements.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <i class="mdi mdi-image-filter-center-focus fs-2 text-warning mb-2 d-block"></i>
+                                <h6 class="fw-bold text-heading mb-1">Optimized Visual Media</h6>
+                                <p class="small text-muted mb-0">
+                                    Upload optimized WebP or JPG/PNG image assets with consistent aspect ratios for About Us company stories and custom policy pages. This guarantees lightning-fast loading across all devices.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <i class="mdi mdi-drag-horizontal-variant fs-2 text-purple mb-2 d-block" style="color: #6f42c1;"></i>
+                                <h6 class="fw-bold text-heading mb-1">Order Hierarchy</h6>
+                                <p class="small text-muted mb-0">
+                                    Place high-volume queries (e.g., order tracking and return methods) at the top of the FAQ list using Sortable.js drag handles to resolve customer questions before they file support tickets.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="sliders-banners.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 15 (Sliders & Banners)
+                    </a>
+                    <a href="blogs-editorial.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 17 (Blogs & Editorial) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch9-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-9-1" class="doc-toc-link">9.1 Dynamic Custom Pages</a>
+                    <a href="#sec-9-2" class="doc-toc-link">9.2 Gemini AI Page Generator</a>
+                    <a href="#sec-9-3" class="doc-toc-link">9.3 About Us Page Builder</a>
+                    <a href="#sec-9-4" class="doc-toc-link">9.4 FAQ Knowledge Base</a>
+                    <a href="#sec-9-5" class="doc-toc-link">9.5 CMS & SEO Best Practices</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch9-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header border-bottom p-3 bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0 text-primary fs-5">
+                            <i class="mdi mdi-magnify"></i>
+                        </span>
+                        <input type="text" class="form-control form-control-lg border-start-0 ps-0" id="docGlobalSearch" placeholder="Search documentation...">
+                    </div>
+                </div>
+                <div class="modal-body p-0" id="docSearchResults" style="max-height: 420px; overflow-y: auto;">
+                    <div class="p-4 text-center text-muted">
+                        <i class="mdi mdi-text-search fs-1 d-block mb-2 text-primary opacity-50"></i>
+                        <p class="mb-0">Type any keyword to search across all chapters in real time.</p>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light py-2 px-3 justify-content-between">
+                    <small class="text-muted"><kbd>ESC</kbd> to close</small>
+                    <small class="text-muted"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

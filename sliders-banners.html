@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 15: Homepage Sliders & Banner Offer Placements - MartX Documentation</title>
+    <meta name="description" content="Chapter 8: Sliders & Promotional Banners Engine - MartX Enterprise Documentation">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+                                    <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER MAIN CONTENT COLUMN ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Chapter 15: Sliders & Banners</li>
+                    </ol>
+                </nav>
+
+                <!-- SECTION HEADER -->
+                <section class="doc-section mb-4" id="ch8-intro">
+                    <h1 class="doc-section-title d-flex align-items-center gap-2 mb-3">
+                        <i class="mdi mdi-view-carousel-outline text-primary"></i> Chapter 8: Sliders & Promotional Banners Engine
+                    </h1>
+                    <p class="lead text-muted">
+                        High-Impact Hero Visual Marketing, Drag-and-Drop Sortable Promo Sliders, and Context-Aware Promotional Offer Banner Architectures.
+                    </p>
+                </section>
+
+                <!-- Quick Overview Stat Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-image-size-select-actual fs-3 text-primary mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">21:9 Aspect Ratio</span>
+                            <span class="text-muted small">Cinema Hero Sliders</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-drag fs-3 text-warning mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">Live Drag & Drop</span>
+                            <span class="text-muted small">Sortable.js & AJAX Sync</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-link-variant fs-3 text-success mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">Dynamic CTA Routing</span>
+                            <span class="text-muted small">Pages, Cats, CMS, URLs</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-bullhorn-outline fs-3 text-purple mb-1 d-block" style="color: #6f42c1;"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">Banner Offers 1 & 2</span>
+                            <span class="text-muted small">Home 1 vs Home 2 Logic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 8.1: ARCHITECTURE & OVERVIEW ================= -->
+                <div class="doc-subsection mt-4 mb-5" id="sec-8-1">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-sitemap text-primary me-1"></i> 8.1 Visual Marketing Engine Architecture
+                    </h3>
+                    <p>
+                        In modern high-conversion e-commerce, the top fold of the storefront dictates customer first impressions and click-through rates (CTR). MartX separates visual marketing into two distinct, high-performance engines:
+                    </p>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <div class="p-4 border rounded-3 bg-white h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <div class="bg-primary-subtle text-primary rounded-3 p-2">
+                                        <i class="mdi mdi-image-multiple-outline fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold text-heading mb-0">1. Hero Promo Sliders Engine</h5>
+                                        <span class="badge bg-primary-subtle text-primary small">Homepage Hero Carousel</span>
+                                    </div>
+                                </div>
+                                <p class="small text-muted mb-3">
+                                    Powers the primary animated hero carousel at the very top of the homepage. Supports multi-slide rotating banners, promotional badges (e.g. <em>"New Season Drops"</em>), customizable headlines, subtitles with responsive 240px wrapping, and flexible Call-To-Action (CTA) buttons with dynamic link binding.
+                                </p>
+                                <ul class="small text-muted mb-0 ps-3">
+                                    <li><strong>Optimal Image Ratio:</strong> 21:9 ultra-wide banner (e.g., 1200x500 px).</li>
+                                    <li><strong>Reordering:</strong> Live drag-and-drop table serialization.</li>
+                                    <li><strong>Visibility:</strong> Independent Active / Inactive status flags.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="p-4 border rounded-3 bg-white h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <div class="bg-purple-subtle text-purple rounded-3 p-2" style="background-color: #f3e8ff; color: #6f42c1;">
+                                        <i class="mdi mdi-tag-percent-outline fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold text-heading mb-0">2. Promotional Banner Offers Engine</h5>
+                                        <span class="badge bg-purple-subtle text-purple small" style="background-color: #f3e8ff; color: #6f42c1;">Seasonal Promotion Cards</span>
+                                    </div>
+                                </div>
+                                <p class="small text-muted mb-3">
+                                    Drives the secondary high-impact promotional offer cards positioned directly below or alongside featured sections. Divided into <strong>Banner Offer 1</strong> and <strong>Banner Offer 2</strong>, tailored with transparent PNG imagery, seasonal discounts, and automated layout context rules.
+                                </p>
+                                <ul class="small text-muted mb-0 ps-3">
+                                    <li><strong>Optimal Image Ratio:</strong> 1:1 square graphic (500x500 px) with transparent PNG.</li>
+                                    <li><strong>Dual Tab Setup:</strong> Dedicated tabs for Offer 1 and Offer 2.</li>
+                                    <li><strong>Home Layout Awareness:</strong> Auto-locks Offer 2 when Home 2 is active.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Paths Callout -->
+                    <div class="doc-callout doc-callout-info">
+                        <div class="doc-callout-title text-primary">
+                            <i class="mdi mdi-compass-outline"></i> Admin Access Routes
+                        </div>
+                        <ul class="small mb-0 ps-3">
+                            <li class="mb-1"><strong>Hero Sliders:</strong> <strong>Admin Dashboard</strong> &rarr; <strong>Website & CMS</strong> &rarr; <strong>Sliders</strong></li>
+                            <li><strong>Banner Offers:</strong> <strong>Admin Dashboard</strong> &rarr; <strong>Website & CMS</strong> &rarr; <strong>Banner Offers</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ================= 8.2: SLIDERS MANAGEMENT WORKSPACE ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-8-2">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-table-furniture text-primary me-1"></i> 8.2 Sliders Management Workspace
+                    </h3>
+                    <p>
+                        The central slider management table provides store managers with an instant visual inventory of all homepage hero carousels. Admins can view banner graphics, verify promotional badges, inspect subtitle messaging, toggle active statuses, and initiate 1-click drag-and-drop reordering.
+                    </p>
+
+                    <!-- Admin Sliders Table Screenshot Frame -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Sliders Management Table
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Slider List View</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/sliders/admin_sliders_table.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/sliders/admin_sliders_table.png" alt="Sliders Management Table" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                    <span class="badge bg-primary-subtle text-primary font-monospace small">images/sliders/admin_sliders_table.png</span>
+                                </div>
+                            </div>
+                            <div class="small text-muted mt-2">
+                                <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Sliders Workspace:</strong> Displays promo slider records with 21:9 image previews, title & CTA indicators, responsive 240px subtitle wrapping, custom badge pills, active statuses, and 3-dots action dropdowns.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column Anatomy Breakdown -->
+                    <h5 class="fw-bold text-heading mb-3">Table Column Structure & UI Features:</h5>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-heading mb-1"><i class="mdi mdi-drag-vertical text-muted me-1"></i> 1. SL & Drag Handle</h6>
+                                <p class="small text-muted mb-0">
+                                    Features a drag-and-drop icon (<i class="mdi mdi-drag-vertical text-muted"></i>) with an interactive grab cursor. Displays current numeric sequence order (1, 2, 3...) that dynamically updates upon drop.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-heading mb-1"><i class="mdi mdi-image text-primary me-1"></i> 2. Preview Image</h6>
+                                <p class="small text-muted mb-0">
+                                    Renders a 190px wide thumbnail preserving the 21:9 cinematic aspect ratio. Features smooth hover zoom (<span class="badge bg-light text-dark border">premium-zoom</span>) for instant graphic verification.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-heading mb-1"><i class="mdi mdi-format-title text-info me-1"></i> 3. Title & Button CTA</h6>
+                                <p class="small text-muted mb-0">
+                                    Displays the main marketing headline in bold text alongside a small CTA badge indicating button text (e.g. <span class="badge bg-light text-dark border small"><i class="mdi mdi-cursor-default-click-outline"></i> Shop Collection</span>).
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-heading mb-1"><i class="mdi mdi-text-short text-success me-1"></i> 4. Sub Title (240px Wrap)</h6>
+                                <p class="small text-muted mb-0">
+                                    Engineered with a dedicated <span class="badge bg-light text-dark border">max-width: 240px;</span> and 2-line clamp safeguard. Prevents long promotional sentences from stretching the table width while displaying full tooltips on hover.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-heading mb-1"><i class="mdi mdi-tag-outline text-purple me-1" style="color: #6f42c1;"></i> 5. Badge Text</h6>
+                                <p class="small text-muted mb-0">
+                                    Displays promotional pill highlights (e.g. <span class="badge bg-primary-subtle text-primary border border-primary-subtle">New Season Drops</span> or <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Trending Now</span>). Shows a dash (<span class="text-muted">—</span>) if no badge is set.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-heading mb-1"><i class="mdi mdi-dots-vertical text-dark me-1"></i> 6. Status & Actions</h6>
+                                <p class="small text-muted mb-0">
+                                    Shows a pill badge (<span class="badge bg-success-subtle text-success">Active</span> / <span class="badge bg-danger-subtle text-danger">Inactive</span>) alongside a 3-dots dropdown menu providing <strong>Edit</strong> and <strong>Delete</strong> actions with SweetAlert2 confirmation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 8.3: DRAG & DROP REORDERING ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-8-3">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-drag text-primary me-1"></i> 8.3 Drag & Drop Sequence Ordering & AJAX Serialization
+                    </h3>
+                    <p>
+                        MartX eliminates tedious numeric order typing. Sliders can be rearranged instantly via native <strong>HTML5 Drag-and-Drop</strong> powered by <span class="badge bg-light text-dark border">Sortable.js</span>:
+                    </p>
+
+                    <div class="row g-4 align-items-center mb-4">
+                        <div class="col-lg-6">
+                            <div class="p-4 border rounded-3 bg-white shadow-sm h-100">
+                                <h6 class="fw-bold text-heading mb-2">
+                                    <i class="mdi mdi-cursor-move text-primary me-1"></i> Reordering Execution Flow
+                                </h6>
+                                <ol class="small text-muted mb-0 ps-3">
+                                    <li class="mb-2">Click and hold any row in the slider table (or touch the drag handle <i class="mdi mdi-drag-vertical"></i> on mobile).</li>
+                                    <li class="mb-2">Drag the slider vertically up or down to your desired display rank.</li>
+                                    <li class="mb-2">Release the mouse button to drop the slide into place.</li>
+                                    <li class="mb-2">The system instantly saves the updated display sequence in the background without requiring any manual "Save" click.</li>
+                                    <li>SL sequence numbers (1, 2, 3...) recalculate dynamically, and a green success Toastr confirmation confirms database synchronization.</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="p-4 border rounded-3 bg-white shadow-sm h-100">
+                                <h6 class="fw-bold text-success mb-2">
+                                    <i class="mdi mdi-cellphone-link text-success me-1"></i> Responsive Multi-Device Reordering
+                                </h6>
+                                <p class="small text-muted mb-3">
+                                    Unlike traditional admin panels that disable sorting on mobile devices, MartX features a dedicated touch-friendly accordion drag engine for smartphones and tablets:
+                                </p>
+                                <div class="p-2 border rounded bg-light small mb-2">
+                                    <strong class="text-dark d-block mb-1">Desktop Display (&ge; 1200px):</strong>
+                                    The entire table row (<span class="font-monospace text-primary">.dash-table tbody tr</span>) acts as an active grab zone with visual drop shadows.
+                                </div>
+                                <div class="p-2 border rounded bg-light small">
+                                    <strong class="text-dark d-block mb-1">Mobile Display (&lt; 1200px):</strong>
+                                    A dedicated touch grip icon (<span class="font-monospace text-primary">.mdi-drag-vertical</span>) enables smooth touch-based sorting without interfering with accordion click-to-expand behaviors.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 8.4: SLIDER CREATION & EDIT WORKSPACE ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-8-4">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-image-edit-outline text-primary me-1"></i> 8.4 Slider Creation & Edit Workspace
+                    </h3>
+                    <p>
+                        Adding a new hero slider (via <strong>Add New Slider</strong>) or editing an existing banner (via the table <strong>Edit</strong> action) features a clean 2-column layout dividing text information and visual media:
+                    </p>
+
+                    <!-- Add & Edit Screenshot Frames (Sequential Showcase) -->
+                    <div class="row g-4 mb-4">
+                        <!-- Add Form Frame -->
+                        <div class="col-lg-6">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Add New Slider
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Create Form</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/sliders/admin_slider_add.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/sliders/admin_slider_add.png" alt="Add New Slider Form" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/sliders/admin_slider_add.png</span>
+                                        </div>
+                                    </div>
+                                    <div class="small text-muted mt-2">
+                                        <i class="mdi mdi-plus-circle text-primary me-1"></i> <strong>Clean Blank State:</strong> Form fields initialized with helpful placeholder hints and empty media uploader with 21:9 ratio guidance.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Edit Form Frame -->
+                        <div class="col-lg-6">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Edit Slider
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-success text-white font-monospace" style="font-size: 10px;">Edit Form</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/sliders/admin_slider_edit.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/sliders/admin_slider_edit.png" alt="Edit Slider Form" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/sliders/admin_slider_edit.png</span>
+                                        </div>
+                                    </div>
+                                    <div class="small text-muted mt-2">
+                                        <i class="mdi mdi-pencil-outline text-success me-1"></i> <strong>Live Populated State:</strong> Active slider record showing Title, Subtitle, Badge, CTA Link binding, and uploaded 21:9 image thumbnail.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Field Architecture Breakdown -->
+                    <h5 class="fw-bold text-heading mb-3">Detailed Field Architecture:</h5>
+                    <div class="card border rounded-3 p-4 bg-white shadow-sm mb-4">
+                        <div class="row g-4">
+                            <!-- Left Column Inputs -->
+                            <div class="col-lg-7">
+                                <h6 class="fw-bold text-primary mb-3"><i class="mdi mdi-card-text-outline me-1"></i> Left Column: Slider Information</h6>
+                                <div class="table-responsive">
+                                    <table class="table table-sm table-bordered align-middle mb-0">
+                                        <thead class="table-light small">
+                                            <tr>
+                                                <th style="width: 25%;">Field Name</th>
+                                                <th style="width: 20%;">Type</th>
+                                                <th style="width: 55%;">Description & Best Practice</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="fw-bold text-heading">Title <span class="text-danger">*</span></td>
+                                                <td><span class="badge bg-light text-dark border">Text (Required)</span></td>
+                                                <td>Main hero headline (e.g. <em>"Summer Fashion 2026"</em>). Keep between 3 to 6 words for optimal typography sizing.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-heading">Sub Title <span class="text-danger">*</span></td>
+                                                <td><span class="badge bg-light text-dark border">Text (Required)</span></td>
+                                                <td>Secondary promotional value proposition (e.g. <em>"Discover curated luxury apparel and breathable activewear."</em>).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-heading">Badge Text</td>
+                                                <td><span class="badge bg-light text-dark border">Text (Optional)</span></td>
+                                                <td>Upper highlight tag (e.g. <em>"New Season Drops"</em>, <em>"50% Off"</em>, <em>"Trending Now"</em>) rendered in an accent pill container.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-heading">Button Text <span class="text-danger">*</span></td>
+                                                <td><span class="badge bg-light text-dark border">Text (Required)</span></td>
+                                                <td>Call-to-action button label (e.g. <em>"Shop Collection"</em>, <em>"Explore Footwear"</em>, <em>"Discover Timepieces"</em>).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-heading">Status</td>
+                                                <td><span class="badge bg-light text-dark border">Select (1 / 0)</span></td>
+                                                <td>Toggle between <strong>Active</strong> (visible on storefront) or <strong>Inactive</strong> (draft/seasonal pause).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-heading">Button Link</td>
+                                                <td><span class="badge bg-primary-subtle text-primary border border-primary-subtle">Dynamic Selector</span></td>
+                                                <td>Connects to <strong>System Pages</strong> (Shop, Flash Sales), <strong>Product Categories</strong>, <strong>CMS Pages</strong>, or <strong>Custom URLs</strong>.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Right Column Media Card -->
+                            <div class="col-lg-5">
+                                <h6 class="fw-bold text-primary mb-3"><i class="mdi mdi-image-frame me-1"></i> Right Column: Media Uploader</h6>
+                                <div class="p-3 border rounded-3 bg-light text-center h-100 d-flex flex-column justify-content-between">
+                                    <div>
+                                        <span class="badge bg-primary-subtle text-primary font-monospace px-3 py-1 mb-2">21:9 Aspect Ratio</span>
+                                        <h6 class="fw-bold text-heading mb-2">High-Resolution Cinematic Canvas</h6>
+                                        <p class="small text-muted mb-3">
+                                            Hero carousels utilize an expansive <strong>21:9 ratio</strong>. Clicking <strong>Select Image</strong> connects directly to the MartX Media Manager for seamless asset upload, cropping, and instant high-res preview.
+                                        </p>
+                                    </div>
+                                    <div class="alert alert-info border-0 bg-info-subtle text-info p-2 mb-0 small text-start d-flex align-items-center">
+                                        <i class="mdi mdi-information-outline fs-5 me-2 flex-shrink-0"></i>
+                                        <span><strong>Pro-Tip:</strong> Recommended resolution is <strong>1200x500 px</strong> or <strong>1920x820 px</strong> in compressed WebP format for sub-second page loads.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 8.5: BANNER OFFERS 1 ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-8-5">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-bullhorn-outline text-primary me-1"></i> 8.5 Promotional Banner Offers Engine (Banner Offer 1)
+                    </h3>
+                    <p>
+                        In addition to rotating hero sliders, MartX incorporates a dedicated <strong>Promotional Banner Offers Module</strong> located under <strong>Website & CMS &rarr; Banner Offers</strong>. These fixed promotional cards showcase targeted seasonal promotions, flash vouchers, and category spotlights.
+                    </p>
+
+                    <!-- Banner Offer 1 Screenshot Frame -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Banner Offers Hub (Banner Offer 1 Active)
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Offer 1 Tab</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/sliders/admin_banner_offer_1.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/sliders/admin_banner_offer_1.png" alt="Banner Offer 1 Configuration" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                    <span class="badge bg-primary-subtle text-primary font-monospace small">images/sliders/admin_banner_offer_1.png</span>
+                                </div>
+                            </div>
+                            <div class="small text-muted mt-2">
+                                <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Banner Offer 1 Details:</strong> Configures campaign title (e.g. <em>"Spring Exclusive Sale"</em>), sub-title (<em>"Up to 60% off"</em>), dynamic category link binding (<em>Eyewear & Accessories</em>), banner status, and transparent PNG portrait media.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Banner Offer 1 Controls -->
+                    <h5 class="fw-bold text-heading mb-3">Banner Offer 1 Architecture:</h5>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-format-title text-primary me-1"></i> Campaign Title & Discount Subtitle</h6>
+                                <p class="small text-muted mb-0">
+                                    Craft clear discount messaging (e.g., Title: <em>"Spring Exclusive Sale"</em> | Subtitle: <em>"Up to 60% off"</em>). The frontend renders these with bold contrast typography over accent colored cards.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-cursor-default-click text-success me-1"></i> Dynamic Destination Link Binding</h6>
+                                <p class="small text-muted mb-0">
+                                    Direct customers straight to high-converting landing pages: select <strong>Category</strong> &rarr; <em>Eyewear & Accessories</em>, a dedicated <strong>CMS Page</strong> (e.g. <em>Spring Deals</em>), or a custom seasonal clearance URL.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-image-filter-none text-info me-1"></i> 1:1 Transparent PNG Banner Graphic</h6>
+                                <p class="small text-muted mb-0">
+                                    Unlike wide hero sliders, promotional banners use a <strong>1:1 square ratio (500x500 px)</strong>. Using transparent PNG backgrounds allows the model or product graphic to seamlessly blend with the card background theme.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-content-save-outline text-purple me-1" style="color: #6f42c1;"></i> Unified Multi-Tab Save Action</h6>
+                                <p class="small text-muted mb-0">
+                                    Clicking the purple <strong>Save All Changes</strong> button at the bottom saves both Banner Offer 1 and Banner Offer 2 simultaneously in a single, atomic database transaction.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 8.6: BANNER OFFER 2 & HOME 2 CONTEXT RULE ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-8-6">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-shield-lock-outline text-primary me-1"></i> 8.6 Banner Offer 2 & Critical Home 1 vs Home 2 Architectural Rule
+                    </h3>
+                    <p>
+                        Clicking the second pill tab in the banner manager reveals <strong>Banner Offer 2</strong>. In MartX, Banner Offer 2 is engineered with an intelligent <strong>Theme Layout Context Rule</strong> that prevents layout distortions across different homepage designs.
+                    </p>
+
+                    <!-- Banner Offer 2 Screenshot Frame -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Banner Offers Hub (Banner Offer 2 Active)
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-purple text-white font-monospace" style="background-color: #6f42c1; font-size: 10px;">Offer 2 Tab</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/sliders/admin_banner_offer_2.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/sliders/admin_banner_offer_2.png" alt="Banner Offer 2 Configuration" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                    <span class="badge bg-primary-subtle text-primary font-monospace small">images/sliders/admin_banner_offer_2.png</span>
+                                </div>
+                            </div>
+                            <div class="small text-muted mt-2">
+                                <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Banner Offer 2 Details:</strong> Features campaign parameters (<em>"Luxury Designer Watches"</em>, <em>"Handcrafted Precision & Minimalist Aesthetics"</em>, System Page Link) with high-res portrait media.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CRITICAL SYSTEM ARCHITECTURE RULE -->
+                    <div class="doc-callout doc-callout-warning mb-4">
+                        <div class="doc-callout-title text-warning">
+                            <i class="mdi mdi-alert-circle-outline"></i> Critical System Rule: Home 1 vs Home 2 Banner Offer Incompatibility
+                        </div>
+                        <p class="small mb-2">
+                            When your active storefront layout is set to <strong>Home 2</strong> (in Chapter 6: <a href="theme-layouts.html#sec-6-2" class="fw-bold text-decoration-none">Home Layouts Hub</a>), <strong>Banner Offer 2 is automatically disabled and locked</strong> in the admin panel!
+                        </p>
+                        <div class="row g-2 mt-2">
+                            <div class="col-md-6">
+                                <div class="p-2 border rounded bg-white small">
+                                    <strong class="text-success d-block mb-1"><i class="mdi mdi-check-circle-outline"></i> In Home 1 (Multi-Section Grid):</strong>
+                                    Both <strong>Banner Offer 1</strong> and <strong>Banner Offer 2</strong> are active and displayed side-by-side as dual complementary promotional cards across the main content flow.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-2 border rounded bg-white small">
+                                    <strong class="text-danger d-block mb-1"><i class="mdi mdi-close-circle-outline"></i> In Home 2 (Full-Width Showcase):</strong>
+                                    Home 2 features an exclusive <strong>single full-width hero showcase banner</strong> powered exclusively by <strong>Banner Offer 1</strong>. Banner Offer 2 is suppressed to maintain geometric balance.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admin Behavior When Home 2 is Active -->
+                    <div class="card border rounded-3 p-4 bg-white shadow-sm mb-4">
+                        <h6 class="fw-bold text-heading mb-2">
+                            <i class="mdi mdi-lock-alert-outline text-warning me-1"></i> Automated Admin UI Protection When Home 2 is Active:
+                        </h6>
+                        <p class="small text-muted mb-3">
+                            To eliminate store manager confusion, MartX automatically enforces the following interface behaviors when Home 2 is selected:
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="p-3 bg-light rounded-3 h-100">
+                                    <span class="badge bg-danger-subtle text-danger mb-2">Pill Tab Badge</span>
+                                    <p class="small text-muted mb-0">
+                                        The <strong>Banner Offer 2</strong> tab header displays a bright red badge: <span class="badge bg-danger-subtle text-danger rounded-pill">Inactive in Home 2</span>.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 bg-light rounded-3 h-100">
+                                    <span class="badge bg-warning-subtle text-warning mb-2">Context Alert Box</span>
+                                    <p class="small text-muted mb-0">
+                                        Displays an informative alert banner: <em>"Notice: Banner Offer 2 is Inactive in Home 2 Layout"</em> explaining the full-width single-banner architecture.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 bg-light rounded-3 h-100">
+                                    <span class="badge bg-secondary-subtle text-secondary mb-2">Fieldset Lock</span>
+                                    <p class="small text-muted mb-0">
+                                        All input fields, dropdown selectors, and media buttons in Tab 2 are locked with <span class="badge bg-light text-dark border">disabled</span> and 55% opacity styling to prevent accidental edits.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 8.7: OPTIMIZATION & BEST PRACTICES ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-8-7">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-lightbulb-on-outline text-primary me-1"></i> 8.7 Optimization & Conversion Best Practices
+                    </h3>
+                    <p>
+                        Follow these enterprise design recommendations to achieve optimal page speed performance and maximum customer click-through rates:
+                    </p>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <i class="mdi mdi-file-image-outline fs-2 text-primary mb-2 d-block"></i>
+                                <h6 class="fw-bold text-heading mb-1">WebP Asset Format</h6>
+                                <p class="small text-muted mb-0">
+                                    Upload visuals in modern WebP format. WebP delivers 30% smaller file sizes than JPEG with identical visual clarity, protecting Google PageSpeed scores.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <i class="mdi mdi-numeric-3-circle-outline fs-2 text-success mb-2 d-block"></i>
+                                <h6 class="fw-bold text-heading mb-1">3 to 5 Slides Limit</h6>
+                                <p class="small text-muted mb-0">
+                                    Avoid carousel bloat. Keeping hero sliders between <strong>3 to 5 slides</strong> maximizes customer attention while keeping first-contentful-paint (FCP) lightning fast.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <i class="mdi mdi-cursor-pointer fs-2 text-warning mb-2 d-block"></i>
+                                <h6 class="fw-bold text-heading mb-1">Action-Driven CTAs</h6>
+                                <p class="small text-muted mb-0">
+                                    Use clear, high-intent action verbs for button labels: <em>"Shop New Drops"</em>, <em>"Claim 50% Voucher"</em>, or <em>"Explore Footwear"</em> rather than generic words.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <i class="mdi mdi-cellphone-check fs-2 text-purple mb-2 d-block" style="color: #6f42c1;"></i>
+                                <h6 class="fw-bold text-heading mb-1">Mobile Center Focal</h6>
+                                <p class="small text-muted mb-0">
+                                    When designing graphics, keep key subjects (models, shoes, watches) towards the center. This guarantees they remain focal on narrow mobile viewports.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="navigation-menus.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 14 (Navigation & Mega Menus)
+                    </a>
+                    <a href="cms-pages.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 16 (Pages, FAQ & About) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch8-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-8-1" class="doc-toc-link">8.1 Architecture & Overview</a>
+                    <a href="#sec-8-2" class="doc-toc-link">8.2 Sliders Management Workspace</a>
+                    <a href="#sec-8-3" class="doc-toc-link">8.3 Drag & Drop Ordering</a>
+                    <a href="#sec-8-4" class="doc-toc-link">8.4 Slider Creation & Edit Workspace</a>
+                    <a href="#sec-8-5" class="doc-toc-link">8.5 Promotional Banner Offers (Offer 1)</a>
+                    <a href="#sec-8-6" class="doc-toc-link">8.6 Banner Offer 2 & Home Layout Rule</a>
+                    <a href="#sec-8-7" class="doc-toc-link">8.7 Optimization & Best Practices</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch8-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header border-bottom p-3 bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0 text-primary fs-5">
+                            <i class="mdi mdi-magnify"></i>
+                        </span>
+                        <input type="text" class="form-control form-control-lg border-start-0 ps-0" id="docGlobalSearch" placeholder="Search documentation...">
+                    </div>
+                </div>
+                <div class="modal-body p-0" id="docSearchResults" style="max-height: 420px; overflow-y: auto;">
+                    <div class="p-4 text-center text-muted">
+                        <i class="mdi mdi-text-search fs-1 d-block mb-2 text-primary opacity-50"></i>
+                        <p class="mb-0">Type any keyword to search across all chapters in real time.</p>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light py-2 px-3 justify-content-between">
+                    <small class="text-muted"><kbd>ESC</kbd> to close</small>
+                    <small class="text-muted"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

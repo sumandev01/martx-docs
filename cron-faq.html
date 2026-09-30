@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 22: Web Cron Automation & Technical Knowledge Base - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="https://wa.me/8801750527181?text=Hello%20Suman%20Dev,%20I%20purchased%20MartX%20Enterprise%20and%20need%20assistance." target="_blank" rel="noopener noreferrer" class="btn btn-outline-success doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1" title="WhatsApp: +880 1750-527181">
+                    <i class="mdi mdi-whatsapp"></i> WhatsApp Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+            <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction &amp; Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce &amp; Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders &amp; Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers &amp; Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons &amp; Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website &amp; CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders &amp; Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ &amp; About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs &amp; Editorial
+                </a>
+                <div class="sidebar-heading">Customer &amp; Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews &amp; Messages
+                </a>
+                <div class="sidebar-heading">Administration &amp; Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations &amp; Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance &amp; Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron &amp; FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Maintenance &amp; Support</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">22. Web Cron &amp; FAQs</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= MAIN CHAPTER SECTION ================= -->
+                <section class="doc-section" id="ch22-intro">
+                    <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2.5 py-1 rounded-pill small fw-semibold">
+                            <i class="mdi mdi-clock-fast me-1"></i> Automation &amp; FAQ
+                        </span>
+                        <span class="badge bg-light text-muted border px-2.5 py-1 rounded-pill small">
+                            Chapter 22 of 22 (Master Reference)
+                        </span>
+                    </div>
+
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-clock-fast text-primary"></i> Chapter 22: Web Cron Automation &amp; Frequently Asked Questions
+                    </h1>
+                    <p class="lead text-muted">
+                        Automating background store maintenance, scheduled stock reconciliation, zero-code cloud web cron configuration, and the official merchant troubleshooting knowledge base.
+                    </p>
+
+                    <!-- Feature Highlights Grid -->
+                    <div class="row g-3 my-4">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-autorenew text-primary fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Automated Background Tasks</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Cancels abandoned unpaid orders, releases locked inventory stock, and keeps your store catalog running smoothly 24/7.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-cloud-outline text-success fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Zero-Code Cloud Web Cron</h6>
+                                </div>
+                                <p class="small text-muted mb-0">No server terminal or SSH commands needed. Set up automated scheduled runs with a single secure URL on any free cron service.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-help-circle-outline text-warning fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Merchant Knowledge Base</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Comprehensive answers to common merchant questions: image symlinks, SMTP delivery, Google Gemini AI setup, and domain transfers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Architectural Overview -->
+                    <div class="card border-0 shadow-sm rounded-3 mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold mb-3">Background Maintenance &amp; Storefront Automation</h4>
+                            <p class="text-muted">
+                                A thriving eCommerce store operates non-stop. While customers browse and purchase products, several essential background tasks must run continuously behind the scenes. The <strong>MartX Automation Engine</strong> ensures that expired unpaid checkout sessions are promptly cancelled, locked product quantities are returned to available stock, promotional flash sale timers trigger on schedule, and system caches remain optimized.
+                            </p>
+                            <div class="alert alert-info border-0 d-flex align-items-start gap-3 mb-0">
+                                <i class="mdi mdi-information-outline fs-4 text-info flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <strong>Supported Automation Methods:</strong>
+                                    <div class="mt-1 font-monospace small">
+                                        • Method A: Standard Hosting Scheduled Task (cPanel Cron Jobs)<br>
+                                        • Method B: 1-Minute Free Cloud Web Cron (cron-job.org / EasyCron / Cloudflare)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 22.1: AUTOMATED BACKGROUND TASKS OVERVIEW ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-22-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-sync-circle text-primary me-1"></i> 22.1 What Background Tasks Do for Your Store
+                        </h3>
+                        <p class="text-muted">
+                            When customers initiate an online payment via Stripe or payment gateways, MartX temporarily holds the product inventory to prevent overselling. If the buyer abandons checkout or closes their browser, the background task engine automatically restores stock availability.
+                        </p>
+
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">Key Automation Responsibilities</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <i class="mdi mdi-cart-remove text-danger fs-4"></i>
+                                                <h6 class="fw-bold mb-0">Cancelling Abandoned Unpaid Orders</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                Automatically scans for pending orders that have exceeded payment expiration windows, marks them as cancelled, and instantly restores the reserved product quantities back to live stock.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <i class="mdi mdi-clock-check-outline text-success fs-4"></i>
+                                                <h6 class="fw-bold mb-0">Promotion &amp; Flash Deal Timers</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                Ensures promotional banners, coupon validity periods, and flash sales start and conclude strictly according to your local store timezone without requiring manual admin intervention.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <i class="mdi mdi-email-sync-outline text-primary fs-4"></i>
+                                                <h6 class="fw-bold mb-0">Email Delivery Reliability</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                Manages outbound customer email queues, review notification dispatches, and contact message notifications so your hosting server never experiences request timeouts.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <i class="mdi mdi-database-sync-outline text-warning fs-4"></i>
+                                                <h6 class="fw-bold mb-0">System Cache Optimization</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                Flushes expired temporary session tokens, prunes stale shopping carts, and optimizes database query performance for ultra-fast customer page load speeds.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 22.2: CPANEL CRON JOBS SETUP ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-22-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-server-network text-primary me-1"></i> 22.2 Method A: Standard cPanel Scheduled Task Setup
+                        </h3>
+                        <p class="text-muted">
+                            If your store is hosted on a standard cPanel hosting server (e.g. Namecheap, Bluehost, Hostinger, Siteground, cPanel VPS), follow this simple 4-step walkthrough:
+                        </p>
+
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">Step-by-Step cPanel Configuration</h5>
+                                <ol class="text-muted small ps-3 mb-0">
+                                    <li class="mb-3">
+                                        <strong>Log into your Hosting cPanel:</strong> Navigate to your hosting client portal and open the cPanel dashboard for your domain.
+                                    </li>
+                                    <li class="mb-3">
+                                        <strong>Find Cron Jobs:</strong> In the search box at the top of cPanel, type <code>Cron Jobs</code> and click on the <strong>Cron Jobs</strong> icon (located under the <em>Advanced</em> section).
+                                    </li>
+                                    <li class="mb-3">
+                                        <strong>Select Schedule Frequency:</strong> In the <em>Common Settings</em> dropdown menu, select <strong>Once Per Minute (* * * * *)</strong>.
+                                    </li>
+                                    <li class="mb-3">
+                                        <strong>Enter the Scheduled Command:</strong> In the <em>Command</em> input field, paste the standard command below (replace <code>your_username</code> with your actual cPanel username):
+                                        <div class="p-2.5 rounded bg-dark text-white font-monospace small my-2">
+                                            php /home/your_username/public_html/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1
+                                        </div>
+                                        <span class="text-muted extra-small"><em>Note: If your store is installed in a subdomain or folder, adjust <code>public_html</code> to match your root folder path.</em></span>
+                                    </li>
+                                    <li>
+                                        <strong>Save Scheduled Task:</strong> Click the <strong>Add New Cron Job</strong> button. cPanel will now automatically trigger background maintenance every minute!
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 22.3: ZERO-CODE CLOUD WEB CRON SETUP ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-22-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-cloud-check text-primary me-1"></i> 22.3 Method B: Zero-Code Cloud Web Cron Setup (No Terminal Needed)
+                        </h3>
+                        <p class="text-muted">
+                            If your hosting plan does not include cPanel cron jobs, or if you prefer a completely visual, zero-code setup, MartX features a dedicated <strong>Secure Web Cron Endpoint</strong>.
+                        </p>
+
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">Your Secure Store Web Cron URL</h5>
+                                <p class="text-muted small">
+                                    MartX includes a protected web URL that safely executes background tasks when visited. Simply copy your store's web cron link:
+                                </p>
+                                <div class="p-3 bg-light rounded-3 border mb-3">
+                                    <span class="text-muted small d-block mb-1 fw-bold">Web Cron Trigger URL:</span>
+                                    <code class="text-primary fw-bold" style="font-size: 14px;">https://yourdomain.com/run-background-tasks/eshop-secure-cron</code>
+                                </div>
+                                <div class="alert alert-light border shadow-sm rounded-3">
+                                    <div class="d-flex align-items-center gap-2 mb-1">
+                                        <i class="mdi mdi-shield-lock-outline text-success fs-5"></i>
+                                        <h6 class="fw-bold mb-0">Built-in Rate Limiting Guard</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        To prevent server performance overload, MartX automatically enforces a smart 1-minute cache guard. Even if the URL is requested multiple times within seconds, background tasks only run once per minute, keeping your server fast and responsive.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3-Step Free Cloud Cron Guide -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">3-Minute Setup on Free Cloud Cron Services</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-primary rounded-circle p-2">1</span>
+                                                <h6 class="fw-bold mb-0">Create Free Account</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                Visit a trusted free cloud cron provider such as <strong>cron-job.org</strong> or <strong>EasyCron</strong> and sign up for a free account.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-primary rounded-circle p-2">2</span>
+                                                <h6 class="fw-bold mb-0">Paste Your URL</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                Click <strong>Create Cronjob</strong>, paste your store's Web Cron URL into the URL field, and select an execution schedule (every 1 to 5 minutes).
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-primary rounded-circle p-2">3</span>
+                                                <h6 class="fw-bold mb-0">Activate &amp; Relax</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                Click <strong>Save</strong>. The cloud service will now reliably ping your store in the background, keeping all order reconciliations running 24/7 with zero maintenance.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 22.4: FREQUENTLY ASKED QUESTIONS (FAQ) ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-22-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-help-box-multiple-outline text-primary me-1"></i> 22.4 Frequently Asked Questions &amp; Troubleshooting Knowledge Base
+                        </h3>
+                        <p class="text-muted">
+                            Quick, authoritative answers to the most common questions and operational scenarios encountered by store owners and administrators:
+                        </p>
+
+                        <!-- FAQ Accordion -->
+                        <div class="accordion shadow-sm rounded-3 overflow-hidden mb-4" id="martxFaqAccordion">
+                            
+                            <!-- FAQ Item 1 -->
+                            <div class="accordion-item border-0 border-bottom">
+                                <h2 class="accordion-header" id="faqHeading1">
+                                    <button class="accordion-button fw-bold text-heading collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                                        <i class="mdi mdi-image-broken text-danger me-2 fs-5"></i> 1. Why are product images or logos showing broken thumbnails after installation or server migration?
+                                    </button>
+                                </h2>
+                                <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#martxFaqAccordion">
+                                    <div class="accordion-body text-muted small">
+                                        <p class="mb-2"><strong>Cause:</strong> On shared hosting, the connection between the private storage folder and the public web directory (known as the storage symlink) can get disconnected during server migrations or domain changes.</p>
+                                        <p class="mb-0"><strong>Instant 1-Click Fix:</strong> You do NOT need terminal or SSH access. Simply log into the MartX Admin Dashboard, navigate to <strong>System Settings &gt; System Configuration</strong>, and click the <strong>Re-generate Storage Symlink</strong> button. The system will automatically repair the connection, and all your product pictures, category icons, and brand logos will display properly immediately.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 2 -->
+                            <div class="accordion-item border-0 border-bottom">
+                                <h2 class="accordion-header" id="faqHeading2">
+                                    <button class="accordion-button fw-bold text-heading collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                        <i class="mdi mdi-email-alert text-warning me-2 fs-5"></i> 2. Why are customer order emails or 2FA verification codes not arriving in the inbox?
+                                    </button>
+                                </h2>
+                                <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#martxFaqAccordion">
+                                    <div class="accordion-body text-muted small">
+                                        <p class="mb-2"><strong>Cause:</strong> Incorrect SMTP port or authentication credentials in your mail configuration.</p>
+                                        <p class="mb-2"><strong>Solution:</strong> Navigate to <strong>System Settings &gt; Mail Settings</strong> and check the following rules:</p>
+                                        <ul class="mb-2 ps-3">
+                                            <li><strong>Port Matching:</strong> If you enter Port <code>465</code>, select <strong>SSL</strong> encryption. If you enter Port <code>587</code>, select <strong>TLS</strong> encryption.</li>
+                                            <li><strong>For Gmail Accounts:</strong> You cannot use your standard account password if 2-Step Verification is active. Generate a 16-character <em>Google App Password</em> from your Google Account Security page and paste it into the <em>Mail Password</em> field.</li>
+                                            <li><strong>For Webmail (cPanel):</strong> Ensure the <em>From Address</em> matches your domain (e.g., <code>orders@yourdomain.com</code>) to prevent emails from going to spam.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 3 -->
+                            <div class="accordion-item border-0 border-bottom">
+                                <h2 class="accordion-header" id="faqHeading3">
+                                    <button class="accordion-button fw-bold text-heading collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                        <i class="mdi mdi-incognito text-primary me-2 fs-5"></i> 3. How do I change my secret Admin Dashboard URL to protect against unauthorized login attempts?
+                                    </button>
+                                </h2>
+                                <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#martxFaqAccordion">
+                                    <div class="accordion-body text-muted small">
+                                        <p class="mb-2"><strong>Solution:</strong> Navigate to <strong>System Settings &gt; Security &amp; Access</strong>. In the <strong>Admin URL Prefix</strong> field, enter any custom path (for example, <code>my_private_hub</code> or <code>staff_portal</code>) and save.</p>
+                                        <p class="mb-0">MartX will immediately move your login page to the new URL (e.g., <code>https://yourdomain.com/my_private_hub</code>). Anyone trying to guess standard paths like <code>/admin</code> or <code>/wp-admin</code> will see a 404 Not Found error.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 4 -->
+                            <div class="accordion-item border-0 border-bottom">
+                                <h2 class="accordion-header" id="faqHeading4">
+                                    <button class="accordion-button fw-bold text-heading collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                                        <i class="mdi mdi-robot text-success me-2 fs-5"></i> 4. How do I set up the 24/7 Google Gemini AI Shopping Assistant for free?
+                                    </button>
+                                </h2>
+                                <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#martxFaqAccordion">
+                                    <div class="accordion-body text-muted small">
+                                        <p class="mb-2"><strong>Solution:</strong> MartX is built with native integration for Google Gemini 1.5 Flash, which has a 100% free tier (up to 15 requests per minute with zero billing required):</p>
+                                        <ol class="mb-0 ps-3">
+                                            <li class="mb-1">Visit <strong>aistudio.google.com/app/apikey</strong> and sign in with your regular Google account.</li>
+                                            <li class="mb-1">Click <strong>Create API Key</strong> and copy your key.</li>
+                                            <li class="mb-1">Go to your Admin Dashboard &gt; <strong>System Settings &gt; AI &amp; Live Chat</strong>, switch <strong>Enable AI Chat</strong> to ON, paste your API key, and click <strong>Save Changes</strong>.</li>
+                                            <li>A modern floating AI chat assistant will now appear on your storefront to help customers find products and answer shopping inquiries!</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 5 -->
+                            <div class="accordion-item border-0 border-bottom">
+                                <h2 class="accordion-header" id="faqHeading5">
+                                    <button class="accordion-button fw-bold text-heading collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                                        <i class="mdi mdi-swap-horizontal-bold text-info me-2 fs-5"></i> 5. How do I move my MartX license to a new live domain name?
+                                    </button>
+                                </h2>
+                                <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#martxFaqAccordion">
+                                    <div class="accordion-body text-muted small">
+                                        <p class="mb-2"><strong>Solution:</strong> You do NOT need to contact support or modify database tables. MartX includes automated <strong>1-Click Domain Relocation</strong>:</p>
+                                        <ol class="mb-0 ps-3">
+                                            <li class="mb-1">In your current dashboard, go to <strong>System Settings &gt; License &amp; Verification</strong>.</li>
+                                            <li class="mb-1">In the <em>License Key Re-binding</em> card, enter your <strong>Target New Domain</strong> and click <strong>Send 1-Click Confirmation Link</strong>.</li>
+                                            <li class="mb-1">Check your registered buyer email and click the confirmation link.</li>
+                                            <li>Your license is immediately unbound from the old domain and activated on your new domain with zero downtime. (See <a href="license-activation.html" class="fw-bold text-primary text-decoration-none">Chapter 4</a> for full details).</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 6 -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header" id="faqHeading6">
+                                    <button class="accordion-button fw-bold text-heading collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
+                                        <i class="mdi mdi-theme-light-dark text-purple me-2 fs-5"></i> 6. How do I change storefront colors, fonts, or default Light/Dark theme mode?
+                                    </button>
+                                </h2>
+                                <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#martxFaqAccordion">
+                                    <div class="accordion-body text-muted small">
+                                        <p class="mb-2"><strong>Solution:</strong> Navigate to <strong>System Settings &gt; Theme &amp; Appearance</strong>:</p>
+                                        <ul class="mb-0 ps-3">
+                                            <li class="mb-1">Choose from <strong>7 curated Google Font families</strong> (Plus Jakarta Sans, Inter, Outfit, Poppins, etc.) to instantly change typography storewide.</li>
+                                            <li class="mb-1">Select from <strong>9 luxury color skin presets</strong> or use the custom hex color pickers to match your brand palette.</li>
+                                            <li>Toggle the <strong>Theme Switcher</strong> ON or OFF, and select whether new shoppers see Light Mode or Dark Mode by default.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ================= 22.5: STORE MAINTENANCE & OPERATIONS SOP ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-22-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-clipboard-check-outline text-primary me-1"></i> 22.5 Merchant Operations &amp; Periodic Maintenance SOP
+                        </h3>
+                        <p class="text-muted">
+                            Adhere to these best-practice routines to keep your MartX eCommerce store secure, high-performing, and reliable:
+                        </p>
+
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">Weekly &amp; Monthly Maintenance Checklist</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-hover border align-middle mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th style="width: 25%;">Frequency</th>
+                                                <th style="width: 35%;">Action Item</th>
+                                                <th style="width: 40%;">Recommended Operational Procedure</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span class="badge bg-primary-subtle text-primary">Daily Automation</span></td>
+                                                <td class="fw-bold">Background Tasks Run</td>
+                                                <td class="small text-muted">Ensure your cPanel cron or cloud web cron is pinging the store every 1-5 minutes to auto-cancel abandoned unpaid orders.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="badge bg-success-subtle text-success">Weekly Review</span></td>
+                                                <td class="fw-bold">Customer Inquiries &amp; Reviews</td>
+                                                <td class="small text-muted">Moderate pending customer product reviews and reply to customer contact inquiries (Chapter 18).</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="badge bg-warning-subtle text-warning">Monthly Security</span></td>
+                                                <td class="fw-bold">Staff Access Audit</td>
+                                                <td class="small text-muted">Review team member roles in User Management (Chapter 19). Suspend accounts for departing staff immediately.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="badge bg-info-subtle text-info">Periodic Backup</span></td>
+                                                <td class="fw-bold">Database &amp; Media Backup</td>
+                                                <td class="small text-muted">Generate a full cPanel backup of your MySQL database and uploaded media files before major seasonal promotional campaigns.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= CONCLUDING CELEBRATION & WELCOME BANNER ================= -->
+                    <div class="doc-subsection mt-5 mb-4" id="thank-you-welcome">
+                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(14, 165, 233, 0.05) 100%); border: 1px solid rgba(99, 102, 241, 0.2) !important;">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="text-center mb-4">
+                                    <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle shadow mb-3" style="width: 64px; height: 64px;">
+                                        <i class="mdi mdi-party-popper fs-2"></i>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1.5 rounded-pill fw-bold text-uppercase small">
+                                            🎉 Documentation Complete &bull; Welcome Aboard
+                                        </span>
+                                    </div>
+                                    <h2 class="display-6 fw-bold text-heading mt-3 mb-2">Thank You for Choosing MartX!</h2>
+                                    <p class="lead text-muted mx-auto" style="max-width: 720px;">
+                                        Welcome to the MartX commerce ecosystem. You have successfully explored all 22 chapters of the official enterprise guide. Your store is now primed to deliver blazing-fast customer experiences, automated operations, and unstoppable sales growth.
+                                    </p>
+                                </div>
+
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-4">
+                                        <div class="p-3 bg-white dark:bg-dark border rounded-3 h-100 shadow-sm text-center">
+                                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-2" style="width: 44px; height: 44px;">
+                                                <i class="mdi mdi-rocket-launch-outline fs-4"></i>
+                                            </div>
+                                            <h6 class="fw-bold mb-1">Launch with Confidence</h6>
+                                            <p class="small text-muted mb-0">Your catalog, checkout flows, payment gateways, and regional delivery rules are synchronized for high-conversion sales.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 bg-white dark:bg-dark border rounded-3 h-100 shadow-sm text-center">
+                                            <div class="d-inline-flex align-items-center justify-content-center bg-success-subtle text-success rounded-circle mb-2" style="width: 44px; height: 44px;">
+                                                <i class="mdi mdi-autorenew fs-4"></i>
+                                            </div>
+                                            <h6 class="fw-bold mb-1">24/7 Automated Engine</h6>
+                                            <p class="small text-muted mb-0">Automated background tasks release expired cart stock, enforce flash sale timers, and keep your database operating at peak speed.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 bg-white dark:bg-dark border rounded-3 h-100 shadow-sm text-center">
+                                            <div class="d-inline-flex align-items-center justify-content-center bg-warning-subtle text-warning rounded-circle mb-2" style="width: 44px; height: 44px;">
+                                                <i class="mdi mdi-shield-crown-outline fs-4"></i>
+                                            </div>
+                                            <h6 class="fw-bold mb-1">Dedicated Author Support</h6>
+                                            <p class="small text-muted mb-0">Enjoy peace of mind with continuous software updates, modern security enhancements, and responsive priority support.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-3 p-md-4 border rounded-3 bg-light-subtle mb-4">
+                                    <div class="row align-items-center g-3">
+                                        <div class="col-lg-7">
+                                            <div class="d-flex align-items-start gap-3">
+                                                <div class="d-flex align-items-center justify-content-center bg-warning text-dark rounded-circle flex-shrink-0" style="width: 42px; height: 42px;">
+                                                    <i class="mdi mdi-star fs-4"></i>
+                                                </div>
+                                                <div>
+                                                    <h5 class="fw-bold mb-1">Loving Your MartX Experience?</h5>
+                                                    <p class="text-muted small mb-0">
+                                                        If MartX and this documentation helped your business, please consider showing your support by leaving a <strong>5-Star Review (★★★★★)</strong> on the platform or marketplace where you purchased it (CodeCanyon, Codester, TemplateMonster, or our Direct Portal). Your positive feedback fuels future feature updates and platform improvements!
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 text-lg-end text-center">
+                                            <div class="d-flex flex-wrap justify-content-lg-end justify-content-center gap-2">
+                                                <a href="https://wa.me/8801750527181?text=Hello%20Suman%20Dev,%20I%20purchased%20MartX%20Enterprise%20and%20need%20assistance." target="_blank" rel="noopener noreferrer" class="btn btn-success fw-bold btn-sm px-3 shadow-sm d-inline-flex align-items-center gap-1">
+                                                    <i class="mdi mdi-whatsapp fs-5"></i> WhatsApp Chat
+                                                </a>
+                                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sumondav444@gmail.com&su=MartX%20Enterprise%20Support%20Inquiry" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary fw-bold btn-sm px-3 d-inline-flex align-items-center gap-1" title="Direct Email: sumondav444@gmail.com">
+                                                    <i class="mdi mdi-email-outline me-1"></i> Email Support
+                                                </a>
+                                                <a href="index.html#quick-start" class="btn btn-primary fw-bold btn-sm px-3 d-inline-flex align-items-center gap-1">
+                                                    <i class="mdi mdi-flash me-1"></i> Quick Start Guide
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center pt-2">
+                                    <p class="text-muted small mb-1">
+                                        <em>"Empowering merchants worldwide with elegant design, high performance, and reliable engineering."</em>
+                                    </p>
+                                    <div class="fw-semibold text-heading small">
+                                        Crafted with <i class="mdi mdi-heart text-danger"></i> by <span class="text-primary">Suman Chandra Dev Sharma</span> &amp; The MartX Team
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="settings-theme.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 21 (System Settings Hub)
+                    </a>
+                    <a href="index.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 1 (Introduction &amp; Overview) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch22-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-22-1" class="doc-toc-link">22.1 Background Tasks</a>
+                    <a href="#sec-22-2" class="doc-toc-link">22.2 cPanel Setup</a>
+                    <a href="#sec-22-3" class="doc-toc-link">22.3 Cloud Web Cron</a>
+                    <a href="#sec-22-4" class="doc-toc-link">22.4 Troubleshooting FAQ</a>
+                    <a href="#sec-22-5" class="doc-toc-link">22.5 Maintenance SOP</a>
+                    <a href="#thank-you-welcome" class="doc-toc-link text-primary fw-semibold"><i class="mdi mdi-party-popper me-1"></i> Thank You &amp; Welcome</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch22-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction &amp; Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce &amp; Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders &amp; Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers &amp; Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons &amp; Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website &amp; CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders &amp; Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ &amp; About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs &amp; Editorial
+            </a>
+            <div class="sidebar-heading">Customer &amp; Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews &amp; Messages
+            </a>
+            <div class="sidebar-heading">Administration &amp; Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations &amp; Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance &amp; Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron &amp; FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 1rem; overflow: hidden;">
+                <div class="modal-header border-bottom p-3">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0 text-muted ps-2">
+                            <i class="mdi mdi-magnify fs-4"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 shadow-none ps-2" id="docGlobalSearch" placeholder="Search documentation chapters, attributes, or guides..." autofocus>
+                    </div>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3" id="docSearchResults" style="max-height: 400px; overflow-y: auto;">
+                    <div class="text-muted small text-uppercase fw-bold px-2 mb-2">Documentation Hub</div>
+                    <div class="p-3 text-center text-muted">Type any keyword to search across all 22 chapters...</div>
+                </div>
+                <div class="modal-footer border-top py-2 px-3 justify-content-between text-muted small">
+                    <span>Press <kbd class="bg-light text-dark border">ESC</kbd> to exit</span>
+                    <span>MartX Documentation v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

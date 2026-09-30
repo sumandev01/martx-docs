@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 14: Navigation & Mega Menus - MartX Documentation</title>
+    <meta name="description" content="Chapter 14: Navigation & Mega Menus Builder - MartX Enterprise Documentation">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+                                    <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER MAIN CONTENT COLUMN ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Chapter 14: Navigation & Mega Menus</li>
+                    </ol>
+                </nav>
+
+                <!-- SECTION HEADER -->
+                <section class="doc-section mb-4" id="ch14-intro">
+                    <h1 class="doc-section-title d-flex align-items-center gap-2 mb-3">
+                        <i class="mdi mdi-menu text-primary"></i> Chapter 14: Navigation & Mega Menus Builder Engine
+                    </h1>
+                    <p class="lead text-muted">
+                        MartX Dynamic Multi-Location Navigation, Drag-and-Drop Menu Builder & Custom Routing Documentation.
+                    </p>
+                </section>
+
+                
+                
+                <!-- Quick Overview Stat Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-map-marker-path fs-3 text-primary mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">Multi-Location</span>
+                            <span class="text-muted small">Header & Footer Columns</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-tab-plus fs-3 text-success mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">4 Source Tabs</span>
+                            <span class="text-muted small">System, CMS, Categories, Custom</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-drag fs-3 text-warning mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">Drag & Drop</span>
+                            <span class="text-muted small">Live Sorting & AJAX Sync</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-pencil-box-multiple-outline fs-3 text-purple mb-1 d-block" style="color: #6f42c1;"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">Item Renamer</span>
+                            <span class="text-muted small">1-Click Custom Title Override</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 7.1: ARCHITECTURE & LOCATIONS ================= -->
+                <div class="doc-subsection mt-4 mb-5" <span id="sec-7-1" class="d-none"></span>id="sec-14-1">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-sitemap text-primary me-1"></i> 14.1 Menu Engine Architecture & Multi-Location Routing
+                    </h3>
+                    <p>
+                        MartX is engineered with an enterprise <strong>Multi-Location Dynamic Menu Engine</strong>. Instead of hardcoding hyperlinks into frontend templates, all navigation bars across the website are managed dynamically through a centralized, high-performance database-driven system.
+                    </p>
+
+                    <div class="doc-callout doc-callout-info mb-4">
+                        <div class="doc-callout-title text-primary">
+                            <i class="mdi mdi-compass-outline"></i> Admin Access Path
+                        </div>
+                        <p class="small mb-0">
+                            Navigate to: <strong>Admin Dashboard</strong> &rarr; <strong>Website & CMS</strong> &rarr; <strong>Menu Builder</strong>.
+                        </p>
+                    </div>
+
+                    <h5 class="fw-bold text-heading mb-3">Supported Menu Locations in MartX:</h5>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-primary-subtle text-primary font-monospace">header_top_menu</span>
+                                </div>
+                                <h6 class="fw-bold text-heading mb-1">Header Top Utility Menu</h6>
+                                <p class="small text-muted mb-0">
+                                    Appears in the upper announcement strip. Used for quick utility links like <em>FAQs</em>, <em>Order Tracking</em>, <em>Wishlist</em>, and <em>Terms & Conditions</em>.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-success-subtle text-success font-monospace">footer_company</span>
+                                </div>
+                                <h6 class="fw-bold text-heading mb-1">Footer Column 1 (Company)</h6>
+                                <p class="small text-muted mb-0">
+                                    First primary navigation column in the store footer. Typically displays <em>About Us</em>, <em>Store Locations</em>, <em>Careers</em>, and <em>Privacy Policy</em>.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-info-subtle text-info font-monospace">footer_support</span>
+                                </div>
+                                <h6 class="fw-bold text-heading mb-1">Footer Column 2 (Support)</h6>
+                                <p class="small text-muted mb-0">
+                                    Second primary footer navigation column. Ideal for <em>Customer Support</em>, <em>Shipping Guide</em>, <em>Return Policy</em>, and <em>Helpdesk</em>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doc-callout doc-callout-success">
+                        <div class="doc-callout-title text-success">
+                            <i class="mdi mdi-flash"></i> High-Performance Eager Loading (Zero N+1 Queries)
+                        </div>
+                        <p class="small mb-0">
+                            The MartX menu service (<span class="font-monospace">App\Services\Admin\MenuService</span>) utilizes optimized eager loading (<span class="font-monospace">Menu::with('items')</span>). Whether your storefront renders 5 menus or 50 items simultaneously, the entire menu tree loads in a single, blazing-fast database query.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ================= 7.2: MENU BUILDER WORKSPACE ================= -->
+                <div class="doc-subsection mt-5 mb-5" <span id="sec-7-2" class="d-none"></span>id="sec-14-2">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-view-dashboard-outline text-primary me-1"></i> 14.2 Menu Builder Workspace Overview
+                    </h3>
+                    <p>
+                        The Menu Builder features an intuitive, dual-pane workspace designed for maximum productivity: the <strong>Left Pane</strong> manages the active menu structure and item sequence, while the <strong>Right Pane</strong> houses the multi-source item addition engine.
+                    </p>
+
+                    <!-- Workspace Screenshot Frame -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Menu Builder Settings Workspace
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Workspace View</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/menus/admin_menu_builder_workspace.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/menus/admin_menu_builder_workspace.png" alt="Menu Builder Workspace" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                    <span class="badge bg-primary-subtle text-primary font-monospace small">images/menus/admin_menu_builder_workspace.png</span>
+                                </div>
+                            </div>
+                            <div class="small text-muted mt-2">
+                                <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Dual-Pane Architecture:</strong> Left side displays active menu items with drag handles & action menus; right side provides 4 dynamic source tabs for effortless item insertion.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1 to 9 Step-by-Step UI Anatomy Table -->
+                    <h5 class="fw-bold text-heading mt-4 mb-3">Interactive Workspace Anatomy (Key Elements 1 &ndash; 9):</h5>
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered table-hover align-middle small bg-white shadow-sm">
+                            <thead class="table-light">
+                                <tr>
+                                    <th style="width: 70px;" class="text-center">#</th>
+                                    <th style="width: 200px;">UI Component</th>
+                                    <th>Location & Technical Role</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center"><span class="badge bg-primary rounded-circle px-2 py-1">1</span></td>
+                                    <td><strong>Menu Selector Dropdown</strong></td>
+                                    <td>Top-right of the left card. Switches the active working menu (e.g. <em>Header Top Menu</em>, <em>Footer - Company</em>, <em>Footer - Support</em>).</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><span class="badge bg-primary rounded-circle px-2 py-1">2</span></td>
+                                    <td><strong>System Pages Tab</strong></td>
+                                    <td>Tab 1 of the right card. Grants access to core application routes (Home, Shop, Contact Us, Wishlist, Flash Sales, etc.).</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><span class="badge bg-primary rounded-circle px-2 py-1">3</span></td>
+                                    <td><strong>Dynamic Pages Tab</strong></td>
+                                    <td>Tab 2 of the right card. Populates custom pages created in the CMS Pages module (e.g. <em>Terms & Conditions</em>, <em>Privacy Policy</em>).</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><span class="badge bg-primary rounded-circle px-2 py-1">4</span></td>
+                                    <td><strong>Categories Tab</strong></td>
+                                    <td>Tab 3 of the right card. Allows direct linking to product catalog categories and subcategories.</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><span class="badge bg-primary rounded-circle px-2 py-1">5</span></td>
+                                    <td><strong>Custom Link Tab</strong></td>
+                                    <td>Tab 4 of the right card. Allows manual entry of external URLs (e.g. <code>https://example.com</code>) or on-page hash anchors (e.g. <code>#deals</code>).</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><span class="badge bg-primary rounded-circle px-2 py-1">6</span></td>
+                                    <td><strong>Target Item Selector</strong></td>
+                                    <td>The dropdown inside the active tab used to pick the specific page, route, or category you wish to link.</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><span class="badge bg-primary rounded-circle px-2 py-1">7</span></td>
+                                    <td><strong>Link Title Override</strong></td>
+                                    <td>Input field allowing you to customize the exact text that will appear in the navigation bar for this link.</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><span class="badge bg-primary rounded-circle px-2 py-1">8</span></td>
+                                    <td><strong>"Add to Menu" Button</strong></td>
+                                    <td>Primary action button (<span class="badge bg-purple text-white" style="background-color: #6f42c1;">+ Add to Menu</span>). Appends the configured link directly to the active menu tree.</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><span class="badge bg-primary rounded-circle px-2 py-1">9</span></td>
+                                    <td><strong>Drag & Drop Structure List</strong></td>
+                                    <td>The left container listing current items with type pills, route IDs, reordering handles, and the 3-dots action menu.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ================= 7.3: FOUR ITEM SOURCE TABS ================= -->
+                <div class="doc-subsection mt-5 mb-5" <span id="sec-7-3" class="d-none"></span>id="sec-14-3">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-tab-plus text-primary me-1"></i> 14.3 The Four Core Item Source Tabs
+                    </h3>
+                    <p>
+                        To give store owners complete linking versatility without requiring manual URL lookups, the Menu Builder divides link sources into <strong>4 dedicated tabs</strong>:
+                    </p>
+
+                    <div class="row g-4 mb-4">
+                        <!-- Tab 1 -->
+                        <div class="col-md-6">
+                            <div class="p-4 border rounded-3 bg-white h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-primary-subtle text-primary font-monospace">Tab 1</span>
+                                    <h6 class="fw-bold text-heading mb-0">System Pages</h6>
+                                </div>
+                                <p class="small text-muted mb-3">
+                                    Connects directly to pre-configured named routes inside Laravel. Ensures links never break even if the site URL or domain changes.
+                                </p>
+                                <div class="bg-light rounded p-2 small font-monospace">
+                                    Supported: Home (root), Shop (shop), About Us (about), Contact Us (contact), Flash Sales, Wishlist, Cart, FAQs, Blogs.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 2 -->
+                        <div class="col-md-6">
+                            <div class="p-4 border rounded-3 bg-white h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-success-subtle text-success font-monospace">Tab 2</span>
+                                    <h6 class="fw-bold text-heading mb-0">Dynamic Pages (CMS)</h6>
+                                </div>
+                                <p class="small text-muted mb-3">
+                                    Dynamically loads all published pages from the MartX CMS Engine (<span class="font-monospace">Page::all()</span>).
+                                </p>
+                                <div class="bg-light rounded p-2 small font-monospace">
+                                    Automatically populates: Terms & Conditions, Privacy Policy, Shipping Policy, Refund Terms, and custom CMS pages.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 3 -->
+                        <div class="col-md-6">
+                            <div class="p-4 border rounded-3 bg-white h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-warning-subtle text-warning font-monospace">Tab 3</span>
+                                    <h6 class="fw-bold text-heading mb-0">Categories (Catalog)</h6>
+                                </div>
+                                <p class="small text-muted mb-3">
+                                    Links directly to e-commerce product categories. Shoppers clicking these items are taken straight to the filtered category catalog.
+                                </p>
+                                <div class="bg-light rounded p-2 small font-monospace">
+                                    Inherits category slugs automatically with live product counts.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 4 -->
+                        <div class="col-md-6">
+                            <div class="p-4 border rounded-3 bg-white h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-info-subtle text-info font-monospace">Tab 4</span>
+                                    <h6 class="fw-bold text-heading mb-0">Custom Links</h6>
+                                </div>
+                                <p class="small text-muted mb-3">
+                                    Enables linking to external domains, partner websites, helpdesk portals, or internal page anchors (<span class="font-monospace">#section-id</span>).
+                                </p>
+                                <div class="bg-light rounded p-2 small font-monospace">
+                                    Required fields: Target URL (https://...) and Link Title.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 7.4: FOOTER COLUMN TITLES ================= -->
+                <div class="doc-subsection mt-5 mb-5" <span id="sec-7-4" class="d-none"></span>id="sec-14-4">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-format-title text-primary me-1"></i> 14.4 Footer Column Titles & Menu Rename Engine
+                    </h3>
+                    <p>
+                        In your storefront's footer, links are organized into structured columns (e.g. <em>Footer - Company</em> and <em>Footer - Support</em>). MartX provides an exclusive <strong>Context-Aware Menu Rename Engine</strong> that empowers administrators to rebrand these column header titles without touching template code.
+                    </p>
+
+                    <!-- Rename Modal Screenshot Frame -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Modal &mdash; Rename Footer Menu Title
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-purple text-white font-monospace" style="background-color: #6f42c1; font-size: 10px;">Rename Engine</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/menus/admin_menu_rename_modal.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/menus/admin_menu_rename_modal.png" alt="Rename Menu Modal" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                    <span class="badge bg-primary-subtle text-primary font-monospace small">images/menus/admin_menu_rename_modal.png</span>
+                                </div>
+                            </div>
+                            <div class="small text-muted mt-2">
+                                <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Context-Aware Trigger:</strong> Selecting "Footer - Company" or "Footer - Support" dynamically displays the "Rename" pill button in the top-right corner.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step-by-Step Instructions -->
+                    <div class="p-4 border rounded-3 bg-white shadow-sm mb-4">
+                        <h6 class="fw-bold text-heading mb-3"><i class="mdi mdi-pencil-circle text-primary me-1"></i> How to Customize Footer Column Headings:</h6>
+                        <ol class="small text-muted mb-0 ps-3">
+                            <li class="mb-2">From the <strong>Menu Selector</strong> dropdown, choose either <strong>"Footer - Company"</strong> or <strong>"Footer - Support"</strong>.</li>
+                            <li class="mb-2">Notice the <span class="badge bg-outline-primary border text-primary"><i class="mdi mdi-pencil"></i> Rename</span> button automatically appear in the top-right corner of the right card.</li>
+                            <li class="mb-2">Click <strong>Rename</strong> to open the <em>Rename Menu</em> modal.</li>
+                            <li class="mb-2">Update the <strong>Menu Name *</strong> field (e.g. change <em>Company</em> to <em>About MartX</em>, or <em>Support</em> to <em>Customer Care</em>).</li>
+                            <li>Click <strong>Save Changes</strong>. The column heading updates immediately in both the admin interface and the live storefront footer.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- ================= 7.5: ITEM CUSTOMIZER MODAL ================= -->
+                <div class="doc-subsection mt-5 mb-5" <span id="sec-7-5" class="d-none"></span>id="sec-14-5">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-form-textbox text-primary me-1"></i> 14.5 Menu Item Customizer & Item Rename Modal
+                    </h3>
+                    <p>
+                        Need to adjust the label of an existing menu link without deleting and rebuilding it? MartX features a dedicated <strong>Menu Item Editor Modal</strong>.
+                    </p>
+
+                    <!-- Edit Item Modal Screenshot Frame -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Modal &mdash; Edit Menu Item Title
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-info text-white font-monospace" style="font-size: 10px;">Item Editor</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/menus/admin_menu_item_edit_modal.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/menus/admin_menu_item_edit_modal.png" alt="Edit Menu Item Modal" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                    <span class="badge bg-primary-subtle text-primary font-monospace small">images/menus/admin_menu_item_edit_modal.png</span>
+                                </div>
+                            </div>
+                            <div class="small text-muted mt-2">
+                                <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Item Editing:</strong> Clicking the 3-dots menu on any link item launches this modal to rename the link title instantly.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Details -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-pencil me-1"></i> 1. Renaming Item Titles</h6>
+                                <p class="small text-muted mb-0">
+                                    Shorten long CMS titles for cleaner navigation (e.g. change <em>"Terms and Conditions of Service"</em> to <em>"Terms & Conditions"</em> or <em>"Customer Frequently Asked Questions"</em> to <em>"FAQs"</em>).
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-danger mb-1"><i class="mdi mdi-trash-can-outline me-1"></i> 2. Deleting Items</h6>
+                                <p class="small text-muted mb-0">
+                                    Clicking the 3-dots action menu also reveals the <strong>Delete</strong> action, allowing 1-click removal of obsolete menu items with automated SweetAlert confirmation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 7.6: DRAG & DROP ORDERING ================= -->
+                <div class="doc-subsection mt-5 mb-5" <span id="sec-7-6" class="d-none"></span>id="sec-14-6">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-drag text-primary me-1"></i> 14.6 Drag & Drop Ordering & Live AJAX Serialization
+                    </h3>
+                    <p>
+                        Managing menu sequence in MartX is effortless. The left-hand menu tree integrates an interactive <strong>HTML5 Drag-and-Drop Sortable Engine</strong>:
+                    </p>
+
+                    <div class="row g-4 align-items-center mb-4">
+                        <div class="col-lg-6">
+                            <div class="p-4 border rounded-3 bg-white shadow-sm h-100">
+                                <h6 class="fw-bold text-heading mb-2">
+                                    <i class="mdi mdi-cursor-move text-primary me-1"></i> Reordering Workflow
+                                </h6>
+                                <ol class="small text-muted mb-0 ps-3">
+                                    <li class="mb-2">Hover your cursor over any menu item in the left list.</li>
+                                    <li class="mb-2">Click and hold the item, then drag it vertically up or down to your desired sequence position.</li>
+                                    <li class="mb-2">Release the mouse button to drop the item in place.</li>
+                                    <li>The engine automatically synchronizes the new sequence in the background, updating the database order instantly without requiring a manual save.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="p-4 border rounded-3 bg-white shadow-sm h-100">
+                                <h6 class="fw-bold text-success mb-2">
+                                    <i class="mdi mdi-database-sync-outline me-1"></i> Real-Time Persistence Highlights
+                                </h6>
+                                <ul class="small text-muted mb-0 ps-3">
+                                    <li class="mb-2"><strong>Zero "Save Order" Clicks:</strong> Order updates save automatically the moment you release the item.</li>
+                                    <li class="mb-2"><strong>Session State Memory:</strong> Remembers your active menu selection across browser refreshes via localStorage.</li>
+                                    <li><strong>Instant Frontend Reflection:</strong> Refreshing the store homepage immediately displays the updated navigation order.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 7.7: MOBILE SYNC & BEST PRACTICES ================= -->
+                <div class="doc-subsection mt-5 mb-5" <span id="sec-7-7" class="d-none"></span>id="sec-14-7">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-cellphone-link text-primary me-1"></i> 14.7 Mobile Navigation Sync & Best Practices
+                    </h3>
+                    <p>
+                        A seamless navigation experience directly impacts store conversions. MartX ensures your menus deliver optimal usability across every device:
+                    </p>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-heading mb-1"><i class="mdi mdi-cellphone text-primary me-1"></i> Automated Mobile Drawer Sync</h6>
+                                <p class="small text-muted mb-0">
+                                    Items configured in your Header Top Menu and Main Menu automatically adapt into the responsive mobile offcanvas drawer on smartphones and tablets, offering smooth touch accordion navigation without duplicate management.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-heading mb-1"><i class="mdi mdi-format-list-numbered text-success me-1"></i> Recommended Item Counts</h6>
+                                <p class="small text-muted mb-0">
+                                    Keep the <strong>Header Top Menu</strong> between <strong>3 to 5 items</strong> to avoid visual crowding. For the <strong>Footer Columns</strong>, <strong>4 to 6 items</strong> per column creates balanced, aesthetically pleasing footer symmetry.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doc-callout doc-callout-info">
+                        <div class="doc-callout-title text-primary">
+                            <i class="mdi mdi-lightbulb-on-outline"></i> Pro-Tip for Multilingual Stores
+                        </div>
+                        <p class="small mb-0">
+                            When configuring menu link titles for an international customer base, keep titles concise (1 to 2 words, e.g. <em>"Track Order"</em>, <em>"Deals"</em>, <em>"Support"</em>). This ensures links render comfortably across varied language character lengths and mobile viewports.
+                        </p>
+                    </div>
+                </div>
+
+                
+                <!-- ================= 7.8: MEGA MENU ENGINES ================= -->
+                <div class="doc-subsection mt-5 mb-5" <span id="sec-7-8" class="d-none"></span>id="sec-14-8">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-view-grid-plus text-primary me-1"></i> 14.8 Mega Menu Configuration & Layout Engines (Layout 1 & Layout 2)
+                    </h3>
+                    <p>
+                        In addition to linear header and footer menus, MartX features an enterprise <strong>Mega Menu Content Engine</strong> located under <strong>Website & CMS &rarr; Mega Menu</strong>. While Chapter 6 (<a href="theme-layouts.html#sec-6-4" class="text-decoration-none">Theme Layouts Hub</a>) enables you to choose your active architectural style (<strong>Layout 1</strong> vs <strong>Layout 2</strong>), this module provides a dedicated, context-aware management dashboard for <strong>featured categories, promotional banners, and real-time frontend simulation</strong>.
+                    </p>
+
+                    <div class="doc-callout doc-callout-info mb-4">
+                        <div class="doc-callout-title text-primary">
+                            <i class="mdi mdi-compass-outline"></i> Admin Access Path & Dynamic Engine Switching
+                        </div>
+                        <p class="small mb-0">
+                            Navigate to: <strong>Admin Dashboard</strong> &rarr; <strong>Website & CMS</strong> &rarr; <strong>Mega Menu</strong>.<br>
+                            The admin workspace dynamically adapts its form fields, layout parameters, and live preview simulator depending on whether your active store layout is configured as <strong>Mega Menu Layout 1</strong> or <strong>Mega Menu Layout 2</strong>.
+                        </p>
+                    </div>
+
+                    <!-- ================= 14.8.1: LAYOUT 1 SECTION ================= -->
+                    <div class="card border rounded-3 p-4 bg-white shadow-sm mb-5">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 border-bottom pb-3 mb-4">
+                            <div>
+                                <h4 class="fw-bold text-heading mb-1 d-flex align-items-center gap-2">
+                                    <span class="badge bg-purple text-white" style="background-color: #6f42c1;">LAYOUT 1</span>
+                                    Seasonal Promotional Banner & Hover Flyout Architecture
+                                </h4>
+                                <p class="small text-muted mb-0">
+                                    Split 3-column navigation featuring parent categories, interactive hover-activated subcategories, and a dedicated campaign promo card.
+                                </p>
+                            </div>
+                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1 font-monospace">Header 1 & Header 2 Compatible</span>
+                        </div>
+
+                        <!-- Mega Menu Layout 1 Admin Screenshot Frame -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Mega Menu Layout 1 (Promotional Banner & Hover Flyout)
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Layout 1 Active</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/menus/admin_megamenu_settings_layout1.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/menus/admin_megamenu_settings_layout1.png" alt="Mega Menu Settings Layout 1" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-4">
+                                        <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                        <span class="badge bg-primary-subtle text-primary font-monospace small">images/menus/admin_megamenu_settings_layout1.png</span>
+                                    </div>
+                                </div>
+                                <div class="small text-muted mt-2">
+                                    <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Layout 1 Control Hub:</strong> Manage featured categories with interactive tag badges, upload campaign promotional banners with custom link targets, and inspect subcategories in the real-time interactive simulator.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Component Anatomy Breakdown: Layout 1 -->
+                        <h5 class="fw-bold text-heading mb-3">Layout 1 Feature Breakdown:</h5>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 bg-light h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary rounded-circle px-2 py-1">1</span>
+                                        <h6 class="fw-bold text-heading mb-0">Active Layout Strip & Quick Switcher</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        Displays the current active layout badge (<span class="badge bg-purple text-white" style="background-color: #6f42c1;">LAYOUT 1</span>) alongside an instant shortcut button (<em>Switch Layout in Theme Layouts</em>) allowing 1-click transit between configuration hubs.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 bg-light h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary rounded-circle px-2 py-1">2</span>
+                                        <h6 class="fw-bold text-heading mb-0">Featured Categories Selector & Tags</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        Pick up to 6 root categories. Selected items appear as purple pill badges with 1-click removal cross buttons (<span class="badge bg-primary">Men's Fashion &times;</span>) and a live counter badge (<span class="badge bg-primary-subtle text-primary">7 / 6 Selected</span>).
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 bg-light h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary rounded-circle px-2 py-1">3</span>
+                                        <h6 class="fw-bold text-heading mb-0">Campaign Promotional Banner Uploader</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        Upload eye-catching campaign imagery (e.g. Seasonal 50% Off Sales). Clicking <strong>Select Banner</strong> connects to the MartX Media Manager for fast selection with instant high-res preview.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 bg-light h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary rounded-circle px-2 py-1">4</span>
+                                        <h6 class="fw-bold text-heading mb-0">Dynamic Banner Link Destination</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        Binds the promotional banner to any desired URL: pick a <em>System Page</em> (Shop, Deals), a specific <em>Product Category</em>, a <em>CMS Page</em>, or an external marketing URL.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Live Frontend Simulator (Layout 1) -->
+                        <div class="p-3 border rounded-3 bg-white">
+                            <h6 class="fw-bold text-heading mb-2 d-flex align-items-center gap-2">
+                                <i class="mdi mdi-eye-check-outline text-success"></i> Layout 1 Interactive Simulator Columns:
+                            </h6>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="p-2 border rounded bg-light small">
+                                        <strong class="text-primary d-block mb-1">Left Column (Categories):</strong>
+                                        Lists selected parent categories vertically. The active category is visually highlighted with an accent container.
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-2 border rounded bg-light small">
+                                        <strong class="text-info d-block mb-1">Center Column (Hover Flyout):</strong>
+                                        Hovering over any parent category dynamically updates the center column with its live child subcategories.
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-2 border rounded bg-light small">
+                                        <strong class="text-warning d-block mb-1">Right Column (Promo Banner):</strong>
+                                        Renders the promotional campaign graphic with smooth hover elevation and full-card link clickability.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= 14.8.2: LAYOUT 2 SECTION ================= -->
+                    <div class="card border rounded-3 p-4 bg-white shadow-sm mb-5">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 border-bottom pb-3 mb-4">
+                            <div>
+                                <h4 class="fw-bold text-heading mb-1 d-flex align-items-center gap-2">
+                                    <span class="badge bg-primary text-white">LAYOUT 2</span>
+                                    Multi-Column Categorized Directory Grid Architecture
+                                </h4>
+                                <p class="small text-muted mb-0">
+                                    Direct directory navigation displaying category thumbnail icons, top 5 subcategories per card, and auto-computed responsive grid columns.
+                                </p>
+                            </div>
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1 font-monospace">Directory Style &bull; No Banner Needed</span>
+                        </div>
+
+                        <!-- Mega Menu Layout 2 Admin Screenshot Frame -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Mega Menu Layout 2 (Multi-Column Categorized Directory Grid)
+                            </div>
+                            <div class="d-flex align-items-center gap-2 ms-auto">
+                                <span class="badge d-none d-md-inline-block bg-success text-white font-monospace" style="font-size: 10px;">Layout 2 Active</span>
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/menus/admin_megamenu_settings_layout2.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/menus/admin_megamenu_settings_layout2.png" alt="Mega Menu Settings Layout 2" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-4">
+                                        <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                        <span class="badge bg-primary-subtle text-primary font-monospace small">images/menus/admin_megamenu_settings_layout2.png</span>
+                                    </div>
+                                </div>
+                                <div class="small text-muted mt-2">
+                                    <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Layout 2 Directory Hub:</strong> Features a top-stacked category selector, dynamic column auto-calculation, category thumbnail icons with letter avatar fallbacks, and a full-width (col-12) live directory grid simulator.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Component Anatomy Breakdown: Layout 2 -->
+                        <h5 class="fw-bold text-heading mb-3">Layout 2 Engineering Highlights:</h5>
+                        <div class="row g-3 mb-4">
+                            <!-- Feature 1 -->
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 bg-light h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary rounded-circle px-2 py-1">1</span>
+                                        <h6 class="fw-bold text-heading mb-0">Top-Stacked Full-Width Category Selector</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        The category selection form is engineered in a clean, full-width top block. Admins select up to 6 featured categories without horizontal clipping, with purple pill tags and 1-click removal (<span class="badge bg-primary">Electronics &times;</span>).
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Feature 2 -->
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 bg-light h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary rounded-circle px-2 py-1">2</span>
+                                        <h6 class="fw-bold text-heading mb-0">Dynamic Multi-Column Auto-Calculation</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        The directory grid intelligently calculates its responsive column layout based on the number of categories chosen: <strong>1–2 items = 2 columns</strong>, <strong>3–4 items = 3 columns</strong>, and <strong>5–6 items = 4 balanced columns</strong> (<span class="font-monospace text-primary">mega-grid-cols-4</span>).
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Feature 3 -->
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 bg-light h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary rounded-circle px-2 py-1">3</span>
+                                        <h6 class="fw-bold text-heading mb-0">Dual Category Icon Engine (Image & Fallback Avatar)</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        Renders genuine category thumbnail images from the Media Library. If no image exists or if media fails to load, it automatically generates a modern, high-contrast <strong>Letter Avatar fallback</strong> (e.g. <span class="badge bg-secondary-subtle text-dark">E</span> for Electronics, <span class="badge bg-secondary-subtle text-dark">M</span> for Men's Fashion).
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Feature 4 -->
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 bg-light h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary rounded-circle px-2 py-1">4</span>
+                                        <h6 class="fw-bold text-heading mb-0">Direct Subcategories & "View All" Deep Link</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        Unlike Layout 1 which requires hover activation, Layout 2 instantly presents the top 5 child subcategories directly inside each category column, accompanied by an automated <strong class="text-primary">"View All (x) &rarr;"</strong> link navigating to the category archive.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Live Frontend Simulator (Layout 2) -->
+                        <div class="p-3 border rounded-3 bg-white">
+                            <h6 class="fw-bold text-heading mb-2 d-flex align-items-center gap-2">
+                                <i class="mdi mdi-monitor-dashboard text-success"></i> Full-Width Live Directory Grid Simulator:
+                            </h6>
+                            <p class="small text-muted mb-3">
+                                Positioned directly below the selection controls in a dedicated full-width container, the simulator mirrors the exact frontend CSS grid styling, category icons, subcategory lists, and responsive spacing in real time.
+                            </p>
+                            <div class="row g-2">
+                                <div class="col-md-3">
+                                    <div class="p-2 border rounded bg-light small text-center">
+                                        <span class="badge bg-primary-subtle text-primary mb-1">Step 1</span>
+                                        <span class="d-block fw-bold text-heading">Pick Category</span>
+                                        <span class="text-muted">Choose from catalog select</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="p-2 border rounded bg-light small text-center">
+                                        <span class="badge bg-primary-subtle text-primary mb-1">Step 2</span>
+                                        <span class="d-block fw-bold text-heading">Instant Grid Sync</span>
+                                        <span class="text-muted">Cards render in full width</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="p-2 border rounded bg-light small text-center">
+                                        <span class="badge bg-primary-subtle text-primary mb-1">Step 3</span>
+                                        <span class="d-block fw-bold text-heading">Auto Columns</span>
+                                        <span class="text-muted">Cols adapt to item count</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="p-2 border rounded bg-light small text-center">
+                                        <span class="badge bg-success text-white mb-1">Step 4</span>
+                                        <span class="d-block fw-bold text-heading">Save Changes</span>
+                                        <span class="text-muted">1-click database sync</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= 14.8.3: ARCHITECTURAL COMPARISON TABLE ================= -->
+                    <h5 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-compare-horizontal text-primary me-1"></i> Mega Menu Layout Comparison Matrix:
+                    </h5>
+                    <div class="table-responsive mb-4 shadow-sm rounded-3">
+                        <table class="table table-bordered table-hover align-middle mb-0 bg-white">
+                            <thead class="table-light">
+                                <tr>
+                                    <th style="width: 25%;">Feature / Capability</th>
+                                    <th style="width: 37.5%;" class="text-purple"><i class="mdi mdi-view-column me-1"></i> Mega Menu Layout 1</th>
+                                    <th style="width: 37.5%;" class="text-primary"><i class="mdi mdi-view-grid me-1"></i> Mega Menu Layout 2</th>
+                                </tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr>
+                                    <td class="fw-bold text-heading">Visual Architecture</td>
+                                    <td>Split 3-Column: Category List + Hover Flyout + Banner</td>
+                                    <td>Multi-Column Categorized Directory Grid</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-heading">Recommended Catalog Type</td>
+                                    <td>Boutique & Lifestyle stores with seasonal promotional campaigns</td>
+                                    <td>Large department, electronics, and multi-category retailers</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-heading">Featured Categories Limit</td>
+                                    <td>Up to <strong>6 Categories</strong></td>
+                                    <td>Up to <strong>6 Categories</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-heading">Promotional Banner Image</td>
+                                    <td><span class="badge bg-success-subtle text-success">Supported</span> Dedicated upload card + dynamic link binding</td>
+                                    <td><span class="badge bg-secondary-subtle text-secondary">None</span> Focused entirely on direct category hierarchy</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-heading">Subcategory Discovery</td>
+                                    <td>Interactive hover-triggered update in center column</td>
+                                    <td>Directly visible inside each category column (top 5 + "View All")</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-heading">Category Icons / Avatars</td>
+                                    <td>Text links with active highlight bar</td>
+                                    <td>Dual: Real thumbnail images + Smart Letter Avatar fallback</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-heading">Grid Column Calculation</td>
+                                    <td>Fixed 3-column proportional split (25% / 40% / 35%)</td>
+                                    <td>Dynamic responsive columns (2, 3, or 4 columns based on count)</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-heading">Live Simulator Container</td>
+                                    <td>Interactive 3-Column Preview Card</td>
+                                    <td>Full-Width Storefront Directory Simulator</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-heading">Header Compatibility</td>
+                                    <td>Header 1 & Header 2 (Auto-disabled on Header 3)</td>
+                                    <td>Header 1 & Header 2 (Auto-disabled on Header 3)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- System Rule Note -->
+                    <div class="doc-callout doc-callout-warning">
+                        <div class="doc-callout-title text-warning">
+                            <i class="mdi mdi-shield-alert-outline"></i> Header 3 Context Rule
+                        </div>
+                        <p class="small mb-0">
+                            Remember that if your store is currently using <strong>Header 3</strong> (Centered-Logo & Curtain Drawer), the Mega Menu is automatically deactivated and locked in the admin panel with a helpful warning notice, as Header 3 features its own dedicated offcanvas side-drawer navigation.
+                        </p>
+                    </div>
+                </div>
+
+                                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="theme-layouts.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 13 (Theme Layouts Hub)
+                    </a>
+                    <a href="sliders-banners.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 15 (Sliders & Banners) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+                        <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch14-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-14-1" class="doc-toc-link">14.1 Architecture & Locations</a>
+                    <a href="#sec-14-2" class="doc-toc-link">14.2 Menu Builder Workspace</a>
+                    <a href="#sec-14-3" class="doc-toc-link">14.3 Four Item Source Tabs</a>
+                    <a href="#sec-14-4" class="doc-toc-link">14.4 Footer Column Titles</a>
+                    <a href="#sec-14-5" class="doc-toc-link">14.5 Item Customizer Modal</a>
+                    <a href="#sec-14-6" class="doc-toc-link">14.6 Drag & Drop Ordering</a>
+                    <a href="#sec-14-7" class="doc-toc-link">14.7 Mobile Sync & Best Practices</a>
+                    <a href="#sec-14-8" class="doc-toc-link">14.8 Mega Menu (Layout 1 & 2)</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch14-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header border-bottom p-3 bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0 text-primary fs-5">
+                            <i class="mdi mdi-magnify"></i>
+                        </span>
+                        <input type="text" class="form-control form-control-lg border-start-0 ps-0" id="docGlobalSearch" placeholder="Search documentation...">
+                    </div>
+                </div>
+                <div class="modal-body p-0" id="docSearchResults" style="max-height: 420px; overflow-y: auto;">
+                    <div class="p-4 text-center text-muted">
+                        <i class="mdi mdi-text-search fs-1 d-block mb-2 text-primary opacity-50"></i>
+                        <p class="mb-0">Type any keyword to search across all chapters in real time.</p>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light py-2 px-3 justify-content-between">
+                    <small class="text-muted"><kbd>ESC</kbd> to close</small>
+                    <small class="text-muted"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

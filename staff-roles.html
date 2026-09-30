@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 19: Team Members & Staff Roles - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+            <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction &amp; Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce &amp; Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders &amp; Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers &amp; Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons &amp; Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website &amp; CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders &amp; Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ &amp; About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs &amp; Editorial
+                </a>
+                <div class="sidebar-heading">Customer &amp; Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews &amp; Messages
+                </a>
+                <div class="sidebar-heading">Administration &amp; Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations &amp; Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance &amp; Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron &amp; FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Administration &amp; Settings</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">19. Team Members &amp; Staff Roles</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= MAIN CHAPTER SECTION ================= -->
+                <section class="doc-section" id="ch19-intro">
+                    <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2.5 py-1 rounded-pill small fw-semibold">
+                            <i class="mdi mdi-account-group me-1"></i> RBAC Security Matrix
+                        </span>
+                        <span class="badge bg-light text-muted border px-2.5 py-1 rounded-pill small">
+                            Chapter 19 of 22
+                        </span>
+                    </div>
+
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-account-group text-primary"></i> Chapter 19: Team Members, Staff &amp; Granular RBAC Permissions
+                    </h1>
+                    <p class="lead text-muted">
+                        Architecting zero-trust administrative governance with Spatie-powered dynamic permission matrices, team showcase directory, automated staff onboarding workflows, and email-verified security protocols.
+                    </p>
+
+                    <!-- Feature Highlights Grid -->
+                    <div class="row g-3 my-4">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-shield-account-outline text-primary fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Granular RBAC Architecture</h6>
+                                </div>
+                                <p class="small text-muted mb-0">129+ granular permission nodes across 34 modules with fine-grained View, Create, Update, and Delete matrix controls.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-email-fast-outline text-success fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Automated Staff Invitations</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Frictionless onboarding with single-use invitation tokens, eliminating insecure plaintext password distribution.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-lock-clock-outline text-danger fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Bank-Grade Profile Security</h6>
+                                </div>
+                                <p class="small text-muted mb-0">15-minute expiring cryptographic email verification tokens for administrator password alterations, preventing workstation takeovers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Architectural Overview -->
+                    <div class="card border-0 shadow-sm rounded-3 mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold mb-3">Governance Architecture &amp; System Path</h4>
+                            <p class="text-muted">
+                                As multi-vendor and enterprise commerce operations scale, maintaining strict boundaries between departments (Customer Support, Warehouse, Marketing, Catalog Management, and Finance) is essential. The <strong>MartX Administration Suite</strong> implements a rigorous Role-Based Access Control (RBAC) foundation built on top of the battle-tested <code>spatie/laravel-permission</code> package, augmented by automated audit trails, drag-and-drop team showcasing, and dual-layer email verification protocols.
+                            </p>
+                            <div class="alert alert-info border-0 d-flex align-items-start gap-3 mb-0">
+                                <i class="mdi mdi-information-outline fs-4 text-info flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <strong>Admin Navigation Paths:</strong>
+                                    <div class="mt-1 font-monospace small">
+                                        • Admin Dashboard &gt; Administration &amp; Settings &gt; Team Members<br>
+                                        • Admin Dashboard &gt; Administration &amp; Settings &gt; Role &amp; Permissions<br>
+                                        • Admin Dashboard &gt; Administration &amp; Settings &gt; User Management<br>
+                                        • Admin Dashboard &gt; Administration &amp; Settings &gt; My Profile
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 19.1: PUBLIC TEAM SHOWCASE & REORDERABLE DIRECTORY ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-19-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-account-multiple-outline text-primary me-1"></i> 19.1 Public Team Showcase &amp; Reorderable Directory
+                        </h3>
+                        <p class="text-muted">
+                            The <strong>Team Members</strong> module manages the public executive and staff profiles featured on your storefront's "About Us" and brand storytelling pages. It features an intuitive split-pane interface: a live drag-and-drop sortable directory on the left and an instant creation form on the right.
+                        </p>
+
+                        <!-- Screenshot 1: Team Members Management (Split View) -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Team Members: Public Directory &amp; Add Form
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Team Directory</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/staff/admin_team_members_index.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/staff/admin_team_members_index.png" alt="MartX Team Members Directory and Add Form" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Technical Deep Dive: Drag-and-Drop Order Matrix -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">Live Reordering &amp; Member Attribute Breakdown</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-hover border align-middle mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th style="width: 25%;">Field / Control</th>
+                                                <th style="width: 25%;">Type &amp; Validation</th>
+                                                <th style="width: 50%;">Operational Purpose &amp; Impact</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">Drag Handle (:::)</td>
+                                                <td><span class="badge bg-primary-subtle text-primary">AJAX Sortable</span></td>
+                                                <td>Click and drag any row to dynamically adjust hierarchy on the public About page. Fires a lightweight async request to <code>/admin/team-member/reorder</code> without page reloads.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">Full Name *</td>
+                                                <td><span class="badge bg-secondary-subtle text-dark">Required / Max 120</span></td>
+                                                <td>Legal or professional name of the team member displayed prominently as the card header on the storefront.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">Position / Designation *</td>
+                                                <td><span class="badge bg-secondary-subtle text-dark">Required / Max 100</span></td>
+                                                <td>Official company title (e.g., <em>"Lead UI/UX Designer"</em>, <em>"Head of Logistics"</em>, <em>"Chief Operations Officer"</em>).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">Member Photo</td>
+                                                <td><span class="badge bg-info-subtle text-info">1:1 Aspect Ratio</span></td>
+                                                <td>Square headshot uploaded directly or selected via the unified MartX Media Manager (WebP/PNG/JPG recommended).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">Actions Menu</td>
+                                                <td><span class="badge bg-warning-subtle text-warning">Edit &amp; Delete</span></td>
+                                                <td>Direct access to edit existing biographies/photos or permanently soft-delete profiles from public view.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 2: Edit Team Member Form -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Edit Team Member: Executive Bio &amp; Avatar Media
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Member Editor</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/staff/admin_team_member_edit.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/staff/admin_team_member_edit.png" alt="Edit Team Member Screen" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <div class="alert alert-light border shadow-sm rounded-3">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="mdi mdi-lightbulb-on text-warning fs-5"></i>
+                                <h6 class="fw-bold mb-0">Best Practice: Team Member Photography</h6>
+                            </div>
+                            <p class="small text-muted mb-0">
+                                Maintain unified brand aesthetic by standardizing avatar resolutions to <strong>500×500px</strong> with consistent neutral backgrounds. The MartX media engine automatically generates WebP responsive thumbnails for ultra-fast mobile loading.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ================= 19.2: ROLE-BASED ACCESS CONTROL (RBAC) ARCHITECTURE ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-19-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-shield-lock-outline text-primary me-1"></i> 19.2 Role-Based Access Control (RBAC) Architecture
+                        </h3>
+                        <p class="text-muted">
+                            MartX employs an enterprise-grade <strong>Multi-Tenant Role Matrix</strong>. Instead of hardcoded boolean permissions, access rights are dynamically evaluated through relational joins between roles, permissions, and authenticated sessions.
+                        </p>
+
+                        <!-- Screenshot 3: Role Permissions Index Table -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Role &amp; Permissions: Multi-Tenant Role Matrix
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Roles Matrix</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/staff/admin_roles_index.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/staff/admin_roles_index.png" alt="All Roles Directory and Active Permission Counts" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Protected System Roles vs Custom Roles -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">System Roles Classification &amp; Immutability Rules</h5>
+                                <p class="text-muted small">
+                                    The MartX kernel strictly partitions roles into <strong>Protected System Roles</strong> (which cannot be deleted or stripped of root privileges to prevent administrative lockouts) and <strong>Custom Operational Roles</strong>.
+                                </p>
+                                <div class="table-responsive">
+                                    <table class="table table-hover border align-middle mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th style="width: 20%;">Role Identifier</th>
+                                                <th style="width: 20%;">Default Permissions</th>
+                                                <th style="width: 20%;">Mutability Status</th>
+                                                <th style="width: 40%;">Governance Function</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fw-bold text-primary font-monospace"><i class="mdi mdi-crown text-warning me-1"></i> Super Admin</td>
+                                                <td><span class="badge bg-primary">129 Permissions</span></td>
+                                                <td><span class="badge bg-danger-subtle text-danger">Strictly Immutable</span></td>
+                                                <td>Root system administrator. Has unrestricted access across all payment gateways, system settings, database migrations, and administrative user assignments.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-info font-monospace"><i class="mdi mdi-shield-account me-1"></i> Admin</td>
+                                                <td><span class="badge bg-info-subtle text-info">118 Permissions</span></td>
+                                                <td><span class="badge bg-success-subtle text-success">Fully Mutable</span></td>
+                                                <td>Store manager level. Grants daily operations control (orders, fulfillment, inventory, catalog, blogs) while restricting raw core infrastructure reconfigurations.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-muted font-monospace"><i class="mdi mdi-account me-1"></i> User</td>
+                                                <td><span class="badge bg-secondary-subtle text-muted">0 Admin Rights</span></td>
+                                                <td><span class="badge bg-danger-subtle text-danger">System Guarded</span></td>
+                                                <td>Standard storefront customer account. Permitted only to view products, manage personal shopping carts, checkout, write reviews, and track order histories.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-purple font-monospace"><i class="mdi mdi-account-cog me-1"></i> Custom Roles</td>
+                                                <td><span class="badge bg-secondary">Configurable</span></td>
+                                                <td><span class="badge bg-success-subtle text-success">Full CRUD</span></td>
+                                                <td>Store owners can create custom roles like <em>"Inventory Clerk"</em>, <em>"Content Writer"</em>, or <em>"Support Agent"</em> with precise module-level access.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-danger border-0 d-flex align-items-start gap-3 shadow-sm rounded-3">
+                            <i class="mdi mdi-shield-alert-outline fs-3 text-danger flex-shrink-0"></i>
+                            <div>
+                                <h6 class="fw-bold mb-1 text-danger">Built-in Safety Shield: Accidental Lockout Protection</h6>
+                                <p class="small mb-0 text-muted">
+                                    MartX includes an automatic safety lock on the primary <strong>Super Admin</strong> and customer <strong>User</strong> roles. These foundational roles cannot be deleted or stripped of their core capabilities by any staff member, permanently safeguarding your store against accidental lockouts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 19.3: GRANULAR RBAC CREATION, EDITING & PERMISSIONS AUDIT ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-19-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-checkbox-multiple-marked-outline text-primary me-1"></i> 19.3 Granular RBAC Creation, Editing &amp; Audit Matrix
+                        </h3>
+                        <p class="text-muted">
+                            MartX exposes a fine-grained permission grid covering over <strong>34 modular domains</strong>. Each domain is decomposed into the standard RESTful operational primitives: <code>VIEW</code>, <code>CREATE</code>, <code>UPDATE</code>, and <code>DELETE</code>, alongside domain-specific actions such as <code>REPLY</code> for customer inquiries.
+                        </p>
+
+                        <!-- Screenshot 4: Add New Role Screen -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Create Custom Role: Module Permission Checklist
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Permission Studio</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/staff/admin_role_create.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/staff/admin_role_create.png" alt="Add New Role with Granular Module Cards" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Step-by-Step Guide: Creating a Custom Role -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">Workflow: Provisioning a New Operational Role</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="fw-bold text-primary mb-1">Step 1: Role Identifier</div>
+                                            <p class="small text-muted mb-0">Enter a descriptive role title in the <strong>Role Name</strong> field (e.g., <em>"Support Specialist"</em> or <em>"Catalog Specialist"</em>).</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="fw-bold text-primary mb-1">Step 2: Module Selection</div>
+                                            <p class="small text-muted mb-0">Use the global <strong>Select All</strong> switch for bulk assignment or browse module cards to check specific CRUD actions.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="fw-bold text-primary mb-1">Step 3: Save &amp; Enforce</div>
+                                            <p class="small text-muted mb-0">Click <strong>Save Role &amp; Permissions</strong>. The Spatie cache is immediately cleared and all assignees receive instant authorization updates.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 5: Edit Role Screen -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Edit Role: Granular Permission Matrix
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Role Revision</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/staff/admin_role_edit.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/staff/admin_role_edit.png" alt="Edit Role Screen with Pre-Checked Permissions" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 6: Role Details Audit View -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Role Details: Read-Only Permission Audit
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Security Audit</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/staff/admin_role_details.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/staff/admin_role_details.png" alt="Role Details Read-Only Audit Screen" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info border-0 shadow-sm rounded-3">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="mdi mdi-eye-check-outline text-info fs-5"></i>
+                                <h6 class="fw-bold mb-0">Security Audit Mode</h6>
+                            </div>
+                            <p class="small text-muted mb-0">
+                                The <strong>Role Details</strong> screen (View mode) provides an immutable, read-only inspection grid displaying purple checkmarked badges for granted capabilities and muted grey badges for inactive permissions. Lead administrators can audit staff clearance without accidental checkbox toggles.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ================= 19.4: SYSTEM USER DIRECTORY & FILTERING ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-19-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-account-box-multiple-outline text-primary me-1"></i> 19.4 System User Directory &amp; Advanced Filtering
+                        </h3>
+                        <p class="text-muted">
+                            The <strong>User Management</strong> hub centralizes both administrative staff and customer accounts. It includes real-time telemetry filters, bulk operations, verification indicators, and account lifecycle controls.
+                        </p>
+
+                        <!-- Screenshot 7: User Management Directory Table -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; User Management: Multi-Tenant Accounts &amp; Roles
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Staff Directory</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/staff/admin_users_table.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/staff/admin_users_table.png" alt="User Management Directory Table" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- User Management Control Matrix -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">Directory Header Filters &amp; Table Data Schema</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-hover border align-middle mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th style="width: 25%;">Control / Column</th>
+                                                <th style="width: 25%;">Component Type</th>
+                                                <th style="width: 50%;">Operational Functionality</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">All Users (8) Filter</td>
+                                                <td><span class="badge bg-primary-subtle text-primary">Status Dropdown</span></td>
+                                                <td>Filters user list by account lifecycle: <code>All</code>, <code>Active</code>, <code>Inactive</code>, or <code>Suspended</code>.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">All Roles (8) Filter</td>
+                                                <td><span class="badge bg-secondary-subtle text-dark">Role Dropdown</span></td>
+                                                <td>Isolates staff members assigned to specific roles: <code>Super Admin</code>, <code>Admin</code>, or registered <code>User</code> customers.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">Search Input Bar</td>
+                                                <td><span class="badge bg-info-subtle text-info">Debounced Live Query</span></td>
+                                                <td>Instantly queries user accounts by Full Name or Email Address with zero page refresh latency.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">Verification Warning Icon</td>
+                                                <td><span class="badge bg-warning-subtle text-warning"><i class="mdi mdi-alert-circle text-warning"></i> Yellow Dot</span></td>
+                                                <td>Appears next to the user's name if their email address is unverified, alerting store admins to potential communication or order notification delivery issues.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">Action Dropdown (⋮)</td>
+                                                <td><span class="badge bg-light text-dark border">Context Menu</span></td>
+                                                <td>Provides contextual actions: <strong>View Profile</strong>, <strong>Edit User Details</strong>, <strong>Toggle Status (Active/Suspended)</strong>, and <strong>Delete Account</strong>.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="alert alert-warning border-0 d-flex align-items-start gap-2 p-3 rounded-3 mt-3 mb-0" style="background-color: #fffbeb; border-left: 4px solid #f59e0b !important;">
+                                    <i class="mdi mdi-shield-lock-outline text-warning fs-4 flex-shrink-0 mt-0"></i>
+                                    <div class="small">
+                                        <strong class="text-dark">Anti-Lockout Governance &amp; Super Admin Immutability:</strong> To prevent catastrophic administrative lockouts, MartX enforces strict programmatic deletion guards. The currently logged-in administrator is strictly prohibited from deleting their own active profile (in both single and bulk deletions). Furthermore, accounts designated with the <code>Super Admin</code> role cannot be deleted or purged via bulk operations under any circumstances, preserving the integrity of the root governance tier.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 19.5: STAFF ONBOARDING, PROFILE EDITING & PASSWORD RECOVERY ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-19-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-account-plus-outline text-primary me-1"></i> 19.5 Staff Onboarding, Profile Editing &amp; Password Recovery
+                        </h3>
+                        <p class="text-muted">
+                            MartX eliminates the critical security flaw of administrators manually generating and texting passwords to new team members. Instead, the platform features a zero-knowledge <strong>Secure Email Invitation Pipeline</strong>.
+                        </p>
+
+                        <!-- Screenshot 8: Add New User / Invite Screen -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Invite &amp; Add Team Member: Secure Email Onboarding
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Staff Invitation</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/staff/admin_user_create.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/staff/admin_user_create.png" alt="Invite and Add New Team Member Form" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Invitation Protocol Highlights -->
+                        <div class="p-4 rounded-3 border bg-light-subtle shadow-sm mb-4">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="mdi mdi-email-seal-outline text-primary fs-4"></i>
+                                <h5 class="fw-bold mb-0">The Secure Staff Onboarding Lifecycle</h5>
+                            </div>
+                            <p class="text-muted small mb-3">
+                                When a store owner invites a new administrator or support specialist via <strong>Invite &amp; Add New Team Member</strong>:
+                            </p>
+                            <ol class="text-muted small ps-3 mb-0">
+                                <li class="mb-2">The administrator specifies the user's official <strong>Email Address</strong> and selects an <strong>Assigned Role</strong> (e.g., <code>Admin</code>, <code>Editor</code>). Optional metadata like Full Name, Phone, and Avatar may also be pre-configured.</li>
+                                <li class="mb-2">Upon clicking <strong>Send Invitation &amp; Create User</strong>, MartX dispatches a cryptographically signed invitation URL with a 24-hour expiration token.</li>
+                                <li class="mb-2">The recipient opens the email link and lands on a secure private onboarding page where they set their own confidential password. The admin never sees or handles their raw credential.</li>
+                                <li>The user account status switches automatically to <code>Active</code>, and their email address is marked as verified.</li>
+                            </ol>
+                        </div>
+
+                        <!-- Screenshot 9: Edit User Screen -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Edit User Details: Password Reset &amp; Verification
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">User Security</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/staff/admin_user_edit.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/staff/admin_user_edit.png" alt="Edit User Details Screen with Password Reset and Verification Triggers" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Account Password Support & Verification Resend Details -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">Administrative Password Reset &amp; Email Verification Triggers</h5>
+                                <p class="text-muted small">
+                                    From the <strong>Edit User Details</strong> console, administrators have two one-click support tools for assisting locked out or newly registered users:
+                                </p>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-white h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <i class="mdi mdi-key-link text-primary fs-4"></i>
+                                                <h6 class="fw-bold mb-0">Send Password Reset Link</h6>
+                                            </div>
+                                            <p class="small text-muted mb-2">
+                                                Generates a standard Laravel <code>Password::createToken($user)</code> valid for exactly <strong>60 minutes</strong>. The reset link is emailed directly to the user with zero manual password input required from the admin.
+                                            </p>
+                                            <span class="badge bg-primary-subtle text-primary small">Token Expiry: 60 mins</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-white h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <i class="mdi mdi-email-check-outline text-warning fs-4"></i>
+                                                <h6 class="fw-bold mb-0">Send Verification Link</h6>
+                                            </div>
+                                            <p class="small text-muted mb-2">
+                                                For users displaying the yellow <span class="badge bg-warning-subtle text-warning">Unverified</span> badge, clicking this button creates a 60-character verification token in Redis/Cache valid for <strong>24 hours</strong> and emails a verification link.
+                                            </p>
+                                            <span class="badge bg-warning-subtle text-warning small">Token Expiry: 24 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 10: User Details 360-Degree Profile View -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; User Profile 360: Effective Permissions Matrix
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Profile 360</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/staff/admin_user_view.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/staff/admin_user_view.png" alt="User Details 360 View with Effective Permissions Matrix" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <div class="alert alert-light border shadow-sm rounded-3">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="mdi mdi-card-account-details-outline text-primary fs-5"></i>
+                                <h6 class="fw-bold mb-0">Effective Permissions Telemetry</h6>
+                            </div>
+                            <p class="small text-muted mb-0">
+                                The <strong>User Details</strong> view aggregates all personal metadata (Joined date, Phone, Newsletter subscription, Timestamps) alongside an <strong>Effective Permissions</strong> box showing exactly which nodes are active for that specific user account (e.g., 69 active permissions for a Store Manager).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ================= 19.6: ADMIN PROFILE SECURITY & 15-MINUTE PROTOCOL ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-19-6">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-shield-account text-primary me-1"></i> 19.6 Admin Profile Security &amp; 15-Minute Verification Protocol
+                        </h3>
+                        <p class="text-muted">
+                            To protect against physical shoulder-surfing and unattended workstation takeovers, MartX features a <strong>Bank-Grade Email-Verified Password Protocol</strong> for all administrative accounts.
+                        </p>
+
+                        <!-- Screenshot 11: Admin Profile and Security Console -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Account Security: 15-Minute Re-Authentication Protocol
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Profile Security</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/staff/admin_profile_security.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/staff/admin_profile_security.png" alt="Admin Profile and Security Console" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- 15-Minute Protocol Architecture Table -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">Dual-Card Architecture &amp; Security Protocol</h5>
+                                <div class="row g-4">
+                                    <!-- Left Card Details -->
+                                    <div class="col-lg-6">
+                                        <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <i class="mdi mdi-account-circle-outline text-primary fs-4"></i>
+                                                <h6 class="fw-bold mb-0">Card 1: Personal Information</h6>
+                                            </div>
+                                            <ul class="text-muted small ps-3 mb-0">
+                                                <li class="mb-1"><strong>Profile Image:</strong> Square photo (JPG, PNG, WebP) up to 2MB. Old files are automatically purged from <code>storage/users/</code> upon replacement.</li>
+                                                <li class="mb-1"><strong>Full Name:</strong> Required admin display name across activity logs.</li>
+                                                <li class="mb-1"><strong>Email Address:</strong> <span class="badge bg-secondary-subtle text-dark">Locked</span> Immutable for active sessions to prevent email hijack vectors.</li>
+                                                <li class="mb-1"><strong>Assigned Role:</strong> <span class="badge bg-primary-subtle text-primary">Read-only</span> Managed exclusively by root Super Admins.</li>
+                                                <li><strong>Contact Details:</strong> Optional Phone Number, Gender selector, and Date of Birth date picker.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right Card Details -->
+                                    <div class="col-lg-6">
+                                        <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <i class="mdi mdi-shield-key-outline text-danger fs-4"></i>
+                                                <h6 class="fw-bold mb-0">Card 2: Security &amp; Password Protocol</h6>
+                                            </div>
+                                            <ul class="text-muted small ps-3 mb-0">
+                                                <li class="mb-1"><strong>Password Fields:</strong> Current Password *, New Password * (min 8 chars), and Confirm New Password * with show/hide eye toggles.</li>
+                                                <li class="mb-1"><strong>15-Minute Token TTL:</strong> Clicking <em>"Send Password Verification Link"</em> hashes the new password and holds it in cache under <code>admin_pwd_change_{token}</code> for exactly 15 minutes.</li>
+                                                <li class="mb-1"><strong>Out-of-Band Email Confirmation:</strong> A verification link is dispatched to the admin's verified email. The password will NOT change until the email owner clicks the verification link.</li>
+                                                <li><strong>Global Session Termination:</strong> Once confirmed, the system immediately invalidates all active sessions across all devices, requiring re-authentication with the new password.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Multi-Staff Security SOP & Best Practices -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">Enterprise Staff Governance &amp; Security SOP</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-hover border align-middle mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th style="width: 25%;">Security Dimension</th>
+                                                <th style="width: 25%;">Operational Rule</th>
+                                                <th style="width: 50%;">Implementation Details</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">Least Privilege (PoLP)</td>
+                                                <td><span class="badge bg-primary">Enforced</span></td>
+                                                <td>Never assign the root <code>Super Admin</code> role to contractors or department leads. Create dedicated custom roles granting only the exact CRUD operations necessary.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">Employee Offboarding</td>
+                                                <td><span class="badge bg-danger">Instant Revocation</span></td>
+                                                <td>When staff depart, set their account status to <code>Suspended</code> from the User Management console. Suspended accounts are barred at middleware level with instant session termination.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">Self-Lockout Shield</td>
+                                                <td><span class="badge bg-success">Automated Guard</span></td>
+                                                <td>Logged-in administrators are forbidden by backend middleware from deactivating their own active account, preventing accidental total system lockout.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">Auditable Event Logs</td>
+                                                <td><span class="badge bg-info">Timestamped</span></td>
+                                                <td>Every role reassignment, permission update, and profile modification is recorded with authenticated admin IDs and UTC timestamps in the database audit log.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="customer-interaction.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 18 (Reviews &amp; Messages)
+                    </a>
+                    <a href="locations-coverage.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 20 (Locations &amp; Coverage) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch19-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-19-1" class="doc-toc-link">19.1 Team Directory</a>
+                    <a href="#sec-19-2" class="doc-toc-link">19.2 RBAC Architecture</a>
+                    <a href="#sec-19-3" class="doc-toc-link">19.3 Role Management</a>
+                    <a href="#sec-19-4" class="doc-toc-link">19.4 User Directory</a>
+                    <a href="#sec-19-5" class="doc-toc-link">19.5 Staff Onboarding</a>
+                    <a href="#sec-19-6" class="doc-toc-link">19.6 Admin Security &amp; SOP</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch19-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction &amp; Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce &amp; Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders &amp; Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers &amp; Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons &amp; Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website &amp; CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders &amp; Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ &amp; About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs &amp; Editorial
+            </a>
+            <div class="sidebar-heading">Customer &amp; Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews &amp; Messages
+            </a>
+            <div class="sidebar-heading">Administration &amp; Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations &amp; Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance &amp; Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron &amp; FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 1rem; overflow: hidden;">
+                <div class="modal-header border-bottom p-3">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0 text-muted ps-2">
+                            <i class="mdi mdi-magnify fs-4"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 shadow-none ps-2" id="docGlobalSearch" placeholder="Search documentation chapters, attributes, or guides..." autofocus>
+                    </div>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3" id="docSearchResults" style="max-height: 400px; overflow-y: auto;">
+                    <div class="text-muted small text-uppercase fw-bold px-2 mb-2">Documentation Hub</div>
+                    <div class="p-3 text-center text-muted">Type any keyword to search across all 22 chapters...</div>
+                </div>
+                <div class="modal-footer border-top py-2 px-3 justify-content-between text-muted small">
+                    <span>Press <kbd class="bg-light text-dark border">ESC</kbd> to exit</span>
+                    <span>MartX Documentation v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

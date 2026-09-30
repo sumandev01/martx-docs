@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Products Management & AI Studio - MartX Documentation</title>
+    <meta name="description" content="Chapter 12: Products Management — Product Directory, Master Creation Canvas, Multi-Attribute Variations, Dedicated Editor, and Live Google SERP Dossier - MartX Enterprise Documentation">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+                                    <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER MAIN CONTENT COLUMN ================= -->
+            <main class="col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb doc-breadcrumb small mb-0">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Docs</a></li>
+                        <li class="breadcrumb-item"><a href="catalog-inventory.html" class="text-decoration-none text-muted">Ecommerce & Operations</a></li>
+                        <li class="breadcrumb-item active text-primary" aria-current="page">Chapter 12: Products Management</li>
+                    </ol>
+                </nav>
+
+                <!-- SECTION HEADER -->
+                <section class="doc-section mb-4" id="ch12-intro">
+                    <h1 class="doc-section-title d-flex align-items-center gap-2 mb-3">
+                        <i class="mdi mdi-package-variant-closed text-primary"></i> Chapter 12: Products Management — Lifecycle, Variations & SERP Engine
+                    </h1>
+                    <p class="lead text-muted">
+                        Enterprise Product Directory Telemetry, Master 2-Column Product Creation Canvas with 1-Click Google Gemini AI Synthesis, Multi-Attribute Variation Matrix (Sizes, Colors & Custom Schedules), Dedicated Product Editor, and the Comprehensive Product Dossier with Live Google SERP Simulation.
+                    </p>
+                </section>
+
+                <!-- Quick Overview Stat Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-package-variant fs-3 mb-1 d-block" style="color: #6366f1;"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">48 Products</span>
+                            <span class="text-muted small">Active Directory Catalog</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-creation fs-3 text-success mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">Gemini AI Engine</span>
+                            <span class="text-muted small">1-Click Specs & SEO Meta</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-layers-triple-outline fs-3 text-warning mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">Variations Matrix</span>
+                            <span class="text-muted small">Sizes, Colors & Custom Pricing</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-google fs-3 text-danger mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">Live Google SERP</span>
+                            <span class="text-muted small">Real-Time Search Simulator</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 12.1: PRODUCTS DIRECTORY & FILTERS ================= -->
+                <div class="doc-subsection mt-4 mb-5" id="sec-12-1">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-format-list-bulleted-square text-primary me-1"></i> 12.1 Products Directory, Metric Telemetry & Filtering Matrix
+                    </h3>
+                    <p>
+                        The <strong>Product Management Directory</strong> is the mission control center for store merchandising. It combines real-time inventory telemetry counters, high-performance faceted dropdown filters, instant SKU search, and high-density tabular records detailing thumbnail imagery, pricing discounts, stock levels, and publication statuses.
+                    </p>
+
+                    <!-- Screenshot 1: Products Directory Table -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Products Management: Product Inventory Directory
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/products/admin_products_table.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/products/admin_products_table.png" alt="Products Directory Table" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-5">
+                                    <i class="mdi mdi-image-outline fs-1 d-block mb-1"></i>
+                                    <span class="small">Products Management Directory (images/products/admin_products_table.png)</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center text-muted small pt-1 border-top mt-2">
+                                <span><i class="mdi mdi-view-list me-1 text-primary"></i> 48 active products across 3 pages (showing 1-20), featuring 4 header stat cards, 3-tier filtering, instant SKU search, and Trendy switches.</span>
+                                <span class="badge bg-light text-dark border">MartX v1.0.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Paths Callout -->
+                    <div class="doc-callout doc-callout-info mb-4">
+                        <div class="doc-callout-title text-primary">
+                            <i class="mdi mdi-compass-outline"></i> Admin Access Route
+                        </div>
+                        <p class="small mb-0">
+                            Navigate to: <strong>Admin Dashboard</strong> &rarr; <strong>Products Management</strong> &rarr; <strong>All Products</strong>. To add a new product SKU, click the purple <kbd class="bg-primary text-white">+ Add New Product</kbd> button located in the top-right corner.
+                        </p>
+                    </div>
+
+                    <!-- Telemetry Cards Anatomy -->
+                    <h5 class="fw-bold text-heading mt-4 mb-3">
+                        <i class="mdi mdi-gauge text-primary me-1"></i> Header Inventory Telemetry Cards
+                    </h5>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-3 col-6">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm border-start border-4 border-primary">
+                                <span class="text-muted small d-block mb-1">Total Products</span>
+                                <h4 class="fw-bold text-heading mb-1">48</h4>
+                                <span class="small text-muted">All catalog records registered in system</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm border-start border-4 border-success">
+                                <span class="text-muted small d-block mb-1">Active Products</span>
+                                <h4 class="fw-bold text-success mb-1">48</h4>
+                                <span class="small text-muted">Live on storefront and purchasable</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm border-start border-4 border-warning">
+                                <span class="text-muted small d-block mb-1">Low Stock Alert</span>
+                                <h4 class="fw-bold text-warning mb-1">3</h4>
+                                <span class="small text-muted">Stock quantity below reorder threshold</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm border-start border-4 border-danger">
+                                <span class="text-muted small d-block mb-1">Out of Stock</span>
+                                <h4 class="fw-bold text-danger mb-1">3</h4>
+                                <span class="small text-muted">Zero inventory available; purchasing locked</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step-by-Step: How to Search, Filter & Audit Products -->
+                    <div class="p-4 border rounded-3 bg-white mb-4 shadow-sm">
+                        <h5 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-filter-cog-outline text-primary me-1"></i> How to Filter, Search & Audit Products (Step-by-Step)
+                        </h5>
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <div class="p-3 border rounded-2 bg-light small h-100">
+                                    <strong class="d-block text-primary mb-1">Step 1: Use Live Search</strong>
+                                    Type any keyword, title snippet, or specific SKU code (e.g. <code>MTX-CWJ2BM</code>) into the search bar. The table updates in real-time.
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="p-3 border rounded-2 bg-light small h-100">
+                                    <strong class="d-block text-primary mb-1">Step 2: Narrow by Category</strong>
+                                    Click the <strong>All Categories</strong> dropdown to filter inventory by primary departments (e.g., <em>Jewelry & Ornaments</em>, <em>Watches & Wearables</em>).
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="p-3 border rounded-2 bg-light small h-100">
+                                    <strong class="d-block text-primary mb-1">Step 3: Filter by Brand</strong>
+                                    Select the manufacturer from the <strong>All Brands</strong> dropdown (e.g., <em>Fossil</em>, <em>Casio</em>, <em>Nike</em>) to isolate specific brand lines.
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="p-3 border rounded-2 bg-light small h-100">
+                                    <strong class="d-block text-success mb-1">Step 4: Toggle Trendy Badges</strong>
+                                    Use the <strong>Trendy</strong> switch next to any product to instantly feature it in storefront homepage carousels with zero page reload.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 12.2: ADD PRODUCT MASTER CANVAS ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-12-2">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-plus-box-multiple-outline text-primary me-1"></i> 12.2 Master Product Creation Canvas & 1-Click Gemini AI Synthesis
+                    </h3>
+                    <p>
+                        Publishing a comprehensive e-commerce product requires synchronizing commercial copywriting, SKU identification, pricing schedules, multi-level variants, WYSIWYG specifications, image galleries, and SEO metadata. The MartX <strong>Add New Product Canvas</strong> arranges these controls into a high-productivity dual-column workspace.
+                    </p>
+
+                    <!-- Screenshot 2: Add Product Page -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Products Management: Master Product Creation Canvas
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/products/admin_product_add.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/products/admin_product_add.png" alt="Add New Product Canvas" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-5">
+                                    <i class="mdi mdi-image-outline fs-1 d-block mb-1"></i>
+                                    <span class="small">Add New Product Master Form (images/products/admin_product_add.png)</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center text-muted small pt-1 border-top mt-2">
+                                <span><i class="mdi mdi-creation text-success me-1"></i> Left column: AI Generator banner, SKU generator, Pricing schedules, Multi-Variant Matrix, WYSIWYG editors; Right column: Category, Brand, Tags, Main Image.</span>
+                                <span class="badge bg-light text-dark border">MartX v1.0.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Generation Highlight Card -->
+                    <div class="p-4 border rounded-3 bg-white mb-4 shadow-sm">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="bg-success text-white rounded-3 p-3 flex-shrink-0">
+                                <i class="mdi mdi-creation fs-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-heading mb-1">1-Click Google Gemini AI Product Copywriter</h5>
+                                <p class="small text-muted mb-2">
+                                    Manually writing compelling e-commerce product copy, technical bullet points, and Google SEO tags for dozens of SKUs can take hours. MartX integrates Google Gemini 1.5 Flash directly into the master product canvas:
+                                </p>
+                                <ul class="small text-muted ps-3 mb-0">
+                                    <li class="mb-1"><strong>The Pro Tip Workflow:</strong> Select your <strong>Category</strong>, <strong>Brand</strong>, <strong>Variants (Size/Color)</strong>, and <strong>Tags</strong> first in the right column, then type your <strong>Product Name</strong>.</li>
+                                    <li class="mb-1"><strong>1-Click AI Trigger:</strong> Click the <kbd class="bg-success text-white">Auto Generate with AI</kbd> button with the sparkles icon.</li>
+                                    <li><strong>Instant 6-Field Synthesis:</strong> In under 3 seconds, Gemini synthesizes an engaging <strong>Short Description</strong>, a rich HTML <strong>Full Description</strong> with bullet points, structured <strong>Product Specifications</strong>, an optimized <strong>Meta Title</strong> (&lt; 60 chars), commercial <strong>Meta Keywords</strong>, and a high-CTR <strong>Meta Description</strong> (&lt; 160 chars).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visible UI Architecture: 2-Column Master Canvas -->
+                    <div class="alert alert-primary border-0 bg-primary-subtle text-primary p-3 mb-4 rounded-3 d-flex align-items-start gap-3">
+                        <i class="mdi mdi-view-column-outline fs-3 flex-shrink-0"></i>
+                        <div class="small">
+                            <strong class="d-block mb-1 fs-6">Master Canvas Visual Architecture: 2-Column Responsive Layout</strong>
+                            MartX organizes the product creation workflow into a synchronized <strong>70% / 30% dual-column interface</strong>. The <strong>Left Column</strong> houses core commercial data, automated SKU creation, time-based promotional calendars, the multi-attribute variation grid, rich WYSIWYG text editors, media gallery dropzones, and Google SERP tags. The <strong>Right Column</strong> maintains store organization (Category, Subcategory, Brand, Product Status), promotional hashtag badges, the primary square product thumbnail, and the sticky <strong>Add New Product</strong> publishing trigger.
+                        </div>
+                    </div>
+
+                    <!-- LEFT COLUMN ENCYCLOPEDIA -->
+                    <div class="card border rounded-3 bg-white mb-4 shadow-sm overflow-hidden">
+                        <div class="card-header bg-light py-3 px-4 border-bottom d-flex justify-content-between align-items-center">
+                            <h5 class="fw-bold text-heading mb-0">
+                                <i class="mdi mdi-dock-left text-primary me-2"></i> Left Column &mdash; Commercial Data, Pricing & Media Encyclopedia
+                            </h5>
+                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle">7 Core UI Cards</span>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0 doc-table">
+                                    <thead class="table-light text-muted small text-uppercase">
+                                        <tr>
+                                            <th style="width: 25%;">Visible Label Name & UI Control</th>
+                                            <th style="width: 25%;">Input Properties & Behavior</th>
+                                            <th style="width: 50%;">Operational Purpose & Storefront Impact</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="small">
+                                        <!-- Card 1: Product Information -->
+                                        <tr class="table-group-divider bg-light-subtle">
+                                            <td colspan="3" class="fw-bold text-primary py-2 px-3">
+                                                <i class="mdi mdi-package-variant-closed me-1"></i> Card 1: Product Information
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">AI Assistant Studio</strong>
+                                                <span class="badge bg-light text-dark border small mt-1">
+                                                    <i class="mdi mdi-creation text-primary me-1"></i> ✨ Auto Generate with AI
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-info-subtle text-info small mb-1">Interactive Action Button</span><br>
+                                                <span>Lavender-indigo gradient studio banner. Active once Product Name is entered.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-robot"></i> 1-Click Gemini Synthesis</span><br>
+                                                Synthesizes an engaging <strong>Short Description</strong>, formatted HTML <strong>Full Description</strong>, technical <strong>Product Specifications</strong>, and 3 optimized <strong>SEO Meta Fields</strong> based on category, brand, and variants.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Product Name</strong>
+                                                <span class="badge bg-danger-subtle text-danger small mt-1">Required</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Text Field</span><br>
+                                                <em>Placeholder: "Enter product name"</em><br>
+                                                <span>Max 100 characters.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-tag"></i> Storefront Title & Breadcrumbs</span><br>
+                                                The primary commercial title displayed on catalog grids, search results, product details pages, and customer invoice receipts.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Product Slug</strong>
+                                                <span class="badge bg-secondary-subtle text-secondary small mt-1">Edit Mode Only</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">URL Text Field</span><br>
+                                                <em>Placeholder: "enter-product-slug"</em><br>
+                                                <span>Hyphen-separated URL string.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-link-variant"></i> Clean Storefront Permalink</span><br>
+                                                Defines the public web address (e.g. <code>/product/leather-cuff-bracelet</code>). Auto-generated on creation and fully editable on update.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Product SKU</strong>
+                                                <span class="badge bg-danger-subtle text-danger small mt-1">Required</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Input with Action Button</span><br>
+                                                <em>Placeholder: "e.g. PRD-8K92F1"</em><br>
+                                                <span class="badge bg-primary text-white small mt-1"><i class="mdi mdi-refresh"></i> Auto-Generate Button</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-barcode"></i> Inventory Barcode Identifier</span><br>
+                                                Unique Stock Keeping Unit used for warehouse scanning, order packaging slips, and instant search queries. Clicking the purple refresh button automatically mints a guaranteed unique SKU code.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Product Quantity</strong>
+                                                <span class="badge bg-danger-subtle text-danger small mt-1">Required</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Numeric Field</span><br>
+                                                <em>Placeholder: "0"</em><br>
+                                                <span>Read-only when variants exist.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-warehouse"></i> Master Inventory Pool</span><br>
+                                                Sets the physical stock level for simple items. For variable items with sizes/colors, this field is automatically locked with the notice <em>"Quantity is managed through variants"</em>.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Short Description</strong>
+                                                <span class="badge bg-danger-subtle text-danger small mt-1">Required</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Text Area (4 Rows)</span><br>
+                                                <em>Placeholder: "Brief summary of the product..."</em><br>
+                                                <span>Max 500 characters with live character counter.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-text-short"></i> Quick View & Hero Summary</span><br>
+                                                Renders immediately below the price on the product detail page and inside storefront Quick View modals to highlight top benefits before the fold.
+                                            </td>
+                                        </tr>
+
+                                        <!-- Card 2: Pricing & Discount -->
+                                        <tr class="table-group-divider bg-light-subtle">
+                                            <td colspan="3" class="fw-bold text-primary py-2 px-3">
+                                                <i class="mdi mdi-currency-usd me-1"></i> Card 2: Pricing & Promotional Schedules
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Regular Price ($)</strong>
+                                                <span class="badge bg-danger-subtle text-danger small mt-1">Required</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Currency Number Field</span><br>
+                                                <em>Placeholder: "0.00"</em><br>
+                                                <span>Step: any decimal.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-cash"></i> Retail Benchmark Price</span><br>
+                                                The standard retail selling price. Displayed with a strikethrough styling whenever an active promotional discount price is configured.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Discount Price ($)</strong>
+                                                <span class="badge bg-secondary-subtle text-secondary small mt-1">Optional</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Currency Number Field</span><br>
+                                                <em>Placeholder: "0.00"</em>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-sale"></i> Promotional Selling Price</span><br>
+                                                The reduced selling price. When active, MartX automatically calculates and displays percentage-off discount badges (e.g. <code>-25% OFF</code>) on storefront catalog cards.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Start Date & Time</strong>
+                                                <span class="badge bg-secondary-subtle text-secondary small mt-1">Optional</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Calendar & Clock Picker</span><br>
+                                                <span>Leave blank for permanent discount.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-calendar-clock"></i> Campaign Launch Window</span><br>
+                                                Specifies the exact date and hour when the discount price goes live. Before this timestamp, customers are charged the standard Regular Price.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">End Date & Time</strong>
+                                                <span class="badge bg-secondary-subtle text-secondary small mt-1">Optional</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Calendar & Clock Picker</span><br>
+                                                <span>Auto-expires on end date.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-timer-sand"></i> Flash Sale Auto-Reversion</span><br>
+                                                Specifies the exact expiration deadline. Once reached, the discount price automatically deactivates without manual administrator intervention.
+                                            </td>
+                                        </tr>
+
+                                        <!-- Card 3: Dynamic Variations Matrix -->
+                                        <tr class="table-group-divider bg-light-subtle">
+                                            <td colspan="3" class="fw-bold text-primary py-2 px-3">
+                                                <i class="mdi mdi-shape-plus me-1"></i> Card 3: Dynamic Variations Matrix
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Add Variant Button</strong>
+                                                <span class="badge bg-primary text-white small mt-1">+ Add Variant</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-info-subtle text-info small mb-1">Dynamic Row Appender</span><br>
+                                                <span>Generates Variant #1, #2, etc.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-layers-triple"></i> Multi-SKU Generation</span><br>
+                                                Instantly expands a dedicated variant card row equipped with individual <strong>Size Selector</strong>, <strong>Color Selector</strong>, <strong>Stock Input</strong>, <strong>Variant Image Selector</strong>, and override checkboxes (details in Section 12.3).
+                                            </td>
+                                        </tr>
+
+                                        <!-- Card 4 & 5: Descriptions & Specifications -->
+                                        <tr class="table-group-divider bg-light-subtle">
+                                            <td colspan="3" class="fw-bold text-primary py-2 px-3">
+                                                <i class="mdi mdi-text-box-outline me-1"></i> Card 4 & 5: Detailed Descriptions & Technical Dossier
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Full Product Description</strong>
+                                                <span class="badge bg-secondary-subtle text-secondary small mt-1">Optional</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Rich Text Formatting Toolbar</span><br>
+                                                <em>Placeholder: "Detailed product description..."</em><br>
+                                                <span>Max 10,000 characters with live counter.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-file-document-edit"></i> Tabbed Storytelling Section</span><br>
+                                                The primary editorial content tab on the storefront product page. Supports bold, italics, bulleted lists, numbered steps, tables, and hyperlinks.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Product Specifications</strong>
+                                                <span class="badge bg-secondary-subtle text-secondary small mt-1">Optional</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Rich Text Formatting Toolbar</span><br>
+                                                <em>Placeholder: "Product specs, materials, origin..."</em><br>
+                                                <span>Max 5,000 characters with live counter.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-format-list-checks"></i> Technical Specifications Tab</span><br>
+                                                Houses structured engineering attributes (e.g. Dimensions, Weight, Materials, Care Instructions, Country of Manufacture) on the storefront.
+                                            </td>
+                                        </tr>
+
+                                        <!-- Card 6: Product Media Gallery -->
+                                        <tr class="table-group-divider bg-light-subtle">
+                                            <td colspan="3" class="fw-bold text-primary py-2 px-3">
+                                                <i class="mdi mdi-image-multiple me-1"></i> Card 6: Product Media Gallery
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Product Media Gallery</strong>
+                                                <span class="badge bg-secondary-subtle text-secondary small mt-1">Optional</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Multi-Image Asset Dropzone</span><br>
+                                                <span>Supports up to 10 photos simultaneously with delete cross badges.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-camera-burst"></i> Interactive Carousel & Lightbox</span><br>
+                                                Powers the interactive storefront thumbnail carousel, zoom magnifier, and fullscreen image lightbox. Administrators can add or remove angles at any time.
+                                            </td>
+                                        </tr>
+
+                                        <!-- Card 7: SEO Optimization -->
+                                        <tr class="table-group-divider bg-light-subtle">
+                                            <td colspan="3" class="fw-bold text-primary py-2 px-3">
+                                                <i class="mdi mdi-google me-1"></i> Card 7: Search Engine Optimization (SEO)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Meta Title</strong>
+                                                <span class="badge bg-secondary-subtle text-secondary small mt-1">Optional</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Single-line Text Field</span><br>
+                                                <span>Max 60 characters with live character counter.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-format-title"></i> SERP Headline & Browser Tab</span><br>
+                                                Controls the blue clickable headline rendered in Google SERP results. Kept strictly under 60 characters to prevent mobile truncation.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Meta Keywords</strong>
+                                                <span class="badge bg-secondary-subtle text-secondary small mt-1">Optional</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Multi-line Text Field</span><br>
+                                                <span>Comma-separated commercial search terms.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-key-variant"></i> Search Indexing Tags</span><br>
+                                                Tags internal site search algorithms and external crawling engines with relevant contextual keywords.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Meta Description</strong>
+                                                <span class="badge bg-secondary-subtle text-secondary small mt-1">Optional</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Text Area (2 Rows)</span><br>
+                                                <span>Max 160 characters with live character counter.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-text"></i> Google Search Snippet</span><br>
+                                                Provides the 2-line promotional preview displayed beneath your search result on Google, Bing, and WhatsApp social link cards.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN ENCYCLOPEDIA -->
+                    <div class="card border rounded-3 bg-white mb-4 shadow-sm overflow-hidden">
+                        <div class="card-header bg-light py-3 px-4 border-bottom d-flex justify-content-between align-items-center">
+                            <h5 class="fw-bold text-heading mb-0">
+                                <i class="mdi mdi-dock-right text-primary me-2"></i> Right Column &mdash; Organization, Visual Branding & Publishing Controls
+                            </h5>
+                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle">4 Core UI Cards</span>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0 doc-table">
+                                    <thead class="table-light text-muted small text-uppercase">
+                                        <tr>
+                                            <th style="width: 25%;">Visible Label Name & UI Control</th>
+                                            <th style="width: 25%;">Input Properties & Behavior</th>
+                                            <th style="width: 50%;">Operational Purpose & Storefront Impact</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="small">
+                                        <!-- Card 1: Organization -->
+                                        <tr class="table-group-divider bg-light-subtle">
+                                            <td colspan="3" class="fw-bold text-primary py-2 px-3">
+                                                <i class="mdi mdi-tag-outline me-1"></i> Card 1: Product Organization & Taxonomy
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Category Selector</strong>
+                                                <span class="badge bg-danger-subtle text-danger small mt-1">Required</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Dropdown Selector</span><br>
+                                                <em>Default: "Select Category"</em><br>
+                                                <span class="badge bg-danger-subtle text-danger small mt-1 border border-danger-subtle">⚠️ Inactive Alert Badge</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-folder-outline"></i> Primary Catalog Taxonomy</span><br>
+                                                Binds the item into the primary storefront navigation tree and category page. If an assigned category is deactivated in the catalog, MartX renders a red warning badge: <em>"Previously assigned category is inactive"</em>.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Subcategory Selector</strong>
+                                                <span class="badge bg-secondary-subtle text-secondary small mt-1">Optional</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Cascading Dropdown Selector</span><br>
+                                                <em>Default: "Select Subcategory"</em><br>
+                                                <span class="badge bg-danger-subtle text-danger small mt-1 border border-danger-subtle">⚠️ Inactive Alert Badge</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-folder-open-outline"></i> Secondary Refinement</span><br>
+                                                Dynamically loads child taxons based on the chosen category. Helps shoppers drill down into specialized collections (e.g. <em>Men's Fashion &rarr; Leather Bracelets</em>).
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Brand Selector</strong>
+                                                <span class="badge bg-secondary-subtle text-secondary small mt-1">Optional</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Dropdown Selector</span><br>
+                                                <em>Default: "Select Brand"</em><br>
+                                                <span class="badge bg-danger-subtle text-danger small mt-1 border border-danger-subtle">⚠️ Inactive Alert Badge</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-shield-check-outline"></i> Manufacturer Authority</span><br>
+                                                Associates the product with its manufacturer roster (from Chapter 11). Displays official brand logos and powers brand filter facet sidebars on shop pages.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Product Status</strong>
+                                                <span class="badge bg-danger-subtle text-danger small mt-1">Required</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Dropdown Selector</span><br>
+                                                <span>Options: <strong>Active</strong> (1) or <strong>Inactive</strong> (0).</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-eye-outline"></i> Catalog Visibility Switch</span><br>
+                                                <strong>Active:</strong> Product is live, searchable, and purchasable.<br>
+                                                <strong>Inactive:</strong> Product is hidden from all storefront lists and direct URLs return a safe draft redirection.
+                                            </td>
+                                        </tr>
+
+                                        <!-- Card 2: Tags -->
+                                        <tr class="table-group-divider bg-light-subtle">
+                                            <td colspan="3" class="fw-bold text-primary py-2 px-3">
+                                                <i class="mdi mdi-pound me-1"></i> Card 2: Promotional Product Tags
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Product Tags Selector</strong>
+                                                <span class="badge bg-secondary-subtle text-secondary small mt-1">Optional</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Interactive Tag Selector</span><br>
+                                                <em>Placeholder: "Select Tag"</em><br>
+                                                <span>Renders purple pill badges with ✕ delete buttons.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-tag-multiple"></i> Dynamic Marketing Badges</span><br>
+                                                Applies marketing badges across storefront cards (e.g. <code>#Trending</code>, <code>#Hot</code>, <code>#Bestseller</code>) and groups related items into curated cross-category search collections.
+                                            </td>
+                                        </tr>
+
+                                        <!-- Card 3: Main Image -->
+                                        <tr class="table-group-divider bg-light-subtle">
+                                            <td colspan="3" class="fw-bold text-primary py-2 px-3">
+                                                <i class="mdi mdi-image-outline me-1"></i> Card 3: Primary Product Thumbnail
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Product Main Image</strong>
+                                                <span class="badge bg-danger-subtle text-danger small mt-1">Required on Add</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Square Media Thumbnail Dropzone</span><br>
+                                                <span>Recommended 1:1 ratio (800x800 px).</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-image-album"></i> Storefront Hero Visual</span><br>
+                                                The master hero image displayed on home sliders, catalog cards, shopping cart drawers, checkout summaries, and order confirmation receipts.
+                                            </td>
+                                        </tr>
+
+                                        <!-- Card 4: Action Button -->
+                                        <tr class="table-group-divider bg-light-subtle">
+                                            <td colspan="3" class="fw-bold text-primary py-2 px-3">
+                                                <i class="mdi mdi-check-circle-outline me-1"></i> Card 4: Sticky Publishing Action Trigger
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Add New Product / Update Product</strong>
+                                                <span class="badge bg-primary text-white small mt-1">Primary Action Button</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Sticky Action Card</span><br>
+                                                <span>Stays locked in view at top: 80px while scrolling.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-publish"></i> Atomic Database Commit</span><br>
+                                                Validates all required fields, creates or synchronizes SKU variants, uploads media linkages, updates stock registers, and redirects back to the directory with a success notification.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step-by-Step Enterprise Publishing Protocol -->
+                    <div class="p-4 border rounded-3 bg-white mb-4 shadow-sm">
+                        <h5 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-clipboard-check-multiple-outline text-success me-1"></i> Enterprise Product Publishing Protocol (Step-by-Step Workflow)
+                        </h5>
+                        <p class="small text-muted mb-4">
+                            Follow this standardized 7-step protocol to guarantee accurate inventory records, complete SEO indexing, and beautiful storefront presentation:
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 border rounded-3 bg-light small h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary rounded-circle text-white p-2" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;">1</span>
+                                        <strong class="text-primary fs-6">Classification First</strong>
+                                    </div>
+                                    <p class="text-muted mb-0">Navigate to the <strong>Right Column</strong> first. Select your <strong>Category</strong>, <strong>Subcategory</strong>, and <strong>Brand</strong>. This establishes the context Gemini AI needs to draft relevant copy.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 border rounded-3 bg-light small h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary rounded-circle text-white p-2" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;">2</span>
+                                        <strong class="text-primary fs-6">Name & SKU Minting</strong>
+                                    </div>
+                                    <p class="text-muted mb-0">Type your commercial <strong>Product Name</strong> in the left column. Click the purple refresh button next to <strong>Product SKU</strong> to instantly generate a guaranteed unique SKU code.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 border rounded-3 bg-light small h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary rounded-circle text-white p-2" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;">3</span>
+                                        <strong class="text-primary fs-6">Pricing & Schedules</strong>
+                                    </div>
+                                    <p class="text-muted mb-0">Enter the <strong>Regular Price ($)</strong>. If hosting a promotion, specify the <strong>Discount Price ($)</strong> along with optional <strong>Start Date & Time</strong> and <strong>End Date & Time</strong> calendars.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 border rounded-3 bg-light small h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary rounded-circle text-white p-2" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;">4</span>
+                                        <strong class="text-primary fs-6">Configure Variations</strong>
+                                    </div>
+                                    <p class="text-muted mb-0">If offering sizes or colors, click <kbd class="bg-primary text-white">+ Add Variant</kbd>. Choose size, color, physical stock, and specific photo. Master quantity locks automatically.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 border rounded-3 bg-light small h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-success rounded-circle text-white p-2" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;">5</span>
+                                        <strong class="text-success fs-6">1-Click AI Copywriting</strong>
+                                    </div>
+                                    <p class="text-muted mb-0">Click <kbd class="bg-success text-white">✨ Auto Generate with AI</kbd>. In seconds, Gemini populates the Short Description, Full Description, Specs, and 3 SERP SEO fields with commercial copy.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 border rounded-3 bg-light small h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary rounded-circle text-white p-2" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;">6</span>
+                                        <strong class="text-primary fs-6">Media Attachments</strong>
+                                    </div>
+                                    <p class="text-muted mb-0">Upload the primary 1:1 <strong>Product Main Image</strong> in the right column. In the left column, click the gallery dropzone to attach up to 10 additional perspective photos.</p>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="p-3 border rounded-3 bg-primary-subtle text-primary small d-flex align-items-center justify-content-between flex-wrap gap-2">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="badge bg-primary rounded-circle text-white p-2" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;">7</span>
+                                        <strong class="fs-6">Step 7: Verification & Final Publication</strong>
+                                        <span class="text-muted">&mdash; Ensure <strong>Product Status</strong> is set to <em>Active</em> and click the purple <kbd class="bg-primary text-white">Add New Product</kbd> button. Your item is immediately live!</span>
+                                    </div>
+                                    <span class="badge bg-white text-primary border border-primary-subtle font-monospace">Status: Live Sync Ready</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ================= 12.3: MULTI-ATTRIBUTE VARIATIONS ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-12-3">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-layers-triple-outline text-primary me-1"></i> 12.3 Multi-Attribute Variations & Attribute Pricing Matrix
+                    </h3>
+                    <p>
+                        Modern fashion, jewelry, and electronics retailing requires items to be offered in multiple sizes, colors, and dimensional configurations. MartX integrates Chapter 11's standardized <strong>Sizes</strong> and <strong>Color Swatches</strong> directly into a dynamic, in-canvas <strong>Product Variations Matrix</strong>.
+                    </p>
+
+                    <!-- Variations Matrix Breakdown Table -->
+                    <h5 class="fw-bold text-heading mt-4 mb-3">
+                        <i class="mdi mdi-matrix text-primary me-1"></i> Variant Configuration Parameters
+                    </h5>
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th style="width: 20%;">Variant Field</th>
+                                    <th style="width: 25%;">Input Source</th>
+                                    <th style="width: 35%;">Storefront Functionality</th>
+                                    <th style="width: 20%;">Inheritance Behavior</th>
+                                </tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr>
+                                    <td><strong>Size Attribute</strong></td>
+                                    <td>Dropdown populated from Chapter 11 Size Registry (e.g., <em>XXL, XL, L, M, S</em>).</td>
+                                    <td>Renders as clickable size selector buttons on the product detail page.</td>
+                                    <td>Required per variant row.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color Swatch</strong></td>
+                                    <td>Dropdown populated from Chapter 11 Color Registry with true HEX codes.</td>
+                                    <td>Renders as circular visual color swatch pills with active border selection.</td>
+                                    <td>Required per variant row.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Variant Stock</strong></td>
+                                    <td>Integer numeric input field.</td>
+                                    <td>Tracks real-time inventory per specific SKU combination. Prevents over-selling.</td>
+                                    <td>Sum of variant stocks equals master product quantity.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Variant Image</strong></td>
+                                    <td>Direct file upload or Central Media Modal selector.</td>
+                                    <td>When a shopper clicks this color/size, the product main photo switches dynamically.</td>
+                                    <td>Falls back to master featured image if unassigned.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Custom Price & Schedule</strong></td>
+                                    <td>Numeric price input and datetime range pickers.</td>
+                                    <td>Allows premium variations (e.g. larger sizes or special materials) to cost more.</td>
+                                    <td>Check <em>"Default Main Price"</em> to inherit master pricing.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Step-by-Step: How to Configure Variations -->
+                    <div class="p-4 border rounded-3 bg-white mb-4 shadow-sm">
+                        <h5 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-tune text-primary me-1"></i> How to Configure Multi-Attribute Variations (Step-by-Step)
+                        </h5>
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <div class="p-3 border rounded-2 bg-light small h-100">
+                                    <strong class="d-block text-primary mb-1">Step 1: Click + Add Variant</strong>
+                                    Inside the <strong>Product Variants</strong> card, click the purple <kbd class="bg-primary text-white">+ Add Variant</kbd> button to append a new variation row.
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="p-3 border rounded-2 bg-light small h-100">
+                                    <strong class="d-block text-primary mb-1">Step 2: Assign Size & Color</strong>
+                                    Select the target <strong>Size</strong> (e.g. <em>"L"</em>) and the target <strong>Color</strong> (e.g. <em>"Purple"</em>) from the Chapter 11 attribute rosters.
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="p-3 border rounded-2 bg-light small h-100">
+                                    <strong class="d-block text-primary mb-1">Step 3: Allocate Stock & Photo</strong>
+                                    Enter the stock count for this SKU (e.g. <code>20</code>). Click <strong>Choose</strong> to attach a dedicated photo showing the product in that specific color.
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="p-3 border rounded-2 bg-light small h-100">
+                                    <strong class="d-block text-success mb-1">Step 4: Pricing Inheritance</strong>
+                                    Leave <strong>Default Main Price</strong> checked to inherit the parent price, or uncheck it to enter a custom price and promotional discount schedule.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 12.4: PRODUCT EDIT WORKFLOW ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-12-4">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-pencil-box-multiple-outline text-primary me-1"></i> 12.4 Dedicated Product Editor & Modification Workflow
+                    </h3>
+                    <p>
+                        Modifying live inventory requires inspecting prefilled parameters without corrupting active order queues. The MartX <strong>Product Editor</strong> provides full access to update pricing schedules, re-allocate variant stock between sizes, remove or add gallery photos, and re-synthesize SEO copy.
+                    </p>
+
+                    <!-- Screenshot 3: Edit Product View -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Products Management: Edit Product Workspace
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/products/admin_product_edit.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/products/admin_product_edit.png" alt="Edit Product Workspace" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-5">
+                                    <i class="mdi mdi-image-outline fs-1 d-block mb-1"></i>
+                                    <span class="small">Edit Product Workspace (images/products/admin_product_edit.png)</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center text-muted small pt-1 border-top mt-2">
+                                <span><i class="mdi mdi-pencil-outline me-1 text-primary"></i> Live inspection of "Braided Genuine Leather & Silver Cuff Bracelet" (SKU MTX-CWJ2BM), showing 2 configured variants (L/Purple & M/Orange), gallery thumbnails with delete badges, and Update button.</span>
+                                <span class="badge bg-light text-dark border">MartX v1.0.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EDIT WORKSPACE VISIBLE ENCYCLOPEDIA & CALIBRATION TABLE -->
+                    <div class="card border rounded-3 bg-white mb-4 shadow-sm overflow-hidden">
+                        <div class="card-header bg-light py-3 px-4 border-bottom d-flex justify-content-between align-items-center">
+                            <h5 class="fw-bold text-heading mb-0">
+                                <i class="mdi mdi-square-edit-outline text-primary me-2"></i> Edit Mode &mdash; Dedicated Controls, Relation Guards & Stock Calibration
+                            </h5>
+                            <span class="badge bg-warning-subtle text-dark border border-warning-subtle">Editor Specific Behaviors</span>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0 doc-table">
+                                    <thead class="table-light text-muted small text-uppercase">
+                                        <tr>
+                                            <th style="width: 25%;">Visible Label & Control</th>
+                                            <th style="width: 25%;">Edit State Behavior</th>
+                                            <th style="width: 50%;">Operational Purpose & Safety Guard</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="small">
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Product Slug</strong>
+                                                <span class="badge bg-primary-subtle text-primary small mt-1">Live URL Path</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Editable Text Field</span><br>
+                                                <span>Prefilled with active permalink (e.g. <code>braided-leather-silver-cuff</code>).</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-link-variant"></i> SEO URL Modification</span><br>
+                                                Allows administrators to refine the public URL slug. <em>Best Practice: If changing an established live product slug, ensure 301 redirects are in place to preserve external backlinks and Google indexing.</em>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Inactive Relation Warnings</strong>
+                                                <span class="badge bg-danger-subtle text-danger small mt-1 border border-danger-subtle">⚠️ Category / Subcategory / Brand Alert</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-danger-subtle text-danger small mb-1">Dynamic Red Warning Badges</span><br>
+                                                <span>Triggers if parent taxon was disabled.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-shield-alert"></i> Catalog Integrity Guard</span><br>
+                                                If an administrator deactivates a category or brand in Chapter 11, MartX immediately highlights the dropdown with a prominent red badge: <em>"Previously assigned category is inactive"</em>, prompting the store manager to reassign the item before saving.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Product Quantity (Locked)</strong>
+                                                <span class="badge bg-secondary-subtle text-secondary small mt-1">Auto-Managed</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Read-Only Numeric Field</span><br>
+                                                <span>Shows total sum of all active variant stock.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-lock-outline"></i> Inventory Synchronization</span><br>
+                                                Prevents manual tally discrepancies. When variants are active, direct editing of total quantity is locked with the indicator <em>"Quantity is managed through variants"</em>.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Remove Variant Trigger</strong>
+                                                <span class="badge bg-danger text-white small mt-1"><i class="mdi mdi-trash-can"></i> Trash Button</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Circular Red Button</span><br>
+                                                <span>Positioned in the header of each Variant card.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-delete-sweep"></i> SKU Decommissioning</span><br>
+                                                Permanently removes a discontinued size or color combination from the database and immediately adjusts total store inventory tally upon save.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Gallery Photo Removal Badges</strong>
+                                                <span class="badge bg-danger text-white small mt-1">✕ Close Badge</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Hover Overlay Cross</span><br>
+                                                <span>Renders on each uploaded thumbnail.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-image-remove"></i> Instant Asset Pruning</span><br>
+                                                Clicking the red ✕ badge unlinks the secondary photo from this product record without deleting the original asset from Chapter 10's Central Media Library.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-heading d-block">Update Product Button</strong>
+                                                <span class="badge bg-primary text-white small mt-1">Sticky Action Trigger</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border small mb-1">Primary Purple Button</span><br>
+                                                <span>Sticky at top: 80px in right column.</span>
+                                            </td>
+                                            <td>
+                                                <span class="doc-field-impact-badge"><i class="mdi mdi-sync"></i> Atomic Persistence</span><br>
+                                                Synchronizes updated prices, variations, descriptions, and SEO tags, triggering instant cache invalidation across the storefront.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step-by-Step: How to Edit a Product -->
+                    <div class="p-4 border rounded-3 bg-white mb-4 shadow-sm">
+                        <h5 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-pencil-circle-outline text-primary me-1"></i> How to Edit an Existing Product & Calibrate Stock (Step-by-Step Workflow)
+                        </h5>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-2 bg-light small h-100">
+                                    <strong class="d-block text-primary mb-1">Step 1: Open Product Editor</strong>
+                                    From the Product Directory table, click the three-dots action menu next to any SKU and select <strong>Edit Product</strong>. All data, images, variants, and SEO tags pre-load automatically into the workspace.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-2 bg-light small h-100">
+                                    <strong class="d-block text-primary mb-1">Step 2: Adjust Stock & Media</strong>
+                                    Update variant quantities (e.g. increase L/Purple from 20 to 30). Hover over existing gallery images and click the red <strong>&times;</strong> badge to prune obsolete angles, or click the dropzone to add new photos.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-2 bg-light small h-100">
+                                    <strong class="d-block text-success mb-1">Step 3: Save & Live Sync</strong>
+                                    Verify taxonomy relationships (ensuring no red inactive warning badges appear). Click the purple <kbd class="bg-primary text-white">Update Product</kbd> button. The catalog reconciles variant counts and refreshes storefront listings immediately.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ================= 12.5: PRODUCT DOSSIER & LIVE SERP ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-12-5">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-file-eye-outline text-primary me-1"></i> 12.5 Product Dossier & Live Google SERP Simulation
+                    </h3>
+                    <p>
+                        Before launching a marketing campaign or sharing a product link with buyers, store managers need a single, read-only dossier to verify all product attributes at a glance. The MartX <strong>View Product Dossier</strong> provides an executive overview, discount countdown badges, dual Content & Specifications tabs, and an interactive <strong>Live Google SERP Simulator</strong>.
+                    </p>
+
+                    <!-- Screenshot 4: View Product Dossier -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                            <div class="doc-admin-dots">
+                                <span class="doc-admin-dot red"></span>
+                                <span class="doc-admin-dot yellow"></span>
+                                <span class="doc-admin-dot green"></span>
+                            </div>
+                            <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                Admin Panel &mdash; Products Management: Product Dossier & Live SERP Inspection
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                    <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                </button>
+                                <a href="images/products/admin_product_view.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                    <i class="mdi mdi-open-in-new"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/products/admin_product_view.png" alt="View Product Dossier" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-5">
+                                    <i class="mdi mdi-image-outline fs-1 d-block mb-1"></i>
+                                    <span class="small">View Product Dossier (images/products/admin_product_view.png)</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center text-muted small pt-1 border-top mt-2">
+                                <span><i class="mdi mdi-eye-check text-success me-1"></i> Complete read-only dossier showing Overview with 1-click slug copy, Active Discount timer ($38.00 15.6% OFF), Variant stock table, SERP preview, and audit timestamps.</span>
+                                <span class="badge bg-light text-dark border">MartX v1.0.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google SERP Simulation Breakdown Card -->
+                    <div class="p-4 border rounded-3 bg-white mb-4 shadow-sm">
+                        <h5 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-google text-danger me-1"></i> Live Google SERP Simulation Telemetry
+                        </h5>
+                        <p class="small text-muted mb-3">
+                            The right-hand column of the Product Dossier displays an authentic simulation of how your product listing will appear in Google Search Engine Results Pages (SERP):
+                        </p>
+                        <div class="p-3 border rounded-3 bg-light mb-3 font-monospace small">
+                            <span class="text-muted d-block" style="font-size: 12px;">http://localhost:8000 &rsaquo; product &rsaquo; braided-genuine-leather-silver-cuff-bra...</span>
+                            <span class="text-primary fw-bold fs-6 d-block text-decoration-underline my-1">Braided Genuine Leather &amp; Silver Cuff Bracelet | Buy Online at MartX</span>
+                            <span class="text-dark d-block">Shop braided genuine leather &amp; silver cuff bracelet online at MartX. Enjoy fast worldwide shipping and secure checkout.</span>
+                        </div>
+                        <div class="row g-3 small text-muted">
+                            <div class="col-md-4">
+                                <strong class="text-heading d-block">URL Breadcrumb</strong>
+                                Displays domain and slug hierarchy, preventing truncated links on mobile search viewports.
+                            </div>
+                            <div class="col-md-4">
+                                <strong class="text-heading d-block">Clickable Title (&lt; 60 Chars)</strong>
+                                Formatted with primary keyword and brand suffix, staying under Google's pixel limit to avoid ellipsis truncation.
+                            </div>
+                            <div class="col-md-4">
+                                <strong class="text-heading d-block">Meta Snippet (&lt; 160 Chars)</strong>
+                                Action-oriented commercial copy containing compelling shipping and checkout guarantees.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step-by-Step: How to Inspect via Dossier -->
+                    <div class="p-4 border rounded-3 bg-white mb-4 shadow-sm">
+                        <h5 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-check-decagram-outline text-success me-1"></i> How to Inspect & Audit via Product Dossier (Step-by-Step)
+                        </h5>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-2 bg-light small h-100">
+                                    <strong class="d-block text-primary mb-1">Step 1: Open Dossier View</strong>
+                                    In the Product Directory, click the product title or select <strong>View Product</strong> from the action dropdown menu.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-2 bg-light small h-100">
+                                    <strong class="d-block text-primary mb-1">Step 2: Copy Slug & Check Timer</strong>
+                                    Click the <kbd class="bg-light text-dark border">Copy</kbd> icon next to Product URL Slug to share the link. Inspect the <strong>Discount Time Window</strong> countdown banner.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-2 bg-light small h-100">
+                                    <strong class="d-block text-success mb-1">Step 3: Direct Edit Switch</strong>
+                                    Need to adjust a price or variant stock? Click the purple <kbd class="bg-primary text-white">Edit Product</kbd> button in the top-right toolbar to jump straight to the editor.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 12.6: BEST PRACTICES & CATALOG HYGIENE ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-12-6">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-lightbulb-on-outline text-warning me-1"></i> 12.6 Product Merchandising & Catalog Hygiene Best Practices
+                    </h3>
+                    <p>
+                        To maximize sales conversion rates, minimize buyer returns, and achieve dominant Google SERP rankings across competitive product queries, adhere to these enterprise merchandising standards:
+                    </p>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <i class="mdi mdi-aspect-ratio fs-2 text-primary mb-2 d-block"></i>
+                                <h6 class="fw-bold text-heading mb-1">Standardized 1:1 Aspect Ratio</h6>
+                                <p class="small text-muted mb-0">
+                                    Always upload primary product thumbnails in a clean 1:1 square ratio (e.g. <code>1000 &times; 1000 px</code>) on neutral backgrounds to maintain grid uniformity across mobile layouts.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <i class="mdi mdi-scale-balance fs-2 text-success mb-2 d-block"></i>
+                                <h6 class="fw-bold text-heading mb-1">Variant Stock Reconciliation</h6>
+                                <p class="small text-muted mb-0">
+                                    Ensure the sum of individual variant stocks (e.g. 20 on Purple + 21 on Orange = 41) exactly reconciles with the master product quantity to eliminate inventory discrepancy alerts.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <i class="mdi mdi-timer-sand fs-2 text-warning mb-2 d-block"></i>
+                                <h6 class="fw-bold text-heading mb-1">Scheduled Flash Sales</h6>
+                                <p class="small text-muted mb-0">
+                                    Always assign both <strong>Start Date</strong> and <strong>End Date</strong> to discount campaigns. Once the end date elapses, MartX automatically reverts pricing back to regular MSRP without manual intervention.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <i class="mdi mdi-google fs-2 text-danger mb-2 d-block"></i>
+                                <h6 class="fw-bold text-heading mb-1">SERP Length Compliance</h6>
+                                <p class="small text-muted mb-0">
+                                    Keep Meta Titles strictly under 60 characters and Meta Descriptions under 160 characters. Inspect the <strong>Search Engine Preview</strong> before publishing to ensure zero snippet truncation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="catalog-inventory.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 7 (Catalog Management)
+                    </a>
+                    <a href="orders-fulfillment.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 9 (Orders & Fulfillment) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch12-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-12-1" class="doc-toc-link">12.1 Products Directory & Filters</a>
+                    <a href="#sec-12-2" class="doc-toc-link">12.2 Add Product Master Canvas</a>
+                    <a href="#sec-12-3" class="doc-toc-link">12.3 Multi-Attribute Variations</a>
+                    <a href="#sec-12-4" class="doc-toc-link">12.4 Product Editor & Stock</a>
+                    <a href="#sec-12-5" class="doc-toc-link">12.5 Product Dossier & Live SERP</a>
+                    <a href="#sec-12-6" class="doc-toc-link">12.6 Merchandising Best Practices</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch12-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 1rem; overflow: hidden;">
+                <div class="modal-header border-bottom p-3">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0 text-muted ps-2">
+                            <i class="mdi mdi-magnify fs-4"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 shadow-none ps-2" id="docGlobalSearch" placeholder="Search documentation chapters, attributes, or guides..." autofocus>
+                    </div>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3" id="docSearchResults" style="max-height: 400px; overflow-y: auto;">
+                    <div class="text-muted small text-uppercase fw-bold px-2 mb-2">Suggested Chapters</div>
+                    <a href="products-management.html" class="d-flex align-items-center gap-3 p-2 rounded-2 text-decoration-none text-dark hover-bg-light">
+                        <div class="p-2 bg-primary-subtle text-primary rounded-2"><i class="mdi mdi-package-variant-closed fs-5"></i></div>
+                        <div>
+                            <span class="fw-semibold d-block">12. Products Management</span>
+                            <span class="text-muted small">Directory, Gemini AI Creator, Multi-Attribute Variations & Live SERP</span>
+                        </div>
+                    </a>
+                    <a href="catalog-inventory.html" class="d-flex align-items-center gap-3 p-2 rounded-2 text-decoration-none text-dark hover-bg-light">
+                        <div class="p-2 bg-success-subtle text-success rounded-2"><i class="mdi mdi-shape-outline fs-5"></i></div>
+                        <div>
+                            <span class="fw-semibold d-block">11. Catalog Management</span>
+                            <span class="text-muted small">Categories, Subcategories, Brands, Sizes, Colors & Promotional Tags</span>
+                        </div>
+                    </a>
+                    <a href="media-manager.html" class="d-flex align-items-center gap-3 p-2 rounded-2 text-decoration-none text-dark hover-bg-light">
+                        <div class="p-2 bg-warning-subtle text-warning rounded-2"><i class="mdi mdi-image-multiple fs-5"></i></div>
+                        <div>
+                            <span class="fw-semibold d-block">10. Media Manager</span>
+                            <span class="text-muted small">Central Media Modal, WebP upload, image insertion</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="modal-footer border-top py-2 px-3 justify-content-between text-muted small">
+                    <span>Press <kbd class="bg-light text-dark border">ESC</kbd> to exit</span>
+                    <span>MartX Documentation v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

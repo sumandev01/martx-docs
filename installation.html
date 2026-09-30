@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Installation & Deployment Guide - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+    <style>
+        /* Interactive Installer UI Mockup Styles */
+        .mockup-window {
+            border: 1px solid var(--doc-border);
+            border-radius: 0.875rem;
+            background: var(--doc-card-bg);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+            margin: 1.75rem 0;
+        }
+        .mockup-header {
+            background: rgba(var(--doc-primary-rgb), 0.04);
+            border-bottom: 1px solid var(--doc-border);
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .mockup-dots {
+            display: flex;
+            gap: 6px;
+        }
+        .mockup-dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .mockup-body {
+            padding: 1.75rem;
+        }
+        .mockup-stepper {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 2rem;
+            padding: 0 0.5rem;
+        }
+        .mockup-stepper::before {
+            content: '';
+            position: absolute;
+            top: 16px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: var(--doc-border);
+            z-index: 1;
+        }
+        .mockup-step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .mockup-step-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--doc-card-bg);
+            border: 2px solid var(--doc-border);
+            color: var(--doc-text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+        .mockup-step.active .mockup-step-circle {
+            background: var(--doc-primary);
+            border-color: var(--doc-primary);
+            color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(var(--doc-primary-rgb), 0.2);
+        }
+        .mockup-step.completed .mockup-step-circle {
+            background: #10b981;
+            border-color: #10b981;
+            color: #ffffff;
+        }
+        .mockup-step-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #64748b;
+        }
+        .mockup-step.active .mockup-step-label {
+            color: var(--doc-primary);
+            font-weight: 700;
+        }
+        .mockup-market-card {
+            border: 1px solid var(--doc-border);
+            border-radius: 0.625rem;
+            padding: 1rem 0.75rem;
+            text-align: center;
+            background: var(--doc-card-bg);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            user-select: none;
+        }
+        .mockup-market-card:hover:not(.selected) {
+            border-color: var(--doc-primary);
+            transform: translateY(-2px);
+        }
+        .mockup-market-card.selected {
+            border-color: var(--doc-primary);
+            background: rgba(var(--doc-primary-rgb), 0.08);
+            box-shadow: 0 0 0 2px var(--doc-primary);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+                                    <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Chapter 3: Installation & Deployment Guide</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= CHAPTER 3: INSTALLATION & DEPLOYMENT GUIDE ================= -->
+                <section class="doc-section" id="ch3-installation">
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-rocket-launch text-primary"></i> Chapter 3: Installation & Deployment Guide
+                    </h1>
+                    <p class="lead text-muted">
+                        Deploying <strong>MartX Enterprise Platform</strong> is effortless. Built with an intuitive WordPress-style 5-Step Web Installation Wizard, merchants and agencies can launch a production-ready store within <strong>3 minutes</strong> without touching command-line scripts.
+                    </p>
+
+                    <!-- 3.1: OVERVIEW OF DEPLOYMENT PATHWAYS -->
+                    <div class="doc-subsection mt-5" id="sec-3-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-map-marker-path text-primary me-1"></i> 3.1 Deployment Pathways & Pre-Installation Checklist
+                        </h3>
+                        <p>
+                            Choose the deployment pathway that best matches your hosting infrastructure:
+                        </p>
+
+                        <div class="table-responsive">
+                            <table class="doc-table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 22%;">Deployment Method</th>
+                                        <th style="width: 23%;">Target Infrastructure</th>
+                                        <th style="width: 17%;" class="text-nowrap">Skill Level</th>
+                                        <th style="width: 14%;" class="text-nowrap">Setup Time</th>
+                                        <th style="width: 24%;">Recommended For</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong class="text-heading">cPanel Quick Deploy</strong></td>
+                                        <td>cPanel / DirectAdmin / Plesk</td>
+                                        <td><span class="badge bg-primary text-white text-nowrap">Standard</span></td>
+                                        <td class="text-nowrap">
+                                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle font-monospace px-2 py-1">
+                                                <i class="mdi mdi-clock-outline me-1"></i>5 Mins
+                                            </span>
+                                        </td>
+                                        <td class="small text-muted">Shared hosting users using File Manager and MySQL Wizard.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong class="text-heading">5-Step Web Wizard</strong></td>
+                                        <td>cPanel / Shared / VPS / Localhost</td>
+                                        <td><span class="badge bg-success text-white text-nowrap">No-Code (Beginner)</span></td>
+                                        <td class="text-nowrap">
+                                            <span class="badge bg-success-subtle text-success border border-success-subtle font-monospace px-2 py-1">
+                                                <i class="mdi mdi-clock-outline me-1"></i>3 Mins
+                                            </span>
+                                        </td>
+                                        <td class="small text-muted">All store owners, designers, and standard marketplace buyers.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong class="text-heading">VPS CLI / DevOps</strong></td>
+                                        <td>Ubuntu / Debian / Nginx / Forge</td>
+                                        <td><span class="badge bg-dark text-white text-nowrap">Advanced</span></td>
+                                        <td class="text-nowrap">
+                                            <span class="badge bg-dark-subtle text-dark border border-dark-subtle font-monospace px-2 py-1">
+                                                <i class="mdi mdi-clock-outline me-1"></i>4 Mins
+                                            </span>
+                                        </td>
+                                        <td class="small text-muted">Agencies, high-traffic stores, and continuous deployment workflows.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong class="text-heading">phpMyAdmin Fallback</strong></td>
+                                        <td>Any MySQL GUI / Offline Localhost</td>
+                                        <td><span class="badge bg-secondary text-white text-nowrap">Manual Fallback</span></td>
+                                        <td class="text-nowrap">
+                                            <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle font-monospace px-2 py-1">
+                                                <i class="mdi mdi-clock-outline me-1"></i>5 Mins
+                                            </span>
+                                        </td>
+                                        <td class="small text-muted">Environments where automated migrations encounter timeout restrictions.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="doc-callout doc-callout-info mt-4">
+                            <h5 class="fw-bold"><i class="mdi mdi-clipboard-check-outline me-1"></i> Pre-Installation Checklist (Have These Ready)</h5>
+                            <ul class="mb-0 ps-3">
+                                <li><strong>Marketplace Purchase Code:</strong> Your official Item Purchase Code or Order ID from CodeCanyon, Codester, TemplateMonster, or Direct Invoice.</li>
+                                <li><strong>MySQL Database Credentials:</strong> Database Host (usually <code>127.0.0.1</code> or <code>localhost</code>), Database Name, Database Username, and Password.</li>
+                                <li><strong>PHP 8.2+ Environment:</strong> Server meets the 13 mandatory PHP extensions outlined in Chapter 2.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 3.2: CPANEL & SHARED HOSTING SETUP (CHRONOLOGICAL STEP 1) -->
+                    <div class="doc-subsection mt-5" id="sec-3-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-server-plus text-primary me-1"></i> 3.2 cPanel & Shared Hosting 5-Minute Quick Setup
+                        </h3>
+                        <p>
+                            Before launching the browser installer, upload the application files and configure your MySQL database in cPanel:
+                        </p>
+
+                        <div class="doc-card">
+                            <h6 class="fw-bold text-primary mb-2">Step 1: Upload and Extract Zip Archive</h6>
+                            <p class="small text-muted mb-0">
+                                Open <strong>cPanel &rarr; File Manager</strong>, navigate to your desired directory (e.g. <code>/public_html</code> for primary domain, or a subfolder like <code>/public_html/your-subfolder</code>), upload the official <code>martx-v1.0.0.zip</code> file, right-click and choose <strong>Extract</strong>.
+                            </p>
+                        </div>
+
+                        <div class="doc-card">
+                            <h6 class="fw-bold text-primary mb-2">Step 2: Configure DocumentRoot to Point to <code>public/</code></h6>
+                            <p class="small text-muted mb-2">
+                                Laravel applications require web traffic to resolve in the <code>public/</code> folder:
+                            </p>
+                            <ul class="small text-muted mb-0 ps-3">
+                                <li><strong>Subdomains & Addon Domains:</strong> In <em>cPanel &rarr; Domains &rarr; Document Root</em>, set the path to <code>public_html/public</code> or <code>public_html/subdomain_name/public</code>.</li>
+                                <li><strong>Primary Main Domain (Root):</strong> Either configure the Primary Document Root in cPanel, or place files in root and point the web root to <code>public/</code>.</li>
+                            </ul>
+                        </div>
+
+                        <div class="doc-card">
+                            <h6 class="fw-bold text-primary mb-2">Step 3: MultiPHP Manager & Version Selection</h6>
+                            <p class="small text-muted mb-0">
+                                In <strong>cPanel &rarr; MultiPHP Manager</strong>, select your domain and choose <strong>PHP 8.2</strong> or <strong>PHP 8.3</strong>.
+                            </p>
+                        </div>
+
+                        <div class="doc-card">
+                            <h6 class="fw-bold text-primary mb-2">Step 4: Create MySQL Database via cPanel Wizard</h6>
+                            <p class="small text-muted mb-2">
+                                In <strong>cPanel &rarr; MySQL Database Wizard</strong>:
+                            </p>
+                            <ol class="small text-muted mb-0 ps-3">
+                                <li>Create a new Database (e.g., <code>cpaneluser_martx</code>).</li>
+                                <li>Create a Database User with a strong password.</li>
+                                <li>Assign <strong>ALL PRIVILEGES</strong> to the user for that database.</li>
+                            </ol>
+                        </div>
+
+                        <div class="doc-card">
+                            <h6 class="fw-bold text-primary mb-2">Step 5: Proceed to Web Installer Wizard</h6>
+                            <p class="small text-muted mb-0">
+                                Once your files are extracted and database credentials are created, open your browser and visit <code>https://yourdomain.com/install</code> to complete the 5-step visual installer below!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 3.3: THE 5-STEP AUTOMATED WEB WIZARD WALKTHROUGH (CHRONOLOGICAL STEP 2) -->
+                    <div class="doc-subsection mt-5" id="sec-3-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-wizard-hat text-primary me-1"></i> 3.3 The 5-Step Visual Web Installation Wizard Walkthrough
+                        </h3>
+                        <p>
+                            When you open <code>https://yourdomain.com/install</code>, the automated wizard will guide you through 5 progressive screens:
+                        </p>
+
+                        <!-- STEP 1 MOCKUP CARD -->
+                        <div class="mockup-window">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span class="mockup-dot bg-danger"></span>
+                                    <span class="mockup-dot bg-warning"></span>
+                                    <span class="mockup-dot bg-success"></span>
+                                </div>
+                                <span class="font-monospace small text-muted">Step 1: System Requirements</span>
+                                <span class="badge bg-success-subtle text-success border border-success-subtle">Step 1 of 5</span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="mockup-stepper">
+                                    <div class="mockup-step active">
+                                        <div class="mockup-step-circle">1</div>
+                                        <span class="mockup-step-label">Requirements</span>
+                                    </div>
+                                    <div class="mockup-step">
+                                        <div class="mockup-step-circle">2</div>
+                                        <span class="mockup-step-label">Permissions</span>
+                                    </div>
+                                    <div class="mockup-step">
+                                        <div class="mockup-step-circle">3</div>
+                                        <span class="mockup-step-label">License</span>
+                                    </div>
+                                    <div class="mockup-step">
+                                        <div class="mockup-step-circle">4</div>
+                                        <span class="mockup-step-label">Database</span>
+                                    </div>
+                                    <div class="mockup-step">
+                                        <div class="mockup-step-circle">5</div>
+                                        <span class="mockup-step-label">Admin</span>
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-2">Step 1: Welcome & Server Requirements Audit</h5>
+                                <p class="text-muted small mb-3">
+                                    MartX automatically checks your active PHP version and confirms that all 13 required extensions (<code>BCMath</code>, <code>cURL</code>, <code>DOM</code>, <code>Fileinfo</code>, <code>JSON</code>, <code>Mbstring</code>, <code>OpenSSL</code>, <code>PDO</code>, <code>Tokenizer</code>, etc.) are compiled into your PHP runtime.
+                                </p>
+                                <div class="p-3 bg-light rounded-3 border d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong class="text-success"><i class="mdi mdi-check-circle me-1"></i> PHP Version Satisfied:</strong>
+                                        <span class="font-monospace small text-muted ms-1">Detected PHP 8.2+ (Required &ge; 8.2.0)</span>
+                                    </div>
+                                    <span class="badge bg-success text-white">All 13 Extensions Passed</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STEP 2 MOCKUP CARD -->
+                        <div class="mockup-window">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span class="mockup-dot bg-danger"></span>
+                                    <span class="mockup-dot bg-warning"></span>
+                                    <span class="mockup-dot bg-success"></span>
+                                </div>
+                                <span class="font-monospace small text-muted">Step 2: Directory Write Permissions</span>
+                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Step 2 of 5</span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="mockup-stepper">
+                                    <div class="mockup-step completed">
+                                        <div class="mockup-step-circle"><i class="mdi mdi-check"></i></div>
+                                        <span class="mockup-step-label">Requirements</span>
+                                    </div>
+                                    <div class="mockup-step active">
+                                        <div class="mockup-step-circle">2</div>
+                                        <span class="mockup-step-label">Permissions</span>
+                                    </div>
+                                    <div class="mockup-step">
+                                        <div class="mockup-step-circle">3</div>
+                                        <span class="mockup-step-label">License</span>
+                                    </div>
+                                    <div class="mockup-step">
+                                        <div class="mockup-step-circle">4</div>
+                                        <span class="mockup-step-label">Database</span>
+                                    </div>
+                                    <div class="mockup-step">
+                                        <div class="mockup-step-circle">5</div>
+                                        <span class="mockup-step-label">Admin</span>
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-2">Step 2: Storage & Cache Permissions Audit</h5>
+                                <p class="text-muted small mb-3">
+                                    The wizard verifies that <code>storage/app</code>, <code>storage/framework/cache</code>, <code>storage/logs</code>, and <code>bootstrap/cache</code> possess write permissions (<code>0775</code> / <code>0755</code>).
+                                </p>
+                                <div class="row g-2">
+                                    <div class="col-sm-6">
+                                        <div class="p-2 border bg-light rounded small d-flex justify-content-between align-items-center">
+                                            <span><code>storage/app</code></span>
+                                            <span class="badge bg-success text-white">Writable (775)</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="p-2 border bg-light rounded small d-flex justify-content-between align-items-center">
+                                            <span><code>storage/framework/cache</code></span>
+                                            <span class="badge bg-success text-white">Writable (775)</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="p-2 border bg-light rounded small d-flex justify-content-between align-items-center">
+                                            <span><code>storage/logs</code></span>
+                                            <span class="badge bg-success text-white">Writable (775)</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="p-2 border bg-light rounded small d-flex justify-content-between align-items-center">
+                                            <span><code>bootstrap/cache</code> &amp; <code>.env</code></span>
+                                            <span class="badge bg-success text-white">Writable (775/644)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STEP 3 MOCKUP CARD (4 MARKETPLACE SELECTOR CARDS) -->
+                        <div class="mockup-window">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span class="mockup-dot bg-danger"></span>
+                                    <span class="mockup-dot bg-warning"></span>
+                                    <span class="mockup-dot bg-success"></span>
+                                </div>
+                                <span class="font-monospace small text-muted">Step 3: Multi-Marketplace License Verification</span>
+                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Step 3 of 5</span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="mockup-stepper">
+                                    <div class="mockup-step completed">
+                                        <div class="mockup-step-circle"><i class="mdi mdi-check"></i></div>
+                                        <span class="mockup-step-label">Requirements</span>
+                                    </div>
+                                    <div class="mockup-step completed">
+                                        <div class="mockup-step-circle"><i class="mdi mdi-check"></i></div>
+                                        <span class="mockup-step-label">Permissions</span>
+                                    </div>
+                                    <div class="mockup-step active">
+                                        <div class="mockup-step-circle">3</div>
+                                        <span class="mockup-step-label">License</span>
+                                    </div>
+                                    <div class="mockup-step">
+                                        <div class="mockup-step-circle">4</div>
+                                        <span class="mockup-step-label">Database</span>
+                                    </div>
+                                    <div class="mockup-step">
+                                        <div class="mockup-step-circle">5</div>
+                                        <span class="mockup-step-label">Admin</span>
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-2">Step 3: Select Marketplace & Verify License</h5>
+                                <p class="text-muted small mb-3">
+                                    Select the official marketplace where you acquired your license and provide your purchase key:
+                                </p>
+                                
+                                <!-- 4 Marketplace Selector Cards Preview -->
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="small fw-bold text-muted">Select Marketplace:</span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle font-monospace" style="font-size: 11px;">
+                                        <i class="mdi mdi-cursor-default-click-outline me-1"></i> Interactive: Click tabs to test
+                                    </span>
+                                </div>
+                                <div class="row g-2 mb-3" id="installerStep3MarketGrid">
+                                    <div class="col-6 col-md-3">
+                                        <div class="mockup-market-card selected" data-channel="codecanyon" role="button">
+                                            <i class="mdi mdi-shopping-outline fs-4 text-primary d-block mb-1 market-card-icon"></i>
+                                            <strong class="d-block small text-primary market-card-title">CodeCanyon</strong>
+                                            <span class="text-muted" style="font-size: 11px;">Envato Market</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <div class="mockup-market-card" data-channel="codester" role="button">
+                                            <i class="mdi mdi-storefront-outline fs-4 text-muted d-block mb-1 market-card-icon"></i>
+                                            <strong class="d-block small market-card-title">Codester</strong>
+                                            <span class="text-muted" style="font-size: 11px;">Order ID</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <div class="mockup-market-card" data-channel="templatemonster" role="button">
+                                            <i class="mdi mdi-palette-swatch-outline fs-4 text-muted d-block mb-1 market-card-icon"></i>
+                                            <strong class="d-block small market-card-title">TemplateMonster</strong>
+                                            <span class="text-muted" style="font-size: 11px;">Invoice Order</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <div class="mockup-market-card" data-channel="direct" role="button">
+                                            <i class="mdi mdi-shield-check-outline fs-4 text-muted d-block mb-1 market-card-icon"></i>
+                                            <strong class="d-block small market-card-title">Direct License</strong>
+                                            <span class="text-muted" style="font-size: 11px;">Author Key</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-2 border rounded bg-light mb-2">
+                                    <label class="form-label small fw-bold mb-1" id="installerFieldLabel">
+                                        Envato Purchase Code <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control form-control-sm font-monospace" id="installerFieldInput" placeholder="e.g., 94a12b8c-55e1-4c12-88f1-22e89fa6b301" value="94a12b8c-55e1-4c12-88f1-22e89fa6b301" readonly style="background-color: var(--doc-card-bg);">
+                                    <span class="text-muted d-block mt-1" id="installerFieldHelp" style="font-size: 11px;">
+                                        Found in your CodeCanyon Downloads &gt; License Certificate &amp; Purchase Code PDF.
+                                    </span>
+                                </div>
+
+                                <div class="row g-2 mb-2">
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold mb-1">Buyer Email Address (Optional)</label>
+                                        <input type="email" class="form-control form-control-sm font-monospace" value="buyer@yourdomain.com" readonly style="background-color: var(--doc-card-bg);">
+                                        <span class="text-muted d-block mt-1" style="font-size: 10px;">Used for update notifications and support.</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold mb-1">Binding Domain (Auto-detected)</label>
+                                        <input type="text" class="form-control form-control-sm font-monospace text-muted" value="yourstore.com (Locked)" readonly style="background-color: var(--doc-card-bg);">
+                                        <span class="text-muted d-block mt-1" style="font-size: 10px;">Domain where license will be registered.</span>
+                                    </div>
+                                </div>
+
+                                <span class="badge bg-info-subtle text-info border border-info-subtle small">
+                                    <i class="mdi mdi-laptop me-1"></i> Localhost auto-detection active: Free unrestricted local testing on .test & localhost
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- STEP 4 MOCKUP CARD (DATABASE & DEMO SEEDER) -->
+                        <div class="mockup-window">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span class="mockup-dot bg-danger"></span>
+                                    <span class="mockup-dot bg-warning"></span>
+                                    <span class="mockup-dot bg-success"></span>
+                                </div>
+                                <span class="font-monospace small text-muted">Step 4: Database Configuration & Seeder</span>
+                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Step 4 of 5</span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="mockup-stepper">
+                                    <div class="mockup-step completed">
+                                        <div class="mockup-step-circle"><i class="mdi mdi-check"></i></div>
+                                        <span class="mockup-step-label">Requirements</span>
+                                    </div>
+                                    <div class="mockup-step completed">
+                                        <div class="mockup-step-circle"><i class="mdi mdi-check"></i></div>
+                                        <span class="mockup-step-label">Permissions</span>
+                                    </div>
+                                    <div class="mockup-step completed">
+                                        <div class="mockup-step-circle"><i class="mdi mdi-check"></i></div>
+                                        <span class="mockup-step-label">License</span>
+                                    </div>
+                                    <div class="mockup-step active">
+                                        <div class="mockup-step-circle">4</div>
+                                        <span class="mockup-step-label">Database</span>
+                                    </div>
+                                    <div class="mockup-step">
+                                        <div class="mockup-step-circle">5</div>
+                                        <span class="mockup-step-label">Admin</span>
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-2">Step 4: Database Connection & Migration Execution</h5>
+                                <p class="text-muted small mb-3">
+                                    Input your MySQL credentials and test the live connection with 1-click AJAX validation:
+                                </p>
+                                <!-- App URL (Auto-Detected) -->
+                                <div class="mb-3 p-2 border rounded bg-light">
+                                    <label class="form-label small fw-bold mb-1 d-flex align-items-center justify-content-between">
+                                        <span>App URL (Auto-detected Website Domain) <span class="text-danger">*</span></span>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle font-monospace" style="font-size: 10px;">Auto-written to .env</span>
+                                    </label>
+                                    <input type="text" class="form-control form-control-sm font-monospace" value="https://yourstore.com" readonly style="background-color: var(--doc-card-bg);">
+                                    <span class="text-muted d-block mt-1" style="font-size: 11px;">
+                                        Automatically detects your active domain URL via <code>url('/')</code>; no manual <code>.env</code> file editing required!
+                                    </span>
+                                </div>
+                                <div class="row g-2 mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold mb-1">Database Host</label>
+                                        <input type="text" class="form-control form-control-sm font-monospace" value="127.0.0.1" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold mb-1">Database Port</label>
+                                        <input type="text" class="form-control form-control-sm font-monospace" value="3306" readonly>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="form-label small fw-bold mb-1">Database Name</label>
+                                        <input type="text" class="form-control form-control-sm font-monospace" value="martx_ecommerce_db" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold mb-1">Database Username</label>
+                                        <input type="text" class="form-control form-control-sm font-monospace" value="martx_user" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold mb-1">Database Password</label>
+                                        <input type="password" class="form-control form-control-sm font-monospace" value="••••••••" readonly>
+                                    </div>
+                                </div>
+                                <div class="p-2 border rounded bg-light mb-3 d-flex align-items-center justify-content-between">
+                                    <div class="form-check mb-0">
+                                        <input class="form-check-input" type="checkbox" checked id="demoDataCheck" disabled>
+                                        <label class="form-check-label small fw-bold" for="demoDataCheck">
+                                            🌟 Automated Sample Catalog & E-Commerce Seeder Included
+                                        </label>
+                                    </div>
+                                    <span class="badge bg-primary text-white">Auto-Executed</span>
+                                </div>
+                                <button class="btn btn-sm btn-outline-success fw-bold" type="button" disabled>
+                                    <i class="mdi mdi-database-check me-1"></i> Test Connection: Successful (Connected to MySQL 8.0)
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 5 MOCKUP CARD (ADMIN SETUP) -->
+                        <div class="mockup-window">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span class="mockup-dot bg-danger"></span>
+                                    <span class="mockup-dot bg-warning"></span>
+                                    <span class="mockup-dot bg-success"></span>
+                                </div>
+                                <span class="font-monospace small text-muted">Step 5: Super Admin Account Setup</span>
+                                <span class="badge bg-success-subtle text-success border border-success-subtle">Step 5 of 5</span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="mockup-stepper">
+                                    <div class="mockup-step completed">
+                                        <div class="mockup-step-circle"><i class="mdi mdi-check"></i></div>
+                                        <span class="mockup-step-label">Requirements</span>
+                                    </div>
+                                    <div class="mockup-step completed">
+                                        <div class="mockup-step-circle"><i class="mdi mdi-check"></i></div>
+                                        <span class="mockup-step-label">Permissions</span>
+                                    </div>
+                                    <div class="mockup-step completed">
+                                        <div class="mockup-step-circle"><i class="mdi mdi-check"></i></div>
+                                        <span class="mockup-step-label">License</span>
+                                    </div>
+                                    <div class="mockup-step completed">
+                                        <div class="mockup-step-circle"><i class="mdi mdi-check"></i></div>
+                                        <span class="mockup-step-label">Database</span>
+                                    </div>
+                                    <div class="mockup-step active">
+                                        <div class="mockup-step-circle">5</div>
+                                        <span class="mockup-step-label">Admin</span>
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-2">Step 5: Super Administrator Provisioning</h5>
+                                <p class="text-muted small mb-3">
+                                    Set up your primary merchant root login. This account is provisioned with all 77 RBAC permissions:
+                                </p>
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold mb-1">Full Name</label>
+                                        <input type="text" class="form-control form-control-sm" value="Super Administrator" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold mb-1">Admin Email Address</label>
+                                        <input type="text" class="form-control form-control-sm" value="admin@yourdomain.com" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold mb-1">Password</label>
+                                        <input type="password" class="form-control form-control-sm" value="••••••••••••" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold mb-1">Confirm Password</label>
+                                        <input type="password" class="form-control form-control-sm" value="••••••••••••" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- INSTALLATION COMPLETE SUCCESS CARD (finish.blade.php) -->
+                        <div class="mockup-window border-success mt-4">
+                            <div class="mockup-header" style="background: rgba(16, 185, 129, 0.08);">
+                                <div class="mockup-dots">
+                                    <span class="mockup-dot bg-danger"></span>
+                                    <span class="mockup-dot bg-warning"></span>
+                                    <span class="mockup-dot bg-success"></span>
+                                </div>
+                                <span class="font-monospace small text-success fw-bold">Installation Completed &amp; Locked</span>
+                                <span class="badge bg-success text-white">100% Launch Ready</span>
+                            </div>
+                            <div class="mockup-body text-center py-4">
+                                <div class="d-inline-flex align-items-center justify-content-center bg-success-subtle text-success rounded-circle mb-3 shadow-sm" style="width: 64px; height: 64px;">
+                                    <i class="mdi mdi-check-decagram fs-1"></i>
+                                </div>
+                                <h4 class="fw-bold text-heading mb-1">Congratulations! Installation Completed</h4>
+                                <p class="text-muted small mx-auto mb-3" style="max-width: 520px;">
+                                    MartX Enterprise E-Commerce Platform has been successfully configured and secured. The security lock file has been registered at <code>storage/installed</code>, automatically blocking any future re-installation attempts.
+                                </p>
+                                <div class="d-flex justify-content-center flex-wrap gap-2">
+                                    <span class="btn btn-sm btn-primary fw-bold px-3">
+                                        <i class="mdi mdi-view-dashboard-outline me-1"></i> Go to Admin Dashboard &rarr;
+                                    </span>
+                                    <span class="btn btn-sm btn-outline-secondary fw-bold px-3">
+                                        <i class="mdi mdi-store-outline me-1"></i> Visit Storefront Home
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- 3.4: UBUNTU VPS & DEVELOPER CLI INSTALLATION GUIDE -->
+                    <div class="doc-subsection mt-5" id="sec-3-4">
+                        <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                            <h3 class="fw-bold text-heading mb-0">
+                                <i class="mdi mdi-console-network text-primary me-1"></i> 3.4 Ubuntu VPS & Developer CLI Installation
+                            </h3>
+                            <span class="badge bg-secondary-subtle text-secondary font-monospace px-2 py-1 small">Optional &bull; For DevOps &amp; Cloud Engineers</span>
+                        </div>
+                        <div class="alert alert-info bg-info-subtle border-info-subtle py-2 px-3 mb-3 small text-info-emphasis">
+                            <i class="mdi mdi-information-outline me-1 fs-5"></i> <strong>Merchant Note:</strong> If you are using cPanel or shared hosting, you <strong>do not need</strong> terminal commands! Simply use the 3-minute visual web installer at <code>https://yourdomain.com/install</code> (detailed in Sections 3.2 &amp; 3.3).
+                        </div>
+                        <p>
+                            For agencies, DevOps engineers, and cloud administrators deploying via SSH terminal, MartX provides a dedicated <strong>interactive CLI installation command</strong> allowing complete setup directly from the command-line without opening a web browser:
+                        </p>
+
+                        <!-- Step-by-Step Terminal Workflow -->
+                        <div class="row g-3 my-2">
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <div class="p-2 rounded bg-primary-subtle text-primary"><i class="mdi mdi-file-cog-outline fs-5"></i></div>
+                                        <h6 class="fw-bold mb-0 text-heading">1. Configure <code>.env</code> File</h6>
+                                    </div>
+                                    <p class="small text-muted mb-2">
+                                        Copy the environment template and set your domain URL and MySQL database credentials:
+                                    </p>
+                                    <div class="doc-code-wrapper mb-0">
+                                        <pre><code class="language-bash">cp .env.example .env
+php artisan key:generate</code></pre>
+                                    </div>
+                                    <p class="small text-muted mt-2 mb-0" style="font-size: 11px;">
+                                        Set <code>APP_URL=https://yourstore.com</code> and your <code>DB_DATABASE</code>, <code>DB_USERNAME</code>, <code>DB_PASSWORD</code>.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <div class="p-2 rounded bg-success-subtle text-success"><i class="mdi mdi-play-circle-outline fs-5"></i></div>
+                                        <h6 class="fw-bold mb-0 text-heading">2. Run MartX CLI Installer</h6>
+                                    </div>
+                                    <p class="small text-muted mb-2">
+                                        Run the automated terminal setup command in interactive mode:
+                                    </p>
+                                    <div class="doc-code-wrapper mb-0">
+                                        <pre><code class="language-bash">php artisan martx:install</code></pre>
+                                    </div>
+                                    <p class="small text-muted mt-2 mb-0" style="font-size: 11px;">
+                                        Prompts for your Purchase Code, verifies licensing, migrates tables, seeds demo data, and provisions the Super Admin account!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 1-Liner Automated CI/CD Deployment Callout -->
+                        <div class="doc-callout doc-callout-info mt-3">
+                            <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-robot-confused-outline me-1"></i> Headless CI/CD & Automated 1-Liner Deployment</h6>
+                            <p class="small mb-2">
+                                You can also pass flags directly to <code>martx:install</code> for zero-prompt, fully unattended CI/CD deployment pipelines:
+                            </p>
+                            <div class="doc-code-wrapper mb-0">
+                                <button type="button" class="doc-btn-copy" onclick="copyCode(this)"><i class="mdi mdi-content-copy me-1"></i>Copy</button>
+                                <pre><code class="language-bash">php artisan martx:install --license="YOUR-PURCHASE-CODE" --email="buyer@domain.com" --admin-email="admin@yourdomain.com" --admin-password="YourStrongPassword123"</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Ubuntu 24.04/22.04 LTS Full Server Provisioning Script -->
+                        <h6 class="fw-bold text-heading mt-4 mb-2"><i class="mdi mdi-server-network text-primary me-1"></i> Ubuntu Server Permissions & Symlink Script</h6>
+                        <div class="doc-code-wrapper">
+                            <div class="doc-code-header">
+                                <span>Ubuntu 24.04 / 22.04 LTS Deployment Script</span>
+                            </div>
+                            <button class="btn btn-sm btn-outline-light doc-btn-copy" type="button"><i class="mdi mdi-content-copy"></i> Copy</button>
+                            <pre><code># 1. Navigate to project root
+cd /var/www/html/martx
+
+# 2. Install production dependencies
+composer install --no-dev --optimize-autoloader --no-interaction
+
+# 3. Create storage symlink
+php artisan storage:link
+
+# 4. Set web server permissions
+sudo chown -R www-data:www-data /var/www/html/martx
+sudo find /var/www/html/martx -type f -exec chmod 644 {} \;
+sudo find /var/www/html/martx -type d -exec chmod 755 {} \;
+sudo chmod -R 775 storage bootstrap/cache
+
+# 5. Compile production performance caches
+php artisan optimize</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- 3.5: STORAGE SYMLINK (3-TIER ARCHITECTURE) -->
+                    <div class="doc-subsection mt-5" id="sec-3-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-link-variant text-primary me-1"></i> 3.5 Storage Symlink (<code>storage:link</code>) 3-Tier Multi-Layer Architecture
+                        </h3>
+                        <p>
+                            Product photography, banner slides, and customer invoices are securely stored in <code>storage/app/public/</code>. To make them visible to web visitors, a symbolic link must exist between <code>public/storage</code> and <code>storage/app/public</code>. MartX provides a comprehensive <strong>3-tier fail-safe solution</strong>:
+                        </p>
+
+                        <!-- 3-Tier Cards -->
+                        <div class="row g-3 mt-1">
+                            <!-- Tier 1: Auto -->
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-success text-white">Tier 1</span>
+                                        <h6 class="fw-bold mb-0 text-heading">100% Automatic at Install</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        Built-in WordPress-style automation. The Web Installer (Step 5) and CLI command (<code>martx:install</code>) silently create the symlink during setup. 95% of store owners never need to touch anything!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Tier 2: Dashboard -->
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary text-white">Tier 2</span>
+                                        <h6 class="fw-bold mb-0 text-heading">1-Click In-Dashboard Fix</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        If you ever migrate hosting or restore a cPanel backup, go to <strong>Admin Sidebar &rarr; Administration & Settings &rarr; System Settings &rarr; "Theme &amp; Appearance" (Tab)</strong>. The live health badge indicates symlink status, with a 1-click <strong>"Generate Public Symlink"</strong> button.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Tier 3: CLI / Cron -->
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-dark text-white">Tier 3</span>
+                                        <h6 class="fw-bold mb-0 text-heading">Terminal &amp; cPanel Cron</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        For DevOps engineers on SSH or servers with locked functions, run <code>php artisan storage:link</code> or create a 1-time cPanel cron task: <code>/usr/local/bin/php /path/artisan storage:link</code>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.6: SUBDOMAIN, SSL & APP_URL SYNC -->
+                    <div class="doc-subsection mt-5" id="sec-3-6">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-shield-lock-outline text-primary me-1"></i> 3.6 Subdomain, SSL (HTTPS) & <code>APP_URL</code> Configuration Standards
+                        </h3>
+                        <p>
+                            To prevent Mixed Content warnings and CSRF security token mismatches, ensure your environment URL strictly matches your live domain protocol:
+                        </p>
+
+                        <div class="table-responsive">
+                            <table class="doc-table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 28%;">Deployment Type</th>
+                                        <th style="width: 36%;">Recommended Pattern</th>
+                                        <th style="width: 36%;">Target <code>APP_URL</code> in <code>.env</code></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Primary Root Domain</strong></td>
+                                        <td><code>https://yourstore.com</code></td>
+                                        <td><code>APP_URL=https://yourstore.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Dedicated Subdomain (Recommended)</strong></td>
+                                        <td><code>https://shop.yourdomain.com</code></td>
+                                        <td><code>APP_URL=https://shop.yourdomain.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Local Development</strong></td>
+                                        <td><code>http://martx.test</code> or <code>http://localhost:8000</code></td>
+                                        <td><code>APP_URL=http://martx.test</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 3.7: POST-INSTALLATION HARDENING & SECURITY LOCK -->
+                    <div class="doc-subsection mt-5" id="sec-3-7">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-lock-check-outline text-primary me-1"></i> 3.7 Post-Installation Security Hardening & Lock Verification
+                        </h3>
+                        <p>
+                            Once the 5-step installer wizard completes, the system executes an automated security lockdown to safeguard your store:
+                        </p>
+
+                        <div class="doc-callout doc-callout-success">
+                            <h5 class="fw-bold"><i class="mdi mdi-shield-check me-1"></i> Automatic Installer Lockdown Engine</h5>
+                            <p class="mb-0">
+                                The installer writes the file <code>storage/installed</code> and establishes secure verification tokens. Subsequent requests to <code>/install</code> are permanently blocked and redirected to the home storefront to prevent unauthorized database resets.
+                            </p>
+                        </div>
+
+                        <div class="p-3 border rounded-3 bg-light mt-3">
+                            <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-speedometer text-primary me-1"></i> Production 1-Click Optimization Command</h6>
+                            <p class="small text-muted mb-2">
+                                For blazing-fast performance and sub-50ms response times, run the optimization compilation command:
+                            </p>
+                            <div class="doc-code-wrapper">
+                                <button class="btn btn-sm btn-outline-light doc-btn-copy" type="button"><i class="mdi mdi-content-copy"></i> Copy</button>
+                                <pre><code># Clear and rebuild all compiled routes, configs, and Blade views
+php artisan optimize</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CHAPTER NAVIGATION BUTTONS -->
+                    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-sm-center gap-3 mt-5 pt-4 border-top">
+                        <a href="server-requirements.html" class="btn btn-outline-secondary fw-bold px-3">
+                            <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 2 (Server Requirements)
+                        </a>
+                        <a href="license-activation.html" class="btn btn-primary fw-bold px-4">
+                            Next: Chapter 4 (License Activation) <i class="mdi mdi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page (7 Topics)</div>
+                    <a href="#sec-3-1" class="doc-toc-link active">3.1 Deployment Pathways</a>
+                    <a href="#sec-3-2" class="doc-toc-link">3.2 cPanel 5-Min Setup</a>
+                    <a href="#sec-3-3" class="doc-toc-link">3.3 5-Step Web Wizard</a>
+                    <a href="#sec-3-4" class="doc-toc-link">3.4 VPS CLI (martx:install)</a>
+                    <a href="#sec-3-5" class="doc-toc-link">3.5 Storage Symlink (3-Tier)</a>
+                    <a href="#sec-3-6" class="doc-toc-link">3.6 Subdomain & SSL Sync</a>
+                    <a href="#sec-3-7" class="doc-toc-link">3.7 Security Lock & Cache</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch3-installation" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header border-bottom p-3 bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0 text-primary fs-5">
+                            <i class="mdi mdi-magnify"></i>
+                        </span>
+                        <input type="text" class="form-control form-control-lg border-start-0 ps-0" id="docGlobalSearch" placeholder="Search documentation... (e.g., cPanel, Step 4, MySQL, Symlink, CLI)">
+                    </div>
+                </div>
+                <div class="modal-body p-0" id="docSearchResults" style="max-height: 420px; overflow-y: auto;">
+                    <div class="p-4 text-center text-muted">
+                        <i class="mdi mdi-text-search fs-1 d-block mb-2 text-primary opacity-50"></i>
+                        <p class="mb-0">Type any keyword to search across all chapters in real time.</p>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light py-2 px-3 justify-content-between">
+                    <small class="text-muted"><kbd>ESC</kbd> to close</small>
+                    <small class="text-muted"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

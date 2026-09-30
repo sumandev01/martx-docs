@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11: Promotional Coupons & Marketing Engine - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+                        <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Ecommerce & Sales</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">11. Coupons & Marketing</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= MAIN CHAPTER SECTION ================= -->
+                <section class="doc-section" id="ch11-intro">
+                    <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2.5 py-1 rounded-pill small fw-semibold">
+                            <i class="mdi mdi-ticket-percent-outline me-1"></i> Growth & Discounts
+                        </span>
+                        <span class="badge bg-light text-muted border px-2.5 py-1 rounded-pill small">
+                            Chapter 11 of 22
+                        </span>
+                    </div>
+
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-ticket-percent-outline text-primary"></i> Chapter 11: Promotional Coupons & Marketing Engine
+                    </h1>
+                    <p class="lead text-muted">
+                        Fixed and percentage coupon discounts, expiration scheduling, usage quotas, and promotional campaigns.
+                    </p>
+
+                    <!-- Feature Highlights Grid -->
+                    <div class="row g-3 my-4">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-shield-check text-success fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Production Ready</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Engineered for mission-critical enterprise commerce with zero latency overhead.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-tune text-primary fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Granular Controls</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Fully customizable via the modern MartX Admin Dashboard with real-time feedback.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-lightning-bolt text-warning fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Instant Sync</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Automated state propagation across multi-device clients, cache, and database layers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Architectural Overview -->
+                    <div class="card border-0 shadow-sm rounded-3 mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold mb-3">Module Architecture & Workflow</h4>
+                            <p class="text-muted">
+                                This chapter details the comprehensive configuration, operational controls, and best practices for <strong>Chapter 11: Promotional Coupons & Marketing Engine</strong>. Follow the guided procedures below to maintain peak operational performance and security.
+                            </p>
+                            <div class="alert alert-info border-0 d-flex align-items-start gap-3 mb-0">
+                                <i class="mdi mdi-information-outline fs-4 text-info flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <strong>Admin Navigation Path:</strong>
+                                    <div class="mt-1 font-monospace small">Admin Dashboard &gt; Ecommerce & Sales &gt; Coupons & Marketing</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- ================= 11.1: COUPONS DIRECTORY & VOUCHER LEDGER ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-11-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-format-list-bulleted-square text-primary me-1"></i> 11.1 Coupons Directory &amp; Voucher Ledger
+                        </h3>
+                        <p class="text-muted">
+                            The <strong>Coupon Management Directory</strong> serves as the central operational command center for all promotional vouchers, discount campaigns, and customer redemption quotas across the MartX storefront. Store administrators can monitor live redemption velocity, examine threshold requirements, review active validity windows, and execute instant lifecycle actions.
+                        </p>
+
+                        <!-- Screenshot 1: All Coupons Table -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Coupon Management: Promotional Discount Coupons &amp; Voucher Ledger
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/coupons/admin_coupons_table.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/coupons/admin_coupons_table.png" alt="Coupon Management Directory" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-ticket-percent-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Coupon Management Directory Interface</span>
+                                        <span class="small text-muted font-monospace">(images/coupons/admin_coupons_table.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">Promotional Voucher Ledger</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Parameter Matrix Table -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-table-cog text-primary me-1"></i> Coupon Management Directory Elements &amp; Column Ledger
+                                </h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light small">
+                                            <tr>
+                                                <th style="width: 20%;">Column / UI Control</th>
+                                                <th style="width: 22%;">Visual Representation</th>
+                                                <th style="width: 58%;">Operational Logic &amp; Business Rules</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-plus-circle text-primary me-1"></i> Add New Coupon Button
+                                                </td>
+                                                <td><span class="badge bg-primary text-white px-2.5 py-1.5"><i class="mdi mdi-plus me-1"></i> Add New Coupon</span></td>
+                                                <td>Primary header action button navigating administrators directly to the coupon creation console (<code>/admin/coupon/create</code>).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-filter-variant text-secondary me-1"></i> Category Filter Dropdown
+                                                </td>
+                                                <td><span class="badge bg-light text-dark border"><i class="mdi mdi-ticket-percent-outline text-primary me-1"></i> All Coupons (3) <i class="mdi mdi-chevron-down ms-1"></i></span></td>
+                                                <td>Contextual filter selector displaying total active voucher inventory and filtering records by lifecycle state.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-magnify text-secondary me-1"></i> Real-Time Code Search
+                                                </td>
+                                                <td><code>Search by coupon code...</code></td>
+                                                <td>Debounced real-time input filter querying database records instantaneously by exact or partial coupon voucher code strings.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-pound text-secondary me-1"></i> SL
+                                                </td>
+                                                <td><code>1, 2, 3...</code></td>
+                                                <td>Sequential index counter identifying records chronologically within the administrative paginated dataset.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-ticket-outline text-primary me-1"></i> COUPON CODE
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column gap-1">
+                                                        <span class="badge bg-light text-dark border border-dashed px-2 py-1 font-monospace fw-bold">SAVE10</span>
+                                                        <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle" style="font-size: 10px;">Type: Fixed</span>
+                                                    </div>
+                                                </td>
+                                                <td>Unique promotional voucher string that customers enter during storefront checkout. Below the code badge, the system dynamically displays an informative pill (<code>Type: Fixed</code> or <code>Type: Percentage</code>) indicating the coupon's algorithmic deduction type.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-cash text-success me-1"></i> AMOUNT
+                                                </td>
+                                                <td>
+                                                    <span class="fw-bold text-dark">$10.00</span> / 
+                                                    <span class="badge bg-primary-subtle text-primary fw-bold">20%</span>
+                                                </td>
+                                                <td>The numerical deduction magnitude. Formatted automatically based on the coupon type: currency value (e.g., <code>$10.00</code>) for fixed coupons, or percentage rate (e.g., <code>20%</code>, <code>15%</code>) for relative discount vouchers.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-tune-vertical text-info me-1"></i> CONDITIONS
+                                                </td>
+                                                <td>
+                                                    <div class="small">
+                                                        <span class="text-muted">Min:</span> <strong class="text-dark">$75.00</strong><br>
+                                                        <span class="text-muted">Max:</span> <strong class="text-danger">$50.00</strong>
+                                                    </div>
+                                                </td>
+                                                <td>Dual margin guardrails protecting merchant profitability:
+                                                    <ul class="ps-3 mb-0 mt-1">
+                                                        <li><strong>Min (Minimum Order Spend):</strong> Minimum cart subtotal required to qualify for coupon redemption.</li>
+                                                        <li><strong>Max (Maximum Discount Cap):</strong> Upper financial ceiling enforced exclusively on percentage coupons.</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-counter text-warning me-1"></i> USED / LIMIT
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-light text-dark border font-monospace px-2 py-1">28 / 150</span>
+                                                </td>
+                                                <td>Real-time campaign velocity tracker. Displays total claimed redemptions versus the global quota ceiling. When usage equals the limit, the system automatically rejects further claims.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-calendar-clock text-primary me-1"></i> VALIDITY PERIOD
+                                                </td>
+                                                <td>
+                                                    <div class="small font-monospace">
+                                                        <span class="text-muted"><i class="mdi mdi-calendar-start"></i> 25 Aug 2026, 11:06 PM</span><br>
+                                                        <span class="text-danger"><i class="mdi mdi-calendar-end"></i> 08 Dec 2026, 11:06 PM</span>
+                                                    </div>
+                                                </td>
+                                                <td>Exact start and expiration timestamps governing the promotion lifecycle. Outside this chronological window, the coupon code cannot be applied during storefront checkout.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-check-decagram text-success me-1"></i> STATUS
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-success-subtle text-success border border-success-subtle px-2.5 py-1 rounded-pill">Active</span>
+                                                </td>
+                                                <td>Operational state toggle. An <code>Active</code> badge confirms the coupon is eligible for buyer redemption; an <code>Inactive</code> badge immediately suspends redemption regardless of date validity.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-dots-vertical text-secondary me-1"></i> ACTION
+                                                </td>
+                                                <td><span class="btn btn-sm btn-light border py-0 px-1.5"><i class="mdi mdi-dots-vertical"></i></span></td>
+                                                <td>Contextual action menu providing administrative access to <strong>Edit Coupon</strong> parameters or <strong>Delete</strong> the voucher entry.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 11.2: DUAL DISCOUNT MECHANICS: PERCENTAGE VS FIXED ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-11-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-calculator-variant-outline text-primary me-1"></i> 11.2 Dual Discount Mechanics: Percentage vs. Fixed Amount
+                        </h3>
+                        <p class="text-muted">
+                            MartX incorporates a high-performance, precision mathematical discount calculation engine engineered to handle diverse marketing campaign strategies. The platform natively provides two fundamentally distinct discount architectures: <strong>Percentage (%)</strong> and <strong>Fixed Currency Amount ($ / ৳)</strong>.
+                        </p>
+
+                        <!-- Comparative Matrix Card -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-scale-balance text-primary me-1"></i> Comprehensive Architectural Comparison: Percentage vs. Fixed
+                                </h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light small">
+                                            <tr>
+                                                <th style="width: 20%;">Architectural Metric</th>
+                                                <th style="width: 40%;">1. Percentage Discount (<code>%</code>)</th>
+                                                <th style="width: 40%;">2. Fixed Amount Discount (<code>$ / ৳</code>)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="fw-bold text-dark">Deduction Method</td>
+                                                <td>Relative mathematical ratio deducted from cart subtotal (e.g., <code>15%</code>, <code>20%</code>).</td>
+                                                <td>Absolute flat monetary sum deducted directly from cart total (e.g., <code>$10.00</code>, <code>$25.00</code>).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Mathematical Formula</td>
+                                                <td>
+                                                    <code class="text-primary fw-bold">Discount = Min(Cart Subtotal &times; Rate / 100, Max Discount)</code>
+                                                </td>
+                                                <td>
+                                                    <code class="text-success fw-bold">Discount = Min(Fixed Amount, Cart Subtotal)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Margin Protection (Cap)</td>
+                                                <td>
+                                                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle px-2 py-1">Mandatory Requirement</span><br>
+                                                    Requires <code>Max Discount</code> ceiling to stop enterprise margin loss on large orders.
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-secondary-subtle text-secondary border px-2 py-1">Disabled &amp; Cleared</span><br>
+                                                    Fixed deductions are intrinsically self-limiting; maximum cap field is automatically disabled.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Qualifying Spend Barrier</td>
+                                                <td>Enforces <code>Min Order Amount</code> to guarantee cart profitability before applying discount.</td>
+                                                <td>Enforces <code>Min Order Amount</code> to ensure order subtotal significantly exceeds the flat deduction.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Ideal Marketing Play</td>
+                                                <td>Sitewide seasonal blowouts, flash festivals, category sales (e.g., <code>SUMMER2026</code>).</td>
+                                                <td>New customer welcome gifts, cart abandonment incentives, VIP retention (e.g., <code>SAVE10</code>).</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Real-World Financial Scenarios -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="p-4 rounded-3 border bg-light-subtle h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary text-white p-2 rounded-circle">
+                                            <i class="mdi mdi-percent fs-5"></i>
+                                        </span>
+                                        <h6 class="fw-bold mb-0 text-heading">Case Study A: Percentage Discount with Cap</h6>
+                                    </div>
+                                    <p class="small text-muted mb-2">
+                                        <strong>Campaign Setup:</strong> Coupon <code>SUMMER2026</code> grants <strong>20% off</strong> on orders with a minimum spend of <strong>$75.00</strong>, constrained by a <strong>$50.00 Maximum Discount Cap</strong>.
+                                    </p>
+                                    <ul class="small text-muted ps-3 mb-0">
+                                        <li><strong>Scenario 1 ($100 Cart):</strong> 20% of $100 = <code>$20.00</code> discount. Customer pays <strong>$80.00</strong>.</li>
+                                        <li><strong>Scenario 2 ($500 Cart):</strong> 20% of $500 = $100.00, but capped at <code>$50.00</code>. Customer pays <strong>$450.00</strong>. <em>Store margin is protected!</em></li>
+                                        <li><strong>Scenario 3 ($50 Cart):</strong> Rejected at checkout because subtotal is below the $75 minimum barrier.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-4 rounded-3 border bg-light-subtle h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-success text-white p-2 rounded-circle">
+                                            <i class="mdi mdi-cash-multiple fs-5"></i>
+                                        </span>
+                                        <h6 class="fw-bold mb-0 text-heading">Case Study B: Fixed Flat Amount Voucher</h6>
+                                    </div>
+                                    <p class="small text-muted mb-2">
+                                        <strong>Campaign Setup:</strong> Coupon <code>SAVE10</code> grants a flat <strong>$10.00 discount</strong> on orders with a minimum spend of <strong>$60.00</strong>.
+                                    </p>
+                                    <ul class="small text-muted ps-3 mb-0">
+                                        <li><strong>Scenario 1 ($80 Cart):</strong> Flat $10.00 deducted. Customer pays <strong>$70.00</strong> (12.5% effective savings).</li>
+                                        <li><strong>Scenario 2 ($250 Cart):</strong> Flat $10.00 deducted. Customer pays <strong>$240.00</strong> (4.0% effective savings).</li>
+                                        <li><strong>Scenario 3 ($40 Cart):</strong> Rejected with explicit checkout notice: <em>"Minimum order amount of $60.00 is required for this coupon."</em></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 11.3: ADD NEW COUPON ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-11-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-plus-box-outline text-primary me-1"></i> 11.3 Creating Promotional Coupons (Add Coupon Console)
+                        </h3>
+                        <p class="text-muted">
+                            The <strong>Add New Coupon</strong> console features a modern, responsive two-column layout separating core discount criteria from campaign configuration and scheduling parameters. Dynamic client-side scripts seamlessly synchronize field visibility and validation rules based on your chosen discount type.
+                        </p>
+
+                        <!-- Screenshot 2: Add Coupon Form -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Add New Coupon: Promotional Criteria &amp; Usage Quotas
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/coupons/admin_coupon_create.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/coupons/admin_coupon_create.png" alt="Add New Coupon Form" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-ticket-percent-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Add New Coupon Form Interface</span>
+                                        <span class="small text-muted font-monospace">(images/coupons/admin_coupon_create.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">Coupon Creation Interface</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Granular Input Fields Specification Table -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-form-select text-primary me-1"></i> Add Coupon Form Input Specifications &amp; Operational Rules
+                                </h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light small">
+                                            <tr>
+                                                <th style="width: 22%;">Input Field Label</th>
+                                                <th style="width: 18%;">Control Type &amp; Rules</th>
+                                                <th style="width: 60%;">Detailed Operational Function &amp; Validation Constraints</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-tag-text-outline text-primary me-1"></i> Coupon Code <span class="text-danger">*</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-light text-dark border font-monospace">Text Input</span><br>
+                                                    <span class="small text-danger fw-semibold">Required &bull; Unique &bull; Min 5</span>
+                                                </td>
+                                                <td>
+                                                    The promotional voucher string customers enter at checkout (e.g., <code>WELCOME20</code>, <code>FLASH50</code>).
+                                                    <ul class="ps-3 mb-0 mt-1">
+                                                        <li><strong>Whitespace Stripping:</strong> JavaScript dynamically strips any typed whitespace in real time (<code>replace(/s/g, '')</code>).</li>
+                                                        <li><strong>Database Constraint:</strong> Must be strictly unique across the <code>coupons</code> table and adhere to alphanumeric dash formatting (<code>alpha_dash</code>).</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-format-list-bulleted-type text-primary me-1"></i> Discount Type <span class="text-danger">*</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-light text-dark border">Select Dropdown</span><br>
+                                                    <span class="small text-danger fw-semibold">Required &bull; Enum</span>
+                                                </td>
+                                                <td>
+                                                    Defines whether the discount calculation is relative or absolute:
+                                                    <ul class="ps-3 mb-0 mt-1">
+                                                        <li><code>Percentage</code>: Calculates a percentage reduction from cart subtotal. Unlocks and mandates the <em>Max Discount</em> field.</li>
+                                                        <li><code>Fixed</code>: Deducts a direct flat monetary value. Automatically disables and resets <em>Max Discount</em>.</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-numeric text-success me-1"></i> Discount Amount <span class="text-danger">*</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-light text-dark border font-monospace">Number Input</span><br>
+                                                    <span class="small text-danger fw-semibold">Required &bull; Numeric &bull; Min 0</span>
+                                                </td>
+                                                <td>
+                                                    The numerical value of the promotion. If <em>Percentage</em> is selected, enter the percentage integer (e.g., <code>20</code> for 20%). If <em>Fixed</em> is selected, enter the exact currency amount in your store's default currency (e.g., <code>20</code> for $20.00). Below the input, dynamic helper text clarifies whether the amount is interpreted as a percentage or currency figure.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-cart-arrow-down text-info me-1"></i> Min Order Amount <span class="text-danger">*</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-light text-dark border font-monospace">Number Input</span><br>
+                                                    <span class="small text-danger fw-semibold">Required &bull; Numeric &bull; Min 0</span>
+                                                </td>
+                                                <td>
+                                                    The minimum gross cart subtotal qualifying threshold (e.g., <code>500</code>). If a customer's cart subtotal before shipping is less than this value, the checkout engine halts application and prompts the customer to add more items to qualify.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-shield-alert-outline text-danger me-1"></i> Max Discount (For % Type)
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-light text-dark border font-monospace">Dynamic Input</span><br>
+                                                    <span class="small text-muted">Required if Type = %</span>
+                                                </td>
+                                                <td>
+                                                    The absolute financial ceiling on percentage savings (e.g., <code>200</code>). When <em>Percentage</em> is selected, this field is automatically enabled and enforced by backend validation (<code>required_if:type,percentage</code>). If <em>Fixed</em> is selected, the input is disabled, greyed out, and cleared to prevent administrative confusion.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-account-multiple-check text-warning me-1"></i> Total Coupon Limit <span class="text-danger">*</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-light text-dark border font-monospace">Number Input</span><br>
+                                                    <span class="small text-danger fw-semibold">Required &bull; Integer &bull; Min 0</span>
+                                                </td>
+                                                <td>
+                                                    Global redemption quota across all customers combined (e.g., <code>100</code>). Each successful order completed with this coupon increments the database counter. Once total redemptions reach this limit, the coupon automatically transitions to exhausted status.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-account-lock-outline text-secondary me-1"></i> Limit Per User <span class="text-danger">*</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-light text-dark border font-monospace">Number Input</span><br>
+                                                    <span class="small text-danger fw-semibold">Required &bull; Min 1 (Default: 1)</span>
+                                                </td>
+                                                <td>
+                                                    Maximum times an individual registered customer account may redeem this coupon. Setting this to <code>1</code> prevents voucher reuse by the same buyer, eliminating promotional budget exhaustion by single shoppers.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-calendar-start text-primary me-1"></i> Start Date <span class="text-danger">*</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-light text-dark border font-monospace">datetime-local</span><br>
+                                                    <span class="small text-danger fw-semibold">Required &bull; Date</span>
+                                                </td>
+                                                <td>
+                                                    Chronological timestamp indicating when the campaign becomes eligible for checkout redemption. Attempted applications prior to this datetime are rejected with an advance notice.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-calendar-end text-danger me-1"></i> Expire Date <span class="text-danger">*</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-light text-dark border font-monospace">datetime-local</span><br>
+                                                    <span class="small text-danger fw-semibold">Required &bull; After Start Date</span>
+                                                </td>
+                                                <td>
+                                                    Campaign cutoff timestamp. The server rigorously enforces <code>after_or_equal:start_date</code> validation. When the current server time surpasses this timestamp, the voucher code is rejected as expired.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">
+                                                    <i class="mdi mdi-toggle-switch text-success me-1"></i> Status <span class="text-danger">*</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-light text-dark border">Select Dropdown</span><br>
+                                                    <span class="small text-danger fw-semibold">Active (1) / Inactive (0)</span>
+                                                </td>
+                                                <td>
+                                                    Master operational switch. Defaults to <code>Active</code>. Selecting <code>Inactive</code> immediately suspends coupon usage across all customer carts without deleting the campaign entity.
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic State Machine Callout -->
+                        <div class="alert alert-info border-0 d-flex align-items-start gap-3 mb-0 p-3 rounded-3">
+                            <i class="mdi mdi-lightning-bolt text-info fs-3 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <strong class="d-block mb-1">Dynamic Client-Side State Machine in Action:</strong>
+                                <p class="small text-muted mb-0">
+                                    When you select <strong>Percentage</strong> in the <em>Discount Type</em> dropdown, the browser instantly enables the <strong>Max Discount</strong> input, marks it as required, and updates the helper note to: <em>"Note: Discount will be applied as a percentage."</em> Conversely, selecting <strong>Fixed</strong> disables and blanks out the maximum discount input, dynamically informing the operator: <em>"Note: Amount should be in USD only."</em>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 11.4: EDIT COUPON & REVISION PROTOCOL ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-11-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-circle-edit-outline text-primary me-1"></i> 11.4 Coupon Lifecycle &amp; Revision Protocols (Edit Console)
+                        </h3>
+                        <p class="text-muted">
+                            The <strong>Edit Coupon</strong> console enables administrators to adjust ongoing campaign quotas, extend promotion dates, or pause underperforming vouchers. To protect audit integrity and ensure accurate historical invoice ledgers, MartX implements strict immutability barriers on core identifiers.
+                        </p>
+
+                        <!-- Screenshot 3: Edit Coupon Form -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Edit Coupon: SUMMER2026 &mdash; Promotional Revision &amp; Quota Adjustments
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/coupons/admin_coupon_edit.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/coupons/admin_coupon_edit.png" alt="Edit Coupon Form" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-ticket-percent-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Edit Coupon Form Interface</span>
+                                        <span class="small text-muted font-monospace">(images/coupons/admin_coupon_edit.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">Coupon Revision Interface</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Immutability Security Architecture Card -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="p-4 rounded-3 border bg-white shadow-sm h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-danger-subtle text-danger p-2 rounded-circle">
+                                            <i class="mdi mdi-lock-outline fs-5"></i>
+                                        </span>
+                                        <h6 class="fw-bold mb-0 text-heading">Immutable Architectural Fields (Locked)</h6>
+                                    </div>
+                                    <p class="small text-muted mb-2">
+                                        Once a coupon is generated, specific attributes are locked in the edit interface to protect store stability:
+                                    </p>
+                                    <ul class="small text-muted ps-3 mb-0">
+                                        <li class="mb-2"><strong>Coupon Code (<code>readonly</code>):</strong> Prevents altering the voucher string mid-campaign, which would break active banner ads, email promotions, and customer checkout sessions.</li>
+                                        <li><strong>Discount Type (<code>disabled</code>):</strong> Prevents altering the computational paradigm (Percentage &harr; Fixed) on an existing voucher, eliminating accounting inconsistencies on past orders.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-4 rounded-3 border bg-white shadow-sm h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-success-subtle text-success p-2 rounded-circle">
+                                            <i class="mdi mdi-square-edit-outline fs-5"></i>
+                                        </span>
+                                        <h6 class="fw-bold mb-0 text-heading">Mutable Operational Parameters (Editable)</h6>
+                                    </div>
+                                    <p class="small text-muted mb-2">
+                                        Administrators can safely update operational parameters at any point during campaign execution:
+                                    </p>
+                                    <ul class="small text-muted ps-3 mb-0">
+                                        <li class="mb-2"><strong>Validity Period (Dates):</strong> Extend the <em>Expire Date</em> to prolong a high-performing campaign, or move it forward to end an expiring offer.</li>
+                                        <li class="mb-2"><strong>Usage Limits:</strong> Increase the <em>Total Coupon Limit</em> (e.g., from 150 to 300) when a campaign hits viral customer demand.</li>
+                                        <li><strong>Emergency Status Toggle:</strong> Instantly switch <em>Status</em> to <code>Inactive</code> to pause redemption without deleting customer usage history.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 11.5: STOREFRONT CHECKOUT PIPELINE ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-11-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-cart-check text-primary me-1"></i> 11.5 Storefront Checkout Engine &amp; Cart Valuation Pipeline
+                        </h3>
+                        <p class="text-muted">
+                            When a buyer enters a promotional code in the MartX storefront checkout modal (<code>Apply Coupon</code>), the backend executes a rigorous, zero-overhead atomic verification sequence before adjusting the payable subtotal.
+                        </p>
+
+                        <!-- Step-by-Step Validation Lifecycle -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-ray-start-arrow text-primary me-1"></i> 7-Step Atomic Checkout Verification Sequence
+                                </h6>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-primary text-white rounded-pill px-2">1</span>
+                                                <h6 class="fw-bold mb-0">Code Sanitization</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">Strips accidental spaces, normalizes case, and queries the database for active coupon records.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-primary text-white rounded-pill px-2">2</span>
+                                                <h6 class="fw-bold mb-0">Temporal Validation</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">Verifies server timestamp lies within the <code>start_date</code> and <code>expire_date</code> window.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-primary text-white rounded-pill px-2">3</span>
+                                                <h6 class="fw-bold mb-0">Global Quota Check</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">Evaluates current redeemed usage count against the <code>usage_limit</code> threshold ceiling.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-primary text-white rounded-pill px-2">4</span>
+                                                <h6 class="fw-bold mb-0">Per-User Velocity</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">Checks buyer account redemption history against <code>limit_per_user</code> in <code>coupon_usages</code>.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-primary text-white rounded-pill px-2">5</span>
+                                                <h6 class="fw-bold mb-0">Spend Barrier Check</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">Validates that gross cart subtotal meets or exceeds the required <code>min_order_amount</code>.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-success text-white rounded-pill px-2">6 &amp; 7</span>
+                                                <h6 class="fw-bold mb-0">Deduction &amp; Ledger</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">Calculates reduction, clamps to <code>max_discount</code> if %, updates cart totals via AJAX, and logs upon order completion.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 11.6: PROMOTIONAL MARKETING SOP & BEST PRACTICES ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-11-6">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-lightbulb-on-outline text-primary me-1"></i> 11.6 Promotional Strategy &amp; Marketing SOP
+                        </h3>
+                        <p class="text-muted">
+                            Deploy high-converting campaigns while safeguarding gross margins using MartX's enterprise coupon playbooks:
+                        </p>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="p-4 rounded-3 border bg-light h-100">
+                                    <h6 class="fw-bold text-heading mb-2">
+                                        <i class="mdi mdi-bullseye-arrow text-primary me-1"></i> High-Converting Campaign Playbooks
+                                    </h6>
+                                    <ul class="small text-muted ps-3 mb-0">
+                                        <li class="mb-2"><strong>First-Time Shopper Acquisition:</strong> Create a single-use coupon like <code>WELCOME15</code> (15% off, min spend $50, max cap $30, limit per user = 1) displayed on welcome banners.</li>
+                                        <li class="mb-2"><strong>Seasonal Volume Drives:</strong> Launch codes like <code>SUMMER2026</code> (20% off, min spend $75, max cap $50) for holiday weekends to boost basket sizes.</li>
+                                        <li><strong>VIP Tier Incentives:</strong> Offer flat vouchers like <code>SAVE10</code> ($10 off orders over $60) to reward repeat newsletter subscribers.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-4 rounded-3 border bg-light h-100">
+                                    <h6 class="fw-bold text-heading mb-2">
+                                        <i class="mdi mdi-shield-check text-success me-1"></i> Fraud Prevention &amp; Operational Safety
+                                    </h6>
+                                    <ul class="small text-muted ps-3 mb-0">
+                                        <li class="mb-2"><strong>Always Mandate Per-User Limits:</strong> Keep <code>Limit Per User</code> set to <code>1</code> for standard public codes to block single buyers from claiming multiple discounts.</li>
+                                        <li class="mb-2"><strong>Always Define Max Discount on %:</strong> Never deploy an uncapped percentage coupon on high-ticket catalogs where a 20% discount could cause thousands in losses.</li>
+                                        <li><strong>Pair with Expiration Timestamps:</strong> Always specify precise expire dates to prevent old promotional coupon links from circulating perpetually.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="shipping-couriers.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 10 (Couriers & Shipping Costs)
+                    </a>
+                    <a href="payment-gateways.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 12 (Payment Gateways) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch11-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-11-1" class="doc-toc-link">11.1 Directory &amp; Ledger</a>
+                    <a href="#sec-11-2" class="doc-toc-link">11.2 Percentage vs. Fixed</a>
+                    <a href="#sec-11-3" class="doc-toc-link">11.3 Add Coupon Console</a>
+                    <a href="#sec-11-4" class="doc-toc-link">11.4 Revision Protocols</a>
+                    <a href="#sec-11-5" class="doc-toc-link">11.5 Checkout Pipeline</a>
+                    <a href="#sec-11-6" class="doc-toc-link">11.6 Marketing SOP</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch11-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 1rem; overflow: hidden;">
+                <div class="modal-header border-bottom p-3">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0 text-muted ps-2">
+                            <i class="mdi mdi-magnify fs-4"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 shadow-none ps-2" id="docGlobalSearch" placeholder="Search documentation chapters, attributes, or guides..." autofocus>
+                    </div>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3" id="docSearchResults" style="max-height: 400px; overflow-y: auto;">
+                    <div class="text-muted small text-uppercase fw-bold px-2 mb-2">Documentation Hub</div>
+                    <div class="p-3 text-center text-muted">Type any keyword to search across all 22 chapters...</div>
+                </div>
+                <div class="modal-footer border-top py-2 px-3 justify-content-between text-muted small">
+                    <span>Press <kbd class="bg-light text-dark border">ESC</kbd> to exit</span>
+                    <span>MartX Documentation v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

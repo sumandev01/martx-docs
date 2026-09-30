@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 13: Theme Layouts Hub & Visual Customization - MartX Documentation</title>
+    <meta name="description" content="Chapter 6: Theme Layouts - MartX Enterprise Documentation">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+                                    <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER MAIN CONTENT COLUMN ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Chapter 13: Theme Layouts Hub</li>
+                    </ol>
+                </nav>
+
+                <!-- SECTION HEADER -->
+                <section class="doc-section mb-4" id="ch6-intro">
+                    <h1 class="doc-section-title d-flex align-items-center gap-2 mb-3">
+                        <i class="mdi mdi-view-dashboard-variant text-primary"></i> Chapter 6: Theme Layouts Hub
+                    </h1>
+                    <p class="lead text-muted">
+                        MartX Theme Layouts, Visual Customizer & Frontend Templates Documentation.
+                    </p>
+                </section>
+
+                
+                <!-- Quick Overview Stat Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-6 col-md-4 col-xl-2">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-page-layout-header fs-3 text-primary mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">3</span>
+                            <span class="text-muted small">Header Styles</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-2">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-home-variant-outline fs-3 text-success mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">2</span>
+                            <span class="text-muted small">Home Layouts</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-2">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-home-edit-outline fs-3 text-warning mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">2</span>
+                            <span class="text-muted small">Content Forms</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-2">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-storefront-outline fs-3 text-info mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">3</span>
+                            <span class="text-muted small">Shop Layouts</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-2">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-menu-open fs-3 text-danger mb-1 d-block"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">2</span>
+                            <span class="text-muted small">Mega Menus</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-2">
+                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                            <i class="mdi mdi-card-outline fs-3 text-purple mb-1 d-block" style="color: #6f42c1;"></i>
+                            <span class="fw-bold fs-5 text-heading d-block">6</span>
+                            <span class="text-muted small">Product Cards</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 6.1: ARCHITECTURE OVERVIEW ================= -->
+                <div class="doc-subsection mt-4 mb-5" id="sec-6-1">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-transit-connection-variant text-primary me-1"></i> 6.1 Theme Layout Architecture & One-Click Customizer Engine
+                    </h3>
+                    <p>
+                        MartX provides an enterprise-grade <strong>Dynamic Theme Layout Engine</strong> that empowers store owners and administrators to completely alter the visual presentation, navigation structure, and product card rendering across the entire storefront in <strong>1 single click</strong> &mdash; with zero code modification, zero server downtime, and zero template recompilation overhead.
+                    </p>
+                    <div class="doc-callout doc-callout-info mb-4">
+                        <div class="doc-callout-title text-primary">
+                            <i class="mdi mdi-compass-outline"></i> Admin Access Path
+                        </div>
+                        <p class="small mb-0">
+                            Navigate to: <strong>Admin Dashboard</strong> &rarr; <strong>Website & CMS</strong> &rarr; <strong>Theme Layouts</strong>.
+                        </p>
+                    </div>
+
+                    <!-- Workflow Cards -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <div class="badge bg-primary text-white rounded-pill mb-2 px-3 py-1">Step 1</div>
+                                <h6 class="fw-bold text-heading mb-1">Visual Selection</h6>
+                                <p class="small text-muted mb-0">Select your desired layout card from any of the 6 dedicated setting tabs.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <div class="badge bg-info text-white rounded-pill mb-2 px-3 py-1">Step 2</div>
+                                <h6 class="fw-bold text-heading mb-1">Live Modal Preview</h6>
+                                <p class="small text-muted mb-0">Click the eye icon on any card to preview the full high-res mockup before saving.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <div class="badge bg-warning text-white rounded-pill mb-2 px-3 py-1">Step 3</div>
+                                <h6 class="fw-bold text-heading mb-1">AJAX Persistence</h6>
+                                <p class="small text-muted mb-0">Click "Save Theme Layouts" to persist settings directly into the database.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm text-center">
+                                <div class="badge bg-success text-white rounded-pill mb-2 px-3 py-1">Step 4</div>
+                                <h6 class="fw-bold text-heading mb-1">Instant Storewide Sync</h6>
+                                <p class="small text-muted mb-0">Blade layout resolvers dynamically adapt the storefront in real-time with instant cache busting.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 6.2: TAB 1 - HEADER LAYOUTS ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-6-2">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-page-layout-header text-primary me-1"></i> 6.2 Tab 1: Dynamic Header Layout Switcher (3 Styles)
+                    </h3>
+                    <p>
+                        The Header is the primary visual anchor of your e-commerce store. MartX features <strong>3 distinct Header Architectures</strong> tailored for diverse inventory depths, branding styles, and navigation models.
+                    </p>
+
+                    <!-- Admin Screenshot Frame -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Admin Panel &mdash; Header Layout Selection Tab
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Admin View</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/theme-layouts/admin_header_layout.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/theme-layouts/admin_header_layout.png" alt="Admin Header Layout Tab" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                    <span class="badge bg-primary-subtle text-primary font-monospace small">images/theme-layouts/admin_header_layout.png</span>
+                                </div>
+                            </div>
+                            <div class="small text-muted mt-2">
+                                <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Admin Interface:</strong> Displays the 3 header options with active radio selection, visual border highlight, active checkmark badge, and the "Save Theme Layouts" action button.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Critical Architectural Rule Callout -->
+                    <div class="doc-callout doc-callout-warning mb-4">
+                        <div class="doc-callout-title text-warning">
+                            <i class="mdi mdi-alert-circle-outline"></i> Critical System Rule: Header 3 & Mega Menu Incompatibility
+                        </div>
+                        <p class="small mb-1">
+                            When <strong>Header 3</strong> is selected, the <strong>Mega Menu Layout tab</strong> is automatically disabled in the admin panel and tagged with an <span class="badge bg-secondary-subtle text-secondary small">N/A</span> badge.
+                        </p>
+                        <p class="small text-muted mb-0">
+                            <strong>Why?</strong> Header 3 utilizes an exclusive <strong>Centered-Logo & Side-Drawer (Curtain Menu)</strong> navigation pattern. Traditional full-width horizontal flyout mega menus are only designed for <strong>Header 1</strong> and <strong>Header 2</strong>.
+                        </p>
+                    </div>
+
+                    <!-- Frontend Header Layouts (Full-Width Cards) -->
+                    <h5 class="fw-bold text-heading mt-4 mb-3">Frontend Visual Styles:</h5>
+                    <div class="row g-4 mb-4">
+                        <!-- Header 1 -->
+                        <div class="col-12">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Frontend Output &mdash; Header Style 1: Classic Marketplace Hub
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-primary-subtle text-primary font-monospace" style="font-size: 10px;">Classic</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/header_1.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3">
+                                    <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                        <img src="images/header_1.png" alt="Header Style 1" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/header_1.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-2">Header 1 Architecture Highlights:</h6>
+                                    <ul class="small text-muted mb-0 ps-3">
+                                        <li class="mb-1"><strong>Top Announcement Bar:</strong> Displays quick links, localized currency/language selectors, and promotional flash notice.</li>
+                                        <li class="mb-1"><strong>Full-Width Search Bar:</strong> High-visibility central search box with live product autocomplete suggestions.</li>
+                                        <li class="mb-1"><strong>User Account & Modal:</strong> Dedicated 1-click user authentication modal trigger, wishlist counter badge, and real-time mini-cart counter.</li>
+                                        <li><strong>Mega Menu Navigation Bar:</strong> Clean lower navigation strip with departments dropdown and quick page links.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Header 2 -->
+                        <div class="col-12">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Frontend Output &mdash; Header Style 2: Modern Compact & Category Dropdown
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-success-subtle text-success font-monospace" style="font-size: 10px;">Modern</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/header_2.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3">
+                                    <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                        <img src="images/header_2.png" alt="Header Style 2" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/header_2.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-2">Header 2 Architecture Highlights:</h6>
+                                    <ul class="small text-muted mb-0 ps-3">
+                                        <li class="mb-1"><strong>Integrated Category Dropdown:</strong> Built-in category selector dropdown directly inside the search bar for scoped catalog queries.</li>
+                                        <li class="mb-1"><strong>24/7 Hotline Support Badge:</strong> Dedicated customer support phone hotline indicator prominently positioned next to user actions.</li>
+                                        <li class="mb-1"><strong>Compact Sticky Header:</strong> Slim height footprint optimized for maximum content viewport area on scroll.</li>
+                                        <li><strong>Category Bar:</strong> Direct access to primary product classifications.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Header 3 -->
+                        <div class="col-12">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Frontend Output &mdash; Header Style 3: Minimalist Luxury / Centered Logo & Curtain Drawer
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-warning-subtle text-warning font-monospace" style="font-size: 10px;">Minimalist</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/header_3.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3">
+                                    <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                        <img src="images/header_3.png" alt="Header Style 3" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/header_3.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-2">Header 3 Architecture Highlights:</h6>
+                                    <ul class="small text-muted mb-0 ps-3">
+                                        <li class="mb-1"><strong>Centered Brand Emblem:</strong> Symmetrical aesthetic putting the brand identity in prime center focus.</li>
+                                        <li class="mb-1"><strong>Split Navigation:</strong> Links distributed evenly to the left and right of the central emblem.</li>
+                                        <li class="mb-1"><strong>Curtain Drawer Trigger:</strong> Hamburger icon triggers an elegant offcanvas curtain navigation menu.</li>
+                                        <li><strong>Boutique Look:</strong> Favored by high-end luxury fashion, jewelry, and lifestyle apparel brands.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 6.3: TAB 2 - HOME PAGE LAYOUTS ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-6-3">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-home-variant-outline text-primary me-1"></i> 6.3 Tab 2: Home Page Layout Switcher (2 Styles)
+                    </h3>
+                    <p>
+                        MartX features <strong>2 completely distinct Home Page architectural templates</strong>. Switching between Home 1 and Home 2 instantly restructures the entire landing page section order, hero banner layout, and content grouping.
+                    </p>
+
+                    <!-- Admin Screenshot Frame -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Admin Panel &mdash; Home Page Layout Selection Tab
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Admin View</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/theme-layouts/admin_home_layout.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/theme-layouts/admin_home_layout.png" alt="Admin Home Page Layout Tab" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                    <span class="badge bg-primary-subtle text-primary font-monospace small">images/theme-layouts/admin_home_layout.png</span>
+                                </div>
+                            </div>
+                            <div class="small text-muted mt-2">
+                                <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Admin Interface:</strong> Switch between Home 1 (Classic Marketplace) and Home 2 (Modern Split-Hero) with 1 click.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Home 1 vs Home 2 Frontend Showcase -->
+                    <div class="row g-4 mb-4">
+                        <!-- Home 1 -->
+                        <div class="col-lg-6">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm d-flex flex-column">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Home 1 &mdash; Classic Marketplace Grid
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto flex-shrink-0 flex-nowrap">
+                                        <span class="badge d-none d-xxl-inline-block bg-primary-subtle text-primary font-monospace" style="font-size: 10px;">Marketplace</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 text-nowrap flex-shrink-0 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center; white-space: nowrap;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/home_1.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace flex-shrink-0" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3 d-flex flex-column flex-grow-1">
+                                    <div class="position-relative rounded-3 mb-3 border bg-light text-center doc-viewport-wrapper" style="max-height: 700px; overflow-y: auto;">
+                                        <img src="images/home_1.png" alt="Home 1 Preview" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/home_1.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-layers-outline text-primary me-1"></i> Home 1 Section Architecture:</h6>
+                                    <ul class="small text-muted mb-0 ps-3">
+                                        <li>Full-width promotional carousel hero banner.</li>
+                                        <li>6-column featured category round thumbnail cards.</li>
+                                        <li>Trendy products grid with tabbed filtering.</li>
+                                        <li>Double promo offer banner split.</li>
+                                        <li>Urgency Flash Sale section with live countdown clock.</li>
+                                        <li>Just Arrived / Latest Products showcase.</li>
+                                        <li>Customer reviews & testimonials carousel.</li>
+                                        <li>Latest news & editorial blogs section.</li>
+                                        <li>Email newsletter subscriber capture banner.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Home 2 -->
+                        <div class="col-lg-6">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm d-flex flex-column">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Home 2 &mdash; Modern Split-Hero &amp; Showcase
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto flex-shrink-0 flex-nowrap">
+                                        <span class="badge d-none d-xxl-inline-block bg-success-subtle text-success font-monospace" style="font-size: 10px;">Modern</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 text-nowrap flex-shrink-0 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center; white-space: nowrap;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/home_2.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace flex-shrink-0" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3 d-flex flex-column flex-grow-1">
+                                    <div class="position-relative rounded-3 mb-3 border bg-light text-center doc-viewport-wrapper" style="max-height: 700px; overflow-y: auto;">
+                                        <img src="images/home_2.png" alt="Home 2 Preview" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/home_2.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-layers-outline text-success me-1"></i> Home 2 Section Architecture:</h6>
+                                    <ul class="small text-muted mb-0 ps-3">
+                                        <li>Split-screen hero with asymmetric promotional cards.</li>
+                                        <li>Store Features strip (Shipping, Support, Guarantee).</li>
+                                        <li>Interactive Category Showcase with hover-reveal tiles.</li>
+                                        <li>Flash Sale section with "Top Deal" badge & countdown.</li>
+                                        <li>Interactive "Discover Now" tab engine (Trending vs Just Arrived).</li>
+                                        <li>"From The Journal" editorial blog slider.</li>
+                                        <li>Curated partner brand logo carousel slider.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 6.4: TAB 3 - HOME PAGE CONTENT BUILDER ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-6-4">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-home-edit-outline text-primary me-1"></i> 6.4 Tab 3: Home Page Content Builder (Context-Aware Dynamic Form Engine)
+                    </h3>
+                    <p>
+                        The <strong>Home Page Content Builder</strong> is a <strong>Context-Aware Dynamic System</strong>. Rather than forcing administrators to fill out irrelevant fields, MartX automatically detects whether <strong>Home 1</strong> or <strong>Home 2</strong> is currently active and renders a specialized, dedicated configuration form.
+                    </p>
+                    <div class="doc-callout doc-callout-info mb-4">
+                        <div class="doc-callout-title text-primary">
+                            <i class="mdi mdi-sync"></i> Seamless In-Tab Layout Switcher
+                        </div>
+                        <p class="small mb-0">
+                            Inside Tab 3, an active badge indicates which layout you are configuring (e.g. <span class="badge bg-purple text-white" style="background-color: #6f42c1;">Active: Home 1</span>). You can click the <strong>"Switch Home Layout"</strong> button in the top-right corner to jump back to Tab 2 at any time.
+                        </p>
+                    </div>
+
+                    <!-- Home 1 Content Builder -->
+                    <div class="card border rounded-3 p-4 mb-4 bg-white shadow-sm">
+                        <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+                            <h5 class="fw-bold text-heading m-0">
+                                <i class="mdi mdi-format-list-bulleted-type text-primary me-2"></i> Home 1 Content Configuration Form
+                            </h5>
+                            <span class="badge bg-primary font-monospace">Home 1 Active Form</span>
+                        </div>
+
+                        <div class="row g-4 mb-3">
+                            <div class="col-12">
+                                <div class="doc-admin-frame shadow-sm">
+                                    <div class="doc-admin-frame-header py-2">
+                                        <div class="doc-admin-dots">
+                                            <span class="doc-admin-dot red"></span>
+                                            <span class="doc-admin-dot yellow"></span>
+                                            <span class="doc-admin-dot green"></span>
+                                        </div>
+                                        <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                            Admin Panel &mdash; Home 1 Content Builder: Category, Flash Sale &amp; Blog Matrix
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2 ms-auto">
+                                            <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Home 1 Form</span>
+                                            <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                                <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                            </button>
+                                            <a href="images/theme-layouts/admin_home_1_content.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                                <i class="mdi mdi-open-in-new"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="doc-admin-frame-body p-0">
+                                        <img src="images/theme-layouts/admin_home_1_content.png" alt="Admin Home 1 Content Form" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <h6 class="fw-bold text-heading mb-3"><i class="mdi mdi-table-eye text-primary me-1"></i> Home 1 Field Breakdown &amp; Live Frontend Mapping:</h6>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered align-middle small mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th style="width: 20%;">Section</th>
+                                                <th style="width: 25%;">Field Label</th>
+                                                <th style="width: 55%;">Purpose / Where It Reflects</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span class="badge bg-light text-dark border">Categories</span></td>
+                                                <td><code>categories_title</code></td>
+                                                <td>Main section heading above the category round slider.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="badge bg-light text-dark border">Trendy Products</span></td>
+                                                <td><code>trending_title</code></td>
+                                                <td>Heading for the high-engagement product grid.</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="3"><span class="badge bg-light text-dark border">Flash Sale</span></td>
+                                                <td><code>flash_sale_title</code></td>
+                                                <td>Bold title next to the live countdown timer clock.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>flash_sale_btn_text</code></td>
+                                                <td>Action button label linking to full deals catalog.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>flash_sale_subtitle</code></td>
+                                                <td>Urgency description paragraph below title.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="badge bg-light text-dark border">Just Arrived</span></td>
+                                                <td><code>latest_title</code></td>
+                                                <td>Section title for new arrival catalog items.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="badge bg-light text-dark border">Reviews</span></td>
+                                                <td><code>reviews_title</code></td>
+                                                <td>Header for the verified customer reviews carousel.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="badge bg-light text-dark border">Blogs</span></td>
+                                                <td><code>blogs_title</code></td>
+                                                <td>Heading for the latest editorial stories & news.</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2"><span class="badge bg-light text-dark border">Newsletter</span></td>
+                                                <td><code>subscribe_heading</code></td>
+                                                <td>Call-to-action title for customer email capture.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>subscribe_text</code></td>
+                                                <td>Descriptive incentive text for email subscription.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Home 2 Content Builder -->
+                    <div class="card border rounded-3 p-4 mb-4 bg-white shadow-sm">
+                        <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+                            <h5 class="fw-bold text-heading m-0">
+                                <i class="mdi mdi-format-list-bulleted-type text-success me-2"></i> Home 2 Content Configuration Form
+                            </h5>
+                            <span class="badge bg-success font-monospace">Home 2 Active Form</span>
+                        </div>
+                        
+                        <div class="row g-4 mb-3">
+                            <div class="col-12">
+                                <div class="doc-admin-frame shadow-sm">
+                                    <div class="doc-admin-frame-header py-2">
+                                        <div class="doc-admin-dots">
+                                            <span class="doc-admin-dot red"></span>
+                                            <span class="doc-admin-dot yellow"></span>
+                                            <span class="doc-admin-dot green"></span>
+                                        </div>
+                                        <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                            Admin Panel &mdash; Home 2 Content Builder: Showcase, Tabs &amp; Brand Matrix
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2 ms-auto">
+                                            <span class="badge d-none d-md-inline-block bg-success text-white font-monospace" style="font-size: 10px;">Home 2 Form</span>
+                                            <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                                <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                            </button>
+                                            <a href="images/theme-layouts/admin_home_2_content.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                                <i class="mdi mdi-open-in-new"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="doc-admin-frame-body p-0">
+                                        <img src="images/theme-layouts/admin_home_2_content.png" alt="Admin Home 2 Content Form" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <h6 class="fw-bold text-heading mb-3"><i class="mdi mdi-table-eye text-success me-1"></i> Home 2 Field Breakdown &amp; Live Frontend Mapping:</h6>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered align-middle small mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th style="width: 20%;">Section</th>
+                                                <th style="width: 25%;">Field Label</th>
+                                                <th style="width: 55%;">Purpose / Where It Reflects</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span class="badge bg-light text-dark border">Store Features</span></td>
+                                                <td><code>features_subtitle</code></td>
+                                                <td>Tagline displayed above service value cards.</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2"><span class="badge bg-light text-dark border">Category Showcase</span></td>
+                                                <td><code>categories_title</code></td>
+                                                <td>Main section title above interactive category cards.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>categories_subtitle</code></td>
+                                                <td>Hover guidance subtitle for shopper engagement.</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="4"><span class="badge bg-light text-dark border">Flash Sale</span></td>
+                                                <td><code>flash_sale_title</code></td>
+                                                <td>Promotional title with emoji support (e.g. 🔥 FLASH SALE).</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>flash_sale_badge</code></td>
+                                                <td>Pill badge highlighting the deal level (e.g. Top Deal).</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>flash_sale_btn_text</code></td>
+                                                <td>Call-to-action button text.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>flash_sale_subtitle</code></td>
+                                                <td>Urgency countdown description paragraph.</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="3"><span class="badge bg-light text-dark border">Discover Products</span></td>
+                                                <td><code>discover_title</code></td>
+                                                <td>Section title above multi-tab product filter engine.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>discover_trending_tab</code></td>
+                                                <td>Custom tab button label (e.g. 🔥 Trending).</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>discover_latest_tab</code></td>
+                                                <td>Custom tab button label (e.g. 🆕 Just Arrived).</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2"><span class="badge bg-light text-dark border">From The Journal</span></td>
+                                                <td><code>blogs_title</code></td>
+                                                <td>Editorial journal stories heading.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>blogs_btn_text</code></td>
+                                                <td>"View All" button text linking to blog archive.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="badge bg-light text-dark border">Our Brands</span></td>
+                                                <td><code>brands_title</code></td>
+                                                <td>Section title above the partner brand logo carousel.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 6.5: TAB 4 - SHOP PAGE LAYOUTS ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-6-5">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-storefront-outline text-primary me-1"></i> 6.5 Tab 4: Shop Page Layout Switcher (3 Styles)
+                    </h3>
+                    <p>
+                        The Shop Page is the primary product discovery and purchasing catalog of your store. MartX includes <strong>3 distinct Shop Architectures</strong> to cater to varying inventory scopes, filter complexities, and customer browsing patterns.
+                    </p>
+
+                    <!-- Admin Screenshot Frame -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Admin Panel &mdash; Shop Page Layout Selection Tab
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Admin View</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/theme-layouts/admin_shop_layout.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/theme-layouts/admin_shop_layout.png" alt="Admin Shop Page Layout Tab" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                    <span class="badge bg-primary-subtle text-primary font-monospace small">images/theme-layouts/admin_shop_layout.png</span>
+                                </div>
+                            </div>
+                            <div class="small text-muted mt-2">
+                                <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Admin Interface:</strong> Choose between Shop Left Sidebar, Shop Right Sidebar, and Shop Full Width with 1-click active state persistence.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 Shop Styles Frontend Showcase -->
+                    <div class="row g-4 mb-4">
+                        <!-- Shop Left Sidebar -->
+                        <div class="col-md-4">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Left Sidebar
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-primary-subtle text-primary font-monospace" style="font-size: 9px;">Standard</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/shop_left_sidebar.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3">
+                                    <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                        <img src="images/shop_left_sidebar.png" alt="Shop Left Sidebar" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/shop_left_sidebar.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-1">Shop Left Sidebar</h6>
+                                    <p class="small text-muted mb-0">
+                                        The industry-standard e-commerce layout. Features a dedicated left-hand filter drawer (price range slider, category accordion, brand checkboxes, customer rating filter) with product cards on the right.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shop Right Sidebar -->
+                        <div class="col-md-4">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Right Sidebar
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-success-subtle text-success font-monospace" style="font-size: 9px;">Modern</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/shop_right_sidebar.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3">
+                                    <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                        <img src="images/shop_right_sidebar.png" alt="Shop Right Sidebar" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/shop_right_sidebar.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-1">Shop Right Sidebar</h6>
+                                    <p class="small text-muted mb-0">
+                                        A catalog-first layout prioritizing product visuals immediately on the left of the screen, while keeping technical filters neatly docked on the right. Popular in apparel, electronics, and lifestyle boutiques.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shop Full Width -->
+                        <div class="col-md-4">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Full Width
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-info-subtle text-info font-monospace" style="font-size: 9px;">Edge-to-Edge</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/shop_full_width.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3">
+                                    <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                        <img src="images/shop_full_width.png" alt="Shop Full Width" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/shop_full_width.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-1">Shop Full Width</h6>
+                                    <p class="small text-muted mb-0">
+                                        A clean 12-column grid maximizing product count per screen view without a permanent sidebar. Filters are accessed via an offcanvas modal or top filter bar. Ideal for wholesale, lookbooks, and visual catalogs.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 6.6: TAB 5 - MEGA MENU ENGINE ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-6-6">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-menu-open text-primary me-1"></i> 6.6 Tab 5: Mega Menu Engine & Global Controls (2 Styles)
+                    </h3>
+                    <p>
+                        MartX includes an integrated <strong>Mega Menu Navigation Engine</strong> that elevates store categorization into an interactive, multi-tiered visual experience with promotional banner support.
+                    </p>
+
+                    <!-- Admin Screenshot Frame -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Admin Panel &mdash; Mega Menu Configuration & Layouts Tab
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Admin View</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/theme-layouts/admin_megamenu_layout.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/theme-layouts/admin_megamenu_layout.png" alt="Admin Mega Menu Layout Tab" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                    <span class="badge bg-primary-subtle text-primary font-monospace small">images/theme-layouts/admin_megamenu_layout.png</span>
+                                </div>
+                            </div>
+                            <div class="small text-muted mt-2">
+                                <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Admin Interface:</strong> Displays the Header 3 compatibility alert, global status toggle switch, custom button label input, and the 2 visual mega menu style cards.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mega Menu Global Controls Details -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-toggle-switch me-1"></i> Mega Menu Status Switch</h6>
+                                <p class="small text-muted mb-0">
+                                    A master toggle switch (<span class="badge bg-light text-dark border">Show Mega Menu in Header Navigation</span>). When switched off, the categories dropdown is cleanly hidden from the header, streamlining the top bar for minimalist stores.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <h6 class="fw-bold text-success mb-1"><i class="mdi mdi-format-title me-1"></i> Mega Menu Button Title</h6>
+                                <p class="small text-muted mb-0">
+                                    Customizable trigger button text (default: <span class="badge bg-secondary-subtle text-secondary">All Categories</span>). You can dynamically rename this to <em>"Departments"</em>, <em>"Shop Categories"</em>, or <em>"Browse Store"</em>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2 Mega Menu Visual Styles Frontend Showcase -->
+                    <div class="row g-4 mb-4">
+                        <!-- Mega Menu 1 -->
+                        <div class="col-lg-6">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Mega Menu 1 &mdash; Hierarchical with Promo Banner
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-primary-subtle text-primary font-monospace" style="font-size: 10px;">Layout 1</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/mega_menu_1.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3">
+                                    <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                        <img src="images/mega_menu_1.png" alt="Mega Menu 1" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/mega_menu_1.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-1">Mega Menu 1 Architecture:</h6>
+                                    <p class="small text-muted mb-0">
+                                        Features a multi-tier navigation hierarchy. Primary categories appear in an organized vertical list on the left; hovering reveals subcategories in the center column, accompanied by a rich promotional image banner with call-to-action on the right.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mega Menu 2 -->
+                        <div class="col-lg-6">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Mega Menu 2 &mdash; Categorized Visual Grid
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-success-subtle text-success font-monospace" style="font-size: 10px;">Layout 2</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/mega_menu_2.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3">
+                                    <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                        <img src="images/mega_menu_2.png" alt="Mega Menu 2" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/mega_menu_2.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-1">Mega Menu 2 Architecture:</h6>
+                                    <p class="small text-muted mb-0">
+                                        A clean, high-density categorized multi-column grid where every main category is displayed with an intuitive thumbnail icon alongside structured lists of subcategories for rapid visual browsing across hundreds of products.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cross-Reference to Chapter 7 -->
+                    <div class="doc-callout doc-callout-info mt-3 mb-0">
+                        <div class="doc-callout-title text-primary">
+                            <i class="mdi mdi-link-variant"></i> Content & Banner Configuration Guide
+                        </div>
+                        <p class="small mb-0">
+                            To configure featured categories, upload promotional banners, set custom banner link destinations, and preview real-time simulators for Mega Menu 1 & 2, see <a href="navigation-menus.html#sec-14-8" class="fw-bold text-decoration-none">Chapter 14: Navigation & Mega Menus (Section 14.8)</a>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ================= 6.7: TAB 6 - PRODUCT CARD ENGINE ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-6-7">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-card-outline text-primary me-1"></i> 6.7 Tab 6: Product Card Engine (6 Architectural Styles)
+                    </h3>
+                    <p>
+                        The Product Card is the single most critical micro-conversion component of any e-commerce storefront. MartX features a <strong>Storewide 1-Click Product Card Engine</strong> offering <strong>6 bespoke card architectures</strong>.
+                    </p>
+                    <div class="doc-callout doc-callout-success mb-4">
+                        <div class="doc-callout-title text-success">
+                            <i class="mdi mdi-check-decagram"></i> Storewide 1-Click Propagation
+                        </div>
+                        <p class="small mb-0">
+                            When you select a card style in Tab 6 and save, the change instantly updates every product display across your entire website: <strong>Home Page sections, Shop catalog, Category archives, Search results, Wishlist, and Related Products</strong>.
+                        </p>
+                    </div>
+
+                    <!-- Admin Screenshot Frame -->
+                    <div class="doc-admin-frame mb-4 shadow-sm">
+                        <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Admin Panel &mdash; Product Card Layout Selection Tab
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Admin View</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/theme-layouts/admin_productcard_layout.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                        <div class="doc-admin-frame-body p-3">
+                            <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                <img src="images/theme-layouts/admin_productcard_layout.png" alt="Admin Product Card Layout Tab" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                <div class="w-100 text-center text-muted py-4">
+                                    <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                    <span class="badge bg-primary-subtle text-primary font-monospace small">images/theme-layouts/admin_productcard_layout.png</span>
+                                </div>
+                            </div>
+                            <div class="small text-muted mt-2">
+                                <i class="mdi mdi-information-outline text-primary me-1"></i> <strong>Admin Interface:</strong> 6 responsive card styles organized in a 3x2 grid with active selection outline, purple checkmark badge, and instant preview triggers.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6 Product Cards Detailed Breakdown (Left: Hover | Right: Default) -->
+                    <h5 class="fw-bold text-heading mt-4 mb-3">6 Architectural Card Styles (Dual State Breakdown):</h5>
+                    <p class="small text-muted mb-4">
+                        Each mockup illustrates the dual visual behavior: the <strong>Left card shows the On-Hover Interactive State</strong>, and the <strong>Right card shows the Default View</strong>.
+                    </p>
+
+                    <div class="row g-4 mb-4">
+                        <!-- Style 1 -->
+                        <div class="col-md-6 col-xl-4">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Card Style 1
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-primary-subtle text-primary font-monospace" style="font-size: 9px;">Classic Action</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/product_card_1.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3">
+                                    <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                        <img src="images/product_card_1.png" alt="Product Card Style 1" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/product_card_1.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-1">Style 1: Slide-In Action Bar</h6>
+                                    <div class="small text-muted">
+                                        <p class="mb-1"><strong>Left (On Hover):</strong> Triggers an animated bottom action bar with slide-in "Add to Cart" button and quick view icons.</p>
+                                        <p class="mb-0"><strong>Right (Default View):</strong> Clean product image presentation with subtle category pill, title, and bold price tag.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Style 2 -->
+                        <div class="col-md-6 col-xl-4">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Card Style 2
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-success-subtle text-success font-monospace" style="font-size: 9px;">Floating Tray</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/product_card_2.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3">
+                                    <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                        <img src="images/product_card_2.png" alt="Product Card Style 2" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/product_card_2.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-1">Style 2: Floating Action Tray</h6>
+                                    <div class="small text-muted">
+                                        <p class="mb-1"><strong>Left (On Hover):</strong> Reveals a vertical floating icon tray on the right (Wishlist, Compare, Quick View) with smooth elevation.</p>
+                                        <p class="mb-0"><strong>Right (Default View):</strong> Top-corner discount badge, centered rating stars, and minimal footer.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Style 3 -->
+                        <div class="col-md-6 col-xl-4">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Card Style 3
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-warning-subtle text-warning font-monospace" style="font-size: 9px;">Minimalist</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/product_card_3.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3">
+                                    <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                        <img src="images/product_card_3.png" alt="Product Card Style 3" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/product_card_3.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-1">Style 3: Minimalist Slide-Up</h6>
+                                    <div class="small text-muted">
+                                        <p class="mb-1"><strong>Left (On Hover):</strong> The entire bottom section seamlessly transitions into a full-width "Add to Cart" button with price slide-up.</p>
+                                        <p class="mb-0"><strong>Right (Default View):</strong> Pure minimalist whitespace, subtle typography, and balanced price alignment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Style 4 -->
+                        <div class="col-md-6 col-xl-4">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Card Style 4
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-info-subtle text-info font-monospace" style="font-size: 9px;">Accent Badges</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/product_card_4.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3">
+                                    <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                        <img src="images/product_card_4.png" alt="Product Card Style 4" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/product_card_4.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-1">Style 4: High-Conversion Badges</h6>
+                                    <div class="small text-muted">
+                                        <p class="mb-1"><strong>Left (On Hover):</strong> High-contrast action button activation with secondary image reveal and quick-add feedback.</p>
+                                        <p class="mb-0"><strong>Right (Default View):</strong> Bold discount percentages, prominent review star rating, and stock level indicator.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Style 5 -->
+                        <div class="col-md-6 col-xl-4">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Card Style 5
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-danger-subtle text-danger font-monospace" style="font-size: 9px;">Elevated Shadow</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/product_card_5.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3">
+                                    <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                        <img src="images/product_card_5.png" alt="Product Card Style 5" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/product_card_5.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-1">Style 5: Rounded Luxury Border</h6>
+                                    <div class="small text-muted">
+                                        <p class="mb-1"><strong>Left (On Hover):</strong> Elevated card lift with smooth 3D drop-shadow and circular quick-action buttons.</p>
+                                        <p class="mb-0"><strong>Right (Default View):</strong> Soft rounded corners (12px radius) and boutique font styling.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Style 6 -->
+                        <div class="col-md-6 col-xl-4">
+                            <div class="doc-admin-frame h-100 m-0 shadow-sm">
+                                <div class="doc-admin-frame-header py-2">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                        Card Style 6
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge d-none d-md-inline-block bg-purple text-white font-monospace" style="background-color: #6f42c1; font-size: 9px;">Image Zoom</span>
+                                        <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                            <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                        </button>
+                                        <a href="images/product_card_6.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="doc-admin-frame-body p-3">
+                                    <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                        <img src="images/product_card_6.png" alt="Product Card Style 6" class="w-100 h-auto rounded-3 img-fluid d-block border doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                        <div class="w-100 text-center text-muted py-4">
+                                            <i class="mdi mdi-image-outline fs-2 text-primary opacity-50 mb-1 d-block"></i>
+                                            <span class="badge bg-primary-subtle text-primary font-monospace small">images/product_card_6.png</span>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold text-heading mb-1">Style 6: Flat Overlay & Zoom</h6>
+                                    <div class="small text-muted">
+                                        <p class="mb-1"><strong>Left (On Hover):</strong> Micro-zoom transition on product photography with flat frosted-glass overlay action tray.</p>
+                                        <p class="mb-0"><strong>Right (Default View):</strong> Clean, borderless modern aesthetic with high-contrast typography.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 6.8: LIVE PREVIEW MODAL & PERSISTENCE ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-6-8">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-eye-outline text-primary me-1"></i> 6.8 Live Preview Modal System & AJAX Persistence Engine
+                    </h3>
+                    <p>
+                        MartX is built to eliminate design guesswork. Every visual layout card in the theme manager is equipped with an integrated <strong>Live Preview Modal System</strong> (<span class="badge bg-light text-dark border">preview_modal.blade.php</span>).
+                    </p>
+                    <div class="row g-4 align-items-center mb-4">
+                        <div class="col-md-6">
+                            <div class="p-4 border rounded-3 bg-white shadow-sm h-100">
+                                <h5 class="fw-bold text-heading mb-2">
+                                    <i class="mdi mdi-magnify-plus-outline text-primary me-1"></i> 1. Inspecting Visual Layouts
+                                </h5>
+                                <p class="small text-muted mb-3">
+                                    Hovering over any card reveals the floating <strong>"Preview"</strong> button. Clicking it instantly launches a Bootstrap 5 modal rendering a full-scale, uncompressed screenshot of that specific layout in action.
+                                </p>
+                                <div class="doc-callout doc-callout-info m-0 p-3">
+                                    <p class="small mb-0">
+                                        <i class="mdi mdi-check-circle text-success me-1"></i> <strong>Zero Commit Risk:</strong> Administrators can inspect headers, menus, and cards in crystal-clear fidelity before making any live changes to the active store.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-4 border rounded-3 bg-white shadow-sm h-100">
+                                <h5 class="fw-bold text-heading mb-2">
+                                    <i class="mdi mdi-database-check-outline text-success me-1"></i> 2. Instant Persistence & Cache Management
+                                </h5>
+                                <p class="small text-muted mb-3">
+                                    When the administrator clicks <strong>"Save Theme Layouts"</strong>, the changes are instantly synchronized in the background without reloading the page.
+                                </p>
+                                <ul class="small text-muted mb-0 ps-3">
+                                    <li class="mb-1">Settings are securely saved and applied globally across the storefront.</li>
+                                    <li class="mb-1">Storefront caches are automatically updated for immediate customer visibility.</li>
+                                    <li>An interactive SweetAlert confirmation toast notifies the user of immediate activation.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 6.9: RECOMMENDED UI/UX COMBINATIONS ================= -->
+                <div class="doc-subsection mt-5 mb-5" id="sec-6-9">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-view-quilt-outline text-primary me-1"></i> 6.9 Recommended Theme Combinations & UX Pairing Guide
+                    </h3>
+                    <p>
+                        To assist you in crafting the perfect brand persona, our UI/UX team has benchmarked the optimal layout combinations for popular e-commerce retail verticals:
+                    </p>
+
+                    <div class="table-responsive mb-4">
+                        <table class="table table-hover table-bordered align-middle small bg-white shadow-sm">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Store Type / Industry</th>
+                                    <th>Recommended Header</th>
+                                    <th>Recommended Home</th>
+                                    <th>Mega Menu</th>
+                                    <th>Shop Page</th>
+                                    <th>Product Card</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong class="text-primary d-block">Multi-Category Superstore</strong>
+                                        <span class="text-muted">Electronics, Gadgets & Groceries</span>
+                                    </td>
+                                    <td><span class="badge bg-primary-subtle text-primary">Header 1 (Classic)</span></td>
+                                    <td><span class="badge bg-primary-subtle text-primary">Home 1 (Marketplace)</span></td>
+                                    <td><span class="badge bg-primary-subtle text-primary">Mega Menu 1</span></td>
+                                    <td><span class="badge bg-light text-dark border">Left Sidebar</span></td>
+                                    <td><span class="badge bg-success-subtle text-success">Style 2 (Action Tray)</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong class="text-success d-block">Fashion & Apparel Brand</strong>
+                                        <span class="text-muted">Clothing, Shoes & Accessories</span>
+                                    </td>
+                                    <td><span class="badge bg-success-subtle text-success">Header 2 (Modern)</span></td>
+                                    <td><span class="badge bg-success-subtle text-success">Home 2 (Split-Hero)</span></td>
+                                    <td><span class="badge bg-success-subtle text-success">Mega Menu 2</span></td>
+                                    <td><span class="badge bg-light text-dark border">Right Sidebar</span></td>
+                                    <td><span class="badge bg-danger-subtle text-danger">Style 5 (Rounded)</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong class="text-warning d-block">Luxury & Designer Boutique</strong>
+                                        <span class="text-muted">Jewelry, Perfumes & High Fashion</span>
+                                    </td>
+                                    <td><span class="badge bg-warning-subtle text-warning">Header 3 (Curtain Menu)</span></td>
+                                    <td><span class="badge bg-success-subtle text-success">Home 2 (Split-Hero)</span></td>
+                                    <td><span class="badge bg-secondary-subtle text-secondary">N/A (Curtain Menu)</span></td>
+                                    <td><span class="badge bg-light text-dark border">Full Width</span></td>
+                                    <td><span class="badge bg-purple text-white" style="background-color: #6f42c1;">Style 6 (Zoom & Overlay)</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong class="text-info d-block">Beauty, Skincare & Health</strong>
+                                        <span class="text-muted">Cosmetics, Organic & Wellness</span>
+                                    </td>
+                                    <td><span class="badge bg-success-subtle text-success">Header 2 (Modern)</span></td>
+                                    <td><span class="badge bg-primary-subtle text-primary">Home 1 (Marketplace)</span></td>
+                                    <td><span class="badge bg-success-subtle text-success">Mega Menu 2</span></td>
+                                    <td><span class="badge bg-light text-dark border">Left Sidebar</span></td>
+                                    <td><span class="badge bg-warning-subtle text-warning">Style 3 (Minimalist)</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Mobile Responsiveness Alert -->
+                    <div class="doc-callout doc-callout-info">
+                        <div class="doc-callout-title text-primary">
+                            <i class="mdi mdi-cellphone-link"></i> Cross-Device & Mobile Responsiveness Guarantee
+                        </div>
+                        <p class="small mb-0">
+                            Regardless of the desktop layout combination you configure in the Theme Layouts Hub, MartX features an adaptive, mobile-first responsive architecture. On mobile and tablet viewports (&lt; 992px), navigation transitions into a unified, high-performance offcanvas touch menu with bottom-sticky action bars for seamless cart and search reachability.
+                        </p>
+                    </div>
+                </div>
+
+                                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="payment-gateways.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 12 (Payment Gateways)
+                    </a>
+                    <a href="navigation-menus.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 14 (Navigation & Mega Menus) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+                        <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch6-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-6-1" class="doc-toc-link">6.1 Architecture Overview</a>
+                    <a href="#sec-6-2" class="doc-toc-link">6.2 Header Layouts (3 Styles)</a>
+                    <a href="#sec-6-3" class="doc-toc-link">6.3 Home Page Layouts (2 Styles)</a>
+                    <a href="#sec-6-4" class="doc-toc-link">6.4 Home Content Builder</a>
+                    <a href="#sec-6-5" class="doc-toc-link">6.5 Shop Page Layouts (3 Styles)</a>
+                    <a href="#sec-6-6" class="doc-toc-link">6.6 Mega Menu Engine</a>
+                    <a href="#sec-6-7" class="doc-toc-link">6.7 Product Card Engine (6 Styles)</a>
+                    <a href="#sec-6-8" class="doc-toc-link">6.8 Live Preview Modal</a>
+                    <a href="#sec-6-9" class="doc-toc-link">6.9 Recommended Combos</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch6-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header border-bottom p-3 bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0 text-primary fs-5">
+                            <i class="mdi mdi-magnify"></i>
+                        </span>
+                        <input type="text" class="form-control form-control-lg border-start-0 ps-0" id="docGlobalSearch" placeholder="Search documentation...">
+                    </div>
+                </div>
+                <div class="modal-body p-0" id="docSearchResults" style="max-height: 420px; overflow-y: auto;">
+                    <div class="p-4 text-center text-muted">
+                        <i class="mdi mdi-text-search fs-1 d-block mb-2 text-primary opacity-50"></i>
+                        <p class="mb-0">Type any keyword to search across all chapters in real time.</p>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light py-2 px-3 justify-content-between">
+                    <small class="text-muted"><kbd>ESC</kbd> to close</small>
+                    <small class="text-muted"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

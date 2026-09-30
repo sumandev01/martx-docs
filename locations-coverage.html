@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 20: Geographic Locations & Delivery Coverage Zones - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+            <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction &amp; Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce &amp; Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders &amp; Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers &amp; Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons &amp; Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website &amp; CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders &amp; Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ &amp; About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs &amp; Editorial
+                </a>
+                <div class="sidebar-heading">Customer &amp; Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews &amp; Messages
+                </a>
+                <div class="sidebar-heading">Administration &amp; Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations &amp; Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance &amp; Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron &amp; FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Administration &amp; Settings</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">20. Locations &amp; Coverage</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= MAIN CHAPTER SECTION ================= -->
+                <section class="doc-section" id="ch20-intro">
+                    <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2.5 py-1 rounded-pill small fw-semibold">
+                            <i class="mdi mdi-map-marker-radius-outline me-1"></i> Geographic Operations
+                        </span>
+                        <span class="badge bg-light text-muted border px-2.5 py-1 rounded-pill small">
+                            Chapter 20 of 22
+                        </span>
+                    </div>
+
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-map-marker-radius-outline text-primary"></i> Chapter 20: Geographic Locations &amp; Delivery Coverage Zones
+                    </h1>
+                    <p class="lead text-muted">
+                        Configuring multi-national delivery zones, 1-click cloud state synchronization, ISO Alpha-2 country standards, interactive province management, and dynamic checkout address cascades.
+                    </p>
+
+                    <!-- Feature Highlights Grid -->
+                    <div class="row g-3 my-4">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-cloud-sync-outline text-primary fs-4"></i>
+                                    <h6 class="fw-bold mb-0">1-Click Online State Sync</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Automated integration with global geo-APIs (<code>countriesnow.space</code>) to ingest hundreds of states/provinces in seconds.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-flag-checkered text-success fs-4"></i>
+                                    <h6 class="fw-bold mb-0">ISO-2 Flag Standards</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Standard 2-letter uppercase country codes (BD, US, GB, CA, DE, AU) enabling automatic flag rendering and payment gateway compliance.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-tag-multiple-outline text-warning fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Interactive State Tags</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Visual, removable state badges with overflow counters (<code>+X more</code>) for frictionless regional delivery zone curation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Architectural Overview -->
+                    <div class="card border-0 shadow-sm rounded-3 mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold mb-3">Geographic Hierarchy &amp; Commerce Architecture</h4>
+                            <p class="text-muted">
+                                Delivery accuracy is the foundation of successful eCommerce fulfillment. The <strong>MartX Locations &amp; Coverage Engine</strong> provides a robust relational hierarchy connecting <code>Country &gt; State / Province / Division &gt; Shipping Couriers</code>. This ensures that customers at storefront checkout only see valid shipping destinations, allowing store managers to define exact coverage boundaries and avoid costly out-of-coverage delivery failures.
+                            </p>
+                            <div class="alert alert-info border-0 d-flex align-items-start gap-3 mb-0">
+                                <i class="mdi mdi-information-outline fs-4 text-info flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <strong>Admin Navigation Paths:</strong>
+                                    <div class="mt-1 font-monospace small">
+                                        • Admin Dashboard &gt; Administration &amp; Settings &gt; Locations &gt; All Locations<br>
+                                        • Admin Dashboard &gt; Administration &amp; Settings &gt; Locations &gt; Add Location
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 20.1: LOCATION DIRECTORY & STATE TAG MANAGEMENT ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-20-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-earth text-primary me-1"></i> 20.1 Location Directory &amp; Interactive State Tag Management
+                        </h3>
+                        <p class="text-muted">
+                            The <strong>Location Management</strong> master console displays an interactive inventory of all supported countries, their ISO regional codes, and active delivery states. The interface incorporates real-time search and an integrated <strong>Sync States From Online</strong> cloud tool.
+                        </p>
+
+                        <!-- Screenshot 1: Location Management Master Table -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Location Management: Country &amp; State Directory
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Locations Sync</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/locations/admin_locations_index.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/locations/admin_locations_index.png" alt="MartX Location Management Directory and Cloud Sync Panel" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Technical Table Breakdown -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">Master Location Table Schema &amp; UI Controls</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-hover border align-middle mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th style="width: 20%;">Column / Control</th>
+                                                <th style="width: 25%;">Component Type</th>
+                                                <th style="width: 55%;">Operational Functionality</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">All Locations (5)</td>
+                                                <td><span class="badge bg-primary-subtle text-primary">Dynamic Counter</span></td>
+                                                <td>Header telemetry badge indicating the total count of active operational countries configured in the MartX database.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">Search Input</td>
+                                                <td><span class="badge bg-info-subtle text-info">Debounced Filter</span></td>
+                                                <td>Instant search query matching Country Name, ISO Country Code, or individual State/Province names without full page reloads.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">COUNTRY</td>
+                                                <td><span class="badge bg-secondary-subtle text-dark">Data Identifier</span></td>
+                                                <td>Displays the formal country name preceded by a standardized globe/flag icon (e.g., <em>Germany</em>, <em>Australia</em>, <em>Canada</em>, <em>United Kingdom</em>, <em>United States</em>).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">STATES Badges</td>
+                                                <td><span class="badge bg-primary-subtle text-primary">Interactive Chips</span></td>
+                                                <td>Visual tag chips (e.g., <code>New York ×</code>, <code>California ×</code>) representing active states. Clicking the cross icon (<code>×</code>) dispatches an instant deletion request to purge that specific region from storefront checkout.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">+X More Counter</td>
+                                                <td><span class="badge bg-light text-muted border">Overflow Popover</span></td>
+                                                <td>Prevents table row inflation when a country has dozens of states (e.g., US has 50 states). Displays the primary regions inline and groups remaining areas in a clean overflow counter.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace">Action Dropdown (⋮)</td>
+                                                <td><span class="badge bg-warning-subtle text-warning">Contextual Menu</span></td>
+                                                <td>Provides direct operations to edit country metadata, view full regional breakdowns, or delete the country and its child state relations.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 20.2: 1-CLICK ONLINE STATE SYNCHRONIZATION ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-20-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-cloud-download text-primary me-1"></i> 20.2 Automated 1-Click Online State Synchronization
+                        </h3>
+                        <p class="text-muted">
+                            Manually typing dozens of states, provinces, or prefectures for multiple countries is tedious and error-prone. MartX incorporates a built-in <strong>1-Click Online State Synchronization Engine</strong> powered by the global <code>countriesnow.space</code> API.
+                        </p>
+
+                        <!-- Workflow Architecture Box -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">The Cloud Sync Execution Pipeline</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-primary rounded-circle p-2">1</span>
+                                                <h6 class="fw-bold mb-0">Select Target Country</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                In the right-hand <strong>Sync States From Online</strong> card, choose any registered country from the dropdown list (e.g., <em>Germany</em>, <em>Canada</em>, <em>Australia</em>).
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-primary rounded-circle p-2">2</span>
+                                                <h6 class="fw-bold mb-0">Trigger Cloud Ingestion</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                Click <strong>Sync States</strong>. The backend dispatches a secure HTTP POST request to <code>https://countriesnow.space/api/v0.1/countries/states</code> with the country payload.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-primary rounded-circle p-2">3</span>
+                                                <h6 class="fw-bold mb-0">Deduplicated Ingestion</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                The repository processes the API response via <code>State::firstOrCreate()</code>, inserting only non-existing states while preserving existing IDs and courier mappings.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Operational Overview: Automated Cloud Sync -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3"><i class="mdi mdi-lightning-bolt text-warning me-1"></i> Merchant Benefits: Automated vs Manual Data Entry</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-white h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <i class="mdi mdi-clock-fast text-success fs-4"></i>
+                                                <h6 class="fw-bold mb-0">100% Zero Manual Typing</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                Instead of spending hours manually researching and typing 50 US states, 16 German Bundesländer, or 10 Canadian provinces, simply select the country from the dropdown and click <strong>Sync States</strong>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-white h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <i class="mdi mdi-shield-check text-primary fs-4"></i>
+                                                <h6 class="fw-bold mb-0">Smart Duplicate Prevention</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                The cloud sync engine automatically checks existing records before saving. You can safely trigger the sync button anytime without creating duplicate regions or disrupting active shipping rules.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-success border-0 d-flex align-items-start gap-3 shadow-sm rounded-3">
+                            <i class="mdi mdi-check-decagram-outline fs-3 text-success flex-shrink-0"></i>
+                            <div>
+                                <h6 class="fw-bold mb-1 text-success">Zero Duplication Guarantee</h6>
+                                <p class="small mb-0 text-muted">
+                                    Because synchronization relies on <code>firstOrCreate</code> based on unique compound keys (<code>country_id + name</code>), you can click <strong>Sync States</strong> multiple times without creating duplicate entries or corrupting customer shipping addresses.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 20.3: MANUAL COUNTRY & STATE PROVISIONING ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-20-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-plus-box-multiple-outline text-primary me-1"></i> 20.3 Manual Country &amp; State Provisioning Console
+                        </h3>
+                        <p class="text-muted">
+                            For custom geographic boundaries, territories, or local administrative divisions that may not exist in standard global registries, MartX offers a dual-card <strong>Add New Location</strong> provisioning screen.
+                        </p>
+
+                        <!-- Screenshot 2: Add New Location Dual-Card Form -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Provision New Location: Dual-Card Country &amp; State Creator
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Territory Creator</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/locations/admin_locations_create.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/locations/admin_locations_create.png" alt="Add New Country and Add State Manual Form" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Form Field Breakdown Cards -->
+                        <div class="row g-4 mb-4">
+                            <!-- Left Card: Add Country -->
+                            <div class="col-lg-6">
+                                <div class="p-4 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <i class="mdi mdi-earth-plus text-primary fs-4"></i>
+                                        <h5 class="fw-bold mb-0">Card 1: Add Country</h5>
+                                    </div>
+                                    <p class="small text-muted mb-3">
+                                        Create a new sovereign country or independent delivery territory:
+                                    </p>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold small">Country Name *</label>
+                                        <input type="text" class="form-control form-control-sm bg-white" value="e.g. Bangladesh" readonly>
+                                        <span class="text-muted extra-small">Official English name of the country.</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold small">Country Code (Optional for Flags)</label>
+                                        <input type="text" class="form-control form-control-sm bg-white" value="e.g. BD" readonly>
+                                        <span class="text-muted extra-small">2-letter ISO 3166-1 alpha-2 code (e.g., <code>BD</code>, <code>US</code>, <code>GB</code>, <code>CA</code>, <code>DE</code>). Stored in uppercase.</span>
+                                    </div>
+                                    <div class="p-2.5 rounded bg-white border small text-muted">
+                                        <strong>Button:</strong> <span class="badge bg-primary text-white">+ Add Country</span><br>
+                                        Dispatches to <code>POST /admin/location/country</code>.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Card: Add State (Manual) -->
+                            <div class="col-lg-6">
+                                <div class="p-4 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <i class="mdi mdi-map-marker-plus text-primary fs-4"></i>
+                                        <h5 class="fw-bold mb-0">Card 2: Add State (Manual)</h5>
+                                    </div>
+                                    <p class="small text-muted mb-3">
+                                        Manually add a specific division, province, county, or city to an existing country:
+                                    </p>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold small">Select Country *</label>
+                                        <select class="form-select form-select-sm bg-white" disabled>
+                                            <option>-- Select Country --</option>
+                                        </select>
+                                        <span class="text-muted extra-small">Select the parent country to attach the new state to.</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold small">State Name *</label>
+                                        <input type="text" class="form-control form-control-sm bg-white" value="e.g. Dhaka" readonly>
+                                        <span class="text-muted extra-small">Specific administrative subdivision (e.g., <em>Dhaka</em>, <em>Chittagong</em>, <em>Bavaria</em>).</span>
+                                    </div>
+                                    <div class="p-2.5 rounded bg-white border small text-muted">
+                                        <strong>Button:</strong> <span class="badge bg-primary text-white">+ Add State</span><br>
+                                        Dispatches to <code>POST /admin/location/state</code>.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 20.4: CHECKOUT CASCADING DROPDOWNS & SHIPPING INTEGRATION ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-20-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-cart-arrow-down text-primary me-1"></i> 20.4 Storefront Checkout Cascades &amp; Courier Integration
+                        </h3>
+                        <p class="text-muted">
+                            The locations configured in this module directly govern the checkout experience on your MartX storefront. When a shopper places an order, the address selection flow executes a dynamic, responsive AJAX cascade.
+                        </p>
+
+                        <!-- Checkout Cascade Diagram -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">Checkout Address Cascade Flow</h5>
+                                <div class="row g-3 align-items-center">
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                                            <i class="mdi mdi-earth text-primary fs-2"></i>
+                                            <h6 class="fw-bold mt-2 mb-1">1. Customer Selects Country</h6>
+                                            <p class="small text-muted mb-0">The shopper chooses their delivery country from your store's supported destination list.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                                            <i class="mdi mdi-lightning-bolt text-warning fs-2"></i>
+                                            <h6 class="fw-bold mt-2 mb-1">2. Instant State Loading</h6>
+                                            <p class="small text-muted mb-0">The State/Province dropdown updates instantly with only the active regions you have enabled.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-white text-center shadow-sm h-100">
+                                            <i class="mdi mdi-truck-fast text-success fs-2"></i>
+                                            <h6 class="fw-bold mt-2 mb-1">3. Accurate Shipping Rates</h6>
+                                            <p class="small text-muted mb-0">Delivery couriers and regional shipping costs (Chapter 10) calculate automatically in real time.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive my-3">
+                            <table class="table table-hover border align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width: 25%;">Storefront Stage</th>
+                                        <th style="width: 25%;">Shopper Interaction</th>
+                                        <th style="width: 50%;">Merchant Control & Operational Impact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold"><i class="mdi mdi-map-marker-radius text-primary me-1"></i> Country Selection</td>
+                                        <td>Selects delivery country at checkout</td>
+                                        <td>Only countries activated in Location Management appear in the storefront dropdown, preventing orders from unsupported nations.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold"><i class="mdi mdi-format-list-bulleted text-info me-1"></i> State Cascading</td>
+                                        <td>Selects regional province, state, or division</td>
+                                        <td>Automatically filters available provinces based on your active state tags, ensuring customers provide verified regional shipping addresses.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold"><i class="mdi mdi-cash-multiple text-success me-1"></i> Shipping Cost Calculation</td>
+                                        <td>Views available couriers and rates</td>
+                                        <td>Pairs directly with <strong>Chapter 10: Couriers & Shipping Costs</strong> to quote exact regional delivery fees before final order payment.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ================= 20.5: INTERNATIONAL EXPANSION & COVERAGE SOP ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-20-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-shield-check text-primary me-1"></i> 20.5 International Expansion &amp; Coverage SOP
+                        </h3>
+                        <p class="text-muted">
+                            Follow these enterprise standard operating procedures when expanding your eCommerce store to new international markets or restricting shipping during regional logistics disruptions.
+                        </p>
+
+                        <!-- Operational SOP Cards -->
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <div class="p-4 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-airplane-takeoff text-primary fs-4"></i>
+                                        <h6 class="fw-bold mb-0">SOP: Launching a New International Market</h6>
+                                    </div>
+                                    <ol class="text-muted small ps-3 mb-0">
+                                        <li class="mb-1">Verify shipping courier rates and lead times with DHL, FedEx, or local logistics partners (see <strong>Chapter 10: Couriers &amp; Shipping Costs</strong>).</li>
+                                        <li class="mb-1">Navigate to <strong>Add New Location</strong> and register the destination country with its official ISO Alpha-2 code (e.g., <code>FR</code> for France, <code>JP</code> for Japan).</li>
+                                        <li class="mb-1">Return to <strong>Location Management</strong> and use <strong>Sync States From Online</strong> to automatically import all provinces or prefectures in one click.</li>
+                                        <li>Assign relevant shipping costs in the Courier configuration. Customers in that country can now place orders immediately.</li>
+                                    </ol>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="p-4 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-alert-octagon-outline text-danger fs-4"></i>
+                                        <h6 class="fw-bold mb-0">SOP: Restricting Affected Delivery Zones</h6>
+                                    </div>
+                                    <ul class="text-muted small ps-3 mb-0">
+                                        <li class="mb-1">In the event of regional weather disruptions, strikes, or courier suspensions in a specific province (e.g., remote territories), find the country row in the master table.</li>
+                                        <li class="mb-1">Click the small <code>×</code> button on the specific state badge (e.g., <code>Bavaria ×</code>). The state is removed from checkout eligibility instantly.</li>
+                                        <li class="mb-1">Checkout attempts from that region will display a helpful customer notice: <em>"We currently do not ship to the selected state."</em></li>
+                                        <li>Once logistics resume, re-add the state manually in 10 seconds via <strong>Add State (Manual)</strong>.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="staff-roles.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 19 (Multi-Staff &amp; Roles)
+                    </a>
+                    <a href="settings-theme.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 21 (System Settings Hub) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch20-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-20-1" class="doc-toc-link">20.1 Location Directory</a>
+                    <a href="#sec-20-2" class="doc-toc-link">20.2 Cloud State Sync</a>
+                    <a href="#sec-20-3" class="doc-toc-link">20.3 Manual Provisioning</a>
+                    <a href="#sec-20-4" class="doc-toc-link">20.4 Checkout Cascades</a>
+                    <a href="#sec-20-5" class="doc-toc-link">20.5 Expansion &amp; SOP</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch20-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction &amp; Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce &amp; Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders &amp; Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers &amp; Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons &amp; Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website &amp; CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders &amp; Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ &amp; About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs &amp; Editorial
+            </a>
+            <div class="sidebar-heading">Customer &amp; Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews &amp; Messages
+            </a>
+            <div class="sidebar-heading">Administration &amp; Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations &amp; Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance &amp; Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron &amp; FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 1rem; overflow: hidden;">
+                <div class="modal-header border-bottom p-3">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0 text-muted ps-2">
+                            <i class="mdi mdi-magnify fs-4"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 shadow-none ps-2" id="docGlobalSearch" placeholder="Search documentation chapters, attributes, or guides..." autofocus>
+                    </div>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3" id="docSearchResults" style="max-height: 400px; overflow-y: auto;">
+                    <div class="text-muted small text-uppercase fw-bold px-2 mb-2">Documentation Hub</div>
+                    <div class="p-3 text-center text-muted">Type any keyword to search across all 22 chapters...</div>
+                </div>
+                <div class="modal-footer border-top py-2 px-3 justify-content-between text-muted small">
+                    <span>Press <kbd class="bg-light text-dark border">ESC</kbd> to exit</span>
+                    <span>MartX Documentation v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

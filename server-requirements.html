@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Server Requirements & Prerequisites - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+                                    <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Chapter 2: Server Requirements & Prerequisites</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= CHAPTER 2: SERVER REQUIREMENTS & PREREQUISITES ================= -->
+                <section class="doc-section" id="ch2-requirements">
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-server text-primary"></i> Chapter 2: Server Requirements & Prerequisites
+                    </h1>
+                    <p class="lead text-muted">
+                        Before initiating the installation of <strong>MartX Enterprise Platform</strong>, ensure your hosting server or local development environment satisfies the required runtime specifications, PHP extensions, and file system permissions.
+                    </p>
+
+                    <!-- 2.1: CORE RUNTIME & ENVIRONMENT -->
+                    <div class="doc-subsection mt-5" id="sec-2-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-cube-scan text-primary me-1"></i> 2.1 Core Runtime & Environment Architecture
+                        </h3>
+                        <p>
+                            MartX is engineered on Laravel 12.46.x and is optimized for ultra-high throughput on modern 64-bit multi-core server environments. Below are the base hardware and software specifications:
+                        </p>
+                        <div class="table-responsive">
+                            <table class="doc-table">
+                                <thead>
+                                    <tr>
+                                        <th>Component</th>
+                                        <th>Minimum Requirement</th>
+                                        <th>Recommended Enterprise Spec</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>PHP Version</strong></td>
+                                        <td><code>PHP 8.2.0</code></td>
+                                        <td><code>PHP 8.2.31</code> / <code>PHP 8.3.x</code> (PHP 8.4 Ready)</td>
+                                        <td><span class="badge bg-success-subtle text-success border border-success-subtle">Mandatory</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Database Engine</strong></td>
+                                        <td>MySQL <code>8.0.x</code> or MariaDB <code>10.4.x</code></td>
+                                        <td>MySQL <code>8.0.36+</code> or MariaDB <code>10.11 LTS</code></td>
+                                        <td><span class="badge bg-success-subtle text-success border border-success-subtle">Mandatory</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Web Server</strong></td>
+                                        <td>Apache <code>2.4+</code> (with <code>mod_rewrite</code>)</td>
+                                        <td>Nginx <code>1.24+</code> (with PHP-FPM socket)</td>
+                                        <td><span class="badge bg-primary-subtle text-primary border border-primary-subtle">Recommended</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Operating System</strong></td>
+                                        <td>Linux / Unix (64-bit)</td>
+                                        <td>Ubuntu <code>24.04 / 22.04 LTS</code>, AlmaLinux <code>9.x</code>, Debian <code>12</code></td>
+                                        <td><span class="badge bg-info-subtle text-info border border-info-subtle">Supported</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Memory (RAM)</strong></td>
+                                        <td><code>1 GB</code> Dedicated RAM</td>
+                                        <td><code>2 GB+</code> RAM (4 GB+ for &gt;50k SKU Catalogs)</td>
+                                        <td><span class="badge bg-light text-dark border">Scale Ready</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Disk Storage</strong></td>
+                                        <td><code>500 MB</code> Free SSD Space</td>
+                                        <td><code>10 GB+</code> NVMe SSD (for Media Library & Backups)</td>
+                                        <td><span class="badge bg-light text-dark border">Storage</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 2.2: THE 13 MANDATORY PHP EXTENSIONS AUDIT -->
+                    <div class="doc-subsection mt-5" id="sec-2-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-puzzle-outline text-primary me-1"></i> 2.2 The 13 Mandatory PHP Extensions Audit
+                        </h3>
+                        <p>
+                            The MartX Web Installer automatically tests each of the following <strong>13 PHP extensions</strong> on Step 1. All 13 extensions must be enabled in your server's <code>php.ini</code> configuration:
+                        </p>
+                        <div class="table-responsive">
+                            <table class="doc-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 18%;">Extension</th>
+                                        <th style="width: 25%;">Installer Check Identifier</th>
+                                        <th>Core Architectural Purpose in MartX</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>BCMath</code></td>
+                                        <td><code>bcmath</code></td>
+                                        <td>High-precision arbitrary accuracy floating-point arithmetic for price calculator service, taxes, coupon percentage deductions, and multi-currency exchange rates.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Ctype</code></td>
+                                        <td><code>ctype</code></td>
+                                        <td>Character type validation checks for alphanumeric user inputs and secure request payload sanitization.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cURL</code></td>
+                                        <td><code>curl</code></td>
+                                        <td>High-speed HTTP client for secure payment gateway API handshakes (Stripe, PayPal, Razorpay, etc.), Google Gemini AI operations, and automated software update checks.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>DOM</code></td>
+                                        <td><code>dom</code></td>
+                                        <td>XML and HTML Document Object Model parsing for Summernote rich text editor processing, product description cleanup, and SVG icon rendering.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Fileinfo</code></td>
+                                        <td><code>fileinfo</code></td>
+                                        <td>Real MIME-type detection for WordPress-style Central Media Library uploads, preventing executable script disguising and malicious payload injection.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>JSON</code></td>
+                                        <td><code>json</code></td>
+                                        <td>High-speed JSON serialization and deserialization for product variant matrices, attributes, and dynamic setting key-value stores.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Mbstring</code></td>
+                                        <td><code>mbstring</code></td>
+                                        <td>Multibyte UTF-8 string encoding and regex handling for international languages, localized product titles, and emoji support.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>OpenSSL</code></td>
+                                        <td><code>openssl</code></td>
+                                        <td>Cryptographic encryption for Laravel <code>APP_KEY</code> (AES-256-CBC), password hashing (Bcrypt 12 rounds), 2FA backup code generation, and secure session management.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>PCRE</code></td>
+                                        <td><code>pcre</code></td>
+                                        <td>Perl-compatible regular expressions for advanced route matching, URL parsing, slug generators, and parameter verification.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>PDO</code></td>
+                                        <td><code>pdo</code></td>
+                                        <td>PHP Data Objects abstraction interface providing a unified, secure database connection layer across all models.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>PDO MySQL</code></td>
+                                        <td><code>pdo_mysql</code></td>
+                                        <td>Native MySQL driver for PDO utilizing prepared statements with strict parameter binding to eliminate 100% of SQL injection vectors.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Tokenizer</code></td>
+                                        <td><code>tokenizer</code></td>
+                                        <td>PHP source tokenizer required by Laravel's Blade compiler to transpile frontend template directives into cached native PHP execution trees.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>XML</code></td>
+                                        <td><code>xml</code></td>
+                                        <td>XML serialization for automatic XML sitemap generation, RSS product feeds, and legacy payment gateway integration feeds.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Non-Technical cPanel & Automated Installer Notice -->
+                        <div class="alert alert-success bg-success-subtle border-success-subtle py-2.5 px-3 mt-4 mb-3 d-flex align-items-center gap-2">
+                            <i class="mdi mdi-check-decagram fs-4 text-success flex-shrink-0"></i>
+                            <div class="small text-success-emphasis">
+                                <strong>100% No-Code Friendly:</strong> In cPanel, simply navigate to <strong>Software &rarr; Select PHP Version &rarr; Extensions</strong> and ensure the checkboxes are checked. Furthermore, the MartX <strong>5-Step Web Installer automatically verifies all 13 extensions</strong> with green checkmarks upon launch!
+                            </div>
+                        </div>
+
+                        <!-- Collapsible Advanced VPS Terminal Commands -->
+                        <details class="p-3 border rounded-3 bg-light mb-3">
+                            <summary class="fw-bold text-muted small" style="cursor: pointer;">
+                                <i class="mdi mdi-console me-1 text-primary"></i> Advanced VPS &amp; Dedicated Server Terminal Commands (Click to expand)
+                            </summary>
+                            <div class="pt-3">
+                                <p class="small text-muted mb-2">Check all 13 active extensions via SSH terminal:</p>
+                                <div class="doc-code-wrapper mb-3">
+                                    <button class="btn btn-sm btn-outline-light doc-btn-copy" type="button"><i class="mdi mdi-content-copy"></i> Copy</button>
+                                    <pre><code>php -m | grep -E -i "bcmath|ctype|curl|dom|fileinfo|json|mbstring|openssl|pcre|pdo|pdo_mysql|tokenizer|xml"</code></pre>
+                                </div>
+                                <p class="small text-muted mb-2">Ubuntu / Debian package installer for missing extensions:</p>
+                                <div class="doc-code-wrapper mb-0">
+                                    <button class="btn btn-sm btn-outline-light doc-btn-copy" type="button"><i class="mdi mdi-content-copy"></i> Copy</button>
+                                    <pre><code>sudo apt-get update && sudo apt-get install -y php8.2 php8.2-bcmath php8.2-curl php8.2-dom php8.2-fileinfo php8.2-mbstring php8.2-mysql php8.2-xml php8.2-zip php8.2-intl php8.2-gd</code></pre>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- 2.2.1: NON-TECHNICAL VERIFICATION & HOSTING SUPPORT TOGGLER -->
+                        <div class="doc-card border-primary p-4 mt-4 shadow-sm" id="sec-non-tech-guide" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, rgba(16, 185, 129, 0.03) 100%);">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 fw-bold">
+                                    <i class="mdi mdi-account-question-outline me-1"></i> Beginner &amp; Non-Technical Friendly
+                                </span>
+                                <h5 class="fw-bold text-heading mb-0">How to Check if Your Server is Ready?</h5>
+                            </div>
+                            <p class="text-muted small mb-3">
+                                You do not need command-line or coding knowledge to verify whether your server meets the requirements. Choose either of these 2 simple methods:
+                            </p>
+
+                            <div class="row g-3 mb-3">
+                                <!-- Method 1: Automated Installer -->
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle flex-shrink-0" style="width: 28px; height: 28px; font-size: 13px; font-weight: bold;">
+                                                1
+                                            </div>
+                                            <h6 class="fw-bold mb-0 text-heading">Automated Web Installer (Easiest)</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Extract MartX files on your hosting and visit <code>https://yourdomain.com/install</code> in your web browser.
+                                        </p>
+                                        <div class="p-2 bg-light rounded-2 border small text-muted">
+                                            <strong class="text-success"><i class="mdi mdi-check-circle me-1"></i> Auto-Diagnostic:</strong> Step 1 runs an instant live test. If all 13 extensions show <span class="badge bg-success text-white">Passed</span> with green checkmarks, you are 100% ready to install!
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Method 2: cPanel GUI Checker -->
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <div class="d-flex align-items-center justify-content-center bg-info text-white rounded-circle flex-shrink-0" style="width: 28px; height: 28px; font-size: 13px; font-weight: bold;">
+                                                2
+                                            </div>
+                                            <h6 class="fw-bold mb-0 text-heading">cPanel Visual Extension Checker</h6>
+                                        </div>
+                                        <p class="small text-muted mb-2">
+                                            Log in to your <strong>cPanel</strong> &rarr; Navigate to <strong>Software &rarr; Select PHP Version</strong>.
+                                        </p>
+                                        <div class="p-2 bg-light rounded-2 border small text-muted">
+                                            <strong class="text-info"><i class="mdi mdi-checkbox-marked-circle-outline me-1"></i> Visual Checkboxes:</strong> Switch to the <em>Extensions</em> tab. Look for <code>bcmath</code>, <code>curl</code>, <code>fileinfo</code>, etc. Checkboxes with ticks are already active on your account.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- COLLAPSIBLE ACCORDION: HOSTING SUPPORT MESSAGE -->
+                            <div class="accordion border rounded-3 overflow-hidden shadow-sm" id="hostingSupportAccordion">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header" id="headingHostingSupport">
+                                        <button class="accordion-button collapsed fw-bold bg-white text-heading py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHostingSupport" aria-expanded="false" aria-controls="collapseHostingSupport">
+                                            <div class="d-flex align-items-center gap-2 text-start">
+                                                <span class="p-2 bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px;">
+                                                    <i class="mdi mdi-lifebuoy fs-5"></i>
+                                                </span>
+                                                <span>
+                                                    Missing an extension or seeing a RED alert? <span class="text-primary text-decoration-underline">Click here to copy a ready-made message for your Hosting Support</span>
+                                                </span>
+                                            </div>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseHostingSupport" class="accordion-collapse collapse" aria-labelledby="headingHostingSupport" data-bs-parent="#hostingSupportAccordion">
+                                        <div class="accordion-body bg-light border-top p-3 p-sm-4">
+                                            <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                                                <span class="badge bg-primary text-white">Free Hosting Support Service</span>
+                                                <span class="text-muted small">Usually resolved within 2-5 minutes via Live Chat</span>
+                                            </div>
+                                            <p class="small text-muted mb-3">
+                                                If you are on shared hosting (Hostinger, Namecheap, Bluehost, cPanel, etc.) or do not have terminal/root access, do not worry! Simply copy the prepared request below, open a <strong>Live Chat or Support Ticket</strong> with your hosting company, and paste it. They will enable all extensions and configure the server limits for you free of charge:
+                                            </p>
+
+                                            <!-- 1-Click Copyable Support Ticket Message -->
+                                            <div class="doc-code-wrapper mb-2">
+                                                <div class="doc-code-header">
+                                                    <span>Ready-to-Paste Hosting Support Ticket Message</span>
+                                                </div>
+                                                <button class="btn btn-sm btn-outline-light doc-btn-copy" type="button" title="Copy to clipboard">
+                                                    <i class="mdi mdi-content-copy"></i> Copy Ticket Message
+                                                </button>
+                                                <pre><code class="language-text">Hello Support Team,
+
+I am setting up a modern Laravel 12 e-commerce platform on my hosting account. Could you please configure my PHP environment with the following specifications:
+
+1. PHP Version:
+   - Please set my domain PHP version to PHP 8.2 or PHP 8.3.
+
+2. Mandatory PHP Extensions:
+   - Please ensure the following 13 extensions are enabled in my php.ini:
+     bcmath, ctype, curl, dom, fileinfo, json, mbstring, openssl, pcre, pdo, pdo_mysql, tokenizer, xml
+
+3. Recommended php.ini Resource Allocation:
+   - memory_limit = 512M
+   - upload_max_filesize = 64M
+   - post_max_size = 64M
+   - max_execution_time = 300
+   - max_input_vars = 3000
+   - allow_url_fopen = On
+   - date.timezone = UTC
+
+Thank you very much for your assistance!</code></pre>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-muted small mt-2">
+                                                <i class="mdi mdi-information-outline text-primary"></i>
+                                                <span>Once your host confirms the update, refresh <code>/install</code> in your browser to proceed with the visual installation wizard!</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.3: RECOMMENDED PHP.INI RESOURCE ALLOCATION -->
+                    <div class="doc-subsection mt-5" id="sec-2-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-tune-vertical text-primary me-1"></i> 2.3 Recommended <code>php.ini</code> Resource Allocation & Directives
+                        </h3>
+                        <p>
+                            To ensure uninterrupted processing of high-resolution product photography, large CSV import/export catalogs, and background synchronization, configure the following directives in your <code>php.ini</code>:
+                        </p>
+                        <div class="table-responsive">
+                            <table class="doc-table">
+                                <thead>
+                                    <tr>
+                                        <th>Directive</th>
+                                        <th>Minimum Value</th>
+                                        <th>Recommended Enterprise Value</th>
+                                        <th>Rationale & Critical Impact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>memory_limit</code></td>
+                                        <td><code>256M</code></td>
+                                        <td><code>512M</code></td>
+                                        <td>Prevents out-of-memory fatal crashes during bulk WebP image conversions, large PDF invoice generation, and database export tasks.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>upload_max_filesize</code></td>
+                                        <td><code>32M</code></td>
+                                        <td><code>64M</code> / <code>128M</code></td>
+                                        <td>Allows administrators to upload multi-angle high-resolution product photography and promotional video banners to the Media Library.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>post_max_size</code></td>
+                                        <td><code>32M</code></td>
+                                        <td><code>64M</code> / <code>128M</code></td>
+                                        <td>Must always be equal to or greater than <code>upload_max_filesize</code> to prevent HTTP 413 (Payload Too Large) submission drops.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>max_execution_time</code></td>
+                                        <td><code>120</code> (seconds)</td>
+                                        <td><code>300</code> (seconds)</td>
+                                        <td>Prevents 504 Gateway Timeouts during database migrations, demo data seeders, and bulk catalog Excel/CSV synchronizations.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>max_input_vars</code></td>
+                                        <td><code>2000</code></td>
+                                        <td><code>3000</code> / <code>5000</code></td>
+                                        <td>Essential for extensive Category Mega Menu tree builders, permissions matrix grids (77+ permission checkboxes), and product attribute variations.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>max_input_time</code></td>
+                                        <td><code>60</code> (seconds)</td>
+                                        <td><code>120</code> (seconds)</td>
+                                        <td>Allocates sufficient time for the server to parse large incoming multipart form data over slower network connections.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>allow_url_fopen</code></td>
+                                        <td><code>On</code></td>
+                                        <td><code>On</code></td>
+                                        <td>Allows internal HTTP streams and remote image URL fetching for automated product imports.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>date.timezone</code></td>
+                                        <td>Store Local (e.g., <code>UTC</code>)</td>
+                                        <td><code>UTC</code></td>
+                                        <td>Ensures consistent datetime timestamps across order transactions, discount countdown timers, and audit logs.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mt-4">
+                            <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-file-document-edit-outline text-primary me-1"></i> Production <code>php.ini</code> Snippet (Ready to Paste)</h6>
+                            <div class="doc-code-wrapper">
+                                <button class="btn btn-sm btn-outline-light doc-btn-copy" type="button"><i class="mdi mdi-content-copy"></i> Copy</button>
+                                <pre><code>; ==============================================================================
+; MartX Recommended php.ini Configuration
+; ==============================================================================
+memory_limit = 512M
+upload_max_filesize = 64M
+post_max_size = 64M
+max_execution_time = 300
+max_input_time = 120
+max_input_vars = 3000
+allow_url_fopen = On
+date.timezone = UTC
+display_errors = Off
+display_startup_errors = Off
+log_errors = On
+error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="doc-callout doc-callout-info mt-3">
+                            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                                <div>
+                                    <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-lifebuoy me-1"></i> Cannot edit php.ini on Shared Hosting?</h6>
+                                    <p class="small text-muted mb-0">
+                                        If your hosting control panel restricts manual <code>php.ini</code> edits, use the <a href="#hostingSupportAccordion" class="text-primary fw-bold text-decoration-underline" onclick="const btn = document.querySelector('#headingHostingSupport button'); if (btn.classList.contains('collapsed')) btn.click();">1-Click Hosting Support Ticket Template</a> above to have your hosting team apply these limits for you in minutes.
+                                    </p>
+                                </div>
+                                <button class="btn btn-sm btn-outline-primary fw-bold text-nowrap" type="button" onclick="const btn = document.querySelector('#headingHostingSupport button'); if (btn.classList.contains('collapsed')) btn.click(); document.querySelector('#sec-non-tech-guide').scrollIntoView({behavior: 'smooth'});">
+                                    <i class="mdi mdi-message-text-outline me-1"></i> Open Ticket Template
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.4: DIRECTORY & STORAGE PERMISSIONS -->
+                    <div class="doc-subsection mt-5" id="sec-2-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-folder-key-network-outline text-primary me-1"></i> 2.4 Directory & Storage File System Permissions
+                        </h3>
+                        <p>
+                            For the Web Installer to write the database credentials to <code>.env</code>, store uploaded media assets, and compile Blade cache files, the web server user (e.g., <code>www-data</code>, <code>nginx</code>, or your cPanel user) must possess write permissions on the following folders:
+                        </p>
+                        <div class="table-responsive">
+                            <table class="doc-table">
+                                <thead>
+                                    <tr>
+                                        <th>Target Directory / File</th>
+                                        <th>Required Permission</th>
+                                        <th>Purpose & Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>storage/app</code></td>
+                                        <td><code>0775</code> / <code>0755</code></td>
+                                        <td>Private application storage, customer invoices, and temporary export files.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>storage/framework</code></td>
+                                        <td><code>0775</code> / <code>0755</code></td>
+                                        <td>Internal framework state caches, route locks, and maintenance flags.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>storage/framework/cache</code></td>
+                                        <td><code>0775</code> / <code>0755</code></td>
+                                        <td>High-speed query result caches, performance data, and secure license tokens.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>storage/framework/sessions</code></td>
+                                        <td><code>0775</code> / <code>0755</code></td>
+                                        <td>Encrypted user session payloads and visitor shopping cart tokens.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>storage/framework/views</code></td>
+                                        <td><code>0775</code> / <code>0755</code></td>
+                                        <td>Compiled Blade views for storefront, admin panel, and email templates.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>storage/logs</code></td>
+                                        <td><code>0775</code> / <code>0755</code></td>
+                                        <td>Laravel rotating application logs (<code>laravel.log</code>) and security audit traces.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>bootstrap/cache</code></td>
+                                        <td><code>0775</code> / <code>0755</code></td>
+                                        <td>Optimized framework service provider caches (<code>packages.php</code>, <code>services.php</code>).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>.env</code></td>
+                                        <td><code>0664</code> (Writable during Install)</td>
+                                        <td>Master environment configuration file written automatically on Step 3 of the Web Installer.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- cPanel Visual Permission Guide -->
+                        <div class="alert alert-primary bg-primary-subtle border-primary-subtle py-2.5 px-3 mt-4 mb-3 d-flex align-items-center gap-2">
+                            <i class="mdi mdi-folder-key-outline fs-4 text-primary flex-shrink-0"></i>
+                            <div class="small text-primary-emphasis">
+                                <strong>cPanel File Manager:</strong> Open <code>File Manager</code> &rarr; right-click <code>storage</code> and <code>bootstrap/cache</code> &rarr; select <strong>Change Permissions</strong> &rarr; set to <code>775</code> (or <code>755</code>). The 5-Step Web Installer automatically verifies write permissions during setup!
+                            </div>
+                        </div>
+
+                        <!-- Collapsible Linux VPS Permission Commands -->
+                        <details class="p-3 border rounded-3 bg-light mb-3">
+                            <summary class="fw-bold text-muted small" style="cursor: pointer;">
+                                <i class="mdi mdi-console-line me-1 text-primary"></i> Advanced Linux VPS Permission Setup Commands (Click to expand)
+                            </summary>
+                            <div class="pt-3">
+                                <p class="small text-muted mb-2">Execute these standard commands in your MartX root directory on Ubuntu/Debian/Nginx servers:</p>
+                                <div class="doc-code-wrapper mb-0">
+                                    <button class="btn btn-sm btn-outline-light doc-btn-copy" type="button"><i class="mdi mdi-content-copy"></i> Copy</button>
+                                    <pre><code># 1. Assign ownership to the webserver user (www-data)
+sudo chown -R www-data:www-data /var/www/html/martx
+
+# 2. Set standard secure permissions for files and folders
+sudo find /var/www/html/martx -type f -exec chmod 644 {} ;
+sudo find /var/www/html/martx -type d -exec chmod 755 {} ;
+
+# 3. Grant write permissions to storage and cache
+sudo chmod -R 775 /var/www/html/martx/storage
+sudo chmod -R 775 /var/www/html/martx/bootstrap/cache</code></pre>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- 2.5: PRODUCTION WEB SERVER CONFIGURATION (NGINX & APACHE) -->
+                    <div class="doc-subsection mt-5" id="sec-2-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-web-sync text-primary me-1"></i> 2.5 Production Web Server Configuration (Nginx & Apache)
+                        </h3>
+                        <p>
+                            MartX requires the web server's <strong>DocumentRoot</strong> to point directly to the <code>public/</code> subfolder. Pointing the web root to the main root folder will cause 404 errors and expose sensitive internal configuration files.
+                        </p>
+
+                        <!-- TABBED SERVERS: NGINX VS APACHE -->
+                        <ul class="nav nav-tabs nav-fill mb-3" id="serverTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active fw-bold" id="nginx-tab" data-bs-toggle="tab" data-bs-target="#nginx-tab-pane" type="button" role="tab" aria-controls="nginx-tab-pane" aria-selected="true">
+                                    <i class="mdi mdi-server-network me-1"></i> Nginx (Recommended)
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-bold" id="apache-tab" data-bs-toggle="tab" data-bs-target="#apache-tab-pane" type="button" role="tab" aria-controls="apache-tab-pane" aria-selected="false">
+                                    <i class="mdi mdi-feather me-1"></i> Apache 2.4 VirtualHost
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="serverTabContent">
+                            <!-- Nginx Pane -->
+                            <div class="tab-pane fade show active" id="nginx-tab-pane" role="tabpanel" aria-labelledby="nginx-tab" tabindex="0">
+                                <div class="p-3 border rounded-3 bg-light">
+                                    <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-file-code-outline text-primary me-1"></i> <code>/etc/nginx/sites-available/martx.conf</code></h6>
+                                    <div class="doc-code-wrapper">
+                                        <button class="btn btn-sm btn-outline-light doc-btn-copy" type="button"><i class="mdi mdi-content-copy"></i> Copy</button>
+                                        <pre><code>server {
+    listen 80;
+    listen [::]:80;
+    server_name yourstore.com www.yourstore.com;
+    root /var/www/html/martx/public;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header Referrer-Policy "strict-origin-when-cross-origin";
+
+    index index.php index.html;
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ .php$ {
+        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+        fastcgi_hide_header X-Powered-By;
+    }
+
+    # Deny access to sensitive files
+    location ~ /.(?!well-known).* {
+        deny all;
+    }
+
+    # Static Asset Caching
+    location ~* .(jpg|jpeg|png|webp|gif|ico|css|js|woff2|woff|ttf|svg)$ {
+        expires 365d;
+        add_header Cache-Control "public, no-transform, max-age=31536000";
+    }
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Apache Pane -->
+                            <div class="tab-pane fade" id="apache-tab-pane" role="tabpanel" aria-labelledby="apache-tab" tabindex="0">
+                                <div class="p-3 border rounded-3 bg-light">
+                                    <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-file-code-outline text-primary me-1"></i> <code>/etc/apache2/sites-available/martx.conf</code></h6>
+                                    <div class="doc-code-wrapper">
+                                        <button class="btn btn-sm btn-outline-light doc-btn-copy" type="button"><i class="mdi mdi-content-copy"></i> Copy</button>
+                                        <pre><code>&lt;VirtualHost *:80&gt;
+    ServerName yourstore.com
+    ServerAlias www.yourstore.com
+    DocumentRoot /var/www/html/martx/public
+
+    &lt;Directory /var/www/html/martx/public&gt;
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+        Require all granted
+    &lt;/Directory&gt;
+
+    ErrorLog ${APACHE_LOG_DIR}/martx-error.log
+    CustomLog ${APACHE_LOG_DIR}/martx-access.log combined
+&lt;/VirtualHost&gt;</code></pre>
+                                    </div>
+                                    <p class="small text-muted mt-2 mb-0">
+                                        <i class="mdi mdi-check-circle-outline text-success me-1"></i> Make sure <code>mod_rewrite</code> is enabled by running: <code>sudo a2enmod rewrite && sudo systemctl restart apache2</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.6: DATABASE STANDARDS & CONFIGURATION -->
+                    <div class="doc-subsection mt-5" id="sec-2-6">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-database-cog-outline text-primary me-1"></i> 2.6 Database Standards & Configuration (MySQL 8.0+ / MariaDB 10.4+)
+                        </h3>
+                        <p>
+                            MartX requires a clean MySQL 8.0+ or MariaDB 10.4+ database with <strong>UTF-8 Full Multilingual (utf8mb4)</strong> encoding to support international character sets, customer emojis in product reviews, and multilingual search terms:
+                        </p>
+                        <div class="table-responsive">
+                            <table class="doc-table">
+                                <thead>
+                                    <tr>
+                                        <th>Database Attribute</th>
+                                        <th>Recommended Value</th>
+                                        <th>Technical Advantage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Character Set</strong></td>
+                                        <td><code>utf8mb4</code></td>
+                                        <td>Stores 4-byte Unicode characters (including non-Latin alphabets and emojis).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Collation</strong></td>
+                                        <td><code>utf8mb4_unicode_ci</code> or <code>utf8mb4_0900_ai_ci</code></td>
+                                        <td>Provides accurate, case-insensitive, language-aware sorting and indexing.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Storage Engine</strong></td>
+                                        <td><code>InnoDB</code></td>
+                                        <td>Guarantees ACID transaction compliance, row-level locking, and foreign key integrity.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>innodb_file_per_table</strong></td>
+                                        <td><code>ON</code> (Default in MySQL 8)</td>
+                                        <td>Isolates table data and indexes for faster disk I/O and easy backup optimization.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="doc-callout doc-callout-info mt-4">
+                            <h5 class="fw-bold"><i class="mdi mdi-database-plus me-1"></i> Recommended Database Creation SQL Query</h5>
+                            <p class="mb-2">Run this standard SQL script in phpMyAdmin or MySQL CLI to create an optimized database and user:</p>
+                            <div class="doc-code-wrapper">
+                                <button class="btn btn-sm btn-outline-light doc-btn-copy" type="button"><i class="mdi mdi-content-copy"></i> Copy</button>
+                                <pre><code>CREATE DATABASE `martx_db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'martx_user'@'localhost' IDENTIFIED BY 'Strong_Secure_Password#2026';
+GRANT ALL PRIVILEGES ON `martx_db`.* TO 'martx_user'@'localhost';
+FLUSH PRIVILEGES;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.7: HOSTING ENVIRONMENT COMPATIBILITY MATRIX -->
+                    <div class="doc-subsection mt-5" id="sec-2-7">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-cloud-check-outline text-primary me-1"></i> 2.7 Hosting Environment Compatibility Matrix
+                        </h3>
+                        <p>
+                            MartX has been tested and verified across a wide range of cloud providers, managed hosts, and local developer environments:
+                        </p>
+                        <div class="table-responsive">
+                            <table class="doc-table">
+                                <thead>
+                                    <tr>
+                                        <th>Hosting Platform</th>
+                                        <th>Compatibility</th>
+                                        <th>Installation Instructions & Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>cPanel / DirectAdmin / Plesk</strong> (Shared / Reseller)</td>
+                                        <td><span class="badge bg-success text-white">100% Fully Compatible</span></td>
+                                        <td>Select <strong>PHP 8.2</strong> via <em>cPanel &rarr; MultiPHP Manager / Select PHP Version</em>. Point the Primary Domain or Subdomain DocumentRoot to <code>/public_html/public</code> or <code>/public_html/martx/public</code>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>VPS / Cloud Dedicated</strong> (DigitalOcean, AWS EC2, Hetzner, Vultr, Linode)</td>
+                                        <td><span class="badge bg-success text-white">Recommended Enterprise</span></td>
+                                        <td>Run on Ubuntu 24.04/22.04 LTS with Nginx and PHP 8.2/8.3-FPM. Ideal for high concurrent visitor traffic and background queue workers.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Managed Cloud Panels</strong> (Cloudways, RunCloud, Ploi, Laravel Forge)</td>
+                                        <td><span class="badge bg-success text-white">1-Click Deploy Ready</span></td>
+                                        <td>Create a PHP 8.2+ application and set web directory to <code>/public</code>. SSL and Nginx are automated natively.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Local Development</strong> (Laragon 6+, XAMPP, Docker, Herd, Valet)</td>
+                                        <td><span class="badge bg-primary text-white">Unrestricted Developer Mode</span></td>
+                                        <td>Local environments like <code>martx.test</code>, <code>localhost</code>, and <code>127.0.0.1</code> automatically operate in Developer Mode with zero trial expiration and no license quota deduction.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- CHAPTER NAVIGATION BUTTONS -->
+                    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-sm-center gap-3 mt-5 pt-4 border-top">
+                        <a href="index.html" class="btn btn-outline-secondary fw-bold px-3">
+                            <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 1 (Overview)
+                        </a>
+                        <a href="installation.html" class="btn btn-primary fw-bold px-4">
+                            Next: Chapter 3 (Installation Guide) <i class="mdi mdi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page (7 Topics)</div>
+                    <a href="#sec-2-1" class="doc-toc-link active">2.1 Runtime Architecture</a>
+                    <a href="#sec-2-2" class="doc-toc-link">2.2 13 PHP Extensions Audit</a>
+                    <a href="#sec-non-tech-guide" class="doc-toc-link ps-3 text-primary" style="font-size: 11px;">↳ Beginner &amp; Hosting Help</a>
+                    <a href="#sec-2-3" class="doc-toc-link">2.3 php.ini Resource Limits</a>
+                    <a href="#sec-2-4" class="doc-toc-link">2.4 File Permissions (chmod)</a>
+                    <a href="#sec-2-5" class="doc-toc-link">2.5 Nginx & Apache VirtualHost</a>
+                    <a href="#sec-2-6" class="doc-toc-link">2.6 MySQL 8.0+ Database</a>
+                    <a href="#sec-2-7" class="doc-toc-link">2.7 Hosting Matrix</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch2-requirements" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header border-bottom p-3 bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0 text-primary fs-5">
+                            <i class="mdi mdi-magnify"></i>
+                        </span>
+                        <input type="text" class="form-control form-control-lg border-start-0 ps-0" id="docGlobalSearch" placeholder="Search documentation... (e.g., PHP 8.2, Nginx, Extensions, Permissions)">
+                    </div>
+                </div>
+                <div class="modal-body p-0" id="docSearchResults" style="max-height: 420px; overflow-y: auto;">
+                    <div class="p-4 text-center text-muted">
+                        <i class="mdi mdi-text-search fs-1 d-block mb-2 text-primary opacity-50"></i>
+                        <p class="mb-0">Type any keyword to search across all chapters in real time.</p>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light py-2 px-3 justify-content-between">
+                    <small class="text-muted"><kbd>ESC</kbd> to close</small>
+                    <small class="text-muted"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

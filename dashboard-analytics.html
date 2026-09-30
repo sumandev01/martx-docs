@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: Dashboard Telemetry & Real-Time Metrics - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+                        <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Main</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">5. Dashboard Telemetry</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= MAIN CHAPTER SECTION ================= -->
+                <section class="doc-section" id="ch5-intro">
+                    <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2.5 py-1 rounded-pill small fw-semibold">
+                            <i class="mdi mdi-view-dashboard-outline me-1"></i> Executive Command Hub
+                        </span>
+                        <span class="badge bg-light text-muted border px-2.5 py-1 rounded-pill small">
+                            Chapter 5 of 22
+                        </span>
+                    </div>
+
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-view-dashboard-outline text-primary"></i> Chapter 5: Dashboard Telemetry & Real-Time Metrics
+                    </h1>
+                    <p class="lead text-muted">
+                        Executive analytics, real-time sales charts, orders tracking, revenue breakdown, and quick action widgets.
+                    </p>
+
+                    <!-- Feature Highlights Grid -->
+                    <div class="row g-3 my-4">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-shield-check text-success fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Production Ready</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Engineered for mission-critical enterprise commerce with zero latency overhead.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-tune text-primary fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Granular Controls</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Fully customizable via the modern MartX Admin Dashboard with real-time feedback.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-lightning-bolt text-warning fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Instant Sync</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Automated state propagation across multi-device clients, cache, and database layers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Architectural Overview -->
+                    <div class="card border-0 shadow-sm rounded-3 mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold mb-3">Module Architecture & Workflow</h4>
+                            <p class="text-muted">
+                                This chapter details the comprehensive configuration, operational controls, and best practices for <strong>Chapter 5: Dashboard Telemetry & Real-Time Metrics</strong>. Follow the guided procedures below to maintain peak operational performance and security.
+                            </p>
+                            <div class="alert alert-info border-0 d-flex align-items-start gap-3 mb-0">
+                                <i class="mdi mdi-information-outline fs-4 text-info flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <strong>Admin Navigation Path:</strong>
+                                    <div class="mt-1 font-monospace small">Admin Dashboard &gt; Main &gt; Dashboard Telemetry</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 5.1: 360° DASHBOARD OVERVIEW & LIGHTBOX FRAME ================= -->
+                    <div class="doc-subsection mt-4 mb-5" id="sec-5-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-monitor-dashboard text-primary me-1"></i> 5.1 360° Real-Time Dashboard Overview & Command Console
+                        </h3>
+                        <p class="text-muted">
+                            Upon logging into the MartX Admin Panel, the executive telemetry dashboard immediately presents an operational pulse of the store. Quick action buttons allow immediate product authoring, review of pending orders, or coupon deployment, while the dynamic date range selector updates all downstream charts and tables in real time.
+                        </p>
+
+                        <!-- Screenshot: Admin Dashboard Master Frame -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Dashboard Telemetry: 360° Real-Time Analytics & Command Hub
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/dashboard/dashboard.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/dashboard/dashboard.png" alt="Admin Dashboard Telemetry Overview" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-monitor-dashboard fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Admin Dashboard Telemetry Interface</span>
+                                        <span class="small text-muted font-monospace">(images/dashboard/dashboard.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">360° Real-Time Analytics</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Live Production vs Demo Telemetry Notice -->
+                        <div class="alert alert-primary border-0 shadow-sm d-flex align-items-start gap-3 my-4 p-3 rounded-3" style="background-color: #eff6ff; border-left: 4px solid #3b82f6 !important;">
+                            <i class="mdi mdi-information-outline fs-3 text-primary flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h6 class="fw-bold text-primary mb-1">Live Storefront Telemetry vs. Demo Illustration</h6>
+                                <p class="small mb-0 text-muted">
+                                    <strong>Important Note for Store Owners:</strong> The figures, order records, customer names, and charts shown in the preview screenshot above represent sample demo transactions. Once MartX is deployed on your live server, <strong>this dashboard automatically binds to your live database in real time</strong>. Every checkout made by a customer on your storefront, every payment collected via Stripe/PayPal/COD, every registered account, and every inventory fluctuation will dynamically render here without manual data entry.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Top Toolbar Quick Controls Table -->
+                        <div class="table-responsive my-3">
+                            <table class="table table-hover border align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width: 25%;">Control / Action</th>
+                                        <th style="width: 20%;">Type / Trigger</th>
+                                        <th style="width: 55%;">Operational Functionality</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-semibold"><i class="mdi mdi-plus-circle-outline text-primary me-1"></i> + Add Product</td>
+                                        <td><span class="badge bg-primary-subtle text-primary">Gradient Purple Button</span></td>
+                                        <td>Directly launches the Chapter 8 Master Product Creator canvas to quickly add new stock items.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold"><i class="mdi mdi-clock-outline text-warning me-1"></i> Pending Orders</td>
+                                        <td><span class="badge bg-warning-subtle text-warning">Gradient Yellow Button</span></td>
+                                        <td>Jumps straight to the Orders Processing screen filtered exclusively by <code>status=pending</code>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold"><i class="mdi mdi-ticket-percent text-info me-1"></i> Manage Coupons</td>
+                                        <td><span class="badge bg-info-subtle text-info">Gradient Cyan Button</span></td>
+                                        <td>Direct shortcut to Chapter 11 Promotional Coupons & Marketing Engine.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold"><i class="mdi mdi-calendar-range text-success me-1"></i> Date Filter Bar</td>
+                                        <td><span class="badge bg-success-subtle text-success">Telemetry Scope Dropdown</span></td>
+                                        <td>Filter presets: <em>Today, Yesterday, Last 7 Days, This Month</em>, or a custom start and end date range.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ================= 5.2: EXECUTIVE KPI METRICS ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-5-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-card-bulleted-settings-outline text-primary me-1"></i> 5.2 Executive KPI Performance Cards & Dynamic Switchers
+                        </h3>
+                        <p class="text-muted">
+                            The top metric tier features 4 responsive gradient statistic cards equipped with real-time percentage indicators and in-card dropdown filters:
+                        </p>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card border-0 shadow-sm rounded-3 p-3 bg-white h-100" style="border-left: 4px solid #f87171 !important;">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="text-muted small fw-semibold">This Month Sales</span>
+                                        <i class="mdi mdi-chart-line text-danger fs-4"></i>
+                                    </div>
+                                    <h4 class="fw-bold mb-1">$1,641.00</h4>
+                                    <small class="text-danger"><i class="mdi mdi-arrow-down-bold me-1"></i>Decreased by last period 6.6%</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card border-0 shadow-sm rounded-3 p-3 bg-white h-100" style="border-left: 4px solid #38bdf8 !important;">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="text-muted small fw-semibold">This Month Orders</span>
+                                        <i class="mdi mdi-bookmark-outline text-info fs-4"></i>
+                                    </div>
+                                    <h4 class="fw-bold mb-1">7 Orders</h4>
+                                    <small class="text-muted"><i class="mdi mdi-minus me-1"></i>No orders from last period 0%</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card border-0 shadow-sm rounded-3 p-3 bg-white h-100" style="border-left: 4px solid #2dd4bf !important;">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="text-muted small fw-semibold">Total Orders</span>
+                                        <span class="badge bg-success-subtle text-success small"><i class="mdi mdi-filter"></i> Filter</span>
+                                    </div>
+                                    <h4 class="fw-bold mb-1">7</h4>
+                                    <small class="text-muted">Interactive status dropdown filter</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card border-0 shadow-sm rounded-3 p-3 bg-white h-100" style="border-left: 4px solid #c084fc !important;">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="text-muted small fw-semibold">Total Users</span>
+                                        <span class="badge bg-primary-subtle text-primary small"><i class="mdi mdi-filter"></i> Role</span>
+                                    </div>
+                                    <h4 class="fw-bold mb-1">8</h4>
+                                    <small class="text-muted">Administrators & Registered Shoppers</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive my-3">
+                            <table class="table table-hover border align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width: 25%;">KPI Card</th>
+                                        <th style="width: 25%;">Interactive Capability</th>
+                                        <th style="width: 50%;">Business Logic & Calculation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-semibold">This Month Sales</td>
+                                        <td>Automated Delta Indicator</td>
+                                        <td>Aggregates net revenue over the current month window and compares against the prior period with percentage variance.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold">This Month Orders</td>
+                                        <td>Order Frequency Counter</td>
+                                        <td>Counts completed and confirmed checkouts within the current month period.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold">Total Orders</td>
+                                        <td><span class="badge bg-light text-dark border">Interactive Status Filter</span></td>
+                                        <td>Dropdown allows filtering count instantly by <em>Total Orders, Pending, Processing, Shipped, Delivered, or Canceled</em> without reloading.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold">Total Users</td>
+                                        <td><span class="badge bg-light text-dark border">Interactive Role Matrix</span></td>
+                                        <td>Dropdown enables viewing counts for <em>Total Users, Super Admins, Staff Members, and Customers</em>.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ================= 5.3: CHARTS & ANALYTICS TELEMETRY ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-5-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-chart-bell-curve-cumulative text-primary me-1"></i> 5.3 Sales & Orders Analytics and Order Status Distribution
+                        </h3>
+                        <p class="text-muted">
+                            MartX harnesses ApexCharts for responsive, interactive visualization:
+                        </p>
+                        <div class="row g-4">
+                            <div class="col-lg-8">
+                                <div class="p-4 rounded-3 border bg-white h-100 shadow-sm">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h5 class="fw-bold mb-0"><i class="mdi mdi-chart-areaspline text-primary me-1"></i> Sales & Orders Analytics (Yearly Curve)</h5>
+                                        <div class="d-flex gap-2">
+                                            <span class="badge bg-info-subtle text-info">40 Orders</span>
+                                            <span class="badge bg-success-subtle text-success">$9,566.00</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-muted small mb-3">
+                                        Combines bar chart volume (Orders, Deliveries, Returns) with a smooth area spline revenue curve (Jan to Dec). Hover tooltips show precise values for any selected month.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-3 small text-muted pt-2 border-top">
+                                        <span><i class="mdi mdi-circle text-primary me-1"></i> Sales Revenue</span>
+                                        <span><i class="mdi mdi-circle text-info me-1"></i> Orders</span>
+                                        <span><i class="mdi mdi-circle text-success me-1"></i> Deliveries</span>
+                                        <span><i class="mdi mdi-circle text-danger me-1"></i> Returns</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="p-4 rounded-3 border bg-white h-100 shadow-sm">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h5 class="fw-bold mb-0"><i class="mdi mdi-chart-donut text-primary me-1"></i> Order Status</h5>
+                                        <span class="badge bg-primary-subtle text-primary">7 Total</span>
+                                    </div>
+                                    <p class="text-muted small mb-3">
+                                        Donut chart illustrating proportional order distribution:
+                                    </p>
+                                    <ul class="list-unstyled small text-muted mb-0">
+                                        <li class="d-flex justify-content-between py-1 border-bottom">
+                                            <span><i class="mdi mdi-circle text-success me-1"></i> Delivered</span>
+                                            <span class="fw-bold text-dark">3 (43%)</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between py-1 border-bottom">
+                                            <span><i class="mdi mdi-circle text-info me-1"></i> Shipped</span>
+                                            <span class="fw-bold text-dark">2 (29%)</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between py-1">
+                                            <span><i class="mdi mdi-circle text-primary me-1"></i> Processing</span>
+                                            <span class="fw-bold text-dark">2 (29%)</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 5.4: INVENTORY ALERTS & OUT-OF-STOCK CAROUSEL ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-5-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-package-variant-closed-remove text-danger me-1"></i> 5.4 Live Inventory Monitoring & Out-of-Stock Carousel
+                        </h3>
+                        <p class="text-muted">
+                            MartX proactively prevents lost sales by tracking stockouts across both standalone products and multi-attribute variation matrices:
+                        </p>
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <div class="p-4 rounded-3 border bg-white h-100 shadow-sm">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <h5 class="fw-bold text-heading mb-0"><i class="mdi mdi-view-carousel-outline text-danger me-1"></i> Out Of Stock Carousel</h5>
+                                        <span class="badge bg-danger-subtle text-danger">3 Items Rotating</span>
+                                    </div>
+                                    <p class="text-muted small">
+                                        An automated 3.5-second rotating slider mounted on the dashboard. When a product or specific size/color combination reaches <code>0</code> stock, it instantly enters the carousel:
+                                    </p>
+                                    <div class="p-3 bg-light rounded-3 text-center border mb-2">
+                                        <span class="badge bg-warning text-dark mb-1">Variant Out of Stock</span>
+                                        <h6 class="fw-bold mb-1">Vintage Genuine Leather Biker Jacket</h6>
+                                        <small class="text-muted">Size: <strong>M</strong> | Color: <span style="background: #eab308; width: 12px; height: 12px; display: inline-block; border-radius: 50%; vertical-align: middle;"></span></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-4 rounded-3 border bg-white h-100 shadow-sm" style="border-left: 4px solid #dc3545 !important;">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <h5 class="fw-bold text-danger mb-0"><i class="mdi mdi-alert-circle-outline me-1"></i> Low Stock Alert Table</h5>
+                                        <span class="badge bg-danger text-white">5 Low Stock Items</span>
+                                    </div>
+                                    <p class="text-muted small mb-2">
+                                        Flags all inventory items below threshold for immediate re-ordering:
+                                    </p>
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-hover align-middle mb-0 small">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Product</th>
+                                                    <th class="text-end">Current Stock</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Men's Breathable Pique Cotton Polo</td>
+                                                    <td class="text-end"><span class="badge bg-danger-subtle text-danger">3 Left</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Vintage Genuine Leather Biker Jacket</td>
+                                                    <td class="text-end"><span class="badge bg-danger text-white">0 Left</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Handcrafted Genuine Leather Wallet</td>
+                                                    <td class="text-end"><span class="badge bg-danger-subtle text-danger">5 Left</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Rugged Waterproof Lace-Up Winter Boots</td>
+                                                    <td class="text-end"><span class="badge bg-danger text-white">0 Left</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Casio G-Shock Rugged Tactical Watch</td>
+                                                    <td class="text-end"><span class="badge bg-danger text-white">0 Left</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 5.5: TOP MERCHANDISING & CUSTOMERS ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-5-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-fire text-danger me-1"></i> 5.5 Top Selling Merchandising & High-Value Customers
+                        </h3>
+                        <p class="text-muted">
+                            Gain immediate clarity into top revenue contributors and high-velocity catalog items:
+                        </p>
+                        <div class="row g-4">
+                            <div class="col-lg-4">
+                                <div class="card border shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-white border-bottom py-3 px-3 d-flex justify-content-between align-items-center">
+                                        <h6 class="fw-bold mb-0"><i class="mdi mdi-fire text-danger me-1"></i> Top Selling Products</h6>
+                                        <span class="badge bg-primary-subtle text-primary">Velocity</span>
+                                    </div>
+                                    <div class="card-body p-2">
+                                        <ul class="list-group list-group-flush small">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center px-2 py-2">
+                                                <span>Overnight Heavy Canvas &amp; Leather Bag</span>
+                                                <span class="badge bg-success-subtle text-success">3 Sold &bull; $95</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center px-2 py-2">
+                                                <span>Genuine Full-Grain Leather Case</span>
+                                                <span class="badge bg-success-subtle text-success">3 Sold &bull; $120</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center px-2 py-2">
+                                                <span>Premium Suede Leather Penny Loafers</span>
+                                                <span class="badge bg-success-subtle text-success">2 Sold &bull; $90</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center px-2 py-2">
+                                                <span>Braided Genuine Leather Bracelet</span>
+                                                <span class="badge bg-success-subtle text-success">2 Sold &bull; $45</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card border shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-white border-bottom py-3 px-3 d-flex justify-content-between align-items-center">
+                                        <h6 class="fw-bold mb-0"><i class="mdi mdi-account-star text-warning me-1"></i> Top Customers</h6>
+                                        <span class="badge bg-warning-subtle text-warning">VIP Spend</span>
+                                    </div>
+                                    <div class="card-body p-2">
+                                        <ul class="list-group list-group-flush small">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center px-2 py-2">
+                                                <span><strong>Emma Watson</strong> (7 Orders)</span>
+                                                <span class="fw-bold text-dark">$2,061.00</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center px-2 py-2">
+                                                <span><strong>Michael Chang</strong> (7 Orders)</span>
+                                                <span class="fw-bold text-dark">$1,734.00</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center px-2 py-2">
+                                                <span><strong>David Miller</strong> (6 Orders)</span>
+                                                <span class="fw-bold text-dark">$1,701.00</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center px-2 py-2">
+                                                <span><strong>Sophia Loren</strong> (6 Orders)</span>
+                                                <span class="fw-bold text-dark">$1,342.00</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card border shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-white border-bottom py-3 px-3 d-flex justify-content-between align-items-center">
+                                        <h6 class="fw-bold mb-0"><i class="mdi mdi-shape-outline text-primary me-1"></i> Sales by Category</h6>
+                                        <span class="badge bg-primary-subtle text-primary">Revenue</span>
+                                    </div>
+                                    <div class="card-body p-2">
+                                        <ul class="list-group list-group-flush small">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center px-2 py-2">
+                                                <span>Bags &amp; Backpacks</span>
+                                                <span class="badge bg-success-subtle text-success fw-bold">$2,048.00</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center px-2 py-2">
+                                                <span>Footwear &amp; Shoes</span>
+                                                <span class="badge bg-success-subtle text-success fw-bold">$1,801.00</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center px-2 py-2">
+                                                <span>Men's Fashion</span>
+                                                <span class="badge bg-success-subtle text-success fw-bold">$1,364.00</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center px-2 py-2">
+                                                <span>Watches &amp; Wearables</span>
+                                                <span class="badge bg-success-subtle text-success fw-bold">$1,323.00</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 5.6: RECENT ORDERS & PAYMENTS ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-5-6">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-receipt-text-outline text-primary me-1"></i> 5.6 Recent Orders Stream & Payment Methods Share
+                        </h3>
+                        <p class="text-muted">
+                            Track incoming checkout streams in real time, monitor gateway volume, and inspect destination territories:
+                        </p>
+                        <div class="row g-4 mb-4">
+                            <div class="col-lg-7">
+                                <div class="card border shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-white border-bottom py-3 px-3 d-flex justify-content-between align-items-center">
+                                        <h6 class="fw-bold mb-0"><i class="mdi mdi-cart-arrow-down text-primary me-1"></i> Recent Orders Feed</h6>
+                                        <a href="orders-fulfillment.html" class="btn btn-sm btn-outline-primary py-0">View All &rarr;</a>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover align-middle mb-0 small">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Order #</th>
+                                                    <th>Price</th>
+                                                    <th>Payment</th>
+                                                    <th class="text-center">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><a href="orders-fulfillment.html" class="font-monospace fw-bold text-primary text-decoration-none">#ORD-2026-4LF9MH</a></td>
+                                                    <td class="fw-bold text-dark">$70.00</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Paid</span></td>
+                                                    <td class="text-center"><i class="mdi mdi-dots-vertical text-muted"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="orders-fulfillment.html" class="font-monospace fw-bold text-primary text-decoration-none">#ORD-2026-SOUBRN</a></td>
+                                                    <td class="fw-bold text-dark">$390.00</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Paid</span></td>
+                                                    <td class="text-center"><i class="mdi mdi-dots-vertical text-muted"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="orders-fulfillment.html" class="font-monospace fw-bold text-primary text-decoration-none">#ORD-2026-DX0BAD</a></td>
+                                                    <td class="fw-bold text-dark">$402.00</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Paid</span></td>
+                                                    <td class="text-center"><i class="mdi mdi-dots-vertical text-muted"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="orders-fulfillment.html" class="font-monospace fw-bold text-primary text-decoration-none">#ORD-2026-EIDOYH</a></td>
+                                                    <td class="fw-bold text-dark">$388.00</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Paid</span></td>
+                                                    <td class="text-center"><i class="mdi mdi-dots-vertical text-muted"></i></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="card border shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-white border-bottom py-3 px-3 d-flex justify-content-between align-items-center">
+                                        <h6 class="fw-bold mb-0"><i class="mdi mdi-credit-card-outline text-success me-1"></i> Payment Methods Share</h6>
+                                        <span class="badge bg-success-subtle text-success">Active Channels</span>
+                                    </div>
+                                    <div class="p-3">
+                                        <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                                            <div>
+                                                <strong class="text-dark">Stripe</strong>
+                                                <div class="small text-muted">5 Orders &bull; 11.7% Share</div>
+                                            </div>
+                                            <span class="fw-bold text-dark">$1,119.00</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <strong class="text-dark">PayPal</strong>
+                                                <div class="small text-muted">2 Orders &bull; 5.5% Share</div>
+                                            </div>
+                                            <span class="fw-bold text-dark">$522.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 5.7: MARKETING & MESSAGES ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-5-7">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-bullhorn-outline text-primary me-1"></i> 5.7 Marketing Campaigns, Courier Reliability & Customer Feeds
+                        </h3>
+                        <p class="text-muted">
+                            Maintain complete operational oversight of marketing promotions, courier delivery success rates, and customer communication:
+                        </p>
+                        <div class="row g-4">
+                            <div class="col-lg-4">
+                                <div class="p-3 rounded-3 border bg-white shadow-sm h-100">
+                                    <h6 class="fw-bold mb-2"><i class="mdi mdi-truck-fast-outline text-primary me-1"></i> Courier Performance</h6>
+                                    <ul class="list-unstyled small text-muted mb-0">
+                                        <li class="d-flex justify-content-between py-1 border-bottom">
+                                            <span><strong>DHL Express</strong> (17 Parcels)</span>
+                                            <span class="badge bg-success-subtle text-success">94.1% Delivered</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between py-1 border-bottom">
+                                            <span><strong>FedEx International</strong> (13 Parcels)</span>
+                                            <span class="badge bg-success-subtle text-success">84.6% Delivered</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between py-1">
+                                            <span><strong>UPS Global Logistics</strong> (5 Parcels)</span>
+                                            <span class="badge bg-success-subtle text-success">80.0% Delivered</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="p-3 rounded-3 border bg-white shadow-sm h-100">
+                                    <h6 class="fw-bold mb-2"><i class="mdi mdi-ticket-percent text-success me-1"></i> Active Coupons</h6>
+                                    <ul class="list-unstyled small text-muted mb-0">
+                                        <li class="d-flex justify-content-between py-1 border-bottom">
+                                            <span><code>WELCOME15</code> (15% Off)</span>
+                                            <span class="text-muted">In 5 months</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between py-1 border-bottom">
+                                            <span><code>SUMMER2026</code> (20% Off)</span>
+                                            <span class="text-muted">In 2 months</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between py-1">
+                                            <span><code>SAVE10</code> ($10.00 Off)</span>
+                                            <span class="text-muted">In 1 month</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="p-3 rounded-3 border bg-white shadow-sm h-100">
+                                    <h6 class="fw-bold mb-2"><i class="mdi mdi-email-outline text-warning me-1"></i> Customer Messages</h6>
+                                    <ul class="list-unstyled small text-muted mb-0">
+                                        <li class="d-flex justify-content-between py-1 border-bottom">
+                                            <span><strong>Daniel Harris</strong> &mdash; Collab</span>
+                                            <span class="badge bg-danger-subtle text-danger">Unread</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between py-1 border-bottom">
+                                            <span><strong>Chloe Bennett</strong> &mdash; Return</span>
+                                            <span class="badge bg-danger-subtle text-danger">Unread</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between py-1">
+                                            <span><strong>Jessica Miller</strong> &mdash; Wholesale</span>
+                                            <span class="badge bg-danger-subtle text-danger">Unread</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="license-activation.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 4 (License Activation)
+                    </a>
+                    <a href="media-manager.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 6 (Media Manager) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch5-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-5-1" class="doc-toc-link">5.1 Console Overview</a>
+                    <a href="#sec-5-2" class="doc-toc-link">5.2 KPI Statistics</a>
+                    <a href="#sec-5-3" class="doc-toc-link">5.3 Charts Telemetry</a>
+                    <a href="#sec-5-4" class="doc-toc-link">5.4 Inventory & Stockout</a>
+                    <a href="#sec-5-5" class="doc-toc-link">5.5 Top Merchandising</a>
+                    <a href="#sec-5-6" class="doc-toc-link">5.6 Orders & Payments</a>
+                    <a href="#sec-5-7" class="doc-toc-link">5.7 Marketing & Messages</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch5-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 1rem; overflow: hidden;">
+                <div class="modal-header border-bottom p-3">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0 text-muted ps-2">
+                            <i class="mdi mdi-magnify fs-4"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 shadow-none ps-2" id="docGlobalSearch" placeholder="Search documentation chapters, attributes, or guides..." autofocus>
+                    </div>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3" id="docSearchResults" style="max-height: 400px; overflow-y: auto;">
+                    <div class="text-muted small text-uppercase fw-bold px-2 mb-2">Documentation Hub</div>
+                    <div class="p-3 text-center text-muted">Type any keyword to search across all 22 chapters...</div>
+                </div>
+                <div class="modal-footer border-top py-2 px-3 justify-content-between text-muted small">
+                    <span>Press <kbd class="bg-light text-dark border">ESC</kbd> to exit</span>
+                    <span>MartX Documentation v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

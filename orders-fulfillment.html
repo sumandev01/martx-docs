@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Orders Processing & Lifecycle Fulfillment - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+                        <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Ecommerce & Sales</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">9. Orders & Fulfillment</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= MAIN CHAPTER SECTION ================= -->
+                <section class="doc-section" id="ch9-intro">
+                    <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2.5 py-1 rounded-pill small fw-semibold">
+                            <i class="mdi mdi-cart-outline me-1"></i> Sales Operations Hub
+                        </span>
+                        <span class="badge bg-light text-muted border px-2.5 py-1 rounded-pill small">
+                            Chapter 9 of 22
+                        </span>
+                    </div>
+
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-cart-outline text-primary"></i> Chapter 9: Orders Processing & Lifecycle Fulfillment
+                    </h1>
+                    <p class="lead text-muted">
+                        Lifecycle order processing, real-time status transitions, invoice generation, and customer dispatching.
+                    </p>
+
+                    <!-- Feature Highlights Grid -->
+                    <div class="row g-3 my-4">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-shield-check text-success fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Production Ready</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Engineered for mission-critical enterprise commerce with zero latency overhead.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-tune text-primary fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Granular Controls</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Fully customizable via the modern MartX Admin Dashboard with real-time feedback.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-lightning-bolt text-warning fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Instant Sync</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Automated state propagation across multi-device clients, cache, and database layers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Architectural Overview -->
+                    <div class="card border-0 shadow-sm rounded-3 mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold mb-3">Module Architecture & Workflow</h4>
+                            <p class="text-muted">
+                                This chapter details the comprehensive configuration, operational controls, and best practices for <strong>Chapter 9: Orders Processing & Lifecycle Fulfillment</strong>. Follow the guided procedures below to maintain peak operational performance and security.
+                            </p>
+                            <div class="alert alert-info border-0 d-flex align-items-start gap-3 mb-0">
+                                <i class="mdi mdi-information-outline fs-4 text-info flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <strong>Admin Navigation Path:</strong>
+                                    <div class="mt-1 font-monospace small">Admin Dashboard &gt; Ecommerce & Sales &gt; Orders & Fulfillment</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 9.1: ORDER MANAGEMENT DIRECTORY ================= -->
+                    <div class="doc-subsection mt-4 mb-5" id="sec-9-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-format-list-bulleted-square text-primary me-1"></i> 9.1 Order Management Directory, Telemetry Cards & Multi-Filter Matrix
+                        </h3>
+                        <p class="text-muted">
+                            The <strong>Order Management Directory</strong> is the operational nervous system of MartX store fulfillment. It equips logistics managers with 4 high-level telemetry metric cards, multi-condition filtering (by status, date, payment state, and gateway method), real-time customer search, and a comprehensive tabular ledger of all customer purchases.
+                        </p>
+
+                        <!-- Screenshot 1: Orders Directory Table -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Order Management: Orders Ledger, KPI Cards & Multi-Filters
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/orders/admin_orders_directory.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/orders/admin_orders_directory.png" alt="Order Management Directory" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-cart-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Order Management Directory Interface</span>
+                                        <span class="small text-muted font-monospace">(images/orders/admin_orders_directory.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">Orders Command Console</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Live Production vs Demo Telemetry Notice -->
+                        <div class="alert alert-primary border-0 shadow-sm d-flex align-items-start gap-3 my-4 p-3 rounded-3" style="background-color: #eff6ff; border-left: 4px solid #3b82f6 !important;">
+                            <i class="mdi mdi-information-outline fs-3 text-primary flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h6 class="fw-bold text-primary mb-1">Live Storefront Orders vs. Sample Illustration</h6>
+                                <p class="small mb-0 text-muted">
+                                    <strong>Important Note for Store Administrators:</strong> The customer names (e.g., <em>Emma Watson, Michael Chang, Sarah Jenkins</em>), order numbers, and financial figures shown in the preview above represent test store checkouts. On your live production server, this table populates dynamically the instant a customer completes checkout on your storefront, reflecting their real billing details, item quantities, payment verification, and chosen shipping zone.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Top 4 KPI Metric Cards Breakdown -->
+                        <h5 class="fw-bold text-heading mt-4 mb-3">Top Telemetry KPI Cards Breakdown</h5>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card border-0 shadow-sm rounded-3 p-3 bg-white h-100" style="border-left: 4px solid #c084fc !important;">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="text-muted small fw-semibold">Total Orders</span>
+                                        <i class="mdi mdi-cart-outline text-primary fs-4"></i>
+                                    </div>
+                                    <h4 class="fw-bold mb-1">40</h4>
+                                    <div class="d-flex justify-content-between small text-muted">
+                                        <span>Paid: <strong>38</strong></span>
+                                        <span>Unpaid: <strong>2</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card border-0 shadow-sm rounded-3 p-3 bg-white h-100" style="border-left: 4px solid #facc15 !important;">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="text-muted small fw-semibold">Pending Orders</span>
+                                        <i class="mdi mdi-clock-outline text-warning fs-4"></i>
+                                    </div>
+                                    <h4 class="fw-bold mb-1">1</h4>
+                                    <small class="text-warning fw-semibold">Requires immediate review</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card border-0 shadow-sm rounded-3 p-3 bg-white h-100" style="border-left: 4px solid #38bdf8 !important;">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="text-muted small fw-semibold">Processing Orders</span>
+                                        <i class="mdi mdi-progress-clock text-info fs-4"></i>
+                                    </div>
+                                    <h4 class="fw-bold mb-1">2</h4>
+                                    <small class="text-info fw-semibold">In warehouse packaging</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card border-0 shadow-sm rounded-3 p-3 bg-white h-100" style="border-left: 4px solid #2dd4bf !important;">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="text-muted small fw-semibold">Total Revenue</span>
+                                        <i class="mdi mdi-currency-usd text-success fs-4"></i>
+                                    </div>
+                                    <h4 class="fw-bold mb-1">$9,566.00</h4>
+                                    <div class="d-flex justify-content-between small text-muted">
+                                        <span>Paid: <strong>$8,965.00</strong></span>
+                                        <span>Unpaid: <strong>$601.00</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filter Controls Table -->
+                        <h5 class="fw-bold text-heading mt-4 mb-3">Multi-Condition Filter Bar & Live Search</h5>
+                        <div class="table-responsive my-3">
+                            <table class="table table-hover border align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width: 25%;">Filter Control</th>
+                                        <th style="width: 25%;">Options / Formats</th>
+                                        <th style="width: 50%;">Operational Purpose & Search Scope</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-semibold">All Orders Dropdown</td>
+                                        <td><span class="badge bg-light text-dark border">All, Pending, Processing, Shipped, Delivered, Cancelled</span></td>
+                                        <td>Filters the entire orders ledger by exact fulfillment lifecycle stage. Badges display real-time order counts per status.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold">Date Range Picker</td>
+                                        <td><span class="badge bg-light text-dark border">Today, Last 7 Days, Month, Custom</span></td>
+                                        <td>Restricts order query to orders created within selected start and end timestamps.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold">Payment Status Filter</td>
+                                        <td><span class="badge bg-success-subtle text-success">Paid</span> / <span class="badge bg-danger-subtle text-danger">Failed</span> / <span class="badge bg-warning-subtle text-warning">Unpaid</span></td>
+                                        <td>Isolates orders based on gateway settlement state or pending cash-on-delivery collection.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold">Payment Methods Filter</td>
+                                        <td><span class="badge bg-light text-dark border">Stripe, PayPal, COD, Bank Transfer</span></td>
+                                        <td>Enables financial reconciliation per individual payment processor channel.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold">Universal Search Input</td>
+                                        <td>Full-text live query string</td>
+                                        <td>Matches instantly across <code>Order ID</code> (e.g., #ORD-2026-PYR0JX), <code>Customer Name</code>, <code>Email</code>, and <code>Phone Number</code>.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ================= 9.2: EDIT ORDER STATUS & COURIER ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-9-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-truck-delivery-outline text-primary me-1"></i> 9.2 Edit Order Status, Payment Transition & Courier Tracking
+                        </h3>
+                        <p class="text-muted">
+                            The <strong>Edit Order Status</strong> workspace provides warehouse fulfillment teams with a focused, streamlined control panel to advance order lifecycle statuses, record payment settlements, assign third-party courier dispatchers, and input tracking numbers.
+                        </p>
+
+                        <!-- Screenshot 2: Edit Order Status -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Orders: Edit Order Status & Courier Dispatch Information
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/orders/admin_order_status_edit.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/orders/admin_order_status_edit.png" alt="Edit Order Status Workspace" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-pencil-box-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Edit Order Status &amp; Tracking Assignment</span>
+                                        <span class="small text-muted font-monospace">(images/orders/admin_order_status_edit.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">Order Transition Engine</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Status Controls Field Guide -->
+                        <div class="row g-4 my-3">
+                            <div class="col-lg-7">
+                                <div class="card border shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-white border-bottom py-3 px-4">
+                                        <h6 class="fw-bold mb-0"><i class="mdi mdi-form-select text-primary me-1"></i> Update Status &amp; Courier Information</h6>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold small text-muted text-uppercase">Payment Status *</label>
+                                            <p class="small text-muted mb-1">
+                                                Update to <strong>Paid</strong>, <strong>Pending</strong>, or <strong>Failed</strong>. Marking an unpaid COD order as Paid automatically updates your financial telemetry and revenue ledger.
+                                            </p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold small text-muted text-uppercase">Order Status *</label>
+                                            <p class="small text-muted mb-1">
+                                                Select active fulfillment milestone: <em>Pending &rarr; Processing &rarr; Shipped &rarr; Delivered &rarr; Canceled</em>. Moving to <strong>Delivered</strong> sends an automated completion email to the buyer.
+                                            </p>
+                                            <div class="alert alert-success border-0 d-flex align-items-start gap-2 p-2.5 rounded-2 mt-2 mb-0" style="background-color: #f0fdf4; border-left: 3px solid #22c55e !important;">
+                                                <i class="mdi mdi-restore text-success fs-5 flex-shrink-0 mt-0"></i>
+                                                <div class="small">
+                                                    <strong class="text-success">Automated Stock &amp; Coupon Recovery:</strong> Transitioning an order status to <strong>Canceled</strong> triggers an atomic database transaction that instantly restores the exact variant quantities (size/color) back to your product inventory ledger and decrements coupon usage count, completely eliminating stock discrepancies without manual inventory adjustments.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold small text-muted text-uppercase">Courier Service Provider</label>
+                                            <p class="small text-muted mb-1">
+                                                Select the courier partner assigned to transport the parcel. This dropdown dynamically populates all active courier services configured in <a href="shipping-couriers.html" class="fw-semibold text-primary text-decoration-none">Chapter 10: Couriers &amp; Shipping Costs</a> (e.g., <em>Sundarban Courier, Steadfast, Pathao, SA Paribahan, RedX, FedEx, DHL</em>).
+                                            </p>
+                                        </div>
+                                        <div class="mb-0">
+                                            <label class="form-label fw-bold small text-muted text-uppercase">Tracking Number &amp; Customer Live Tracking</label>
+                                            <p class="small text-muted mb-1">
+                                                Enter the official courier parcel booking consignment code or memo number (e.g., <code>SB-8921004</code>).
+                                            </p>
+                                            <div class="p-2.5 bg-light rounded-2 border small text-muted mt-2">
+                                                <i class="mdi mdi-information-outline text-primary me-1"></i>
+                                                <strong>How Customers Track Their Parcel:</strong> The tracking number is <strong>not</strong> auto-appended to the URL. The buyer receives the tracking code directly on their customer order dashboard and invoice, accompanied by a <strong>"Track on Courier Website"</strong> button. Clicking this button opens the courier's official tracking portal in a new tab, where the customer pastes the consignment number to verify live transit progress.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="card border shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-white border-bottom py-3 px-4">
+                                        <h6 class="fw-bold mb-0"><i class="mdi mdi-information-outline text-info me-1"></i> Quick Order Summary Sidebar</h6>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <p class="small text-muted mb-3">
+                                            A dedicated contextual sidebar displaying key purchase metadata without leaving the editing view:
+                                        </p>
+                                        <ul class="list-group list-group-flush small">
+                                            <li class="list-group-item d-flex justify-content-between px-0">
+                                                <span class="text-muted">Order Number:</span>
+                                                <strong class="font-monospace text-primary">#ORD-2026-PYR0JX</strong>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between px-0">
+                                                <span class="text-muted">Customer Name:</span>
+                                                <strong class="text-dark">Emma Watson</strong>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between px-0">
+                                                <span class="text-muted">Total Items:</span>
+                                                <span class="badge bg-light text-dark border">2 Items</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between px-0">
+                                                <span class="text-muted">Grand Total Amount:</span>
+                                                <strong class="text-success fs-6">$485.00</strong>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between px-0">
+                                                <span class="text-muted">Payment Status:</span>
+                                                <span class="badge bg-success-subtle text-success">Paid</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between px-0">
+                                                <span class="text-muted">Order Status:</span>
+                                                <span class="badge bg-success-subtle text-success">Delivered</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 9.3: ORDER DETAILS DOSSIER ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-9-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-file-document-box-multiple-outline text-primary me-1"></i> 9.3 Order Details Dossier & Multi-Item Line Inspector
+                        </h3>
+                        <p class="text-muted">
+                            Clicking <strong>View Order</strong> opens the high-density <strong>Order Details Dossier</strong>. This screen displays a 3-card customer profile overview alongside an itemized visual breakdown of every product, variation, unit pricing, applied discount, delivery fee, and net total.
+                        </p>
+
+                        <!-- Screenshot 3: Order Details -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Orders: Complete Order Dossier & Line-Item Breakdown
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/orders/admin_order_view_details.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/orders/admin_order_view_details.png" alt="Order Details Dossier" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-text-box-search-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Order Details Dossier &amp; Item Inspector</span>
+                                        <span class="small text-muted font-monospace">(images/orders/admin_order_view_details.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">Complete Order Dossier</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3 Cards Breakdown Grid -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-4">
+                                <div class="card border shadow-sm rounded-3 p-3 bg-white h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-account-circle text-primary fs-4"></i>
+                                        <h6 class="fw-bold mb-0">Customer Info</h6>
+                                    </div>
+                                    <h6 class="fw-bold text-dark mb-1">Emma Watson</h6>
+                                    <div class="small text-muted"><i class="mdi mdi-email-outline me-1"></i> emma.watson@example.com</div>
+                                    <div class="small text-muted"><i class="mdi mdi-phone-outline me-1"></i> +1 555-703-6011</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card border shadow-sm rounded-3 p-3 bg-white h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-truck-delivery text-success fs-4"></i>
+                                        <h6 class="fw-bold mb-0">Shipping Address</h6>
+                                    </div>
+                                    <p class="small text-dark fw-semibold mb-1">42 Oxford Street</p>
+                                    <div class="small text-muted"><i class="mdi mdi-map-marker-outline me-1"></i> Post Code: EC1A 1BB</div>
+                                    <div class="small text-muted">London, England, United Kingdom</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card border shadow-sm rounded-3 p-3 bg-white h-100" style="border-left: 4px solid #eab308 !important;">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-credit-card-outline text-warning fs-4"></i>
+                                        <h6 class="fw-bold mb-0">Payment Details</h6>
+                                    </div>
+                                    <div class="small text-muted mb-1">Gateway Method: <strong class="text-dark">STRIPE</strong></div>
+                                    <div class="small text-muted">Payment Status: <span class="badge bg-success-subtle text-success">Paid</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Itemized Products Table Guide -->
+                        <div class="table-responsive my-3">
+                            <table class="table table-hover border align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width: 50%;">Product Details</th>
+                                        <th style="width: 15%;" class="text-center">Unit Price</th>
+                                        <th style="width: 15%;" class="text-center">Quantity</th>
+                                        <th style="width: 20%;" class="text-end">Total Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="p-1 border rounded bg-light" style="width: 42px; height: 42px;">
+                                                    <i class="mdi mdi-tshirt-crew text-secondary fs-4 d-flex align-items-center justify-content-center h-100"></i>
+                                                </div>
+                                                <div>
+                                                    <strong class="text-dark">Vintage Genuine Leather Biker Bomber Jacket</strong>
+                                                    <div class="small text-muted">SKU: MTX-BOMBER-01 &bull; Size: M</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center fw-semibold">$190.00</td>
+                                        <td class="text-center"><span class="badge bg-primary-subtle text-primary">x 2</span></td>
+                                        <td class="text-end fw-bold text-dark">$380.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="p-1 border rounded bg-light" style="width: 42px; height: 42px;">
+                                                    <i class="mdi mdi-necklace text-secondary fs-4 d-flex align-items-center justify-content-center h-100"></i>
+                                                </div>
+                                                <div>
+                                                    <strong class="text-dark">Layered Sterling Silver Herringbone Chain Necklace</strong>
+                                                    <div class="small text-muted">SKU: MTX-CHAIN-SLV</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center fw-semibold">$40.00</td>
+                                        <td class="text-center"><span class="badge bg-primary-subtle text-primary">x 2</span></td>
+                                        <td class="text-end fw-bold text-dark">$80.00</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot class="table-light">
+                                    <tr>
+                                        <td colspan="3" class="text-end fw-semibold text-muted">Subtotal:</td>
+                                        <td class="text-end fw-semibold">$460.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="text-end fw-semibold text-muted">Promotional Discount:</td>
+                                        <td class="text-end fw-semibold text-danger">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="text-end fw-semibold text-muted">Courier Delivery Charge:</td>
+                                        <td class="text-end fw-semibold">$25.00</td>
+                                    </tr>
+                                    <tr class="table-active">
+                                        <td colspan="3" class="text-end fw-bold text-heading fs-6">Grand Total:</td>
+                                        <td class="text-end fw-bold text-primary fs-5">$485.00</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ================= 9.4: PRINTABLE INVOICE & PACKING SLIP ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-9-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-printer-outline text-primary me-1"></i> 9.4 Enterprise Printable Invoice &amp; Packaging Slip Generator
+                        </h3>
+                        <p class="text-muted">
+                            Clicking the <strong>Print Invoice</strong> button on the order details view renders a production-ready, high-resolution invoice designed for thermal warehouse printing or PDF customer dispatch. It incorporates full corporate branding, order barcodes, itemized tables, and an authentic security watermark.
+                        </p>
+
+                        <!-- Screenshot 4: Print Invoice -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Browser Print Dialog &mdash; Official MartX Customer Invoice & Packaging Slip
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/orders/admin_order_print_invoice.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/orders/admin_order_print_invoice.png" alt="Print Invoice Dialog" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-printer-pos-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Printable Invoice &amp; Packaging Slip</span>
+                                        <span class="small text-muted font-monospace">(images/orders/admin_order_print_invoice.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">Print &amp; PDF Export</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Invoice Layout Structure Breakdown -->
+                        <div class="p-4 rounded-3 border bg-light my-3">
+                            <h5 class="fw-bold text-heading mb-3">Enterprise Invoice Architecture (Component Matrix):</h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-white rounded border h-100">
+                                        <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-watermark text-success me-1"></i> Security "PAID" Watermark</h6>
+                                        <p class="small text-muted mb-0">
+                                            A translucent, diagonal <code>PAID</code> watermark stamp renders across the invoice body for completed transactions, preventing fraudulent duplicate billing and providing clear proof of payment.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-white rounded border h-100">
+                                        <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-domain me-1"></i> Dynamic Corporate Branding</h6>
+                                        <p class="small text-muted mb-0">
+                                            The header displays your official MartX store logo alongside your registered corporate business address, telephone contact, and support email configured in Chapter 21 (System Settings).
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-white rounded border h-100">
+                                        <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-barcode-scan me-1"></i> Logistics &amp; Fiscal Identifiers</h6>
+                                        <p class="small text-muted mb-0">
+                                            Prominently displays the unique <strong>Invoice Number</strong> (<code>ORD-2026-PYR0JX</code>), <strong>Date</strong> (<code>20-Aug-2026</code>), and sequential internal <strong>Order ID</strong> (<code>#40</code>).
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-white rounded border h-100">
+                                        <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-script-text-outline me-1"></i> Electronic Signature Disclaimer</h6>
+                                        <p class="small text-muted mb-0">
+                                            Includes international eCommerce legal compliance text: <em>"This is a computer-generated document and does not require a physical signature."</em>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 9.5: FULFILLMENT LIFECYCLE PROTOCOL ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-9-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-transit-connection-variant text-primary me-1"></i> 9.5 Standard Operating Procedure: 5-Step Fulfillment Protocol
+                        </h3>
+                        <p class="text-muted">
+                            Follow this standardized workflow to process, fulfill, and dispatch orders with maximum operational accuracy:
+                        </p>
+
+                        <div class="p-4 rounded-3 border bg-light">
+                            <div class="d-flex align-items-start gap-3 mb-3 pb-3 border-bottom">
+                                <div class="badge bg-primary rounded-circle p-2 fs-6 flex-shrink-0" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">1</div>
+                                <div>
+                                    <h6 class="fw-bold text-heading mb-1">Identify &amp; Filter Incoming Orders</h6>
+                                    <p class="small text-muted mb-0">Navigate to <strong>Ecommerce &amp; Sales &gt; Orders</strong>. Click the <strong>Pending Orders</strong> KPI card or filter by <code>status=pending</code> to isolate new purchases requiring processing.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3 mb-3 pb-3 border-bottom">
+                                <div class="badge bg-primary rounded-circle p-2 fs-6 flex-shrink-0" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">2</div>
+                                <div>
+                                    <h6 class="fw-bold text-heading mb-1">Verify Payment &amp; Stock Availability</h6>
+                                    <p class="small text-muted mb-0">Click <strong>View Order</strong>. Inspect the itemized table to verify product variations, sizes, and colors. For COD orders, verify telephone contact with the buyer before dispatch.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3 mb-3 pb-3 border-bottom">
+                                <div class="badge bg-primary rounded-circle p-2 fs-6 flex-shrink-0" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">3</div>
+                                <div>
+                                    <h6 class="fw-bold text-heading mb-1">Print Warehouse Packaging Slip</h6>
+                                    <p class="small text-muted mb-0">Click <strong>Print Invoice</strong>. Print a thermal packing slip or save as PDF to accompany the parcel in the fulfillment box.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3 mb-3 pb-3 border-bottom">
+                                <div class="badge bg-primary rounded-circle p-2 fs-6 flex-shrink-0" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">4</div>
+                                <div>
+                                    <h6 class="fw-bold text-heading mb-1">Assign Courier &amp; Tracking Code</h6>
+                                    <p class="small text-muted mb-0">Navigate to <strong>Edit Order Status</strong>. Select your configured courier partner (e.g., <em>Sundarban Courier, Steadfast, Pathao, FedEx</em>), enter the parcel consignment tracking number, update order status to <strong>Shipped</strong>, and click <strong>Update Order Status</strong>. The customer receives the tracking code with a direct tracking portal link.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="badge bg-success rounded-circle p-2 fs-6 flex-shrink-0" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">5</div>
+                                <div>
+                                    <h6 class="fw-bold text-heading mb-1">Final Delivery Reconciliation</h6>
+                                    <p class="small text-muted mb-0">Upon courier delivery confirmation, update the order status to <strong>Delivered</strong> and reconcile the payment status to <strong>Paid</strong>. Telemetry metrics update instantaneously.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="products-management.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 8 (Products Management)
+                    </a>
+                    <a href="shipping-couriers.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 10 (Couriers & Shipping Costs) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch9-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-9-1" class="doc-toc-link">9.1 Orders Directory</a>
+                    <a href="#sec-9-2" class="doc-toc-link">9.2 Edit Status & Courier</a>
+                    <a href="#sec-9-3" class="doc-toc-link">9.3 Order Details Dossier</a>
+                    <a href="#sec-9-4" class="doc-toc-link">9.4 Printable Invoice</a>
+                    <a href="#sec-9-5" class="doc-toc-link">9.5 Fulfillment Protocol</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch9-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 1rem; overflow: hidden;">
+                <div class="modal-header border-bottom p-3">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0 text-muted ps-2">
+                            <i class="mdi mdi-magnify fs-4"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 shadow-none ps-2" id="docGlobalSearch" placeholder="Search documentation chapters, attributes, or guides..." autofocus>
+                    </div>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3" id="docSearchResults" style="max-height: 400px; overflow-y: auto;">
+                    <div class="text-muted small text-uppercase fw-bold px-2 mb-2">Documentation Hub</div>
+                    <div class="p-3 text-center text-muted">Type any keyword to search across all 22 chapters...</div>
+                </div>
+                <div class="modal-footer border-top py-2 px-3 justify-content-between text-muted small">
+                    <span>Press <kbd class="bg-light text-dark border">ESC</kbd> to exit</span>
+                    <span>MartX Documentation v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 12: Payment Gateways & Visual Logos Hub - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+                        <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Ecommerce & Sales</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">12. Payment Gateways</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= MAIN CHAPTER SECTION ================= -->
+                <section class="doc-section" id="ch12-intro">
+                    <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2.5 py-1 rounded-pill small fw-semibold">
+                            <i class="mdi mdi-credit-card-outline me-1"></i> Checkout & Gateways
+                        </span>
+                        <span class="badge bg-light text-muted border px-2.5 py-1 rounded-pill small">
+                            Chapter 12 of 22
+                        </span>
+                    </div>
+
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-credit-card-outline text-primary"></i> Chapter 12: Payment Gateways & Visual Logos Hub
+                    </h1>
+                    <p class="lead text-muted">
+                        Multi-gateway configurations (Stripe, PayPal, Razorpay, SSLCommerz, COD) and high-res checkout logos.
+                    </p>
+
+                    <!-- Feature Highlights Grid -->
+                    <div class="row g-3 my-4">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-shield-check text-success fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Production Ready</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Engineered for mission-critical enterprise commerce with zero latency overhead.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-tune text-primary fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Granular Controls</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Fully customizable via the modern MartX Admin Dashboard with real-time feedback.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-lightning-bolt text-warning fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Instant Sync</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Automated state propagation across multi-device clients, cache, and database layers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Architectural Overview -->
+                    <div class="card border-0 shadow-sm rounded-3 mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold mb-3">Module Architecture & Workflow</h4>
+                            <p class="text-muted">
+                                This chapter details the comprehensive configuration, operational controls, and best practices for <strong>Chapter 12: Payment Gateways & Visual Logos Hub</strong>. Follow the guided procedures below to maintain peak operational performance and security.
+                            </p>
+                            <div class="alert alert-info border-0 d-flex align-items-start gap-3 mb-0">
+                                <i class="mdi mdi-information-outline fs-4 text-info flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <strong>Admin Navigation Path:</strong>
+                                    <div class="mt-1 font-monospace small">Admin Dashboard &gt; Ecommerce & Sales &gt; Payment Gateways</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- ================= 12.1: GATEWAY ARCHITECTURE & CONSOLE OVERVIEW ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-view-dashboard-outline text-primary me-1"></i> 12.1 Gateway Selection Console &amp; Architectural Overview
+                        </h3>
+                        <p class="text-muted">
+                            MartX provides a unified, enterprise-grade payment processing architecture supporting <strong>10 distinct gateway integrations</strong> across credit/debit cards, digital wallets, global escrow, cryptocurrency rails, and localized offline payments. Administrators manage all payment channels through the centralized <strong>Gateway Settings</strong> console (<code>Ecommerce &amp; Sales &gt; Payment Gateways &gt; Gateway Settings</code>).
+                        </p>
+
+                        <!-- Overview Metric Cards -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-3">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100 text-center">
+                                    <span class="badge bg-primary text-white p-2 rounded-circle mb-2">
+                                        <i class="mdi mdi-credit-card-multiple fs-5"></i>
+                                    </span>
+                                    <h6 class="fw-bold mb-1">Global Cards</h6>
+                                    <p class="small text-muted mb-0">Stripe, PayPal, Razorpay, Paystack, WayForPay</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100 text-center">
+                                    <span class="badge bg-success text-white p-2 rounded-circle mb-2">
+                                        <i class="mdi mdi-cellphone-check fs-5"></i>
+                                    </span>
+                                    <h6 class="fw-bold mb-1">Local &amp; Wallets</h6>
+                                    <p class="small text-muted mb-0">SSLCommerz (bKash, Nagad, Rocket), UPI, Netbanking</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100 text-center">
+                                    <span class="badge bg-warning text-dark p-2 rounded-circle mb-2">
+                                        <i class="mdi mdi-currency-btc fs-5"></i>
+                                    </span>
+                                    <h6 class="fw-bold mb-1">Crypto Rails</h6>
+                                    <p class="small text-muted mb-0">Binance Pay (USDT) &amp; CoinGate (70+ Cryptos)</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100 text-center">
+                                    <span class="badge bg-info text-white p-2 rounded-circle mb-2">
+                                        <i class="mdi mdi-truck-delivery-outline fs-5"></i>
+                                    </span>
+                                    <h6 class="fw-bold mb-1">COD &amp; Offline</h6>
+                                    <p class="small text-muted mb-0">Cash on Delivery &amp; Direct Bank / Manual Transfer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Core Architectural Guidelines Alert -->
+                        <div class="alert alert-info border-0 d-flex align-items-start gap-3 mb-4 p-3 rounded-3">
+                            <i class="mdi mdi-information-outline fs-3 text-info flex-shrink-0 mt-1"></i>
+                            <div>
+                                <strong class="d-block mb-1">Multi-Currency Exchange Rate Engine:</strong>
+                                <p class="small text-muted mb-0">
+                                    When your storefront operates in a regional base currency (such as BDT, INR, or NGN) while utilizing international gateways that settle in USD or EUR (such as PayPal, WayForPay, or CoinGate), the administrative console provides a dedicated <strong>Exchange Rate Field</strong>. The checkout engine multiplies order subtotals by this multiplier in real time, ensuring accurate international billing without discrepancy.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Multi-Currency Dynamic Reference Matrix (Illustrative Sample Guide) -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-calculator-variant-outline text-primary me-1"></i> Multi-Currency Exchange Rate Reference Matrix (Illustrative Sample Guide)
+                                </h6>
+                                <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle px-2.5 py-1 small">
+                                    <i class="mdi mdi-chart-timeline-variant me-1"></i> Market-Driven &bull; Dynamic Floating Rates
+                                </span>
+                            </div>
+                            <div class="card-body p-4">
+                                <!-- Important Floating Rate Notice -->
+                                <div class="alert alert-warning bg-warning-subtle border-0 text-dark mb-3 p-3 rounded-3 d-flex align-items-start gap-3">
+                                    <i class="mdi mdi-alert-circle text-warning fs-4 flex-shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong class="d-block text-dark mb-1">Notice: Rates Below Are Purely Illustrative Samples (Not Fixed or Permanent):</strong>
+                                        <p class="small mb-0">
+                                            Foreign exchange currency rates fluctuate dynamically based on international forex markets and central bank regulations. The numerical conversion rates shown in this matrix (such as <code>120.00</code> for BDT or <code>1.45</code> for INR) are <strong>illustrative sample figures (নমুনা উদাহরণ)</strong> provided solely to explain the computational logic. Store administrators <strong>must always input their current, actual live exchange rates</strong> corresponding to their active bank or payment gateway settlement terms.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light small">
+                                            <tr>
+                                                <th style="width: 20%;">Store Base Currency</th>
+                                                <th style="width: 20%;">Payment Gateway Enabled</th>
+                                                <th style="width: 25%;">Admin Input Field</th>
+                                                <th style="width: 15%;">Sample Value (Illustrative)</th>
+                                                <th style="width: 20%;">Checkout Conversion Result</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="fw-bold text-dark"><span class="badge bg-light text-dark border">BDT (৳) - Bangladeshi Taka</span></td>
+                                                <td><span class="badge bg-primary-subtle text-primary">PayPal / WayForPay / CoinGate</span></td>
+                                                <td><code>1 USD = ? Base Currency</code></td>
+                                                <td><code class="fw-bold text-primary">120.00</code> <small class="text-muted d-block">(Sample Market Rate)</small></td>
+                                                <td>A ৳1,200 cart automatically charges <strong>$10.00 USD</strong> at checkout \((1200 \div 120)\).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark"><span class="badge bg-light text-dark border">BDT (৳) - Bangladeshi Taka</span></td>
+                                                <td><span class="badge bg-warning-subtle text-dark">Binance Pay (Crypto)</span></td>
+                                                <td><code>1 USDT = ? Base Currency</code></td>
+                                                <td><code class="fw-bold text-warning-emphasis">122.00</code> <small class="text-muted d-block">(Sample P2P Rate)</small></td>
+                                                <td>A ৳1,220 order generates a dynamic QR code for <strong>10.00 USDT</strong>.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark"><span class="badge bg-light text-dark border">BDT (৳) - Bangladeshi Taka</span></td>
+                                                <td><span class="badge bg-info-subtle text-info-emphasis">Razorpay (Indian Gateway)</span></td>
+                                                <td><code>1 INR = ? Base Currency</code></td>
+                                                <td><code class="fw-bold text-info-emphasis">1.45</code> <small class="text-muted d-block">(Sample Cross-Border Rate)</small></td>
+                                                <td>A ৳145 order charges <strong>₹100 INR</strong> on Indian UPI / Netbanking.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark"><span class="badge bg-light text-dark border">USD ($) - US Dollar</span></td>
+                                                <td><span class="badge bg-success-subtle text-success">PayPal / Stripe / CoinGate</span></td>
+                                                <td><code>1 USD = ? Base Currency</code></td>
+                                                <td><code class="fw-bold text-success">1.00</code> <small class="text-muted d-block">(No Conversion Required)</small></td>
+                                                <td>A $50.00 cart charges exactly <strong>$50.00 USD</strong> (1:1 parity).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark"><span class="badge bg-light text-dark border">INR (₹) - Indian Rupee</span></td>
+                                                <td><span class="badge bg-info-subtle text-info-emphasis">Razorpay (Domestic India)</span></td>
+                                                <td><code>1 INR = ? Base Currency</code></td>
+                                                <td><code class="fw-bold text-success">1.00</code> <small class="text-muted d-block">(Domestic Currency Parity)</small></td>
+                                                <td>A ₹1,000 order charges exactly <strong>₹1,000 INR</strong> with 0 conversion loss.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark"><span class="badge bg-light text-dark border">NGN (₦) - Nigerian Naira</span></td>
+                                                <td><span class="badge bg-primary-subtle text-primary">Paystack (Domestic Africa)</span></td>
+                                                <td><code>1 NGN = ? Base Currency</code></td>
+                                                <td><code class="fw-bold text-success">1.00</code> <small class="text-muted d-block">(Domestic Currency Parity)</small></td>
+                                                <td>A ₦5,000 cart charges exactly <strong>₦5,000 NGN</strong> directly via Paystack.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 12.2: GLOBAL CARD & WALLET GATEWAYS ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-credit-card-outline text-primary me-1"></i> 12.2 Global Card &amp; Wallet Gateways: Stripe, PayPal, SSLCommerz &amp; Razorpay
+                        </h3>
+                        <p class="text-muted">
+                            These Tier-1 financial processors handle standard consumer card transactions, mobile wallets, and domestic banking integrations. Each gateway can be independently switched between <strong>Active</strong> and <strong>Inactive</strong> states.
+                        </p>
+
+                        <!-- Screenshot 1: Stripe Configuration -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Stripe Configuration: Global Cards, Apple Pay &amp; Google Pay
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/payments/admin_gateway_stripe.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/payments/admin_gateway_stripe.png" alt="Stripe Configuration Interface" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-credit-card-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Stripe Gateway Configuration</span>
+                                        <span class="small text-muted font-monospace">(images/payments/admin_gateway_stripe.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Interactive Full-Screen Lightbox enabled. Click image or "Full View" to zoom.</span>
+                                    <span class="badge bg-light text-dark border">Stripe Processing Engine</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 2: PayPal Configuration -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; PayPal Configuration: Global Express Checkout &amp; Wallets
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/payments/admin_gateway_paypal.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/payments/admin_gateway_paypal.png" alt="PayPal Configuration Interface" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-paypal fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">PayPal Gateway Configuration</span>
+                                        <span class="small text-muted font-monospace">(images/payments/admin_gateway_paypal.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Dual-mode Sandbox &amp; Live credential configuration.</span>
+                                    <span class="badge bg-light text-dark border">PayPal Express Engine</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 3: SSLCommerz Configuration -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; SSLCommerz Configuration: Bangladesh Cards, bKash, Nagad &amp; Rocket
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/payments/admin_gateway_sslcommerz.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/payments/admin_gateway_sslcommerz.png" alt="SSLCommerz Configuration Interface" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-shield-check-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">SSLCommerz Gateway Configuration</span>
+                                        <span class="small text-muted font-monospace">(images/payments/admin_gateway_sslcommerz.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Complete Bangladesh domestic card &amp; MFS aggregator integration.</span>
+                                    <span class="badge bg-light text-dark border">SSLCommerz Aggregator</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 4: Razorpay Configuration -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Razorpay Configuration: India UPI, Netbanking &amp; Cards
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/payments/admin_gateway_razorpay.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/payments/admin_gateway_razorpay.png" alt="Razorpay Configuration Interface" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-credit-card-chip-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Razorpay Gateway Configuration</span>
+                                        <span class="small text-muted font-monospace">(images/payments/admin_gateway_razorpay.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Omnichannel payments platform for UPI, QR codes, and cards.</span>
+                                    <span class="badge bg-light text-dark border">Razorpay India Engine</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Parameter Matrix Table -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-table-cog text-primary me-1"></i> Global Card Gateways Parameter Specification
+                                </h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light small">
+                                            <tr>
+                                                <th style="width: 20%;">Gateway</th>
+                                                <th style="width: 25%;">Configuration Fields</th>
+                                                <th style="width: 15%;">Environment</th>
+                                                <th style="width: 40%;">Operational Function &amp; Usage Notes</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="fw-bold text-dark"><i class="mdi mdi-credit-card text-primary me-1"></i> Stripe</td>
+                                                <td>
+                                                    <code>Stripe Key *</code><br>
+                                                    <code>Stripe Secret *</code><br>
+                                                    <code>Webhook Secret</code>
+                                                </td>
+                                                <td><span class="badge bg-success-subtle text-success">Live / Test</span></td>
+                                                <td>Direct client-side tokenization. Accepts all major international cards, Apple Pay, and Google Pay. The Webhook Secret (<code>whsec_...</code>) ensures asynchronous payment reconciliation.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark"><i class="mdi mdi-paypal text-primary me-1"></i> PayPal</td>
+                                                <td>
+                                                    <code>Exchange Rate</code><br>
+                                                    <code>Sandbox Client ID / Secret</code><br>
+                                                    <code>Live Client ID / Secret</code>
+                                                </td>
+                                                <td><span class="badge bg-primary-subtle text-primary">Selector</span></td>
+                                                <td>PayPal Express Checkout. Features dual credential inputs for seamless switching between Sandbox testing and Live production without credential re-entry.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark"><i class="mdi mdi-shield-check text-danger me-1"></i> SSLCommerz</td>
+                                                <td>
+                                                    <code>Store ID *</code><br>
+                                                    <code>Store Password *</code>
+                                                </td>
+                                                <td><span class="badge bg-primary-subtle text-primary">Selector</span></td>
+                                                <td>Premier Bangladesh payment gateway aggregating bKash, Nagad, Rocket, Upay, Visa, MasterCard, and local internet banking portals.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark"><i class="mdi mdi-flash text-info me-1"></i> Razorpay</td>
+                                                <td>
+                                                    <code>Exchange Rate</code><br>
+                                                    <code>Key ID *</code><br>
+                                                    <code>Key Secret *</code>
+                                                </td>
+                                                <td><span class="badge bg-success-subtle text-success">Live / Test</span></td>
+                                                <td>Standard Indian payment stack enabling instant checkout via UPI (Google Pay, PhonePe, Paytm), netbanking across 50+ banks, and domestic debit/credit cards.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 12.3: REGIONAL & MULTI-CURRENCY GATEWAYS ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-earth text-primary me-1"></i> 12.3 Regional &amp; Multi-Currency Processing: Paystack &amp; WayForPay
+                        </h3>
+                        <p class="text-muted">
+                            MartX expands business reach into emerging markets through specialized regional gateways equipped with real-time base currency conversion.
+                        </p>
+
+                        <!-- Screenshot 5: Paystack Configuration -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Paystack Configuration: African Commerce (Nigeria, Ghana, South Africa)
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/payments/admin_gateway_paystack.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/payments/admin_gateway_paystack.png" alt="Paystack Configuration Interface" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-layers-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Paystack Gateway Configuration</span>
+                                        <span class="small text-muted font-monospace">(images/payments/admin_gateway_paystack.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Configured with exchange rate (1 NGN = ? Base Currency) and merchant credentials.</span>
+                                    <span class="badge bg-light text-dark border">Paystack Africa Engine</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 6: WayForPay Configuration -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; WayForPay Configuration: Multi-Currency International Processing
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/payments/admin_gateway_wayforpay.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/payments/admin_gateway_wayforpay.png" alt="WayForPay Configuration Interface" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-cash-register fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">WayForPay Gateway Configuration</span>
+                                        <span class="small text-muted font-monospace">(images/payments/admin_gateway_wayforpay.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Fast international payment gateway for European &amp; CIS commerce.</span>
+                                    <span class="badge bg-light text-dark border">WayForPay International</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Parameter Matrix Table -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-table-cog text-primary me-1"></i> Regional Gateways Parameter Specification
+                                </h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light small">
+                                            <tr>
+                                                <th style="width: 20%;">Gateway</th>
+                                                <th style="width: 30%;">Required Parameters</th>
+                                                <th style="width: 20%;">Conversion Multiplier</th>
+                                                <th style="width: 30%;">Operational Logic</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="fw-bold text-dark"><i class="mdi mdi-layers-triple text-primary me-1"></i> Paystack</td>
+                                                <td>
+                                                    <code>Public Key *</code><br>
+                                                    <code>Secret Key *</code><br>
+                                                    <code>Merchant Email *</code>
+                                                </td>
+                                                <td><code>1 NGN = ? Base Currency</code></td>
+                                                <td>Enables African buyers to pay via bank account, debit card, USSD, and mobile money. Automatically converts amounts into Nigerian Naira (NGN).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark"><i class="mdi mdi-cash-multiple text-success me-1"></i> WayForPay</td>
+                                                <td>
+                                                    <code>Merchant Account *</code><br>
+                                                    <code>Merchant Secret Key *</code>
+                                                </td>
+                                                <td><code>1 USD = ? Base Currency</code></td>
+                                                <td>High-performance processing for international clients with automated 3-D Secure authentication and fraud screening.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 12.4: BORDERLESS CRYPTOCURRENCY GATEWAYS ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-currency-btc text-primary me-1"></i> 12.4 Borderless Cryptocurrency Gateways: Binance Pay &amp; CoinGate
+                        </h3>
+                        <p class="text-muted">
+                            For global decentralized commerce, MartX integrates premier Web3 payment rails enabling real-time stablecoin and cryptocurrency settlements.
+                        </p>
+
+                        <!-- Screenshot 7: Binance Pay Configuration -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Binance Pay Configuration: Instant Cryptocurrency &amp; USDT Settlements
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/payments/admin_gateway_binance.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/payments/admin_gateway_binance.png" alt="Binance Pay Configuration Interface" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-alpha-b-circle-outline fs-1 d-block mb-1 text-warning opacity-50"></i>
+                                        <span class="fw-semibold d-block">Binance Pay Gateway Configuration</span>
+                                        <span class="small text-muted font-monospace">(images/payments/admin_gateway_binance.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Zero gas fee instant checkout for Binance registered app users.</span>
+                                    <span class="badge bg-light text-dark border">Binance Pay Integration</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 8: CoinGate Configuration -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; CoinGate Configuration: Bitcoin, Ethereum &amp; 70+ Leading Cryptocurrencies
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/payments/admin_gateway_coingate.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/payments/admin_gateway_coingate.png" alt="CoinGate Configuration Interface" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-currency-btc fs-1 d-block mb-1 text-warning opacity-50"></i>
+                                        <span class="fw-semibold d-block">CoinGate Gateway Configuration</span>
+                                        <span class="small text-muted font-monospace">(images/payments/admin_gateway_coingate.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Multi-coin invoice generation with dynamic network rate locking.</span>
+                                    <span class="badge bg-light text-dark border">CoinGate Crypto Platform</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Crypto Conversion Guidelines -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-calculator-variant text-warning me-1"></i> Crypto Exchange Rate Engineering
+                                </h6>
+                            </div>
+                            <div class="card-body p-4">
+                                <p class="text-muted small mb-3">
+                                    Cryptocurrency volatility requires accurate fiat-to-crypto pegging:
+                                </p>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-light">
+                                            <h6 class="fw-bold mb-1"><i class="mdi mdi-alpha-b-circle text-warning me-1"></i> Binance Pay (USDT Peg)</h6>
+                                            <p class="small text-muted mb-0">The <code>1 USDT = ? Base Currency</code> multiplier converts your catalog prices into equivalent Tether (USDT) units during Binance QR code generation.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-light">
+                                            <h6 class="fw-bold mb-1"><i class="mdi mdi-bitcoin text-warning me-1"></i> CoinGate (Dynamic Invoice)</h6>
+                                            <p class="small text-muted mb-0">The <code>1 USD = ? Base Currency</code> multiplier informs the CoinGate API of the exact fiat invoice value, which CoinGate locks for 15 minutes across BTC, ETH, and altcoin checkouts.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 12.5: COD & ADVANCE SHIPPING CHARGE ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-truck-delivery-outline text-primary me-1"></i> 12.5 Cash on Delivery (COD) &amp; Advance Shipping Charge Enforcement
+                        </h3>
+                        <p class="text-muted">
+                            Cash on Delivery is a vital payment method in emerging markets but carries high return and refusal risks (RTO). MartX features a sophisticated <strong>Advance Delivery Charge Architecture</strong> that eliminates fake orders by requiring buyers to pay the courier shipping fee online before confirming their COD shipment.
+                        </p>
+
+                        <!-- Screenshot 9: COD Configuration with Validation -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Cash On Delivery: Advance Shipping Charge &amp; Mandatory Method Selection
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/payments/admin_gateway_cod.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/payments/admin_gateway_cod.png" alt="Cash on Delivery Configuration with Advance Charge Validation" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-truck-delivery-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Cash On Delivery Configuration Interface</span>
+                                        <span class="small text-muted font-monospace">(images/payments/admin_gateway_cod.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-alert-decagram text-danger me-1"></i> Live Screenshot: Red warning banner enforcing minimum 1 active advance payment method.</span>
+                                    <span class="badge bg-light text-dark border">Advance COD Security</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Advance Shipping Validation Architecture Breakdown -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-shield-lock-outline text-danger me-1"></i> Mandatory Selection Validation Architecture
+                                </h6>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <h6 class="fw-bold text-dark mb-2">
+                                                <i class="mdi mdi-cursor-default-click text-primary me-1"></i> 1. Client-Side Instant Prevention
+                                            </h6>
+                                            <p class="small text-muted mb-0">
+                                                When <strong>"Require Advance Shipping Charge?"</strong> is toggled ON, the system inspects the <em>Allowed Advance Payment Methods</em> checkboxes. If an administrator clicks <strong>"Save And Update"</strong> without selecting at least one active gateway, submission is halted instantly (<code>e.preventDefault()</code>), the screen scrolls smoothly to the container, and an inline red warning is revealed: <em>"Selection Required: Please select at least one active payment gateway to collect advance shipping charges."</em>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <h6 class="fw-bold text-dark mb-2">
+                                                <i class="mdi mdi-server-security text-success me-1"></i> 2. Server-Side Backend Safeguard
+                                            </h6>
+                                            <p class="small text-muted mb-0">
+                                                The backend controller (<code>PaymentMethodController::updateGateways</code>) strictly validates that when <code>payment_cod_advance_shipping == '1'</code>, the <code>payment_cod_advance_methods</code> payload must not be empty. Any malformed request is rejected with a session flash error, completely preventing database corruption or headless checkout deadlocks.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 12.6: MANUAL PAYMENT GATEWAY ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-6">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-bank-transfer text-primary me-1"></i> 12.6 Manual Bank &amp; Direct Mobile Transfers (Manual Payment)
+                        </h3>
+                        <p class="text-muted">
+                            For stores accepting direct bank wire transfers, offline deposits, or personal mobile wallet "Send Money" transactions (bKash/Nagad personal numbers), the <strong>Manual Payment</strong> module allows administrators to specify custom buyer instructions.
+                        </p>
+
+                        <!-- Screenshot 10: Manual Payment Configuration -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Manual Payment Configuration: Direct Transfer Instructions &amp; TrxID Protocols
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/payments/admin_gateway_manual.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/payments/admin_gateway_manual.png" alt="Manual Payment Configuration Interface" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-bank-transfer fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Manual Payment Configuration Interface</span>
+                                        <span class="small text-muted font-monospace">(images/payments/admin_gateway_manual.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Rich text instructions rendered directly on the customer checkout modal.</span>
+                                    <span class="badge bg-light text-dark border">Manual Payment</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Customer Instructions Configuration Guide -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-format-list-bulleted text-primary me-1"></i> Manual Payment Customer Instruction Best Practices
+                                </h6>
+                            </div>
+                            <div class="card-body p-4">
+                                <p class="text-muted small mb-2">
+                                    In the <strong>Payment Instructions for Customers</strong> textarea, clearly state:
+                                </p>
+                                <ol class="small text-muted ps-3 mb-0">
+                                    <li class="mb-1">Your exact Bank Account Number, Routing Number, and Account Name.</li>
+                                    <li class="mb-1">Personal bKash / Nagad / Rocket numbers if using direct mobile transfers.</li>
+                                    <li>Instruction for the buyer to submit their bank deposit slip or Mobile Transaction ID (TrxID) into the checkout notes.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 12.7: PAYMENT LOGOS & VISUAL TRUST BADGES ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-7">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-shield-star-outline text-primary me-1"></i> 12.7 Payment Logos &amp; Visual Trust Badges Hub (Storefront Footer &amp; Checkout)
+                        </h3>
+                        <p class="text-muted">
+                            Beyond backend transaction processing, displaying recognized payment brand logos (MasterCard, Visa, bKash, PayPal, Amex) on the storefront <strong>Footer</strong> and checkout summary is proven to enhance buyer confidence and checkout conversion rates. The <strong>Payment Logos Console</strong> (<code>Ecommerce &amp; Sales &gt; Payment Gateways &gt; Payment Logos</code>) manages these visual assets.
+                        </p>
+
+                        <!-- Screenshot 11: Payment Methods Table & Add Form -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Payment Methods Information: Visual Logos Directory &amp; Add Console
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/payments/admin_payment_methods_table.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/payments/admin_payment_methods_table.png" alt="Payment Methods Information Directory and Add Form" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-image-multiple-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Payment Logos Management Interface</span>
+                                        <span class="small text-muted font-monospace">(images/payments/admin_payment_methods_table.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-drag-vertical me-1"></i> Drag-and-drop position ordering on the left; instant creation on the right.</span>
+                                    <span class="badge bg-light text-dark border">Visual Logos Hub</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 12: Edit Payment Method -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Edit Payment Method: master card &mdash; Asset Revision Console
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/payments/admin_payment_method_edit.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-3">
+                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
+                                    <img src="images/payments/admin_payment_method_edit.png" alt="Edit Payment Method Interface" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                                    <div class="w-100 text-center text-muted py-5">
+                                        <i class="mdi mdi-square-edit-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
+                                        <span class="fw-semibold d-block">Edit Payment Method Interface</span>
+                                        <span class="small text-muted font-monospace">(images/payments/admin_payment_method_edit.png)</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Live asset preview with one-click Media Manager asset replacement.</span>
+                                    <span class="badge bg-light text-dark border">Payment Logo Revision</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Parameter Matrix Table for Logos -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-table-cog text-primary me-1"></i> Payment Logos Management Interface Elements
+                                </h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light small">
+                                            <tr>
+                                                <th style="width: 20%;">Control / Column</th>
+                                                <th style="width: 25%;">UI Interaction</th>
+                                                <th style="width: 55%;">Storefront Operational Impact</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="fw-bold text-dark"><i class="mdi mdi-drag-vertical text-secondary me-1"></i> Drag Handle (SL)</td>
+                                                <td><span class="badge bg-light text-dark border font-monospace">::: 1, ::: 2</span></td>
+                                                <td>Drag-and-drop table row reordering via HTML5 draggable JS. Controls the exact horizontal sequence of payment logos displayed across the storefront website footer.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark"><i class="mdi mdi-image text-primary me-1"></i> LOGO Preview</td>
+                                                <td>Thumbnail Image Tag</td>
+                                                <td>Displays a crisp thumbnail of the brand asset (PNG, SVG, WEBP) currently published in the database.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark"><i class="mdi mdi-format-title text-info me-1"></i> Payment Method Name *</td>
+                                                <td>Text Input (Required)</td>
+                                                <td>Brand title (e.g., <code>master card</code>, <code>visa card</code>, <code>bKash</code>). Used as the image <code>alt</code> tag for accessibility and SEO compliance.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark"><i class="mdi mdi-paperclip text-success me-1"></i> Logo Image * (Media Manager)</td>
+                                                <td><span class="badge bg-primary text-white"><i class="mdi mdi-image me-1"></i> Select Image</span></td>
+                                                <td>Launches the central MartX Media Manager modal. Allows instant asset selection from uploaded media or direct disk upload.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark"><i class="mdi mdi-dots-vertical text-secondary me-1"></i> Action Dropdown</td>
+                                                <td>Contextual Menu</td>
+                                                <td>Provides immediate administrative access to <strong>Edit</strong> the record or <strong>Delete</strong> the brand asset from the storefront footer.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 12.8: SETTLEMENT & SECURITY SOP ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-8">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-shield-check-outline text-primary me-1"></i> 12.8 Payment Settlement, Webhooks &amp; Security SOP
+                        </h3>
+                        <p class="text-muted">
+                            Adhere to enterprise financial engineering best practices when deploying live payment channels on MartX:
+                        </p>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="p-4 rounded-3 border bg-light h-100">
+                                    <h6 class="fw-bold text-heading mb-2">
+                                        <i class="mdi mdi-lock-check text-success me-1"></i> Security &amp; Key Management
+                                    </h6>
+                                    <ul class="small text-muted ps-3 mb-0">
+                                        <li class="mb-2"><strong>Encrypted Credential Storage:</strong> All Secret Keys, Auth Tokens, and Passwords are automatically AES-256 encrypted in the database before storage.</li>
+                                        <li class="mb-2"><strong>Sandbox Verification:</strong> Always run complete checkout transactions using Sandbox test cards before flipping environment toggles to Live Mode.</li>
+                                        <li><strong>Webhook URL Whitelisting:</strong> Configure your gateway portal webhooks to point to your store's secure SSL endpoint to guarantee instant payment state callbacks.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-4 rounded-3 border bg-light h-100">
+                                    <h6 class="fw-bold text-heading mb-2">
+                                        <i class="mdi mdi-cash-sync text-primary me-1"></i> Financial Accounting &amp; Conversion
+                                    </h6>
+                                    <ul class="small text-muted ps-3 mb-0">
+                                        <li class="mb-2"><strong>Never Enter 0 for Exchange Rates:</strong> Setting an exchange rate to <code>0</code> causes payment calculation failure. If your store currency matches the gateway, set it to <code>1.00</code>.</li>
+                                        <li class="mb-2"><strong>Mitigate COD Abandonment:</strong> Keep <em>Require Advance Shipping Charge?</em> active to ensure customer commitment and protect logistics capital.</li>
+                                        <li><strong>Footer Trust Badges:</strong> Keep 4–6 high-resolution payment logos in the visual logos hub to optimize buyer checkout conversion.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="coupons-marketing.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 11 (Coupons & Marketing)
+                    </a>
+                    <a href="theme-layouts.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 13 (Theme Layouts Hub) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch12-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-12-1" class="doc-toc-link">12.1 Architecture</a>
+                    <a href="#sec-12-2" class="doc-toc-link">12.2 Global Cards</a>
+                    <a href="#sec-12-3" class="doc-toc-link">12.3 Regional Gates</a>
+                    <a href="#sec-12-4" class="doc-toc-link">12.4 Crypto Rails</a>
+                    <a href="#sec-12-5" class="doc-toc-link">12.5 COD &amp; Advance</a>
+                    <a href="#sec-12-6" class="doc-toc-link">12.6 Manual Payments</a>
+                    <a href="#sec-12-7" class="doc-toc-link">12.7 Trust Badges</a>
+                    <a href="#sec-12-8" class="doc-toc-link">12.8 Settlement SOP</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch12-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce & Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website & CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+            </a>
+            <div class="sidebar-heading">Customer & Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+            </a>
+            <div class="sidebar-heading">Administration & Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance & Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 1rem; overflow: hidden;">
+                <div class="modal-header border-bottom p-3">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0 text-muted ps-2">
+                            <i class="mdi mdi-magnify fs-4"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 shadow-none ps-2" id="docGlobalSearch" placeholder="Search documentation chapters, attributes, or guides..." autofocus>
+                    </div>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3" id="docSearchResults" style="max-height: 400px; overflow-y: auto;">
+                    <div class="text-muted small text-uppercase fw-bold px-2 mb-2">Documentation Hub</div>
+                    <div class="p-3 text-center text-muted">Type any keyword to search across all 22 chapters...</div>
+                </div>
+                <div class="modal-footer border-top py-2 px-3 justify-content-between text-muted small">
+                    <span>Press <kbd class="bg-light text-dark border">ESC</kbd> to exit</span>
+                    <span>MartX Documentation v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

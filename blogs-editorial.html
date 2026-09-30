@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 17: Blogs & Editorial Content Publishing - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="mailto:sumondav444@gmail.com" class="btn btn-outline-primary doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1">
+                    <i class="mdi mdi-lifebuoy"></i> Get Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+            <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction & Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce & Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders & Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers & Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons & Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website & CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders & Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ & About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs & Editorial
+                </a>
+                <div class="sidebar-heading">Customer & Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews & Messages
+                </a>
+                <div class="sidebar-heading">Administration & Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations & Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance & Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron & FAQs
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Docs</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Website & CMS</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">17. Blogs & Editorial</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= MAIN CHAPTER SECTION ================= -->
+                <section class="doc-section" id="ch17-intro">
+                    <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2.5 py-1 rounded-pill small fw-semibold">
+                            <i class="mdi mdi-post-outline me-1"></i> Editorial & Content Hub
+                        </span>
+                        <span class="badge bg-light text-muted border px-2.5 py-1 rounded-pill small">
+                            Chapter 17 of 22
+                        </span>
+                    </div>
+
+                    <h1 class="doc-section-title">
+                        <i class="mdi mdi-post-outline text-primary"></i> Chapter 17: Blogs &amp; Editorial Content Publishing
+                    </h1>
+                    <p class="lead text-muted">
+                        High-converting blog articles, integrated Google Gemini AI Studio, hierarchical topic taxonomies, rich-media Quill WYSIWYG publishing, and search engine optimization (SEO) metadata engineering.
+                    </p>
+
+                    <!-- Feature Highlights Grid -->
+                    <div class="row g-3 my-4">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-creation text-primary fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Gemini AI Studio</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Automate long-form article drafting, headings, practical tips, and SEO meta tags in under 3 seconds using the integrated AI assistant.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-text-box-edit-outline text-success fs-4"></i>
+                                    <h6 class="fw-bold mb-0">Quill WYSIWYG Editor</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Full-featured rich text authoring with video embeds, media manager pictures, bullet formatting, quotes, and 20,000-character capacity.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-light-subtle h-100 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-search-web text-warning fs-4"></i>
+                                    <h6 class="fw-bold mb-0">SERP &amp; SEO Engine</h6>
+                                </div>
+                                <p class="small text-muted mb-0">Granular meta title, keyword, and description counters with real-time length monitoring for optimal Google search click-through rates.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Architectural Overview -->
+                    <div class="card border-0 shadow-sm rounded-3 mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold mb-3">Module Architecture &amp; Workflow</h4>
+                            <p class="text-muted">
+                                The <strong>MartX Editorial Suite</strong> empowers digital merchants to establish organic brand authority, educate prospective buyers, and dominate organic search engine rankings. With deep catalog linkages, articles can guide shoppers from initial awareness straight into product checkout flows.
+                            </p>
+                            <div class="alert alert-info border-0 d-flex align-items-start gap-3 mb-0">
+                                <i class="mdi mdi-information-outline fs-4 text-info flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <strong>Admin Navigation Path:</strong>
+                                    <div class="mt-1 font-monospace small">Admin Dashboard &gt; Website &amp; CMS &gt; Blogs (All Blogs / Add Blog / Blog Categories)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- ================= 17.1: BLOG CATEGORY ARCHITECTURE & SPLIT CONSOLE ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-17-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-folder-multiple-outline text-primary me-1"></i> 17.1 Blog Category Architecture &amp; Split Console
+                        </h3>
+                        <p class="text-muted">
+                            MartX employs a dual-column split management console for <strong>Blog Categories</strong>. The left column presents an interactive, searchable category directory with article count badges, while the right column houses a persistent, zero-friction creation panel.
+                        </p>
+
+                        <!-- Screenshot 1: Blog Category Index Table + Add Form -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Blog Category Management: Topic Hierarchy &amp; Quick Creation
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Category Console</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/blogs/admin_blog_category_index.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/blogs/admin_blog_category_index.png" alt="Blog Category Management Directory and Add Form" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Technical Deep Dive: Split Console Columns & Attributes -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-light-subtle border-bottom py-3 px-4">
+                                <h5 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-table-eye text-primary me-2"></i> Category Directory Columns &amp; Parameters
+                                </h5>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light text-muted small text-uppercase">
+                                            <tr>
+                                                <th style="width: 18%;">Column / Field</th>
+                                                <th style="width: 15%;">Data Type</th>
+                                                <th style="width: 15%;">Requirement</th>
+                                                <th style="width: 52%;">Operational Description &amp; Front-End Impact</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">SL</td>
+                                                <td><span class="badge bg-light text-dark border">Integer</span></td>
+                                                <td>Auto-generated</td>
+                                                <td>Sequential row identifier strictly for administration sorting and cataloging.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Category Name</td>
+                                                <td><span class="badge bg-primary-subtle text-primary">String / Varchar</span></td>
+                                                <td><span class="badge bg-danger-subtle text-danger">Required</span></td>
+                                                <td>The human-readable label rendered on storefront blog tags, filter pills, and navigation menus.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Total Articles</td>
+                                                <td><span class="badge bg-info-subtle text-info">Counter Badge</span></td>
+                                                <td>System Metric</td>
+                                                <td>Live count of active articles associated with this category. Prevents accidental orphan categorization.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Status</td>
+                                                <td><span class="badge bg-success-subtle text-success">Active / Inactive</span></td>
+                                                <td>Toggle</td>
+                                                <td>Controls public visibility. Deactivating hides all associated blogs from storefront category feeds.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Actions</td>
+                                                <td><span class="badge bg-secondary-subtle text-dark">Action Buttons</span></td>
+                                                <td>Management</td>
+                                                <td>Provides one-click triggers for AJAX Edit Modal opening and soft-deletion with foreign key checks.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screenshot 2: Blog Category Edit Modal -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Edit Blog Category: AJAX Modal Interface &amp; Inactive Safety Warning
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Category Editor</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/blogs/admin_blog_category_edit.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/blogs/admin_blog_category_edit.png" alt="Edit Blog Category Modal Interface" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Inactive Category Safety Warning Mechanism -->
+                        <div class="alert alert-warning border border-warning-subtle rounded-3 p-3 mb-0">
+                            <div class="d-flex align-items-start gap-3">
+                                <i class="mdi mdi-alert-circle text-warning fs-4 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <h6 class="fw-bold text-dark mb-1">Dynamic Inactive Warning Safety Mechanism</h6>
+                                    <p class="small text-muted mb-2">
+                                        When an administrator switches a category status to <strong>Inactive</strong> (either in the Add Form or the Edit Modal), MartX immediately reveals a contextual warning banner:
+                                    </p>
+                                    <ul class="small text-muted mb-0 ps-3">
+                                        <li><strong>Public Navigation Concealment:</strong> The category is immediately removed from storefront top navigation bars, footer links, and sidebar category widgets.</li>
+                                        <li><strong>Storefront Filtering:</strong> Associated articles will not be served on public category browsing pages.</li>
+                                        <li><strong>Draft Safety:</strong> Existing article associations and database relations remain 100% intact and will immediately restore upon reactivating the category.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= 17.2: EDITORIAL DIRECTORY & ARTICLE LEDGER ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-17-2">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-format-list-text text-primary me-1"></i> 17.2 Editorial Directory &amp; Article Ledger
+                        </h3>
+                        <p class="text-muted">
+                            The <strong>Blog Management Directory</strong> provides a centralized control hub for all published stories, seasonal lookbooks, style guides, and customer tutorials across your digital storefront.
+                        </p>
+
+                        <!-- Screenshot 3: All Blogs Table -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Blog Management: Article Ledger, Filter Bar &amp; Live Telemetry
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Article Ledger</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/blogs/admin_blogs_table.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/blogs/admin_blogs_table.png" alt="Blog Management Directory and Article Table" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Filter Controls & Directory Features Grid -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-filter-variant text-primary fs-5"></i>
+                                        <h6 class="fw-bold mb-0">Status Filtering</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">Filter between <strong>All Blogs</strong>, <strong>Active</strong> (published articles), and <strong>Inactive</strong> (drafts) with instant row refresh.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-shape-plus text-success fs-5"></i>
+                                        <h6 class="fw-bold mb-0">Category Segmentation</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">Isolate articles by topic (e.g., <em>Style Guides</em>, <em>New Arrivals</em>) to streamline editorial audits and updates.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-magnify text-warning fs-5"></i>
+                                        <h6 class="fw-bold mb-0">Live Title Search</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">Type any headline keywords into the search box to pinpoint specific articles instantly without reloading the page.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Table Schema Reference Table -->
+                        <div class="table-responsive my-3">
+                            <table class="table table-hover border align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width: 15%;">Table Column</th>
+                                        <th style="width: 25%;">Visual Representation</th>
+                                        <th style="width: 60%;">Operational Functionality &amp; Behavior</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-semibold font-monospace">Bulk Select [ ]</td>
+                                        <td>Checkbox</td>
+                                        <td>Allows administrators to select multiple articles for bulk status updates or batch deletion actions.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold font-monospace">Blog Details</td>
+                                        <td>Thumbnail (48x48) + Title + Date</td>
+                                        <td>Displays the featured image with hover-zoom, title truncated for responsive layouts, and publication timestamp (e.g., <code>Sep 08, 2026</code>).</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold font-monospace">Category</td>
+                                        <td><span class="badge bg-light text-dark border"><i class="mdi mdi-tag-outline text-primary me-1"></i>Category Name</span></td>
+                                        <td>Identifies the primary topic taxonomy under which the article is filed on the storefront.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold font-monospace">Views</td>
+                                        <td><span class="badge rounded-pill bg-light text-muted border px-2"><i class="mdi mdi-eye-outline text-primary me-1"></i>3,552</span></td>
+                                        <td>Real-time visitor telemetry tracking unique and repeat storefront pageviews for measuring editorial engagement.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold font-monospace">Status</td>
+                                        <td><span class="badge rounded-pill bg-success-subtle text-success border border-success-subtle px-3 py-1">Active</span></td>
+                                        <td>Visual pill badge indicating whether the post is live on the public storefront or retained in administrative draft mode.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-semibold font-monospace">Action</td>
+                                        <td><i class="mdi mdi-dots-vertical"></i> Dropdown Menu</td>
+                                        <td>Provides direct navigation to <strong>Edit Blog</strong> or triggers a secured confirmation dialog for <strong>Delete</strong>.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= 17.3: CREATING ARTICLES & GEMINI AI STUDIO ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-17-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-creation text-primary me-1"></i> 17.3 Article Creation &amp; Gemini AI Content Studio
+                        </h3>
+                        <p class="text-muted">
+                            Creating high-quality content at scale is accelerated by the <strong>MartX Gemini AI Content Studio</strong>. By analyzing your chosen blog category and article headline, the AI engine drafts a publication-ready article and complete SEO metadata in a single click.
+                        </p>
+
+                        <!-- Screenshot 4: Add New Blog Screen with AI Studio -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Add New Blog: Integrated Gemini AI Content Assistant &amp; Quill WYSIWYG
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">AI Studio</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/blogs/admin_blog_create.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/blogs/admin_blog_create.png" alt="Add New Blog Form with AI Studio and Rich Text Editor" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- AI Studio Deep-Dive Box -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%); border-left: 4px solid #6366f1 !important;">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <span class="badge bg-primary px-3 py-1.5 rounded-pill fw-semibold">
+                                        <i class="mdi mdi-robot me-1"></i> Core Innovation
+                                    </span>
+                                    <h5 class="fw-bold mb-0 text-heading">Gemini AI Studio: Architecture &amp; Execution Pipeline</h5>
+                                </div>
+                                <p class="text-muted mb-3">
+                                    The AI Studio container sits directly atop the Blog Content card. It continuously observes form inputs and offers intelligent state guidance:
+                                </p>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-white rounded-3 border h-100 shadow-xs">
+                                            <h6 class="fw-bold text-primary mb-2">
+                                                <i class="mdi mdi-lightbulb-on-outline me-1"></i> Pro Tip Optimization
+                                            </h6>
+                                            <p class="small text-muted mb-0">
+                                                The studio displays the guideline: <em>"Select <strong>Category</strong> &amp; enter <strong>Blog Title</strong> for <strong>95%+ accurate</strong> AI Article &amp; SEO generation."</em> Supplying category context ensures the AI writes with specific industry vocabulary.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 bg-white rounded-3 border h-100 shadow-xs">
+                                            <h6 class="fw-bold text-primary mb-2">
+                                                <i class="mdi mdi-shield-check-outline me-1"></i> Smart Tooltip &amp; Key Validation
+                                            </h6>
+                                            <p class="small text-muted mb-0">
+                                                If the <code>GEMINI_API_KEY</code> is missing in System Settings, the button is disabled with tooltip: <code>⚠️ Please configure Gemini API Key in Settings first</code>. When the title has fewer than 3 characters, the button remains locked with a gentle prompt.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h6 class="fw-bold text-dark mt-4 mb-2">What Happens When You Click "Auto Generate with AI":</h6>
+                                <ol class="text-muted small ps-3 mb-0">
+                                    <li class="mb-2"><strong>Asynchronous API Dispatch:</strong> A secure AJAX request is transmitted to <code>admin.ai.generate-content</code> with the title, category context, and <code>type: 'blog'</code>.</li>
+                                    <li class="mb-2"><strong>Contextual Prompt Engineering:</strong> The backend formats a role-based prompt directing Gemini to act as an <em>Elite E-Commerce Content Marketer &amp; SEO Journalist</em> for the current store name.</li>
+                                    <li class="mb-2"><strong>Structured JSON Response:</strong> Gemini returns a clean payload containing:
+                                        <ul class="mt-1 ps-3">
+                                            <li><code>content</code>: Comprehensive HTML article with an engaging hook, <em>"Why This Matters"</em> section, practical steps/tips with ordered lists, and an inspiring conclusion with a subtle store CTA.</li>
+                                            <li><code>meta_title</code>: High-CTR SEO headline under 70 characters.</li>
+                                            <li><code>meta_keyword</code>: 6 to 8 comma-separated search tags.</li>
+                                            <li><code>meta_description</code>: Compelling search snippet under 160 characters.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Instant Form Synchronization:</strong> The Quill WYSIWYG editor, hidden form inputs, and all 3 SEO textareas are populated automatically with updated live character count meters.</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- Full Input Fields Breakdown (Create Form) -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-light-subtle border-bottom py-3 px-4">
+                                <h5 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-form-select text-primary me-2"></i> Comprehensive Input Fields Reference
+                                </h5>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light text-muted small text-uppercase">
+                                            <tr>
+                                                <th style="width: 20%;">Field Name</th>
+                                                <th style="width: 15%;">Type &amp; Limit</th>
+                                                <th style="width: 12%;">Mandatory</th>
+                                                <th style="width: 53%;">Detailed Operational Behavior &amp; Validation</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Blog Title</td>
+                                                <td>Text Input (Max 255)</td>
+                                                <td><span class="badge bg-danger-subtle text-danger">Required</span></td>
+                                                <td>The primary editorial headline of the article. Must be clear and captivating. Unlocks the AI Studio generator once at least 3 characters are typed.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Blog Content</td>
+                                                <td>Quill WYSIWYG Editor (Max 20,000)</td>
+                                                <td><span class="badge bg-secondary-subtle text-secondary">Optional</span></td>
+                                                <td>Full rich-text body. Supports heading levels, typography formatting (bold, italic, underline, strike), code blocks, blockquotes, bullet/numbered lists, hyperlinks, embedded YouTube videos, and photos from the Media Manager.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Meta Title</td>
+                                                <td>Textarea (Max 70 chars)</td>
+                                                <td><span class="badge bg-secondary-subtle text-secondary">Recommended</span></td>
+                                                <td>Specifies the HTML <code>&lt;title&gt;</code> tag for search engines. Live character counter warns if the title exceeds standard 70-character SERP display limits.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Meta Keywords</td>
+                                                <td>Textarea (Max 255 chars)</td>
+                                                <td><span class="badge bg-secondary-subtle text-secondary">Optional</span></td>
+                                                <td>Comma-separated search keywords and taxonomy indexing tags (e.g., <code>fashion tips, summer trends 2026, wardrobe essentials</code>).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Meta Description</td>
+                                                <td>Textarea (Max 160 chars)</td>
+                                                <td><span class="badge bg-secondary-subtle text-secondary">Recommended</span></td>
+                                                <td>The 1-2 sentence preview snippet displayed on Google and social media sharing cards. Features a live character counter optimized for the 160-character search boundary.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Category</td>
+                                                <td>Select Dropdown</td>
+                                                <td><span class="badge bg-danger-subtle text-danger">Required</span></td>
+                                                <td>Assigns the article to an active topic taxonomy. Crucial for organizing archive pages and storefront breadcrumbs.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Featured Image</td>
+                                                <td>Media Manager Picker</td>
+                                                <td><span class="badge bg-secondary-subtle text-secondary">Optional</span></td>
+                                                <td>High-resolution cover image displayed in card grids and article headers. Fixed <strong>5:3 aspect ratio</strong> ensures crisp, uniform presentation across mobile and desktop displays.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold font-monospace text-primary">Status</td>
+                                                <td>Select Dropdown (Active/Inactive)</td>
+                                                <td><span class="badge bg-danger-subtle text-danger">Required</span></td>
+                                                <td>Default is <strong>Active</strong> (immediately visible on public storefront). Selecting <strong>Inactive</strong> saves the post as an administrative draft.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= 17.4: ARTICLE REVISION, RICH MEDIA & PUBLISHING LIFECYCLE ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-17-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-book-edit-outline text-primary me-1"></i> 17.4 Article Revision, Rich Media &amp; Publishing Lifecycle
+                        </h3>
+                        <p class="text-muted">
+                            Editorial content requires ongoing revisions, image refreshes, and seasonal updates. The <strong>Edit Blog</strong> interface retains existing content while allowing continuous regeneration via AI or manual copy editing.
+                        </p>
+
+                        <!-- Screenshot 5: Edit Blog Screen -->
+                        <div class="doc-admin-frame mb-4 shadow-sm">
+                            <div class="doc-admin-frame-header py-2">
+                                <div class="doc-admin-dots">
+                                    <span class="doc-admin-dot red"></span>
+                                    <span class="doc-admin-dot yellow"></span>
+                                    <span class="doc-admin-dot green"></span>
+                                </div>
+                                <div class="doc-admin-url-bar" style="font-size: 11px;">
+                                    Admin Panel &mdash; Edit Blog: Live Content Revision, Media Thumbnail &amp; SEO Counters
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-auto">
+                                    <span class="badge d-none d-md-inline-block bg-primary text-white font-monospace" style="font-size: 10px;">Content Revision</span>
+                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
+                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
+                                    </button>
+                                    <a href="images/blogs/admin_blog_edit.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
+                                        <i class="mdi mdi-open-in-new"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="doc-admin-frame-body p-0">
+                                <img src="images/blogs/admin_blog_edit.png" alt="Edit Blog Form with Loaded Content and Media" class="w-100 h-auto d-block doc-mockup-img" style="cursor: zoom-in;" title="Click to open full HD Lightbox modal">
+                            </div>
+                        </div>
+
+                        <!-- Lifecycle Rules & Warnings -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="card border-0 shadow-sm rounded-3 h-100 p-3">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-image-album text-primary fs-4"></i>
+                                        <h6 class="fw-bold mb-0">Featured Image Curation</h6>
+                                    </div>
+                                    <p class="small text-muted mb-2">
+                                        The <strong>Featured Image</strong> picker interfaces directly with Chapter 6: Media Manager. Administrators can select existing WebP thumbnails or upload fresh high-resolution artwork.
+                                    </p>
+                                    <ul class="small text-muted ps-3 mb-0">
+                                        <li>Optimized aspect ratio: <code>5:3</code> (e.g., 1000px × 600px).</li>
+                                        <li>Supports WebP, PNG, JPG formats with automated multi-size thumbnail generation.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card border-0 shadow-sm rounded-3 h-100 p-3">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-alert-octagon text-danger fs-4"></i>
+                                        <h6 class="fw-bold mb-0">Inactive Category Protection</h6>
+                                    </div>
+                                    <p class="small text-muted mb-2">
+                                        If an article's assigned category is later marked inactive, the edit screen alerts the editor:
+                                    </p>
+                                    <div class="badge bg-danger-subtle text-danger border border-danger-subtle px-2 py-1.5 fw-semibold small d-inline-flex align-items-center mb-2">
+                                        <i class="mdi mdi-alert-circle-outline me-1"></i> Previously assigned category is inactive
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        The administrator can simply reassign the article to another active category to restore full storefront visibility.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Inactive Blog State Warning Details -->
+                        <div class="p-4 rounded-3 border bg-light-subtle">
+                            <h6 class="fw-bold text-dark mb-2">
+                                <i class="mdi mdi-eye-off-outline text-warning me-1"></i> What Occurs When Setting a Blog to Inactive:
+                            </h6>
+                            <ul class="text-muted small ps-3 mb-0">
+                                <li class="mb-1"><strong>Instant Unpublish:</strong> The post is immediately removed from the storefront blog index, recent post carousels, and category archives.</li>
+                                <li class="mb-1"><strong>Direct URL Protection:</strong> Public visitors attempting to visit the slug directly will receive a 404 Not Found error.</li>
+                                <li><strong>Draft Preservation:</strong> All rich-text markup, user comments, views metrics, and SEO metadata are securely preserved in the database for future republication.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= 17.5: SEO & METADATA ENGINEERING ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-17-5">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-google text-primary me-1"></i> 17.5 Search Engine Optimization (SEO) &amp; Metadata Engineering
+                        </h3>
+                        <p class="text-muted">
+                            MartX is engineered for aggressive organic search dominance. Every article includes dedicated metadata fields that feed directly into HTML header tags and OpenGraph social preview cards.
+                        </p>
+
+                        <!-- Google SERP Snippet Preview Card -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h6 class="card-title mb-0 fw-bold">
+                                        <i class="mdi mdi-eye-check-outline text-success me-1"></i> Real-Time Google SERP Simulator
+                                    </h6>
+                                    <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 small">Desktop &amp; Mobile Preview</span>
+                                </div>
+                            </div>
+                            <div class="card-body p-4 bg-white font-sans">
+                                <div class="serp-preview p-3 border rounded-3" style="max-width: 680px; background-color: #ffffff;">
+                                    <div class="d-flex align-items-center gap-2 mb-1">
+                                        <div class="rounded-circle bg-light border d-flex align-items-center justify-content-center" style="width: 26px; height: 26px;">
+                                            <i class="mdi mdi-shopping text-primary fs-6"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-dark small fw-medium" style="font-size: 13px; line-height: 1.2;">MartX Online Store</div>
+                                            <div class="text-muted small font-monospace" style="font-size: 11px;">https://yourstore.com/blogs/exclusive-autumn-winter-2026-collection-preview</div>
+                                        </div>
+                                    </div>
+                                    <h5 class="text-primary fw-medium mb-1" style="color: #1a0dab !important; cursor: pointer; text-decoration: none; font-size: 18px; line-height: 1.3;">
+                                        Exclusive Autumn-Winter 2026 Collection Preview | MartX Journal
+                                    </h5>
+                                    <p class="text-secondary small mb-0" style="color: #4d5156 !important; font-size: 13px; line-height: 1.5;">
+                                        Get an exclusive first look at our upcoming Autumn-Winter 2026 drops. Featuring double-faced Italian wool overcoats, waterproof insulated parkas, and shearling-lined boots...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SEO Character Optimization Table -->
+                        <div class="table-responsive">
+                            <table class="table table-hover border align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width: 22%;">Metadata Attribute</th>
+                                        <th style="width: 18%;">Recommended Character Limit</th>
+                                        <th style="width: 60%;">SEO Best Practice &amp; Search Impact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold font-monospace">Meta Title</td>
+                                        <td><code>50 - 70 characters</code></td>
+                                        <td>Crucial ranking signal. Include primary target keywords near the beginning and append brand identifier (e.g., <code>| MartX Journal</code>).</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold font-monospace">Meta Keywords</td>
+                                        <td><code>Under 255 characters</code></td>
+                                        <td>Comma-separated keywords used for internal site search ranking and secondary indexing algorithms.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold font-monospace">Meta Description</td>
+                                        <td><code>140 - 160 characters</code></td>
+                                        <td>The search snippet that drives click-through rate (CTR). Must include a persuasive call-to-action without getting truncated on mobile SERP displays.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= 17.6: CONTENT MARKETING & EDITORIAL PUBLISHING SOP ================= -->
+                    <div class="doc-subsection mt-5" id="sec-17-6">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-clipboard-check-outline text-primary me-1"></i> 17.6 Content Marketing &amp; Editorial Publishing SOP
+                        </h3>
+                        <p class="text-muted">
+                            To ensure high editorial standards, search visibility, and maximum buyer conversions, marketing teams should execute this 6-step publishing SOP for every new story:
+                        </p>
+
+                        <div class="p-4 rounded-3 border bg-light shadow-sm">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white border rounded-3 h-100">
+                                        <div class="fw-bold text-primary mb-1">Step 1: Topic &amp; Category Selection</div>
+                                        <p class="small text-muted mb-0">Navigate to <strong>Add New Blog</strong> and select an active category from the right sidebar dropdown to anchor article taxonomy.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white border rounded-3 h-100">
+                                        <div class="fw-bold text-primary mb-1">Step 2: Headline Drafting</div>
+                                        <p class="small text-muted mb-0">Input a compelling, search-intent driven headline in <strong>Blog Title</strong> (e.g., <em>Top 10 Men's Summer Fashion Trends in 2026</em>).</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white border rounded-3 h-100">
+                                        <div class="fw-bold text-primary mb-1">Step 3: AI Generation Trigger</div>
+                                        <p class="small text-muted mb-0">Click <strong>✨ Auto Generate with AI</strong> to generate the full article, structured headings, tips, and SEO meta tags.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white border rounded-3 h-100">
+                                        <div class="fw-bold text-primary mb-1">Step 4: Editorial Refinement</div>
+                                        <p class="small text-muted mb-0">Review the generated text in the Quill WYSIWYG editor. Add store product hyperlinks, brand voice touches, or video embeds.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white border rounded-3 h-100">
+                                        <div class="fw-bold text-primary mb-1">Step 5: Featured Artwork Assignment</div>
+                                        <p class="small text-muted mb-0">Click <strong>Select Image</strong> to choose an eye-catching 5:3 aspect ratio cover photo from the MartX Media Manager.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white border rounded-3 h-100">
+                                        <div class="fw-bold text-primary mb-1">Step 6: Publish &amp; Verify</div>
+                                        <p class="small text-muted mb-0">Ensure Status is set to <strong>Active</strong> and click <strong>Save &amp; Publish Blog</strong>. Verify immediate appearance on your public blog storefront.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="cms-pages.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 16 (Pages, FAQ &amp; About)
+                    </a>
+                    <a href="customer-interaction.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 18 (Reviews &amp; Messages) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc" style="font-size: 0.75rem;">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#ch17-intro" class="doc-toc-link active">Overview</a>
+                    <a href="#sec-17-1" class="doc-toc-link">17.1 Categories &amp; Split Console</a>
+                    <a href="#sec-17-2" class="doc-toc-link">17.2 Editorial Directory</a>
+                    <a href="#sec-17-3" class="doc-toc-link">17.3 AI Content Studio</a>
+                    <a href="#sec-17-4" class="doc-toc-link">17.4 Publishing Lifecycle</a>
+                    <a href="#sec-17-5" class="doc-toc-link">17.5 SEO Engineering</a>
+                    <a href="#sec-17-6" class="doc-toc-link">17.6 Publishing SOP</a>
+                    
+                    <hr class="my-2">
+                    <a href="#ch17-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction &amp; Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce &amp; Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders &amp; Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers &amp; Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons &amp; Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website &amp; CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders &amp; Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ &amp; About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link active" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs &amp; Editorial
+            </a>
+            <div class="sidebar-heading">Customer &amp; Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews &amp; Messages
+            </a>
+            <div class="sidebar-heading">Administration &amp; Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations &amp; Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance &amp; Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron &amp; FAQs
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 1rem; overflow: hidden;">
+                <div class="modal-header border-bottom p-3">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0 text-muted ps-2">
+                            <i class="mdi mdi-magnify fs-4"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 shadow-none ps-2" id="docGlobalSearch" placeholder="Search documentation chapters, attributes, or guides..." autofocus>
+                    </div>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3" id="docSearchResults" style="max-height: 400px; overflow-y: auto;">
+                    <div class="text-muted small text-uppercase fw-bold px-2 mb-2">Documentation Hub</div>
+                    <div class="p-3 text-center text-muted">Type any keyword to search across all 22 chapters...</div>
+                </div>
+                <div class="modal-footer border-top py-2 px-3 justify-content-between text-muted small">
+                    <span>Press <kbd class="bg-light text-dark border">ESC</kbd> to exit</span>
+                    <span>MartX Documentation v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>
