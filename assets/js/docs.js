@@ -32,6 +32,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 1.2 Mobile Offcanvas Fallback & Enhanced Navigation Guarantee (Pure Vanilla JS Fallback)
+    const offcanvasToggleBtn = document.querySelector('[data-bs-toggle="offcanvas"][data-bs-target="#sidebarOffcanvas"]');
+    if (offcanvasToggleBtn && sidebarOffcanvas) {
+        function closeFallbackOffcanvas() {
+            sidebarOffcanvas.classList.remove('show');
+            setTimeout(() => {
+                if (!sidebarOffcanvas.classList.contains('show')) {
+                    sidebarOffcanvas.style.visibility = '';
+                }
+            }, 300);
+            const backdrop = document.querySelector('.offcanvas-backdrop');
+            if (backdrop) backdrop.remove();
+        }
+
+        offcanvasToggleBtn.addEventListener('click', (e) => {
+            if (typeof bootstrap === 'undefined' || !bootstrap.Offcanvas) {
+                e.preventDefault();
+                const isOpen = sidebarOffcanvas.classList.contains('show');
+                if (!isOpen) {
+                    sidebarOffcanvas.classList.add('show');
+                    sidebarOffcanvas.style.visibility = 'visible';
+                    let backdrop = document.querySelector('.offcanvas-backdrop');
+                    if (!backdrop) {
+                        backdrop = document.createElement('div');
+                        backdrop.className = 'offcanvas-backdrop fade show';
+                        document.body.appendChild(backdrop);
+                        backdrop.addEventListener('click', closeFallbackOffcanvas);
+                    }
+                    const activeMobileNav = sidebarOffcanvas.querySelector('.sidebar-nav-link.active');
+                    if (activeMobileNav) {
+                        activeMobileNav.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'instant' });
+                    }
+                } else {
+                    closeFallbackOffcanvas();
+                }
+            }
+        });
+
+        sidebarOffcanvas.querySelectorAll('.btn-close, [data-bs-dismiss="offcanvas"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (typeof bootstrap === 'undefined' || !bootstrap.Offcanvas) {
+                    closeFallbackOffcanvas();
+                }
+            });
+        });
+    }
+
     // 2. Robust One-Click Code Snippet Copying (with file:// fallback)
     function copyToClipboard(text) {
         if (navigator.clipboard && window.isSecureContext) {
@@ -116,23 +163,23 @@ document.addEventListener('DOMContentLoaded', () => {
         2: 'mdi-server',
         3: 'mdi-rocket-launch',
         4: 'mdi-shield-key',
-        5: 'mdi-view-dashboard-variant',
-        6: 'mdi-view-carousel-outline',
-        7: 'mdi-menu',
-        8: 'mdi-image-multiple',
-        9: 'mdi-package-variant-closed',
-        10: 'mdi-shape-outline',
+        5: 'mdi-view-dashboard-outline',
+        6: 'mdi-image-multiple',
+        7: 'mdi-shape-outline',
+        8: 'mdi-package-variant-closed',
+        9: 'mdi-cart-outline',
+        10: 'mdi-truck-fast-outline',
         11: 'mdi-ticket-percent-outline',
-        12: 'mdi-truck-fast-outline',
-        13: 'mdi-credit-card-outline',
-        14: 'mdi-cart-outline',
-        15: 'mdi-account-star-outline',
-        16: 'mdi-post-outline',
-        17: 'mdi-file-document-outline',
-        18: 'mdi-view-dashboard-outline',
+        12: 'mdi-credit-card-outline',
+        13: 'mdi-view-dashboard-variant',
+        14: 'mdi-menu',
+        15: 'mdi-view-carousel-outline',
+        16: 'mdi-file-document-outline',
+        17: 'mdi-post-outline',
+        18: 'mdi-account-star-outline',
         19: 'mdi-account-group',
         20: 'mdi-map-marker-radius-outline',
-        21: 'mdi-cog-outline',
+        21: 'mdi-cog',
         22: 'mdi-clock-fast'
     };
 
