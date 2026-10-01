@@ -2531,4 +2531,378 @@ document.addEventListener('DOMContentLoaded', () => {
             openLightbox(img.getAttribute('src'), title);
         });
     });
+
+    // ================= 🎬 14-POINT CINEMATIC AUTOPLAY SHOWCASE (VIDEO-LIKE EXPERIENCE) =================
+    const tourContainer = document.getElementById('visual-showcase');
+    if (tourContainer) {
+        const slides = [
+            {
+                id: 1,
+                category: 'Storefront',
+                title: 'Storefront Homepage & Gemini AI Shopping Assistant',
+                desc: 'High-converting responsive landing with Summer Fashion 2026 hero slider, quick category navigation pills, trust badges (Free Shipping, 14-Day Return), and autonomous floating Gemini AI shopping concierge.',
+                url: 'Storefront — Homepage: Hero Slider, Category Badges & Gemini AI Concierge',
+                badge: 'Conversion Driver',
+                tags: ['Hero Slider', 'Gemini AI Bot', 'Sub-50ms SSR', 'Category Navigator'],
+                image: 'assets/images/screenshots/01_storefront_home.png',
+                chip: '1. Home & AI'
+            },
+            {
+                id: 2,
+                category: 'Storefront',
+                title: 'Shop Catalog, Dynamic Price Slider & Live Badges',
+                desc: 'Sub-30ms faceted search filtering by price slider, brand, and color without page reloads. Includes live flash sale countdown clocks (Ends in 38 Days) and 1-click cart triggers.',
+                url: 'Storefront — Shop Catalog: Real-Time Faceted Search & Flash Badges',
+                badge: 'Instant Search',
+                tags: ['Faceted Filter', 'Flash Countdown', 'Grid Layout', 'Instant Search'],
+                image: 'assets/images/screenshots/02_shop_catalog_filters.png',
+                chip: '2. Shop & Filters'
+            },
+            {
+                id: 3,
+                category: 'Storefront',
+                title: 'Product Details, Color Swatches & Stock Availability',
+                desc: 'Single product page featuring multi-angle gallery, interactive color swatches, size selectors (M, L), real-time inventory counter (19 In Stock), and verified customer star reviews.',
+                url: 'Storefront — Product Details: Color Swatches, Variant Pickers & Stock Ticker',
+                badge: 'E-Commerce Powerhouse',
+                tags: ['Color Swatches', 'Real-Time Stock', 'Flash Timer', 'Review Schema'],
+                image: 'assets/images/screenshots/03_product_details_variants.png',
+                chip: '3. Variants & Stock'
+            },
+            {
+                id: 4,
+                category: 'Storefront',
+                title: 'Shopping Cart, Dynamic Coupon Engine & Totals',
+                desc: 'Frictionless cart review table featuring automated subtotal calculations, dynamic coupon discount verification, real-time quantity modifiers, and high-visibility secure checkout CTA.',
+                url: 'Storefront — Shopping Cart: Discount Coupon Verification & Order Recalculation',
+                badge: 'Conversion Engine',
+                tags: ['Coupon Engine', 'Cart Recalculation', 'Secure Checkout CTA'],
+                image: 'assets/images/screenshots/04_shopping_cart.png',
+                chip: '4. Cart & Coupon'
+            },
+            {
+                id: 5,
+                category: 'Storefront',
+                title: 'Self-Service Customer Order Tracking Portal',
+                desc: 'Zero-friction customer self-service hub allowing buyers to track package delivery status, courier assigned, and payment confirmation in real time using their Order ID and billing email.',
+                url: 'Storefront — Order Tracking: Self-Service Dispatch & Fulfillment Radar',
+                badge: 'Customer Retention',
+                tags: ['Customer Self-Service', 'Courier Live Radar', 'Zero Support Overhead'],
+                image: 'assets/images/screenshots/05_order_tracking.png',
+                chip: '5. Order Track'
+            },
+            {
+                id: 6,
+                category: 'Admin Cockpit',
+                title: '360° Executive Telemetry Dashboard & Spline Analytics',
+                desc: 'Executive admin command center with monthly sales KPI cards, live order statistics, spline sales vs. order analytics curves, and order distribution donut charts.',
+                url: 'Admin Cockpit — Executive Dashboard: Spline Revenue Analytics & Order Status Charts',
+                badge: 'Executive Cockpit',
+                tags: ['Executive KPIs', 'Spline Charts', 'Donut Distribution', 'Quick Actions'],
+                image: 'assets/images/screenshots/07_admin_executive_dashboard.png',
+                chip: '6. 360° Dashboard'
+            },
+            {
+                id: 7,
+                category: 'Admin Cockpit',
+                title: 'Order Fulfillment, Payment Verification & Invoices',
+                desc: 'Complete order processing dashboard tracking 41+ live orders with multi-status filters (Paid, Unpaid, Pending, Delivered), customer billing overview, and 1-click printable PDF invoices.',
+                url: 'Admin Cockpit — Orders Management: Real-Time Fulfillment, Invoices & Filters',
+                badge: 'Fulfillment Hub',
+                tags: ['41+ Live Orders', 'Status Workflow', 'Printable Invoices', 'Payment Badges'],
+                image: 'assets/images/screenshots/08_admin_orders_management.png',
+                chip: '7. Orders Hub'
+            },
+            {
+                id: 8,
+                category: 'Admin Cockpit',
+                title: 'Catalog Inventory Management & Low Stock Warning Radar',
+                desc: 'Comprehensive catalog directory tracking 48+ active products, real-time stock alert counters (3 low stock, 3 out of stock), product SKU codes, category taxonomy, and instant Trendy toggles.',
+                url: 'Admin Cockpit — Product Inventory: 48+ SKUs, Low-Stock Radar & Instant Toggles',
+                badge: 'Stock Radar',
+                tags: ['Stock Alert Radar', 'SKU Tracking', 'Instant Toggles', 'Bulk Actions'],
+                image: 'assets/images/screenshots/09_admin_products_inventory.png',
+                chip: '8. Inventory Radar'
+            },
+            {
+                id: 9,
+                category: 'Admin Cockpit',
+                title: 'Multi-Tab Product Creation & SEO Meta Wizard',
+                desc: 'Structured product authoring suite with dedicated tabs for General Info, Pricing, Inventory & Stock, Product Variants & Attributes, Reusable Media Library, and Google SEO Metadata.',
+                url: 'Admin Cockpit — Add Product Wizard: Multi-Tab Variations, Media & SEO Meta',
+                badge: 'Authoring Wizard',
+                tags: ['Multi-Tab Wizard', 'Attribute Matrix', 'SEO Metadata', 'Media Picker'],
+                image: 'assets/images/screenshots/12_admin_product_create_wizard.png',
+                chip: '9. Product Wizard'
+            },
+            {
+                id: 10,
+                category: 'Admin Cockpit',
+                title: 'Enterprise Granular Role & Permissions Matrix',
+                desc: '77+ granular security permissions governing Super Admins, Managers, and Staff roles across products, orders, media, customer communications, payment gateways, and core settings.',
+                url: 'Admin Cockpit — Role Permissions: 77+ Granular Checkbox Matrix & Staff Management',
+                badge: 'Enterprise Security',
+                tags: ['77+ Permissions', 'Role Matrix', 'Least-Privilege Security', 'Staff Manager'],
+                image: 'assets/images/screenshots/13_admin_role_permissions.png',
+                chip: '10. Role Permissions'
+            },
+            {
+                id: 11,
+                category: 'Customizer',
+                title: 'No-Code Visual Theme Layouts & Header Switcher',
+                desc: 'Intuitive visual layout builder allowing store owners to switch between Header 1, Header 2, and Header 3, customize Home Page layout blocks, select Mega Menu styles, and configure product card designs with 1 click.',
+                url: 'Customizer — Theme Layouts: 1-Click Header 1/2/3 Switcher & Visual Mega Menu',
+                badge: 'No-Code Freedom',
+                tags: ['3 Header Styles', 'Mega Menu Customizer', 'No-Code Layouts', 'Card Styles'],
+                image: 'assets/images/screenshots/10_admin_theme_layouts_builder.png',
+                chip: '11. Theme Layouts'
+            },
+            {
+                id: 12,
+                category: 'Customizer',
+                title: '8+ Universal Payment Gateways & Crypto Hub',
+                desc: 'Pre-integrated payment switchboard supporting Stripe, PayPal, SSLCommerz, Paystack, Razorpay, WayForPay, Cash on Delivery with advance validation, and next-gen Crypto Gateways (Binance Pay & CoinGate).',
+                url: 'Gateways — Payment Hub: Stripe, PayPal, SSLCommerz, Binance Pay & CoinGate',
+                badge: 'Universal Checkout',
+                tags: ['Stripe & PayPal', 'Binance Pay & CoinGate', 'Zero Chargebacks', 'Instant Webhooks'],
+                image: 'assets/images/screenshots/11_admin_payment_gateways.png',
+                chip: '12. 8+ Gateways'
+            },
+            {
+                id: 13,
+                category: 'Customizer',
+                title: 'System Settings, Currency Switcher & Mail SMTP Hub',
+                desc: 'Central operational hub for configuring store currency, tax calculations, automated email SMTP credentials, and platform security flags.',
+                url: 'System — Master Settings: Currency, SMTP Email Relay & System Configuration',
+                badge: 'Infrastructure Hub',
+                tags: ['Multi-Currency', 'SMTP Mailer', 'Branding Engine', 'SEO Prefixes'],
+                image: 'assets/images/screenshots/11_admin_settings_hub.png',
+                chip: '13. Settings Hub'
+            },
+            {
+                id: 14,
+                category: 'Customizer',
+                title: 'Protected Admin Authentication Gateway',
+                desc: 'Modern branded MartX admin login screen engineered with brute-force rate-limiting, secure session management, and encrypted password protection.',
+                url: 'Security — Admin Login Portal: Brute-Force Rate-Limiting & Session Encryption',
+                badge: 'Security Shield',
+                tags: ['Brute-Force Rate Limiting', 'Encrypted Sessions', 'MartX Branded Portal'],
+                image: 'assets/images/screenshots/06_admin_login_portal.png',
+                chip: '14. Admin Login'
+            }
+        ];
+
+        let currentIndex = 0;
+        let isPlaying = true;
+        const slideDuration = 4000;
+        let slideStartTime = Date.now();
+        let animationFrameId = null;
+
+        const activeImg = document.getElementById('tourActiveImg');
+        const urlBar = document.getElementById('tourUrlBar');
+        const counterBadge = document.getElementById('tourSlideCounter');
+        const categoryBadge = document.getElementById('tourCategoryBadge');
+        const newTabLink = document.getElementById('tourNewTabLink');
+        const captionTitle = document.getElementById('tourCaptionTitle');
+        const captionDesc = document.getElementById('tourCaptionDesc');
+        const captionTags = document.getElementById('tourCaptionTags');
+        const badgeDisplay = document.getElementById('tourBadgeDisplay');
+        const playPauseBtn = document.getElementById('tourPlayPauseBtn');
+        const prevBtn = document.getElementById('tourPrevBtn');
+        const nextBtn = document.getElementById('tourNextBtn');
+        const fullscreenBtn = document.getElementById('tourFullscreenBtn');
+        const progressTrack = document.getElementById('tourProgressTrack');
+        const chapterBar = document.getElementById('tourChapterBar');
+        const viewport = document.getElementById('tourViewport');
+
+        // Build 14 Story Progress Segments
+        if (progressTrack) {
+            progressTrack.innerHTML = '';
+            slides.forEach((s, idx) => {
+                const seg = document.createElement('div');
+                seg.className = 'tour-progress-segment' + (idx === 0 ? ' active' : '');
+                seg.title = `${s.chip}: ${s.title}`;
+                const fill = document.createElement('div');
+                fill.className = 'tour-progress-fill';
+                seg.appendChild(fill);
+                seg.addEventListener('click', () => {
+                    goToSlide(idx);
+                });
+                progressTrack.appendChild(seg);
+            });
+        }
+
+        // Build 14 Chapter Chips
+        if (chapterBar) {
+            chapterBar.innerHTML = '';
+            slides.forEach((s, idx) => {
+                const chip = document.createElement('button');
+                chip.type = 'button';
+                chip.className = 'tour-chip-btn' + (idx === 0 ? ' active' : '');
+                chip.innerHTML = `<i class="mdi mdi-play-circle-outline"></i> ${s.chip}`;
+                chip.addEventListener('click', () => {
+                    goToSlide(idx);
+                });
+                chapterBar.appendChild(chip);
+            });
+        }
+
+        function renderSlide(index, animate = true) {
+            const slide = slides[index];
+            if (!slide) return;
+
+            if (animate && activeImg) {
+                activeImg.classList.add('transitioning');
+                setTimeout(() => {
+                    activeImg.src = slide.image;
+                    activeImg.alt = slide.title;
+                    activeImg.classList.remove('transitioning');
+                }, 180);
+            } else if (activeImg) {
+                activeImg.src = slide.image;
+                activeImg.alt = slide.title;
+            }
+
+            if (urlBar) urlBar.textContent = slide.url;
+            if (counterBadge) counterBadge.textContent = `${slide.id} / ${slides.length}`;
+            if (categoryBadge) categoryBadge.textContent = slide.category;
+            if (newTabLink) newTabLink.href = slide.image;
+
+            if (captionTitle) captionTitle.innerHTML = `<i class="mdi mdi-shield-check text-primary"></i> ${slide.id}. ${slide.title}`;
+            if (captionDesc) captionDesc.textContent = slide.desc;
+            if (badgeDisplay) badgeDisplay.textContent = slide.badge;
+
+            if (captionTags) {
+                captionTags.innerHTML = slide.tags.map(t => `<span class="badge">${t}</span>`).join('');
+            }
+
+            // Update Chapter Chips
+            if (chapterBar) {
+                const chips = chapterBar.querySelectorAll('.tour-chip-btn');
+                chips.forEach((c, idx) => {
+                    if (idx === index) {
+                        c.classList.add('active');
+                        c.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    } else {
+                        c.classList.remove('active');
+                    }
+                });
+            }
+
+            // Update Progress Segments
+            if (progressTrack) {
+                const segs = progressTrack.querySelectorAll('.tour-progress-segment');
+                segs.forEach((seg, idx) => {
+                    const fill = seg.querySelector('.tour-progress-fill');
+                    seg.classList.remove('active', 'completed');
+                    if (idx < index) {
+                        seg.classList.add('completed');
+                        if (fill) fill.style.width = '100%';
+                    } else if (idx === index) {
+                        seg.classList.add('active');
+                        if (fill) fill.style.width = '0%';
+                    } else {
+                        if (fill) fill.style.width = '0%';
+                    }
+                });
+            }
+
+            slideStartTime = Date.now();
+        }
+
+        function goToSlide(index) {
+            currentIndex = (index + slides.length) % slides.length;
+            renderSlide(currentIndex);
+        }
+
+        function nextSlide() {
+            goToSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentIndex - 1);
+        }
+
+        function togglePlayPause() {
+            isPlaying = !isPlaying;
+            if (playPauseBtn) {
+                if (isPlaying) {
+                    playPauseBtn.innerHTML = '<i class="mdi mdi-pause me-1"></i> Pause';
+                    slideStartTime = Date.now();
+                } else {
+                    playPauseBtn.innerHTML = '<i class="mdi mdi-play me-1"></i> Play';
+                }
+            }
+        }
+
+        function tick() {
+            if (isPlaying && !document.hidden) {
+                const elapsed = Date.now() - slideStartTime;
+                const percent = Math.min(100, (elapsed / slideDuration) * 100);
+
+                if (progressTrack) {
+                    const activeSeg = progressTrack.querySelector('.tour-progress-segment.active .tour-progress-fill');
+                    if (activeSeg) {
+                        activeSeg.style.width = percent + '%';
+                    }
+                }
+
+                if (elapsed >= slideDuration) {
+                    nextSlide();
+                }
+            }
+            animationFrameId = requestAnimationFrame(tick);
+        }
+
+        if (playPauseBtn) playPauseBtn.addEventListener('click', togglePlayPause);
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+        if (fullscreenBtn) {
+            fullscreenBtn.addEventListener('click', () => {
+                const current = slides[currentIndex];
+                if (current && typeof openLightbox === 'function') {
+                    openLightbox(current.image, current.title);
+                }
+            });
+        }
+
+        if (activeImg) {
+            activeImg.addEventListener('click', () => {
+                const current = slides[currentIndex];
+                if (current && typeof openLightbox === 'function') {
+                    openLightbox(current.image, current.title);
+                }
+            });
+        }
+
+        if (viewport) {
+            viewport.addEventListener('mouseenter', () => {
+                if (isPlaying) {
+                    isPlaying = false;
+                    if (playPauseBtn) playPauseBtn.innerHTML = '<i class="mdi mdi-play me-1"></i> Play';
+                }
+            });
+            viewport.addEventListener('mouseleave', () => {
+                if (!isPlaying) {
+                    isPlaying = true;
+                    slideStartTime = Date.now();
+                    if (playPauseBtn) playPauseBtn.innerHTML = '<i class="mdi mdi-pause me-1"></i> Pause';
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            const lightbox = document.getElementById('docLightboxModal');
+            if (lightbox && lightbox.classList.contains('is-open')) return;
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        });
+
+        renderSlide(0, false);
+        animationFrameId = requestAnimationFrame(tick);
+    }
 });
