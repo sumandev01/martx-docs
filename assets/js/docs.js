@@ -2694,11 +2694,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let currentIndex = 0;
         let isPlaying = true;
-        const slideDuration = 4000;
+        const slideDuration = 4500;
         let slideStartTime = Date.now();
         let animationFrameId = null;
+        let activeLayer = 'A';
+        let transitionTimeout = null;
+        let hoverPaused = false;
 
-        const activeImg = document.getElementById('tourActiveImg');
+        const imgA = document.getElementById('tourImgA');
+        const imgB = document.getElementById('tourImgB');
+        const captionStrip = document.querySelector('.tour-caption-strip');
         const urlBar = document.getElementById('tourUrlBar');
         const counterBadge = document.getElementById('tourSlideCounter');
         const categoryBadge = document.getElementById('tourCategoryBadge');
@@ -2747,22 +2752,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        function renderSlide(index, animate = true) {
-            const slide = slides[index];
-            if (!slide) return;
-
-            if (animate && activeImg) {
-                activeImg.classList.add('transitioning');
-                setTimeout(() => {
-                    activeImg.src = slide.image;
-                    activeImg.alt = slide.title;
-                    activeImg.classList.remove('transitioning');
-                }, 180);
-            } else if (activeImg) {
-                activeImg.src = slide.image;
-                activeImg.alt = slide.title;
-            }
-
+        function updateCaptions(slide) {
             if (urlBar) urlBar.textContent = slide.url;
             if (counterBadge) counterBadge.textContent = `${slide.id} / ${slides.length}`;
             if (categoryBadge) categoryBadge.textContent = slide.category;
@@ -2774,6 +2764,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (captionTags) {
                 captionTags.innerHTML = slide.tags.map(t => `<span class="badge">${t}</span>`).join('');
+            }
+        }
+
+        function renderSlide(index, animate = true) {
+            const slide = slides[index];
+            if (!slide) return;
+
+            const currentEl = (activeLayer === 'A') ? imgA : imgB;
+            const nextEl = (activeLayer === 'A') ? imgB : imgA;
+
+            if (transitionTimeout) {
+                clearTimeout(transitionTimeout);
+                transitionTimeout = null;
+            }
+
+            if (animate && currentEl && nextEl) {
+                // Dual-Layer 60fps/120fps Hardware-Accelerated Crossfade
+                nextEl.src = slide.image;
+                nextEl.alt = slide.title;
+                nextEl.style.zIndex = '3';
+                nextEl.classList.remove('active');
+                
+                // Force layout reflow to reset Ken Burns transform
+                void nextEl.offsetWidth;
+
+                // Trigger smooth 800ms dissolve and 5s Ken Burns camera drift
+                nextEl.classList.add('active');
+
+                transitionTimeout = setTimeout(() => {
+                    currentEl.classList.remove('active');
+                    currentEl.style.zIndex = '1';
+                    nextEl.style.zIndex = '2';
+                    activeLayer = (activeLayer === 'A') ? 'B' : 'A';
+                    transitionTimeout = null;
+
+                    // Preload upcoming slide
+                    const nextSlideIdx = (index + 1) % slides.length;
+                    const preloader = new Image();
+                    preloader.src = slides[nextSlideIdx].image;
+                }, 820);
+            } else if (currentEl) {
+                currentEl.src = slide.image;
+                currentEl.alt = slide.title;
+                currentEl.style.zIndex = '2';
+                currentEl.classList.add('active');
+                if (nextEl) {
+                    nextEl.classList.remove('active');
+                    nextEl.style.zIndex = '1';
+                }
+            }
+
+            // Keynote Subtitle Morphing
+            if (animate && captionStrip) {
+                captionStrip.classList.add('morphing');
+                setTimeout(() => {
+                    updateCaptions(slide);
+                    captionStrip.classList.remove('morphing');
+                }, 180);
+            } else {
+                updateCaptions(slide);
             }
 
             // Update Chapter Chips
@@ -2825,6 +2875,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function togglePlayPause() {
             isPlaying = !isPlaying;
+            hoverPaused = false;
             if (playPauseBtn) {
                 if (isPlaying) {
                     playPauseBtn.innerHTML = '<i class="mdi mdi-pause me-1"></i> Pause';
@@ -2867,24 +2918,28 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        if (activeImg) {
-            activeImg.addEventListener('click', () => {
-                const current = slides[currentIndex];
-                if (current && typeof openLightbox === 'function') {
-                    openLightbox(current.image, current.title);
-                }
-            });
-        }
+        [imgA, imgB].forEach(img => {
+            if (img) {
+                img.addEventListener('click', () => {
+                    const current = slides[currentIndex];
+                    if (current && typeof openLightbox === 'function') {
+                        openLightbox(current.image, current.title);
+                    }
+                });
+            }
+        });
 
         if (viewport) {
             viewport.addEventListener('mouseenter', () => {
                 if (isPlaying) {
+                    hoverPaused = true;
                     isPlaying = false;
                     if (playPauseBtn) playPauseBtn.innerHTML = '<i class="mdi mdi-play me-1"></i> Play';
                 }
             });
             viewport.addEventListener('mouseleave', () => {
-                if (!isPlaying) {
+                if (hoverPaused) {
+                    hoverPaused = false;
                     isPlaying = true;
                     slideStartTime = Date.now();
                     if (playPauseBtn) playPauseBtn.innerHTML = '<i class="mdi mdi-pause me-1"></i> Pause';

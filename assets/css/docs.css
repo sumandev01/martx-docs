@@ -1264,16 +1264,19 @@ code:not(pre code) {
 
 /* ================= 🎬 14-POINT CINEMATIC AUTOPLAY SHOWCASE (VIDEO-LIKE EXPERIENCE) ================= */
 .doc-cinema-player {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 1.15rem;
     overflow: hidden;
     position: relative;
     border: 1px solid var(--doc-border);
     background-color: var(--doc-card-bg);
-    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
 }
 
 [data-bs-theme="dark"] .doc-cinema-player {
-    box-shadow: 0 14px 34px -4px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 20px 48px -6px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.07);
 }
 
 /* 14-Segment Story Progress Bars (Instagram / Apple Story Style) */
@@ -1330,40 +1333,46 @@ code:not(pre code) {
 .tour-viewport-container {
     position: relative;
     width: 100%;
-    height: 440px;
-    max-height: 480px;
+    aspect-ratio: 16 / 10;
+    height: auto;
     overflow: hidden;
-    background: #0f172a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #090d16;
+    display: block;
+    contain: layout paint;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
-@media (max-width: 991.98px) {
-    .tour-viewport-container {
-        height: 360px;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .tour-viewport-container {
-        height: 240px;
-    }
-}
-
-.tour-slide-img {
+/* Dual-Layer Cinema Stack: 60fps/120fps Hardware-Accelerated Crossfade (100% Full Uncropped View) */
+.tour-slide-img.tour-layer {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: top center;
+    object-fit: contain;
+    object-position: center center;
     display: block;
     cursor: zoom-in;
-    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s ease;
+    opacity: 0;
+    z-index: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    transform-origin: center center;
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-.tour-slide-img.transitioning {
-    opacity: 0.15;
-    transform: scale(0.99);
+.tour-slide-img.tour-layer.active {
+    opacity: 1;
+    z-index: 2;
+    transform: translate3d(0, 0, 0) scale(1.02);
+}
+
+/* Subtly ease Ken Burns drift on hover for inspection */
+.tour-viewport-container:hover .tour-slide-img.tour-layer.active {
+    transform: translate3d(0, 0, 0) scale(1.01);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s ease-out;
 }
 
 /* Pause Hover Watermark Overlay */
@@ -1442,11 +1451,28 @@ code:not(pre code) {
     box-shadow: 0 4px 10px rgba(99, 102, 241, 0.28);
 }
 
-/* Dynamic Live Subtitle / Caption Strip */
+/* Dynamic Live Subtitle / Caption Strip (Keynote Morphing Effect) */
 .tour-caption-strip {
     padding: 1rem 1.25rem;
     background: var(--doc-card-bg);
     border-top: 1px solid var(--doc-border);
+    transition: background-color 0.25s ease;
+}
+
+.tour-caption-title,
+.tour-caption-desc,
+.tour-caption-tags,
+#tourBadgeDisplay {
+    transition: opacity 0.22s cubic-bezier(0.4, 0, 0.2, 1), transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+.tour-caption-strip.morphing .tour-caption-title,
+.tour-caption-strip.morphing .tour-caption-desc,
+.tour-caption-strip.morphing .tour-caption-tags,
+.tour-caption-strip.morphing #tourBadgeDisplay {
+    opacity: 0.12;
+    transform: translateY(4px);
 }
 
 .tour-caption-title {
