@@ -2039,13 +2039,58 @@ document.addEventListener('DOMContentLoaded', () => {
         "keywords": "22.5 merchant operations & periodic maintenance sop sec-22-5 web cron automated tasks cpanel cron command 1 minute scheduler expired orders cache clear knowledge base 22.5 merchant operations amp periodic maintenance sop adhere these best-practice routines keep your martx ecommerce store secure high-performing and reliable weekly amp monthly maintenance checklist frequency action item recommended operational procedure daily automation background tasks run ensure your cpanel cron cloud web cron pinging the store every 1-5 minutes auto-cancel abandoned unpaid orders. weekly review customer inquiries amp reviews moderate"
     },
     {
-        "ch": 22,
-        "badge": "Ch 22 • Cron & FAQ",
-        "title": "Thank You for Choosing MartX!",
-        "url": "cron-faq.html#thank-you-welcome",
+        "ch": 23,
+        "badge": "Ch 23 • Security & Speed",
+        "title": "Chapter 23: Extra Security & Speed Boost (Cloudflare Edge & CDN)",
+        "url": "extra-security-speed.html#ch23-intro",
+        "type": "Chapter",
+        "snippet": "Elevate your MartX e-commerce storefront into an enterprise digital fortress with Cloudflare edge shield, DDoS protection, and sub-50ms loading.",
+        "keywords": "chapter 23 extra security speed boost cloudflare cdn edge shield ddos protection free wildcard ssl origin ip hidden early hints bot fight mode http3 quic"
+    },
+    {
+        "ch": 23,
+        "badge": "Ch 23 • Security & Speed",
+        "title": "23.1 High-Impact Advantages: What You Gain",
+        "url": "extra-security-speed.html#sec-23-1",
         "type": "Section",
-        "snippet": "Welcome to the MartX commerce ecosystem. You have successfully explored all 22 chapters of the official enterprise guide. Your store is n...",
-        "keywords": "thank you for choosing martx! thank-you-welcome web cron automated tasks cpanel cron command 1 minute scheduler expired orders cache clear knowledge base documentation complete bull welcome aboard thank you for choosing martx welcome the martx commerce ecosystem. you have successfully explored all chapters the official enterprise guide. your store now primed deliver blazing-fast customer experiences automated operations and unstoppable sales growth. launch with confidence your catalog checkout flows payment gateways and regional delivery rules are synchronized for high-conversion sales. automated engine automated"
+        "snippet": "Origin IP concealment, sub-50ms edge caching, universal wildcard SSL, zero server overload, and automated bot mitigation.",
+        "keywords": "23.1 high-impact advantages what you gain origin ip concealment sub-50ms edge caching universal wildcard ssl zero server overload bot mitigation reverse proxy"
+    },
+    {
+        "ch": 23,
+        "badge": "Ch 23 • Security & Speed",
+        "title": "23.3 DNS Records & The Critical Mail Shield",
+        "url": "extra-security-speed.html#sec-23-3",
+        "type": "Section",
+        "snippet": "Configuring Orange Cloud for web assets vs Grey Cloud (DNS only) for mail and ftp to prevent broken store notification emails.",
+        "keywords": "23.3 dns records critical mail shield orange cloud proxied grey cloud dns only cname mail mx record prevent email downtime"
+    },
+    {
+        "ch": 23,
+        "badge": "Ch 23 • Security & Speed",
+        "title": "23.5 Military-Grade SSL/TLS & HTTPS Force",
+        "url": "extra-security-speed.html#sec-23-5",
+        "type": "Section",
+        "snippet": "Configuring Full or Full (Strict) SSL encryption mode, Always Use HTTPS, and TLS 1.2/1.3 without redirect loops.",
+        "keywords": "23.5 military-grade ssl tls https force encryption full full strict always use https err_too_many_redirects tls 1.2 tls 1.3"
+    },
+    {
+        "ch": 23,
+        "badge": "Ch 23 • Security & Speed",
+        "title": "23.6 2026+ Next-Gen Speed Acceleration",
+        "url": "extra-security-speed.html#sec-23-6",
+        "type": "Section",
+        "snippet": "Activating Early Hints, Cloudflare Fonts, HTTP/3 with QUIC, and 0-RTT connection resumption for sub-50ms loading.",
+        "keywords": "23.6 2026+ next-gen speed acceleration early hints 103 early hints cloudflare fonts http3 quic 0-rtt connection resumption"
+    },
+    {
+        "ch": 23,
+        "badge": "Ch 23 • Security & Speed",
+        "title": "Thank You for Choosing MartX!",
+        "url": "extra-security-speed.html#thank-you-welcome",
+        "type": "Section",
+        "snippet": "Welcome to the MartX commerce ecosystem. You have successfully explored all 23 chapters of the official enterprise guide. Your store is primed for sales.",
+        "keywords": "thank you for choosing martx! thank-you-welcome 5-star review whatsapp support email support suman chandra dev sharma all 23 chapters complete"
     }
 ];
 

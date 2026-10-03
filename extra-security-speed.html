@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 23: Extra Security & Speed Boost (Cloudflare Edge & CDN) - MartX Documentation</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons (MDI) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <!-- Custom Documentation Styling -->
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+
+    <!-- ================= 1. TOP STICKY NAVBAR ================= -->
+    <header class="navbar navbar-expand-lg sticky-top doc-navbar px-2 px-sm-3 px-lg-4 py-2">
+        <div class="container-fluid px-0 d-flex align-items-center justify-content-between flex-nowrap">
+            <!-- Brand & Mobile Toggle -->
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu fs-4"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none m-0 py-0" href="index.html">
+                    <img src="assets/images/logo.png" alt="MartX Logo" class="doc-brand-logo">
+                    <span class="doc-brand-badge d-none d-sm-inline-block">v1.0.0</span>
+                </a>
+            </div>
+
+            <!-- Global Search Trigger (Ctrl + K) - Desktop Only (>= 992px) -->
+            <div class="d-none d-lg-block mx-auto px-3" style="max-width: 420px; width: 100%;">
+                <div class="input-group" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <span class="input-group-text text-muted ps-3">
+                        <i class="mdi mdi-magnify"></i>
+                    </span>
+                    <input type="text" class="form-control text-muted" placeholder="Search documentation... (Ctrl + K)" readonly style="cursor: pointer;">
+                    <span class="input-group-text text-muted pe-3 font-monospace small">⌘K</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Mobile/Tablet Search (< 992px), Support -->
+            <div class="d-flex align-items-center gap-1 gap-sm-2 flex-shrink-0">
+                <button class="btn doc-navbar-btn-icon d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search documentation" aria-label="Search">
+                    <i class="mdi mdi-magnify fs-5"></i>
+                </button>
+                <a href="https://wa.me/8801750527181?text=Hello%20Suman%20Dev,%20I%20purchased%20MartX%20Enterprise%20and%20need%20assistance." target="_blank" rel="noopener noreferrer" class="btn btn-outline-success doc-navbar-btn d-none d-md-inline-flex align-items-center gap-1" title="WhatsApp: +880 1750-527181">
+                    <i class="mdi mdi-whatsapp"></i> WhatsApp Support
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. MAIN 3-COLUMN WRAPPER ================= -->
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+
+            <!-- ================= LEFT SIDEBAR (DESKTOP) ================= -->
+            <nav class="col-lg-3 col-xl-2 d-none d-lg-block doc-sidebar">
+                <div class="sidebar-heading">Getting Started</div>
+                <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold">
+                    <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+                </a>
+                <a href="index.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction &amp; Overview
+                </a>
+                <a href="server-requirements.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-server"></i> 2. Server Requirements
+                </a>
+                <a href="installation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+                </a>
+                <a href="license-activation.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shield-key"></i> 4. License Activation
+                </a>
+                <div class="sidebar-heading">Main</div>
+                <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+                </a>
+                <a href="media-manager.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+                </a>
+                <div class="sidebar-heading">Ecommerce &amp; Sales</div>
+                <a href="catalog-inventory.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+                </a>
+                <a href="products-management.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+                </a>
+                <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cart-outline"></i> 9. Orders &amp; Fulfillment
+                </a>
+                <a href="shipping-couriers.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers &amp; Shipping Costs
+                </a>
+                <a href="coupons-marketing.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons &amp; Marketing
+                </a>
+                <a href="payment-gateways.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+                </a>
+                <div class="sidebar-heading">Website &amp; CMS</div>
+                <a href="theme-layouts.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+                </a>
+                <a href="navigation-menus.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+                </a>
+                <a href="sliders-banners.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders &amp; Banners
+                </a>
+                <a href="cms-pages.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ &amp; About
+                </a>
+                <a href="blogs-editorial.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-post-outline"></i> 17. Blogs &amp; Editorial
+                </a>
+                <div class="sidebar-heading">Customer &amp; Community</div>
+                <a href="customer-interaction.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-star-outline"></i> 18. Reviews &amp; Messages
+                </a>
+                <div class="sidebar-heading">Administration &amp; Settings</div>
+                <a href="staff-roles.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+                </a>
+                <a href="locations-coverage.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations &amp; Coverage
+                </a>
+                <a href="settings-theme.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-cog"></i> 21. System Settings Hub
+                </a>
+                <div class="sidebar-heading">Maintenance &amp; Support</div>
+                <a href="cron-faq.html" class="sidebar-nav-link">
+                    <i class="mdi mdi-clock-fast"></i> 22. Web Cron &amp; FAQs
+                </a>
+                <a href="extra-security-speed.html" class="sidebar-nav-link active">
+                    <i class="mdi mdi-shield-airplane text-success"></i> 23. Extra Security &amp; Speed Boost
+                </a>
+            </nav>
+
+            <!-- ================= CENTER CONTENT (MAIN DOCS BODY) ================= -->
+            <main class="col-12 col-lg-9 col-xl-8 doc-main-content">
+
+                <!-- BREADCRUMB & HEADER -->
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Docs</a></li>
+                        <li class="breadcrumb-item">Maintenance &amp; Support</li>
+                        <li class="breadcrumb-item active" aria-current="page">Chapter 23: Extra Security &amp; Speed Boost</li>
+                    </ol>
+                </nav>
+
+                <!-- ================= CHAPTER 23: MAIN SECTION ================= -->
+                <section class="doc-section" id="ch23-intro">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1.5 rounded-pill fw-bold text-uppercase small">
+                            <i class="mdi mdi-shield-airplane me-1"></i> Edge Shield &bull; Global CDN &bull; Military SSL
+                        </span>
+                    </div>
+
+                    <h1 class="display-6 fw-bold text-heading mb-3">
+                        <i class="mdi mdi-shield-crown text-primary"></i> Chapter 23: Extra Security &amp; Speed Boost
+                    </h1>
+                    <p class="lead text-muted">
+                        Elevate your MartX e-commerce storefront into an enterprise-grade digital fortress. By coupling your hosting server with Cloudflare's global Anycast edge network, you unlock military-grade origin IP protection, sub-50ms worldwide asset delivery, automated bot mitigation, and free lifetime Universal Wildcard SSL.
+                    </p>
+
+                    <!-- ================= 23.1: CORE ARCHITECTURAL ADVANTAGES ================= -->
+                    <div class="doc-subsection mt-5" id="sec-23-1">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-primary text-white">23.1</span>
+                            <h3 class="fw-bold mb-0 text-heading">High-Impact Advantages: What You Gain</h3>
+                        </div>
+                        <p class="text-muted">
+                            Connecting Cloudflare to your store is not merely an optional enhancement—it is an indispensable architectural shield that fundamentally upgrades your store's security posture and customer browsing speed:
+                        </p>
+
+                        <!-- 5 High-Impact Benefit Cards -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6 col-xl-4">
+                                <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <div class="d-inline-flex align-items-center justify-content-center bg-danger-subtle text-danger rounded-circle" style="width: 40px; height: 40px;">
+                                            <i class="mdi mdi-shield-lock-outline fs-4"></i>
+                                        </div>
+                                        <h6 class="fw-bold mb-0 text-heading">Origin IP Concealment</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        Your origin hosting server's real IP is completely hidden behind Cloudflare. Malicious actors, SYN flood attacks, and direct port scanners can never touch your actual server.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-xl-4">
+                                <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <div class="d-inline-flex align-items-center justify-content-center bg-success-subtle text-success rounded-circle" style="width: 40px; height: 40px;">
+                                            <i class="mdi mdi-lightning-bolt fs-4"></i>
+                                        </div>
+                                        <h6 class="fw-bold mb-0 text-heading">Sub-50ms Edge Caching</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        Store catalog images, CSS, JavaScript, and WebP assets are served from 300+ worldwide edge locations closest to your buyers, slashing mobile latency and boosting conversions.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-xl-4">
+                                <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <div class="d-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle" style="width: 40px; height: 40px;">
+                                            <i class="mdi mdi-certificate fs-4"></i>
+                                        </div>
+                                        <h6 class="fw-bold mb-0 text-heading">Universal Wildcard SSL</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        Instant, automated lifetime SSL certificates that guard both your root domain (<code>yourstore.com</code>) and every subdomain (<code>demo.yourstore.com</code>) with zero manual renewal hassle.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-xl-6">
+                                <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <div class="d-inline-flex align-items-center justify-content-center bg-warning-subtle text-warning rounded-circle" style="width: 40px; height: 40px;">
+                                            <i class="mdi mdi-server-network-off fs-4"></i>
+                                        </div>
+                                        <h6 class="fw-bold mb-0 text-heading">Zero Server Overload &amp; Crash Prevention</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        Offloads up to 80% of bandwidth and web requests away from your origin server. Even if thousands of concurrent buyers surge into a flash sale, your cPanel or VPS RAM and CPU will remain smooth and unburdened.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-xl-6">
+                                <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <div class="d-inline-flex align-items-center justify-content-center bg-info-subtle text-info rounded-circle" style="width: 40px; height: 40px;">
+                                            <i class="mdi mdi-robot-off-outline fs-4"></i>
+                                        </div>
+                                        <h6 class="fw-bold mb-0 text-heading">Automated Bot &amp; Scraping Mitigation</h6>
+                                    </div>
+                                    <p class="small text-muted mb-0">
+                                        Cloudflare's machine-learning Bot Fight Mode silently identifies and blocks malicious content scrapers, price harvesters, and automated credential-stuffing attacks in real time.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Architecture Diagram Card -->
+                        <div class="p-4 border rounded-3 bg-light-subtle">
+                            <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-sitemap-outline text-primary me-1"></i> Traffic Flow &amp; Reverse-Proxy Topology</h6>
+                            <div class="row align-items-center text-center g-2 py-2">
+                                <div class="col-sm-3">
+                                    <div class="p-3 bg-white dark:bg-dark border rounded-3 shadow-sm">
+                                        <i class="mdi mdi-account-group fs-2 text-primary d-block mb-1"></i>
+                                        <strong class="small d-block">Shopper / Visitor</strong>
+                                        <span class="badge bg-secondary-subtle text-secondary small">HTTPS Request</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1 d-none d-sm-block">
+                                    <i class="mdi mdi-arrow-right-bold fs-3 text-muted"></i>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="p-3 bg-white dark:bg-dark border border-primary rounded-3 shadow-sm position-relative">
+                                        <span class="position-absolute top-0 start-50 translate-middle badge bg-primary text-white">Edge Shield</span>
+                                        <i class="mdi mdi-shield-check fs-2 text-success d-block mb-1"></i>
+                                        <strong class="small d-block">Cloudflare Anycast CDN</strong>
+                                        <span class="badge bg-success-subtle text-success small">Cache Hit: 30ms</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1 d-none d-sm-block">
+                                    <i class="mdi mdi-arrow-right-bold fs-3 text-muted"></i>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="p-3 bg-white dark:bg-dark border rounded-3 shadow-sm">
+                                        <i class="mdi mdi-server fs-2 text-dark d-block mb-1"></i>
+                                        <strong class="small d-block">MartX Origin Server</strong>
+                                        <span class="badge bg-dark-subtle text-dark small">IP Hidden &bull; 100% Safe</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 23.2: CONNECTING YOUR DOMAIN ================= -->
+                    <div class="doc-subsection mt-5" id="sec-23-2">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-primary text-white">23.2</span>
+                            <h3 class="fw-bold mb-0 text-heading">Step 1: Connecting Your Domain</h3>
+                        </div>
+                        <p class="text-muted">
+                            To begin, log into your <a href="https://dash.cloudflare.com" target="_blank" rel="noopener noreferrer" class="fw-semibold text-primary">Cloudflare Dashboard</a> and initiate domain provisioning:
+                        </p>
+
+                        <div class="doc-step-box p-3 border rounded-3 mb-3 bg-light-subtle">
+                            <h6 class="fw-bold text-heading mb-2">Walkthrough:</h6>
+                            <ol class="mb-0 ps-3">
+                                <li class="mb-2">Click the blue <strong>"Add a domain"</strong> or <strong>"+ Add a site"</strong> button.</li>
+                                <li class="mb-2">Enter your naked root domain name (e.g., <code>yourstore.com</code> &mdash; do not include <code>https://</code> or <code>www</code>).</li>
+                                <li class="mb-2">Click <strong>Continue</strong>.</li>
+                                <li class="mb-2">On the plan selection screen, scroll down to the bottom and select the <strong>Free ($0 / month)</strong> tier.</li>
+                                <li>Click <strong>Continue</strong> to let Cloudflare scan your existing DNS zone.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- ================= 23.3: DNS PROXY & CRITICAL MAIL SHIELD ================= -->
+                    <div class="doc-subsection mt-5" id="sec-23-3">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-primary text-white">23.3</span>
+                            <h3 class="fw-bold mb-0 text-heading">Step 2: DNS Records &amp; The Critical Mail Shield</h3>
+                        </div>
+                        <p class="text-muted">
+                            Cloudflare will automatically import your existing DNS records. Carefully inspect the <strong>Proxy status</strong> toggle for each row:
+                        </p>
+
+                        <div class="table-responsive mb-3">
+                            <table class="table table-bordered table-hover align-middle small mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width: 10%;">Type</th>
+                                        <th style="width: 25%;">Name</th>
+                                        <th style="width: 30%;">Target / Content</th>
+                                        <th style="width: 20%;">Proxy Status</th>
+                                        <th style="width: 15%;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="badge bg-secondary">A</span></td>
+                                        <td><code>yourstore.com</code></td>
+                                        <td><code>192.0.2.1</code> (Your Hosting IP)</td>
+                                        <td><span class="badge bg-warning text-dark"><i class="mdi mdi-cloud me-1"></i> Proxied (Orange)</span></td>
+                                        <td><strong class="text-success">Keep Proxied</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge bg-secondary">A</span></td>
+                                        <td><code>demo</code></td>
+                                        <td><code>192.0.2.1</code></td>
+                                        <td><span class="badge bg-warning text-dark"><i class="mdi mdi-cloud me-1"></i> Proxied (Orange)</span></td>
+                                        <td><strong class="text-success">Keep Proxied</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge bg-secondary">CNAME</span></td>
+                                        <td><code>www</code></td>
+                                        <td><code>yourstore.com</code></td>
+                                        <td><span class="badge bg-warning text-dark"><i class="mdi mdi-cloud me-1"></i> Proxied (Orange)</span></td>
+                                        <td><strong class="text-success">Keep Proxied</strong></td>
+                                    </tr>
+                                    <tr class="table-warning">
+                                        <td><span class="badge bg-secondary">CNAME / A</span></td>
+                                        <td><code>mail</code></td>
+                                        <td><code>yourstore.com</code> or Server IP</td>
+                                        <td><span class="badge bg-secondary"><i class="mdi mdi-cloud-outline me-1"></i> DNS only (Grey)</span></td>
+                                        <td><strong class="text-danger">MUST BE GREY</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge bg-secondary">A</span></td>
+                                        <td><code>ftp</code></td>
+                                        <td><code>192.0.2.1</code></td>
+                                        <td><span class="badge bg-secondary"><i class="mdi mdi-cloud-outline me-1"></i> DNS only (Grey)</span></td>
+                                        <td>Set to DNS only</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge bg-secondary">MX</span></td>
+                                        <td><code>yourstore.com</code></td>
+                                        <td><code>mail.yourstore.com</code> (Priority 0)</td>
+                                        <td><span class="badge bg-secondary"><i class="mdi mdi-cloud-outline me-1"></i> DNS only (Grey)</span></td>
+                                        <td>DNS only (Auto)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Critical Warning Alert -->
+                        <div class="alert alert-danger border-danger d-flex align-items-start gap-3 rounded-3 shadow-sm mb-4">
+                            <i class="mdi mdi-alert-octagon fs-2 text-danger flex-shrink-0"></i>
+                            <div>
+                                <h6 class="fw-bold mb-1">CRITICAL NOTICE: Do Not Proxy Your Mail Record!</h6>
+                                <p class="small mb-0">
+                                    Cloudflare's HTTP proxy handles web traffic on ports 80/443 only. It does <strong>not</strong> proxy email protocols (SMTP port 25/465, IMAP 993, POP3 995). If your <code>mail</code> or <code>MX</code> record is left on <strong>Orange Cloud (Proxied)</strong>, your store will immediately stop receiving and sending customer order notification emails! Always click the toggle to set <code>mail</code> to <strong>Grey Cloud (DNS only)</strong>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <p class="text-muted small">
+                            After verifying that <code>mail</code> is set to DNS only, click the blue <strong>"Continue to activation"</strong> button.
+                        </p>
+                    </div>
+
+                    <!-- ================= 23.4: NAMESERVERS & REGISTRAR LOCK ================= -->
+                    <div class="doc-subsection mt-5" id="sec-23-4">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-primary text-white">23.4</span>
+                            <h3 class="fw-bold mb-0 text-heading">Step 3: Nameserver Delegation &amp; Registrar Lock</h3>
+                        </div>
+                        <p class="text-muted">
+                            Cloudflare will assign you two designated Anycast nameservers. For example:
+                        </p>
+
+                        <div class="doc-code-wrapper mb-3">
+                            <pre><code class="language-text">Nameserver 1: ada.ns.cloudflare.com
+Nameserver 2: burt.ns.cloudflare.com</code></pre>
+                        </div>
+
+                        <div class="doc-step-box p-3 border rounded-3 mb-3 bg-light-subtle">
+                            <h6 class="fw-bold text-heading mb-2">How to Update at Your Registrar:</h6>
+                            <ol class="mb-0 ps-3">
+                                <li class="mb-2">Log into the registrar portal where you purchased your domain (e.g., Namecheap, GoDaddy, Hostinger, Parknil).</li>
+                                <li class="mb-2">Navigate to <strong>Domain Management &rarr; Nameservers</strong>.</li>
+                                <li class="mb-2">Select <strong>"Use Custom Nameservers"</strong>.</li>
+                                <li class="mb-2">Remove your old hosting nameservers and paste Cloudflare's two nameservers into slot 1 and 2. Ensure slots 3 and 4 are completely empty.</li>
+                                <li class="mb-2">Click <strong>Save Changes</strong>.</li>
+                                <li>Return to Cloudflare and click <strong>"I updated my nameservers"</strong> (or <strong>"Check nameservers now"</strong>).</li>
+                            </ol>
+                        </div>
+
+                        <!-- Pro-Tip Box for Reverting Nameservers -->
+                        <div class="alert alert-info border-info d-flex align-items-start gap-3 rounded-3 shadow-sm">
+                            <i class="mdi mdi-lightbulb-on fs-2 text-info flex-shrink-0"></i>
+                            <div>
+                                <h6 class="fw-bold mb-1">Troubleshooting: "Changes Saved Successfully" but Old Nameservers Revert Back?</h6>
+                                <p class="small mb-0">
+                                    If your domain registrar interface displays <em>"Changes Saved Successfully"</em>, but upon reloading you still see the old nameservers, your domain has <strong>Registrar Lock (ClientTransferProhibited)</strong> active! Go to the <strong>"Registrar Lock"</strong> tab in your registrar portal, click <strong>"Disable Registrar Lock"</strong>, update the nameservers again, save, and then re-enable the lock for security.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 23.5: FULL SSL/TLS ENCRYPTION ================= -->
+                    <div class="doc-subsection mt-5" id="sec-23-5">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-primary text-white">23.5</span>
+                            <h3 class="fw-bold mb-0 text-heading">Step 4: Military-Grade SSL/TLS &amp; HTTPS Force</h3>
+                        </div>
+                        <p class="text-muted">
+                            Once Cloudflare verifies your nameservers (indicated by <code>✅ Your domain is now protected by Cloudflare</code>), configure end-to-end cryptographic security:
+                        </p>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 h-100" style="background-color: var(--doc-card-bg);">
+                                    <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-lock-check text-primary me-1"></i> 1. Encryption Mode: Full (Strict)</h6>
+                                    <p class="small text-muted mb-2">
+                                        Navigate to <strong>SSL/TLS &rarr; Overview</strong> in the sidebar. Set the mode to <strong>`Full`</strong> or <strong>`Full (Strict)`</strong>.
+                                    </p>
+                                    <div class="p-2 bg-danger-subtle text-danger rounded border border-danger-subtle small">
+                                        <strong>Never use `Flexible`!</strong> If your origin cPanel or Laravel store has AutoSSL or forces HTTPS, `Flexible` causes an infinite browser redirect loop (<code>ERR_TOO_MANY_REDIRECTS</code>).
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 h-100" style="background-color: var(--doc-card-bg);">
+                                    <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-shield-link-variant text-success me-1"></i> 2. Edge Certificates Configuration</h6>
+                                    <p class="small text-muted mb-2">
+                                        Navigate to <strong>SSL/TLS &rarr; Edge Certificates</strong> and enable:
+                                    </p>
+                                    <ul class="small text-muted mb-0 ps-3">
+                                        <li class="mb-1"><strong>Always Use HTTPS:</strong> <span class="badge bg-success">ON</span> &mdash; Auto-rewrites all unencrypted <code>http://</code> requests to <code>https://</code>.</li>
+                                        <li class="mb-1"><strong>Minimum TLS Version:</strong> Set to <span class="badge bg-primary">TLS 1.2</span> &mdash; Blocks insecure legacy ciphers.</li>
+                                        <li class="mb-1"><strong>TLS 1.3:</strong> <span class="badge bg-success">ON</span> &mdash; Fastest modern 1-RTT cryptographic handshake.</li>
+                                        <li><strong>Automatic HTTPS Rewrites:</strong> <span class="badge bg-success">ON</span> &mdash; Resolves mixed-content HTTP asset warnings.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 23.6: 2026+ SPEED OPTIMIZATIONS ================= -->
+                    <div class="doc-subsection mt-5" id="sec-23-6">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-primary text-white">23.6</span>
+                            <h3 class="fw-bold mb-0 text-heading">Step 5: 2026+ Next-Gen Speed Acceleration</h3>
+                        </div>
+                        <p class="text-muted">
+                            MartX is built for sub-second page loads. Activate these edge performance features inside your Cloudflare dashboard:
+                        </p>
+
+                        <div class="doc-step-box p-3 border rounded-3 mb-3 bg-light-subtle">
+                            <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-speedometer text-primary me-1"></i> Recommended Speed Toggles:</h6>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-white dark:bg-dark border rounded-3 shadow-sm">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <strong class="text-heading small">Early Hints (103 Early Hints)</strong>
+                                            <span class="badge bg-success">Enable (ON)</span>
+                                        </div>
+                                        <p class="small text-muted mb-0">
+                                            Located in <strong>Speed &rarr; Settings &rarr; Content Optimization</strong>. Allows edge servers to signal critical CSS, JS, and web fonts to the browser before the origin HTML finishes rendering.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-white dark:bg-dark border rounded-3 shadow-sm">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <strong class="text-heading small">Cloudflare Fonts</strong>
+                                            <span class="badge bg-success">Enable (ON)</span>
+                                        </div>
+                                        <p class="small text-muted mb-0">
+                                            Rewrites Google Fonts requests so typography is delivered directly from the same domain at Cloudflare edge, eliminating render-blocking third-party DNS lookups.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-white dark:bg-dark border rounded-3 shadow-sm">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <strong class="text-heading small">HTTP/3 with QUIC</strong>
+                                            <span class="badge bg-success">Enable (ON)</span>
+                                        </div>
+                                        <p class="small text-muted mb-0">
+                                            Located in <strong>Speed &rarr; Settings &rarr; Protocol Optimization</strong>. Runs HTTP over UDP/QUIC, eliminating Head-of-Line packet loss delays on mobile LTE/5G networks.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-white dark:bg-dark border rounded-3 shadow-sm">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <strong class="text-heading small">0-RTT Connection Resumption</strong>
+                                            <span class="badge bg-success">Enable (ON)</span>
+                                        </div>
+                                        <p class="small text-muted mb-0">
+                                            Permits returning buyers who have visited your store previously to transmit requests on TLS handshake round-trip 0, delivering zero-wait checkout and browsing speeds.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 23.7: AUTOMATED BOT DEFENSE ================= -->
+                    <div class="doc-subsection mt-5" id="sec-23-7">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-primary text-white">23.7</span>
+                            <h3 class="fw-bold mb-0 text-heading">Step 6: Automated Bot &amp; Scraping Defense</h3>
+                        </div>
+                        <p class="text-muted">
+                            To ensure aggressive scrapers and malicious bots do not exhaust your hosting CPU and database connection pool:
+                        </p>
+
+                        <div class="p-3 border rounded-3 mb-4 bg-light-subtle">
+                            <ol class="mb-0 ps-3">
+                                <li class="mb-2">In the Cloudflare left sidebar, click <strong>Security &rarr; Settings</strong>.</li>
+                                <li class="mb-2">Under the <strong>Bots</strong> section, switch <strong>Bot Fight Mode</strong> to <span class="badge bg-success">ON</span>.</li>
+                                <li>Ensure the baseline <strong>Security Level</strong> is set to <span class="badge bg-primary">Medium</span> (optimal for production e-commerce operations).</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- ================= 23.8: PRE-FLIGHT VERIFICATION MATRIX ================= -->
+                    <div class="doc-subsection mt-5" id="sec-23-8">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-primary text-white">23.8</span>
+                            <h3 class="fw-bold mb-0 text-heading">Step 7: Pre-Flight Verification Matrix &amp; Diagnostic FAQ</h3>
+                        </div>
+                        <p class="text-muted">
+                            Validate your complete edge setup using this authoritative verification checklist:
+                        </p>
+
+                        <div class="table-responsive mb-4">
+                            <table class="table table-bordered table-hover align-middle small mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Verification Check</th>
+                                        <th>Expected Target Result</th>
+                                        <th>How to Test</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Domain Status</strong></td>
+                                        <td><span class="badge bg-success">Active</span> (Green Checkmark)</td>
+                                        <td>Cloudflare Overview displays <em>"Your domain is now protected by Cloudflare"</em>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Global NS Propagation</strong></td>
+                                        <td>Cloudflare Nameservers Resolved</td>
+                                        <td>Search <code>yourstore.com</code> on <a href="https://dnschecker.org" target="_blank" rel="noopener noreferrer">dnschecker.org</a> under NS record type.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Automatic HTTPS Force</strong></td>
+                                        <td>Redirect to <code>https://yourstore.com</code></td>
+                                        <td>Type <code>http://yourstore.com</code> in browser and verify instant rewrite to secure padlock.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Universal Wildcard SSL</strong></td>
+                                        <td>Valid Cloudflare Edge Certificate</td>
+                                        <td>Click browser padlock &rarr; Certificate valid for <code>yourstore.com</code> &amp; <code>*.yourstore.com</code>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Email Routing Integrity</strong></td>
+                                        <td>Unbroken SMTP Delivery</td>
+                                        <td>Place a test order or send an inquiry to verify notifications arrive immediately via <code>mail</code> (Grey Cloud).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Origin IP Concealment</strong></td>
+                                        <td>Cloudflare Anycast IPs (<code>104.21.x.x</code>)</td>
+                                        <td>Run <code>ping yourstore.com</code> in terminal; your real hosting IP (<code>192.0.2.1</code>) is never revealed.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- FAQ Accordion -->
+                        <h6 class="fw-bold text-heading mb-3"><i class="mdi mdi-frequently-asked-questions text-primary me-1"></i> Frequently Asked Questions</h6>
+                        <div class="accordion mb-5" id="cfFaqAccordion">
+                            <div class="accordion-item border rounded-3 mb-2 shadow-sm">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Q1: I see ERR_TOO_MANY_REDIRECTS when opening my website. How do I fix it?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#cfFaqAccordion">
+                                    <div class="accordion-body small text-muted">
+                                        This issue occurs when your Cloudflare SSL/TLS mode is set to <strong>Flexible</strong> while your origin hosting server (cPanel AutoSSL or Laravel) already forces HTTPS. Change the mode from <code>Flexible</code> to <strong>Full</strong> or <strong>Full (Strict)</strong> under <strong>SSL/TLS &rarr; Overview</strong> to fix it instantly.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border rounded-3 mb-2 shadow-sm">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Q2: Will my subdomains (e.g. demo.yourstore.com) also be protected?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#cfFaqAccordion">
+                                    <div class="accordion-body small text-muted">
+                                        Yes! Cloudflare's Universal SSL certificate is a wildcard certificate covering both <code>yourstore.com</code> and <code>*.yourstore.com</code>. Any subdomain you create in Cloudflare DNS with an Orange Cloud (Proxied) toggle will automatically receive free SSL and full CDN protection.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border rounded-3 shadow-sm">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Q3: How long does nameserver propagation take?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#cfFaqAccordion">
+                                    <div class="accordion-body small text-muted">
+                                        While global registrars mention up to 24 hours, Cloudflare's global Anycast infrastructure typically detects nameserver updates within <strong>5 to 15 minutes</strong>. Clicking <em>"Check nameservers now"</em> in your Cloudflare overview triggers an immediate live re-scan.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= CONCLUDING CELEBRATION & WELCOME BANNER (THE GRAND FINALE) ================= -->
+                    <div class="doc-subsection mt-5 mb-4" id="thank-you-welcome">
+                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(14, 165, 233, 0.05) 100%); border: 1px solid rgba(99, 102, 241, 0.2) !important;">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="text-center mb-4">
+                                    <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle shadow mb-3" style="width: 64px; height: 64px;">
+                                        <i class="mdi mdi-party-popper fs-2"></i>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1.5 rounded-pill fw-bold text-uppercase small">
+                                            🎉 Documentation Complete &bull; Welcome Aboard
+                                        </span>
+                                    </div>
+                                    <h2 class="display-6 fw-bold text-heading mt-3 mb-2">Thank You for Choosing MartX!</h2>
+                                    <p class="lead text-muted mx-auto" style="max-width: 720px;">
+                                        Welcome to the MartX commerce ecosystem. You have successfully explored all 23 chapters of the official enterprise guide. Your store is now primed to deliver blazing-fast customer experiences, automated operations, military-grade security, and unstoppable sales growth.
+                                    </p>
+                                </div>
+
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-4">
+                                        <div class="p-3 bg-white dark:bg-dark border rounded-3 h-100 shadow-sm text-center">
+                                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-2" style="width: 44px; height: 44px;">
+                                                <i class="mdi mdi-rocket-launch-outline fs-4"></i>
+                                            </div>
+                                            <h6 class="fw-bold mb-1">Launch with Confidence</h6>
+                                            <p class="small text-muted mb-0">Your catalog, checkout flows, payment gateways, and regional delivery rules are synchronized for high-conversion sales.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 bg-white dark:bg-dark border rounded-3 h-100 shadow-sm text-center">
+                                            <div class="d-inline-flex align-items-center justify-content-center bg-success-subtle text-success rounded-circle mb-2" style="width: 44px; height: 44px;">
+                                                <i class="mdi mdi-autorenew fs-4"></i>
+                                            </div>
+                                            <h6 class="fw-bold mb-1">24/7 Automated Engine</h6>
+                                            <p class="small text-muted mb-0">Automated background tasks release expired cart stock, enforce flash sale timers, and keep your database operating at peak speed.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 bg-white dark:bg-dark border rounded-3 h-100 shadow-sm text-center">
+                                            <div class="d-inline-flex align-items-center justify-content-center bg-warning-subtle text-warning rounded-circle mb-2" style="width: 44px; height: 44px;">
+                                                <i class="mdi mdi-shield-crown-outline fs-4"></i>
+                                            </div>
+                                            <h6 class="fw-bold mb-1">Dedicated Author Support</h6>
+                                            <p class="small text-muted mb-0">Enjoy peace of mind with continuous software updates, modern security enhancements, and responsive priority support.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-3 p-md-4 border rounded-3 bg-light-subtle mb-4">
+                                    <div class="row align-items-center g-3">
+                                        <div class="col-lg-7">
+                                            <div class="d-flex align-items-start gap-3">
+                                                <div class="d-flex align-items-center justify-content-center bg-warning text-dark rounded-circle flex-shrink-0" style="width: 42px; height: 42px;">
+                                                    <i class="mdi mdi-star fs-4"></i>
+                                                </div>
+                                                <div>
+                                                    <h5 class="fw-bold mb-1">Loving Your MartX Experience?</h5>
+                                                    <p class="text-muted small mb-0">
+                                                        If MartX and this documentation helped your business, please consider showing your support by leaving a <strong>5-Star Review (★★★★★)</strong> on the platform or marketplace where you purchased it (CodeCanyon, Codester, TemplateMonster, or our Direct Portal). Your positive feedback fuels future feature updates and platform improvements!
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 text-lg-end text-center">
+                                            <div class="d-flex flex-wrap justify-content-lg-end justify-content-center gap-2">
+                                                <a href="https://wa.me/8801750527181?text=Hello%20Suman%20Dev,%20I%20purchased%20MartX%20Enterprise%20and%20need%20assistance." target="_blank" rel="noopener noreferrer" class="btn btn-success fw-bold btn-sm px-3 shadow-sm d-inline-flex align-items-center gap-1">
+                                                    <i class="mdi mdi-whatsapp fs-5"></i> WhatsApp Chat
+                                                </a>
+                                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sumondav444@gmail.com&su=MartX%20Enterprise%20Support%20Inquiry" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary fw-bold btn-sm px-3 d-inline-flex align-items-center gap-1" title="Direct Email: sumondav444@gmail.com">
+                                                    <i class="mdi mdi-email-outline me-1"></i> Email Support
+                                                </a>
+                                                <a href="index.html#quick-start" class="btn btn-primary fw-bold btn-sm px-3 d-inline-flex align-items-center gap-1">
+                                                    <i class="mdi mdi-flash me-1"></i> Quick Start Guide
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center pt-2">
+                                    <p class="text-muted small mb-1">
+                                        <em>"Empowering merchants worldwide with elegant design, high performance, and reliable engineering."</em>
+                                    </p>
+                                    <div class="fw-semibold text-heading small">
+                                        Crafted with <i class="mdi mdi-heart text-danger"></i> by <span class="text-primary">Suman Chandra Dev Sharma</span> &amp; The MartX Team
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
+                    <a href="cron-faq.html" class="btn btn-outline-secondary fw-bold px-4">
+                        <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 22 (Web Cron &amp; FAQs)
+                    </a>
+                    <a href="index.html" class="btn btn-primary fw-bold px-4">
+                        Next: Chapter 1 (Introduction &amp; Overview) <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+            </main>
+
+            <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
+            <aside class="col-xl-2 d-none d-xl-block">
+                <div class="doc-toc sticky-top">
+                    <div class="doc-toc-title">On This Page</div>
+                    <a href="#sec-23-1" class="doc-toc-link">23.1 High-Impact Advantages</a>
+                    <a href="#sec-23-2" class="doc-toc-link">23.2 Domain Connection</a>
+                    <a href="#sec-23-3" class="doc-toc-link">23.3 DNS &amp; Mail Shield</a>
+                    <a href="#sec-23-4" class="doc-toc-link">23.4 Nameservers &amp; Lock</a>
+                    <a href="#sec-23-5" class="doc-toc-link">23.5 Full SSL/TLS &amp; HTTPS</a>
+                    <a href="#sec-23-6" class="doc-toc-link">23.6 2026+ Speed Boost</a>
+                    <a href="#sec-23-7" class="doc-toc-link">23.7 Bot Defense Mode</a>
+                    <a href="#sec-23-8" class="doc-toc-link">23.8 Pre-Flight Matrix &amp; FAQ</a>
+                    <a href="#thank-you-welcome" class="doc-toc-link text-primary fw-semibold"><i class="mdi mdi-party-popper me-1"></i> Thank You &amp; Welcome</a>
+                    <hr class="my-2">
+                    <a href="#ch23-intro" class="doc-toc-link text-muted small">
+                        <i class="mdi mdi-arrow-up me-1"></i> Back to top
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- ================= MOBILE OFFCANVAS SIDEBAR ================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom pb-3">
+            <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+                <i class="mdi mdi-book-open-page-variant text-primary me-1"></i> Documentation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3">
+            <div class="sidebar-heading">Getting Started</div>
+            <a href="index.html#quick-start" class="sidebar-nav-link text-primary fw-bold" data-bs-dismiss="offcanvas">
+                <i class="mdi mdi-flash text-warning"></i> ⚡ 3-Minute Quick Start
+            </a>
+            <a href="index.html" class="sidebar-nav-link">
+                <i class="mdi mdi-book-open-page-variant"></i> 1. Introduction &amp; Overview
+            </a>
+            <a href="server-requirements.html" class="sidebar-nav-link">
+                <i class="mdi mdi-server"></i> 2. Server Requirements
+            </a>
+            <a href="installation.html" class="sidebar-nav-link">
+                <i class="mdi mdi-rocket-launch"></i> 3. Installation Guide
+            </a>
+            <a href="license-activation.html" class="sidebar-nav-link">
+                <i class="mdi mdi-shield-key"></i> 4. License Activation
+            </a>
+            <div class="sidebar-heading">Main</div>
+            <a href="dashboard-analytics.html" class="sidebar-nav-link">
+                <i class="mdi mdi-view-dashboard-outline"></i> 5. Dashboard Telemetry
+            </a>
+            <a href="media-manager.html" class="sidebar-nav-link">
+                <i class="mdi mdi-image-multiple"></i> 6. Media Manager
+            </a>
+            <div class="sidebar-heading">Ecommerce &amp; Sales</div>
+            <a href="catalog-inventory.html" class="sidebar-nav-link">
+                <i class="mdi mdi-shape-outline"></i> 7. Catalog Management
+            </a>
+            <a href="products-management.html" class="sidebar-nav-link">
+                <i class="mdi mdi-package-variant-closed"></i> 8. Products Management
+            </a>
+            <a href="orders-fulfillment.html" class="sidebar-nav-link">
+                <i class="mdi mdi-cart-outline"></i> 9. Orders &amp; Fulfillment
+            </a>
+            <a href="shipping-couriers.html" class="sidebar-nav-link">
+                <i class="mdi mdi-truck-fast-outline"></i> 10. Couriers &amp; Shipping Costs
+            </a>
+            <a href="coupons-marketing.html" class="sidebar-nav-link">
+                <i class="mdi mdi-ticket-percent-outline"></i> 11. Coupons &amp; Marketing
+            </a>
+            <a href="payment-gateways.html" class="sidebar-nav-link">
+                <i class="mdi mdi-credit-card-outline"></i> 12. Payment Gateways
+            </a>
+            <div class="sidebar-heading">Website &amp; CMS</div>
+            <a href="theme-layouts.html" class="sidebar-nav-link">
+                <i class="mdi mdi-view-dashboard-variant"></i> 13. Theme Layouts Hub
+            </a>
+            <a href="navigation-menus.html" class="sidebar-nav-link">
+                <i class="mdi mdi-menu"></i> 14. Navigation & Mega Menus
+            </a>
+            <a href="sliders-banners.html" class="sidebar-nav-link">
+                <i class="mdi mdi-view-carousel-outline"></i> 15. Sliders &amp; Banners
+            </a>
+            <a href="cms-pages.html" class="sidebar-nav-link">
+                <i class="mdi mdi-file-document-outline"></i> 16. Pages, FAQ &amp; About
+            </a>
+            <a href="blogs-editorial.html" class="sidebar-nav-link">
+                <i class="mdi mdi-post-outline"></i> 17. Blogs &amp; Editorial
+            </a>
+            <div class="sidebar-heading">Customer &amp; Community</div>
+            <a href="customer-interaction.html" class="sidebar-nav-link">
+                <i class="mdi mdi-account-star-outline"></i> 18. Reviews &amp; Messages
+            </a>
+            <div class="sidebar-heading">Administration &amp; Settings</div>
+            <a href="staff-roles.html" class="sidebar-nav-link">
+                <i class="mdi mdi-account-group"></i> 19. Team Members &amp; Staff Roles
+            </a>
+            <a href="locations-coverage.html" class="sidebar-nav-link">
+                <i class="mdi mdi-map-marker-radius-outline"></i> 20. Locations &amp; Coverage
+            </a>
+            <a href="settings-theme.html" class="sidebar-nav-link">
+                <i class="mdi mdi-cog"></i> 21. System Settings Hub
+            </a>
+            <div class="sidebar-heading">Maintenance &amp; Support</div>
+            <a href="cron-faq.html" class="sidebar-nav-link">
+                <i class="mdi mdi-clock-fast"></i> 22. Web Cron &amp; FAQs
+            </a>
+            <a href="extra-security-speed.html" class="sidebar-nav-link active">
+                <i class="mdi mdi-shield-airplane text-success"></i> 23. Extra Security &amp; Speed Boost
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 3. GLOBAL SEARCH MODAL (Ctrl + K) ================= -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 1rem; overflow: hidden;">
+                <div class="modal-header border-bottom p-3">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0 text-muted ps-2">
+                            <i class="mdi mdi-magnify fs-4"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 shadow-none ps-2" id="docGlobalSearch" placeholder="Search documentation chapters, attributes, or guides..." autofocus>
+                    </div>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-3" id="docSearchResults" style="max-height: 400px; overflow-y: auto;">
+                    <div class="text-muted small text-uppercase fw-bold px-2 mb-2">Documentation Hub</div>
+                    <div class="p-3 text-center text-muted">Type any keyword to search across all 23 chapters...</div>
+                </div>
+                <div class="modal-footer border-top py-2 px-3 justify-content-between text-muted small">
+                    <span>Press <kbd class="bg-light text-dark border">ESC</kbd> to exit</span>
+                    <span>MartX Documentation v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Documentation Logic -->
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>
