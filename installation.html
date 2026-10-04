@@ -879,6 +879,65 @@
                             </div>
                         </div>
 
+                        <!-- Method B: Manual Migration & In-Dashboard License Activation -->
+                        <div class="doc-card mt-3">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="fw-bold text-heading mb-0">
+                                    <i class="mdi mdi-database-cog-outline text-primary me-1"></i> Alternative: Manual Terminal Migration &amp; In-Dashboard Activation
+                                </h6>
+                                <span class="badge bg-primary-subtle text-primary font-monospace px-2 py-1 small">Manual Workflow</span>
+                            </div>
+                            <p class="small text-muted mb-3">
+                                If you prefer running standard Laravel migration and seeding commands directly, and activating your license later via the Admin Dashboard:
+                            </p>
+                            <div class="row g-3">
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                        <span class="badge bg-primary mb-2">Step 1</span>
+                                        <h6 class="fw-bold mb-1 small text-heading">Database &amp; Key</h6>
+                                        <p class="small text-muted mb-2" style="font-size: 11px;">Set DB credentials in <code>.env</code> and generate application encryption key:</p>
+                                        <div class="doc-code-wrapper mb-0">
+                                            <pre style="font-size: 11px; padding: 8px;"><code class="language-bash">nano .env
+php artisan key:generate</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                        <span class="badge bg-primary mb-2">Step 2</span>
+                                        <h6 class="fw-bold mb-1 small text-heading">Migrate &amp; Seed</h6>
+                                        <p class="small text-muted mb-2" style="font-size: 11px;">Run schema migrations, catalog seeders, and link media storage:</p>
+                                        <div class="doc-code-wrapper mb-0">
+                                            <pre style="font-size: 11px; padding: 8px;"><code class="language-bash">php artisan migrate:fresh --seed --force
+php artisan storage:link</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                        <span class="badge bg-primary mb-2">Step 3</span>
+                                        <h6 class="fw-bold mb-1 small text-heading">Lock Installation</h6>
+                                        <p class="small text-muted mb-2" style="font-size: 11px;">Mark setup complete to bypass web installer on browser hits:</p>
+                                        <div class="doc-code-wrapper mb-0">
+                                            <pre style="font-size: 11px; padding: 8px;"><code class="language-bash">touch storage/installed
+php artisan optimize:clear</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                        <span class="badge bg-success mb-2">Step 4</span>
+                                        <h6 class="fw-bold mb-1 small text-heading">License Activation</h6>
+                                        <p class="small text-muted mb-2" style="font-size: 11px;">Login as Super Admin and activate license in dashboard:</p>
+                                        <div class="p-2 border rounded small" style="font-size: 11px; background-color: var(--doc-code-bg);">
+                                            Navigate to <strong>Admin &rarr; Settings &rarr; License Activation</strong> and paste your CodeCanyon Purchase Code.
+                                            <div class="mt-1 text-muted"><em>Or CLI:</em> <code>php artisan martx:activate --key=CODE</code></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- 1-Liner Automated CI/CD Deployment Callout -->
                         <div class="doc-callout doc-callout-info mt-3">
                             <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-robot-confused-outline me-1"></i> Headless CI/CD & Automated 1-Liner Deployment</h6>
