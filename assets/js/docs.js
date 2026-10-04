@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "url": "index.html#sec-1-19",
         "type": "Section",
         "snippet": "Upon logging into the MartX administrative portal (Admin Sidebar &rarr; Main &rarr; Dashboard), store managers are greeted with an execut...",
-        "keywords": "1.19 360° executive admin dashboard & real-time analytics sec-1-19 overview architecture capabilities 2026 enterprise laravel 12 quickstart roadmap 1.19 360 executive admin dashboard real-time analytics upon logging into the martx administrative portal admin sidebar rarr main rarr dashboard store managers are greeted with executive 6-tier business intelligence cockpit https demo.martx.com admin dashboard purple pro cockpit this week sales 450.00 14.2 last week this week orders 324 orders 8.5 growth active catalog 250 products stock healthy customer base 890"
+        "keywords": "1.19 360° executive admin dashboard & real-time analytics sec-1-19 overview architecture capabilities 2026 enterprise laravel 12 quickstart roadmap 1.19 360 executive admin dashboard real-time analytics upon logging into the martx administrative portal admin sidebar rarr main rarr dashboard store managers are greeted with executive 6-tier business intelligence cockpit https demo.getmartx.com admin dashboard purple pro cockpit this week sales 450.00 14.2 last week this week orders 324 orders 8.5 growth active catalog 250 products stock healthy customer base 890"
     },
     {
         "ch": 1,
