@@ -879,6 +879,18 @@
                             </div>
                         </div>
 
+                        <!-- 1-Liner Automated CI/CD Deployment Callout -->
+                        <div class="doc-callout doc-callout-info mt-3">
+                            <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-robot-confused-outline me-1"></i> Headless CI/CD & Automated 1-Liner Deployment</h6>
+                            <p class="small mb-2">
+                                You can also pass flags directly to <code>martx:install</code> for zero-prompt, fully unattended CI/CD deployment pipelines:
+                            </p>
+                            <div class="doc-code-wrapper mb-0">
+                                <button type="button" class="doc-btn-copy" onclick="copyCode(this)"><i class="mdi mdi-content-copy me-1"></i>Copy</button>
+                                <pre><code class="language-bash">php artisan martx:install --license="YOUR-PURCHASE-CODE" --email="buyer@domain.com" --admin-email="admin@yourdomain.com" --admin-password="YourStrongPassword123"</code></pre>
+                            </div>
+                        </div>
+
                         <!-- Method B: Manual Migration & In-Dashboard License Activation -->
                         <div class="doc-card mt-3">
                             <div class="d-flex align-items-center justify-content-between mb-2">
@@ -891,7 +903,7 @@
                                 If you prefer running standard Laravel migration and seeding commands directly, and activating your license later via the Admin Dashboard:
                             </p>
                             <div class="row g-3">
-                                <div class="col-md-6 col-lg-3">
+                                <div class="col-md-6">
                                     <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
                                         <span class="badge bg-primary mb-2">Step 1</span>
                                         <h6 class="fw-bold mb-1 small text-heading">Database &amp; Key</h6>
@@ -902,7 +914,7 @@ php artisan key:generate</code></pre>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-3">
+                                <div class="col-md-6">
                                     <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
                                         <span class="badge bg-primary mb-2">Step 2</span>
                                         <h6 class="fw-bold mb-1 small text-heading">Migrate &amp; Seed</h6>
@@ -913,7 +925,7 @@ php artisan storage:link</code></pre>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-3">
+                                <div class="col-md-6">
                                     <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
                                         <span class="badge bg-primary mb-2">Step 3</span>
                                         <h6 class="fw-bold mb-1 small text-heading">Lock Installation</h6>
@@ -924,7 +936,7 @@ php artisan optimize:clear</code></pre>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-3">
+                                <div class="col-md-6">
                                     <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
                                         <span class="badge bg-success mb-2">Step 4</span>
                                         <h6 class="fw-bold mb-1 small text-heading">License Activation</h6>
@@ -935,18 +947,6 @@ php artisan optimize:clear</code></pre>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- 1-Liner Automated CI/CD Deployment Callout -->
-                        <div class="doc-callout doc-callout-info mt-3">
-                            <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-robot-confused-outline me-1"></i> Headless CI/CD & Automated 1-Liner Deployment</h6>
-                            <p class="small mb-2">
-                                You can also pass flags directly to <code>martx:install</code> for zero-prompt, fully unattended CI/CD deployment pipelines:
-                            </p>
-                            <div class="doc-code-wrapper mb-0">
-                                <button type="button" class="doc-btn-copy" onclick="copyCode(this)"><i class="mdi mdi-content-copy me-1"></i>Copy</button>
-                                <pre><code class="language-bash">php artisan martx:install --license="YOUR-PURCHASE-CODE" --email="buyer@domain.com" --admin-email="admin@yourdomain.com" --admin-password="YourStrongPassword123"</code></pre>
                             </div>
                         </div>
 
