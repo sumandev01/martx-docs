@@ -374,7 +374,7 @@
                             <div class="alert alert-info border-0 shadow-sm d-flex align-items-start gap-2 py-2 px-3 mt-2 mb-0" role="alert">
                                 <i class="mdi mdi-information-outline fs-5 text-info flex-shrink-0 mt-0"></i>
                                 <div class="small">
-                                    <strong>cPanel Pro-Tip (Hidden Dotfiles):</strong> If you do not see the <code>.env</code> or <code>.htaccess</code> files after extracting, they are hidden by default in Linux. Click <strong>Settings (gear icon)</strong> at the top-right of cPanel File Manager &rarr; check <strong>"Show Hidden Files (dotfiles)"</strong> &rarr; click <strong>Save</strong>.
+                                    <strong>cPanel Pro-Tip (Hidden Dotfiles):</strong> If you do not see the <code>.htaccess</code> or <code>.env.example</code> files after extracting, they are hidden by default in Linux. Click <strong>Settings (gear icon)</strong> at the top-right of cPanel File Manager &rarr; check <strong>"Show Hidden Files (dotfiles)"</strong> &rarr; click <strong>Save</strong>. <em>(Note: Your active <code>.env</code> file is automatically created when you run the web installer)</em>.
                                 </div>
                             </div>
                         </div>
@@ -693,7 +693,7 @@
                                     </label>
                                     <input type="text" class="form-control form-control-sm font-monospace" value="https://yourstore.com" readonly style="background-color: var(--doc-card-bg);">
                                     <span class="text-muted d-block mt-1" style="font-size: 11px;">
-                                        Automatically detects your active domain URL via <code>url('/')</code>; no manual <code>.env</code> file editing required!
+                                        Automatically detects domain via <code>url('/')</code> and configures <code>APP_ENV=production</code> with <code>APP_DEBUG=false</code>; no manual <code>.env</code> file editing required!
                                     </span>
                                 </div>
                                 <div class="row g-2 mb-3">
@@ -783,6 +783,9 @@
                                     <div class="col-md-6">
                                         <label class="form-label small fw-bold mb-1">Password</label>
                                         <input type="password" class="form-control form-control-sm" value="••••••••••••" readonly>
+                                        <div class="small text-muted mt-1" style="font-size: 0.75rem;">
+                                            <i class="mdi mdi-shield-check text-primary"></i> Requires 8+ chars, mixed case, numbers &amp; symbols
+                                        </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label small fw-bold mb-1">Confirm Password</label>
@@ -848,14 +851,15 @@
                                         <h6 class="fw-bold mb-0 text-heading">1. Configure <code>.env</code> File</h6>
                                     </div>
                                     <p class="small text-muted mb-2">
-                                        The package includes a ready <code>.env</code> file. Simply configure your MySQL database credentials:
+                                        Initialize environment, generate your encryption key, and configure MySQL credentials:
                                     </p>
                                     <div class="doc-code-wrapper mb-0">
-                                        <pre><code class="language-bash">nano .env
-# Set DB_DATABASE, DB_USERNAME, DB_PASSWORD</code></pre>
+                                        <pre><code class="language-bash">cp .env.example .env
+php artisan key:generate
+nano .env # Set DB_DATABASE, DB_USERNAME, DB_PASSWORD</code></pre>
                                     </div>
                                     <p class="small text-muted mt-2 mb-0" style="font-size: 11px;">
-                                        Pre-configured with a valid <code>APP_KEY</code> and file sessions. <em>(Template backup: <code>.env.example</code>)</em>.
+                                        Generates a unique <code>APP_KEY</code>. <em>(Web GUI Installer automatically generates this in Step 1)</em>.
                                     </p>
                                 </div>
                             </div>
@@ -907,10 +911,11 @@
                                     <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
                                         <span class="badge bg-primary mb-2">Step 1</span>
                                         <h6 class="fw-bold mb-1 small text-heading">Database &amp; Key</h6>
-                                        <p class="small text-muted mb-2" style="font-size: 11px;">Set DB credentials in <code>.env</code> and generate application encryption key:</p>
+                                        <p class="small text-muted mb-2" style="font-size: 11px;">Initialize environment, generate application key, and set DB:</p>
                                         <div class="doc-code-wrapper mb-0">
-                                            <pre style="font-size: 11px; padding: 8px;"><code class="language-bash">nano .env
-php artisan key:generate</code></pre>
+                                            <pre style="font-size: 11px; padding: 8px;"><code class="language-bash">cp .env.example .env
+php artisan key:generate
+nano .env</code></pre>
                                         </div>
                                     </div>
                                 </div>
@@ -1087,12 +1092,18 @@ php artisan optimize</code></pre>
                         <div class="p-3 border rounded-3 bg-light mt-3">
                             <h6 class="fw-bold text-heading mb-2"><i class="mdi mdi-speedometer text-primary me-1"></i> Production 1-Click Optimization Command</h6>
                             <p class="small text-muted mb-2">
-                                For blazing-fast performance and sub-50ms response times, run the optimization compilation command:
+                                For optimal production performance and lower server response latency, run the optimization compilation command once your setup is complete:
                             </p>
                             <div class="doc-code-wrapper">
                                 <button class="btn btn-sm btn-outline-light doc-btn-copy" type="button"><i class="mdi mdi-content-copy"></i> Copy</button>
                                 <pre><code># Clear and rebuild all compiled routes, configs, and Blade views
 php artisan optimize</code></pre>
+                            </div>
+                            <div class="alert alert-warning border-0 shadow-sm d-flex align-items-start gap-2 py-2 px-3 mt-3 mb-0" role="alert">
+                                <i class="mdi mdi-alert-circle-outline fs-5 text-warning flex-shrink-0 mt-0"></i>
+                                <div class="small">
+                                    <strong>Production Cache Notice:</strong> Only run <code>php artisan optimize</code> after your <code>.env</code> settings and testing are finalized. If you modify your <code>.env</code> file in the future, remember to clear cached configurations by running <code>php artisan optimize:clear</code>.
+                                </div>
                             </div>
                         </div>
                     </div>

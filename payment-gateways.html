@@ -170,10 +170,10 @@
                     </div>
 
                     <h1 class="doc-section-title">
-                        <i class="mdi mdi-credit-card-outline text-primary"></i> Chapter 12: Payment Gateways & Visual Logos Hub
+                        <i class="mdi mdi-credit-card-outline text-primary"></i> Chapter 12: Payment Gateways &amp; Visual Logos Hub
                     </h1>
                     <p class="lead text-muted">
-                        Multi-gateway configurations (Stripe, PayPal, Razorpay, SSLCommerz, COD) and high-res checkout logos.
+                        Production payment configurations (Stripe, PayPal, SSLCommerz, CoinGate, Cash on Delivery, Manual Transfer) and high-res checkout logos.
                     </p>
 
                     <!-- Feature Highlights Grid -->
@@ -210,66 +210,137 @@
                     <!-- Core Architectural Overview -->
                     <div class="card border-0 shadow-sm rounded-3 mb-4">
                         <div class="card-body p-4">
-                            <h4 class="fw-bold mb-3">Module Architecture & Workflow</h4>
+                            <h4 class="fw-bold mb-3">Module Architecture &amp; Workflow</h4>
                             <p class="text-muted">
-                                This chapter details the comprehensive configuration, operational controls, and best practices for <strong>Chapter 12: Payment Gateways & Visual Logos Hub</strong>. Follow the guided procedures below to maintain peak operational performance and security.
+                                This chapter details the comprehensive configuration, operational controls, and best practices for <strong>Chapter 12: Payment Gateways &amp; Visual Logos Hub</strong>. Follow the guided procedures below to maintain peak operational performance and security.
                             </p>
                             <div class="alert alert-info border-0 d-flex align-items-start gap-3 mb-0">
                                 <i class="mdi mdi-information-outline fs-4 text-info flex-shrink-0 mt-1"></i>
                                 <div>
                                     <strong>Admin Navigation Path:</strong>
-                                    <div class="mt-1 font-monospace small">Admin Dashboard &gt; Ecommerce & Sales &gt; Payment Gateways</div>
+                                    <div class="mt-1 font-monospace small">Admin Dashboard &gt; Ecommerce &amp; Sales &gt; Payment Gateways &gt; Gateway Settings</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    
                     <!-- ================= 12.1: GATEWAY ARCHITECTURE & CONSOLE OVERVIEW ================= -->
                     <div class="doc-subsection mt-5 mb-5" id="sec-12-1">
                         <h3 class="fw-bold text-heading mb-3">
                             <i class="mdi mdi-view-dashboard-outline text-primary me-1"></i> 12.1 Gateway Selection Console &amp; Architectural Overview
                         </h3>
                         <p class="text-muted">
-                            MartX provides a unified, enterprise-grade payment processing architecture supporting <strong>10 distinct gateway integrations</strong> across credit/debit cards, digital wallets, global escrow, cryptocurrency rails, and localized offline payments. Administrators manage all payment channels through the centralized <strong>Gateway Settings</strong> console (<code>Ecommerce &amp; Sales &gt; Payment Gateways &gt; Gateway Settings</code>).
+                            MartX provides a unified, enterprise-grade payment processing architecture supporting <strong>6 core payment methods</strong> across credit/debit cards, digital wallets, domestic Bangladesh banking, borderless cryptocurrency rails, and localized offline payments. Administrators manage all payment channels through the centralized <strong>Gateway Settings</strong> console (<code>Ecommerce &amp; Sales &gt; Payment Gateways &gt; Gateway Settings</code>).
                         </p>
 
-                        <!-- Overview Metric Cards -->
+                        <!-- Overview Metric Cards (6 Real Payment Channels) -->
                         <div class="row g-3 mb-4">
-                            <div class="col-md-3">
+                            <div class="col-6 col-md-4 col-lg-2">
                                 <div class="p-3 border rounded-3 bg-light-subtle h-100 text-center">
                                     <span class="badge bg-primary text-white p-2 rounded-circle mb-2">
-                                        <i class="mdi mdi-credit-card-multiple fs-5"></i>
+                                        <i class="mdi mdi-credit-card-outline fs-5"></i>
                                     </span>
-                                    <h6 class="fw-bold mb-1">Global Cards</h6>
-                                    <p class="small text-muted mb-0">Stripe, PayPal, Razorpay, Paystack, WayForPay</p>
+                                    <h6 class="fw-bold mb-1 small">Global Cards</h6>
+                                    <p class="extra-small text-muted mb-0">Stripe (Cards, Apple Pay, Google Pay)</p>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="p-3 border rounded-3 bg-light-subtle h-100 text-center">
-                                    <span class="badge bg-success text-white p-2 rounded-circle mb-2">
-                                        <i class="mdi mdi-cellphone-check fs-5"></i>
-                                    </span>
-                                    <h6 class="fw-bold mb-1">Local &amp; Wallets</h6>
-                                    <p class="small text-muted mb-0">SSLCommerz (bKash, Nagad, Rocket), UPI, Netbanking</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="p-3 border rounded-3 bg-light-subtle h-100 text-center">
-                                    <span class="badge bg-warning text-dark p-2 rounded-circle mb-2">
-                                        <i class="mdi mdi-currency-btc fs-5"></i>
-                                    </span>
-                                    <h6 class="fw-bold mb-1">Crypto Rails</h6>
-                                    <p class="small text-muted mb-0">Binance Pay (USDT) &amp; CoinGate (70+ Cryptos)</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
+                            <div class="col-6 col-md-4 col-lg-2">
                                 <div class="p-3 border rounded-3 bg-light-subtle h-100 text-center">
                                     <span class="badge bg-info text-white p-2 rounded-circle mb-2">
+                                        <i class="fa fa-paypal fs-5"></i>
+                                    </span>
+                                    <h6 class="fw-bold mb-1 small">Global Wallet</h6>
+                                    <p class="extra-small text-muted mb-0">PayPal (Express Checkout &amp; Wallet)</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100 text-center">
+                                    <span class="badge bg-danger text-white p-2 rounded-circle mb-2">
+                                        <i class="mdi mdi-shield-check-outline fs-5"></i>
+                                    </span>
+                                    <h6 class="fw-bold mb-1 small">Local Gateway</h6>
+                                    <p class="extra-small text-muted mb-0">SSLCommerz (bKash, Nagad, BD Cards)</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100 text-center">
+                                    <span class="badge bg-warning text-dark p-2 rounded-circle mb-2">
+                                        <i class="mdi mdi-bitcoin fs-5"></i>
+                                    </span>
+                                    <h6 class="fw-bold mb-1 small">Crypto Rails</h6>
+                                    <p class="extra-small text-muted mb-0">CoinGate (BTC, ETH, 70+ Coins)</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100 text-center">
+                                    <span class="badge bg-success text-white p-2 rounded-circle mb-2">
                                         <i class="mdi mdi-truck-delivery-outline fs-5"></i>
                                     </span>
-                                    <h6 class="fw-bold mb-1">COD &amp; Offline</h6>
-                                    <p class="small text-muted mb-0">Cash on Delivery &amp; Direct Bank / Manual Transfer</p>
+                                    <h6 class="fw-bold mb-1 small">Doorstep COD</h6>
+                                    <p class="extra-small text-muted mb-0">Cash on Delivery (Advance / Full)</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2">
+                                <div class="p-3 border rounded-3 bg-light-subtle h-100 text-center">
+                                    <span class="badge bg-secondary text-white p-2 rounded-circle mb-2">
+                                        <i class="mdi mdi-bank-transfer fs-5"></i>
+                                    </span>
+                                    <h6 class="fw-bold mb-1 small">Manual Direct</h6>
+                                    <p class="extra-small text-muted mb-0">Manual Payment (Bank Wire &amp; TrxID)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Visual Flowchart: Customer Checkout & Payment Routing Engine -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white py-3 px-4 border-bottom d-flex align-items-center gap-2">
+                                <i class="mdi mdi-sitemap text-primary fs-5"></i>
+                                <h6 class="fw-bold mb-0">Visual Flowchart: Customer Checkout &amp; Payment Routing Engine</h6>
+                            </div>
+                            <div class="card-body p-4 bg-light-subtle">
+                                <p class="small text-muted mb-3">
+                                    When a customer reaches the MartX checkout page, the routing engine processes transactions across three primary channels:
+                                </p>
+                                <div class="row g-3 text-center small">
+                                    <div class="col-md-4">
+                                        <div class="p-3 bg-white rounded-3 border shadow-xs h-100 d-flex flex-column justify-content-between">
+                                            <div>
+                                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1 mb-2">Channel 1</span>
+                                                <h6 class="fw-bold text-dark mb-1">Online Gateways</h6>
+                                                <p class="text-muted extra-small mb-2">Stripe &bull; PayPal &bull; SSLCommerz &bull; CoinGate</p>
+                                            </div>
+                                            <div class="d-flex flex-column gap-1 extra-small">
+                                                <span class="badge bg-success-subtle text-success border border-success-subtle">Success: Order PAID &amp; Stock Locked</span>
+                                                <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Abandoned: Web Cron Auto-Cancels</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 bg-white rounded-3 border shadow-xs h-100 d-flex flex-column justify-content-between">
+                                            <div>
+                                                <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle px-2 py-1 mb-2">Channel 2</span>
+                                                <h6 class="fw-bold text-dark mb-1">Cash on Delivery</h6>
+                                                <p class="text-muted extra-small mb-2">Doorstep Payment Collection</p>
+                                            </div>
+                                            <div class="d-flex flex-column gap-1 extra-small">
+                                                <span class="badge bg-info-subtle text-dark border border-info-subtle">Advance Shipping: Pay Delivery Fee First</span>
+                                                <span class="badge bg-light text-dark border">Standard COD: Pay Full Amount at Door</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 bg-white rounded-3 border shadow-xs h-100 d-flex flex-column justify-content-between">
+                                            <div>
+                                                <span class="badge bg-warning-subtle text-dark border border-warning-subtle px-2 py-1 mb-2">Channel 3</span>
+                                                <h6 class="fw-bold text-dark mb-1">Manual Transfer</h6>
+                                                <p class="text-muted extra-small mb-2">Direct Bank Wire &bull; Personal Mobile Money</p>
+                                            </div>
+                                            <div class="d-flex flex-column gap-1 extra-small">
+                                                <span class="badge bg-light text-dark border">Buyer Submits TrxID in Checkout</span>
+                                                <span class="badge bg-success-subtle text-success border border-success-subtle">Store Admin Confirms &amp; Approves</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -280,16 +351,16 @@
                             <div>
                                 <strong class="d-block mb-1">Multi-Currency Exchange Rate Engine:</strong>
                                 <p class="small text-muted mb-0">
-                                    When your storefront operates in a regional base currency (such as BDT, INR, or NGN) while utilizing international gateways that settle in USD or EUR (such as PayPal, WayForPay, or CoinGate), the administrative console provides a dedicated <strong>Exchange Rate Field</strong>. The checkout engine multiplies order subtotals by this multiplier in real time, ensuring accurate international billing without discrepancy.
+                                    When your storefront operates in a regional base currency (such as BDT or EUR) while utilizing international gateways that settle in USD (such as PayPal or CoinGate), the administrative console provides a dedicated <strong>Exchange Rate Field</strong>. The checkout engine converts order subtotals by this multiplier in real time, ensuring accurate international billing without discrepancy.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Multi-Currency Dynamic Reference Matrix (Illustrative Sample Guide) -->
+                        <!-- Multi-Currency Dynamic Reference Matrix (Real Scenarios) -->
                         <div class="card border shadow-sm rounded-3 mb-4">
                             <div class="card-header bg-white border-bottom py-3 px-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
                                 <h6 class="fw-bold mb-0 text-heading">
-                                    <i class="mdi mdi-calculator-variant-outline text-primary me-1"></i> Multi-Currency Exchange Rate Reference Matrix (Illustrative Sample Guide)
+                                    <i class="mdi mdi-calculator-variant-outline text-primary me-1"></i> Multi-Currency Exchange Rate Reference Matrix
                                 </h6>
                                 <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle px-2.5 py-1 small">
                                     <i class="mdi mdi-chart-timeline-variant me-1"></i> Market-Driven &bull; Dynamic Floating Rates
@@ -300,9 +371,9 @@
                                 <div class="alert alert-warning bg-warning-subtle border-0 text-dark mb-3 p-3 rounded-3 d-flex align-items-start gap-3">
                                     <i class="mdi mdi-alert-circle text-warning fs-4 flex-shrink-0 mt-0.5"></i>
                                     <div>
-                                        <strong class="d-block text-dark mb-1">Notice: Rates Below Are Purely Illustrative Samples (Not Fixed or Permanent):</strong>
+                                        <strong class="d-block text-dark mb-1">Notice: Rates Below Are Illustrative Real-World Examples:</strong>
                                         <p class="small mb-0">
-                                            Foreign exchange currency rates fluctuate dynamically based on international forex markets and central bank regulations. The numerical conversion rates shown in this matrix (such as <code>120.00</code> for BDT or <code>1.45</code> for INR) are <strong>illustrative sample figures (নমুনা উদাহরণ)</strong> provided solely to explain the computational logic. Store administrators <strong>must always input their current, actual live exchange rates</strong> corresponding to their active bank or payment gateway settlement terms.
+                                            Foreign exchange currency rates fluctuate based on international forex markets and central bank regulations. The numerical conversion rates shown below are <strong>illustrative examples (নমুনা উদাহরণ)</strong> to explain calculation logic. Store administrators <strong>must input their current, actual live exchange rates</strong> corresponding to active bank or settlement terms.
                                         </p>
                                     </div>
                                 </div>
@@ -311,55 +382,41 @@
                                     <table class="table table-hover align-middle mb-0">
                                         <thead class="table-light small">
                                             <tr>
-                                                <th style="width: 20%;">Store Base Currency</th>
-                                                <th style="width: 20%;">Payment Gateway Enabled</th>
+                                                <th style="width: 25%;">Store Base Currency</th>
+                                                <th style="width: 20%;">Gateway Configured</th>
                                                 <th style="width: 25%;">Admin Input Field</th>
-                                                <th style="width: 15%;">Sample Value (Illustrative)</th>
-                                                <th style="width: 20%;">Checkout Conversion Result</th>
+                                                <th style="width: 15%;">Sample Value</th>
+                                                <th style="width: 15%;">Checkout Result</th>
                                             </tr>
                                         </thead>
                                         <tbody class="small">
                                             <tr>
                                                 <td class="fw-bold text-dark"><span class="badge bg-light text-dark border">BDT (৳) - Bangladeshi Taka</span></td>
-                                                <td><span class="badge bg-primary-subtle text-primary">PayPal / WayForPay / CoinGate</span></td>
+                                                <td><span class="badge bg-primary-subtle text-primary">PayPal Express</span></td>
                                                 <td><code>1 USD = ? Base Currency</code></td>
-                                                <td><code class="fw-bold text-primary">120.00</code> <small class="text-muted d-block">(Sample Market Rate)</small></td>
-                                                <td>A ৳1,200 cart automatically charges <strong>$10.00 USD</strong> at checkout \((1200 \div 120)\).</td>
+                                                <td><code class="fw-bold text-primary">122.50</code></td>
+                                                <td>A ৳1,225 cart charges <strong>$10.00 USD</strong> at checkout \((1225 \div 122.50)\).</td>
                                             </tr>
                                             <tr>
                                                 <td class="fw-bold text-dark"><span class="badge bg-light text-dark border">BDT (৳) - Bangladeshi Taka</span></td>
-                                                <td><span class="badge bg-warning-subtle text-dark">Binance Pay (Crypto)</span></td>
-                                                <td><code>1 USDT = ? Base Currency</code></td>
-                                                <td><code class="fw-bold text-warning-emphasis">122.00</code> <small class="text-muted d-block">(Sample P2P Rate)</small></td>
-                                                <td>A ৳1,220 order generates a dynamic QR code for <strong>10.00 USDT</strong>.</td>
+                                                <td><span class="badge bg-warning-subtle text-dark">CoinGate (Crypto)</span></td>
+                                                <td><code>1 USD = ? Base Currency</code></td>
+                                                <td><code class="fw-bold text-warning-emphasis">122.50</code></td>
+                                                <td>Locks a $10.00 USD equivalent in BTC/ETH for 20 minutes.</td>
                                             </tr>
                                             <tr>
-                                                <td class="fw-bold text-dark"><span class="badge bg-light text-dark border">BDT (৳) - Bangladeshi Taka</span></td>
-                                                <td><span class="badge bg-info-subtle text-info-emphasis">Razorpay (Indian Gateway)</span></td>
-                                                <td><code>1 INR = ? Base Currency</code></td>
-                                                <td><code class="fw-bold text-info-emphasis">1.45</code> <small class="text-muted d-block">(Sample Cross-Border Rate)</small></td>
-                                                <td>A ৳145 order charges <strong>₹100 INR</strong> on Indian UPI / Netbanking.</td>
+                                                <td class="fw-bold text-dark"><span class="badge bg-light text-dark border">EUR (€) - Euro</span></td>
+                                                <td><span class="badge bg-primary-subtle text-primary">PayPal / CoinGate</span></td>
+                                                <td><code>1 USD = ? Base Currency</code></td>
+                                                <td><code class="fw-bold text-info">0.92</code></td>
+                                                <td>A €92 cart charges <strong>$100.00 USD</strong> on PayPal.</td>
                                             </tr>
                                             <tr>
                                                 <td class="fw-bold text-dark"><span class="badge bg-light text-dark border">USD ($) - US Dollar</span></td>
                                                 <td><span class="badge bg-success-subtle text-success">PayPal / Stripe / CoinGate</span></td>
                                                 <td><code>1 USD = ? Base Currency</code></td>
-                                                <td><code class="fw-bold text-success">1.00</code> <small class="text-muted d-block">(No Conversion Required)</small></td>
+                                                <td><code class="fw-bold text-success">1.00</code></td>
                                                 <td>A $50.00 cart charges exactly <strong>$50.00 USD</strong> (1:1 parity).</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fw-bold text-dark"><span class="badge bg-light text-dark border">INR (₹) - Indian Rupee</span></td>
-                                                <td><span class="badge bg-info-subtle text-info-emphasis">Razorpay (Domestic India)</span></td>
-                                                <td><code>1 INR = ? Base Currency</code></td>
-                                                <td><code class="fw-bold text-success">1.00</code> <small class="text-muted d-block">(Domestic Currency Parity)</small></td>
-                                                <td>A ₹1,000 order charges exactly <strong>₹1,000 INR</strong> with 0 conversion loss.</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fw-bold text-dark"><span class="badge bg-light text-dark border">NGN (₦) - Nigerian Naira</span></td>
-                                                <td><span class="badge bg-primary-subtle text-primary">Paystack (Domestic Africa)</span></td>
-                                                <td><code>1 NGN = ? Base Currency</code></td>
-                                                <td><code class="fw-bold text-success">1.00</code> <small class="text-muted d-block">(Domestic Currency Parity)</small></td>
-                                                <td>A ₦5,000 cart charges exactly <strong>₦5,000 NGN</strong> directly via Paystack.</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -368,13 +425,13 @@
                         </div>
                     </div>
 
-                    <!-- ================= 12.2: GLOBAL CARD & WALLET GATEWAYS ================= -->
+                    <!-- ================= 12.2: STRIPE CONFIGURATION ================= -->
                     <div class="doc-subsection mt-5 mb-5" id="sec-12-2">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-credit-card-outline text-primary me-1"></i> 12.2 Global Card &amp; Wallet Gateways: Stripe, PayPal, SSLCommerz &amp; Razorpay
+                            <i class="mdi mdi-credit-card-outline text-primary me-1"></i> 12.2 Global Card &amp; Mobile Wallet Processing: Stripe
                         </h3>
                         <p class="text-muted">
-                            These Tier-1 financial processors handle standard consumer card transactions, mobile wallets, and domestic banking integrations. Each gateway can be independently switched between <strong>Active</strong> and <strong>Inactive</strong> states.
+                            Stripe is the premier international card processing infrastructure for MartX. It accepts all major credit and debit cards (Visa, MasterCard, American Express, Discover, JCB) alongside 1-click mobile wallets including <strong>Apple Pay</strong> and <strong>Google Pay</strong> via Stripe Elements.
                         </p>
 
                         <!-- Screenshot 1: Stripe Configuration -->
@@ -413,6 +470,60 @@
                             </div>
                         </div>
 
+                        <!-- Technical Parameter Matrix Table for Stripe -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-table-cog text-primary me-1"></i> Stripe Parameter Specification
+                                </h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light small">
+                                            <tr>
+                                                <th style="width: 25%;">Field Name</th>
+                                                <th style="width: 25%;">Sample Value</th>
+                                                <th style="width: 50%;">Merchant Operational Purpose</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="fw-bold text-dark">Status Toggle</td>
+                                                <td><span class="badge bg-success-subtle text-success">Active / Inactive</span></td>
+                                                <td>Enables or disables Stripe across customer checkout without erasing stored API credentials.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Stripe Key *</td>
+                                                <td><code>pk_test_...</code> / <code>pk_live_...</code></td>
+                                                <td>Your Stripe Publishable API key. Used on customer checkout for direct client-side tokenization (PCI-DSS compliant).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Stripe Secret *</td>
+                                                <td><code>sk_test_...</code> / <code>sk_live_...</code></td>
+                                                <td>Your confidential Stripe Secret API key. Securely stored and used server-side to authorize payment charges.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Webhook Secret (Optional)</td>
+                                                <td><code>whsec_...</code></td>
+                                                <td>Allows Stripe servers to send asynchronous background notifications when payments succeed or fail.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 12.3: PAYPAL CONFIGURATION ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-3">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="fa fa-paypal text-info me-1"></i> 12.3 Global Digital Wallet &amp; Express Checkout: PayPal
+                        </h3>
+                        <p class="text-muted">
+                            PayPal offers worldwide brand recognition, enabling buyers to pay with their stored PayPal wallet balances, linked bank accounts, or debit/credit cards without entering card details on your website.
+                        </p>
+
                         <!-- Screenshot 2: PayPal Configuration -->
                         <div class="doc-admin-frame mb-4 shadow-sm">
                             <div class="doc-admin-frame-header py-2">
@@ -443,11 +554,65 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
-                                    <span><i class="mdi mdi-information-outline me-1"></i> Dual-mode Sandbox &amp; Live credential configuration.</span>
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Dual-mode Sandbox &amp; Live credential configuration with instant dropdown selector.</span>
                                     <span class="badge bg-light text-dark border">PayPal Express Engine</span>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Technical Parameter Matrix Table for PayPal -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-table-cog text-primary me-1"></i> PayPal Parameter Specification
+                                </h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light small">
+                                            <tr>
+                                                <th style="width: 25%;">Field Name</th>
+                                                <th style="width: 25%;">Configuration Type</th>
+                                                <th style="width: 50%;">Merchant Operational Purpose</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="fw-bold text-dark">Exchange Rate *</td>
+                                                <td><code>1 USD = ? Base Currency</code></td>
+                                                <td>Multiplies checkout subtotals into equivalent USD for PayPal settlement. If your store currency is USD, set to <code>1.00</code>. Never enter <code>0</code>.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Environment Mode</td>
+                                                <td><span class="badge bg-primary-subtle text-primary">Sandbox / Live</span></td>
+                                                <td>Switch between Sandbox test mode and Live production payments with a single click.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Sandbox Credentials</td>
+                                                <td>Client ID &amp; Secret</td>
+                                                <td>Test credentials obtained from PayPal Developer Portal (Apps &amp; Credentials &gt; Sandbox).</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Live Credentials</td>
+                                                <td>Client ID &amp; Secret</td>
+                                                <td>Production credentials from your verified business PayPal account for processing real customer payments.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 12.4: SSLCOMMERZ CONFIGURATION ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-4">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-shield-check-outline text-danger me-1"></i> 12.4 Bangladesh Domestic Payment Gateway: SSLCommerz
+                        </h3>
+                        <p class="text-muted">
+                            SSLCommerz is Bangladesh's premier licensed payment aggregator. It enables eCommerce stores to accept payments from <strong>bKash, Nagad, Rocket, Upay</strong>, domestic and international Visa/MasterCard, and internet banking portals across all major Bangladeshi commercial banks.
+                        </p>
 
                         <!-- Screenshot 3: SSLCommerz Configuration -->
                         <div class="doc-admin-frame mb-4 shadow-sm">
@@ -479,53 +644,17 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
-                                    <span><i class="mdi mdi-information-outline me-1"></i> Complete Bangladesh domestic card &amp; MFS aggregator integration.</span>
+                                    <span><i class="mdi mdi-information-outline me-1"></i> Domestic card &amp; MFS aggregator integration with 3D-Secure bank OTP handling.</span>
                                     <span class="badge bg-light text-dark border">SSLCommerz Aggregator</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Screenshot 4: Razorpay Configuration -->
-                        <div class="doc-admin-frame mb-4 shadow-sm">
-                            <div class="doc-admin-frame-header py-2">
-                                <div class="doc-admin-dots">
-                                    <span class="doc-admin-dot red"></span>
-                                    <span class="doc-admin-dot yellow"></span>
-                                    <span class="doc-admin-dot green"></span>
-                                </div>
-                                <div class="doc-admin-url-bar" style="font-size: 11px;">
-                                    Admin Panel &mdash; Razorpay Configuration: India UPI, Netbanking &amp; Cards
-                                </div>
-                                <div class="d-flex align-items-center gap-2">
-                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
-                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
-                                    </button>
-                                    <a href="images/payments/admin_gateway_razorpay.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
-                                        <i class="mdi mdi-open-in-new"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="doc-admin-frame-body p-3">
-                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
-                                    <img src="images/payments/admin_gateway_razorpay.png" alt="Razorpay Configuration Interface" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
-                                    <div class="w-100 text-center text-muted py-5">
-                                        <i class="mdi mdi-credit-card-chip-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
-                                        <span class="fw-semibold d-block">Razorpay Gateway Configuration</span>
-                                        <span class="small text-muted font-monospace">(images/payments/admin_gateway_razorpay.png)</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
-                                    <span><i class="mdi mdi-information-outline me-1"></i> Omnichannel payments platform for UPI, QR codes, and cards.</span>
-                                    <span class="badge bg-light text-dark border">Razorpay India Engine</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Technical Parameter Matrix Table -->
+                        <!-- Technical Parameter Matrix Table for SSLCommerz -->
                         <div class="card border shadow-sm rounded-3 mb-4">
                             <div class="card-header bg-white border-bottom py-3 px-4">
                                 <h6 class="fw-bold mb-0 text-heading">
-                                    <i class="mdi mdi-table-cog text-primary me-1"></i> Global Card Gateways Parameter Specification
+                                    <i class="mdi mdi-table-cog text-primary me-1"></i> SSLCommerz Parameter Specification
                                 </h6>
                             </div>
                             <div class="card-body p-0">
@@ -533,51 +662,26 @@
                                     <table class="table table-hover align-middle mb-0">
                                         <thead class="table-light small">
                                             <tr>
-                                                <th style="width: 20%;">Gateway</th>
-                                                <th style="width: 25%;">Configuration Fields</th>
-                                                <th style="width: 15%;">Environment</th>
-                                                <th style="width: 40%;">Operational Function &amp; Usage Notes</th>
+                                                <th style="width: 25%;">Field Name</th>
+                                                <th style="width: 25%;">Input Format</th>
+                                                <th style="width: 50%;">Merchant Operational Purpose</th>
                                             </tr>
                                         </thead>
                                         <tbody class="small">
                                             <tr>
-                                                <td class="fw-bold text-dark"><i class="mdi mdi-credit-card text-primary me-1"></i> Stripe</td>
-                                                <td>
-                                                    <code>Stripe Key *</code><br>
-                                                    <code>Stripe Secret *</code><br>
-                                                    <code>Webhook Secret</code>
-                                                </td>
-                                                <td><span class="badge bg-success-subtle text-success">Live / Test</span></td>
-                                                <td>Direct client-side tokenization. Accepts all major international cards, Apple Pay, and Google Pay. The Webhook Secret (<code>whsec_...</code>) ensures asynchronous payment reconciliation.</td>
+                                                <td class="fw-bold text-dark">Environment Mode</td>
+                                                <td><span class="badge bg-primary-subtle text-primary">Sandbox / Live</span></td>
+                                                <td>Toggle between the SSLCommerz testing sandbox and active production gateway.</td>
                                             </tr>
                                             <tr>
-                                                <td class="fw-bold text-dark"><i class="mdi mdi-paypal text-primary me-1"></i> PayPal</td>
-                                                <td>
-                                                    <code>Exchange Rate</code><br>
-                                                    <code>Sandbox Client ID / Secret</code><br>
-                                                    <code>Live Client ID / Secret</code>
-                                                </td>
-                                                <td><span class="badge bg-primary-subtle text-primary">Selector</span></td>
-                                                <td>PayPal Express Checkout. Features dual credential inputs for seamless switching between Sandbox testing and Live production without credential re-entry.</td>
+                                                <td class="fw-bold text-dark">Store ID *</td>
+                                                <td>Text string</td>
+                                                <td>Unique merchant store identifier issued during SSLCommerz merchant onboarding.</td>
                                             </tr>
                                             <tr>
-                                                <td class="fw-bold text-dark"><i class="mdi mdi-shield-check text-danger me-1"></i> SSLCommerz</td>
-                                                <td>
-                                                    <code>Store ID *</code><br>
-                                                    <code>Store Password *</code>
-                                                </td>
-                                                <td><span class="badge bg-primary-subtle text-primary">Selector</span></td>
-                                                <td>Premier Bangladesh payment gateway aggregating bKash, Nagad, Rocket, Upay, Visa, MasterCard, and local internet banking portals.</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fw-bold text-dark"><i class="mdi mdi-flash text-info me-1"></i> Razorpay</td>
-                                                <td>
-                                                    <code>Exchange Rate</code><br>
-                                                    <code>Key ID *</code><br>
-                                                    <code>Key Secret *</code>
-                                                </td>
-                                                <td><span class="badge bg-success-subtle text-success">Live / Test</span></td>
-                                                <td>Standard Indian payment stack enabling instant checkout via UPI (Google Pay, PhonePe, Paytm), netbanking across 50+ banks, and domestic debit/credit cards.</td>
+                                                <td class="fw-bold text-dark">Store Password *</td>
+                                                <td>Password / Key</td>
+                                                <td>Secure authentication secret provided by SSLCommerz for encrypted server-to-server API validation.</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -586,178 +690,16 @@
                         </div>
                     </div>
 
-                    <!-- ================= 12.3: REGIONAL & MULTI-CURRENCY GATEWAYS ================= -->
-                    <div class="doc-subsection mt-5 mb-5" id="sec-12-3">
+                    <!-- ================= 12.5: COINGATE CONFIGURATION ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-5">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-earth text-primary me-1"></i> 12.3 Regional &amp; Multi-Currency Processing: Paystack &amp; WayForPay
+                            <i class="mdi mdi-bitcoin text-warning me-1"></i> 12.5 Borderless Web3 &amp; Cryptocurrency Processing: CoinGate
                         </h3>
                         <p class="text-muted">
-                            MartX expands business reach into emerging markets through specialized regional gateways equipped with real-time base currency conversion.
+                            For global decentralized commerce, MartX integrates <strong>CoinGate</strong>, enabling customers to pay using <strong>Bitcoin (BTC), Ethereum (ETH), Tether (USDT), Litecoin (LTC)</strong>, and 70+ leading cryptocurrencies with automated invoice rate locking.
                         </p>
 
-                        <!-- Screenshot 5: Paystack Configuration -->
-                        <div class="doc-admin-frame mb-4 shadow-sm">
-                            <div class="doc-admin-frame-header py-2">
-                                <div class="doc-admin-dots">
-                                    <span class="doc-admin-dot red"></span>
-                                    <span class="doc-admin-dot yellow"></span>
-                                    <span class="doc-admin-dot green"></span>
-                                </div>
-                                <div class="doc-admin-url-bar" style="font-size: 11px;">
-                                    Admin Panel &mdash; Paystack Configuration: African Commerce (Nigeria, Ghana, South Africa)
-                                </div>
-                                <div class="d-flex align-items-center gap-2">
-                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
-                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
-                                    </button>
-                                    <a href="images/payments/admin_gateway_paystack.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
-                                        <i class="mdi mdi-open-in-new"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="doc-admin-frame-body p-3">
-                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
-                                    <img src="images/payments/admin_gateway_paystack.png" alt="Paystack Configuration Interface" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
-                                    <div class="w-100 text-center text-muted py-5">
-                                        <i class="mdi mdi-layers-outline fs-1 d-block mb-1 text-primary opacity-50"></i>
-                                        <span class="fw-semibold d-block">Paystack Gateway Configuration</span>
-                                        <span class="small text-muted font-monospace">(images/payments/admin_gateway_paystack.png)</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
-                                    <span><i class="mdi mdi-information-outline me-1"></i> Configured with exchange rate (1 NGN = ? Base Currency) and merchant credentials.</span>
-                                    <span class="badge bg-light text-dark border">Paystack Africa Engine</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Screenshot 6: WayForPay Configuration -->
-                        <div class="doc-admin-frame mb-4 shadow-sm">
-                            <div class="doc-admin-frame-header py-2">
-                                <div class="doc-admin-dots">
-                                    <span class="doc-admin-dot red"></span>
-                                    <span class="doc-admin-dot yellow"></span>
-                                    <span class="doc-admin-dot green"></span>
-                                </div>
-                                <div class="doc-admin-url-bar" style="font-size: 11px;">
-                                    Admin Panel &mdash; WayForPay Configuration: Multi-Currency International Processing
-                                </div>
-                                <div class="d-flex align-items-center gap-2">
-                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
-                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
-                                    </button>
-                                    <a href="images/payments/admin_gateway_wayforpay.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
-                                        <i class="mdi mdi-open-in-new"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="doc-admin-frame-body p-3">
-                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
-                                    <img src="images/payments/admin_gateway_wayforpay.png" alt="WayForPay Configuration Interface" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
-                                    <div class="w-100 text-center text-muted py-5">
-                                        <i class="mdi mdi-cash-register fs-1 d-block mb-1 text-primary opacity-50"></i>
-                                        <span class="fw-semibold d-block">WayForPay Gateway Configuration</span>
-                                        <span class="small text-muted font-monospace">(images/payments/admin_gateway_wayforpay.png)</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
-                                    <span><i class="mdi mdi-information-outline me-1"></i> Fast international payment gateway for European &amp; CIS commerce.</span>
-                                    <span class="badge bg-light text-dark border">WayForPay International</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Technical Parameter Matrix Table -->
-                        <div class="card border shadow-sm rounded-3 mb-4">
-                            <div class="card-header bg-white border-bottom py-3 px-4">
-                                <h6 class="fw-bold mb-0 text-heading">
-                                    <i class="mdi mdi-table-cog text-primary me-1"></i> Regional Gateways Parameter Specification
-                                </h6>
-                            </div>
-                            <div class="card-body p-0">
-                                <div class="table-responsive">
-                                    <table class="table table-hover align-middle mb-0">
-                                        <thead class="table-light small">
-                                            <tr>
-                                                <th style="width: 20%;">Gateway</th>
-                                                <th style="width: 30%;">Required Parameters</th>
-                                                <th style="width: 20%;">Conversion Multiplier</th>
-                                                <th style="width: 30%;">Operational Logic</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="small">
-                                            <tr>
-                                                <td class="fw-bold text-dark"><i class="mdi mdi-layers-triple text-primary me-1"></i> Paystack</td>
-                                                <td>
-                                                    <code>Public Key *</code><br>
-                                                    <code>Secret Key *</code><br>
-                                                    <code>Merchant Email *</code>
-                                                </td>
-                                                <td><code>1 NGN = ? Base Currency</code></td>
-                                                <td>Enables African buyers to pay via bank account, debit card, USSD, and mobile money. Automatically converts amounts into Nigerian Naira (NGN).</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fw-bold text-dark"><i class="mdi mdi-cash-multiple text-success me-1"></i> WayForPay</td>
-                                                <td>
-                                                    <code>Merchant Account *</code><br>
-                                                    <code>Merchant Secret Key *</code>
-                                                </td>
-                                                <td><code>1 USD = ? Base Currency</code></td>
-                                                <td>High-performance processing for international clients with automated 3-D Secure authentication and fraud screening.</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ================= 12.4: BORDERLESS CRYPTOCURRENCY GATEWAYS ================= -->
-                    <div class="doc-subsection mt-5 mb-5" id="sec-12-4">
-                        <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-currency-btc text-primary me-1"></i> 12.4 Borderless Cryptocurrency Gateways: Binance Pay &amp; CoinGate
-                        </h3>
-                        <p class="text-muted">
-                            For global decentralized commerce, MartX integrates premier Web3 payment rails enabling real-time stablecoin and cryptocurrency settlements.
-                        </p>
-
-                        <!-- Screenshot 7: Binance Pay Configuration -->
-                        <div class="doc-admin-frame mb-4 shadow-sm">
-                            <div class="doc-admin-frame-header py-2">
-                                <div class="doc-admin-dots">
-                                    <span class="doc-admin-dot red"></span>
-                                    <span class="doc-admin-dot yellow"></span>
-                                    <span class="doc-admin-dot green"></span>
-                                </div>
-                                <div class="doc-admin-url-bar" style="font-size: 11px;">
-                                    Admin Panel &mdash; Binance Pay Configuration: Instant Cryptocurrency &amp; USDT Settlements
-                                </div>
-                                <div class="d-flex align-items-center gap-2">
-                                    <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2 doc-lightbox-trigger" title="Click to view full HD in Lightbox Modal" style="font-size: 11px; height: 26px; display: inline-flex; align-items: center;">
-                                        <i class="mdi mdi-magnify-plus-outline me-1"></i> Full View
-                                    </button>
-                                    <a href="images/payments/admin_gateway_binance.png" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open uncompressed in new browser tab">
-                                        <i class="mdi mdi-open-in-new"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="doc-admin-frame-body p-3">
-                                <div class="position-relative rounded-3 mb-2 border bg-light text-center doc-viewport-wrapper">
-                                    <img src="images/payments/admin_gateway_binance.png" alt="Binance Pay Configuration Interface" class="w-100 h-auto rounded-3 img-fluid d-block doc-mockup-img" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
-                                    <div class="w-100 text-center text-muted py-5">
-                                        <i class="mdi mdi-alpha-b-circle-outline fs-1 d-block mb-1 text-warning opacity-50"></i>
-                                        <span class="fw-semibold d-block">Binance Pay Gateway Configuration</span>
-                                        <span class="small text-muted font-monospace">(images/payments/admin_gateway_binance.png)</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-2 px-1 text-muted small">
-                                    <span><i class="mdi mdi-information-outline me-1"></i> Zero gas fee instant checkout for Binance registered app users.</span>
-                                    <span class="badge bg-light text-dark border">Binance Pay Integration</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Screenshot 8: CoinGate Configuration -->
+                        <!-- Screenshot 4: CoinGate Configuration -->
                         <div class="doc-admin-frame mb-4 shadow-sm">
                             <div class="doc-admin-frame-header py-2">
                                 <div class="doc-admin-dots">
@@ -793,39 +735,50 @@
                             </div>
                         </div>
 
-                        <!-- Crypto Conversion Guidelines -->
+                        <!-- Technical Parameter Matrix Table for CoinGate -->
                         <div class="card border shadow-sm rounded-3 mb-4">
                             <div class="card-header bg-white border-bottom py-3 px-4">
                                 <h6 class="fw-bold mb-0 text-heading">
-                                    <i class="mdi mdi-calculator-variant text-warning me-1"></i> Crypto Exchange Rate Engineering
+                                    <i class="mdi mdi-table-cog text-primary me-1"></i> CoinGate Parameter Specification
                                 </h6>
                             </div>
-                            <div class="card-body p-4">
-                                <p class="text-muted small mb-3">
-                                    Cryptocurrency volatility requires accurate fiat-to-crypto pegging:
-                                </p>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="p-3 border rounded-3 bg-light">
-                                            <h6 class="fw-bold mb-1"><i class="mdi mdi-alpha-b-circle text-warning me-1"></i> Binance Pay (USDT Peg)</h6>
-                                            <p class="small text-muted mb-0">The <code>1 USDT = ? Base Currency</code> multiplier converts your catalog prices into equivalent Tether (USDT) units during Binance QR code generation.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="p-3 border rounded-3 bg-light">
-                                            <h6 class="fw-bold mb-1"><i class="mdi mdi-bitcoin text-warning me-1"></i> CoinGate (Dynamic Invoice)</h6>
-                                            <p class="small text-muted mb-0">The <code>1 USD = ? Base Currency</code> multiplier informs the CoinGate API of the exact fiat invoice value, which CoinGate locks for 15 minutes across BTC, ETH, and altcoin checkouts.</p>
-                                        </div>
-                                    </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light small">
+                                            <tr>
+                                                <th style="width: 25%;">Field Name</th>
+                                                <th style="width: 25%;">Configuration Type</th>
+                                                <th style="width: 50%;">Merchant Operational Purpose</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="fw-bold text-dark">Exchange Rate *</td>
+                                                <td><code>1 USD = ? Base Currency</code></td>
+                                                <td>Converts store order totals into USD before creating the CoinGate cryptocurrency payment invoice.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Environment Mode</td>
+                                                <td><span class="badge bg-primary-subtle text-primary">Sandbox / Live</span></td>
+                                                <td>Toggle between the CoinGate Sandbox (testnet cryptocurrency) and Live production blockchain network.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">Auth Token *</td>
+                                                <td>API Secret Token</td>
+                                                <td>CoinGate API authentication token generated from your CoinGate merchant portal under API &gt; Apps.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ================= 12.5: COD & ADVANCE SHIPPING CHARGE ================= -->
-                    <div class="doc-subsection mt-5 mb-5" id="sec-12-5">
+                    <!-- ================= 12.6: COD & ADVANCE SHIPPING CHARGE ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-6">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-truck-delivery-outline text-primary me-1"></i> 12.5 Cash on Delivery (COD) &amp; Advance Shipping Charge Enforcement
+                            <i class="mdi mdi-truck-delivery-outline text-primary me-1"></i> 12.6 Cash on Delivery (COD) &amp; Advance Shipping Charge Enforcement
                         </h3>
                         <p class="text-muted">
                             Cash on Delivery is a vital payment method in emerging markets but carries high return and refusal risks (RTO). MartX features a sophisticated <strong>Advance Delivery Charge Architecture</strong> that eliminates fake orders by requiring buyers to pay the courier shipping fee online before confirming their COD shipment.
@@ -901,10 +854,10 @@
                         </div>
                     </div>
 
-                    <!-- ================= 12.6: MANUAL PAYMENT GATEWAY ================= -->
-                    <div class="doc-subsection mt-5 mb-5" id="sec-12-6">
+                    <!-- ================= 12.7: MANUAL PAYMENT GATEWAY ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-7">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-bank-transfer text-primary me-1"></i> 12.6 Manual Bank &amp; Direct Mobile Transfers (Manual Payment)
+                            <i class="mdi mdi-bank-transfer text-primary me-1"></i> 12.7 Manual Bank &amp; Direct Mobile Transfers (Manual Payment)
                         </h3>
                         <p class="text-muted">
                             For stores accepting direct bank wire transfers, offline deposits, or personal mobile wallet "Send Money" transactions (bKash/Nagad personal numbers), the <strong>Manual Payment</strong> module allows administrators to specify custom buyer instructions.
@@ -966,10 +919,10 @@
                         </div>
                     </div>
 
-                    <!-- ================= 12.7: PAYMENT LOGOS & VISUAL TRUST BADGES ================= -->
-                    <div class="doc-subsection mt-5 mb-5" id="sec-12-7">
+                    <!-- ================= 12.8: PAYMENT LOGOS & VISUAL TRUST BADGES ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-8">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-shield-star-outline text-primary me-1"></i> 12.7 Payment Logos &amp; Visual Trust Badges Hub (Storefront Footer &amp; Checkout)
+                            <i class="mdi mdi-shield-star-outline text-primary me-1"></i> 12.8 Payment Logos &amp; Visual Trust Badges Hub (Storefront Footer &amp; Checkout)
                         </h3>
                         <p class="text-muted">
                             Beyond backend transaction processing, displaying recognized payment brand logos (MasterCard, Visa, bKash, PayPal, Amex) on the storefront <strong>Footer</strong> and checkout summary is proven to enhance buyer confidence and checkout conversion rates. The <strong>Payment Logos Console</strong> (<code>Ecommerce &amp; Sales &gt; Payment Gateways &gt; Payment Logos</code>) manages these visual assets.
@@ -1097,10 +1050,10 @@
                         </div>
                     </div>
 
-                    <!-- ================= 12.8: SETTLEMENT & SECURITY SOP ================= -->
-                    <div class="doc-subsection mt-5 mb-5" id="sec-12-8">
+                    <!-- ================= 12.9: SETTLEMENT & SECURITY SOP ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-9">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-shield-check-outline text-primary me-1"></i> 12.8 Payment Settlement, Webhooks &amp; Security SOP
+                            <i class="mdi mdi-shield-check-outline text-primary me-1"></i> 12.9 Payment Settlement, Webhooks &amp; Security SOP
                         </h3>
                         <p class="text-muted">
                             Adhere to enterprise financial engineering best practices when deploying live payment channels on MartX:
@@ -1153,13 +1106,14 @@
                     <div class="doc-toc-title">On This Page</div>
                     <a href="#ch12-intro" class="doc-toc-link active">Overview</a>
                     <a href="#sec-12-1" class="doc-toc-link">12.1 Architecture</a>
-                    <a href="#sec-12-2" class="doc-toc-link">12.2 Global Cards</a>
-                    <a href="#sec-12-3" class="doc-toc-link">12.3 Regional Gates</a>
-                    <a href="#sec-12-4" class="doc-toc-link">12.4 Crypto Rails</a>
-                    <a href="#sec-12-5" class="doc-toc-link">12.5 COD &amp; Advance</a>
-                    <a href="#sec-12-6" class="doc-toc-link">12.6 Manual Payments</a>
-                    <a href="#sec-12-7" class="doc-toc-link">12.7 Trust Badges</a>
-                    <a href="#sec-12-8" class="doc-toc-link">12.8 Settlement SOP</a>
+                    <a href="#sec-12-2" class="doc-toc-link">12.2 Stripe Cards</a>
+                    <a href="#sec-12-3" class="doc-toc-link">12.3 PayPal Wallet</a>
+                    <a href="#sec-12-4" class="doc-toc-link">12.4 SSLCommerz</a>
+                    <a href="#sec-12-5" class="doc-toc-link">12.5 CoinGate Crypto</a>
+                    <a href="#sec-12-6" class="doc-toc-link">12.6 COD &amp; Advance</a>
+                    <a href="#sec-12-7" class="doc-toc-link">12.7 Manual Payments</a>
+                    <a href="#sec-12-8" class="doc-toc-link">12.8 Trust Badges</a>
+                    <a href="#sec-12-9" class="doc-toc-link">12.9 Settlement SOP</a>
                     
                     <hr class="my-2">
                     <a href="#ch12-intro" class="doc-toc-link text-muted small">

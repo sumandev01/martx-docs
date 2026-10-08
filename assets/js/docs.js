@@ -2825,37 +2825,48 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (animate && currentEl && nextEl) {
-                // Dual-Layer 60fps/120fps Hardware-Accelerated Crossfade
-                nextEl.src = slide.image;
-                nextEl.alt = slide.title;
-                nextEl.style.zIndex = '3';
-                nextEl.classList.remove('active');
-                
-                // Force layout reflow to reset Ken Burns transform
-                void nextEl.offsetWidth;
+                // High-End Video Crossfade Dissolve Engine
+                const executeTransition = () => {
+                    nextEl.src = slide.image;
+                    nextEl.alt = slide.title;
+                    nextEl.style.zIndex = '3';
+                    nextEl.classList.remove('fading-out');
+                    nextEl.classList.add('active');
 
-                // Trigger smooth 800ms dissolve and 5s Ken Burns camera drift
-                nextEl.classList.add('active');
+                    // Gracefully fade out outgoing layer simultaneously
+                    currentEl.classList.add('fading-out');
 
-                transitionTimeout = setTimeout(() => {
-                    currentEl.classList.remove('active');
-                    currentEl.style.zIndex = '1';
-                    nextEl.style.zIndex = '2';
-                    activeLayer = (activeLayer === 'A') ? 'B' : 'A';
-                    transitionTimeout = null;
+                    transitionTimeout = setTimeout(() => {
+                        currentEl.classList.remove('active', 'fading-out');
+                        currentEl.style.zIndex = '1';
+                        nextEl.style.zIndex = '2';
+                        activeLayer = (activeLayer === 'A') ? 'B' : 'A';
+                        transitionTimeout = null;
 
-                    // Preload upcoming slide
-                    const nextSlideIdx = (index + 1) % slides.length;
-                    const preloader = new Image();
-                    preloader.src = slides[nextSlideIdx].image;
-                }, 820);
+                        // Preload upcoming slide into browser cache
+                        const nextSlideIdx = (index + 1) % slides.length;
+                        const preloader = new Image();
+                        preloader.src = slides[nextSlideIdx].image;
+                    }, 1000);
+                };
+
+                // Decode image before crossfading to ensure zero frame drops or pop-in
+                const preloader = new Image();
+                preloader.src = slide.image;
+                if (preloader.decode) {
+                    preloader.decode().then(executeTransition).catch(executeTransition);
+                } else {
+                    preloader.onload = executeTransition;
+                    preloader.onerror = executeTransition;
+                }
             } else if (currentEl) {
                 currentEl.src = slide.image;
                 currentEl.alt = slide.title;
                 currentEl.style.zIndex = '2';
                 currentEl.classList.add('active');
+                currentEl.classList.remove('fading-out');
                 if (nextEl) {
-                    nextEl.classList.remove('active');
+                    nextEl.classList.remove('active', 'fading-out');
                     nextEl.style.zIndex = '1';
                 }
             }
@@ -2871,13 +2882,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateCaptions(slide);
             }
 
-            // Update Chapter Chips
+            // Update Chapter Chips (Horizontal container scroll only — 0% effect on window scroll)
             if (chapterBar) {
                 const chips = chapterBar.querySelectorAll('.tour-chip-btn');
                 chips.forEach((c, idx) => {
                     if (idx === index) {
                         c.classList.add('active');
-                        c.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                        const targetLeft = c.offsetLeft - (chapterBar.clientWidth / 2) + (c.clientWidth / 2);
+                        chapterBar.scrollTo({ left: targetLeft, behavior: 'smooth' });
                     } else {
                         c.classList.remove('active');
                     }
@@ -3001,6 +3013,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 nextSlide();
             }
         });
+
+        // Auto-pause when scrolled away from view, resume when back in view
+        if ('IntersectionObserver' in window && tourContainer) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        if (isPlaying && !hoverPaused) {
+                            isPlaying = false;
+                        }
+                    } else {
+                        if (!isPlaying && !hoverPaused) {
+                            isPlaying = true;
+                            slideStartTime = Date.now();
+                        }
+                    }
+                });
+            }, { threshold: 0.15 });
+            observer.observe(tourContainer);
+        }
 
         renderSlide(0, false);
         animationFrameId = requestAnimationFrame(tick);

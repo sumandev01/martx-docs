@@ -394,31 +394,33 @@
                             <div class="tour-progress-track" id="tourProgressTrack" title="Click any bar to jump to that screen"></div>
                         </div>
 
-                        <!-- Mac-Style Frame Header & Live Screen Stage -->
-                        <div class="doc-admin-frame tour-stage-frame">
-                            <div class="doc-admin-frame-header py-2 px-3">
-                                <div class="doc-admin-dots">
-                                    <span class="doc-admin-dot red"></span>
-                                    <span class="doc-admin-dot yellow"></span>
-                                    <span class="doc-admin-dot green"></span>
+                        <!-- Mac-Style Frame Header & Live Screen Stage with Cinema Theater Wrapper -->
+                        <div class="tour-stage-frame-wrapper">
+                            <div class="doc-admin-frame tour-stage-frame">
+                                <div class="doc-admin-frame-header py-2 px-3">
+                                    <div class="doc-admin-dots">
+                                        <span class="doc-admin-dot red"></span>
+                                        <span class="doc-admin-dot yellow"></span>
+                                        <span class="doc-admin-dot green"></span>
+                                    </div>
+                                    <div class="doc-admin-url-bar font-monospace text-truncate" id="tourUrlBar" style="font-size: 11px; max-width: 500px;">
+                                        Storefront &mdash; Homepage: Hero Slider &amp; Gemini AI Concierge
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 ms-auto">
+                                        <span class="badge bg-primary text-white font-monospace" id="tourCategoryBadge" style="font-size: 10px;">Storefront</span>
+                                        <a href="assets/images/screenshots/01_storefront_home.png" id="tourNewTabLink" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open original image in new tab">
+                                            <i class="mdi mdi-open-in-new"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="doc-admin-url-bar font-monospace text-truncate" id="tourUrlBar" style="font-size: 11px; max-width: 500px;">
-                                    Storefront &mdash; Homepage: Hero Slider &amp; Gemini AI Concierge
-                                </div>
-                                <div class="d-flex align-items-center gap-2 ms-auto">
-                                    <span class="badge bg-primary text-white font-monospace" id="tourCategoryBadge" style="font-size: 10px;">Storefront</span>
-                                    <a href="assets/images/screenshots/01_storefront_home.png" id="tourNewTabLink" target="_blank" class="badge bg-light text-muted border text-decoration-none font-monospace" style="font-size: 10px; padding: 5px 7px;" title="Open original image in new tab">
-                                        <i class="mdi mdi-open-in-new"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <!-- Video Viewport Stage (Dual-Layer 60fps Crossfade Engine) -->
-                            <div class="tour-viewport-container" id="tourViewport">
-                                <img src="assets/images/screenshots/01_storefront_home.png" alt="MartX Architecture Tour" class="tour-slide-img tour-layer active" id="tourImgA" title="Click to open Full HD Lightbox">
-                                <img src="assets/images/screenshots/02_shop_catalog_filters.png" alt="MartX Architecture Tour" class="tour-slide-img tour-layer" id="tourImgB" title="Click to open Full HD Lightbox">
-                                <div class="tour-hover-hint">
-                                    <i class="mdi mdi-cursor-default-click-outline me-1"></i> Click to Zoom Full HD | Hover pauses tour
+                                
+                                <!-- Video Viewport Stage (Dual-Layer 60fps Crossfade Engine) -->
+                                <div class="tour-viewport-container" id="tourViewport">
+                                    <img src="assets/images/screenshots/01_storefront_home.png" alt="MartX Architecture Tour" class="tour-slide-img tour-layer active" id="tourImgA" title="Click to open Full HD Lightbox">
+                                    <img src="assets/images/screenshots/02_shop_catalog_filters.png" alt="MartX Architecture Tour" class="tour-slide-img tour-layer" id="tourImgB" title="Click to open Full HD Lightbox">
+                                    <div class="tour-hover-hint">
+                                        <i class="mdi mdi-cursor-default-click-outline me-1"></i> Click to Zoom Full HD | Hover pauses tour
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -518,7 +520,7 @@
                                 <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
                                     <h6 class="fw-bold text-heading mb-1"><i class="mdi mdi-bug-check text-success me-1"></i> Bug Fix Support Scope</h6>
                                     <p class="small text-muted mb-0">
-                                        <strong>Included:</strong> 100% free resolution for genuine software defects, core codebase errors, and out-of-the-box system bugs.<br>
+                                        <strong>Included:</strong> Free resolution for genuine software defects, core codebase errors, and out-of-the-box system bugs.<br>
                                         <strong>Excluded:</strong> Custom feature requests, user code modifications, third-party plugin conflicts, and server misconfigurations (available as paid custom services).
                                     </p>
                                 </div>
@@ -565,7 +567,7 @@
                             <div class="d-flex align-items-center gap-2 mb-2">
                                 <div class="p-2 rounded bg-success-subtle text-success"><i class="mdi mdi-cached fs-4"></i></div>
                                 <div>
-                                    <h6 class="fw-bold mb-0 text-heading">Storefront Multi-Tier Speed Caching & Real-Time Sync</h6>
+                                    <h6 class="fw-bold mb-0 text-heading">Storefront Multi-Tier Caching & Automated Catalog Sync</h6>
                                     <span class="text-muted small">Sub-50ms instant response with automated background updates</span>
                                 </div>
                             </div>
@@ -689,14 +691,16 @@
                         </div>
                     </div>
 
-                    <!-- 1.4: ZERO-CONFIG LICENSING -->
+                    <!-- 1.4: CLOUD LICENSE VERIFICATION & 14-DAY GRACE PERIOD -->
                     <div class="doc-subsection mt-5" id="sec-1-4">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-shield-check text-primary me-1"></i> 1.4 Cloud Security & Zero-Configuration License Shield
+                            <i class="mdi mdi-shield-check text-primary me-1"></i> 1.4 Cloud License Verification & 14-Day Grace Period
                         </h3>
-                        <p>
-                            MartX eliminates complex configuration hurdles. Your installation requires zero licensing API keys or external server setup. The platform operates with automated cloud-based security verification, instant domain binding, and a 14-day offline fail-safe checkout protection ensuring your store never drops a customer order.
-                        </p>
+                        <ul class="text-muted mb-0 ps-3">
+                            <li class="mb-1.5">Activates directly from your admin panel &mdash; no external portal, no third-party account, no complex setup.</li>
+                            <li class="mb-1.5">Automatic domain binding upon installation with a 14-day offline grace period (the entire store remains operational if the license server is temporarily unreachable, with automatic daily retry).</li>
+                            <li>Free, unrestricted developer testing on localhost, <code>.test</code>, and local IP addresses.</li>
+                        </ul>
                     </div>
 
                     <!-- 1.5: 5-STEP WEB INSTALLER -->
@@ -725,7 +729,7 @@
                             <i class="mdi mdi-shield-bug-outline text-danger me-1"></i> 1.7 Multi-Layered Anti-Hacking & Code Purity Shield
                         </h3>
                         <p>
-                            Enterprise-grade defense against database injection attacks, malicious script execution, unauthorized fake requests, and military-grade encrypted password hashing for maximum buyer and administrative account security.
+                            Prepared statements via PDO MySQL, following OWASP best practices, to prevent SQL injection attacks. Multi-layered defense against malicious script execution, unauthorized fake requests, and military-grade encrypted password hashing for maximum buyer and administrative account security.
                         </p>
                     </div>
 
@@ -745,7 +749,7 @@
                             <i class="mdi mdi-currency-usd-off text-success me-1"></i> 1.9 Anti-Tampering Server-Side Price Calculation
                         </h3>
                         <p>
-                            Any attempt by dishonest buyers to manipulate product prices in their browser (such as attempting to change \$100 to \$1 via inspect tools) is strictly blocked. All product prices, variant surcharges, coupon discounts, shipping rates, and taxes are strictly verified and recalculated automatically by an automated secure server-side pricing engine.
+                            Any attempt by dishonest buyers to manipulate product prices in their browser (such as attempting to change \$100 to \$1 via inspect tools) is strictly blocked. All product prices, variant surcharges, coupon discounts, and shipping rates are strictly verified and recalculated automatically by an automated secure server-side pricing engine.
                         </p>
                     </div>
 
@@ -953,7 +957,7 @@
 
                         <!-- Sticky Mobile Bottom Nav Callout with clean spacing -->
                         <div class="p-3 bg-light border rounded-3 small">
-                            <strong class="text-primary"><i class="mdi mdi-cellphone-link me-1"></i> Sticky Mobile Bottom Navigation:</strong> On smartphones and tablets, MartX renders an app-like sticky bottom bar giving instant 1-thumb touch access to <em>Home, Shop, Categories, Wishlist, and Cart</em> with live counter badges.
+                            <strong class="text-primary"><i class="mdi mdi-cellphone-link me-1"></i> Sticky Mobile Bottom Navigation:</strong> Touch-optimized bottom navigation bar on smartphones for quick access to <em>Home, Shop, Categories, Wishlist, and Cart</em> with live counter badges.
                         </div>
                     </div>
 
@@ -1561,75 +1565,45 @@
                             <i class="mdi mdi-cash-multiple text-success me-1"></i> 1.21 Payment Gateways, Unlimited Custom Roles & Codebase Architecture
                         </h3>
                         <p>
-                            Pre-integrated with <strong>11 Payment Methods</strong>, an enterprise <strong>Unlimited Custom Staff RBAC Engine</strong>, and a clean, layered Laravel 12 architecture:
+                            Pre-integrated with <strong>6 Core Payment Methods</strong> (+ Storefront Trust Badges Hub), an enterprise <strong>Unlimited Custom Staff RBAC Engine</strong>, and a clean, layered Laravel 12 architecture:
                         </p>
 
-                        <!-- Payment Gateways Grid -->
+                        <!-- Payment Gateways Grid (Real 6 Methods) -->
                         <div class="row g-2 mb-4">
-                            <div class="col-6 col-md-3 col-lg-2">
+                            <div class="col-6 col-md-4 col-lg-2">
                                 <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
                                     <div class="fw-bold text-primary small">Stripe</div>
-                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Global Credit/Debit</span>
+                                    <span class="badge bg-primary-subtle text-primary" style="font-size: 8px;">Cards &amp; Wallets</span>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3 col-lg-2">
+                            <div class="col-6 col-md-4 col-lg-2">
                                 <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
-                                    <div class="fw-bold text-primary small">SSLCommerz</div>
-                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Bangladesh #1</span>
+                                    <div class="fw-bold text-info small">PayPal</div>
+                                    <span class="badge bg-info-subtle text-info" style="font-size: 8px;">Express Checkout</span>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3 col-lg-2">
+                            <div class="col-6 col-md-4 col-lg-2">
                                 <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
-                                    <div class="fw-bold text-primary small">PayPal</div>
-                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Express Checkout</span>
+                                    <div class="fw-bold text-danger small">SSLCommerz</div>
+                                    <span class="badge bg-danger-subtle text-danger" style="font-size: 8px;">bKash &amp; BD Cards</span>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3 col-lg-2">
+                            <div class="col-6 col-md-4 col-lg-2">
                                 <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
-                                    <div class="fw-bold text-primary small">Razorpay</div>
-                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">India UPI / Cards</span>
+                                    <div class="fw-bold text-warning small">CoinGate</div>
+                                    <span class="badge bg-warning-subtle text-dark" style="font-size: 8px;">Crypto 70+ Coins</span>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
-                                    <div class="fw-bold text-primary small">WayForPay</div>
-                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Eastern Europe</span>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
-                                    <div class="fw-bold text-primary small">Paystack</div>
-                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Africa Market</span>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
-                                    <div class="fw-bold text-primary small">CoinGate</div>
-                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Crypto 70+ Coins</span>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
-                                    <div class="fw-bold text-primary small">Binance Pay</div>
-                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Crypto 0% Fee</span>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
+                            <div class="col-6 col-md-4 col-lg-2">
                                 <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
                                     <div class="fw-bold text-dark small">Cash on Delivery</div>
-                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Zero Risk / Hybrid</span>
+                                    <span class="badge bg-success-subtle text-success" style="font-size: 8px;">Advance / Standard</span>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3 col-lg-2">
+                            <div class="col-6 col-md-4 col-lg-2">
                                 <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
-                                    <div class="fw-bold text-dark small">Bank Transfer</div>
-                                    <span class="badge bg-dark-subtle text-dark" style="font-size: 8px;">Offline BACS</span>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="p-2 border rounded-2 bg-white text-center shadow-sm h-100">
-                                    <div class="fw-bold text-dark small">Manual / Custom</div>
-                                    <span class="badge bg-dark-subtle text-dark" style="font-size: 8px;">Custom Instructions</span>
+                                    <div class="fw-bold text-dark small">Manual Payment</div>
+                                    <span class="badge bg-secondary-subtle text-secondary" style="font-size: 8px;">Bank Wire &amp; TrxID</span>
                                 </div>
                             </div>
                         </div>
@@ -1677,7 +1651,7 @@
                                             <i class="mdi mdi-credit-card-sync-outline text-primary"></i> Omni-Channel Advance Payment Channels:
                                         </strong>
                                         <span class="text-muted d-block">
-                                            Merchants easily select which gateways are permitted to receive advance shipping charges using the <strong>Allowed Advance Gateways</strong> multi-select dropdown. Customers choose between any of the <strong>8 integrated online gateways</strong> (<em>Stripe, SSLCommerz, PayPal, Razorpay, WayForPay, Paystack, CoinGate, Binance Pay</em>) or <strong>Direct / Manual Payment</strong> (<em>bKash, Nagad, Rocket, Bank Transfer</em> with Sender Number & Transaction ID verification). The order status automatically updates to <span class="badge bg-info-subtle text-info border border-info-subtle px-2 py-0"><i class="mdi mdi-check-circle me-1"></i>Shipping Paid</span> with verified advance payment confirmation in the admin order list.
+                                            Merchants easily select which gateways are permitted to receive advance shipping charges using the <strong>Allowed Advance Gateways</strong> multi-select checkboxes. Customers choose between any of the <strong>active online gateways</strong> (<em>Stripe, PayPal, SSLCommerz, CoinGate</em>) or <strong>Direct / Manual Payment</strong> (<em>bKash, Nagad, Rocket, Bank Transfer</em> with Sender Number & Transaction ID verification). The order status automatically updates to <span class="badge bg-info-subtle text-info border border-info-subtle px-2 py-0"><i class="mdi mdi-check-circle me-1"></i>Shipping Paid</span> with verified advance payment confirmation in the admin order list.
                                         </span>
                                     </div>
                                 </div>
@@ -1718,7 +1692,7 @@
                                 <div class="col-md-4">
                                     <div class="p-2 bg-light rounded border h-100">
                                         <strong class="text-primary"><i class="mdi mdi-shield-check me-1"></i> Cryptographic Signatures:</strong>
-                                        <p class="text-muted mb-0 mt-1" style="font-size: 11px;">Payment notifications are cryptographically verified directly with gateway servers (Stripe, PayPal, Razorpay, Paystack) to ensure every transaction confirmation is genuine.</p>
+                                        <p class="text-muted mb-0 mt-1" style="font-size: 11px;">Payment notifications are cryptographically verified directly with gateway servers (Stripe, PayPal, SSLCommerz, CoinGate) to ensure every transaction confirmation is genuine.</p>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -1771,7 +1745,7 @@
                             <i class="mdi mdi-layers-triple-outline text-primary me-1"></i> 1.22 Complete Enterprise Commerce Engine & Capabilities Suite
                         </h3>
                         <p>
-                            Beyond themes and administrative security, MartX packages <strong>14 turnkey enterprise commerce engines</strong> designed for merchants to operate smoothly with zero coding:
+                            Beyond themes and administrative security, MartX packages <strong>15 turnkey enterprise commerce engines</strong> designed for merchants to operate smoothly with zero coding:
                         </p>
 
                         <div class="row g-3 my-2">
@@ -2023,6 +1997,25 @@
                                     </div>
                                     <div class="pt-2 mt-auto border-top small text-primary lh-base">
                                         <i class="mdi mdi-compass-outline me-1"></i><strong>Admin Navigation:</strong> Admin Sidebar &rarr; Customer & Community &rarr; <strong>Contact Messages</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engine 15: Operational Refund Management & Return Policy Standard -->
+                            <div class="col-12 mt-2">
+                                <div class="p-3 bg-white border rounded-3 shadow-sm d-flex flex-column justify-content-between">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <div class="p-2 rounded bg-info-subtle text-info"><i class="mdi mdi-cash-refund fs-5"></i></div>
+                                        <h6 class="fw-bold mb-0 text-heading">15. Operational Refund Management & Audit Policy</h6>
+                                        <span class="badge bg-primary-subtle text-primary border ms-auto small">v1.0.0 Manual Gateway Standard</span>
+                                    </div>
+                                    <p class="small text-muted mb-2">
+                                        MartX v1.0.0 implements an enterprise <strong>Admin-Managed Gateway Refund Standard</strong>. Store administrators maintain complete financial control by verifying return claims and executing refunds securely through payment merchant portals (Stripe Dashboard, PayPal Manager, SSLCommerz Panel). Order statuses are seamlessly updated to <code>Cancelled</code> with transaction reference audit trails. 
+                                        <em>(Automated in-dashboard gateway refund APIs scheduled for v1.1.0 free update)</em>.
+                                    </p>
+                                    <div class="pt-2 mt-auto border-top small text-primary lh-base d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                        <span><i class="mdi mdi-shield-check me-1"></i><strong>Financial Integrity:</strong> Zero accidental double-refund chargebacks</span>
+                                        <span class="text-muted"><i class="mdi mdi-calendar-clock me-1"></i>Automated API Suite: Coming in v1.1.0</span>
                                     </div>
                                 </div>
                             </div>
@@ -2396,6 +2389,69 @@
 
                     </div>
 
+                    <!-- ================= MARTX PRODUCT EVOLUTION & ROADMAP ================= -->
+                    <div class="card border-0 bg-light rounded-4 p-4 my-5 shadow-sm">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="p-3 rounded-3 bg-primary text-white">
+                                <i class="mdi mdi-rocket-launch fs-3"></i>
+                            </div>
+                            <div>
+                                <h4 class="fw-bold text-heading mb-1">MartX Evolution &amp; Continuous Improvement Roadmap</h4>
+                                <p class="text-muted small mb-0">Built for longevity: Review upcoming planned capabilities and enterprise enhancements</p>
+                            </div>
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 ms-auto fw-bold font-monospace">LIFETIME UPDATES</span>
+                        </div>
+                        <div class="row g-3 mt-1">
+                            <div class="col-md-4">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="badge bg-primary text-white font-monospace small">v1.0.0 &bull; LIVE</span>
+                                        <span class="badge bg-success-subtle text-success small">Current</span>
+                                    </div>
+                                    <h6 class="fw-bold text-heading">Production Core Release</h6>
+                                    <ul class="text-muted small ps-3 mb-0">
+                                        <li>11 Turnkey Payment Gateways</li>
+                                        <li>Anti-Tamper Pricing &amp; Deadlock Defense</li>
+                                        <li>Incremental Geographic Shipping</li>
+                                        <li>Google Gemini AI Inquiry Desk</li>
+                                        <li>Self-Healing Stripe Polling</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="badge bg-info-subtle text-info font-monospace small">v1.1.0 &bull; Q1 2027</span>
+                                        <span class="badge bg-primary-subtle text-primary small">Free Upgrade</span>
+                                    </div>
+                                    <h6 class="fw-bold text-heading">Financial Automation Suite</h6>
+                                    <ul class="text-muted small ps-3 mb-0">
+                                        <li>1-Click Dashboard Gateway Refunds</li>
+                                        <li>Partial Item Restocking &amp; Credits</li>
+                                        <li>Dynamic Multi-Currency Auto-GeoIP</li>
+                                        <li>Optional Guest Checkout Mode</li>
+                                        <li>Redis Queue Optimization</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="badge bg-warning-subtle text-dark font-monospace small">v2.0.0 &bull; Q4 2027</span>
+                                        <span class="badge bg-dark text-white small">Major Expansion</span>
+                                    </div>
+                                    <h6 class="fw-bold text-heading">Marketplace Ecosystem</h6>
+                                    <ul class="text-muted small ps-3 mb-0">
+                                        <li>Multi-Vendor Seller Portals</li>
+                                        <li>Commission Splits &amp; Payouts</li>
+                                        <li>Native Flutter iOS &amp; Android Apps</li>
+                                        <li>GraphQL Headless Commerce API</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- CHAPTER NAVIGATION BUTTONS -->
                     <div class="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-sm-center gap-3 mt-5 pt-4 border-top">
                         <button class="btn btn-outline-secondary disabled" disabled>
@@ -2419,7 +2475,7 @@
                     <a href="#sec-1-1" class="doc-toc-link active">1.1 Welcome & Vision</a>
                     <a href="#sec-1-2" class="doc-toc-link">1.2 Author & Licensing</a>
                     <a href="#sec-1-3" class="doc-toc-link">1.3 Modern Tech Stack</a>
-                    <a href="#sec-1-4" class="doc-toc-link">1.4 License Shield</a>
+                    <a href="#sec-1-4" class="doc-toc-link">1.4 License Verification</a>
                     <a href="#sec-1-5" class="doc-toc-link">1.5 5-Step Web Installer</a>
                     <a href="#sec-1-6" class="doc-toc-link">1.6 Dashboard Management</a>
                     <a href="#sec-1-7" class="doc-toc-link">1.7 Anti-Hacking Shield</a>

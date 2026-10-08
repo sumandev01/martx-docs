@@ -1264,9 +1264,10 @@ code:not(pre code) {
 
 /* ================= 🎬 14-POINT CINEMATIC AUTOPLAY SHOWCASE (VIDEO-LIKE EXPERIENCE) ================= */
 .doc-cinema-player {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     border-radius: 1.15rem;
     overflow: hidden;
     position: relative;
@@ -1320,21 +1321,41 @@ code:not(pre code) {
     background: #6366f1;
 }
 
-/* Stage Frame & Viewport */
+/* Stage Frame & Viewport with Cinema Theater Styling */
+.tour-stage-frame-wrapper {
+    background: rgba(15, 23, 42, 0.035);
+    padding: 1.25rem 1rem;
+    border-top: 1px solid var(--doc-border);
+    border-bottom: 1px solid var(--doc-border);
+    display: flex;
+    justify-content: center;
+}
+
+[data-bs-theme="dark"] .tour-stage-frame-wrapper {
+    background: rgba(0, 0, 0, 0.35);
+}
+
 .tour-stage-frame {
-    margin: 0 !important;
-    border-left: none !important;
-    border-right: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    background: transparent !important;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.22), 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+    background: #090d16 !important;
+}
+
+[data-bs-theme="dark"] .tour-stage-frame {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7) !important;
 }
 
 .tour-viewport-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 10;
-    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 480px;
     overflow: hidden;
     background: #090d16;
     display: block;
@@ -1343,7 +1364,7 @@ code:not(pre code) {
     -webkit-user-select: none;
 }
 
-/* Dual-Layer Cinema Stack: 60fps/120fps Hardware-Accelerated Crossfade (100% Full Uncropped View) */
+/* Dual-Layer Cinema Stack: Hardware-Accelerated Video Crossfade Dissolve */
 .tour-slide-img.tour-layer {
     position: absolute;
     inset: 0;
@@ -1355,24 +1376,21 @@ code:not(pre code) {
     cursor: zoom-in;
     opacity: 0;
     z-index: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-    transform-origin: center center;
-    will-change: opacity, transform;
+    transform: translate3d(0, 0, 0);
+    will-change: opacity;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: opacity 1.0s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tour-slide-img.tour-layer.active {
     opacity: 1;
     z-index: 2;
-    transform: translate3d(0, 0, 0) scale(1.02);
 }
 
-/* Subtly ease Ken Burns drift on hover for inspection */
-.tour-viewport-container:hover .tour-slide-img.tour-layer.active {
-    transform: translate3d(0, 0, 0) scale(1.01);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s ease-out;
+.tour-slide-img.tour-layer.fading-out {
+    opacity: 0;
+    z-index: 1;
 }
 
 /* Pause Hover Watermark Overlay */

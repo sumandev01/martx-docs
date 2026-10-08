@@ -329,30 +329,140 @@
                     <!-- ================= 22.3: ZERO-CODE CLOUD WEB CRON SETUP ================= -->
                     <div class="doc-subsection mt-5 mb-5" id="sec-22-3">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-cloud-check text-primary me-1"></i> 22.3 Method B: Zero-Code Cloud Web Cron Setup (No Terminal Needed)
+                            <i class="mdi mdi-cloud-check text-primary me-1"></i> 22.3 Method B: Zero-Code Cloud Web Cron Setup &amp; Anti-DoS Security Shield
                         </h3>
                         <p class="text-muted">
-                            If your hosting plan does not include cPanel cron jobs, or if you prefer a completely visual, zero-code setup, MartX features a dedicated <strong>Secure Web Cron Endpoint</strong>.
+                            If your hosting plan does not include cPanel cron jobs, or if you prefer a completely visual, zero-code setup, MartX features a dedicated <strong>Secure Web Cron Endpoint</strong>. It allows reliable background maintenance without terminal commands or server root access.
                         </p>
 
                         <div class="card border-0 shadow-sm rounded-3 mb-4">
                             <div class="card-body p-4">
                                 <h5 class="fw-bold mb-3">Your Secure Store Web Cron URL</h5>
                                 <p class="text-muted small">
-                                    MartX includes a protected web URL that safely executes background tasks when visited. Simply copy your store's web cron link:
+                                    MartX includes a protected web trigger URL that safely executes background tasks when visited. Simply copy your store's web cron link:
                                 </p>
                                 <div class="p-3 bg-light rounded-3 border mb-3">
-                                    <span class="text-muted small d-block mb-1 fw-bold">Web Cron Trigger URL:</span>
-                                    <code class="text-primary fw-bold" style="font-size: 14px;">https://yourdomain.com/run-background-tasks/eshop-secure-cron</code>
+                                    <span class="text-muted small d-block mb-1 fw-bold">Default Web Cron Trigger URL:</span>
+                                    <code class="text-primary fw-bold" style="font-size: 14px;">https://yourdomain.com/run-background-tasks/<span class="text-dark">YOUR_SECRET_TOKEN</span></code>
                                 </div>
-                                <div class="alert alert-light border shadow-sm rounded-3">
-                                    <div class="d-flex align-items-center gap-2 mb-1">
-                                        <i class="mdi mdi-shield-lock-outline text-success fs-5"></i>
-                                        <h6 class="fw-bold mb-0">Built-in Rate Limiting Guard</h6>
+
+                                <!-- Security & Rate Limit Badges -->
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-white h-100 shadow-xs">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <i class="mdi mdi-shield-key-outline text-primary fs-5"></i>
+                                                <h6 class="fw-bold mb-0">Custom Secret Bearer Token</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                You can customize your secret key at any time in your store environment configuration (<code>CRON_TOKEN</code>). Any request using an unauthorized or guessed token is instantly rejected with an <strong>HTTP 403 Forbidden</strong> response.
+                                            </p>
+                                        </div>
                                     </div>
-                                    <p class="small text-muted mb-0">
-                                        To prevent server performance overload, MartX automatically enforces a smart 1-minute cache guard. Even if the URL is requested multiple times within seconds, background tasks only run once per minute, keeping your server fast and responsive.
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-white h-100 shadow-xs">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <i class="mdi mdi-speedometer text-danger fs-5"></i>
+                                                <h6 class="fw-bold mb-0">3-Request/Minute Anti-DoS Shield</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                To guarantee your server CPU remains safe from traffic floods or malicious bot pings, the web cron enforces a strict rate limit of <strong>3 requests per minute</strong> (<code>CRON_RATE_LIMIT=3</code>). Exceeding requests are immediately stopped with an <strong>HTTP 429 Too Many Requests</strong> notice.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Visual 4-Layer Security Flowchart -->
+                                <div class="p-4 rounded-3 border bg-light-subtle my-3">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <i class="mdi mdi-sitemap text-primary fs-4"></i>
+                                        <h6 class="fw-bold text-heading mb-0">Visual Flowchart: 4-Layer Web Cron Security &amp; Task Lifecycle</h6>
+                                    </div>
+                                    <div class="row g-2 text-center small">
+                                        <div class="col-md-3">
+                                            <div class="p-3 bg-white rounded-3 border shadow-xs h-100 d-flex flex-column justify-content-between">
+                                                <div>
+                                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1 mb-2">Layer 1</span>
+                                                    <h6 class="fw-bold text-dark mb-1">Token Guard</h6>
+                                                    <p class="text-muted extra-small mb-2">Validates secret bearer key</p>
+                                                </div>
+                                                <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Wrong: 403 Forbidden</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="p-3 bg-white rounded-3 border shadow-xs h-100 d-flex flex-column justify-content-between">
+                                                <div>
+                                                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle px-2 py-1 mb-2">Layer 2</span>
+                                                    <h6 class="fw-bold text-dark mb-1">Rate Limiter</h6>
+                                                    <p class="text-muted extra-small mb-2">Max 3 requests / minute</p>
+                                                </div>
+                                                <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Exceeded: 429 Too Many</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="p-3 bg-white rounded-3 border shadow-xs h-100 d-flex flex-column justify-content-between">
+                                                <div>
+                                                    <span class="badge bg-warning-subtle text-dark border border-warning-subtle px-2 py-1 mb-2">Layer 3</span>
+                                                    <h6 class="fw-bold text-dark mb-1">60s Cache Guard</h6>
+                                                    <p class="text-muted extra-small mb-2">Deduplicates within 1 min</p>
+                                                </div>
+                                                <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Recent: Skipped (0 Load)</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="p-3 bg-white rounded-3 border shadow-xs h-100 d-flex flex-column justify-content-between">
+                                                <div>
+                                                    <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 mb-2">Layer 4</span>
+                                                    <h6 class="fw-bold text-dark mb-1">Smart Timers</h6>
+                                                    <p class="text-muted extra-small mb-2">Gateway-specific expiry</p>
+                                                </div>
+                                                <span class="badge bg-success-subtle text-success border border-success-subtle">Restores Locked Stock</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Gateway Specific Cancellation Window Matrix -->
+                                <div class="mt-4">
+                                    <h6 class="fw-bold text-heading mb-2">
+                                        <i class="mdi mdi-timer-sand text-warning me-1"></i> Tailored Payment Gateway Auto-Cancellation Windows
+                                    </h6>
+                                    <p class="small text-muted mb-3">
+                                        Rather than using an arbitrary flat timer, MartX automatically protects store inventory based on the actual session expiration policies of each payment network:
                                     </p>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-sm align-middle small mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Payment Gateway</th>
+                                                    <th>Auto-Cancel Window</th>
+                                                    <th>Protection Rationale</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="fw-bold"><i class="mdi mdi-bitcoin text-warning me-1"></i> CoinGate (Cryptocurrency)</td>
+                                                    <td><span class="badge bg-warning-subtle text-dark border">22 Minutes</span></td>
+                                                    <td>Matches the 20-minute blockchain rate invoice lock plus a 2-minute mempool broadcast buffer.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold"><i class="mdi mdi-credit-card-outline text-primary me-1"></i> Stripe &amp; SSLCommerz</td>
+                                                    <td><span class="badge bg-primary-subtle text-primary border">32 Minutes</span></td>
+                                                    <td>Matches the 30-minute bank checkout expiration plus a 2-minute 3D-Secure SMS/OTP grace period.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold"><i class="fa fa-paypal text-info me-1"></i> PayPal Checkout</td>
+                                                    <td><span class="badge bg-info-subtle text-dark border">185 Minutes (~3 Hours)</span></td>
+                                                    <td>Matches PayPal's official 3-hour REST token validity plus a 5-minute network latency safety buffer.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold"><i class="mdi mdi-truck-delivery-outline text-success me-1"></i> Cash on Delivery &amp; Bank Transfer</td>
+                                                    <td><span class="badge bg-success-subtle text-success border">Never Cancelled</span></td>
+                                                    <td>Preserved indefinitely in your orders ledger for store manager phone confirmation or manual bank slip approval.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -516,6 +626,25 @@
                                             <li class="mb-1">Choose from <strong>7 curated Google Font families</strong> (Plus Jakarta Sans, Inter, Outfit, Poppins, etc.) to instantly change typography storewide.</li>
                                             <li class="mb-1">Select from <strong>9 luxury color skin presets</strong> or use the custom hex color pickers to match your brand palette.</li>
                                             <li>Toggle the <strong>Theme Switcher</strong> ON or OFF, and select whether new shoppers see Light Mode or Dark Mode by default.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 7 -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header" id="faqHeading7">
+                                    <button class="accordion-button fw-bold text-heading collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse7" aria-expanded="false" aria-controls="faqCollapse7">
+                                        <i class="mdi mdi-sitemap text-success me-2 fs-5"></i> 7. How does MartX handle Google Sitemaps and search engine indexing?
+                                    </button>
+                                </h2>
+                                <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7" data-bs-parent="#martxFaqAccordion">
+                                    <div class="accordion-body text-muted small">
+                                        <p class="mb-2"><strong>Solution:</strong> MartX features an automated dynamic XML sitemap located at <code>https://yourdomain.com/sitemap.xml</code>.</p>
+                                        <ul class="mb-0 ps-3">
+                                            <li class="mb-1"><strong>Zero Maintenance:</strong> All published products, categories, subcategories, brands, CMS pages, and blog posts are compiled automatically.</li>
+                                            <li class="mb-1"><strong>Smart 24-Hour Cache:</strong> The sitemap XML is cached in server memory for 24 hours to prevent database load from search bot crawlers.</li>
+                                            <li><strong>Instant Invalidation:</strong> Whenever an admin creates, updates, or deletes any product, category, or blog post, MartX Eloquent Observers immediately flush the sitemap cache so search engines always find fresh URLs.</li>
                                         </ul>
                                     </div>
                                 </div>

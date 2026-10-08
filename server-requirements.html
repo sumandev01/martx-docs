@@ -247,7 +247,7 @@
                                     <tr>
                                         <td><code>BCMath</code></td>
                                         <td><code>bcmath</code></td>
-                                        <td>High-precision arbitrary accuracy floating-point arithmetic for price calculator service, taxes, coupon percentage deductions, and multi-currency exchange rates.</td>
+                                        <td>High-precision arbitrary accuracy floating-point arithmetic for order pricing services, promotional coupon percentage deductions, and payment gateway calculations.</td>
                                     </tr>
                                     <tr>
                                         <td><code>Ctype</code></td>
@@ -257,7 +257,7 @@
                                     <tr>
                                         <td><code>cURL</code></td>
                                         <td><code>curl</code></td>
-                                        <td>High-speed HTTP client for secure payment gateway API handshakes (Stripe, PayPal, Razorpay, etc.), Google Gemini AI operations, and automated software update checks.</td>
+                                        <td>High-speed HTTP client for secure payment gateway API handshakes (Stripe, PayPal, SSLCommerz, CoinGate), Google Gemini AI operations, and automated software update checks.</td>
                                     </tr>
                                     <tr>
                                         <td><code>DOM</code></td>
@@ -267,7 +267,7 @@
                                     <tr>
                                         <td><code>Fileinfo</code></td>
                                         <td><code>fileinfo</code></td>
-                                        <td>Real MIME-type detection for WordPress-style Central Media Library uploads, preventing executable script disguising and malicious payload injection.</td>
+                                        <td>Real MIME-type detection for Central Media Library uploads, product photography, and digital invoice assets, preventing executable script disguising and malicious payload injection.</td>
                                     </tr>
                                     <tr>
                                         <td><code>JSON</code></td>
@@ -620,7 +620,7 @@ error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT</code></pre>
                                     <tr>
                                         <td><code>.env</code></td>
                                         <td><code>0664</code> (Writable during Install)</td>
-                                        <td>Master environment configuration file written automatically on Step 3 of the Web Installer.</td>
+                                        <td>Master environment configuration file written automatically on Step 4 of the Web Installer.</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -647,8 +647,8 @@ error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT</code></pre>
 sudo chown -R www-data:www-data /var/www/html/martx
 
 # 2. Set standard secure permissions for files and folders
-sudo find /var/www/html/martx -type f -exec chmod 644 {} ;
-sudo find /var/www/html/martx -type d -exec chmod 755 {} ;
+sudo find /var/www/html/martx -type f -exec chmod 644 {} \;
+sudo find /var/www/html/martx -type d -exec chmod 755 {} \;
 
 # 3. Grant write permissions to storage and cache
 sudo chmod -R 775 /var/www/html/martx/storage
@@ -706,7 +706,7 @@ sudo chmod -R 775 /var/www/html/martx/bootstrap/cache</code></pre>
     }
 
     location = /favicon.ico { access_log off; log_not_found off; }
-    location = /robots.txt  { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; try_files $uri /index.php?$query_string; }
 
     error_page 404 /index.php;
 
