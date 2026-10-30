@@ -1086,6 +1086,129 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- ================= 12.10: PAYMENT & FINANCIAL AUDIT LOGS HUB ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-10">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-receipt-text-outline text-primary me-1"></i> 12.10 Payment Logs &amp; Forensic Financial Audit Hub
+                        </h3>
+                        <p class="text-muted">
+                            MartX includes a centralized <strong>Payment &amp; Financial Audit Hub</strong> designed specifically for store owners, accountants, and financial auditors. While the standard Order Management screen tracks packages, shipping labels, and fulfillment statuses, this hub acts as an immutable legal ledger of raw gateway callbacks, settlement figures, and bank communication records.
+                        </p>
+
+                        <!-- Navigation Callout -->
+                        <div class="alert alert-primary border-0 d-flex align-items-center gap-3 p-3 rounded-3 shadow-sm mb-4">
+                            <i class="mdi mdi-compass-outline fs-3 text-primary flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-dark">How to Access the Hub:</strong> Navigate to <strong>Admin Dashboard &rarr; Payment Gateways &rarr; Payment &amp; Audit Logs</strong>.
+                            </div>
+                        </div>
+
+                        <!-- 4 Executive Dynamic KPI Cards -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">
+                                    <i class="mdi mdi-chart-box-outline text-primary me-1"></i> Executive Financial Telemetry Cards
+                                </h5>
+                                <p class="small text-muted mb-3">
+                                    Four executive cards provide an instant snapshot of your store's digital cashflow and checkout conversion efficiency:
+                                </p>
+                                <div class="row g-3">
+                                    <div class="col-md-3">
+                                        <div class="p-3 rounded-3 border bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-success-subtle text-success p-2 rounded-2"><i class="mdi mdi-cash-check fs-5"></i></span>
+                                                <strong class="text-dark small">Settled Revenue</strong>
+                                            </div>
+                                            <p class="small text-muted mb-0">Total confirmed digital revenue successfully captured and credited across all gateways for the selected period.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="p-3 rounded-3 border bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-primary-subtle text-primary p-2 rounded-2"><i class="mdi mdi-check-decagram-outline fs-5"></i></span>
+                                                <strong class="text-dark small">Settlement Rate (%)</strong>
+                                            </div>
+                                            <p class="small text-muted mb-0">Percentage of initiated payment attempts that resulted in successful settlements vs customer drop-offs.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="p-3 rounded-3 border bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-warning-subtle text-warning p-2 rounded-2"><i class="mdi mdi-timer-cancel-outline fs-5"></i></span>
+                                                <strong class="text-dark small">Auto-Cancellations</strong>
+                                            </div>
+                                            <p class="small text-muted mb-0">Orders where customers abandoned checkout midway, automatically cancelled and inventory restocked by background cron rules.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="p-3 rounded-3 border bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-danger-subtle text-danger p-2 rounded-2"><i class="mdi mdi-alert-octagon-outline fs-5"></i></span>
+                                                <strong class="text-dark small">Declined / Failed</strong>
+                                            </div>
+                                            <p class="small text-muted mb-0">Transactions rejected by issuing banks (e.g., insufficient balance, expired cards, or incorrect CVV) requiring forensic review.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Real-Time Filter Toolbar & AJAX Live Sync -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">
+                                    <i class="mdi mdi-filter-variant text-primary me-1"></i> Multi-Criteria Filtering with Instant AJAX Live Sync
+                                </h5>
+                                <p class="text-muted small mb-3">
+                                    The audit toolbar provides instant, zero-reload filtering. Whenever you select an option, the page seamlessly updates both the data table and the top 4 metric cards simultaneously:
+                                </p>
+                                <ul class="text-muted small ps-3 mb-3">
+                                    <li class="mb-2"><strong>All Gateways Filter:</strong> Isolate transactions by provider: <code>Stripe</code>, <code>PayPal</code>, <code>SSLCommerz</code>, or <code>CoinGate</code>.</li>
+                                    <li class="mb-2"><strong>All Statuses Filter:</strong> Filter by outcome: <code>SUCCESS</code>, <code>FAILED</code>, or <code>PENDING</code>.</li>
+                                    <li class="mb-2"><strong>Date Range Filter:</strong> Fast presets for <code>Today</code>, <code>Yesterday</code>, <code>This Week</code>, <code>Last 7 Days</code>, <code>This Month</code>, <code>Last Month</code>, <code>This Year</code>, or a custom calendar date picker.</li>
+                                    <li class="mb-2"><strong>Live Debounced Search:</strong> Find transactions by Order Number (e.g., <code>#ORD-202610...</code>), Customer Name, Email, or Gateway.</li>
+                                    <li><strong>Floating Reset Button:</strong> A subtle floating pill bar appears when filters are active, allowing one-click restoration to all-time view.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Forensic Payload Modal & Dispute Defense -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-3">
+                                    <i class="mdi mdi-shield-search text-warning me-1"></i> Forensic Payload Inspector: Resolving Customer Disputes &amp; Chargebacks
+                                </h5>
+                                <p class="text-muted small mb-3">
+                                    When a customer claims funds were deducted or when an issuing bank requests verification for a disputed charge, clicking the <strong>Inspect</strong> button on any row opens the dark-themed Forensic Payload Modal:
+                                </p>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="p-3 rounded-3 border bg-light h-100">
+                                            <h6 class="fw-bold text-dark small mb-2"><i class="mdi mdi-download text-info me-1"></i> Gateway Response / Webhook Tab</h6>
+                                            <p class="small text-muted mb-0">Displays the authentic, raw response sent back by Stripe, PayPal, or SSLCommerz. Includes the official Gateway Transaction ID, customer card brand (Visa, Mastercard), last 4 digits, and exact bank failure codes (e.g., <em>insufficient_funds</em>, <em>do_not_honor</em>).</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 rounded-3 border bg-light h-100">
+                                            <h6 class="fw-bold text-dark small mb-2"><i class="mdi mdi-content-copy text-primary me-1"></i> One-Click Clipboard Copy</h6>
+                                            <p class="small text-muted mb-0">Store managers can click the <strong>Copy</strong> button to instantly copy the complete technical payload to the clipboard, providing definitive proof to submit directly to payment gateway support or banking dispute portals.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exporting for Accounting -->
+                        <div class="alert alert-success border-0 d-flex align-items-center justify-content-between p-3 rounded-3 shadow-sm mb-0">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="mdi mdi-file-excel text-success fs-3 flex-shrink-0"></i>
+                                <div class="small">
+                                    <strong class="text-dark">Export Audit (CSV) for Accounting &amp; Tax Filing:</strong> Click the green <strong>Export Audit (CSV)</strong> button at the top right of the page to download a filtered, Excel-compliant spreadsheet containing exact timestamps, customer details, gateways, amounts, and settlement statuses for your CA firm or tax filings.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                                 <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
@@ -1114,6 +1237,7 @@
                     <a href="#sec-12-7" class="doc-toc-link">12.7 Manual Payments</a>
                     <a href="#sec-12-8" class="doc-toc-link">12.8 Trust Badges</a>
                     <a href="#sec-12-9" class="doc-toc-link">12.9 Settlement SOP</a>
+                    <a href="#sec-12-10" class="doc-toc-link">12.10 Audit Logs Hub</a>
                     
                     <hr class="my-2">
                     <a href="#ch12-intro" class="doc-toc-link text-muted small">

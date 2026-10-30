@@ -395,6 +395,137 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Verified Buyer & Multi-Purchase Security Engine Deep Dive -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-light-subtle border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-shield-check text-success me-2"></i> Verified Buyer Pipeline &amp; Multi-Purchase Architecture
+                                </h6>
+                            </div>
+                            <div class="card-body p-4">
+                                <p class="text-muted mb-3">
+                                    To eliminate review fraud, astroturfing, and competitors submitting fake feedback, MartX implements a cryptographic order-verified review gating system:
+                                </p>
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-white h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-success-subtle text-success p-2 rounded-circle">
+                                                    <i class="mdi mdi-truck-check fs-5"></i>
+                                                </span>
+                                                <h6 class="fw-bold mb-0">Delivered Order Required</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                Reviews cannot be submitted for Pending, Processing, or Shipped orders. A customer must possess at least one completed purchase in <strong>Delivered</strong> status. Unverified or guest attempts are blocked instantly.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-white h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-primary-subtle text-primary p-2 rounded-circle">
+                                                    <i class="mdi mdi-repeat fs-5"></i>
+                                                </span>
+                                                <h6 class="fw-bold mb-0">Multi-Purchase Eligibility</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                If a loyal customer orders the same item across multiple separate transactions, each fulfilled delivery grants an independent review allocation (the system automatically verifies fulfilled deliveries against prior reviews submitted).
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alert alert-info border-0 d-flex align-items-start gap-2 mb-0">
+                                    <i class="mdi mdi-information-outline fs-5 text-info flex-shrink-0 mt-0.5"></i>
+                                    <div class="small">
+                                        <strong>Storefront Verified Badge:</strong> Approved reviews originating from authenticated orders display the prominent <strong>Verified Purchase</strong> badge, elevating credibility and driving higher organic conversion.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Customer Photos & High-Res Inspection Modal -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-light-subtle border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-camera-image text-primary me-2"></i> Customer Photo Gallery &amp; Admin Moderation Modal
+                                </h6>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="row align-items-center g-3">
+                                    <div class="col-lg-7">
+                                        <h6 class="fw-bold text-dark mb-2">Real-Product Customer Photo Uploads</h6>
+                                        <p class="text-muted small mb-3">
+                                            Shoppers can upload up to <strong>5 authentic product photos</strong> alongside their written testimonial. The MartX media engine validates file types (JPEG, PNG, WebP &le; 2MB) and converts them into optimized WebP formats stored safely in public media assets.
+                                        </p>
+                                        <h6 class="fw-bold text-dark mb-2">Interactive Admin Photo Inspector</h6>
+                                        <p class="text-muted small mb-0">
+                                            The Admin <strong>Review Details Modal</strong> dynamically renders interactive photo thumbnails. Store moderators can click to inspect product condition, verify authenticity, and identify potential image guideline violations prior to publishing.
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="p-3 border rounded-3 bg-light-subtle">
+                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                <span class="small fw-bold text-heading">Photo Pipeline Specs</span>
+                                                <span class="badge bg-success-subtle text-success">WebP Optimized</span>
+                                            </div>
+                                            <ul class="list-unstyled small text-muted mb-0 space-y-1">
+                                                <li><i class="mdi mdi-check-circle text-success me-1"></i> Max 5 photos per submission</li>
+                                                <li><i class="mdi mdi-check-circle text-success me-1"></i> Validated MIME: jpeg, png, webp</li>
+                                                <li><i class="mdi mdi-check-circle text-success me-1"></i> Secure multi-asset storage</li>
+                                                <li><i class="mdi mdi-check-circle text-success me-1"></i> 1-click modal thumbnail lightbox</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Merchant Store Replies & RBAC Lockdown -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-light-subtle border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-reply-circle text-warning me-2"></i> Official Store Replies &amp; Anti-Spoofing RBAC Enforcement
+                                </h6>
+                            </div>
+                            <div class="card-body p-4">
+                                <p class="text-muted small mb-3">
+                                    Public responses from the merchant display a high-authority <span class="badge bg-primary text-white font-monospace">Store Response</span> badge on the product page. To prevent malicious actors from posing as store representatives, strict authorization guards are enforced:
+                                </p>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm align-middle small mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Security Layer</th>
+                                                <th>Permission Required</th>
+                                                <th>Action on Unauthorized Attempt</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fw-bold text-primary">Customer Reply Form</td>
+                                                <td><span class="badge bg-light text-dark border">Verified Staff Account with "Reply to Review" Permission</span></td>
+                                                <td>Submission blocked with <span class="badge bg-danger-subtle text-danger">403 Forbidden</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-primary">Identity Spoof Guard</td>
+                                                <td><span class="badge bg-light text-dark border">Store Administrator or Delegated Staff Role</span></td>
+                                                <td>Rejects forged requests and records security event log</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-primary">Performance Optimization</td>
+                                                <td><span class="badge bg-light text-dark border">Single-Query Customer &amp; Reply Sync</span></td>
+                                                <td>Instantly renders nested replies without server latency</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -817,6 +948,127 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- ================= 18.7: CUSTOMER ACCOUNT SELF-SERVICE & SECURITY ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-18-7">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-primary text-white">18.7</span>
+                            <h3 class="fw-bold mb-0 text-heading">Customer Account Self-Service Security &amp; Decoupled Address Hub</h3>
+                        </div>
+                        <p class="text-muted">
+                            Empowering customers with privacy controls builds brand trust while reducing routine support tickets. MartX provides a self-service customer suite engineered for international privacy compliance (GDPR/CCPA) and frictionless checkout:
+                        </p>
+
+                        <!-- Self-Service Account Deletion & OTP Guard -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4 d-flex align-items-center justify-content-between flex-wrap gap-2">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="mdi mdi-shield-account text-danger fs-5"></i>
+                                    <h6 class="fw-bold mb-0 text-heading">Privacy Compliance: Self-Service Account Deletion via Email OTP</h6>
+                                </div>
+                                <span class="badge bg-danger-subtle text-danger border border-danger-subtle font-monospace small">
+                                    <i class="mdi mdi-lock-check me-1"></i> 3-Attempt Lockout Active
+                                </span>
+                            </div>
+                            <div class="card-body p-4">
+                                <p class="text-muted small mb-3">
+                                    Customers can initiate self-service account termination directly inside their storefront account profile under <strong>Settings &rarr; Security</strong>. To prevent account takeovers and unauthorized deletion, MartX enforces a 4-tier security verification workflow:
+                                </p>
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-danger-subtle text-danger p-2 rounded-circle">
+                                                    <i class="mdi mdi-email-seal fs-5"></i>
+                                                </span>
+                                                <h6 class="fw-bold mb-0">6-Digit Email OTP</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                Clicking "Delete Account" generates a unique, one-time 6-digit confirmation code dispatched directly to the customer's registered email inbox.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-warning-subtle text-warning p-2 rounded-circle">
+                                                    <i class="mdi mdi-timer-sand fs-5"></i>
+                                                </span>
+                                                <h6 class="fw-bold mb-0">60-Second Cooldown</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                The "Resend Code" button enforces a strict 60-second cooldown timer, preventing accidental button flooding and protecting your outgoing mail server.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-danger-subtle text-danger p-2 rounded-circle">
+                                                    <i class="mdi mdi-shield-lock-outline fs-5"></i>
+                                                </span>
+                                                <h6 class="fw-bold mb-0">3-Attempt Lockout</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                Entering 3 consecutive invalid OTP codes automatically locks the deletion modal for 30 minutes, thwarting automated brute-force attacks.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <span class="badge bg-success-subtle text-success p-2 rounded-circle">
+                                                    <i class="mdi mdi-receipt-text-check fs-5"></i>
+                                                </span>
+                                                <h6 class="fw-bold mb-0">Financial Audit Safe</h6>
+                                            </div>
+                                            <p class="small text-muted mb-0">
+                                                Personal credentials and login sessions are wiped immediately, while historical order receipts and tax audit records are preserved anonymously for regulatory accounting.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Decoupled Customer Address Book -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4 d-flex align-items-center justify-content-between flex-wrap gap-2">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="mdi mdi-map-marker-multiple text-primary fs-5"></i>
+                                    <h6 class="fw-bold mb-0 text-heading">Decoupled Customer Address Book Architecture</h6>
+                                </div>
+                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle small font-monospace">
+                                    <i class="mdi mdi-check-all me-1"></i> Multi-Destination Ready
+                                </span>
+                            </div>
+                            <div class="card-body p-4">
+                                <p class="text-muted small mb-3">
+                                    Older e-commerce scripts frequently lock address inputs to strict courier pricing rules, causing checkout crashes when customers reside outside predefined delivery boundaries. MartX implements an independent, decoupled address engine:
+                                </p>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <h6 class="fw-bold text-dark small mb-1"><i class="mdi mdi-home-map-marker text-primary me-1"></i> Multi-Address Storage</h6>
+                                            <p class="small text-muted mb-0">Shoppers can save, label, and manage multiple delivery profiles (e.g., <em>"Home"</em>, <em>"Corporate Office"</em>, <em>"Alternative Recipient"</em>) directly in their customer account.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <h6 class="fw-bold text-dark small mb-1"><i class="mdi mdi-earth text-success me-1"></i> Geographic Independence</h6>
+                                            <p class="small text-muted mb-0">State, province, city, and postal code fields accept custom customer input cleanly without requiring advance shipping rate configurations for every global territory.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <h6 class="fw-bold text-dark small mb-1"><i class="mdi mdi-flash-outline text-warning me-1"></i> 1-Click Checkout Autofill</h6>
+                                            <p class="small text-muted mb-0">During checkout, the customer's primary address pre-populates instantly with zero typing required, reducing mobile cart abandonment and speeding up order completion.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
@@ -842,6 +1094,7 @@
                     <a href="#sec-18-4" class="doc-toc-link">18.4 AI Email Reply Studio</a>
                     <a href="#sec-18-5" class="doc-toc-link">18.5 Newsletters &amp; Audience</a>
                     <a href="#sec-18-6" class="doc-toc-link">18.6 Interaction SOP</a>
+                    <a href="#sec-18-7" class="doc-toc-link text-success fw-semibold"><i class="mdi mdi-shield-account me-1"></i> 18.7 Account Security &amp; Address</a>
                     
                     <hr class="my-2">
                     <a href="#ch18-intro" class="doc-toc-link text-muted small">

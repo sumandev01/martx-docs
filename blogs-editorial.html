@@ -708,7 +708,7 @@
                         </div>
 
                         <!-- Inactive Blog State Warning Details -->
-                        <div class="p-4 rounded-3 border bg-light-subtle">
+                        <div class="p-4 rounded-3 border bg-light-subtle mb-4">
                             <h6 class="fw-bold text-dark mb-2">
                                 <i class="mdi mdi-eye-off-outline text-warning me-1"></i> What Occurs When Setting a Blog to Inactive:
                             </h6>
@@ -717,6 +717,34 @@
                                 <li class="mb-1"><strong>Direct URL Protection:</strong> Public visitors attempting to visit the slug directly will receive a 404 Not Found error.</li>
                                 <li><strong>Draft Preservation:</strong> All rich-text markup, user comments, views metrics, and SEO metadata are securely preserved in the database for future republication.</li>
                             </ul>
+                        </div>
+
+                        <!-- Blog Comment Moderation & Anti-Spam Protection Card -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white border-bottom py-3 px-4">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-comment-account-outline text-primary me-2"></i> Reader Discussions &amp; Anti-Spam Comment Moderation
+                                </h6>
+                            </div>
+                            <div class="card-body p-4">
+                                <p class="text-muted small mb-3">
+                                    Engaging reader comments build community and organic search rankings. MartX protects the blog discussion feed with automated spam defenses and a dedicated admin moderation hub:
+                                </p>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <h6 class="fw-bold text-dark small mb-1"><i class="mdi mdi-shield-airplane text-success me-1"></i> Bot Flooding Protection</h6>
+                                            <p class="small text-muted mb-0">Public comment submissions are protected by intelligent rate limiting, restricting automated bots and aggressive submission scripts to safeguard your mail server and database.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <h6 class="fw-bold text-dark small mb-1"><i class="mdi mdi-filter-check-outline text-info me-1"></i> Three-Tier Moderation States</h6>
+                                            <p class="small text-muted mb-0">Inside <strong>Admin &rarr; Blog Comments</strong>, editors can filter incoming feedback across three distinct workflow stages: <code>Pending</code> (unapproved), <code>Approved</code> (live on storefront), or <code>Rejected</code> (hidden spam).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -812,8 +840,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="p-3 bg-white border rounded-3 h-100">
-                                        <div class="fw-bold text-primary mb-1">Step 2: Headline Drafting</div>
-                                        <p class="small text-muted mb-0">Input a compelling, search-intent driven headline in <strong>Blog Title</strong> (e.g., <em>Top 10 Men's Summer Fashion Trends in 2026</em>).</p>
+                                        <div class="fw-bold text-primary mb-1">Step 2: Headline Drafting &amp; Unique Slugs</div>
+                                        <p class="small text-muted mb-0">Input a compelling headline in <strong>Blog Title</strong>. MartX includes <em>Automatic Slug Collision Protection</em>: if identical titles exist, it seamlessly appends incremental numbers (e.g. <code>-1</code>, <code>-2</code>) to ensure collision-free permalinks.</p>
                                     </div>
                                 </div>
                                 <div class="col-md-4">

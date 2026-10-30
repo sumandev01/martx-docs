@@ -442,18 +442,23 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="fw-bold"><i class="mdi mdi-bitcoin text-warning me-1"></i> CoinGate (Cryptocurrency)</td>
-                                                    <td><span class="badge bg-warning-subtle text-dark border">22 Minutes</span></td>
-                                                    <td>Matches the 20-minute blockchain rate invoice lock plus a 2-minute mempool broadcast buffer.</td>
+                                                    <td><span class="badge bg-warning-subtle text-dark border">25 Minutes</span></td>
+                                                    <td>Matches the 20-minute blockchain rate invoice lock plus an extra 5-minute mempool broadcast safety buffer.</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="fw-bold"><i class="mdi mdi-credit-card-outline text-primary me-1"></i> Stripe &amp; SSLCommerz</td>
-                                                    <td><span class="badge bg-primary-subtle text-primary border">32 Minutes</span></td>
-                                                    <td>Matches the 30-minute bank checkout expiration plus a 2-minute 3D-Secure SMS/OTP grace period.</td>
+                                                    <td><span class="badge bg-primary-subtle text-primary border">35 Minutes</span></td>
+                                                    <td>Matches the 30-minute bank checkout expiration plus an extra 5-minute 3D-Secure SMS/OTP grace period buffer.</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="fw-bold"><i class="fa fa-paypal text-info me-1"></i> PayPal Checkout</td>
                                                     <td><span class="badge bg-info-subtle text-dark border">185 Minutes (~3 Hours)</span></td>
                                                     <td>Matches PayPal's official 3-hour REST token validity plus a 5-minute network latency safety buffer.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold"><i class="mdi mdi-shield-check-outline text-secondary me-1"></i> Generic Safety Net (Other Gateways)</td>
+                                                    <td><span class="badge bg-secondary-subtle text-dark border">24 Hours</span></td>
+                                                    <td>Universal fallback: any abandoned order remaining in processing state for over 24 hours is automatically cancelled to restore inventory.</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="fw-bold"><i class="mdi mdi-truck-delivery-outline text-success me-1"></i> Cash on Delivery &amp; Bank Transfer</td>
@@ -605,7 +610,7 @@
                                         <ol class="mb-0 ps-3">
                                             <li class="mb-1">In your current dashboard, go to <strong>System Settings &gt; License &amp; Verification</strong>.</li>
                                             <li class="mb-1">In the <em>License Key Re-binding</em> card, enter your <strong>Target New Domain</strong> and click <strong>Send 1-Click Confirmation Link</strong>.</li>
-                                            <li class="mb-1">Check your registered buyer email and click the confirmation link.</li>
+                                            <li class="mb-1">Check your registered purchase email address and click the confirmation link.</li>
                                             <li>Your license is immediately unbound from the old domain and activated on your new domain with zero downtime. (See <a href="license-activation.html" class="fw-bold text-primary text-decoration-none">Chapter 4</a> for full details).</li>
                                         </ol>
                                     </div>
@@ -613,13 +618,32 @@
                             </div>
 
                             <!-- FAQ Item 6 -->
-                            <div class="accordion-item border-0">
+                            <div class="accordion-item border-0 border-bottom">
                                 <h2 class="accordion-header" id="faqHeading6">
                                     <button class="accordion-button fw-bold text-heading collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
-                                        <i class="mdi mdi-theme-light-dark text-purple me-2 fs-5"></i> 6. How do I change storefront colors, fonts, or default Light/Dark theme mode?
+                                        <i class="mdi mdi-key-link text-primary me-2 fs-5"></i> 6. Where do I get my License Key if I purchased from a marketplace or lost my credentials?
                                     </button>
                                 </h2>
                                 <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#martxFaqAccordion">
+                                    <div class="accordion-body text-muted small">
+                                        <p class="mb-2"><strong>Instant Self-Service Solution:</strong> You do NOT need to wait for author support replies. Visit the official MartX Client Portal at <a href="https://license.getmartx.com/" target="_blank" class="fw-bold text-primary">https://license.getmartx.com/</a>:</p>
+                                        <ul class="mb-2 ps-3">
+                                            <li class="mb-1"><strong>First-Time Marketplace Buyers:</strong> Enter your <strong>(1) Purchase Code / Order ID</strong>, <strong>(2) Marketplace Username</strong>, and <strong>(3) Marketplace Channel</strong> (Codester, TemplateMonster, Envato). You'll set up your preferred email and password, and your official <code>MARTX-PRO-XXXX-XXXX</code> License Key is displayed instantly with a 1-click copy button.</li>
+                                            <li class="mb-1"><strong>Existing Account Holders:</strong> Log in with your registered email and password to view all active licenses and domain allocations.</li>
+                                        </ul>
+                                        <p class="mb-0">For full step-by-step guidance, see <a href="license-activation.html#sec-4-3" class="fw-bold text-primary text-decoration-none">Chapter 4.3: Self-Service License Claim &amp; Key Recovery Portal</a>.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 7 -->
+                            <div class="accordion-item border-0 border-bottom">
+                                <h2 class="accordion-header" id="faqHeading7">
+                                    <button class="accordion-button fw-bold text-heading collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse7" aria-expanded="false" aria-controls="faqCollapse7">
+                                        <i class="mdi mdi-theme-light-dark text-purple me-2 fs-5"></i> 7. How do I change storefront colors, fonts, or default Light/Dark theme mode?
+                                    </button>
+                                </h2>
+                                <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7" data-bs-parent="#martxFaqAccordion">
                                     <div class="accordion-body text-muted small">
                                         <p class="mb-2"><strong>Solution:</strong> Navigate to <strong>System Settings &gt; Theme &amp; Appearance</strong>:</p>
                                         <ul class="mb-0 ps-3">
@@ -631,14 +655,14 @@
                                 </div>
                             </div>
 
-                            <!-- FAQ Item 7 -->
+                            <!-- FAQ Item 8 -->
                             <div class="accordion-item border-0">
-                                <h2 class="accordion-header" id="faqHeading7">
-                                    <button class="accordion-button fw-bold text-heading collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse7" aria-expanded="false" aria-controls="faqCollapse7">
-                                        <i class="mdi mdi-sitemap text-success me-2 fs-5"></i> 7. How does MartX handle Google Sitemaps and search engine indexing?
+                                <h2 class="accordion-header" id="faqHeading8">
+                                    <button class="accordion-button fw-bold text-heading collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse8" aria-expanded="false" aria-controls="faqCollapse8">
+                                        <i class="mdi mdi-sitemap text-success me-2 fs-5"></i> 8. How does MartX handle Google Sitemaps and search engine indexing?
                                     </button>
                                 </h2>
-                                <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7" data-bs-parent="#martxFaqAccordion">
+                                <div id="faqCollapse8" class="accordion-collapse collapse" aria-labelledby="faqHeading8" data-bs-parent="#martxFaqAccordion">
                                     <div class="accordion-body text-muted small">
                                         <p class="mb-2"><strong>Solution:</strong> MartX features an automated dynamic XML sitemap located at <code>https://yourdomain.com/sitemap.xml</code>.</p>
                                         <ul class="mb-0 ps-3">

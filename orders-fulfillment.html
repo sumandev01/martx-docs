@@ -429,35 +429,39 @@
                                         <div class="mb-3">
                                             <label class="form-label fw-bold small text-muted text-uppercase">Payment Status *</label>
                                             <p class="small text-muted mb-1">
-                                                Update to <strong>Paid</strong>, <strong>Pending</strong>, or <strong>Failed</strong>. Marking an unpaid COD order as Paid automatically updates your financial telemetry and revenue ledger.
+                                                Update to <strong>Paid</strong> or <strong>Refunded</strong>. To enforce financial integrity, a verified <strong>Paid</strong> order cannot be downgraded to <em>Unpaid</em>. Once marked as <strong>Refunded</strong>, the financial record is permanently locked to maintain audit discipline.
                                             </p>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label fw-bold small text-muted text-uppercase">Order Status *</label>
                                             <p class="small text-muted mb-1">
-                                                Select active fulfillment milestone: <em>Pending &rarr; Processing &rarr; Shipped &rarr; Delivered &rarr; Canceled</em>. Moving to <strong>Delivered</strong> sends an automated completion email to the buyer.
+                                                Select active fulfillment milestone: <em>Confirmed &rarr; Processing &rarr; Shipped &rarr; Delivered</em>. Marking as <strong>Delivered</strong> strictly requires payment to be <strong>Paid</strong>.
                                             </p>
-                                            <div class="alert alert-success border-0 d-flex align-items-start gap-2 p-2.5 rounded-2 mt-2 mb-0" style="background-color: #f0fdf4; border-left: 3px solid #22c55e !important;">
-                                                <i class="mdi mdi-restore text-success fs-5 flex-shrink-0 mt-0"></i>
+                                            <div class="alert alert-info border-0 d-flex align-items-start gap-2 p-2.5 rounded-2 mt-2 mb-0" style="background-color: #f0fdf4; border-left: 3px solid #0284c7 !important;">
+                                                <i class="mdi mdi-shield-check text-info fs-5 flex-shrink-0 mt-0"></i>
                                                 <div class="small">
-                                                    <strong class="text-success">Automated Stock &amp; Coupon Recovery:</strong> Transitioning an order status to <strong>Canceled</strong> triggers an atomic database transaction that instantly restores the exact variant quantities (size/color) back to your product inventory ledger and decrements coupon usage count, completely eliminating stock discrepancies without manual inventory adjustments.
+                                                    <strong class="text-info">Enterprise State Machine &amp; Stock Protection:</strong> To prevent warehouse phantom inventory and double-refund discrepancies, order cancellation is exclusively executed by the automated background engine (<em>CancelUnpaidOrders</em>). Admins fulfill orders forward, and transitioning to <strong>Shipped</strong> automatically dispatches a branded shipment confirmation email with live courier tracking links to the customer.
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label fw-bold small text-muted text-uppercase">Courier Service Provider</label>
                                             <p class="small text-muted mb-1">
-                                                Select the courier partner assigned to transport the parcel. This dropdown dynamically populates all active courier services configured in <a href="shipping-couriers.html" class="fw-semibold text-primary text-decoration-none">Chapter 10: Couriers &amp; Shipping Costs</a> (e.g., <em>Sundarban Courier, Steadfast, Pathao, SA Paribahan, RedX, FedEx, DHL</em>).
+                                                Select the courier partner assigned to transport the parcel. This dropdown dynamically populates active courier services configured in <a href="shipping-couriers.html" class="fw-semibold text-primary text-decoration-none">Chapter 10: Couriers &amp; Shipping Costs</a> (e.g., <em>Sundarban Courier, Steadfast, Pathao, SA Paribahan, RedX, FedEx, DHL, UPS</em>).
                                             </p>
                                         </div>
                                         <div class="mb-0">
                                             <label class="form-label fw-bold small text-muted text-uppercase">Tracking Number &amp; Customer Live Tracking</label>
                                             <p class="small text-muted mb-1">
-                                                Enter the official courier parcel booking consignment code or memo number (e.g., <code>SB-8921004</code>).
+                                                Enter the official courier parcel booking consignment code or memo number (e.g., <code>STE-8921004</code>).
                                             </p>
                                             <div class="p-2.5 bg-light rounded-2 border small text-muted mt-2">
                                                 <i class="mdi mdi-information-outline text-primary me-1"></i>
-                                                <strong>How Customers Track Their Parcel:</strong> The tracking number is <strong>not</strong> auto-appended to the URL. The buyer receives the tracking code directly on their customer order dashboard and invoice, accompanied by a <strong>"Track on Courier Website"</strong> button. Clicking this button opens the courier's official tracking portal in a new tab, where the customer pastes the consignment number to verify live transit progress.
+                                                <strong>Dynamic Live Tracking URL:</strong> MartX supports dynamic placeholder substitution (e.g. <code>https://www.ups.com/track?tracknum={tracking_code}</code> or <code>https://steadfast.com.bd/t/{tracking_code}</code>). When the customer clicks <strong>"Track on Courier Website"</strong>, the system automatically replaces <code>{tracking_code}</code> with their real parcel tracking number for instant 1-click tracking.
+                                                <div class="mt-2 pt-2 border-top">
+                                                    <i class="mdi mdi-magnify text-success me-1"></i>
+                                                    <strong>Flexible Public Order Tracking &amp; Delivery Notes:</strong> On the public tracking page (<code>/order-tracking</code>), customers can search using any format (full <code>#ORD-2026...</code>, prefix <code>ORD-2026...</code>, or raw numeric digits). Customer special delivery instructions (e.g., <em>"Call before delivery"</em>) are prominently highlighted for fulfillment staff in Admin Order View and included on printable invoices.
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

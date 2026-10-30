@@ -877,6 +877,51 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Feature Highlight: Selective Checkout & Regular Product Eligibility -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="card border border-primary-subtle shadow-sm rounded-3 h-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <i class="mdi mdi-checkbox-multiple-marked-circle-outline text-primary fs-4"></i>
+                                            <h6 class="fw-bold mb-0 text-heading">Selective Cart Checkout Scoping</h6>
+                                        </div>
+                                        <p class="small text-muted mb-0">
+                                            When a buyer selects specific items from their cart to check out, the coupon engine strictly scopes its evaluation to the selected items via secure <code>checkout_token</code>. This prevents unselected products from triggering false threshold validations.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card border border-info-subtle shadow-sm rounded-3 h-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <i class="mdi mdi-tag-off-outline text-info fs-4"></i>
+                                            <h6 class="fw-bold mb-0 text-heading">Regular vs. Sale Item Eligibility</h6>
+                                        </div>
+                                        <p class="small text-muted mb-0">
+                                            To protect retail profit margins, coupons strictly apply to regular-priced items. Existing discounted or flash sale products are automatically excluded from the coupon discount calculation.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UI/UX Highlight: Zero-CLS & Context-Aware Celebration Modal -->
+                        <div class="card border shadow-sm rounded-3 bg-light p-3 mb-4">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="badge bg-primary rounded-circle p-2 fs-5 flex-shrink-0" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="mdi mdi-cellphone-link"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold text-heading mb-1">Zero-CLS Order Summary &amp; Context-Aware Celebration Modal</h6>
+                                    <p class="small text-muted mb-0">
+                                        Following 2026 UI/UX design standards, the checkout summary features a permanent Zero Cumulative Layout Shift (Zero-CLS) discount row defaulting to <code>$0.00</code> that smoothly transitions to vibrant green upon coupon application. Furthermore, the celebration modal is context-aware: when all cart items are regular products, redundant exclusion warnings are hidden, presenting a clean, celebratory savings callout.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- ================= 11.6: PROMOTIONAL MARKETING SOP & BEST PRACTICES ================= -->

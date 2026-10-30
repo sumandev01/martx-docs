@@ -426,6 +426,76 @@
                             When you open <code>https://yourdomain.com/install</code>, the automated wizard will guide you through 5 progressive screens:
                         </p>
 
+                        <!-- Visual Flowchart: 5-Step Web Installation Wizard Lifecycle -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white py-3 px-4 border-bottom d-flex align-items-center justify-content-between flex-wrap gap-2">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="mdi mdi-sitemap text-primary fs-5"></i>
+                                    <h6 class="fw-bold mb-0">Visual Flowchart: 5-Step Automated Web Installation Pipeline</h6>
+                                </div>
+                                <span class="badge bg-success-subtle text-success border border-success-subtle font-monospace small">
+                                    <i class="mdi mdi-clock-fast me-1"></i> Under 3 Minutes Setup
+                                </span>
+                            </div>
+                            <div class="card-body p-4 bg-light-subtle">
+                                <p class="small text-muted mb-3">
+                                    The automated browser wizard inspects and prepares your server in 5 progressive, fail-safe phases:
+                                </p>
+                                <div class="row g-2 text-center small">
+                                    <div class="col-md">
+                                        <div class="p-3 bg-white rounded-3 border shadow-xs h-100 d-flex flex-column justify-content-between">
+                                            <div>
+                                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1 mb-2">Step 1</span>
+                                                <h6 class="fw-bold text-dark mb-1">Requirements</h6>
+                                                <p class="text-muted extra-small mb-2">PHP 8.2+ &bull; 13 Extensions</p>
+                                            </div>
+                                            <span class="badge bg-success-subtle text-success border border-success-subtle">All Checks Passed</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="p-3 bg-white rounded-3 border shadow-xs h-100 d-flex flex-column justify-content-between">
+                                            <div>
+                                                <span class="badge bg-info-subtle text-info border border-info-subtle px-2 py-1 mb-2">Step 2</span>
+                                                <h6 class="fw-bold text-dark mb-1">Permissions</h6>
+                                                <p class="text-muted extra-small mb-2">Storage &bull; Cache &bull; .env</p>
+                                            </div>
+                                            <span class="badge bg-light text-dark border">Writable (775 / 755)</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="p-3 bg-white rounded-3 border shadow-xs h-100 d-flex flex-column justify-content-between">
+                                            <div>
+                                                <span class="badge bg-warning-subtle text-dark border border-warning-subtle px-2 py-1 mb-2">Step 3</span>
+                                                <h6 class="fw-bold text-dark mb-1">License Check</h6>
+                                                <p class="text-muted extra-small mb-2">Marketplace Code &bull; Email</p>
+                                            </div>
+                                            <span class="badge bg-warning-subtle text-dark border border-warning-subtle">Domain Verified</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="p-3 bg-white rounded-3 border shadow-xs h-100 d-flex flex-column justify-content-between">
+                                            <div>
+                                                <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle px-2 py-1 mb-2">Step 4</span>
+                                                <h6 class="fw-bold text-dark mb-1">Database Setup</h6>
+                                                <p class="text-muted extra-small mb-2">Schema Migration &bull; Seeds</p>
+                                            </div>
+                                            <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Tables Migrated</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="p-3 bg-white rounded-3 border shadow-xs h-100 d-flex flex-column justify-content-between">
+                                            <div>
+                                                <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 mb-2">Step 5</span>
+                                                <h6 class="fw-bold text-dark mb-1">Admin Provision</h6>
+                                                <p class="text-muted extra-small mb-2">Super Admin &bull; Lockfile</p>
+                                            </div>
+                                            <span class="badge bg-success-subtle text-success border border-success-subtle">Installation Locked</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- STEP 1 MOCKUP CARD -->
                         <div class="mockup-window">
                             <div class="mockup-header">
@@ -541,7 +611,7 @@
                             </div>
                         </div>
 
-                        <!-- STEP 3 MOCKUP CARD (4 MARKETPLACE SELECTOR CARDS) -->
+                        <!-- STEP 3 MOCKUP CARD (MULTI-CHANNEL SELECTOR CARDS) -->
                         <div class="mockup-window">
                             <div class="mockup-header">
                                 <div class="mockup-dots">
@@ -580,59 +650,57 @@
                                     Select the official marketplace where you acquired your license and provide your purchase key:
                                 </p>
                                 
-                                <!-- 4 Marketplace Selector Cards Preview -->
+                                <!-- Multi-Channel Selector Cards Preview -->
                                 <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <span class="small fw-bold text-muted">Select Marketplace:</span>
+                                    <span class="small fw-bold text-muted">Select Purchase Channel:</span>
                                     <span class="badge bg-primary-subtle text-primary border border-primary-subtle font-monospace" style="font-size: 11px;">
                                         <i class="mdi mdi-cursor-default-click-outline me-1"></i> Interactive: Click tabs to test
                                     </span>
                                 </div>
                                 <div class="row g-2 mb-3" id="installerStep3MarketGrid">
-                                    <div class="col-6 col-md-3">
-                                        <div class="mockup-market-card selected" data-channel="codecanyon" role="button">
-                                            <i class="mdi mdi-shopping-outline fs-4 text-primary d-block mb-1 market-card-icon"></i>
-                                            <strong class="d-block small text-primary market-card-title">CodeCanyon</strong>
-                                            <span class="text-muted" style="font-size: 11px;">Envato Market</span>
+                                    <div class="col-12 col-md-4">
+                                        <div class="mockup-market-card selected" data-channel="direct" role="button">
+                                            <i class="mdi mdi-shield-check-outline fs-4 text-primary d-block mb-1 market-card-icon"></i>
+                                            <strong class="d-block small text-primary market-card-title">Direct / B2B</strong>
+                                            <span class="text-muted" style="font-size: 11px;">MartX Direct Key</span>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="mockup-market-card" data-channel="codester" role="button">
                                             <i class="mdi mdi-storefront-outline fs-4 text-muted d-block mb-1 market-card-icon"></i>
                                             <strong class="d-block small market-card-title">Codester</strong>
-                                            <span class="text-muted" style="font-size: 11px;">Order ID</span>
+                                            <span class="text-muted" style="font-size: 11px;">Order ID Key</span>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-4">
                                         <div class="mockup-market-card" data-channel="templatemonster" role="button">
                                             <i class="mdi mdi-palette-swatch-outline fs-4 text-muted d-block mb-1 market-card-icon"></i>
                                             <strong class="d-block small market-card-title">TemplateMonster</strong>
-                                            <span class="text-muted" style="font-size: 11px;">Invoice Order</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-3">
-                                        <div class="mockup-market-card" data-channel="direct" role="button">
-                                            <i class="mdi mdi-shield-check-outline fs-4 text-muted d-block mb-1 market-card-icon"></i>
-                                            <strong class="d-block small market-card-title">Direct License</strong>
-                                            <span class="text-muted" style="font-size: 11px;">Author Key</span>
+                                            <span class="text-muted" style="font-size: 11px;">Invoice ID Key</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="p-2 border rounded bg-light mb-2">
-                                    <label class="form-label small fw-bold mb-1" id="installerFieldLabel">
-                                        Envato Purchase Code <span class="text-danger">*</span>
-                                    </label>
-                                    <input type="text" class="form-control form-control-sm font-monospace" id="installerFieldInput" placeholder="e.g., 94a12b8c-55e1-4c12-88f1-22e89fa6b301" value="94a12b8c-55e1-4c12-88f1-22e89fa6b301" readonly style="background-color: var(--doc-card-bg);">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <label class="form-label small fw-bold mb-0" id="installerFieldLabel">
+                                            License Key <span class="text-danger">*</span>
+                                        </label>
+                                        <a href="https://license.getmartx.com/" target="_blank" class="text-primary text-decoration-none fw-semibold" style="font-size: 11px;">
+                                            <i class="mdi mdi-help-circle-outline"></i> Lost your key? Retrieve credentials &rarr;
+                                        </a>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm font-monospace" id="installerFieldInput" placeholder="e.g., MARTX-PRO-XXXX-XXXX" value="MARTX-PRO-7749-ENTERPRISE" readonly style="background-color: var(--doc-card-bg);">
                                     <span class="text-muted d-block mt-1" id="installerFieldHelp" style="font-size: 11px;">
-                                        Found in your CodeCanyon Downloads &gt; License Certificate &amp; Purchase Code PDF.
+                                        Provided upon purchase or retrieved directly from the <a href="https://license.getmartx.com/" target="_blank" class="fw-semibold text-primary text-decoration-none">Client Portal (license.getmartx.com)</a>.
                                     </span>
                                 </div>
 
                                 <div class="row g-2 mb-2">
                                     <div class="col-md-6">
-                                        <label class="form-label small fw-bold mb-1">Buyer Email Address (Optional)</label>
-                                        <input type="email" class="form-control form-control-sm font-monospace" value="buyer@yourdomain.com" readonly style="background-color: var(--doc-card-bg);">
-                                        <span class="text-muted d-block mt-1" style="font-size: 10px;">Used for update notifications and support.</span>
+                                        <label class="form-label small fw-bold mb-1">Purchase Email Address <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control form-control-sm font-monospace" value="admin@martx-demo.test" readonly style="background-color: var(--doc-card-bg);">
+                                        <span class="text-muted d-block mt-1" style="font-size: 10px;">Required for 1-click domain transfer authorization.</span>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label small fw-bold mb-1">Binding Domain (Auto-detected)</label>
@@ -645,6 +713,26 @@
                                     <i class="mdi mdi-laptop me-1"></i> Localhost auto-detection active: Free unrestricted local testing on .test & localhost
                                 </span>
                             </div>
+                        </div>
+
+                        <!-- FIRST-TIME BUYER & SELF-SERVICE RECOVERY CALLOUT -->
+                        <div class="doc-callout doc-callout-info mt-3">
+                            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                                <h6 class="fw-bold mb-0 text-heading">
+                                    <i class="mdi mdi-key-link text-primary me-1"></i> First-Time Buyer or Lost Your License Key?
+                                </h6>
+                                <a href="https://license.getmartx.com/" target="_blank" class="btn btn-sm btn-primary fw-semibold px-3">
+                                    <i class="mdi mdi-open-in-new me-1"></i> Open License Portal (license.getmartx.com)
+                                </a>
+                            </div>
+                            <p class="small text-muted mb-2">
+                                If you recently purchased MartX from an authorized marketplace (e.g., Codester, TemplateMonster, Envato) and do not have your official License Key, you do <strong>not</strong> need to wait for author support tickets. You can claim or retrieve your credentials instantly through our 24/7 self-service portal:
+                            </p>
+                            <ul class="small text-muted mb-0 ps-3">
+                                <li class="mb-1"><strong>Instant 3-Input Claim (New Buyers):</strong> Visit <a href="https://license.getmartx.com/" target="_blank" class="fw-bold text-primary">license.getmartx.com</a> &rarr; submit your <strong>(1) Purchase Code / Order ID</strong>, <strong>(2) Marketplace Username</strong>, and <strong>(3) Marketplace Channel</strong> to create your permanent portal account.</li>
+                                <li class="mb-1"><strong>Direct Portal Login (Existing Accounts):</strong> Sign in with your registered email and password to view all your active license keys and bound domains.</li>
+                                <li class="mb-0"><strong>1-Click Key Copy:</strong> Copy your verified License Key directly from the portal dashboard card and paste it into the field above!</li>
+                            </ul>
                         </div>
 
                         <!-- STEP 4 MOCKUP CARD (DATABASE & DEMO SEEDER) -->
@@ -842,42 +930,114 @@
                             For agencies, DevOps engineers, and cloud administrators deploying via SSH terminal, MartX provides a dedicated <strong>interactive CLI installation command</strong> allowing complete setup directly from the command-line without opening a web browser:
                         </p>
 
-                        <!-- Step-by-Step Terminal Workflow -->
+                        <!-- Step-by-Step Terminal Workflow (4-Step Sequential Guide) -->
                         <div class="row g-3 my-2">
+                            <!-- Step 1: Environment & Key -->
                             <div class="col-md-6">
                                 <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
-                                    <div class="d-flex align-items-center gap-2 mb-2">
-                                        <div class="p-2 rounded bg-primary-subtle text-primary"><i class="mdi mdi-file-cog-outline fs-5"></i></div>
-                                        <h6 class="fw-bold mb-0 text-heading">1. Configure <code>.env</code> File</h6>
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="p-2 rounded bg-primary-subtle text-primary"><i class="mdi mdi-key-outline fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">1. Environment &amp; Key</h6>
+                                        </div>
+                                        <span class="badge bg-primary-subtle text-primary font-monospace small">Step 1</span>
                                     </div>
                                     <p class="small text-muted mb-2">
-                                        Initialize environment, generate your encryption key, and configure MySQL credentials:
+                                        Copy the environment template and generate your application's unique encryption key (<code>APP_KEY</code>):
                                     </p>
                                     <div class="doc-code-wrapper mb-0">
+                                        <button type="button" class="doc-btn-copy" onclick="copyCode(this)"><i class="mdi mdi-content-copy me-1"></i>Copy</button>
                                         <pre><code class="language-bash">cp .env.example .env
-php artisan key:generate
-nano .env # Set DB_DATABASE, DB_USERNAME, DB_PASSWORD</code></pre>
+php artisan key:generate</code></pre>
                                     </div>
                                     <p class="small text-muted mt-2 mb-0" style="font-size: 11px;">
-                                        Generates a unique <code>APP_KEY</code>. <em>(Web GUI Installer automatically generates this in Step 1)</em>.
+                                        Secures cookie encryptions, user sessions, and signed routes.
                                     </p>
                                 </div>
                             </div>
 
+                            <!-- Step 2: Database & APP_URL -->
                             <div class="col-md-6">
                                 <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
-                                    <div class="d-flex align-items-center gap-2 mb-2">
-                                        <div class="p-2 rounded bg-success-subtle text-success"><i class="mdi mdi-play-circle-outline fs-5"></i></div>
-                                        <h6 class="fw-bold mb-0 text-heading">2. Run MartX CLI Installer</h6>
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="p-2 rounded bg-info-subtle text-info"><i class="mdi mdi-database-cog-outline fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">2. Database &amp; Domain</h6>
+                                        </div>
+                                        <span class="badge bg-info-subtle text-info font-monospace small">Step 2</span>
                                     </div>
                                     <p class="small text-muted mb-2">
-                                        Run the automated terminal setup command in interactive mode:
+                                        Create a MySQL database and update your credentials and live domain in <code>.env</code>:
                                     </p>
                                     <div class="doc-code-wrapper mb-0">
+                                        <button type="button" class="doc-btn-copy" onclick="copyCode(this)"><i class="mdi mdi-content-copy me-1"></i>Copy</button>
+                                        <pre><code class="language-bash">nano .env
+APP_URL=https://yourdomain.com
+DB_HOST=127.0.0.1
+DB_DATABASE=your_database_name
+DB_USERNAME=your_database_user
+DB_PASSWORD=your_database_password</code></pre>
+                                    </div>
+                                    <p class="small text-muted mt-2 mb-0" style="font-size: 11px;">
+                                        Ensures migrations connect to the right MySQL database and links render with your live domain.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Run CLI Installer -->
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="p-2 rounded bg-success-subtle text-success"><i class="mdi mdi-play-circle-outline fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">3. Run MartX CLI Installer</h6>
+                                        </div>
+                                        <span class="badge bg-success-subtle text-success font-monospace small">Step 3</span>
+                                    </div>
+                                    <p class="small text-muted mb-2">
+                                        Execute the automated terminal setup command in interactive mode:
+                                    </p>
+                                    <div class="doc-code-wrapper mb-0">
+                                        <button type="button" class="doc-btn-copy" onclick="copyCode(this)"><i class="mdi mdi-content-copy me-1"></i>Copy</button>
                                         <pre><code class="language-bash">php artisan martx:install</code></pre>
                                     </div>
                                     <p class="small text-muted mt-2 mb-0" style="font-size: 11px;">
-                                        Prompts for your Purchase Code, verifies licensing, migrates tables, seeds demo data, and provisions the Super Admin account!
+                                        Guides you through purchase code check, runs migrations, seeds catalogs, and sets up Super Admin.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Step 4: License Verification & Activation -->
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 h-100 shadow-sm" style="background-color: var(--doc-card-bg);">
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="p-2 rounded bg-warning-subtle text-warning-emphasis"><i class="mdi mdi-shield-check-outline fs-5"></i></div>
+                                            <h6 class="fw-bold mb-0 text-heading">4. License &amp; Verification</h6>
+                                        </div>
+                                        <span class="badge bg-warning-subtle text-warning-emphasis font-monospace small">Step 4</span>
+                                    </div>
+                                    <p class="small text-muted mb-2">
+                                        Input your Purchase Code and Buyer Email when prompted by the CLI installer:
+                                    </p>
+                                    <div class="doc-code-wrapper mb-2">
+                                        <button type="button" class="doc-btn-copy" onclick="copyCode(this)"><i class="mdi mdi-content-copy me-1"></i>Copy</button>
+                                        <pre><code class="language-bash"># Interactive prompt inputs:
+Enter License Key: YOUR-PURCHASE-CODE
+Enter Buyer Email: buyer@yourdomain.com</code></pre>
+                                    </div>
+                                    <div class="p-2 rounded border small" style="font-size: 11px; background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.25) !important;">
+                                        <div class="mb-1 text-heading">
+                                            <span class="badge bg-success text-white fw-bold me-1">&check; Automated</span>
+                                            <span>CLI verifies with license server instantly.</span>
+                                        </div>
+                                        <div class="text-muted">
+                                            <span class="badge bg-primary text-white fw-bold me-1">&rarr; Post-Install</span>
+                                            <span>Manage anytime at <strong>Admin &rarr; Settings &rarr; License</strong>.</span>
+                                        </div>
+                                    </div>
+                                    <p class="small text-muted mt-2 mb-0" style="font-size: 11px;">
+                                        Secures live domain locking with 7-day heartbeat cache protection.
                                     </p>
                                 </div>
                             </div>
@@ -885,13 +1045,13 @@ nano .env # Set DB_DATABASE, DB_USERNAME, DB_PASSWORD</code></pre>
 
                         <!-- 1-Liner Automated CI/CD Deployment Callout -->
                         <div class="doc-callout doc-callout-info mt-3">
-                            <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-robot-confused-outline me-1"></i> Headless CI/CD & Automated 1-Liner Deployment</h6>
+                            <h6 class="fw-bold text-primary mb-1"><i class="mdi mdi-robot-confused-outline me-1"></i> Headless CI/CD &amp; Automated 1-Liner Deployment</h6>
                             <p class="small mb-2">
                                 You can also pass flags directly to <code>martx:install</code> for zero-prompt, fully unattended CI/CD deployment pipelines:
                             </p>
                             <div class="doc-code-wrapper mb-0">
                                 <button type="button" class="doc-btn-copy" onclick="copyCode(this)"><i class="mdi mdi-content-copy me-1"></i>Copy</button>
-                                <pre><code class="language-bash">php artisan martx:install --license="YOUR-PURCHASE-CODE" --email="buyer@domain.com" --admin-email="admin@yourdomain.com" --admin-password="YourStrongPassword123"</code></pre>
+                                <pre><code class="language-bash">php artisan martx:install --license="YOUR-PURCHASE-CODE" --email="buyer@domain.com" --admin-email="admin@yourdomain.com" --admin-password="YourStrongPassword123" --app-url="https://yourdomain.com"</code></pre>
                             </div>
                         </div>
 
@@ -947,8 +1107,8 @@ php artisan optimize:clear</code></pre>
                                         <h6 class="fw-bold mb-1 small text-heading">License Activation</h6>
                                         <p class="small text-muted mb-2" style="font-size: 11px;">Login as Super Admin and activate license in dashboard:</p>
                                         <div class="p-2 border rounded small" style="font-size: 11px; background-color: var(--doc-code-bg);">
-                                            Navigate to <strong>Admin &rarr; Settings &rarr; License Activation</strong> and paste your CodeCanyon Purchase Code.
-                                            <div class="mt-1 text-muted"><em>Or CLI:</em> <code>php artisan martx:activate --key=CODE</code></div>
+                                            Navigate to <strong>Admin &rarr; Settings &rarr; License &amp; Verification</strong> and enter your official License Key.
+                                            <div class="mt-1 text-muted"><em>Or CLI:</em> <code>php artisan martx:activate --key=MARTX-PRO-KEY</code></div>
                                         </div>
                                     </div>
                                 </div>

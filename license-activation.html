@@ -339,7 +339,7 @@
                             <i class="mdi mdi-monitor-dashboard text-primary me-1"></i> 4.1 In-Dashboard License Activation Suite
                         </h3>
                         <p>
-                            If you verified your purchase code during <strong>Step 3 of the 5-Step Web Installer</strong>, your store is already fully activated and ready for business!
+                            If you verified your license key during <strong>Step 3 of the 5-Step Web Installer</strong>, your store is already fully activated and ready for business!
                         </p>
                         <p>
                             However, if you installed the platform and skipped license verification during initial setup, an unactivated license notification banner will appear across the top of your Administrative Dashboard:
@@ -422,46 +422,46 @@
                                 </div>
                                 
                                 <div class="admin-market-grid" id="docMarketGrid">
-                                    <div class="admin-market-card active" data-channel="codecanyon" role="button" tabindex="0">
-                                        <i class="mdi mdi-shopping-outline text-primary d-block fs-5 mb-1 market-card-icon"></i>
-                                        <strong class="d-block small text-primary market-card-title">CodeCanyon</strong>
-                                        <span class="text-muted" style="font-size: 11px;">Envato Purchase Code</span>
+                                    <div class="admin-market-card active" data-channel="direct" role="button" tabindex="0">
+                                        <i class="mdi mdi-shield-check-outline text-primary d-block fs-5 mb-1 market-card-icon"></i>
+                                        <strong class="d-block small text-primary market-card-title">Direct / B2B</strong>
+                                        <span class="text-muted" style="font-size: 11px;">MartX Key</span>
                                     </div>
                                     <div class="admin-market-card" data-channel="codester" role="button" tabindex="0">
                                         <i class="mdi mdi-storefront-outline text-muted d-block fs-5 mb-1 market-card-icon"></i>
                                         <strong class="d-block small text-heading market-card-title">Codester</strong>
-                                        <span class="text-muted" style="font-size: 11px;">Order ID</span>
+                                        <span class="text-muted" style="font-size: 11px;">Order ID Key</span>
                                     </div>
                                     <div class="admin-market-card" data-channel="templatemonster" role="button" tabindex="0">
                                         <i class="mdi mdi-palette-swatch-outline text-muted d-block fs-5 mb-1 market-card-icon"></i>
                                         <strong class="d-block small text-heading market-card-title">TemplateMonster</strong>
-                                        <span class="text-muted" style="font-size: 11px;">Invoice ID</span>
-                                    </div>
-                                    <div class="admin-market-card" data-channel="direct" role="button" tabindex="0">
-                                        <i class="mdi mdi-shield-check-outline text-muted d-block fs-5 mb-1 market-card-icon"></i>
-                                        <strong class="d-block small text-heading market-card-title">Direct / B2B</strong>
-                                        <span class="text-muted" style="font-size: 11px;">Author Key</span>
+                                        <span class="text-muted" style="font-size: 11px;">Invoice ID Key</span>
                                     </div>
                                 </div>
 
                                 <div class="mb-3" id="docFieldWrapper" style="transition: all 0.2s ease;">
-                                    <label class="form-label small fw-bold mb-1" id="docFieldLabel">
-                                        Envato Purchase Code <span class="text-danger">*</span>
-                                    </label>
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <label class="form-label small fw-bold mb-0" id="docFieldLabel">
+                                            License Key <span class="text-danger">*</span>
+                                        </label>
+                                        <a href="https://license.getmartx.com/" target="_blank" class="text-primary text-decoration-none fw-semibold" style="font-size: 11px;">
+                                            <i class="mdi mdi-help-circle-outline"></i> Lost your key? Retrieve credentials &rarr;
+                                        </a>
+                                    </div>
                                     <div class="input-group input-group-sm">
                                         <span class="input-group-text bg-light text-muted border-end-0">
                                             <i class="mdi mdi-key-outline text-primary" id="docFieldIcon"></i>
                                         </span>
-                                        <input type="text" class="form-control font-monospace border-start-0 ps-0" id="docFieldInput" placeholder="e.g., 94b1a45e-4501-4475-b6d8-XXXXXXXXXXXX" value="94a12b8c-55e1-4c12-88f1-22e89fa6b301" readonly style="background-color: var(--doc-card-bg);">
+                                        <input type="text" class="form-control font-monospace border-start-0 ps-0" id="docFieldInput" placeholder="e.g., MARTX-PRO-XXXX-XXXX" value="MARTX-PRO-7749-ENTERPRISE" readonly style="background-color: var(--doc-card-bg);">
                                     </div>
                                     <span class="text-muted d-block mt-1" id="docFieldHelp" style="font-size: 11px;">
-                                        Found in your CodeCanyon Downloads &gt; License Certificate &amp; Purchase Code PDF.
+                                        Provided upon purchase or retrieved directly from the <a href="https://license.getmartx.com/" target="_blank" class="fw-semibold text-primary text-decoration-none">Client Portal (license.getmartx.com)</a>.
                                     </span>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label small fw-bold mb-1">Buyer Email Address (Optional)</label>
-                                    <input type="email" class="form-control form-control-sm" placeholder="e.g., buyer@yourdomain.com" value="merchant@yourdomain.com" readonly style="background-color: var(--doc-card-bg);">
+                                    <label class="form-label small fw-bold mb-1">Purchase Email Address <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control form-control-sm" placeholder="e.g., buyer@yourdomain.com" value="admin@martx-demo.test" readonly style="background-color: var(--doc-card-bg);">
                                     <span class="text-muted d-block mt-1" style="font-size: 11px;">
                                         Used for automated 1-click domain transfer authorization and official security notices.
                                     </span>
@@ -482,7 +482,7 @@
                             </h6>
                             <ol class="small text-muted mb-0 ps-3">
                                 <li class="mb-1"><strong>Click Banner:</strong> Click the <strong>"Activate Now &rarr;"</strong> button on the top amber notification banner inside your Admin Dashboard.</li>
-                                <li class="mb-1"><strong>Select Channel &amp; Enter Code:</strong> Select your marketplace channel (e.g., CodeCanyon) and paste your official <strong>Purchase Code</strong> into the input field.</li>
+                                <li class="mb-1"><strong>Select Channel &amp; Enter Key:</strong> Select your purchase channel (e.g., Direct / B2B, Codester, TemplateMonster) and paste your official <strong>License Key</strong> into the input field.</li>
                                 <li class="mb-0"><strong>Instant 1-Click Verification:</strong> Click <strong>"Verify &amp; Activate &rarr;"</strong>. Your live domain is instantly authenticated in the cloud with zero store downtime!</li>
                             </ol>
                         </div>
@@ -492,59 +492,231 @@
                     <!-- 4.2: MULTI-MARKETPLACE VERIFICATION GUIDE -->
                     <div class="doc-subsection mt-5" id="sec-4-2">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-store-check-outline text-primary me-1"></i> 4.2 Multi-Marketplace Verification Guide
+                            <i class="mdi mdi-store-check-outline text-primary me-1"></i> 4.2 Multi-Channel License Verification Guide
                         </h3>
                         <p>
-                            MartX provides native support across all major script marketplaces. Select the marketplace card where you acquired your license:
+                            MartX provides native support across multiple sales channels and authorized digital marketplaces. Select the channel where you acquired your license:
                         </p>
 
                         <div class="table-responsive">
                             <table class="doc-table table align-middle mb-0">
                                 <thead>
                                     <tr>
-                                        <th style="width: 25%;">Marketplace Channel</th>
+                                        <th style="width: 25%;">Purchase Channel</th>
                                         <th style="width: 25%;">Key Identifier</th>
                                         <th>Where to Find Your Key</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><strong>CodeCanyon (Envato)</strong></td>
-                                        <td><code>Envato Purchase Code</code> (UUID format)</td>
-                                        <td>
-                                            Log in to <a href="https://codecanyon.net/downloads" target="_blank" class="text-decoration-none fw-bold text-primary">CodeCanyon.net/downloads</a> &rarr; locate <strong>MartX</strong> &rarr; click <strong>Download</strong> &rarr; select <strong>"License Certificate & Purchase Code"</strong> (PDF or text). Your 36-character purchase code is located inside the file.
-                                        </td>
+                                        <td><strong>Direct / B2B Channel (MartX Author Key)</strong></td>
+                                        <td><code>Official License Key</code></td>
+                                        <td>Received directly via official purchase invoice email from author Suman Chandra Dev Sharma (<a href="mailto:sumondav444@gmail.com" class="text-decoration-none fw-bold text-primary">sumondav444@gmail.com</a>) or in your client portal.</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Codester</strong></td>
-                                        <td><code>Codester Order ID</code></td>
+                                        <td><code>Codester Order ID Key</code></td>
                                         <td>Codester &rarr; User Dashboard &rarr; Purchases &rarr; View Order Details.</td>
                                     </tr>
                                     <tr>
                                         <td><strong>TemplateMonster</strong></td>
-                                        <td><code>Invoice Order Number</code></td>
+                                        <td><code>TemplateMonster Invoice ID Key</code></td>
                                         <td>TemplateMonster Account &rarr; Order History &rarr; Item Invoice / Download Details.</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Direct / Agency Deployment</strong></td>
-                                        <td><code>MartX Author License Key</code></td>
-                                        <td>Received directly via official email from lead author Suman Chandra Dev Sharma (<a href="mailto:sumondav444@gmail.com" class="text-decoration-none fw-bold text-primary">sumondav444@gmail.com</a>).</td>
+                                        <td><strong>Authorized Commercial Resellers</strong></td>
+                                        <td><code>Commercial Partner License Key</code></td>
+                                        <td>Dispatched to your registered billing email address upon verified checkout.</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
-                    <!-- 4.3: 7-DAY LIVE DOMAIN INSTALLATION TRIAL WINDOW -->
+                    <!-- 4.3: SELF-SERVICE LICENSE KEY CLAIM & RECOVERY PORTAL -->
                     <div class="doc-subsection mt-5" id="sec-4-3">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                            <h3 class="fw-bold text-heading mb-0">
+                                <i class="mdi mdi-shield-account-outline text-primary me-1"></i> 4.3 Self-Service License Claim &amp; Key Recovery Portal
+                            </h3>
+                            <a href="https://license.getmartx.com/" target="_blank" class="btn btn-sm btn-primary fw-semibold px-3 shadow-xs">
+                                <i class="mdi mdi-open-in-new me-1"></i> Visit Client Portal (license.getmartx.com)
+                            </a>
+                        </div>
+                        <p>
+                            We understand that buyers purchasing from digital marketplaces (such as <strong>CodeCanyon, Codester, TemplateMonster</strong>, or authorized resellers) often receive an Order ID or Purchase Code instead of a direct License Key, or may misplace their credentials over time. 
+                        </p>
+                        <p>
+                            To eliminate author support delays and give you immediate, 24/7/365 self-service access, we have built the official centralized <strong>MartX License &amp; Client Portal</strong> at <a href="https://license.getmartx.com/" target="_blank" class="fw-bold text-primary">https://license.getmartx.com/</a>.
+                        </p>
+
+                        <!-- DUAL-PATH WORKFLOW: NEW BUYER VS RETURNING BUYER -->
+                        <div class="row g-3 mb-4">
+                            <!-- Left: First-Time Buyer 3-Input Claim -->
+                            <div class="col-lg-6">
+                                <div class="p-4 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-3">
+                                            <div class="p-2 rounded bg-primary-subtle text-primary"><i class="mdi mdi-account-plus-outline fs-5"></i></div>
+                                            <div>
+                                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle font-monospace" style="font-size: 11px;">Path A: First-Time Buyer</span>
+                                                <h6 class="fw-bold mb-0 text-heading">3-Input Instant License Claim</h6>
+                                            </div>
+                                        </div>
+                                        <p class="small text-muted mb-3">
+                                            If this is your first purchase from a marketplace and you haven't created a portal account yet, follow these 3 quick steps:
+                                        </p>
+                                        <ol class="small text-muted ps-3 mb-3">
+                                            <li class="mb-2">
+                                                <strong>Step 1: Enter 3 Marketplace Credentials:</strong><br>
+                                                Go to <a href="https://license.getmartx.com/" target="_blank" class="fw-semibold text-primary">license.getmartx.com</a> and provide:
+                                                <ul class="mt-1 ps-3">
+                                                    <li><strong>Marketplace:</strong> Select channel from dropdown (e.g. CodeCanyon, Codester, TemplateMonster).</li>
+                                                    <li><strong>Marketplace Username:</strong> Your profile username on that marketplace.</li>
+                                                    <li><strong>Purchase Code / Order ID:</strong> The receipt order number from your purchase email.</li>
+                                                </ul>
+                                            </li>
+                                            <li class="mb-2">
+                                                <strong>Step 2: Set Up Account Email &amp; Password:</strong><br>
+                                                Upon identity match, enter your real preferred email address and create a password. The system binds your account securely in the cloud registry.
+                                            </li>
+                                            <li class="mb-0">
+                                                <strong>Step 3: Instant 1-Click Key Reveal:</strong><br>
+                                                Your official <code>MARTX-PRO-XXXX-XXXX</code> License Key is instantly displayed on your dashboard with a 1-click copy button!
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="pt-2 border-top">
+                                        <a href="https://license.getmartx.com/" target="_blank" class="btn btn-outline-primary btn-sm w-100 fw-semibold">
+                                            <i class="mdi mdi-badge-account-horizontal-outline me-1"></i> Claim Your License Key Now &rarr;
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Returning Buyer Direct Login -->
+                            <div class="col-lg-6">
+                                <div class="p-4 bg-white border rounded-3 h-100 shadow-sm d-flex flex-column justify-content-between">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-3">
+                                            <div class="p-2 rounded bg-success-subtle text-success"><i class="mdi mdi-login-variant fs-5"></i></div>
+                                            <div>
+                                                <span class="badge bg-success-subtle text-success border border-success-subtle font-monospace" style="font-size: 11px;">Path B: Returning Buyer</span>
+                                                <h6 class="fw-bold mb-0 text-heading">Instant Client Portal Login</h6>
+                                            </div>
+                                        </div>
+                                        <p class="small text-muted mb-3">
+                                            If you have already claimed your license or purchased directly with your email address:
+                                        </p>
+                                        <ol class="small text-muted ps-3 mb-3">
+                                            <li class="mb-2">
+                                                <strong>Step 1: Direct Authentication:</strong><br>
+                                                Visit <a href="https://license.getmartx.com/" target="_blank" class="fw-semibold text-primary">license.getmartx.com</a> and enter your registered <strong>Purchase Email Address</strong> and password.
+                                            </li>
+                                            <li class="mb-2">
+                                                <strong>Step 2: Instant Key Copy:</strong><br>
+                                                From the main dashboard card, copy your License Key directly with 1 click.
+                                            </li>
+                                            <li class="mb-0">
+                                                <strong>Step 3: Paste into Web Installer or Admin Settings:</strong><br>
+                                                Paste into Step 3 of the MartX Web Installer or your Admin Dashboard activation modal for immediate activation!
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="pt-2 border-top">
+                                        <a href="https://license.getmartx.com/" target="_blank" class="btn btn-success btn-sm w-100 fw-semibold text-white">
+                                            <i class="mdi mdi-key-variant me-1"></i> Login &amp; Copy License Key &rarr;
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PORTAL WORKFLOW PREVIEW MOCKUP -->
+                        <div class="admin-modal-frame mb-3">
+                            <div class="admin-modal-header d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="mdi mdi-shield-check text-primary fs-5"></i>
+                                    <span class="fw-bold text-heading">MartX Client Portal &bull; Self-Service Key Center</span>
+                                </div>
+                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle font-monospace" style="font-size: 11px;">https://license.getmartx.com/</span>
+                            </div>
+                            <div class="admin-modal-body p-3">
+                                <div class="row g-3">
+                                    <div class="col-md-5">
+                                        <div class="p-3 border rounded-3 bg-light h-100">
+                                            <h6 class="fw-bold mb-2 small text-heading"><i class="mdi mdi-form-select text-primary me-1"></i> 3-Input Verification Form</h6>
+                                            <div class="mb-2">
+                                                <label class="form-label extra-small fw-semibold mb-0">Marketplace Channel</label>
+                                                <input type="text" class="form-control form-control-sm font-monospace" value="Codester / Envato / Partner" readonly style="background-color: var(--doc-card-bg); font-size: 11px;">
+                                            </div>
+                                            <div class="mb-2">
+                                                <label class="form-label extra-small fw-semibold mb-0">Marketplace Username</label>
+                                                <input type="text" class="form-control form-control-sm font-monospace" value="john_dev99" readonly style="background-color: var(--doc-card-bg); font-size: 11px;">
+                                            </div>
+                                            <div class="mb-2">
+                                                <label class="form-label extra-small fw-semibold mb-0">Purchase Code / Order ID</label>
+                                                <input type="text" class="form-control form-control-sm font-monospace" value="94b1a45e-382a-4df1-****-b301" readonly style="background-color: var(--doc-card-bg); font-size: 11px;">
+                                            </div>
+                                            <button class="btn btn-primary btn-sm w-100 fw-semibold" style="font-size: 11px;" type="button" disabled>
+                                                <i class="mdi mdi-check-circle-outline me-1"></i> Verify &amp; Proceed to Account Setup
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="p-3 border rounded-3 bg-white h-100 d-flex flex-column justify-content-between">
+                                            <div>
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <span class="badge bg-success-subtle text-success border border-success-subtle fw-semibold" style="font-size: 11px;">
+                                                        <i class="mdi mdi-check-decagram me-1"></i> Verified Active License
+                                                    </span>
+                                                    <span class="text-muted extra-small">Cloudflare Edge D1 Synced</span>
+                                                </div>
+                                                <h6 class="fw-bold mb-1 text-heading">Your Official MartX License Key:</h6>
+                                                <div class="input-group input-group-sm mb-2">
+                                                    <input type="text" class="form-control font-monospace fw-bold text-primary" value="MARTX-PRO-7749-ENTERPRISE-VERIFIED" readonly style="background-color: var(--doc-card-bg);">
+                                                    <button class="btn btn-primary btn-sm px-3" type="button" onclick="navigator.clipboard.writeText('MARTX-PRO-7749-ENTERPRISE-VERIFIED'); alert('License Key copied to clipboard!');">
+                                                        <i class="mdi mdi-content-copy me-1"></i> Copy Key
+                                                    </button>
+                                                </div>
+                                                <div class="row g-2 text-muted extra-small">
+                                                    <div class="col-6"><strong>Account:</strong> buyer@domain.com</div>
+                                                    <div class="col-6"><strong>Bound Domain:</strong> yourstore.com</div>
+                                                    <div class="col-6"><strong>Type:</strong> Commercial Perpetual</div>
+                                                    <div class="col-6"><strong>Domain Migrations:</strong> 1-Click Available</div>
+                                                </div>
+                                            </div>
+                                            <div class="alert alert-light border small text-muted mb-0 mt-3 py-1.5 px-2">
+                                                <i class="mdi mdi-information-outline text-primary me-1"></i>
+                                                Copy this key and paste directly into Step 3 of the Web Installer or your Admin Settings console.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- VALUE PROPOSITION CALLOUT -->
+                        <div class="doc-callout doc-callout-success">
+                            <h5 class="fw-bold text-success"><i class="mdi mdi-check-circle-outline me-1"></i> Why Self-Service Key Recovery Matters for Merchants</h5>
+                            <ul class="mb-0 ps-3">
+                                <li class="mb-1.5"><strong>Zero Support Ticket Waiting:</strong> No need to message the author on marketplace comment boards or wait across different time zones. You get your key within 30 seconds of purchase.</li>
+                                <li class="mb-1.5"><strong>Multi-Channel Unification:</strong> Whether you bought on Codester, TemplateMonster, or Direct B2B invoice, all your purchases and active domain slots are manageable under one single login at <a href="https://license.getmartx.com/" target="_blank" class="fw-bold text-success">https://license.getmartx.com/</a>.</li>
+                                <li class="mb-0"><strong>Permanent Key Safety:</strong> Even if you switch hosting servers, reformat your computer, or lose your installation notes, your official license keys and domain statuses are safely preserved in your portal account forever.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 4.4: 7-DAY LIVE DOMAIN INSTALLATION TRIAL WINDOW -->
+                    <div class="doc-subsection mt-5" id="sec-4-4">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-clock-fast text-primary me-1"></i> 4.3 7-Day Live Domain Installation Trial Window
+                            <i class="mdi mdi-clock-fast text-primary me-1"></i> 4.4 7-Day Live Domain Installation Trial Window
                         </h3>
                         <p>
                             We understand that merchants and agencies often need time to connect their payment gateways, upload catalog items, and verify storefront operations on a live production domain before permanently binding their license key.
                         </p>
                         <p class="small text-muted fst-italic">
-                            <i class="mdi mdi-information-outline me-1"></i> Note: This 7-day trial applies only to new, unactivated live installations. It is distinct from the 14-day offline fail-safe grace period described in Section 4.7.
+                            <i class="mdi mdi-information-outline me-1"></i> Note: This 7-day trial applies only to new, unactivated live installations. It is distinct from the 14-day offline fail-safe grace period described in Section 4.8.
                         </p>
                         
                         <div class="doc-callout doc-callout-info">
@@ -558,13 +730,13 @@
                         </div>
                     </div>
 
-                    <!-- 4.4: ADMIN PANEL LOCKDOWN SCREEN & HOW TO UNLOCK -->
-                    <div class="doc-subsection mt-5" id="sec-4-4">
+                    <!-- 4.5: ADMIN PANEL LOCKDOWN SCREEN & HOW TO UNLOCK -->
+                    <div class="doc-subsection mt-5" id="sec-4-5">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-lock-alert text-primary me-1"></i> 4.4 Admin Panel Lockdown Screen & How to Unlock
+                            <i class="mdi mdi-lock-alert text-primary me-1"></i> 4.5 Admin Panel Lockdown Screen & How to Unlock
                         </h3>
                         <p>
-                            If the initial 7-day live trial window elapses without entering a valid purchase code, your Administrative Panel safely enters the <strong>License Verification Lockdown Screen</strong>.
+                            If the initial 7-day live trial window elapses without entering a valid license key, your Administrative Panel safely enters the <strong>License Verification Lockdown Screen</strong>.
                         </p>
                         <p>
                             In Lockdown Mode, standard administrative routes are paused until the license is activated. <strong>Your store's data (products, orders, customers) remains completely safe and intact in your database</strong>; however, customer-facing catalog browsing and checkout are temporarily paused until a valid license is verified.
@@ -579,12 +751,12 @@
                                 <h4 class="fw-bold text-white mb-1">Administrative Access Locked</h4>
                                 <span class="badge bg-danger text-white px-2 py-1 small mb-3">Trial Window Expired</span>
                                 <p class="text-white-50 small mb-4">
-                                    Your 7-day live domain trial period has elapsed. Please verify your purchase code below to immediately unlock full administrative access.
+                                    Your 7-day live domain trial period has elapsed. Please verify your license key below to immediately unlock full administrative access.
                                 </p>
 
                                 <div class="bg-dark rounded-3 p-3 text-start mb-3 border border-secondary">
-                                    <label class="form-label small fw-bold text-white mb-1">Purchase Code / Order ID</label>
-                                    <input type="text" class="form-control form-control-sm font-monospace bg-dark text-white border-secondary mb-2" value="94a12b8c-55e1-4c12-88f1-••••••••••••" readonly>
+                                    <label class="form-label small fw-bold text-white mb-1">Official License Key</label>
+                                    <input type="text" class="form-control form-control-sm font-monospace bg-dark text-white border-secondary mb-2" value="MARTX-PRO-7749-••••••••••••" readonly>
                                     <button class="btn btn-primary btn-sm fw-bold w-100 py-2" style="border-radius: 0.5rem;" type="button" disabled>
                                         <i class="mdi mdi-lock-open-variant-outline me-1"></i> Verify & Unlock Admin Panel &rarr;
                                     </button>
@@ -601,16 +773,16 @@
                             <h6 class="fw-bold text-primary mb-2"><i class="mdi mdi-lightbulb-on-outline me-1"></i> Quick 3-Step Unlock Process:</h6>
                             <ol class="small text-muted mb-0 ps-3">
                                 <li>Navigate to your secure Admin login URL. You will be automatically presented with the License Verification Portal.</li>
-                                <li>Paste your <strong>Envato Purchase Code</strong> or marketplace order ID into the input field.</li>
+                                <li>Paste your <strong>Official License Key</strong> or authorized marketplace order ID into the input field.</li>
                                 <li>Click <strong>"Verify & Unlock Admin Panel &rarr;"</strong>. Your license is verified immediately in the cloud and you are redirected straight into your full Admin Dashboard!</li>
                             </ol>
                         </div>
                     </div>
 
-                    <!-- 4.5: UNRESTRICTED LOCALHOST TESTING -->
-                    <div class="doc-subsection mt-5" id="sec-4-5">
+                    <!-- 4.6: UNRESTRICTED LOCALHOST TESTING -->
+                    <div class="doc-subsection mt-5" id="sec-4-6">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-laptop-account text-primary me-1"></i> 4.5 Unrestricted Localhost & Developer Testing (100% Free)
+                            <i class="mdi mdi-laptop-account text-primary me-1"></i> 4.6 Unrestricted Localhost & Developer Testing (100% Free)
                         </h3>
                         <p>
                             You never have to waste your live domain activation quota when building, styling, or testing your store on local computers or staging sandboxes:
@@ -651,13 +823,13 @@
                         </div>
                     </div>
 
-                    <!-- 4.6: LICENSE KEY RE-BINDING & MIGRATION TO A NEW DOMAIN -->
-                    <div class="doc-subsection mt-5" id="sec-4-6">
+                    <!-- 4.7: LICENSE KEY RE-BINDING & MIGRATION TO A NEW DOMAIN -->
+                    <div class="doc-subsection mt-5" id="sec-4-7">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-swap-horizontal-bold text-primary me-1"></i> 4.6 License Key Re-binding & Migration to a New Domain
+                            <i class="mdi mdi-swap-horizontal-bold text-primary me-1"></i> 4.7 License Key Re-binding & Migration to a New Domain
                         </h3>
                         <p>
-                            Under official commercial licensing, a single MartX purchase code can be actively bound to <strong>one live production domain at a time</strong>. However, if you are migrating from a development/staging subdomain to your primary domain (e.g., from <code>staging.mystore.com</code> to <code>mystore.com</code>) or rebranding your business under a new domain name, you do <strong>not</strong> need to purchase a new license key.
+                            Under official commercial licensing, a single MartX license key can be actively bound to <strong>one live production domain at a time</strong>. However, if you are migrating from a development/staging subdomain to your primary domain (e.g., from <code>staging.mystore.com</code> to <code>mystore.com</code>) or rebranding your business under a new domain name, you do <strong>not</strong> need to purchase a new license key.
                         </p>
                         <p>
                             MartX includes an automated <strong>1-Click License Relocation &amp; Re-binding</strong> workflow. You can seamlessly move your existing license key to your new domain without contacting support or editing database tables:
@@ -669,7 +841,7 @@
                                     <span class="badge bg-primary-subtle text-primary border border-primary-subtle fw-semibold mb-2">Step 1: Request Key Relocation</span>
                                     <h6 class="fw-bold">Trigger License Re-binding</h6>
                                     <p class="small text-muted mb-0">
-                                        On your new live domain's admin panel (or the locked screen), click <strong>"Transfer License to This Domain"</strong> and enter your existing Purchase Code along with your registered Buyer Email address.
+                                        On your new live domain's admin panel (or the locked screen), click <strong>"Transfer License to This Domain"</strong> and enter your existing License Key along with your registered Purchase Email Address.
                                     </p>
                                 </div>
                             </div>
@@ -678,17 +850,17 @@
                                     <span class="badge bg-success-subtle text-success border border-success-subtle fw-semibold mb-2">Step 2: Instant Email Authorization</span>
                                     <h6 class="fw-bold">1-Click Secure Activation</h6>
                                     <p class="small text-muted mb-0">
-                                        Check your buyer email inbox. You will receive an automated, secure 10-minute confirmation link. Simply click <strong>"Confirm Domain Transfer"</strong> — your purchase code is instantly released from the old domain and locked to your new live store with zero downtime.
+                                        Check your registered purchase email inbox. You will receive an automated, secure 10-minute confirmation link. Simply click <strong>"Confirm Domain Transfer"</strong> — your license key is instantly released from the old domain and locked to your new live store with zero downtime.
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 4.7: 14-DAY OFFLINE FAIL-SAFE PROTECTION & HEARTBEAT -->
-                    <div class="doc-subsection mt-5" id="sec-4-7">
+                    <!-- 4.8: 14-DAY OFFLINE FAIL-SAFE PROTECTION & HEARTBEAT -->
+                    <div class="doc-subsection mt-5" id="sec-4-8">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-shield-airplane text-primary me-1"></i> 4.7 14-Day Offline Fail-Safe Protection &amp; Weekly Check-in
+                            <i class="mdi mdi-shield-airplane text-primary me-1"></i> 4.8 14-Day Offline Fail-Safe Protection &amp; Weekly Check-in
                         </h3>
                         <p>
                             Store owners never have to worry about sales interruptions caused by external internet fluctuations, cloud maintenance, or temporary hosting connectivity drops. MartX is engineered with a built-in merchant safety net.
@@ -730,13 +902,13 @@
                         </div>
                     </div>
 
-                    <!-- 4.8: IN-SETTINGS LICENSE CONSOLE & KEY MANAGEMENT -->
-                    <div class="doc-subsection mt-5" id="sec-4-8">
+                    <!-- 4.9: IN-SETTINGS LICENSE CONSOLE & KEY MANAGEMENT -->
+                    <div class="doc-subsection mt-5" id="sec-4-9">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-cog-sync-outline text-primary me-1"></i> 4.8 In-Settings License Console, Key Switching & Safe Deactivation
+                            <i class="mdi mdi-cog-sync-outline text-primary me-1"></i> 4.9 In-Settings License Console, Key Switching & Safe Deactivation
                         </h3>
                         <p>
-                            Super Administrators can inspect active credentials, switch purchase codes, or relocate licenses directly from the dedicated management console located at:
+                            Super Administrators can inspect active credentials, switch license keys, or relocate licenses directly from the dedicated management console located at:
                         </p>
                         <div class="p-3 bg-light rounded-3 border mb-3 small d-flex align-items-center gap-2">
                             <i class="mdi mdi-shield-crown text-danger fs-5"></i>
@@ -757,7 +929,7 @@
                                         <h6 class="fw-bold mb-0 text-heading">1. Current License Overview &amp; Key Switcher</h6>
                                     </div>
                                     <ul class="small text-muted mb-0 ps-3">
-                                        <li class="mb-1.5"><strong>Active Credentials Display:</strong> Displays your masked purchase code (e.g., <code>94b1a45e-****-****-b301</code>), buyer name, marketplace channel badge, bound domain, verification date, and cloud heartbeat health.</li>
+                                        <li class="mb-1.5"><strong>Active Credentials Display:</strong> Displays your masked license key (e.g., <code>MARTX-PRO-****-****-7749</code>), buyer email, purchase channel badge, bound domain, verification date, and cloud heartbeat health.</li>
                                         <li class="mb-1.5"><strong>Switch / Update License Key:</strong> An inline collapsible form allows you to replace or upgrade your license key on the fly without wiping store settings or reinstalling the application.</li>
                                         <li class="mb-0"><strong>Safe Deactivation:</strong> Clicking <strong>"Deactivate License"</strong> triggers a confirmation modal to cleanly unlink the license key from this store so it can be deployed on another project.</li>
                                     </ul>
@@ -772,7 +944,7 @@
                                     </div>
                                     <ul class="small text-muted mb-0 ps-3">
                                         <li class="mb-1.5"><strong>Target Domain Input:</strong> Moving your store to a new domain or sub-domain? Simply type the destination domain name directly into the migration field.</li>
-                                        <li class="mb-1.5"><strong>1-Click Email Dispatch:</strong> Clicking <strong>"Send 1-Click Transfer Email Link"</strong> dispatches an authorization link to your registered buyer email address.</li>
+                                        <li class="mb-1.5"><strong>1-Click Email Dispatch:</strong> Clicking <strong>"Send 1-Click Transfer Email Link"</strong> dispatches an authorization link to your registered purchase email address.</li>
                                         <li class="mb-0"><strong>Instant Domain Re-binding:</strong> Confirming the link via your inbox unlocks the new store domain instantly with zero downtime.</li>
                                     </ul>
                                 </div>
@@ -780,10 +952,10 @@
                         </div>
                     </div>
 
-                    <!-- 4.9: MERCHANT PRIVACY & DATA PROTECTION ARCHITECTURE -->
-                    <div class="doc-subsection mt-5" id="sec-4-9">
+                    <!-- 4.10: MERCHANT PRIVACY & DATA PROTECTION ARCHITECTURE -->
+                    <div class="doc-subsection mt-5" id="sec-4-10">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-shield-lock-outline text-primary me-1"></i> 4.9 Merchant Privacy &amp; Zero-Telemetry Architecture
+                            <i class="mdi mdi-shield-lock-outline text-primary me-1"></i> 4.10 Merchant Privacy &amp; Zero-Telemetry Architecture
                         </h3>
                         <p>
                             We design the MartX license verification system to strictly minimize data collection in line with international privacy best practices. The verification mechanism is strictly confined to software entitlement: it never monitors, accesses, or exports your private business operations.
@@ -801,10 +973,10 @@
                                     <tr>
                                         <td>
                                             <ul class="mb-0 ps-3 small text-muted">
-                                                <li class="mb-1"><strong>Purchase Code / License Key:</strong> To confirm purchase authenticity.</li>
+                                                <li class="mb-1"><strong>Official License Key:</strong> To confirm purchase authenticity.</li>
                                                 <li class="mb-1"><strong>Domain Address (URL):</strong> To bind the license to your active store.</li>
-                                                <li class="mb-1"><strong>Marketplace Identifier:</strong> To identify where the item was purchased (e.g., CodeCanyon).</li>
-                                                <li class="mb-0"><strong>Buyer Email Address:</strong> Used strictly for 1-click domain transfer authorization.</li>
+                                                <li class="mb-1"><strong>Marketplace / Purchase Channel:</strong> To identify where the item was purchased (e.g., Direct / B2B, Codester, TemplateMonster).</li>
+                                                <li class="mb-0"><strong>Purchase Email Address:</strong> Used strictly for 1-click domain transfer authorization.</li>
                                             </ul>
                                         </td>
                                         <td>
@@ -830,10 +1002,10 @@
                         </div>
                     </div>
 
-                    <!-- 4.10: PRODUCTION DEPLOYMENT CHECKLIST & BEST PRACTICES -->
-                    <div class="doc-subsection mt-5" id="sec-4-10">
+                    <!-- 4.11: PRODUCTION DEPLOYMENT CHECKLIST & BEST PRACTICES -->
+                    <div class="doc-subsection mt-5" id="sec-4-11">
                         <h3 class="fw-bold text-heading mb-3">
-                            <i class="mdi mdi-checkbox-marked-circle-outline text-primary me-1"></i> 4.10 Live Production Deployment Checklist &amp; Best Practices
+                            <i class="mdi mdi-checkbox-marked-circle-outline text-primary me-1"></i> 4.11 Live Production Deployment Checklist &amp; Best Practices
                         </h3>
                         <p>
                             When moving your MartX store from a staging computer to a live web hosting environment, ensure the following quick checks are completed:
@@ -869,7 +1041,7 @@
                                         <h6 class="fw-bold mb-0 text-heading">3. Moving Between Domains</h6>
                                     </div>
                                     <p class="small text-muted mb-0">
-                                        A standard commercial license is actively bound to one live domain at a time. If you initially test on a live staging subdomain (e.g., <code>staging.mystore.com</code>) and later launch on <code>mystore.com</code>, use the built-in <strong>1-Click Domain Transfer Desk</strong> in Chapter 4.6.
+                                        A standard commercial license is actively bound to one live domain at a time. If you initially test on a live staging subdomain (e.g., <code>staging.mystore.com</code>) and later launch on <code>mystore.com</code>, use the built-in <strong>1-Click Domain Transfer Desk</strong> in Chapter 4.7.
                                     </p>
                                 </div>
                             </div>
@@ -892,17 +1064,18 @@
             <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
             <aside class="col-xl-2 d-none d-xl-block">
                 <div class="doc-toc" style="font-size: 0.75rem;">
-                    <div class="doc-toc-title">On This Page (10 Topics)</div>
+                    <div class="doc-toc-title">On This Page (11 Topics)</div>
                     <a href="#sec-4-1" class="doc-toc-link active">4.1 In-Dashboard Suite</a>
-                    <a href="#sec-4-2" class="doc-toc-link">4.2 Marketplace Guide</a>
-                    <a href="#sec-4-3" class="doc-toc-link">4.3 7-Day Live Trial</a>
-                    <a href="#sec-4-4" class="doc-toc-link">4.4 Admin Lockout & Unlock</a>
-                    <a href="#sec-4-5" class="doc-toc-link">4.5 Free Localhost Testing</a>
-                    <a href="#sec-4-6" class="doc-toc-link">4.6 Key Re-binding to New Domain</a>
-                    <a href="#sec-4-7" class="doc-toc-link">4.7 14-Day Offline Shield</a>
-                    <a href="#sec-4-8" class="doc-toc-link">4.8 In-Settings Console & Key Switch</a>
-                    <a href="#sec-4-9" class="doc-toc-link">4.9 Privacy & Zero Telemetry</a>
-                    <a href="#sec-4-10" class="doc-toc-link">4.10 Production Best Practices</a>
+                    <a href="#sec-4-2" class="doc-toc-link">4.2 Multi-Channel Guide</a>
+                    <a href="#sec-4-3" class="doc-toc-link">4.3 Claim &amp; Recovery Portal</a>
+                    <a href="#sec-4-4" class="doc-toc-link">4.4 7-Day Live Trial</a>
+                    <a href="#sec-4-5" class="doc-toc-link">4.5 Admin Lockout & Unlock</a>
+                    <a href="#sec-4-6" class="doc-toc-link">4.6 Free Localhost Testing</a>
+                    <a href="#sec-4-7" class="doc-toc-link">4.7 Key Re-binding to New Domain</a>
+                    <a href="#sec-4-8" class="doc-toc-link">4.8 14-Day Offline Shield</a>
+                    <a href="#sec-4-9" class="doc-toc-link">4.9 In-Settings Console & Key Switch</a>
+                    <a href="#sec-4-10" class="doc-toc-link">4.10 Privacy & Zero Telemetry</a>
+                    <a href="#sec-4-11" class="doc-toc-link">4.11 Production Best Practices</a>
                     
                     <hr class="my-2">
                     <a href="#ch4-licensing" class="doc-toc-link text-muted small">
@@ -1014,7 +1187,7 @@
                         <span class="input-group-text bg-white border-end-0 text-primary fs-5">
                             <i class="mdi mdi-magnify"></i>
                         </span>
-                        <input type="text" class="form-control form-control-lg border-start-0 ps-0" id="docGlobalSearch" placeholder="Search documentation... (e.g., License, Grace Period, Domain Transfer, Envato)">
+                        <input type="text" class="form-control form-control-lg border-start-0 ps-0" id="docGlobalSearch" placeholder="Search documentation... (e.g., License, Grace Period, Domain Transfer, B2B Key)">
                     </div>
                 </div>
                 <div class="modal-body p-0" id="docSearchResults" style="max-height: 420px; overflow-y: auto;">

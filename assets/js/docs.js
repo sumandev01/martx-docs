@@ -592,65 +592,92 @@ document.addEventListener('DOMContentLoaded', () => {
     {
         "ch": 4,
         "badge": "Ch 4 • License",
-        "title": "4.2 Multi-Marketplace Verification Guide",
+        "title": "4.2 Multi-Channel License Verification Guide",
         "url": "license-activation.html#sec-4-2",
         "type": "Section",
-        "snippet": "MartX provides native support across all major script marketplaces. Select the marketplace card where you acquired your license:",
-        "keywords": "4.2 multi-marketplace verification guide sec-4-2 envato codecanyon codester templatemonster direct purchase code buyer key verification domain transfer grace period 4.2 multi-marketplace verification guide martx provides native support across all major script marketplaces. select the marketplace card where you acquired your license marketplace channel key identifier where find your key codecanyon envato envato purchase code uuid format log codecanyon.net downloads rarr locate martx rarr click download rarr select license certificate purchase code pdf text your 36-character purchase code located inside"
+        "snippet": "MartX provides native support across multiple sales channels and authorized digital marketplaces. Select your purchase channel:",
+        "keywords": "4.2 multi-channel license verification guide sec-4-2 direct b2b codester templatemonster purchase channel official license key purchase email address verification domain transfer grace period 4.2 multi-channel verification guide martx provides native support across multiple sales channels. select the channel where you acquired your license direct b2b official license key codester templatemonster"
     },
     {
         "ch": 4,
         "badge": "Ch 4 • License",
-        "title": "4.3 7-Day Live Domain Installation Trial Window (Grace Period)",
+        "title": "4.3 Self-Service License Claim & Key Recovery Portal",
         "url": "license-activation.html#sec-4-3",
         "type": "Section",
-        "snippet": "We understand that merchants and agencies often need time to connect their payment gateways, upload catalog items, and verify storefront ...",
-        "keywords": "4.3 7-day live domain installation trial window (grace period) sec-4-3 envato codecanyon codester templatemonster direct purchase code buyer key verification domain transfer grace period 4.3 7-day live domain installation trial window grace period understand that merchants and agencies often need time connect their payment gateways upload catalog items and verify storefront operations live production domain before permanently binding their license key. how the 7-day window works for buyers instant unrestricted access from the moment you first install martx any live domain e.g. yourdomain.com you"
+        "snippet": "Claim or retrieve your official MartX License Key directly at license.getmartx.com using your 3 marketplace credentials (channel, username, purchase code).",
+        "keywords": "4.3 self-service license claim & key recovery portal sec-4-3 license.getmartx.com client portal lost key retrieve credentials purchase code marketplace username codecanyon codester templatemonster first time buyer account setup instant key copy 24/7 self service"
     },
     {
         "ch": 4,
         "badge": "Ch 4 • License",
-        "title": "4.4 Admin Panel Lockdown Screen & How to Unlock",
+        "title": "4.4 7-Day Live Domain Installation Trial Window (Grace Period)",
         "url": "license-activation.html#sec-4-4",
         "type": "Section",
-        "snippet": "If the initial 7-day live trial window elapses without entering a valid purchase code, your Administrative Panel safely enters the Licens...",
-        "keywords": "4.4 admin panel lockdown screen & how to unlock sec-4-4 envato codecanyon codester templatemonster direct purchase code buyer key verification domain transfer grace period 4.4 admin panel lockdown screen how unlock the initial 7-day live trial window elapses without entering valid purchase code your administrative panel safely enters the license verification lockdown screen lockdown mode standard admin routes are paused until the license activated. rest assured your customer storefront and catalog remain safe administrative access locked trial window expired your 7-day live domain trial"
+        "snippet": "We understand that merchants and agencies often need time to connect their payment gateways, upload catalog items, and verify storefront ...",
+        "keywords": "4.4 7-day live domain installation trial window (grace period) sec-4-4 envato codecanyon codester templatemonster direct purchase code buyer key verification domain transfer grace period 4.4 7-day live domain installation trial window grace period understand that merchants and agencies often need time connect their payment gateways upload catalog items and verify storefront operations live production domain before permanently binding their license key. how the 7-day window works for buyers instant unrestricted access from the moment you first install martx any live domain e.g. yourdomain.com you"
     },
     {
         "ch": 4,
         "badge": "Ch 4 • License",
-        "title": "4.5 Unrestricted Localhost & Developer Testing (100% Free)",
+        "title": "4.5 Admin Panel Lockdown Screen & How to Unlock",
         "url": "license-activation.html#sec-4-5",
         "type": "Section",
-        "snippet": "You never have to waste your live domain activation quota when building, styling, or testing your store on local computers or staging san...",
-        "keywords": "4.5 unrestricted localhost & developer testing (100% free) sec-4-5 envato codecanyon codester templatemonster direct purchase code buyer key verification domain transfer grace period 4.5 unrestricted localhost developer testing 100 free you never have waste your live domain activation quota when building styling testing your store local computers staging sandboxes local environment pattern recognized domains developer mode policy standard localhost localhost 127.0.0.1 localhost 8000 free amp unlimited expiration local development tlds .test laragon valet .local .localhost free amp unlimited expiration local lan addresses 192.168."
+        "snippet": "If the initial 7-day live trial window elapses without entering a valid purchase code, your Administrative Panel safely enters the Licens...",
+        "keywords": "4.5 admin panel lockdown screen & how to unlock sec-4-5 envato codecanyon codester templatemonster direct purchase code buyer key verification domain transfer grace period 4.5 admin panel lockdown screen how unlock the initial 7-day live trial window elapses without entering valid purchase code your administrative panel safely enters the license verification lockdown screen lockdown mode standard admin routes are paused until the license activated. rest assured your customer storefront and catalog remain safe administrative access locked trial window expired your 7-day live domain trial"
     },
     {
         "ch": 4,
         "badge": "Ch 4 • License",
-        "title": "4.6 License Key Re-binding & Migration to a New Domain",
+        "title": "4.6 Unrestricted Localhost & Developer Testing (100% Free)",
         "url": "license-activation.html#sec-4-6",
         "type": "Section",
-        "snippet": "Under official commercial licensing, a single MartX purchase code can be actively bound to one live production domain at a time. However,...",
-        "keywords": "4.6 license key re-binding & migration to a new domain sec-4-6 envato codecanyon codester templatemonster direct purchase code buyer key verification domain transfer grace period 4.6 license key re-binding migration new domain under official commercial licensing single martx purchase code can actively bound one live production domain time however you are migrating from development staging subdomain your primary domain e.g. from staging.mystore.com mystore.com rebranding your business under new domain name you not need purchase new license key. martx includes automated 1-click license relocation amp re-binding"
+        "snippet": "You never have to waste your live domain activation quota when building, styling, or testing your store on local computers or staging san...",
+        "keywords": "4.6 unrestricted localhost & developer testing (100% free) sec-4-6 envato codecanyon codester templatemonster direct purchase code buyer key verification domain transfer grace period 4.6 unrestricted localhost developer testing 100 free you never have waste your live domain activation quota when building styling testing your store local computers staging sandboxes local environment pattern recognized domains developer mode policy standard localhost localhost 127.0.0.1 localhost 8000 free amp unlimited expiration local development tlds .test laragon valet .local .localhost free amp unlimited expiration local lan addresses 192.168."
     },
     {
         "ch": 4,
         "badge": "Ch 4 • License",
-        "title": "4.7 14-Day Offline Fail-Safe Checkout Protection",
+        "title": "4.7 License Key Re-binding & Migration to a New Domain",
         "url": "license-activation.html#sec-4-7",
         "type": "Section",
-        "snippet": "Store owners never have to worry about downtime caused by external internet fluctuations or cloud server maintenance.",
-        "keywords": "4.7 14-day offline fail-safe checkout protection sec-4-7 envato codecanyon codester templatemonster direct purchase code buyer key verification domain transfer grace period 4.7 14-day offline fail-safe checkout protection store owners never have worry about downtime caused external internet fluctuations cloud server maintenance. continuous sales guarantee 14-day fail-safe window your hosting server cannot reach the cloud licensing registry during routine periodic health checks your storefront and admin panel continue running with 100 normal checkout and order processing for consecutive days silent auto-renewal soon"
+        "snippet": "Under official commercial licensing, a single MartX purchase code can be actively bound to one live production domain at a time. However,...",
+        "keywords": "4.7 license key re-binding & migration to a new domain sec-4-7 envato codecanyon codester templatemonster direct purchase code buyer key verification domain transfer grace period 4.7 license key re-binding migration new domain under official commercial licensing single martx purchase code can actively bound one live production domain time however you are migrating from development staging subdomain your primary domain e.g. from staging.mystore.com mystore.com rebranding your business under new domain name you not need purchase new license key. martx includes automated 1-click license relocation amp re-binding"
     },
     {
         "ch": 4,
         "badge": "Ch 4 • License",
-        "title": "4.8 In-Settings License Console, Key Switching & Safe Deactivation",
+        "title": "4.8 14-Day Offline Fail-Safe Checkout Protection",
         "url": "license-activation.html#sec-4-8",
         "type": "Section",
+        "snippet": "Store owners never have to worry about downtime caused by external internet fluctuations or cloud server maintenance.",
+        "keywords": "4.8 14-day offline fail-safe checkout protection sec-4-8 envato codecanyon codester templatemonster direct purchase code buyer key verification domain transfer grace period 4.8 14-day offline fail-safe checkout protection store owners never have worry about downtime caused external internet fluctuations cloud server maintenance. continuous sales guarantee 14-day fail-safe window your hosting server cannot reach the cloud licensing registry during routine periodic health checks your storefront and admin panel continue running with 100 normal checkout and order processing for consecutive days silent auto-renewal soon"
+    },
+    {
+        "ch": 4,
+        "badge": "Ch 4 • License",
+        "title": "4.9 In-Settings License Console, Key Switching & Safe Deactivation",
+        "url": "license-activation.html#sec-4-9",
+        "type": "Section",
         "snippet": "Super Administrators can inspect active credentials, switch purchase codes, or relocate licenses directly from the dedicated management c...",
-        "keywords": "4.8 in-settings license console, key switching & safe deactivation sec-4-8 envato codecanyon codester templatemonster direct purchase code buyer key verification domain transfer grace period 4.8 in-settings license console key switching safe deactivation super administrators can inspect active credentials switch purchase codes relocate licenses directly from the dedicated management console located super admin exclusive path admin sidebar rarr system settings rarr license amp verification tab the license amp verification console organized into two operational workstations current license overview amp key switcher active credentials display displays"
+        "keywords": "4.9 in-settings license console, key switching & safe deactivation sec-4-9 envato codecanyon codester templatemonster direct purchase code buyer key verification domain transfer grace period 4.9 in-settings license console key switching safe deactivation super administrators can inspect active credentials switch purchase codes relocate licenses directly from the dedicated management console located super admin exclusive path admin sidebar rarr system settings rarr license amp verification tab the license amp verification console organized into two operational workstations current license overview amp key switcher active credentials display displays"
+    },
+    {
+        "ch": 4,
+        "badge": "Ch 4 • License",
+        "title": "4.10 Merchant Privacy & Zero-Telemetry Architecture",
+        "url": "license-activation.html#sec-4-10",
+        "type": "Section",
+        "snippet": "We design the MartX license verification system to strictly minimize data collection in line with international privacy best practices.",
+        "keywords": "4.10 merchant privacy & zero-telemetry architecture sec-4-10 privacy data sovereignty no telemetry gdpr merchant security"
+    },
+    {
+        "ch": 4,
+        "badge": "Ch 4 • License",
+        "title": "4.11 Live Production Deployment Checklist & Best Practices",
+        "url": "license-activation.html#sec-4-11",
+        "type": "Section",
+        "snippet": "When moving your MartX store from a staging computer to a live web hosting environment, ensure the following quick checks are completed.",
+        "keywords": "4.11 live production deployment checklist & best practices sec-4-11 app_env production outbound https port 443 staging migration"
     },
     {
         "ch": 5,
@@ -2329,17 +2356,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. Interactive Marketplace Mockup Tabs (Chapter 4 & Chapter 3)
     const marketplaceMetadata = {
-        codecanyon: {
-            title: 'CodeCanyon',
-            label: 'Envato Purchase Code',
-            icon: 'mdi-shopping-outline',
-            value: '94a12b8c-55e1-4c12-88f1-22e89fa6b301',
-            placeholder: 'e.g., 94b1a45e-4501-4475-b6d8-XXXXXXXXXXXX',
-            help: 'Found in your CodeCanyon Downloads &gt; License Certificate &amp; Purchase Code PDF.'
+        direct: {
+            title: 'Direct / B2B',
+            label: 'License Key',
+            icon: 'mdi-shield-check-outline',
+            value: 'MARTX-PRO-7749-ENTERPRISE',
+            placeholder: 'e.g., MARTX-PRO-XXXX-XXXX',
+            help: 'Provided by MartX Author upon contract purchase or in your client portal invoice.'
         },
         codester: {
             title: 'Codester',
-            label: 'Codester Order ID',
+            label: 'License Key (Codester Order ID)',
             icon: 'mdi-storefront-outline',
             value: 'COD-9842107',
             placeholder: 'e.g., COD-1234567',
@@ -2347,19 +2374,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         templatemonster: {
             title: 'TemplateMonster',
-            label: 'TemplateMonster Order / Invoice ID',
+            label: 'License Key (TemplateMonster Invoice ID)',
             icon: 'mdi-palette-swatch-outline',
             value: 'TM-INV-49281',
             placeholder: 'e.g., TM-INV-88219',
             help: 'Found in your TemplateMonster Account &gt; Order History &gt; Item Invoice / Download Details.'
-        },
-        direct: {
-            title: 'Direct / B2B',
-            label: 'MartX Author License Key',
-            icon: 'mdi-shield-check-outline',
-            value: 'MARTX-DIRECT-ENTERPRISE-2026-X99',
-            placeholder: 'e.g., MARTX-DIRECT-XXXX-XXXX',
-            help: 'Received directly via official email from lead author Suman Chandra Dev Sharma (sumondav444@gmail.com).'
         }
     };
 
@@ -2463,7 +2482,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mockCancelBtn) {
         mockCancelBtn.addEventListener('click', () => {
-            const defaultCard = document.querySelector('#docMarketGrid [data-channel="codecanyon"]');
+            const defaultCard = document.querySelector('#docMarketGrid [data-channel="direct"]');
             if (defaultCard) defaultCard.click();
         });
     }

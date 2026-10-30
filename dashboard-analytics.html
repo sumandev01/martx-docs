@@ -314,6 +314,63 @@
                                 </tbody>
                             </table>
                         </div>
+                        <!-- ================= 5.1.1 PROACTIVE ONBOARDING GUARDRAILS & DASHBOARD ALERTS ================= -->
+                        <div class="doc-subsection mt-4 mb-4" id="sec-5-1-alerts">
+                            <h4 class="fw-bold text-heading mb-3">
+                                <i class="mdi mdi-bell-ring-outline text-primary me-1"></i> 5.1.1 Proactive System Alerts &amp; Onboarding Guardrails
+                            </h4>
+                            <p class="text-muted small">
+                                To prevent store operators from launching without mission-critical dependencies configured, MartX incorporates <strong>non-intrusive, proactive dashboard alert banners</strong> at the top of the command console:
+                            </p>
+
+                            <!-- Mockup 1: SMTP Warning Banner -->
+                            <div class="card border-0 rounded-3 mb-3 p-3 shadow-xs" style="background-color: #fffbeb; border-left: 4px solid #f59e0b !important;">
+                                <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="p-2 rounded-3 bg-warning text-white flex-shrink-0" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                                            <i class="mdi mdi-email-alert fs-4"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="fw-bold text-dark mb-0">Action Required: Outgoing Mail Server (SMTP) Not Verified</h6>
+                                            <p class="small text-muted mb-0">Customers will not receive order confirmation receipts, invoice PDFs, or 2FA login verification codes until mail delivery is verified.</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="settings-theme.html#sec-21-4" class="btn btn-warning btn-sm fw-bold px-3 py-1.5 shadow-xs text-dark text-decoration-none">
+                                            <i class="mdi mdi-cog me-1"></i> Configure Mail Server
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Alert Behavioral Matrix Table -->
+                            <div class="table-responsive my-3">
+                                <table class="table table-hover border align-middle mb-0 small">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th style="width: 25%;">Alert Banner</th>
+                                            <th style="width: 20%;">Trigger Condition</th>
+                                            <th style="width: 35%;">Storefront Impact &amp; Consequence</th>
+                                            <th style="width: 20%;">Resolution Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong class="text-warning"><i class="mdi mdi-email-alert me-1"></i> SMTP Unverified Banner</strong></td>
+                                            <td><code>smtp_verified !== '1'</code> on any live domain</td>
+                                            <td>Order receipts, password resets, and 2FA OTP emails cannot dispatch.</td>
+                                            <td>Complete the 1-click test in <strong>Chapter 21.4</strong>; banner permanently auto-dismisses.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong class="text-danger"><i class="mdi mdi-shield-alert me-1"></i> License Grace Period Banner</strong></td>
+                                            <td>Unlicensed installation running on live domain</td>
+                                            <td>14-day grace window countdown begins before store lockdown.</td>
+                                            <td>Bind valid license key in <strong>Chapter 4</strong> or Chapter 21.6.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- ================= 5.2: EXECUTIVE KPI METRICS ================= -->
@@ -520,7 +577,7 @@
                                                     <td class="text-end"><span class="badge bg-danger text-white">0 Left</span></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Casio G-Shock Rugged Tactical Watch</td>
+                                                    <td>Zenith Rugged Tactical Watch</td>
                                                     <td class="text-end"><span class="badge bg-danger text-white">0 Left</span></td>
                                                 </tr>
                                             </tbody>
