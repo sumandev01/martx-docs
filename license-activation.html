@@ -1048,6 +1048,45 @@
                         </div>
                     </div>
 
+                    <!-- 4.12: CLI & HEADLESS VPS LICENSE COMMANDS -->
+                    <div class="doc-subsection mt-5" id="sec-4-12">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-console text-primary me-1"></i> 4.12 Headless VPS &amp; Terminal License CLI Commands
+                        </h3>
+                        <p>
+                            For DevOps engineers and automated server provisioning scripts (such as Ansible, Docker, or CI/CD pipelines), MartX supports direct terminal activation and license verification via Artisan commands:
+                        </p>
+
+                        <div class="table-responsive mb-4">
+                            <table class="table table-bordered table-hover align-middle bg-white">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width: 35%;">Artisan Command</th>
+                                        <th style="width: 25%;">Execution Role</th>
+                                        <th>Description &amp; Options</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>php artisan martx:activate --status</code></td>
+                                        <td><span class="badge bg-info-subtle text-info border border-info">Status Inspection</span></td>
+                                        <td>Queries the local encrypted license payload and displays the current binding domain, registered email, and validation status without triggering network lockouts.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>php artisan martx:activate --key="..." --email="..."</code></td>
+                                        <td><span class="badge bg-success-subtle text-success border border-success">Headless Activation</span></td>
+                                        <td>Directly contacts the central license gateway to bind the server domain to the provided purchase code and buyer email without visiting the web installer.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>php artisan martx:install</code></td>
+                                        <td><span class="badge bg-primary-subtle text-primary border border-primary">Terminal Setup Wizard</span></td>
+                                        <td>Interactive CLI wizard that runs migrations, sets up administrative accounts, and triggers license verification in a single continuous terminal flow.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
                     <!-- CHAPTER NAVIGATION BUTTONS -->
                     <div class="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-sm-center gap-3 mt-5 pt-4 border-top">
                         <a href="installation.html" class="btn btn-outline-secondary fw-bold px-3">
@@ -1064,7 +1103,7 @@
             <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
             <aside class="col-xl-2 d-none d-xl-block">
                 <div class="doc-toc" style="font-size: 0.75rem;">
-                    <div class="doc-toc-title">On This Page (11 Topics)</div>
+                    <div class="doc-toc-title">On This Page (12 Topics)</div>
                     <a href="#sec-4-1" class="doc-toc-link active">4.1 In-Dashboard Suite</a>
                     <a href="#sec-4-2" class="doc-toc-link">4.2 Multi-Channel Guide</a>
                     <a href="#sec-4-3" class="doc-toc-link">4.3 Claim &amp; Recovery Portal</a>
@@ -1076,6 +1115,7 @@
                     <a href="#sec-4-9" class="doc-toc-link">4.9 In-Settings Console & Key Switch</a>
                     <a href="#sec-4-10" class="doc-toc-link">4.10 Privacy & Zero Telemetry</a>
                     <a href="#sec-4-11" class="doc-toc-link">4.11 Production Best Practices</a>
+                    <a href="#sec-4-12" class="doc-toc-link">4.12 Terminal CLI Commands</a>
                     
                     <hr class="my-2">
                     <a href="#ch4-licensing" class="doc-toc-link text-muted small">

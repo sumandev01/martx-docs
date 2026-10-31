@@ -919,6 +919,63 @@
                         </div>
                     </div>
 
+                    <!-- ================= 12.7.1: DIRECT BANK TRANSFER & EXTENDED GATEWAYS PIPELINE ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-12-7-1">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-bank-outline text-primary me-1"></i> 12.7.1 Direct Bank Transfer &amp; Extended Gateways Pipeline (Paystack, Razorpay, BinancePay, WayForPay)
+                        </h3>
+                        <p class="text-muted">
+                            In addition to standard manual mobile payments, MartX incorporates a dedicated <strong>Direct Bank Transfer</strong> enum case (<code>PaymentMethodEnums::BANK_TRANSFER</code>) for high-value B2B invoicing, wholesale checkouts, and international SWIFT/IBAN wire remittances. Furthermore, the core framework comes with pre-configured, CSRF-exempted webhook callback endpoints for regional international expansion:
+                        </p>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6 col-lg-3">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-xs">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-credit-card-fast text-success fs-4"></i>
+                                        <h6 class="fw-bold mb-0">Paystack (Africa)</h6>
+                                    </div>
+                                    <p class="small text-muted mb-2">Nigeria, Ghana, Kenya &amp; South Africa card and mobile money processing.</p>
+                                    <code class="extra-small text-primary">/payment/paystack/callback</code>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-xs">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-currency-inr text-primary fs-4"></i>
+                                        <h6 class="fw-bold mb-0">Razorpay (India)</h6>
+                                    </div>
+                                    <p class="small text-muted mb-2">UPI, NetBanking, RuPay, and domestic Indian digital wallets.</p>
+                                    <code class="extra-small text-primary">/payment/razorpay/callback</code>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-xs">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-bitcoin text-warning fs-4"></i>
+                                        <h6 class="fw-bold mb-0">BinancePay (Crypto)</h6>
+                                    </div>
+                                    <p class="small text-muted mb-2">Instant Web3 crypto payment via QR code and Binance App wallet.</p>
+                                    <code class="extra-small text-primary">/payment/binancepay/callback</code>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="p-3 border rounded-3 bg-white h-100 shadow-xs">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-credit-card-wireless text-info fs-4"></i>
+                                        <h6 class="fw-bold mb-0">WayForPay (E. Europe)</h6>
+                                    </div>
+                                    <p class="small text-muted mb-2">Fast checkout for Ukraine, Poland, and international multi-currency cards.</p>
+                                    <code class="extra-small text-primary">/payment/wayforpay/callback</code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-light border small text-muted">
+                            <i class="mdi mdi-shield-check text-success me-1"></i> <strong>Zero-Configuration CSRF Exemption:</strong> In <code>bootstrap/app.php</code>, all callback endpoints (<code>/payment/stripe/webhook</code>, <code>/payment/ssl/*</code>, <code>/payment/coingate/callback</code>, <code>/payment/paystack/callback</code>, <code>/payment/razorpay/callback</code>, <code>/payment/binancepay/callback</code>, <code>/payment/wayforpay/callback</code>) are pre-whitelisted in <code>validateCsrfTokens()</code>, eliminating 419 Page Expired errors when remote payment servers send background IPN status notifications.
+                        </div>
+                    </div>
+
                     <!-- ================= 12.8: PAYMENT LOGOS & VISUAL TRUST BADGES ================= -->
                     <div class="doc-subsection mt-5 mb-5" id="sec-12-8">
                         <h3 class="fw-bold text-heading mb-3">
@@ -1235,6 +1292,7 @@
                     <a href="#sec-12-5" class="doc-toc-link">12.5 CoinGate Crypto</a>
                     <a href="#sec-12-6" class="doc-toc-link">12.6 COD &amp; Advance</a>
                     <a href="#sec-12-7" class="doc-toc-link">12.7 Manual Payments</a>
+                    <a href="#sec-12-7-1" class="doc-toc-link">12.7.1 Extended Gateways</a>
                     <a href="#sec-12-8" class="doc-toc-link">12.8 Trust Badges</a>
                     <a href="#sec-12-9" class="doc-toc-link">12.9 Settlement SOP</a>
                     <a href="#sec-12-10" class="doc-toc-link">12.10 Audit Logs Hub</a>

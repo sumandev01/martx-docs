@@ -1069,6 +1069,73 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- ================= 18.8: STOREFRONT AI CHATBOT & WHATSAPP SUPPORT ================= -->
+                    <div class="doc-subsection mt-5" id="sec-18-8">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <span class="badge bg-success text-white me-2" style="font-size: 0.9rem;">18.8</span>
+                            <i class="mdi mdi-robot text-primary me-1"></i> Storefront 24/7 AI Shopping Assistant &amp; WhatsApp Live Chat Hub
+                        </h3>
+                        <p class="text-muted">
+                            MartX provides an omni-channel customer interaction experience directly on the public storefront. Combining autonomous conversational intelligence with instant human escalation guarantees high conversion rates, immediate support response, and frictionless buyer self-service.
+                        </p>
+
+                        <!-- Feature Comparison Cards -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 bg-white shadow-xs h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-robot text-primary fs-4"></i>
+                                        <h6 class="fw-bold text-heading mb-0">24/7 AI Shopping Assistant (<code class="small">&lt;x-web.ai-chat-widget /&gt;</code>)</h6>
+                                    </div>
+                                    <p class="small text-muted mb-2">
+                                        Powered by a resilient Google Gemini 4-model fallback cascade (<code>gemini-3.5-flash-lite</code> &rarr; <code>gemini-3.6-flash</code> &rarr; <code>gemini-2.5-flash</code> &rarr; <code>gemini-3.7-flash</code>). Automatically advises shoppers on sizing, recommended pairings, and catalog inventory with zero credit card required.
+                                    </p>
+                                    <div class="p-2 rounded bg-light-subtle border small text-muted">
+                                        <i class="mdi mdi-shield-check text-success me-1"></i> <strong>Anti-Abuse Rate Limit:</strong> Protected by <code>throttle:30,1</code> (max 30 requests/minute per client IP) to guard against API quota exhaustion.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-3 bg-white shadow-xs h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="mdi mdi-whatsapp text-success fs-4"></i>
+                                        <h6 class="fw-bold text-heading mb-0">1-Click WhatsApp Live Agent Escalation</h6>
+                                    </div>
+                                    <p class="small text-muted mb-2">
+                                        Customers seeking human support can instantly open a direct conversation with your support desk via the floating WhatsApp trigger. Pre-fills an instant greeting message automatically configured in <strong>System Settings &rarr; AI &amp; Live Chat</strong>.
+                                    </p>
+                                    <div class="p-2 rounded bg-light-subtle border small text-muted">
+                                        <i class="mdi mdi-cellphone-link text-primary me-1"></i> <strong>Frictionless Handoff:</strong> Deep-links directly to WhatsApp Web on desktops or the native WhatsApp app on iOS and Android devices.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Real-Time Deterministic Order Tracking (Zero Hallucination) -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold text-heading mb-2">
+                                    <i class="mdi mdi-magnify-scan text-primary me-1"></i> Deterministic Real-Time Order Tracking (Zero Hallucination Guarantee)
+                                </h5>
+                                <p class="text-muted small mb-3">
+                                    Traditional LLM chatbots frequently hallucinate fictitious delivery dates or wrong payment states. MartX implements a strict, deterministic regex interception engine:
+                                </p>
+                                <div class="p-3 rounded-3 bg-light border mb-3">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-primary text-white font-monospace">Deterministic Logic</span>
+                                        <strong class="text-heading small">How Order Tracking Queries Are Processed:</strong>
+                                    </div>
+                                    <ol class="small text-muted ps-3 mb-0">
+                                        <li class="mb-1">When a customer types an order query containing <code>#ORD-...</code> or <code>ORD-...</code>, <code>AiChatService::handleOrderTracking()</code> intercepts the prompt <em>before</em> sending it to Google Gemini.</li>
+                                        <li class="mb-1">The system queries the real database record directly, fetching live status (Pending, Processing, Delivered), item count, and formatted currency total.</li>
+                                        <li class="mb-1">Returns an accurate, structured message with real data and appends a direct WhatsApp handoff button pre-filled with: <em>"Regarding Order #ORD-XXXXX"</em>.</li>
+                                        <li><strong>Privacy Guard:</strong> Strict zero-customer-PII leakage guarantee — customer phone numbers, physical addresses, and payment card details are never exposed in AI chat responses.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
@@ -1095,6 +1162,7 @@
                     <a href="#sec-18-5" class="doc-toc-link">18.5 Newsletters &amp; Audience</a>
                     <a href="#sec-18-6" class="doc-toc-link">18.6 Interaction SOP</a>
                     <a href="#sec-18-7" class="doc-toc-link text-success fw-semibold"><i class="mdi mdi-shield-account me-1"></i> 18.7 Account Security &amp; Address</a>
+                    <a href="#sec-18-8" class="doc-toc-link text-primary fw-semibold"><i class="mdi mdi-robot me-1"></i> 18.8 AI Chat &amp; WhatsApp</a>
                     
                     <hr class="my-2">
                     <a href="#ch18-intro" class="doc-toc-link text-muted small">

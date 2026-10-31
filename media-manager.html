@@ -690,7 +690,67 @@
                     </div>
                 </div>
 
-                                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
+                <!-- ================= 6.7: ENTERPRISE STORAGE & CLI MAINTENANCE SUITE ================= -->
+                <div class="doc-subsection mt-4 mb-5" id="sec-6-7">
+                    <h3 class="fw-bold text-heading mb-3">
+                        <i class="mdi mdi-console-line text-primary me-1"></i> 6.7 Enterprise Storage &amp; CLI Maintenance Suite
+                    </h3>
+                    <p>
+                        For high-volume production stores managing tens of thousands of catalog assets, MartX includes a dedicated suite of headless Artisan CLI commands for server maintenance and scheduled automation:
+                    </p>
+
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered table-hover align-middle bg-white">
+                            <thead class="table-light">
+                                <tr>
+                                    <th style="width: 32%;">Artisan CLI Command</th>
+                                    <th style="width: 25%;">Execution Scope</th>
+                                    <th>Operational Purpose &amp; Safety Flags</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>php artisan media:clean</code></td>
+                                    <td><span class="badge bg-danger-subtle text-danger border border-danger">Storage Disk Cleanup</span></td>
+                                    <td>
+                                        Scans the physical <code>public/storage/media</code> directory and purges orphaned files that no longer have corresponding records in the <code>media</code> database table.
+                                        <div class="mt-1 small text-muted">
+                                            <strong>Dry-Run Mode:</strong> Run <code>php artisan media:clean --dry-run</code> to audit orphaned files without making disk changes.
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>php artisan media:vacuum</code></td>
+                                    <td><span class="badge bg-warning-subtle text-warning border border-warning">Database Vacuum</span></td>
+                                    <td>
+                                        Purges dangling database rows in the <code>media</code> table whose physical asset files are missing from storage, restoring 100% database integrity.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>php artisan media:optimize</code></td>
+                                    <td><span class="badge bg-success-subtle text-success border border-success">WebP Compression</span></td>
+                                    <td>
+                                        Batch scans catalog images and generates modern WebP compressed variants to slash mobile page load times and improve Google Core Web Vitals.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="alert alert-info border-info d-flex align-items-start gap-3 mb-0">
+                        <i class="mdi mdi-information-outline fs-4 text-info mt-1"></i>
+                        <div>
+                            <h6 class="fw-bold mb-1">Recommended VPS Server Crontab</h6>
+                            <p class="small mb-0">
+                                Server administrators can safely schedule automated weekly disk hygiene via standard crontab:
+                                <br>
+                                <code>0 3 * * 0 cd /path-to-martx &amp;&amp; php artisan media:clean --force &gt;&gt; /dev/null 2&gt;&amp;1</code>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= CHAPTER NAVIGATION BOTTOM BAR ================= -->
                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-4 border-top mt-5">
                     <a href="dashboard-analytics.html" class="btn btn-outline-secondary fw-bold px-4">
                         <i class="mdi mdi-arrow-left me-1"></i> Previous: Chapter 5 (Dashboard Telemetry)
@@ -713,6 +773,7 @@
                     <a href="#sec-6-4" class="doc-toc-link">6.4 Universal Modal (Gallery)</a>
                     <a href="#sec-6-5" class="doc-toc-link">6.5 Universal Modal (Upload)</a>
                     <a href="#sec-6-6" class="doc-toc-link">6.6 Asset Best Practices</a>
+                    <a href="#sec-6-7" class="doc-toc-link">6.7 CLI Maintenance Suite</a>
                     
                     <hr class="my-2">
                     <a href="#ch6-intro" class="doc-toc-link text-muted small">

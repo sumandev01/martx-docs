@@ -773,6 +773,76 @@ Nameserver 2: burt.ns.cloudflare.com</code></pre>
                         </div>
                     </div>
 
+                    <!-- ================= 23.10: HIGH-CONCURRENCY DATABASE INDEXING & DYNAMIC SITEMAP ================= -->
+                    <div class="doc-subsection mt-5 mb-5" id="sec-23-10">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-primary text-white">23.10</span>
+                            <h3 class="fw-bold mb-0 text-heading">High-Concurrency Database Composite Indexing &amp; Dynamic XML Sitemap (SEO)</h3>
+                        </div>
+                        <p class="text-muted">
+                            To maintain ultra-responsive sub-second storefront performance during heavy viral traffic spikes and ensure complete organic search engine visibility, MartX includes enterprise database optimization and automated Google XML indexing out of the box:
+                        </p>
+
+                        <div class="row g-4 mb-4">
+                            <!-- Database Composite Indexing Card -->
+                            <div class="col-lg-6">
+                                <div class="p-4 border rounded-3 bg-white h-100 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <div class="p-2 rounded bg-primary-subtle text-primary">
+                                            <i class="mdi mdi-database-cog-outline fs-4"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="fw-bold mb-0 text-heading">B-Tree Composite Indexes</h5>
+                                            <small class="text-muted">Lock-Free High-Throughput Orders</small>
+                                        </div>
+                                    </div>
+                                    <p class="small text-muted mb-3">
+                                        High-volume stores processing hundreds of simultaneous orders can experience database contention when background crons run. MartX eliminates full-table scans with specialized composite indexes on the <code>orders</code> table:
+                                    </p>
+                                    <ul class="small text-muted mb-3 ps-3">
+                                        <li class="mb-2">
+                                            <strong class="text-heading"><code>idx_orders_status_cron</code>:</strong> Covers <code>(payment_status, order_status, payment_method, created_at)</code>. Powers lock-free background automated order cancellation and payment expiry processing.
+                                        </li>
+                                        <li>
+                                            <strong class="text-heading"><code>idx_orders_status_created</code>:</strong> Covers <code>(order_status, created_at)</code>. Powers instant admin dashboard telemetry filtering and customer real-time tracking lookups.
+                                        </li>
+                                    </ul>
+                                    <div class="p-2 bg-light rounded font-monospace small border">
+                                        php artisan migrate
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dynamic XML Sitemap Card -->
+                            <div class="col-lg-6">
+                                <div class="p-4 border rounded-3 bg-white h-100 shadow-sm">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <div class="p-2 rounded bg-success-subtle text-success">
+                                            <i class="mdi mdi-sitemap-outline fs-4"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="fw-bold mb-0 text-heading">Dynamic XML Sitemap Hub</h5>
+                                            <small class="text-muted">Real-Time Google &amp; Bing Discovery</small>
+                                        </div>
+                                    </div>
+                                    <p class="small text-muted mb-3">
+                                        MartX dynamically generates an SEO-standard XML sitemap accessible at <code>https://yourdomain.com/sitemap.xml</code> with zero static file management required:
+                                    </p>
+                                    <ul class="small text-muted mb-3 ps-3">
+                                        <li class="mb-1"><strong>Core Pages:</strong> Homepage, Shop Catalog, About Us, Contact, and Order Tracking.</li>
+                                        <li class="mb-1"><strong>Taxonomies:</strong> Active Categories, Subcategories, and Child Categories.</li>
+                                        <li class="mb-1"><strong>Verified Brands:</strong> Live brand product showcases (<code>/brand/{slug}</code>).</li>
+                                        <li class="mb-1"><strong>Catalog Items:</strong> All published, active products (<code>/product/{slug}</code>).</li>
+                                        <li><strong>Content &amp; Editorial:</strong> Published blog articles (<code>/blog/{slug}</code>).</li>
+                                    </ul>
+                                    <div class="p-2 bg-success-subtle text-success rounded small border border-success-subtle">
+                                        <i class="mdi mdi-check-circle-outline me-1"></i> Submit <code>/sitemap.xml</code> directly in Google Search Console.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- ================= CONCLUDING CELEBRATION & WELCOME BANNER (THE GRAND FINALE) ================= -->
                     <div class="doc-subsection mt-5 mb-4" id="thank-you-welcome">
                         <div class="card border-0 shadow-sm rounded-4 overflow-hidden" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(14, 165, 233, 0.05) 100%); border: 1px solid rgba(99, 102, 241, 0.2) !important;">
@@ -892,6 +962,7 @@ Nameserver 2: burt.ns.cloudflare.com</code></pre>
                     <a href="#sec-23-7" class="doc-toc-link">23.7 Bot Defense Mode</a>
                     <a href="#sec-23-8" class="doc-toc-link">23.8 Pre-Flight Matrix &amp; FAQ</a>
                     <a href="#sec-23-9" class="doc-toc-link text-success fw-semibold"><i class="mdi mdi-alert-circle-outline me-1"></i> 23.9 Error Handling Suite</a>
+                    <a href="#sec-23-10" class="doc-toc-link text-info fw-semibold"><i class="mdi mdi-database-cog-outline me-1"></i> 23.10 DB Indexing &amp; Sitemap</a>
                     <a href="#thank-you-welcome" class="doc-toc-link text-primary fw-semibold"><i class="mdi mdi-party-popper me-1"></i> Thank You &amp; Welcome</a>
                     <hr class="my-2">
                     <a href="#ch23-intro" class="doc-toc-link text-muted small">

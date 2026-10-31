@@ -342,8 +342,11 @@
                                     MartX includes a protected web trigger URL that safely executes background tasks when visited. Simply copy your store's web cron link:
                                 </p>
                                 <div class="p-3 bg-light rounded-3 border mb-3">
-                                    <span class="text-muted small d-block mb-1 fw-bold">Default Web Cron Trigger URL:</span>
-                                    <code class="text-primary fw-bold" style="font-size: 14px;">https://yourdomain.com/run-background-tasks/<span class="text-dark">YOUR_SECRET_TOKEN</span></code>
+                                    <span class="text-muted small d-block mb-1 fw-bold">Default Web Cron Trigger URL (Out-of-the-Box Ready):</span>
+                                    <code class="text-primary fw-bold" style="font-size: 14px;">https://yourdomain.com/run-background-tasks/<span class="text-dark">martx-secure-cron-2026</span></code>
+                                    <span class="text-muted extra-small d-block mt-2">
+                                        <i class="mdi mdi-information-outline text-primary me-1"></i> The default token is <code>martx-secure-cron-2026</code>. You can customize this anytime by adding <code>CRON_TOKEN=your-custom-secret</code> to your <code>.env</code> file.
+                                    </span>
                                 </div>
 
                                 <!-- Security & Rate Limit Badges -->
@@ -355,7 +358,7 @@
                                                 <h6 class="fw-bold mb-0">Custom Secret Bearer Token</h6>
                                             </div>
                                             <p class="small text-muted mb-0">
-                                                You can customize your secret key at any time in your store environment configuration (<code>CRON_TOKEN</code>). Any request using an unauthorized or guessed token is instantly rejected with an <strong>HTTP 403 Forbidden</strong> response.
+                                                Secured with constant-time cryptographic comparison (<code>hash_equals</code>) to prevent side-channel timing attacks. Any request using an unauthorized or guessed token is instantly rejected with an <strong>HTTP 403 Forbidden</strong> response.
                                             </p>
                                         </div>
                                     </div>
