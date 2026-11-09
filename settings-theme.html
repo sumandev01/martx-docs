@@ -1075,6 +1075,140 @@
                         </div>
                     </div>
 
+                    <!-- ================= 21.8 CUSTOMER SOCIAL AUTHENTICATION (GOOGLE & FACEBOOK OAUTH 2.0) ================= -->
+                    <div class="doc-subsection mt-5" id="sec-21-8">
+                        <h3 class="fw-bold text-heading mb-3">
+                            <i class="mdi mdi-account-key-outline text-primary me-1"></i> 21.8 Customer Social Authentication Hub (Google &amp; Facebook OAuth 2.0)
+                        </h3>
+                        <p class="text-muted">
+                            MartX provides single-click customer social authentication powered by Laravel Socialite. Shoppers can register and log in instantly using their official <strong>Google</strong> or <strong>Facebook (Meta)</strong> accounts across the storefront Login page, Registration page, and interactive Quick Login Modal.
+                        </p>
+
+                        <!-- Enterprise Zero-Crash Architecture Callout -->
+                        <div class="card border-0 shadow-sm rounded-3 my-4" style="background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border-left: 4px solid #3b82f6 !important;">
+                            <div class="card-body p-3 p-md-4">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-shield-check text-primary fs-4"></i>
+                                    <h6 class="fw-bold mb-0 text-heading">Smart Dynamic UI Visibility &amp; Bank-Grade Safety Guarantee</h6>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle font-monospace small ms-auto">
+                                        <i class="mdi mdi-check-decagram me-1"></i> Enterprise Standard
+                                    </span>
+                                </div>
+                                <ul class="small text-muted mb-0 ps-3">
+                                    <li class="mb-1"><strong>Optional Configuration (Zero Broken Buttons):</strong> If you do not configure Google or Facebook credentials, the social login buttons and the <code>OR</code> divider automatically hide. No customer will ever see broken or unconfigured buttons.</li>
+                                    <li class="mb-1"><strong>Automatic Single-Button Grid:</strong> If you configure only Google or only Facebook, the configured button smartly expands to full width (<code>col-12</code>). If both are configured, they automatically render in a 2-column grid (<code>col-sm-6</code>).</li>
+                                    <li class="mb-1"><strong>Backend Failsafe Guard:</strong> Direct manual visits to <code>/login/google</code> or <code>/login/facebook</code> without configured credentials are intercepted gracefully and redirected to the login page with a friendly notification—eliminating 400 Bad Request or 500 runtime crashes.</li>
+                                    <li><strong>Admin Account Protection:</strong> Administrative staff accounts (Super Admin, Admin, Manager) are strictly prohibited from accessing the system via social OAuth, preventing account hijacking vectors.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step-by-Step Setup Guides -->
+                        <div class="row g-4 mt-2 mb-4">
+                            <!-- Google OAuth Guide Card -->
+                            <div class="col-lg-6">
+                                <div class="card border shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-white py-3 px-4 border-bottom d-flex align-items-center gap-2">
+                                        <i class="mdi mdi-google text-danger fs-4"></i>
+                                        <h6 class="fw-bold mb-0">Google OAuth 2.0 Setup (3 Steps)</h6>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <ol class="small text-muted ps-3 mb-3">
+                                            <li class="mb-2">Visit <a href="https://console.cloud.google.com/" target="_blank" class="fw-semibold text-primary text-decoration-underline">Google Cloud Console</a>, sign in, and create or select a project.</li>
+                                            <li class="mb-2">Navigate to <strong>APIs &amp; Services &rarr; Credentials &rarr; Create Credentials &rarr; OAuth Client ID</strong>. Select <strong>Web application</strong> as Application Type.</li>
+                                            <li class="mb-2">
+                                                Under <strong>Authorized redirect URIs</strong>, paste your store's exact callback URL:
+                                                <div class="p-2 bg-light rounded border font-monospace text-dark mt-1" style="font-size: 11px; word-break: break-all;">
+                                                    https://yourdomain.com/login/google/callback
+                                                </div>
+                                            </li>
+                                            <li>Click <strong>Create</strong> and copy your <strong>Client ID</strong> and <strong>Client Secret</strong>.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Facebook Meta Login Guide Card -->
+                            <div class="col-lg-6">
+                                <div class="card border shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-white py-3 px-4 border-bottom d-flex align-items-center gap-2">
+                                        <i class="mdi mdi-facebook text-primary fs-4"></i>
+                                        <h6 class="fw-bold mb-0">Facebook (Meta) Login Setup (3 Steps)</h6>
+                                    </div>
+                                    <div class="card-body p-4">
+                                        <ol class="small text-muted ps-3 mb-3">
+                                            <li class="mb-2">Visit <a href="https://developers.facebook.com/" target="_blank" class="fw-semibold text-primary text-decoration-underline">Meta for Developers</a>, log in, and click <strong>My Apps &rarr; Create App</strong>.</li>
+                                            <li class="mb-2">Select <strong>Authenticate and request data with Facebook Login</strong>.</li>
+                                            <li class="mb-2">
+                                                Navigate to <strong>Facebook Login &rarr; Settings</strong> and under <strong>Valid OAuth Redirect URIs</strong>, paste:
+                                                <div class="p-2 bg-light rounded border font-monospace text-dark mt-1" style="font-size: 11px; word-break: break-all;">
+                                                    https://yourdomain.com/login/facebook/callback
+                                                </div>
+                                            </li>
+                                            <li>Go to <strong>App settings &rarr; Basic</strong>, copy your <strong>App ID</strong> &amp; <strong>App Secret</strong>, and switch the App status from Development to <strong>Live</strong>.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- .env Configuration Blueprint Table -->
+                        <h5 class="fw-bold text-heading mt-4 mb-3">Environment Keys Reference (.env)</h5>
+                        <div class="table-responsive">
+                            <table class="doc-table table align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;">Environment Variable</th>
+                                        <th style="width: 40%;">Description &amp; Where to Find</th>
+                                        <th style="width: 35%;">Sample Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>GOOGLE_CLIENT_ID</code></td>
+                                        <td>Your official Google Cloud OAuth 2.0 Web Application Client ID.</td>
+                                        <td><code class="small text-muted">982173491-xxxx.apps.googleusercontent.com</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>GOOGLE_CLIENT_SECRET</code></td>
+                                        <td>Confidential client secret string issued by Google Cloud Console.</td>
+                                        <td><code class="small text-muted">GOCSPX-xxxxxxxxxxxxxxxx</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>GOOGLE_REDIRECT_URI</code></td>
+                                        <td>Automated OAuth callback URL. Dynamically uses <code>${APP_URL}</code>.</td>
+                                        <td><code>${APP_URL}/login/google/callback</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>FACEBOOK_CLIENT_ID</code></td>
+                                        <td>Your Meta for Developers App ID (Numeric string).</td>
+                                        <td><code class="small text-muted">184920491829048</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>FACEBOOK_CLIENT_SECRET</code></td>
+                                        <td>Confidential application secret key generated in Meta App Settings.</td>
+                                        <td><code class="small text-muted">a8f7c9e01b34d78e234f9a0c12</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>FACEBOOK_REDIRECT_URI</code></td>
+                                        <td>Automated Meta OAuth callback URL. Dynamically uses <code>${APP_URL}</code>.</td>
+                                        <td><code>${APP_URL}/login/facebook/callback</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="alert alert-info border-0 shadow-sm d-flex align-items-start gap-3 my-4 p-3 rounded-3" style="background-color: #f0fdf4; border-left: 4px solid #10b981 !important;">
+                            <i class="mdi mdi-checkbox-marked-circle-outline fs-3 text-success flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h6 class="fw-bold text-success mb-1">Applying Changes on Your Live Server</h6>
+                                <p class="small mb-0 text-muted">
+                                    After pasting your Google or Facebook keys into your server's <code>.env</code> file, execute <code>php artisan optimize:clear</code> via terminal or click <strong>1-Click Clear Cache</strong> under <em>System Settings &rarr; System Configuration</em> to apply the new keys immediately.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- HUMAN-READABLE ROLE & PERMISSION NOTE -->
                     <div class="p-3 p-md-4 border rounded-3 bg-light d-flex align-items-start gap-3 my-4">
                         <i class="mdi mdi-shield-check text-success fs-3 lh-1"></i>
@@ -1102,7 +1236,7 @@
             <!-- ================= RIGHT SIDEBAR (ON THIS PAGE TOC) ================= -->
             <aside class="col-xl-2 d-none d-xl-block">
                 <div class="doc-toc" style="font-size: 0.75rem;">
-                    <div class="doc-toc-title">On This Page (7 Tabs)</div>
+                    <div class="doc-toc-title">On This Page (8 Sections)</div>
                     <a href="#sec-21-1" class="doc-toc-link active">21.1 General & Brand</a>
                     <a href="#sec-21-2" class="doc-toc-link">21.2 Theme & Appearance</a>
                     <a href="#sec-21-3" class="doc-toc-link">21.3 System & Symlink</a>
@@ -1110,6 +1244,7 @@
                     <a href="#sec-21-5" class="doc-toc-link">21.5 AI & WhatsApp Hub</a>
                     <a href="#sec-21-6" class="doc-toc-link">21.6 Security & 2FA</a>
                     <a href="#sec-21-7" class="doc-toc-link">21.7 License & Key Re-bind</a>
+                    <a href="#sec-21-8" class="doc-toc-link">21.8 Social Logins (Google & FB)</a>
                     
                     <hr class="my-2">
                     <a href="#ch21-settings" class="doc-toc-link text-muted small">
