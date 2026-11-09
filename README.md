@@ -74,7 +74,7 @@
 
 * **Backend Framework:** [Laravel 12.x](https://laravel.com)
 * **Programming Language:** PHP 8.2+
-* **Frontend Architecture:** Blade Components, Bootstrap 5.3.3, Material Design Icons (MDI)
+* **Frontend Architecture:** Blade Components (<x-icon> Vector SVG), Bootstrap 5.3.3, Material Design Icons (MDI)
 * **Asset Pipeline:** Vite 6
 * **Database Compatibility:** MySQL 8.0+ / MariaDB 10.4+
 

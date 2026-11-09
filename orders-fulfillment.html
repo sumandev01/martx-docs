@@ -654,6 +654,31 @@
                                 </tfoot>
                             </table>
                         </div>
+
+                        <!-- Enterprise Security & Context-Aware Redirect Architecture Callout -->
+                        <div class="card border-0 shadow-sm rounded-3 mt-4 mb-2" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-left: 4px solid #6366f1 !important;">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="mdi mdi-shield-account-outline text-primary fs-4"></i>
+                                    <h6 class="fw-bold mb-0 text-heading">Customer Privacy Isolation vs. Smart Admin Context Redirect</h6>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle font-monospace small ms-auto">
+                                        <i class="mdi mdi-check-decagram me-1"></i> Enterprise UX Architecture
+                                    </span>
+                                </div>
+                                <p class="small text-muted mb-2">
+                                    MartX strictly separates customer self-service routes (<code>/user/orders/{order}</code>) from store management routes (<code>/admin/orders/{order}/view</code>) using Laravel Authorization Policies (<code>OrderPolicy</code>) to protect GDPR customer data privacy:
+                                </p>
+                                <ul class="small text-muted mb-3 ps-3">
+                                    <li class="mb-1"><strong>Cross-Customer Isolation:</strong> Regular customer accounts cannot view each other's purchase history, shipping addresses, or phone numbers by manipulating the ID in the browser URL. Non-owner customer requests are strictly denied with an HTTP 403 Access Forbidden response.</li>
+                                    <li class="mb-1"><strong>Smart Context-Aware Admin Redirect:</strong> When a store administrator (<em>Super Admin</em> or <em>Admin</em>) clicks or navigates to a customer order link that does not belong to their personal shopper account, MartX dynamically bypasses the customer 403 error and seamlessly redirects them directly to the operational <strong>Admin Order Details Dossier</strong> (<code>admin.order.view</code>).</li>
+                                    <li><strong>Personal Admin Shopper Experience:</strong> If an administrator personally checks out and purchases items on the storefront, their personal order remains viewable inside their customer portal without unnecessary redirections.</li>
+                                </ul>
+                                <div class="d-flex align-items-center gap-2 small text-primary fw-semibold pt-2 border-top">
+                                    <i class="mdi mdi-lightbulb-on-outline"></i>
+                                    <span>Result: Zero 403 frustration for store operators while maintaining 100% airtight customer data security.</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- ================= 9.4: PRINTABLE INVOICE & PACKING SLIP ================= -->
